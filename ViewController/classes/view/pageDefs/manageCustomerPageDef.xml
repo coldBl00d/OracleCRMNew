@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="manageCustomerPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerAccountsUVO1" RangeSize="25" DataControl="UserAppModuleDataControl"
+              id="CustomerAccountsUVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerAccountsUVO1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerAccountsUVO1Iterator" id="CustomerAccountsUVO1">
+      <nodeDefinition DefName="model.uvo.CustomerAccountsUVO" Name="CustomerAccountsUVO10">
+        <AttrNames>
+          <Item Value="AccountName"/>
+          <Item Value="AccountUrl"/>
+          <Item Value="Ceo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

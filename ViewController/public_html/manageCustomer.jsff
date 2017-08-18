@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow id="gr2">
+            <af:gridCell id="gc2">
+                <af:toolbar id="t1">
+                    <af:button text="Add" id="b1"/>
+                    <af:spacer width="10" height="10" id="s1"/>
+                    <af:button text="Edit" id="b2"/>
+                    <af:spacer width="10" height="10" id="s2"/>
+                    <af:button text="Delete" id="b3"/>
+                    <af:spacer width="10" height="10" id="s3"/>
+                    <af:spacer width="10" height="10" id="s4"/>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                    <af:table value="#{bindings.CustomerAccountsUVO1.collectionModel}" var="row"
+                              rows="#{bindings.CustomerAccountsUVO1.rangeSize}"
+                              emptyText="#{bindings.CustomerAccountsUVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.CustomerAccountsUVO1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.CustomerAccountsUVO1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.CustomerAccountsUVO1.rangeSize}"
+                              partialTriggers="::qryId1" id="t2">
+                        <af:column sortProperty="#{bindings.CustomerAccountsUVO1.hints.AccountName.name}"
+                                   sortable="true" headerText="#{bindings.CustomerAccountsUVO1.hints.AccountName.label}"
+                                   id="c1">
+                            <af:outputText value="#{row.AccountName}"
+                                           shortDesc="#{bindings.CustomerAccountsUVO1.hints.AccountName.tooltip}"
+                                           id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomerAccountsUVO1.hints.AccountUrl.name}" sortable="true"
+                                   headerText="#{bindings.CustomerAccountsUVO1.hints.AccountUrl.label}" id="c2">
+                            <af:outputText value="#{row.AccountUrl}"
+                                           shortDesc="#{bindings.CustomerAccountsUVO1.hints.AccountUrl.tooltip}"
+                                           id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomerAccountsUVO1.hints.Ceo.name}" sortable="true"
+                                   headerText="#{bindings.CustomerAccountsUVO1.hints.Ceo.label}" id="c3">
+                            <af:outputText value="#{row.Ceo}"
+                                           shortDesc="#{bindings.CustomerAccountsUVO1.hints.Ceo.tooltip}" id="ot3"/>
+                        </af:column>
+                        <af:column id="c4">
+                            <af:button text="View" id="b4"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

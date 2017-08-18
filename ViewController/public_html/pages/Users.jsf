@@ -16,7 +16,7 @@
                                 <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Users.pl1}">
                                     <af:link text="Manage Cutomers" id="l1"
                                              binding="#{backingBeanScope.backing_pages_Users.l1}"
-                                             actionListener="#{backingBeanScope.Launcher.createCustomerActivity}"
+                                             actionListener="#{backingBeanScope.Launcher.manageCustomerActivity}"
                                              partialSubmit="true"/>
                                     <af:link text="link 2" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Users.l2}"/>
@@ -35,14 +35,17 @@
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Users.np1}">
                         <af:commandNavigationItem id="ni1" text="Admin" 
                                                   binding="#{backingBeanScope.backing_pages_Users.ni1}"
-                                                  partialSubmit="true" partialTriggers="::np1"/>
+                                                  partialSubmit="true" partialTriggers="::np1" action="goAdmin"/>
                         <af:commandNavigationItem id="ni2" text="Users" 
                                                   binding="#{backingBeanScope.backing_pages_Users.ni2}"
                                                   partialSubmit="true" partialTriggers="::np1" action="goUsers"
                                                   selected="true"/>
                     </af:navigationPane>
                 </f:facet>
-                <f:facet name="welcome"/>
+                <f:facet name="welcome">
+                    <af:region value="#{bindings.welcome1.regionModel}" id="r1"
+                               binding="#{backingBeanScope.backing_pages_Users.r1}"/>
+                </f:facet>
                 <f:facet name="innerToolbar"/>
             </af:pageTemplate>
         </af:form>

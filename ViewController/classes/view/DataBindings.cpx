@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/manageCustomer.jsff" usageId="view_manageCustomerPageDef"/>
+    <page path="/pages/Users.jsf" usageId="view_UsersPageDef"/>
+    <page path="/pages/Admin.jsf" usageId="view_AdminPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_manageCustomerPageDef" path="view.pageDefs.manageCustomerPageDef"/>
+    <page id="view_UsersPageDef" path="pages.UsersPageDef"/>
+    <page id="view_AdminPageDef" path="pages.AdminPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="UserAppModuleDataControl" Package="model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="UserAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

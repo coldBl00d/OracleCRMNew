@@ -3,6 +3,7 @@ package view.backing.pages;
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.fragment.RichPageTemplate;
+import oracle.adf.view.rich.component.rich.fragment.RichRegion;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelList;
@@ -23,6 +24,7 @@ public class Admin {
     private RichLink l1;
     private RichLink l2;
     private RichLink l3;
+    private RichRegion r1;
 
     public void setPt1(RichPageTemplate pt1) {
         this.pt1 = pt1;
@@ -119,5 +121,13 @@ public class Admin {
 
     public RichLink getL3() {
         return l3;
+    }
+
+    public void setR1(RichRegion r1) {
+        this.r1 = r1;
+    }
+
+    public RichRegion getR1() {
+        return r1;
     }
 }
