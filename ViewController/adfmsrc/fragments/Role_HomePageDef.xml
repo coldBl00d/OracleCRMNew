@@ -4,6 +4,19 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="RolesR1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesR1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="RolesR1Iterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="RolesR1Iterator" id="RolesR1">
+      <nodeDefinition DefName="model.rvo.RolesRVO" Name="RolesR10">
+        <AttrNames>
+          <Item Value="RoleName"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

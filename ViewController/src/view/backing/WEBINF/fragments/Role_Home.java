@@ -1,10 +1,18 @@
 package view.backing.WEBINF.fragments;
 
+import oracle.adf.view.rich.component.rich.RichQuickQuery;
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.jbo.ViewObject;
+
+import org.apache.myfaces.trinidad.event.ReturnEvent;
 
 public class Role_Home {
     private RichGridRow gr2;
@@ -14,6 +22,10 @@ public class Role_Home {
     private RichButton b2;
     private RichButton b3;
     private RichSpacer s1;
+    private RichPanelGroupLayout pgl2;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t2;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -70,5 +82,41 @@ public class Role_Home {
 
     public RichSpacer getS1() {
         return s1;
+    }
+
+    public void setPgl2(RichPanelGroupLayout pgl2) {
+        this.pgl2 = pgl2;
+    }
+
+    public RichPanelGroupLayout getPgl2() {
+        return pgl2;
+    }
+
+
+    public void setQryId1(RichQuickQuery qryId1) {
+        this.qryId1 = qryId1;
+    }
+
+    public RichQuickQuery getQryId1() {
+        return qryId1;
+    }
+
+    public void setCl1(RichCommandLink cl1) {
+        this.cl1 = cl1;
+    }
+
+    public RichCommandLink getCl1() {
+        return cl1;
+    }
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
+    }
+    
+    public void onCreateReturn(ReturnEvent returnEvent){
+        
     }
 }
