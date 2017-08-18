@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.am.AdminAppModule">
+      <AppModuleConfig name="15DF4FC0E0E" JDBCName="oraclecrm" DeployPlatform="LOCAL" jbo.project="model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="AdminAppModuleLocal" ApplicationName="model.am.AdminAppModule" DBconnection="java:comp/env/jdbc/oraclecrmDS">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/oraclecrmDS" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.am.AdminAppModule"/>
+         <Tester FullProxyInterfaceName="model.am.common.AdminAppModule"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

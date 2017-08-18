@@ -14,11 +14,12 @@
                             <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_pages_Admin.pgl1}"
                                                  layout="vertical">
                                 <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Admin.pl1}">
-                                    <af:link text="link 1" id="l1"
-                                             binding="#{backingBeanScope.backing_pages_Admin.l1}"/>
-                                    <af:link text="link 2" id="l2"
+                                    <af:link text="Manage Roles" id="l1"
+                                             binding="#{backingBeanScope.backing_pages_Admin.l1}"
+                                             actionListener="#{backingBeanScope.Launcher.manageRoleActivity}"/>
+                                    <af:link text="Manage Products" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Admin.l2}"/>
-                                    <af:link text="link 3" id="l3"
+                                    <af:link text="Manage Users" id="l3"
                                              binding="#{backingBeanScope.backing_pages_Admin.l3}"/>
                                 </af:panelList>
                             </af:panelGroupLayout>
@@ -33,9 +34,9 @@
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Admin.np1}">
                         <af:commandNavigationItem id="ni1" text="Admin" selected="true"
                                                   binding="#{backingBeanScope.backing_pages_Admin.ni1}"
-                                                  partialSubmit="true" partialTriggers="::np1"/>
+                                                  partialSubmit="true" partialTriggers="::np1" action="goUsers"/>
                         <af:commandNavigationItem id="ni2" text="User"
-                                                  binding="#{backingBeanScope.backing_pages_Admin.ni2}" action="goUsers"
+                                                  binding="#{backingBeanScope.backing_pages_Admin.ni2}"
                                                   partialSubmit="true" partialTriggers="::np1"/>
                     </af:navigationPane>
                 </f:facet>
