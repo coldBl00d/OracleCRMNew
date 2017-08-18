@@ -17,51 +17,11 @@
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                     <af:spacer width="10" height="10" id="s1"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.s1}"/>
-                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
-                                   binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.qryId1}">
-                        <f:facet name="end">
-                            <af:commandLink text="Advanced" rendered="false" id="cl1"
-                                            binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.cl1}"/>
-                        </f:facet>
-                    </af:quickQuery>
                 </af:toolbar>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow id="gr2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gr2}" height="95%">
-            <af:gridCell id="gc2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gc2}">
-                <af:panelGroupLayout layout="vertical" id="pgl2"
-                                     binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pgl2}">
-                    <af:table value="#{bindings.RolesR1.collectionModel}" var="row" rows="#{bindings.RolesR1.rangeSize}"
-                              emptyText="#{bindings.RolesR1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              rowBandingInterval="0" selectedRowKeys="#{bindings.RolesR1.collectionModel.selectedRow}"
-                              selectionListener="#{bindings.RolesR1.collectionModel.makeCurrent}" rowSelection="single"
-                              fetchSize="#{bindings.RolesR1.rangeSize}" partialTriggers="::qryId1" id="t2"
-                              binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}">
-                        <af:column sortProperty="#{bindings.RolesR1.hints.RoleName.name}" sortable="true"
-                                   headerText="#{bindings.RolesR1.hints.RoleName.label}" id="c1">
-                            <af:outputText value="#{row.RoleName}"
-                                           shortDesc="#{bindings.RolesR1.hints.RoleName.tooltip}" id="ot1"/>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.RolesR1.hints.StartDate.name}" sortable="true"
-                                   headerText="#{bindings.RolesR1.hints.StartDate.label}" id="c2">
-                            <af:outputText value="#{row.StartDate}"
-                                           shortDesc="#{bindings.RolesR1.hints.StartDate.tooltip}" id="ot2">
-                                <af:convertDateTime pattern="#{bindings.RolesR1.hints.StartDate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.RolesR1.hints.EndDate.name}" sortable="true"
-                                   headerText="#{bindings.RolesR1.hints.EndDate.label}" id="c3">
-                            <af:outputText value="#{row.EndDate}" shortDesc="#{bindings.RolesR1.hints.EndDate.tooltip}"
-                                           id="ot3">
-                                <af:convertDateTime pattern="#{bindings.RolesR1.hints.EndDate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                    </af:table>
-                </af:panelGroupLayout>
-            </af:gridCell>
+            <af:gridCell id="gc2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gc2}"/>
         </af:gridRow>
     </af:panelGridLayout>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_Role_Home-->
