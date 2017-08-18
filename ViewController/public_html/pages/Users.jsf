@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Users.jsf" id="d1" binding="#{backingBeanScope.backing_pages_Users.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_pages_Users.f1}">
+            <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
+                             binding="#{backingBeanScope.backing_pages_Users.pt1}">
+                <f:facet name="copyright"/>
+                <f:facet name="about"/>
+                <f:facet name="navigation">
+                    <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_pages_Users.db1}">
+                        <f:facet name="top"/>
+                        <f:facet name="center">
+                            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_pages_Users.pgl1}"
+                                                 layout="vertical">
+                                <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Users.pl1}">
+                                    <af:link text="Manage Cutomers" id="l1"
+                                             binding="#{backingBeanScope.backing_pages_Users.l1}"
+                                             actionListener="#{backingBeanScope.Launcher.createCustomerActivity}"
+                                             partialSubmit="true"/>
+                                    <af:link text="link 2" id="l2"
+                                             binding="#{backingBeanScope.backing_pages_Users.l2}"/>
+                                    <af:link text="link 3" id="l3"
+                                             binding="#{backingBeanScope.backing_pages_Users.l3}"/>
+                                </af:panelList>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+                <f:facet name="globalLinks"/>
+                <f:facet name="status"/>
+                <f:facet name="globalToolbar"/>
+                <f:facet name="globalSearch"/>
+                <f:facet name="globalTabs">
+                    <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Users.np1}">
+                        <af:commandNavigationItem id="ni1" text="Admin" 
+                                                  binding="#{backingBeanScope.backing_pages_Users.ni1}"
+                                                  partialSubmit="true" partialTriggers="::np1"/>
+                        <af:commandNavigationItem id="ni2" text="Users" 
+                                                  binding="#{backingBeanScope.backing_pages_Users.ni2}"
+                                                  partialSubmit="true" partialTriggers="::np1" action="goUsers"
+                                                  selected="true"/>
+                    </af:navigationPane>
+                </f:facet>
+                <f:facet name="welcome"/>
+                <f:facet name="innerToolbar"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pages_Users-->
+</f:view>

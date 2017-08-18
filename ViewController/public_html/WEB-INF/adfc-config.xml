@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Admin">
+    <page>/pages/Admin.jsf</page>
+  </view>
+  <view id="Users">
+    <page>/pages/Users.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>goAdmin</from-outcome>
+      <to-activity-id>Admin</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>goUsers</from-outcome>
+      <to-activity-id>Users</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__4">
+    <managed-bean-name>backing_pages_Admin</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Admin</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Admin.jsf-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_Users</managed-bean-name>
+    <managed-bean-class>view.backing.Users</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Users.jsf-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_pages_Users</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Users</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Users.jsf-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>Launcher</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Launcher</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
