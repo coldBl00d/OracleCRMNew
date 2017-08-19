@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="Product_HomePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductsU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="ProductsU1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ProductsU1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="CategoryU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="CategoryU1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CategoryU1Iterator" id="ImplicitViewCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProductsU1Iterator" id="ProductsU1">
+      <nodeDefinition DefName="model.uvo.ProductsUVO" Name="ProductsU10">
+        <AttrNames>
+          <Item Value="ProductName"/>
+          <Item Value="ProductPrice"/>
+          <Item Value="ProductCategory"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProductsU1Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsU1Iterator" id="ProductDescription">
+      <AttrNames>
+        <Item Value="ProductDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsU1Iterator" id="ProductPrice">
+      <AttrNames>
+        <Item Value="ProductPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProductsU1Iterator" StaticList="false" Uses="LOV_ProductCategory" id="ProductCategory"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="CategoryU1Iterator" id="CategoryU1">
+      <nodeDefinition DefName="model.uvo.CategoryUVO" Name="CategoryU10">
+        <AttrNames>
+          <Item Value="CategoryName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CategoryU1Iterator" id="CategoryName">
+      <AttrNames>
+        <Item Value="CategoryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CategoryU1Iterator" id="CategoryDescription">
+      <AttrNames>
+        <Item Value="CategoryDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProductsU1Iterator" id="CreateInsert" InstanceName="AdminAppModuleDataControl.ProductsU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ProductsU1Iterator" id="Delete" InstanceName="AdminAppModuleDataControl.ProductsU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="CategoryU1Iterator" id="CreateInsert1" InstanceName="AdminAppModuleDataControl.CategoryU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CategoryU1Iterator" id="Delete1" InstanceName="AdminAppModuleDataControl.CategoryU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>

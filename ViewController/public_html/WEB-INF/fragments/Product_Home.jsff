@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="10%" id="gr1">
+            <af:gridCell id="gc1" width="40%">
+                <af:toolbar id="t1" binding="#{backingBeanScope.backing_Product_Home.t1}">
+                    <af:button id="b1" binding="#{backingBeanScope.backing_Product_Home.b1}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"
+                               actionListener="#{backingBeanScope.backing_Product_Home.insertPopupActionListener}">
+                        <af:showPopupBehavior popupId="p1" triggerType="click" align="startAfter" alignId="b1"/>
+                    </af:button>
+                    <af:button id="b2" binding="#{backingBeanScope.backing_Product_Home.b2}"
+                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p2" align="startAfter" alignId="b2"/>
+                    </af:button>
+                    <af:button id="b3" binding="#{backingBeanScope.backing_Product_Home.b3}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p3" align="startAfter" alignId="b3"/>
+                    </af:button>
+                </af:toolbar>
+            </af:gridCell>
+            <af:gridCell id="gc6" binding="#{backingBeanScope.backing_Product_Home.gc6}" width="60%">
+                <af:toolbar id="t3" binding="#{backingBeanScope.backing_Product_Home.t3}">
+                    <af:button id="b4" binding="#{backingBeanScope.backing_Product_Home.b4}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"
+                               actionListener="#{backingBeanScope.backing_Product_Home.insertCatPopupActionListener}">
+                        <af:showPopupBehavior popupId="p4" triggerType="click" align="startAfter" alignId="b4"/>
+                    </af:button>
+                    <af:button id="b5" binding="#{backingBeanScope.backing_Product_Home.b5}"
+                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p5" align="startAfter" alignId="b5"/>
+                    </af:button>
+                    <af:button id="b6" binding="#{backingBeanScope.backing_Product_Home.b6}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p6" align="startAfter" alignId="b6"/>
+                    </af:button>
+                </af:toolbar>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow id="gr3" binding="#{backingBeanScope.backing_Product_Home.gr3}" height="10%">
+            <af:gridCell id="gc3" binding="#{backingBeanScope.backing_Product_Home.gc3}" width="40%">
+                <af:toolbar id="t5" binding="#{backingBeanScope.backing_Product_Home.t5}">
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.backing_Product_Home.qryId1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.backing_Product_Home.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </af:gridCell>
+            <af:gridCell id="gc7" binding="#{backingBeanScope.backing_Product_Home.gc7}" width="60%">
+                <af:toolbar id="t6" binding="#{backingBeanScope.backing_Product_Home.t6}">
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
+                                   value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
+                                   binding="#{backingBeanScope.backing_Product_Home.qryId2}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl2"
+                                            binding="#{backingBeanScope.backing_Product_Home.cl2}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow id="gr2" binding="#{backingBeanScope.backing_Product_Home.gr2}" height="80%">
+            <af:gridCell id="gc2" binding="#{backingBeanScope.backing_Product_Home.gc2}" width="40%">
+                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                     binding="#{backingBeanScope.backing_Product_Home.pgl2}">
+                    <af:table value="#{bindings.ProductsU1.collectionModel}" var="row"
+                              rows="#{bindings.ProductsU1.rangeSize}"
+                              emptyText="#{bindings.ProductsU1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ProductsU1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ProductsU1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ProductsU1.rangeSize}"
+                              partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.backing_Product_Home.t2}">
+                        <af:column sortProperty="#{bindings.ProductsU1.hints.ProductName.name}" sortable="true"
+                                   headerText="#{bindings.ProductsU1.hints.ProductName.label}" id="c1">
+                            <af:outputText value="#{row.ProductName}"
+                                           shortDesc="#{bindings.ProductsU1.hints.ProductName.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductsU1.hints.ProductPrice.name}" sortable="true"
+                                   headerText="#{bindings.ProductsU1.hints.ProductPrice.label}" id="c2">
+                            <af:outputText value="#{row.ProductPrice}"
+                                           shortDesc="#{bindings.ProductsU1.hints.ProductPrice.tooltip}" id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProductsU1.hints.ProductPrice.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductsU1.hints.ProductCategory.name}" sortable="true"
+                                   headerText="#{bindings.ProductsU1.hints.ProductCategory.label}" id="c3">
+                            <af:selectOneChoice value="#{row.bindings.ProductCategory.inputValue}"
+                                                label="#{row.bindings.ProductCategory.label}"
+                                                required="#{bindings.ProductsU1.hints.ProductCategory.mandatory}"
+                                                shortDesc="#{bindings.ProductsU1.hints.ProductCategory.tooltip}"
+                                                id="soc3">
+                                <f:selectItems value="#{row.bindings.ProductCategory.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.ProductCategory.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                          binding="#{backingBeanScope.backing_Product_Home.p1}"
+                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}">
+                    <af:dialog id="d1" binding="#{backingBeanScope.backing_Product_Home.d1}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.insertDialogListener}">
+                        <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Product_Home.pfl1}">
+                            <af:inputText value="#{bindings.ProductName.inputValue}"
+                                          label="#{bindings.ProductName.hints.label}"
+                                          required="#{bindings.ProductName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.ProductName.hints.precision}"
+                                          shortDesc="#{bindings.ProductName.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_Product_Home.it1}">
+                                <f:validator binding="#{bindings.ProductName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ProductDescription.inputValue}"
+                                          label="#{bindings.ProductDescription.hints.label}"
+                                          required="#{bindings.ProductDescription.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.ProductDescription.hints.precision}"
+                                          shortDesc="#{bindings.ProductDescription.hints.tooltip}" id="it2"
+                                          binding="#{backingBeanScope.backing_Product_Home.it2}" rows="4">
+                                <f:validator binding="#{bindings.ProductDescription.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ProductPrice.inputValue}"
+                                          label="#{bindings.ProductPrice.hints.label}"
+                                          required="#{bindings.ProductPrice.hints.mandatory}"
+                                          columns="#{bindings.ProductPrice.hints.displayWidth}"
+                                          maximumLength="#{bindings.ProductPrice.hints.precision}"
+                                          shortDesc="#{bindings.ProductPrice.hints.tooltip}" id="it3"
+                                          binding="#{backingBeanScope.backing_Product_Home.it3}">
+                                <f:validator binding="#{bindings.ProductPrice.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ProductPrice.format}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.ProductCategory.inputValue}"
+                                                label="#{bindings.ProductCategory.label}"
+                                                required="#{bindings.ProductCategory.hints.mandatory}"
+                                                shortDesc="#{bindings.ProductCategory.hints.tooltip}" id="soc1"
+                                                binding="#{backingBeanScope.backing_Product_Home.soc1}">
+                                <f:selectItems value="#{bindings.ProductCategory.items}" id="si1"
+                                               binding="#{backingBeanScope.backing_Product_Home.si1}"/>
+                                <f:validator binding="#{bindings.ProductCategory.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelFormLayout>
+                        <f:facet name="buttonBar"/>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                          binding="#{backingBeanScope.backing_Product_Home.p2}"
+                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}"
+                          contentDelivery="lazyUncached">
+                    <af:dialog id="d2" binding="#{backingBeanScope.backing_Product_Home.d2}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.editDialogListener}"
+                               partialTriggers="t2">
+                        <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_Product_Home.pfl2}">
+                            <af:inputText value="#{bindings.ProductName.inputValue}"
+                                          label="#{bindings.ProductName.hints.label}"
+                                          required="#{bindings.ProductName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.ProductName.hints.precision}"
+                                          shortDesc="#{bindings.ProductName.hints.tooltip}" id="it4"
+                                          binding="#{backingBeanScope.backing_Product_Home.it4}">
+                                <f:validator binding="#{bindings.ProductName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ProductDescription.inputValue}"
+                                          label="#{bindings.ProductDescription.hints.label}"
+                                          required="#{bindings.ProductDescription.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.ProductDescription.hints.precision}"
+                                          shortDesc="#{bindings.ProductDescription.hints.tooltip}" id="it5"
+                                          binding="#{backingBeanScope.backing_Product_Home.it5}" rows="4">
+                                <f:validator binding="#{bindings.ProductDescription.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ProductPrice.inputValue}"
+                                          label="#{bindings.ProductPrice.hints.label}"
+                                          required="#{bindings.ProductPrice.hints.mandatory}"
+                                          columns="#{bindings.ProductPrice.hints.displayWidth}"
+                                          maximumLength="#{bindings.ProductPrice.hints.precision}"
+                                          shortDesc="#{bindings.ProductPrice.hints.tooltip}" id="it6"
+                                          binding="#{backingBeanScope.backing_Product_Home.it6}">
+                                <f:validator binding="#{bindings.ProductPrice.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ProductPrice.format}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.ProductCategory.inputValue}"
+                                                label="#{bindings.ProductCategory.label}"
+                                                required="#{bindings.ProductCategory.hints.mandatory}"
+                                                shortDesc="#{bindings.ProductCategory.hints.tooltip}" id="soc2"
+                                                binding="#{backingBeanScope.backing_Product_Home.soc2}">
+                                <f:selectItems value="#{bindings.ProductCategory.items}" id="si2"
+                                               binding="#{backingBeanScope.backing_Product_Home.si2}"/>
+                                <f:validator binding="#{bindings.ProductCategory.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelFormLayout>
+                        <f:facet name="buttonBar"/>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
+                          binding="#{backingBeanScope.backing_Product_Home.p3}">
+                    <af:dialog id="d3" binding="#{backingBeanScope.backing_Product_Home.d3}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.deleteDialogListener}"
+                               type="yesNo">
+                        <f:facet name="buttonBar"/>
+                        <af:outputText value="Are you sure you want to delete?" id="ot4"
+                                       binding="#{backingBeanScope.backing_Product_Home.ot4}"/>
+                    </af:dialog>
+                </af:popup>
+            </af:gridCell>
+            <af:gridCell id="gc5" binding="#{backingBeanScope.backing_Product_Home.gc5}" width="60%">
+                <af:panelGroupLayout layout="vertical" id="pgl3"
+                                     binding="#{backingBeanScope.backing_Product_Home.pgl3}">
+                    <af:table value="#{bindings.CategoryU1.collectionModel}" var="row"
+                              rows="#{bindings.CategoryU1.rangeSize}"
+                              emptyText="#{bindings.CategoryU1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.CategoryU1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.CategoryU1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.CategoryU1.rangeSize}"
+                              partialTriggers="::qryId2" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}">
+                        <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryName.name}" sortable="true"
+                                   headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4">
+                            <af:outputText value="#{row.CategoryName}"
+                                           shortDesc="#{bindings.CategoryU1.hints.CategoryName.tooltip}" id="ot7"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow id="gr4" binding="#{backingBeanScope.backing_Product_Home.gr4}" height="0%">
+            <af:gridCell id="gc4" binding="#{backingBeanScope.backing_Product_Home.gc4}">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+                          binding="#{backingBeanScope.backing_Product_Home.p4}"
+                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}">
+                    <af:dialog id="d4" binding="#{backingBeanScope.backing_Product_Home.d4}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.insertCatDialogListener}">
+                        <f:facet name="buttonBar"/>
+                        <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_Product_Home.pfl3}">
+                            <af:inputText value="#{bindings.CategoryName.inputValue}"
+                                          label="#{bindings.CategoryName.hints.label}"
+                                          required="#{bindings.CategoryName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.CategoryName.hints.precision}"
+                                          shortDesc="#{bindings.CategoryName.hints.tooltip}" id="it7"
+                                          binding="#{backingBeanScope.backing_Product_Home.it7}">
+                                <f:validator binding="#{bindings.CategoryName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CategoryDescription.inputValue}"
+                                          label="#{bindings.CategoryDescription.hints.label}"
+                                          required="#{bindings.CategoryDescription.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.CategoryDescription.hints.precision}"
+                                          shortDesc="#{bindings.CategoryDescription.hints.tooltip}" id="it8"
+                                          binding="#{backingBeanScope.backing_Product_Home.it8}" rows="4">
+                                <f:validator binding="#{bindings.CategoryDescription.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p5"
+                          binding="#{backingBeanScope.backing_Product_Home.p5}"
+                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}"
+                          contentDelivery="lazyUncached">
+                    <af:dialog id="d5" binding="#{backingBeanScope.backing_Product_Home.d5}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.editCatDialogListener}">
+                        <f:facet name="buttonBar"/>
+                        <af:panelFormLayout id="pfl4" binding="#{backingBeanScope.backing_Product_Home.pfl4}">
+                            <af:inputText value="#{bindings.CategoryName.inputValue}"
+                                          label="#{bindings.CategoryName.hints.label}"
+                                          required="#{bindings.CategoryName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.CategoryName.hints.precision}"
+                                          shortDesc="#{bindings.CategoryName.hints.tooltip}" id="it9"
+                                          binding="#{backingBeanScope.backing_Product_Home.it9}" rows="1">
+                                <f:validator binding="#{bindings.CategoryName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CategoryDescription.inputValue}"
+                                          label="#{bindings.CategoryDescription.hints.label}"
+                                          required="#{bindings.CategoryDescription.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.CategoryDescription.hints.precision}"
+                                          shortDesc="#{bindings.CategoryDescription.hints.tooltip}" id="it10"
+                                          binding="#{backingBeanScope.backing_Product_Home.it10}" rows="4">
+                                <f:validator binding="#{bindings.CategoryDescription.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p6"
+                          binding="#{backingBeanScope.backing_Product_Home.p6}">
+                    <af:dialog id="d6" binding="#{backingBeanScope.backing_Product_Home.d6}"
+                               dialogListener="#{backingBeanScope.backing_Product_Home.deleteCatDialogListener}"
+                               type="yesNo">
+                        <f:facet name="buttonBar"/>
+                        <af:outputText value="Are you sure you want to delete?" id="ot8"
+                                       binding="#{backingBeanScope.backing_Product_Home.ot8}"
+                                       inlineStyle="font-size:100%; font-weight:normal;"/>
+                    </af:dialog>
+                </af:popup>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Product_Home-->
+</ui:composition>

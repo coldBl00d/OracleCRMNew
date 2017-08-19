@@ -126,10 +126,10 @@
                     </af:dialog>
                 </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
-                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p3}" partialTriggers="t2">
+                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p3}" partialTriggers="t2"
+                          contentDelivery="lazyUncached">
                     <af:dialog id="d3" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d3}"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}"
-                               partialTriggers="t2">
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}">
                         <af:panelFormLayout id="pfl2"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pfl2}">
                             <af:inputText value="#{bindings.RoleName.inputValue}"

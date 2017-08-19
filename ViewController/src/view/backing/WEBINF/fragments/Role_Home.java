@@ -191,9 +191,7 @@ public class Role_Home {
             if(dialogEvent.getOutcome().name().equals("ok")==true) {
                
                 BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
-                OperationBinding operationBinding = bindings.getOperationBinding("Execute");
-                operationBinding.execute();
-                operationBinding = bindings.getOperationBinding("Commit");
+                OperationBinding operationBinding = bindings.getOperationBinding("Commit");
                 operationBinding.execute();
                
                 

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="model.am.AdminAppModule">
-      <AppModuleConfig name="15DF5809E51" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.AdminAppModule" jbo.project="model.Model" BC4JConfigName="AdminAppModuleLocal" JDBCName="oraclecrm" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+      <AppModuleConfig name="15DFA26B23E" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.AdminAppModule" jbo.project="model.Model" BC4JConfigName="AdminAppModuleLocal" JDBCName="oraclecrm" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
          <Database JDBCDataSource="java:comp/env/jdbc/oraclecrmDS" jbo.SQLBuilder="Oracle" jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
          <Security AppModuleJndiName="model.am.AdminAppModule"/>
          <Tester FullProxyInterfaceName="model.am.common.AdminAppModule"/>

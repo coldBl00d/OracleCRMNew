@@ -1,0 +1,12 @@
+//Groovy Scripts for model.eo.CategoryEO
+
+package model.eo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="CategoryNameRule0", attributeName="CategoryName")
+def CategoryName_CategoryNameRule0_ValidationRuleScript_ValidationRule()
+{
+null
+}
+

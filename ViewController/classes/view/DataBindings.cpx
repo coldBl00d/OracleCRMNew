@@ -12,6 +12,7 @@
     <page path="/pages/Admin.jsf" usageId="view_AdminPageDef"/>
     <page path="/WEB-INF/fragments/Edit.jsff" usageId="view_EditPageDef"/>
     <page path="/Edit.jsf" usageId="view_EditPageDef1"/>
+    <page path="/WEB-INF/fragments/Product_Home.jsff" usageId="view_Product_HomePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -19,6 +20,7 @@
     <page id="view_AdminPageDef" path="pages.AdminPageDef"/>
     <page id="view_EditPageDef" path="view.pageDefs.EditPageDef"/>
     <page id="view_EditPageDef1" path="view.pageDefs.EditPageDef1"/>
+    <page id="view_Product_HomePageDef" path="view.pageDefs.Product_HomePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

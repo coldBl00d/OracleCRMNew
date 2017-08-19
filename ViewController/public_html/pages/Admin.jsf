@@ -18,7 +18,8 @@
                                              binding="#{backingBeanScope.backing_pages_Admin.l1}"
                                              actionListener="#{backingBeanScope.Launcher.manageRoleActivity}"/>
                                     <af:link text="Manage Products" id="l2"
-                                             binding="#{backingBeanScope.backing_pages_Admin.l2}"/>
+                                             binding="#{backingBeanScope.backing_pages_Admin.l2}"
+                                             actionListener="#{backingBeanScope.Launcher.manageProductActivity}"/>
                                     <af:link text="Manage Users" id="l3"
                                              binding="#{backingBeanScope.backing_pages_Admin.l3}"/>
                                 </af:panelList>

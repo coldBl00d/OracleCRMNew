@@ -58,11 +58,11 @@
     TableName="ROLES">
     <validation:CompareValidationBean
       Name="StartDate_Current"
-      ResId="THE_DATE_YOU_ARE_ENTERING_HAS_ALREADY_PASSED_"
+      ResId="PLEASE_ENTER_A_DATE"
       OnAttribute="StartDate"
       OperandType="EXPR"
-      Inverse="false"
-      CompareType="GREATERTHANEQUALTO">
+      Inverse="true"
+      CompareType="EQUALTO">
       <validation:TransientExpression
         Name="ValidationRuleScript"
         trustMode="untrusted"

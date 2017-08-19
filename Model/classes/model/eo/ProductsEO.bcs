@@ -1,0 +1,12 @@
+//Groovy Scripts for model.eo.ProductsEO
+
+package model.eo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="ProductName_Null", attributeName="ProductName")
+def ProductName_ProductName_Null_ValidationRuleScript_ValidationRule()
+{
+null
+}
+

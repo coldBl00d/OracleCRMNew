@@ -13,4 +13,13 @@
   <ViewUsage
     Name="RolesU1"
     ViewObjectName="model.uvo.RolesUVO"/>
+  <ViewUsage
+    Name="ProductsU1"
+    ViewObjectName="model.uvo.ProductsUVO"/>
+  <ViewUsage
+    Name="CategoryU1"
+    ViewObjectName="model.uvo.CategoryUVO"/>
+  <ViewUsage
+    Name="CategoriesR2"
+    ViewObjectName="model.rvo.CategoriesRVO"/>
 </AppModule>
