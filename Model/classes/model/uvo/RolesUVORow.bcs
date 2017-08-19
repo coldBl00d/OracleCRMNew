@@ -1,0 +1,12 @@
+//Groovy Scripts for model.uvo.RolesUVO
+
+package model.uvo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="Start_Date_Current", attributeName="StartDate")
+def StartDate_Start_Date_Current_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate
+}
+

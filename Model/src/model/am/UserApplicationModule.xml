@@ -3,14 +3,21 @@
 <!---->
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="AdminAppModule"
+  Name="UserApplicationModule"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
-  <ViewUsage
-    Name="RolesR1"
-    ViewObjectName="model.rvo.RolesRVO"/>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.am.UserApplicationModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewUsage
     Name="RolesU1"
     ViewObjectName="model.uvo.RolesUVO"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </AppModule>

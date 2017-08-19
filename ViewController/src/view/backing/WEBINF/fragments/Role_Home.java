@@ -1,14 +1,35 @@
 package view.backing.WEBINF.fragments;
 
+
+import javax.faces.event.ActionEvent;
+
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.view.rich.component.rich.RichDialog;
+import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.adf.view.rich.event.DialogEvent;
+import oracle.adf.view.rich.event.PopupCanceledEvent;
+import oracle.adf.view.rich.event.PopupFetchEvent;
+
+import oracle.adfdt.model.objects.IteratorBinding;
+
+import oracle.binding.BindingContainer;
+
+import oracle.binding.OperationBinding;
 
 import oracle.jbo.ViewObject;
 
@@ -22,6 +43,23 @@ public class Role_Home {
     private RichButton b2;
     private RichButton b3;
     private RichSpacer s1;
+    private RichPopup p1;
+    private RichDialog d1;
+    private RichPopup p2;
+    private RichDialog d2;
+    private RichOutputText ot4;
+    private RichPanelFormLayout pfl1;
+    private RichInputText it1;
+    private RichInputText it2;
+    private RichInputDate id1;
+    private RichInputDate id2;
+    private RichPopup p3;
+    private RichDialog d3;
+    private RichPanelFormLayout pfl2;
+    private RichInputText it3;
+    private RichInputText it4;
+    private RichInputDate id3;
+    private RichInputDate id4;
     private RichPanelGroupLayout pgl2;
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
@@ -84,6 +122,234 @@ public class Role_Home {
         return s1;
     }
 
+
+    public void onCreateReturn(ReturnEvent returnEvent){
+        
+    }
+
+
+    public void setP1(RichPopup p1) {
+        this.p1 = p1;
+    }
+
+    public RichPopup getP1() {
+        return p1;
+    }
+
+    public void setD1(RichDialog d1) {
+        this.d1 = d1;
+    }
+
+    public RichDialog getD1() {
+        return d1;
+    }
+
+    public void editPopupActionListener(ActionEvent actionEvent){
+       
+   
+        
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
+            operationBinding.execute();
+            System.out.println("Testing");
+            
+       
+    }
+   
+    public void editPopupFetchListener(PopupFetchEvent popupFetchEvent){
+        System.out.println(popupFetchEvent.getLaunchSourceClientId());
+        if(popupFetchEvent.getLaunchSourceClientId().contains("b1"))
+        {
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
+            operationBinding.execute();
+            System.out.println("Testing");
+            
+        }
+    }
+    
+    public void editDialogListener(DialogEvent dialogEvent) {
+       
+            if(dialogEvent.getOutcome().name().equals("ok")==true) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+               
+                
+            } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
+    public void editorsDialogListener(DialogEvent dialogEvent) {
+       
+            if(dialogEvent.getOutcome().name().equals("ok")==true) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Execute");
+                operationBinding.execute();
+                operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+               
+                
+            } 
+       
+    }
+    public void deleteDialogListener(DialogEvent dialogEvent) {
+                System.out.println(dialogEvent.getOutcome().name().equals("yes"));
+            if(dialogEvent.getOutcome().name().equals("yes")) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Delete");
+                operationBinding.execute();
+                operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                
+            } else if(dialogEvent.getOutcome().name().equals("no")){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
+    
+    public void cancelPopupListener(PopupCanceledEvent popupCanceledEvent){
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+        operationBinding.execute();
+        
+    }
+
+
+    public void setP2(RichPopup p2) {
+        this.p2 = p2;
+    }
+
+    public RichPopup getP2() {
+        return p2;
+    }
+
+    public void setD2(RichDialog d2) {
+        this.d2 = d2;
+    }
+
+    public RichDialog getD2() {
+        return d2;
+    }
+
+    public void setOt4(RichOutputText ot4) {
+        this.ot4 = ot4;
+    }
+
+    public RichOutputText getOt4() {
+        return ot4;
+    }
+
+
+    public void setPfl1(RichPanelFormLayout pfl1) {
+        this.pfl1 = pfl1;
+    }
+
+    public RichPanelFormLayout getPfl1() {
+        return pfl1;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setId1(RichInputDate id1) {
+        this.id1 = id1;
+    }
+
+    public RichInputDate getId1() {
+        return id1;
+    }
+
+    public void setId2(RichInputDate id2) {
+        this.id2 = id2;
+    }
+
+    public RichInputDate getId2() {
+        return id2;
+    }
+
+    public void setP3(RichPopup p3) {
+        this.p3 = p3;
+    }
+
+    public RichPopup getP3() {
+        return p3;
+    }
+
+    public void setD3(RichDialog d3) {
+        this.d3 = d3;
+    }
+
+    public RichDialog getD3() {
+        return d3;
+    }
+
+    public void setPfl2(RichPanelFormLayout pfl2) {
+        this.pfl2 = pfl2;
+    }
+
+    public RichPanelFormLayout getPfl2() {
+        return pfl2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setId3(RichInputDate id3) {
+        this.id3 = id3;
+    }
+
+    public RichInputDate getId3() {
+        return id3;
+    }
+
+    public void setId4(RichInputDate id4) {
+        this.id4 = id4;
+    }
+
+    public RichInputDate getId4() {
+        return id4;
+    }
+
+
     public void setPgl2(RichPanelGroupLayout pgl2) {
         this.pgl2 = pgl2;
     }
@@ -108,15 +374,12 @@ public class Role_Home {
     public RichCommandLink getCl1() {
         return cl1;
     }
+
     public void setT2(RichTable t2) {
         this.t2 = t2;
     }
 
     public RichTable getT2() {
         return t2;
-    }
-    
-    public void onCreateReturn(ReturnEvent returnEvent){
-        
     }
 }

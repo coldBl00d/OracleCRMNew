@@ -13,6 +13,7 @@
     <Attr Name="_jprName" Value="../../Model.jpr"/>
     <Attr Name="_NamedConnection" Value="oraclecrm"/>
     <Attr Name="_appModuleNames0" Value="model.am.AdminAppModule"/>
+    <Attr Name="_appModuleNames1" Value="model.am.UserApplicationModule"/>
   </DesignTime>
   <Containee
     Name="am"

@@ -9,18 +9,22 @@
   DBObjectType="table"
   DBObjectName="ROLES"
   AliasName="RolesEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="RoleId"
-    IsNotNull="true"
     Precision="18"
     Scale="0"
     ColumnName="ROLE_ID"
     SQLType="NUMERIC"
-    Type="java.lang.Long"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="ROLES"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="RoleName"
     Precision="255"
@@ -51,14 +55,36 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ROLES"/>
+    TableName="ROLES">
+    <validation:CompareValidationBean
+      Name="StartDate_Current"
+      ResId="THE_DATE_YOU_ARE_ENTERING_HAS_ALREADY_PASSED_"
+      OnAttribute="StartDate"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO">
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="untrusted"
+        CodeSourceName="RolesEORow"/>
+    </validation:CompareValidationBean>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ROLES"/>
+    TableName="ROLES">
+    <validation:CompareValidationBean
+      Name="EndDate_Start"
+      ResId="THE_DATE_IS_BEHIND_THE_START_DATE_YOU_CHOSE"
+      OnAttribute="EndDate"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.uvo.RolesUVO.StartDate"/>
+  </Attribute>
   <Key
     Name="RolesPk"
     PrimaryKey="true">
@@ -69,4 +95,8 @@
       <Item Value="model.eo.RolesEO.RoleId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

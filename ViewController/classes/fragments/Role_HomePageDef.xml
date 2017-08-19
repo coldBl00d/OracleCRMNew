@@ -4,6 +4,48 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="RolesU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesU1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="RolesU1Iterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <action IterBinding="RolesU1Iterator" id="CreateInsert" InstanceName="AdminAppModuleDataControl.RolesU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <attributeValues IterBinding="RolesU1Iterator" id="RoleName">
+      <AttrNames>
+        <Item Value="RoleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="RoleDescription">
+      <AttrNames>
+        <Item Value="RoleDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="RolesU1Iterator" id="Delete" InstanceName="AdminAppModuleDataControl.RolesU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="RolesU1Iterator" id="Execute" InstanceName="AdminAppModuleDataControl.RolesU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="RolesU1Iterator" id="RolesU1">
+      <nodeDefinition DefName="model.uvo.RolesUVO" Name="RolesU10">
+        <AttrNames>
+          <Item Value="RoleName"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

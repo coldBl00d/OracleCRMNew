@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <EntityUsage
     Name="RolesEO"
     Entity="model.eo.RolesEO"/>
@@ -22,29 +23,64 @@
     PrecisionRule="true"
     EntityAttrName="RoleId"
     EntityUsage="RolesEO"
-    AliasName="ROLE_ID"/>
+    AliasName="ROLE_ID"
+    IsUpdateable="while_insert"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="RoleName"
     PrecisionRule="true"
     EntityAttrName="RoleName"
     EntityUsage="RolesEO"
-    AliasName="ROLE_NAME"/>
+    AliasName="ROLE_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.RolesUVO.RoleName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RoleDescription"
     PrecisionRule="true"
     EntityAttrName="RoleDescription"
     EntityUsage="RolesEO"
-    AliasName="ROLE_DESCRIPTION"/>
+    AliasName="ROLE_DESCRIPTION"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.RolesUVO.RoleDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StartDate"
     PrecisionRule="true"
     EntityAttrName="StartDate"
     EntityUsage="RolesEO"
-    AliasName="START_DATE"/>
+    AliasName="START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.RolesUVO.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EndDate"
     PrecisionRule="true"
     EntityAttrName="EndDate"
     EntityUsage="RolesEO"
-    AliasName="END_DATE"/>
+    AliasName="END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.RolesUVO.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

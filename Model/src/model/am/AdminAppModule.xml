@@ -10,4 +10,7 @@
   <ViewUsage
     Name="RolesR1"
     ViewObjectName="model.rvo.RolesRVO"/>
+  <ViewUsage
+    Name="RolesU1"
+    ViewObjectName="model.uvo.RolesUVO"/>
 </AppModule>

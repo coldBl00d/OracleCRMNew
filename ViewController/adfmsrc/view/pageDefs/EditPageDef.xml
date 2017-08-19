@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="EditPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RolesU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesU1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="RolesU1Iterator" id="RoleName">
+      <AttrNames>
+        <Item Value="RoleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="RoleDescription">
+      <AttrNames>
+        <Item Value="RoleDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RolesU1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
