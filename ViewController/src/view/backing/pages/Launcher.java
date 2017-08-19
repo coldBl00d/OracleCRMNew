@@ -35,6 +35,19 @@ public class Launcher {
           "/WEB-INF/flows/manage-product-taskflow.xml#manage-product-taskflow",  
           true); 
       } 
+    public void manageUserActivity(ActionEvent actionEvent) 
+      { 
+        /** 
+        * Example method when called repeatedly, will open another instance as 
+        * oppose to selecting a previously opened tab instance. Note the boolean 
+        * to create another tab instance is set to true. 
+        */ 
+          
+        _launchActivity( 
+          "Products", 
+          "/WEB-INF/flows/manage-user-taskflow.xml#manage-user-taskflow",  
+          true); 
+      } 
     
     
       private void _launchActivity(String title, String taskflowId, boolean newTab) 

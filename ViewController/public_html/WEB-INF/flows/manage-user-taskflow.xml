@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="manage-user-taskflow">
+    <default-activity>User_Home</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>backing_WEBINF_fragments_User_Home</managed-bean-name>
+      <managed-bean-class>view.backing.WEBINF.fragments.User_Home</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/User_Home.jsff-->
+    </managed-bean>
+    <view id="User_Home">
+      <page>/WEB-INF/fragments/User_Home.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

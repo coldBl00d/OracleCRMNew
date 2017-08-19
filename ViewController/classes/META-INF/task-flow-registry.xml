@@ -5,5 +5,6 @@
    <task-flow-descriptor path="WEB-INF/flows/manage-customer-taskflow.xml" id="manage-customer-taskflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
    <task-flow-descriptor path="WEB-INF/flows/manage-product-taskflow.xml" id="manage-product-taskflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
    <task-flow-descriptor path="WEB-INF/flows/manage-role-taskflow.xml" id="manage-role-taskflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/flows/manage-user-taskflow.xml" id="manage-user-taskflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
    <task-flow-descriptor path="WEB-INF/flows/welcome.xml" id="welcome" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
 </task-flow-registry>

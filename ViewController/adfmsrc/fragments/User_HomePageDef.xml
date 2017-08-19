@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="User_HomePageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AKUsersU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="AKUsersU1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="AKUsersU1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="AKUserFormU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="AKUserFormU1Iterator"/>
+    <iterator Binds="AKUserFormU2" RangeSize="25" DataControl="AdminAppModuleDataControl" id="AKUserFormU2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AKUsersU1Iterator" id="AKUsersU1">
+      <nodeDefinition DefName="model.uvo.AKUsersUVO" Name="AKUsersU10">
+        <AttrNames>
+          <Item Value="UserRefId"/>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="LastName"/>
+          <Item Value="Gender"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="UName">
+      <AttrNames>
+        <Item Value="UName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="UPassword">
+      <AttrNames>
+        <Item Value="UPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AKUserFormU1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU1Iterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <action IterBinding="AKUsersU1Iterator" id="Delete" InstanceName="AdminAppModuleDataControl.AKUsersU1"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="UName1">
+      <AttrNames>
+        <Item Value="UName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="UPassword1">
+      <AttrNames>
+        <Item Value="UPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AKUserFormU2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="FirstName1">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="MiddleName1">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="LastName1">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="Email1">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="StartDate1">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="EndDate1">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="AddressLine11">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="AddressLine21">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AKUserFormU2Iterator" id="AddressLine31">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AKUserFormU2Iterator" id="CreateInsert" InstanceName="AdminAppModuleDataControl.AKUserFormU2"
+            DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

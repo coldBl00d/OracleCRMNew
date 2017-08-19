@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AKUserFormUVO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  RowClass="model.uvo.AKUserFormUVORowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.uvo.AKUserFormUVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="GenderUVO1"
+    ViewObjectName="model.uvo.GenderUVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="GenderUVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="AKUsersEO"
+    Entity="model.eo.AKUsersEO"/>
+  <EntityUsage
+    Name="AKAddressEO"
+    Entity="model.eo.AKAddressEO"
+    Association="model.assoc.AKUser_AddressASSOC"
+    AssociationEnd="model.assoc.AKUser_AddressASSOC.AKAddress"
+    SourceUsage="model.uvo.AKUserFormUVO.AKUsersEO"
+    JoinType="INNER JOIN"
+    DeleteParticipant="false">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.eo.AKAddressEO.AddressId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.eo.AKUsersEO.AddressId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="UserId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="AKUsersEO"
+    AliasName="USER_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="UName"
+    PrecisionRule="true"
+    EntityAttrName="UName"
+    EntityUsage="AKUsersEO"
+    AliasName="U_NAME"/>
+  <ViewAttribute
+    Name="UPassword"
+    PrecisionRule="true"
+    EntityAttrName="UPassword"
+    EntityUsage="AKUsersEO"
+    AliasName="U_PASSWORD"/>
+  <ViewAttribute
+    Name="Gender"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="AKUsersEO"
+    AliasName="GENDER"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="AKUsersEO"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="MiddleName"
+    PrecisionRule="true"
+    EntityAttrName="MiddleName"
+    EntityUsage="AKUsersEO"
+    AliasName="MIDDLE_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="AKUsersEO"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="UserRefId"
+    PrecisionRule="true"
+    EntityAttrName="UserRefId"
+    EntityUsage="AKUsersEO"
+    AliasName="USER_REF_ID"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="AKUsersEO"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="AKUsersEO"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="AKUsersEO"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="AddressId1"
+    PrecisionRule="true"
+    EntityAttrName="AddressId"
+    EntityUsage="AKUsersEO"
+    AliasName="ADDRESS_ID1"/>
+  <ViewAttribute
+    Name="AddressId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AddressId"
+    EntityUsage="AKAddressEO"
+    AliasName="ADDRESS_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="AddressLine1"
+    PrecisionRule="true"
+    EntityAttrName="AddressLine1"
+    EntityUsage="AKAddressEO"
+    AliasName="ADDRESS_LINE1"/>
+  <ViewAttribute
+    Name="AddressLine2"
+    PrecisionRule="true"
+    EntityAttrName="AddressLine2"
+    EntityUsage="AKAddressEO"
+    AliasName="ADDRESS_LINE2"/>
+  <ViewAttribute
+    Name="AddressLine3"
+    PrecisionRule="true"
+    EntityAttrName="AddressLine3"
+    EntityUsage="AKAddressEO"
+    AliasName="ADDRESS_LINE3"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="UserId"/>
+  </SortCriteria>
+</ViewObject>

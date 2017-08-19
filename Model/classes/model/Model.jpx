@@ -24,6 +24,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="assoc"
+    PackageName="model.assoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="eo"
     PackageName="model.eo"
     ObjectType="JboPackage">
@@ -45,6 +53,14 @@
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="vl"
+    PackageName="model.vl"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
 </JboProject>

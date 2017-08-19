@@ -52,7 +52,8 @@
     EntityAttrName="ProductCode"
     EntityUsage="ProductsEO"
     AliasName="PRODUCT_CODE"
-    IsUpdateable="while_insert"/>
+    IsUpdateable="while_insert"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="ProductName"
     PrecisionRule="true"
@@ -71,7 +72,8 @@
     PrecisionRule="true"
     EntityAttrName="ProductDescription"
     EntityUsage="ProductsEO"
-    AliasName="PRODUCT_DESCRIPTION">
+    AliasName="PRODUCT_DESCRIPTION"
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

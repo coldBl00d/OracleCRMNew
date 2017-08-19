@@ -14,8 +14,8 @@
    </AppModuleConfigBag>
    <AppModuleConfigBag ApplicationName="model.am.UserApplicationModule">
       <AppModuleConfig name="UserApplicationModuleLocal" jbo.project="model.Model"
-                       ApplicationName="model.am.UserApplicationModule" JDBCName="oraclecrm" DeployPlatform="LOCAL">
-         <Database jbo.TypeMapEntries="OracleApps"/>
+                       ApplicationName="model.am.UserApplicationModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/oraclecrmDS"/>
          <Security AppModuleJndiName="model.am.UserApplicationModule"/>
       </AppModuleConfig>
    </AppModuleConfigBag>

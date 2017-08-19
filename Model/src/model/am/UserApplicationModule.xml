@@ -13,9 +13,6 @@
         ResId="model.am.UserApplicationModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <ViewUsage
-    Name="RolesU1"
-    ViewObjectName="model.uvo.RolesUVO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

@@ -21,7 +21,8 @@
                                              binding="#{backingBeanScope.backing_pages_Admin.l2}"
                                              actionListener="#{backingBeanScope.Launcher.manageProductActivity}"/>
                                     <af:link text="Manage Users" id="l3"
-                                             binding="#{backingBeanScope.backing_pages_Admin.l3}"/>
+                                             binding="#{backingBeanScope.backing_pages_Admin.l3}"
+                                             actionListener="#{backingBeanScope.Launcher.manageUserActivity}"/>
                                 </af:panelList>
                             </af:panelGroupLayout>
                         </f:facet>

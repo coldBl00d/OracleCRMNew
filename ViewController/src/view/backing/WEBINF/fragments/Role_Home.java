@@ -151,7 +151,7 @@ public class Role_Home {
             BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
             OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
             operationBinding.execute();
-            System.out.println("Testing");
+            
             
        
     }
@@ -163,7 +163,7 @@ public class Role_Home {
             BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
             OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
             operationBinding.execute();
-            System.out.println("Testing");
+            
             
         }
     }

@@ -23,7 +23,8 @@
     EntityAttrName="CategoryId"
     EntityUsage="CategoryEO"
     AliasName="CATEGORY_ID"
-    IsUpdateable="while_insert"/>
+    IsUpdateable="while_insert"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="CategoryName"
     PrecisionRule="true"
@@ -42,7 +43,8 @@
     PrecisionRule="true"
     EntityAttrName="CategoryDescription"
     EntityUsage="CategoryEO"
-    AliasName="CATEGORY_DESCRIPTION">
+    AliasName="CATEGORY_DESCRIPTION"
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

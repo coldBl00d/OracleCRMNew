@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="10%" id="gr2">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t1}">
+                    <af:button id="b1"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b1}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"
+                               actionListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertPopupActionListener}">
+                        <af:showPopupBehavior popupId="p1" align="afterStart" alignId="b1" triggerType="click"/>
+                    </af:button>
+                    <af:button id="b2"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b2}"
+                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b2"/>
+                    </af:button>
+                    <af:button id="b3"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b3}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="p4"/>
+                    </af:button>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.qryId1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="90%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Footer -->
+                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pgl2}">
+                    <af:table value="#{bindings.AKUsersU1.collectionModel}" var="row"
+                              rows="#{bindings.AKUsersU1.rangeSize}"
+                              emptyText="#{bindings.AKUsersU1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" selectedRowKeys="#{bindings.AKUsersU1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.AKUsersU1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.AKUsersU1.rangeSize}"
+                              partialTriggers="::qryId1" id="t2"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t2}">
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.UserRefId.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.UserRefId.label}" id="c1">
+                            <af:outputText value="#{row.UserRefId}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.UserRefId.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.FirstName.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.FirstName.label}" id="c2">
+                            <af:outputText value="#{row.FirstName}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.FirstName.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.MiddleName.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.MiddleName.label}" id="c3">
+                            <af:outputText value="#{row.MiddleName}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.MiddleName.tooltip}" id="ot3"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.LastName.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.LastName.label}" id="c4">
+                            <af:outputText value="#{row.LastName}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.LastName.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.Gender.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.Gender.label}" id="c5">
+                            <af:outputText value="#{row.Gender}" shortDesc="#{bindings.AKUsersU1.hints.Gender.tooltip}"
+                                           id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.AKUsersU1.hints.Gender.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.StartDate.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.StartDate.label}" id="c6">
+                            <af:outputText value="#{row.StartDate}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.StartDate.tooltip}" id="ot6">
+                                <af:convertDateTime pattern="#{bindings.AKUsersU1.hints.StartDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.EndDate.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.EndDate.label}" id="c7">
+                            <af:outputText value="#{row.EndDate}"
+                                           shortDesc="#{bindings.AKUsersU1.hints.EndDate.tooltip}" id="ot7">
+                                <af:convertDateTime pattern="#{bindings.AKUsersU1.hints.EndDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AKUsersU1.hints.Email.name}" sortable="true"
+                                   headerText="#{bindings.AKUsersU1.hints.Email.label}" id="c8">
+                            <af:outputText value="#{row.Email}" shortDesc="#{bindings.AKUsersU1.hints.Email.tooltip}"
+                                           id="ot8"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow id="gr3" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.gr3}" height="0%">
+            <af:gridCell id="gc3" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.gc3}">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.p1}"
+                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}">
+                    <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d1}"
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertDialogListener}">
+                        <af:panelFormLayout id="pfl1"
+                                            binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pfl1}">
+                            <af:inputText value="#{bindings.UName1.inputValue}" label="#{bindings.UName1.hints.label}"
+                                          required="#{bindings.UName1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.UName1.hints.precision}"
+                                          shortDesc="#{bindings.UName1.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it1}">
+                                <f:validator binding="#{bindings.UName1.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.UPassword1.inputValue}"
+                                          label="#{bindings.UPassword1.hints.label}"
+                                          required="#{bindings.UPassword1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.UPassword1.hints.precision}"
+                                          shortDesc="#{bindings.UPassword1.hints.tooltip}" id="it2"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it2}"
+                                          secret="true">
+                                <f:validator binding="#{bindings.UPassword1.validator}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.Gender1.inputValue}" label="#{bindings.Gender1.label}"
+                                                required="#{bindings.Gender1.hints.mandatory}"
+                                                shortDesc="#{bindings.Gender1.hints.tooltip}" id="soc1"
+                                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.soc1}">
+                                <f:selectItems value="#{bindings.Gender1.items}" id="si1"
+                                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.si1}"/>
+                                <f:validator binding="#{bindings.Gender1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.FirstName1.inputValue}"
+                                          label="#{bindings.FirstName1.hints.label}"
+                                          required="#{bindings.FirstName1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.FirstName1.hints.precision}"
+                                          shortDesc="#{bindings.FirstName1.hints.tooltip}" id="it3"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it3}">
+                                <f:validator binding="#{bindings.FirstName1.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.MiddleName1.inputValue}"
+                                          label="#{bindings.MiddleName1.hints.label}"
+                                          required="#{bindings.MiddleName1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.MiddleName1.hints.precision}"
+                                          shortDesc="#{bindings.MiddleName1.hints.tooltip}" id="it4"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it4}">
+                                <f:validator binding="#{bindings.MiddleName1.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.LastName1.inputValue}"
+                                          label="#{bindings.LastName1.hints.label}"
+                                          required="#{bindings.LastName1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.LastName1.hints.precision}"
+                                          shortDesc="#{bindings.LastName1.hints.tooltip}" id="it5"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it5}">
+                                <f:validator binding="#{bindings.LastName1.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Email1.inputValue}" label="#{bindings.Email1.hints.label}"
+                                          required="#{bindings.Email1.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.Email1.hints.precision}"
+                                          shortDesc="#{bindings.Email1.hints.tooltip}" id="it6"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it6}">
+                                <f:validator binding="#{bindings.Email1.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.StartDate1.inputValue}"
+                                          label="#{bindings.StartDate1.hints.label}"
+                                          required="#{bindings.StartDate1.hints.mandatory}"
+                                          columns="#{bindings.StartDate1.hints.displayWidth}"
+                                          shortDesc="#{bindings.StartDate1.hints.tooltip}" id="id1"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id1}">
+                                <f:validator binding="#{bindings.StartDate1.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.StartDate1.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.EndDate1.inputValue}"
+                                          label="#{bindings.EndDate1.hints.label}"
+                                          required="#{bindings.EndDate1.hints.mandatory}"
+                                          columns="#{bindings.EndDate1.hints.displayWidth}"
+                                          shortDesc="#{bindings.EndDate1.hints.tooltip}" id="id2"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id2}">
+                                <f:validator binding="#{bindings.EndDate1.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.EndDate1.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.AddressLine11.inputValue}"
+                                          label="#{bindings.AddressLine11.hints.label}"
+                                          required="#{bindings.AddressLine11.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine11.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine11.hints.tooltip}" id="it7"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it7}" rows="2">
+                                <f:validator binding="#{bindings.AddressLine11.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AddressLine21.inputValue}"
+                                          label="#{bindings.AddressLine21.hints.label}"
+                                          required="#{bindings.AddressLine21.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine21.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine21.hints.tooltip}" id="it8"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it8}" rows="2">
+                                <f:validator binding="#{bindings.AddressLine21.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AddressLine31.inputValue}"
+                                          label="#{bindings.AddressLine31.hints.label}"
+                                          required="#{bindings.AddressLine31.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine31.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine31.hints.tooltip}" id="it9"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it9}" rows="2">
+                                <f:validator binding="#{bindings.AddressLine31.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                        <f:facet name="buttonBar"/>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.p2}"
+                          contentDelivery="lazyUncached"
+                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}">
+                    <af:dialog id="d2" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d2}"
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.editDialogListener}">
+                        <af:panelFormLayout id="pfl2"
+                                            binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pfl2}">
+                            <af:inputText value="#{bindings.UName.inputValue}" label="#{bindings.UName.hints.label}"
+                                          required="#{bindings.UName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.UName.hints.precision}"
+                                          shortDesc="#{bindings.UName.hints.tooltip}" id="it10"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it10}">
+                                <f:validator binding="#{bindings.UName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.UPassword.inputValue}"
+                                          label="#{bindings.UPassword.hints.label}"
+                                          required="#{bindings.UPassword.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.UPassword.hints.precision}"
+                                          shortDesc="#{bindings.UPassword.hints.tooltip}" id="it11"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it11}">
+                                <f:validator binding="#{bindings.UPassword.validator}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="#{bindings.Gender.label}"
+                                                required="#{bindings.Gender.hints.mandatory}"
+                                                shortDesc="#{bindings.Gender.hints.tooltip}" id="soc2"
+                                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.soc2}">
+                                <f:selectItems value="#{bindings.Gender.items}" id="si2"
+                                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.si2}"/>
+                                <f:validator binding="#{bindings.Gender.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.FirstName.inputValue}"
+                                          label="#{bindings.FirstName.hints.label}"
+                                          required="#{bindings.FirstName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.FirstName.hints.precision}"
+                                          shortDesc="#{bindings.FirstName.hints.tooltip}" id="it12"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it12}">
+                                <f:validator binding="#{bindings.FirstName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.MiddleName.inputValue}"
+                                          label="#{bindings.MiddleName.hints.label}"
+                                          required="#{bindings.MiddleName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.MiddleName.hints.precision}"
+                                          shortDesc="#{bindings.MiddleName.hints.tooltip}" id="it13"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it13}">
+                                <f:validator binding="#{bindings.MiddleName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.LastName.inputValue}"
+                                          label="#{bindings.LastName.hints.label}"
+                                          required="#{bindings.LastName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.LastName.hints.precision}"
+                                          shortDesc="#{bindings.LastName.hints.tooltip}" id="it14"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it14}">
+                                <f:validator binding="#{bindings.LastName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                          required="#{bindings.Email.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.Email.hints.precision}"
+                                          shortDesc="#{bindings.Email.hints.tooltip}" id="it15"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it15}">
+                                <f:validator binding="#{bindings.Email.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.StartDate.inputValue}"
+                                          label="#{bindings.StartDate.hints.label}"
+                                          required="#{bindings.StartDate.hints.mandatory}"
+                                          columns="#{bindings.StartDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.StartDate.hints.tooltip}" id="id3"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id3}">
+                                <f:validator binding="#{bindings.StartDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.EndDate.inputValue}" label="#{bindings.EndDate.hints.label}"
+                                          required="#{bindings.EndDate.hints.mandatory}"
+                                          columns="#{bindings.EndDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.EndDate.hints.tooltip}" id="id4"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id4}">
+                                <f:validator binding="#{bindings.EndDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.AddressLine1.inputValue}"
+                                          label="#{bindings.AddressLine1.hints.label}"
+                                          required="#{bindings.AddressLine1.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine1.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it16"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it16}"
+                                          rows="2">
+                                <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AddressLine2.inputValue}"
+                                          label="#{bindings.AddressLine2.hints.label}"
+                                          required="#{bindings.AddressLine2.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine2.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it17"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it17}"
+                                          rows="2">
+                                <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AddressLine3.inputValue}"
+                                          label="#{bindings.AddressLine3.hints.label}"
+                                          required="#{bindings.AddressLine3.hints.mandatory}"
+                                          columns="28"
+                                          maximumLength="#{bindings.AddressLine3.hints.precision}"
+                                          shortDesc="#{bindings.AddressLine3.hints.tooltip}" id="it18"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it18}"
+                                          rows="2">
+                                <f:validator binding="#{bindings.AddressLine3.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                        <f:facet name="buttonBar"/>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.p4}">
+                    <af:dialog id="d3" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d3}" type="yesNo"
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.deleteDialogListener}">
+                        <f:facet name="buttonBar"/>
+                        <af:outputText value="Are you sure you want to delete?" id="ot9"
+                                       binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.ot9}"/>
+                    </af:dialog>
+                </af:popup>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_User_Home-->
+</ui:composition>
