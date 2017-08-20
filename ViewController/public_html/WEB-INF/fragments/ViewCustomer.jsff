@@ -3,7 +3,6 @@
                 xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_flows_ViewCustomer-->
     <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.db1}">
-        <f:facet name="top"/>
         <f:facet name="center">
             <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl1}">
                 <af:gridRow marginTop="5px" id="gr1"
@@ -52,16 +51,31 @@
                     <af:gridCell id="gc6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc6}">
                         <af:panelTabbed position="left" id="pt1"
                                         binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pt1}">
-                            <af:showDetailItem id="tab1" text="Oppertunity"
+                            <af:showDetailItem id="tab1"
                                                icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
                                                disclosed="true"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"/>
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"
+                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               hoverIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               disabledIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"/>
                             <af:showDetailItem id="tab2" text="Tasks"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"/>
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"
+                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               depressedIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               hoverIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               disabledIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"/>
                             <af:showDetailItem id="tab3" text="Notes"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"/>
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
+                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
+                                               depressedIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
+                                               hoverIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
+                                               disabledIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"/>
                             <af:showDetailItem id="tab4" text="Contacts"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"/>
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
+                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               depressedIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               hoverIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               disabledIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"/>
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
