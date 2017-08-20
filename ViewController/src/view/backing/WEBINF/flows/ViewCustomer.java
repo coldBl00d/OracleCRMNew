@@ -4,6 +4,7 @@ package view.backing.WEBINF.flows;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
+import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
@@ -38,6 +39,7 @@ public class ViewCustomer {
     private RichSpacer s1;
     private RichSpacer s2;
     private RichOutputText ot6;
+    private RichPanelBox pb1;
 
     public void setPgl1(RichPanelGridLayout pgl1) {
         this.pgl1 = pgl1;
@@ -211,5 +213,13 @@ public class ViewCustomer {
 
     public RichOutputText getOt6() {
         return ot6;
+    }
+
+    public void setPb1(RichPanelBox pb1) {
+        this.pb1 = pb1;
+    }
+
+    public RichPanelBox getPb1() {
+        return pb1;
     }
 }

@@ -10,34 +10,39 @@
                     <af:gridCell marginStart="5px" marginEnd="5px" id="gc1"
                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc1}" width="200px"
                                  inlineStyle="border-right-color:ThreeDFace; border-right-width:thin;">
-                        <af:image source="#{resource['images:customer_image.png']}" id="i1"
-                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.i1}"
-                                  inlineStyle="width:104px;"/>
-                        <af:panelGroupLayout id="pgl2"
-                                             binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
-                                             layout="vertical">
-                            <af:outputText value="Google" id="ot1"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
-                                           inlineStyle="font-size:xx-large; font-weight:bolder;"/>
-                            <af:outputText value="Parent" id="ot6"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot6}"
-                                           inlineStyle="font-size:large; font-weight:bolder;"/>
-                            <af:outputText value="C.E.O:" id="ot2"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
-                                           inlineStyle="font-size:large; font-weight:bold;"/>
-                            <af:spacer width="10" height="10" id="s1"
-                                       binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
-                            <af:outputText value="Address Line 1" id="ot3"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot3}"/>
-                            <af:outputText value="Address Line 2" id="ot4"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot4}"/>
-                            <af:outputText value="Address Line 1" id="ot5"
-                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot5}"/>
-                            <af:spacer width="10" height="10" id="s2"
-                                       binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
-                        </af:panelGroupLayout>
-                        <af:link text="Customer Home Page" id="l1"
-                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"/>
+                        <af:panelBox text="Company Overview" id="pb1"
+                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pb1}"
+                                     showDisclosure="false" type="flow" background="light"
+                                     inlineStyle="width:199px; height:400px;">
+                            <af:image source="#{resource['images:customer_image.png']}" id="i1"
+                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.i1}"
+                                      inlineStyle="width:104px;"/>
+                            <af:panelGroupLayout id="pgl2"
+                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
+                                                 layout="vertical">
+                                <af:outputText value="Google" id="ot1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
+                                               inlineStyle="font-size:xx-large; font-weight:bolder;"/>
+                                <af:outputText value="Parent" id="ot6"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot6}"
+                                               inlineStyle="font-size:large; font-weight:bolder;"/>
+                                <af:outputText value="C.E.O:" id="ot2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
+                                               inlineStyle="font-size:large; font-weight:bold;"/>
+                                <af:spacer width="10" height="10" id="s1"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
+                                <af:outputText value="Address Line 1" id="ot3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot3}"/>
+                                <af:outputText value="Address Line 2" id="ot4"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot4}"/>
+                                <af:outputText value="Address Line 1" id="ot5"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot5}"/>
+                                <af:spacer width="10" height="10" id="s2"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
+                            </af:panelGroupLayout>
+                            <af:link text="Customer Home Page" id="l1"
+                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"/>
+                        </af:panelBox>
                     </af:gridCell>
                     <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"
                                  width="auto">
