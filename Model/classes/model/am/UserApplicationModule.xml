@@ -13,6 +13,9 @@
         ResId="model.am.UserApplicationModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewUsage
+    Name="CustomerList"
+    ViewObjectName="model.uvo.CustomerListView_arVO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

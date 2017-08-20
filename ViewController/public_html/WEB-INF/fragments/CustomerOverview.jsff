@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1"
+                         binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.pgl1}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.db1}">
+            <f:facet name="top">
+                <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.t1}">
+                    <af:button id="b1"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b1}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                    <af:button id="b2"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b2}"
+                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                    <af:button id="b3"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b3}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                    <af:spacer width="10" height="10" id="s1"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.s1}"/>
+                    <af:spacer width="10" height="10" id="s2"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.s2}"/>
+                    <af:spacer width="10" height="10" id="s3"
+                               binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.s3}"/>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.qryId1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </f:facet>
+            <f:facet name="center">
+                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.pgl2}">
+                    <af:table value="#{bindings.CustomerList.collectionModel}" var="row"
+                              rows="#{bindings.CustomerList.rangeSize}"
+                              emptyText="#{bindings.CustomerList.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.CustomerList.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.CustomerList.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.CustomerList.rangeSize}"
+                              partialTriggers="::qryId1" id="t2"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.t2}">
+                        <af:column sortProperty="#{bindings.CustomerList.hints.AccountName.name}" sortable="true"
+                                   headerText="Name" id="c1">
+                            <af:outputText value="#{row.AccountName}"
+                                           shortDesc="#{bindings.CustomerList.hints.AccountName.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomerList.hints.AccountUrl.name}" sortable="true"
+                                   headerText="URL" id="c2">
+                            <af:outputText value="#{row.AccountUrl}"
+                                           shortDesc="#{bindings.CustomerList.hints.AccountUrl.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomerList.hints.Ceo.name}" sortable="true"
+                                   headerText="C.E.O" id="c3">
+                            <af:outputText value="#{row.Ceo}" shortDesc="#{bindings.CustomerList.hints.Ceo.tooltip}"
+                                           id="ot3"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomerList.hints.EmpCount.name}" sortable="true"
+                                   headerText="Employees Count" id="c4">
+                            <af:outputText value="#{row.EmpCount}"
+                                           shortDesc="#{bindings.CustomerList.hints.EmpCount.tooltip}" id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.CustomerList.hints.EmpCount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column id="c5" align="center">
+                            <af:button id="b4" icon="#{resource['images:ic_info_black_24dp_1x.png']}"
+                                       action="viewCustomer"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_CustomerOverview-->
+</ui:composition>

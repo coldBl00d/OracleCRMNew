@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_flows_ViewCustomer-->
+    <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.db1}">
+        <f:facet name="top"/>
+        <f:facet name="center">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl1}">
+                <af:gridRow marginTop="5px" id="gr1"
+                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr1}">
+                    <af:gridCell marginStart="5px" marginEnd="5px" id="gc1"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc1}" width="auto">
+                        <af:image source="#{resource['images:customer_image.png']}" id="i1"
+                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.i1}"
+                                  inlineStyle="width:104px;"/>
+                        <af:spacer width="10" height="10" id="s1"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
+                    </af:gridCell>
+                    <af:gridCell id="gc3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc3}">
+                        <af:panelGroupLayout id="pgl2"
+                                             binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
+                                             layout="vertical">
+                            <af:outputText value="Google" id="ot1"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
+                                           inlineStyle="font-size:xx-large; font-weight:bolder;"/>
+                            <af:spacer width="10" height="10" id="s2"
+                                       binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
+                            <af:outputText value="C.E.O:" id="ot2"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
+                                           inlineStyle="font-size:large; font-weight:bold;"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"/>
+                </af:gridRow>
+                <af:gridRow id="gr3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr3}">
+                    <af:gridCell id="gc4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc4}">
+                        <af:spacer width="10" height="10" id="s4"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s4}"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2"
+                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr2}">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc2}">
+                        <af:link text="Customer Home Page" id="l1"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"/>
+                        <af:spacer width="10" height="10" id="s3"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s3}"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr4}">
+                    <af:gridCell id="gc6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc6}">
+                        <af:panelTabbed position="left" id="pt1"
+                                        binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pt1}">
+                            <af:showDetailItem id="tab1" text="Oppertunity"
+                                               icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               disclosed="true"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"/>
+                            <af:showDetailItem id="tab2" text="Tasks"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"/>
+                            <af:showDetailItem id="tab3" text="Notes"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"/>
+                            <af:showDetailItem id="tab4" text="Contacts"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"/>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+    </af:decorativeBox>
+</ui:composition>

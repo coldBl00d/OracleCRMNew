@@ -17,6 +17,7 @@
     <page path="/pages/Login.jsf" usageId="view_LoginPageDef"/>
     <page path="/pages/Error.jsf" usageId="view_ErrorPageDef"/>
     <page path="/WEB-INF/fragments/Welcome.jsff" usageId="view_WelcomePageDef"/>
+    <page path="/WEB-INF/fragments/CustomerOverview.jsff" usageId="view_CustomerOverviewPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -29,12 +30,18 @@
     <page id="view_LoginPageDef" path="pages.LoginPageDef"/>
     <page id="view_ErrorPageDef" path="pages.ErrorPageDef"/>
     <page id="view_WelcomePageDef" path="fragments.WelcomePageDef"/>
+    <page id="view_CustomerOverviewPageDef" path="fragments.CustomerOverviewPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AdminAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="UserApplicationModuleDataControl" Package="model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="UserApplicationModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

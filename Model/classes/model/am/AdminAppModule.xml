@@ -28,9 +28,6 @@
   <ViewUsage
     Name="AKUserFormU1"
     ViewObjectName="model.uvo.AKUserFormUVO"/>
-  <ViewUsage
-    Name="AKUserFormU2"
-    ViewObjectName="model.uvo.AKUserFormUVO"/>
   <ViewLinkUsage
     Name="AKUser_FormVL1"
     ViewLinkObjectName="model.vl.AKUser_FormVL"

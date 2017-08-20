@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerEO_ar"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CUSTOMER_ACCOUNTS"
+  AliasName="CustomerEO_ar"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AccountId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Precision="18"
+    Scale="0"
+    Domain="oracle.jbo.domain.DBSequence"
+    ColumnName="ACCOUNT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="AccountName"
+    Precision="255"
+    ColumnName="ACCOUNT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AccountAddress"
+    Precision="18"
+    Scale="0"
+    ColumnName="ACCOUNT_ADDRESS"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <Attribute
+    Name="AccountUrl"
+    Precision="1000"
+    ColumnName="ACCOUNT_URL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentAccountId"
+    Precision="18"
+    Scale="0"
+    ColumnName="PARENT_ACCOUNT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <Attribute
+    Name="Ceo"
+    Precision="255"
+    ColumnName="CEO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmpCount"
+    Precision="18"
+    Scale="0"
+    ColumnName="EMP_COUNT"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <Attribute
+    Name="PrimaryAddress"
+    Precision="18"
+    Scale="0"
+    ColumnName="PRIMARY_ADDRESS"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <Attribute
+    Name="ShippingAddress"
+    Precision="18"
+    Scale="0"
+    ColumnName="SHIPPING_ADDRESS"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <Attribute
+    Name="PicId"
+    Precision="18"
+    Scale="0"
+    ColumnName="PIC_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNTS"/>
+  <AccessorAttribute
+    Name="AKAddress"
+    Association="model.eo.ShippingFkASSOC"
+    AssociationEnd="model.eo.ShippingFkASSOC.AKAddress"
+    AssociationOtherEnd="model.eo.ShippingFkASSOC.CustomerEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CustomerAccountPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_ACCOUNT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerEO_ar.AccountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ShippingFk">
+    <DesignTime>
+      <Attr Name="_isDeferrableConstraint" Value="true"/>
+      <Attr Name="_isInitiallyDeferredConstraint" Value="true"/>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SHIPPING_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerEO_ar.ShippingAddress"/>
+    </AttrArray>
+  </Key>
+</Entity>
