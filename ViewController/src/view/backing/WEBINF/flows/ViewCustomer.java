@@ -20,29 +20,24 @@ public class ViewCustomer {
     private RichPanelGridLayout pgl1;
     private RichGridRow gr1;
     private RichGridCell gc1;
-    private RichGridRow gr2;
-    private RichGridCell gc2;
-    private RichGridCell gc3;
     private RichImage i1;
-    private RichSpacer s1;
     private RichOutputText ot1;
     private RichOutputText ot2;
     private RichPanelGroupLayout pgl2;
-    private RichSpacer s2;
     private RichLink l1;
-    private RichSpacer s3;
-    private RichGridRow gr3;
-    private RichGridCell gc4;
-    private RichSpacer s4;
     private RichGridCell gc5;
     private RichDecorativeBox db1;
-    private RichGridRow gr4;
-    private RichGridCell gc6;
     private RichPanelTabbed pt1;
     private RichShowDetailItem tab1;
     private RichShowDetailItem tab2;
     private RichShowDetailItem tab3;
     private RichShowDetailItem tab4;
+    private RichOutputText ot3;
+    private RichOutputText ot4;
+    private RichOutputText ot5;
+    private RichSpacer s1;
+    private RichSpacer s2;
+    private RichOutputText ot6;
 
     public void setPgl1(RichPanelGridLayout pgl1) {
         this.pgl1 = pgl1;
@@ -68,30 +63,6 @@ public class ViewCustomer {
         return gc1;
     }
 
-    public void setGr2(RichGridRow gr2) {
-        this.gr2 = gr2;
-    }
-
-    public RichGridRow getGr2() {
-        return gr2;
-    }
-
-    public void setGc2(RichGridCell gc2) {
-        this.gc2 = gc2;
-    }
-
-    public RichGridCell getGc2() {
-        return gc2;
-    }
-
-    public void setGc3(RichGridCell gc3) {
-        this.gc3 = gc3;
-    }
-
-    public RichGridCell getGc3() {
-        return gc3;
-    }
-
 
     public void setI1(RichImage i1) {
         this.i1 = i1;
@@ -99,15 +70,6 @@ public class ViewCustomer {
 
     public RichImage getI1() {
         return i1;
-    }
-
-
-    public void setS1(RichSpacer s1) {
-        this.s1 = s1;
-    }
-
-    public RichSpacer getS1() {
-        return s1;
     }
 
 
@@ -135,13 +97,6 @@ public class ViewCustomer {
         return pgl2;
     }
 
-    public void setS2(RichSpacer s2) {
-        this.s2 = s2;
-    }
-
-    public RichSpacer getS2() {
-        return s2;
-    }
 
     public void setL1(RichLink l1) {
         this.l1 = l1;
@@ -149,40 +104,6 @@ public class ViewCustomer {
 
     public RichLink getL1() {
         return l1;
-    }
-
-    public void setS3(RichSpacer s3) {
-        this.s3 = s3;
-    }
-
-    public RichSpacer getS3() {
-        return s3;
-    }
-
-
-    public void setGr3(RichGridRow gr3) {
-        this.gr3 = gr3;
-    }
-
-    public RichGridRow getGr3() {
-        return gr3;
-    }
-
-    public void setGc4(RichGridCell gc4) {
-        this.gc4 = gc4;
-    }
-
-    public RichGridCell getGc4() {
-        return gc4;
-    }
-
-
-    public void setS4(RichSpacer s4) {
-        this.s4 = s4;
-    }
-
-    public RichSpacer getS4() {
-        return s4;
     }
 
 
@@ -201,22 +122,6 @@ public class ViewCustomer {
 
     public RichDecorativeBox getDb1() {
         return db1;
-    }
-
-    public void setGr4(RichGridRow gr4) {
-        this.gr4 = gr4;
-    }
-
-    public RichGridRow getGr4() {
-        return gr4;
-    }
-
-    public void setGc6(RichGridCell gc6) {
-        this.gc6 = gc6;
-    }
-
-    public RichGridCell getGc6() {
-        return gc6;
     }
 
 
@@ -258,5 +163,53 @@ public class ViewCustomer {
 
     public RichShowDetailItem getTab4() {
         return tab4;
+    }
+
+    public void setOt3(RichOutputText ot3) {
+        this.ot3 = ot3;
+    }
+
+    public RichOutputText getOt3() {
+        return ot3;
+    }
+
+    public void setOt4(RichOutputText ot4) {
+        this.ot4 = ot4;
+    }
+
+    public RichOutputText getOt4() {
+        return ot4;
+    }
+
+    public void setOt5(RichOutputText ot5) {
+        this.ot5 = ot5;
+    }
+
+    public RichOutputText getOt5() {
+        return ot5;
+    }
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+    public void setOt6(RichOutputText ot6) {
+        this.ot6 = ot6;
+    }
+
+    public RichOutputText getOt6() {
+        return ot6;
     }
 }
