@@ -32,7 +32,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>setCustomerId&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">589.0801</property>
+         name="y">586.97656</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">goViewCustomer</property>
       <property
-         name="sdm:polyPoints">R50,369.0,588.7295,625.0918,594.64355,L50</property>
+         name="sdm:polyPoints">R50,369.0,586.626,625.0918,594.64355,L50</property>
    </ControlFlowCase>
 </SDM>

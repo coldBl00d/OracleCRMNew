@@ -70,9 +70,8 @@
                         </af:column>
                         <af:column id="c5" align="center">
                             <af:button id="b4" icon="#{resource['images:ic_info_black_24dp_1x.png']}"
-                                       action="#{backingBeanScope.Launcher.viewCustomerActivity}">
-                                <af:setActionListener from="#{bindings.CustomerListIterator.currentRowKeyString}"
-                                                      to="#{backingBeanScope.StorageBean.customerIdForView}"/>
+                                       action="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.action}">
+                                
                             </af:button>
                         </af:column>
                     </af:table>

@@ -2,6 +2,9 @@ package view.backing.WEBINF.fragments;
 
 import javax.faces.event.ActionEvent;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -10,6 +13,9 @@ import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+import java.util.Map;
+import java.util.HashMap;
+import oracle.jbo.ViewObject;
 
 import oracle.ui.pattern.dynamicShell.TabContext;
 
@@ -133,7 +139,22 @@ public class CustomerOverview {
         return s3;
     }
     
-    public void viewCustomerActivity(ActionEvent actionEvent) 
+    public String action(){
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding custIter = bindings.findIteratorBinding("CustomerListIterator");
+        ViewObject obj = custIter.getViewObject();
+
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("customerIdForView", custIter.getCurrentRowKeyString());
+        System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyString());
+        
+        viewCustomerActivity(m);
+        System.out.println("Done");
+
+        return null;
+    }
+    
+    public void viewCustomerActivity(Map<String, Object> params) 
       { 
         /** 
         * Example method when called repeatedly, will open another instance as 
@@ -143,11 +164,11 @@ public class CustomerOverview {
           
         _launchActivity( 
           "Customer Detail", 
-          "/WEB-INF/flows/manager-contact-taskflow.xml#manage-contact-taskflow",  
-          true); 
+          "/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow",  
+          true, params); 
       } 
     
-    private void _launchActivity(String title, String taskflowId, boolean newTab) 
+    private void _launchActivity(String title, String taskflowId, boolean newTab, Map<String, Object> params) 
     { 
       try 
       { 
@@ -155,13 +176,13 @@ public class CustomerOverview {
         { 
           TabContext.getCurrentInstance().addTab( 
             title, 
-            taskflowId); 
+            taskflowId, params); 
         } 
         else 
         { 
           TabContext.getCurrentInstance().addOrSelectTab( 
             title, 
-            taskflowId); 
+            taskflowId, params); 
         } 
       } 
       catch (TabContext.TabOverflowException toe) 

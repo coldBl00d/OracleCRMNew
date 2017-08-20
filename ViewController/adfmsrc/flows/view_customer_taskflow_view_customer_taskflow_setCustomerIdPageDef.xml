@@ -10,7 +10,7 @@
   <bindings>
     <action IterBinding="CustomerListIterator" id="setCurrentRowWithKey" RequiresUpdateModel="false"
             Action="setCurrentRowWithKey">
-      <NamedData NDName="rowKey" NDValue="#{backingBeanScope.StorageBean.customerIdForView}" NDType="java.lang.String"/>
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.customerIdForView}" NDType="java.lang.String"/>
     </action>
   </bindings>
 </pageDefinition>

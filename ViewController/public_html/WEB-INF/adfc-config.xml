@@ -78,6 +78,6 @@
   <managed-bean id="__14">
     <managed-bean-name>StorageBean</managed-bean-name>
     <managed-bean-class>view.backing.pages.StorageClass</managed-bean-class>
-    <managed-bean-scope>backingBean</managed-bean-scope>
+    <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

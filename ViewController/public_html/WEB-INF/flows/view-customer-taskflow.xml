@@ -7,7 +7,7 @@
     </data-control-scope>
     <input-parameter-definition id="__3">
       <name>customerIdForView</name>
-      <value>#{backingBeanScope.StorageBean.customerIdForView}</value>
+      <value>#{pageFlowScope.customerIdForView}</value>
       <class>java.lang.String</class>
     </input-parameter-definition>
     <view id="ViewCustomer">
