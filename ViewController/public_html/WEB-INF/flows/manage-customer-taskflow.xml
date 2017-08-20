@@ -8,6 +8,19 @@
     <view id="CustomerOverview">
       <page>/WEB-INF/fragments/CustomerOverview.jsff</page>
     </view>
+    <task-flow-call id="view-customer-taskflow">
+      <task-flow-reference>
+        <document>/WEB-INF/flows/view-customer-taskflow.xml</document>
+        <id>view-customer-taskflow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>CustomerOverview</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>viewCustomer</from-outcome>
+        <to-activity-id>view-customer-taskflow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>
