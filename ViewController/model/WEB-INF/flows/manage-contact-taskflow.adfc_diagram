@@ -2,4 +2,23 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">ViewCustomer</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">255.0918</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ViewCustomer&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">307.44824</property>
+      <property
+         name="page">/WEB-INF/fragments/ViewCustomer.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

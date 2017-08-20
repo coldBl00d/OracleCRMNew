@@ -91,6 +91,7 @@
          <list n="constituent-sets">
             <hash>
                <list n="pattern-filters">
+                  <string v="+customer_image.png"/>
                   <string v="+ic_info_black_24dp_1x.png"/>
                   <string v="+ic_delete_black_24dp_1x.png"/>
                   <string v="+ic_mode_edit_black_24dp_1x.png"/>

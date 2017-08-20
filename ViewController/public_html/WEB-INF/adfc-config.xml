@@ -63,4 +63,16 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/CustomerOverview.jsff-->
   </managed-bean>
+  <managed-bean id="__12">
+    <managed-bean-name>backing_ViewCustomer</managed-bean-name>
+    <managed-bean-class>view.backing.ViewCustomer</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1ViewCustomer.jsff-->
+  </managed-bean>
+  <managed-bean id="__13">
+    <managed-bean-name>backing_WEBINF_flows_ViewCustomer</managed-bean-name>
+    <managed-bean-class>view.backing.WEBINF.flows.ViewCustomer</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/ViewCustomer.jsff-->
+  </managed-bean>
 </adfc-config>
