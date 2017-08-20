@@ -8,7 +8,7 @@
                 <af:gridRow marginTop="5px" id="gr1"
                             binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr1}">
                     <af:gridCell marginStart="5px" marginEnd="5px" id="gc1"
-                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc1}" width="auto">
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc1}" width="150px">
                         <af:image source="#{resource['images:customer_image.png']}" id="i1"
                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.i1}"
                                   inlineStyle="width:104px;"/>
@@ -29,7 +29,8 @@
                                            inlineStyle="font-size:large; font-weight:bold;"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"/>
+                    <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"
+                                 width="500px"/>
                 </af:gridRow>
                 <af:gridRow id="gr3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr3}">
                     <af:gridCell id="gc4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc4}">
@@ -48,34 +49,24 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow id="gr4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr4}">
-                    <af:gridCell id="gc6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc6}">
-                        <af:panelTabbed position="left" id="pt1"
+                    <af:gridCell id="gc6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc6}"
+                                 width="100%">
+                        <af:panelTabbed position="above" id="pt1"
                                         binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pt1}">
                             <af:showDetailItem id="tab1"
-                                               icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               disclosed="true"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"
-                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               hoverIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               disabledIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"/>
-                            <af:showDetailItem id="tab2" text="Tasks"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"
-                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               depressedIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               hoverIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               disabledIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"/>
-                            <af:showDetailItem id="tab3" text="Notes"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
-                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
-                                               depressedIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
-                                               hoverIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
-                                               disabledIcon="#{resource['images:ic_account_box_black_24dp_1x.png']}"/>
-                            <af:showDetailItem id="tab4" text="Contacts"
+                                               disclosed="true"
+                                               icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"/>
+                            <af:showDetailItem id="tab4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
-                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               depressedIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               hoverIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
-                                               disabledIcon="#{resource['images:ic_assignment_black_24dp_1x.png']}"/>
+                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}"/>
+                            <af:showDetailItem id="tab2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"
+                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"/>
+                            <af:showDetailItem id="tab3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
+                                               icon="#{resource['images:ic_note_add_black_24dp_1x.png']}"/>
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
