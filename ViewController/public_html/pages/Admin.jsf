@@ -16,7 +16,8 @@
                                 <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Admin.pl1}">
                                     <af:link text="Manage Roles" id="l1"
                                              binding="#{backingBeanScope.backing_pages_Admin.l1}"
-                                             actionListener="#{backingBeanScope.Launcher.manageRoleActivity}"/>
+                                             actionListener="#{backingBeanScope.Launcher.manageRoleActivity}"
+                                             partialSubmit="true" partialTriggers="::f1"/>
                                     <af:link text="Manage Products" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Admin.l2}"
                                              actionListener="#{backingBeanScope.Launcher.manageProductActivity}"/>

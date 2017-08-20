@@ -51,4 +51,10 @@
     <managed-bean-class>view.backing.pages.LoginBean_ak</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name>backing_pages_Error</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Error</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Error.jsf-->
+  </managed-bean>
 </adfc-config>
