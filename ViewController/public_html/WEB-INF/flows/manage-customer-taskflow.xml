@@ -3,8 +3,14 @@
   <task-flow-definition id="manage-customer-taskflow">
     <default-activity>CustomerOverview</default-activity>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
+    <input-parameter-definition id="__3">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
+      <required/>
+    </input-parameter-definition>
     <view id="CustomerOverview">
       <page>/WEB-INF/fragments/CustomerOverview.jsff</page>
     </view>

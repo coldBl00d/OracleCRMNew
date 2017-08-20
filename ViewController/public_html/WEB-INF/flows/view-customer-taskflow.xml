@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="view-customer-taskflow">
-    <default-activity>ViewCustomer</default-activity>
+    <default-activity>setCustomerId</default-activity>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
+    <input-parameter-definition id="__3">
+      <name>customerIdForView</name>
+      <value>#{backingBeanScope.StorageBean.customerIdForView}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
     <view id="ViewCustomer">
       <page>/WEB-INF/fragments/ViewCustomer.jsff</page>
     </view>
+    <method-call id="setCustomerId">
+      <method>#{bindings.setCurrentRowWithKey.execute}</method>
+      <outcome>
+        <fixed-outcome>goViewCustomer</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>setCustomerId</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goViewCustomer</from-outcome>
+        <to-activity-id>ViewCustomer</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

@@ -9,7 +9,10 @@ import oracle.ui.pattern.dynamicShell.TabContext;
 public class Launcher {
     
     
-    public void viewCustomerActivity(ActionEvent actionEvent) 
+    
+    
+    
+    public String viewCustomerActivity() 
       { 
         /** 
         * Example method when called repeatedly, will open another instance as 
@@ -19,8 +22,11 @@ public class Launcher {
           
         _launchActivity( 
           "Customer Detail", 
-          "/WEB-INF/flows/manager-contact-taskflow.xml#manage-contact-taskflow",  
+          "/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow",  
           true); 
+        
+        return null;
+        
       } 
     
     public void manageCustomerActivity(ActionEvent actionEvent) 
@@ -34,7 +40,7 @@ public class Launcher {
         _launchActivity( 
           "Customers", 
           "/WEB-INF/flows/manage-customer-taskflow.xml#manage-customer-taskflow",  
-          false); 
+          true); 
       } 
     
     /* dont edit this */

@@ -75,4 +75,9 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/ViewCustomer.jsff-->
   </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name>StorageBean</managed-bean-name>
+    <managed-bean-class>view.backing.pages.StorageClass</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

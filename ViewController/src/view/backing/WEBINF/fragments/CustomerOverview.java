@@ -1,5 +1,7 @@
 package view.backing.WEBINF.fragments;
 
+import javax.faces.event.ActionEvent;
+
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -8,6 +10,8 @@ import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.ui.pattern.dynamicShell.TabContext;
 
 public class CustomerOverview {
     private RichPanelGroupLayout pgl1;
@@ -128,6 +132,47 @@ public class CustomerOverview {
     public RichSpacer getS3() {
         return s3;
     }
+    
+    public void viewCustomerActivity(ActionEvent actionEvent) 
+      { 
+        /** 
+        * Example method when called repeatedly, will open another instance as 
+        * oppose to selecting a previously opened tab instance. Note the boolean 
+        * to create another tab instance is set to true. 
+        */ 
+          
+        _launchActivity( 
+          "Customer Detail", 
+          "/WEB-INF/flows/manager-contact-taskflow.xml#manage-contact-taskflow",  
+          true); 
+      } 
+    
+    private void _launchActivity(String title, String taskflowId, boolean newTab) 
+    { 
+      try 
+      { 
+        if (newTab) 
+        { 
+          TabContext.getCurrentInstance().addTab( 
+            title, 
+            taskflowId); 
+        } 
+        else 
+        { 
+          TabContext.getCurrentInstance().addOrSelectTab( 
+            title, 
+            taskflowId); 
+        } 
+      } 
+      catch (TabContext.TabOverflowException toe) 
+      { 
+        // causes a dialog to be displayed to the user saying that there are 
+        // too many tabs open - the new tab will not be opened... 
+        toe.handleDefault();  
+      } 
+      
+      
+    } 
 
 
 }

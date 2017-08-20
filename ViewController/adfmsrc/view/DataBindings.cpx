@@ -18,6 +18,9 @@
     <page path="/pages/Error.jsf" usageId="view_ErrorPageDef"/>
     <page path="/WEB-INF/fragments/Welcome.jsff" usageId="view_WelcomePageDef"/>
     <page path="/WEB-INF/fragments/CustomerOverview.jsff" usageId="view_CustomerOverviewPageDef"/>
+    <page path="/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow@setCustomerId"
+          usageId="view_view_customer_taskflow_view_customer_taskflow_setCustomerIdPageDef"/>
+    <page path="/WEB-INF/fragments/ViewCustomer.jsff" usageId="view_ViewCustomerPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -31,6 +34,9 @@
     <page id="view_ErrorPageDef" path="pages.ErrorPageDef"/>
     <page id="view_WelcomePageDef" path="fragments.WelcomePageDef"/>
     <page id="view_CustomerOverviewPageDef" path="fragments.CustomerOverviewPageDef"/>
+    <page id="view_view_customer_taskflow_view_customer_taskflow_setCustomerIdPageDef"
+          path="flows.view_customer_taskflow_view_customer_taskflow_setCustomerIdPageDef"/>
+    <page id="view_ViewCustomerPageDef" path="fragments.ViewCustomerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

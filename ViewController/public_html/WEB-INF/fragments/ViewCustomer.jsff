@@ -20,13 +20,15 @@
                             <af:panelGroupLayout id="pgl2"
                                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
                                                  layout="vertical">
-                                <af:outputText value="Google" id="ot1"
+                                <af:outputText value="#{bindings.AccountAddress.inputValue}" id="ot1"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
-                                               inlineStyle="font-size:xx-large; font-weight:bolder;"/>
+                                               inlineStyle="font-size:xx-large; font-weight:bolder;">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AccountAddress.format}"/>
+                                </af:outputText>
                                 <af:outputText value="Parent" id="ot6"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot6}"
                                                inlineStyle="font-size:large; font-weight:bolder;"/>
-                                <af:outputText value="C.E.O:" id="ot2"
+                                <af:outputText value="#{bindings.Ceo.inputValue}" id="ot2"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
                                                inlineStyle="font-size:large; font-weight:bold;"/>
                                 <af:spacer width="10" height="10" id="s1"
@@ -41,7 +43,8 @@
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
                             </af:panelGroupLayout>
                             <af:link text="Customer Home Page" id="l1"
-                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"/>
+                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"
+                                     destination="#{bindings.AccountUrl.inputValue}"/>
                         </af:panelBox>
                     </af:gridCell>
                     <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="ViewCustomerPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerList" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerListIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomerListIterator" id="AccountAddress">
+      <AttrNames>
+        <Item Value="AccountAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerListIterator" id="Ceo">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
