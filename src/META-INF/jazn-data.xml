@@ -156,6 +156,12 @@
                         <display-name>manage-customer-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/manage-customer-taskflow.xml#manage-customer-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-customer-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -215,6 +221,24 @@
                                 <display-name>Login (pages)</display-name>
                                 <actions>view</actions>
                             </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-contact-taskflow.xml#manage-contact-taskflow</resource-name>
+                                <display-name>manage-contact-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-customer-taskflow.xml#manage-customer-taskflow</resource-name>
+                                <display-name>manage-customer-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow</resource-name>
+                                <display-name>view-customer-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
                         </member-resources>
                     </permission-set>
                     <permission-set>
@@ -260,6 +284,12 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/manage-customer-taskflow.xml#manage-customer-taskflow</resource-name>
                                 <display-name>manage-customer-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow</resource-name>
+                                <display-name>view-customer-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>
