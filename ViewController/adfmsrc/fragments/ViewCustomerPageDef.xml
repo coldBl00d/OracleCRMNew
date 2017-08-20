@@ -8,14 +8,14 @@
               id="CustomerListIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="CustomerListIterator" id="AccountAddress">
-      <AttrNames>
-        <Item Value="AccountAddress"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="CustomerListIterator" id="Ceo">
       <AttrNames>
         <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerListIterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
       </AttrNames>
     </attributeValues>
   </bindings>
