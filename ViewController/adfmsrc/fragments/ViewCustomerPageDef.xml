@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="CustomerList" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+    <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CustomerListIterator"/>
   </executables>
   <bindings>

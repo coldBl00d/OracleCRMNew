@@ -14,8 +14,38 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewUsage
-    Name="CustomerList"
+    Name="Customer"
     ViewObjectName="model.uvo.CustomerListView_arVO"/>
+  <ViewUsage
+    Name="OppertunityViewObject"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="OppertunitiesOfCustomer"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="CreatorDetails"
+    ViewObjectName="model.uvo.AKUsersUVO"/>
+  <ViewUsage
+    Name="PrimaryContactDetail"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewLinkUsage
+    Name="CustomerToOppertunityViewLink_ar1"
+    ViewLinkObjectName="model.vl.CustomerToOppertunityViewLink_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToCreatorAssoc1"
+    ViewLinkObjectName="model.vl.OppertunityToCreatorAssoc"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.CreatorDetails"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.PrimaryContactDetail"
+    Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

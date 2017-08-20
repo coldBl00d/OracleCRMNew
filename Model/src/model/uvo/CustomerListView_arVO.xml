@@ -20,7 +20,6 @@
     Name="AccountId"
     IsUpdateable="while_insert"
     PrecisionRule="true"
-    Domain="oracle.jbo.domain.DBSequence"
     EntityAttrName="AccountId"
     EntityUsage="CustomerEO_ar"
     AliasName="ACCOUNT_ID"/>
@@ -78,4 +77,9 @@
     EntityAttrName="PicId"
     EntityUsage="CustomerEO_ar"
     AliasName="PIC_ID"/>
+  <ViewLinkAccessor
+    Name="OppertunityUVO_ar"
+    ViewLink="model.vl.CustomerToOppertunityViewLink_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

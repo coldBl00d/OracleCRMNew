@@ -1,14 +1,20 @@
 package view.backing.WEBINF.flows;
 
 
+import oracle.adf.view.rich.component.rich.RichQuickQuery;
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelHeader;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
+import oracle.adf.view.rich.component.rich.layout.RichToolbar;
+import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
@@ -40,6 +46,16 @@ public class ViewCustomer {
     private RichSpacer s2;
     private RichOutputText ot6;
     private RichPanelBox pb1;
+    private RichToolbar t1;
+    private RichButton b1;
+    private RichButton b2;
+    private RichButton b3;
+    private RichPanelGroupLayout pgl3;
+    private RichPanelGroupLayout pgl4;
+    private RichPanelHeader ph1;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t2;
 
     public void setPgl1(RichPanelGridLayout pgl1) {
         this.pgl1 = pgl1;
@@ -221,5 +237,88 @@ public class ViewCustomer {
 
     public RichPanelBox getPb1() {
         return pb1;
+    }
+
+
+    public void setT1(RichToolbar t1) {
+        this.t1 = t1;
+    }
+
+    public RichToolbar getT1() {
+        return t1;
+    }
+
+    public void setB1(RichButton b1) {
+        this.b1 = b1;
+    }
+
+    public RichButton getB1() {
+        return b1;
+    }
+
+    public void setB2(RichButton b2) {
+        this.b2 = b2;
+    }
+
+    public RichButton getB2() {
+        return b2;
+    }
+
+    public void setB3(RichButton b3) {
+        this.b3 = b3;
+    }
+
+    public RichButton getB3() {
+        return b3;
+    }
+
+
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
+    }
+
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
+    }
+
+
+    public void setPgl4(RichPanelGroupLayout pgl4) {
+        this.pgl4 = pgl4;
+    }
+
+    public RichPanelGroupLayout getPgl4() {
+        return pgl4;
+    }
+
+    public void setPh1(RichPanelHeader ph1) {
+        this.ph1 = ph1;
+    }
+
+    public RichPanelHeader getPh1() {
+        return ph1;
+    }
+
+    public void setQryId1(RichQuickQuery qryId1) {
+        this.qryId1 = qryId1;
+    }
+
+    public RichQuickQuery getQryId1() {
+        return qryId1;
+    }
+
+    public void setCl1(RichCommandLink cl1) {
+        this.cl1 = cl1;
+    }
+
+    public RichCommandLink getCl1() {
+        return cl1;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
     }
 }

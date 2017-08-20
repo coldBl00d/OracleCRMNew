@@ -53,7 +53,18 @@
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"
                                                disclosed="true"
                                                icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"/>
+                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}">
+                                <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t1}">
+                                    <af:button text="button 1" id="b1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b1}"/>
+                                    <af:button text="button 2" id="b2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b2}"/>
+                                    <af:button text="button 3" id="b3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b3}"/>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl3"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl3}"/>
+                            </af:showDetailItem>
                             <af:showDetailItem id="tab4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
                                                icon="#{resource['images:ic_account_box_black_24dp_1x.png']}"/>

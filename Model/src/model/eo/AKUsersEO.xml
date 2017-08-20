@@ -163,6 +163,13 @@
     AssociationOtherEnd="model.assoc.AKUser_PicASSOC.AKUsers"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.OppertunityToCreatorAssoc_ar"
+    AssociationEnd="model.assoc.OppertunityToCreatorAssoc_ar.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc_ar.AKUsers"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UseraccountsPk"
     PrimaryKey="true">

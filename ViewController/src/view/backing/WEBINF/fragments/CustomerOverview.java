@@ -15,6 +15,8 @@ import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import java.util.Map;
 import java.util.HashMap;
+
+import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
 
 import oracle.ui.pattern.dynamicShell.TabContext;
@@ -143,18 +145,19 @@ public class CustomerOverview {
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding custIter = bindings.findIteratorBinding("CustomerListIterator");
         ViewObject obj = custIter.getViewObject();
-
+        Row row = obj.getCurrentRow();
+        String companyName = (String)row.getAttribute("AccountName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("customerIdForView", custIter.getCurrentRowKeyString());
-        System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyString());
+        //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyString());
         
-        viewCustomerActivity(m);
+        viewCustomerActivity(m, companyName);
         System.out.println("Done");
 
         return null;
     }
     
-    public void viewCustomerActivity(Map<String, Object> params) 
+    public void viewCustomerActivity(Map<String, Object> params, String companyName) 
       { 
         /** 
         * Example method when called repeatedly, will open another instance as 
@@ -163,7 +166,7 @@ public class CustomerOverview {
         */ 
           
         _launchActivity( 
-          "Customer Detail", 
+          companyName, 
           "/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow",  
           true, params); 
       } 

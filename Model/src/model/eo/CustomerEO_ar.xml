@@ -121,6 +121,13 @@
     AssociationOtherEnd="model.eo.ShippingFkASSOC.CustomerEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.CustomerToOppertunityAssociation"
+    AssociationEnd="model.assoc.CustomerToOppertunityAssociation.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.CustomerToOppertunityAssociation.CustomerEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">
