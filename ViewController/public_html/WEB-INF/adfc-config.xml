@@ -40,4 +40,15 @@
     <managed-bean-class>view.backing.pages.Launcher</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>backing_pages_Login</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Login</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Login.jsf-->
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name>LoginBean</managed-bean-name>
+    <managed-bean-class>view.backing.pages.LoginBean_ak</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>
