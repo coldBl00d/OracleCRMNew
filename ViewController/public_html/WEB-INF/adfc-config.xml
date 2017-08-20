@@ -57,4 +57,10 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Error.jsf-->
   </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name>backing_WEBINF_fragments_CustomerOverview</managed-bean-name>
+    <managed-bean-class>view.backing.WEBINF.fragments.CustomerOverview</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/CustomerOverview.jsff-->
+  </managed-bean>
 </adfc-config>
