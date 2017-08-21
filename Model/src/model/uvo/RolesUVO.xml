@@ -79,6 +79,11 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="AllRoleUserPairUVO_AK"
+    ViewLink="model.vl.RoleUserVL_AK"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

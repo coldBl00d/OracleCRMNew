@@ -23,6 +23,9 @@
                                     <af:link text="Manage Users" id="l3"
                                              binding="#{backingBeanScope.backing_pages_Admin.l3}"
                                              actionListener="#{backingBeanScope.Launcher.manageUserActivity}"/>
+                                    <af:link text="Manage Team" id="l4"
+                                             binding="#{backingBeanScope.backing_pages_Admin.l4}"
+                                             actionListener="#{backingBeanScope.Launcher.manageTeamActivity}"/>
                                 </af:panelList>
                             </af:panelGroupLayout>
                         </f:facet>

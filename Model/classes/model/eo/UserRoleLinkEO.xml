@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserRoleLinkEO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USER_ROLE_LINK"
+  AliasName="UserRoleLinkEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="RoleId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="ROLE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="USER_ROLE_LINK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="UserId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="USER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="USER_ROLE_LINK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="USER_ROLE_LINK"/>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="USER_ROLE_LINK"/>
+  <Key
+    Name="UserRoleLinkPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="USER_ROLE_LINK_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.UserRoleLinkEO.RoleId"/>
+      <Item Value="model.eo.UserRoleLinkEO.UserId"/>
+    </AttrArray>
+  </Key>
+</Entity>

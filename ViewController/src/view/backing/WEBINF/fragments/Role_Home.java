@@ -1,16 +1,22 @@
 package view.backing.WEBINF.fragments;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.component.UISelectItems;
 import javax.faces.event.ActionEvent;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.RichDialog;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectManyShuttle;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
@@ -31,6 +37,9 @@ import oracle.binding.BindingContainer;
 
 import oracle.binding.OperationBinding;
 
+import oracle.jbo.Key;
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 
 import org.apache.myfaces.trinidad.event.ReturnEvent;
@@ -64,6 +73,17 @@ public class Role_Home {
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t2;
+    private RichButton b4;
+    private RichPopup p4;
+    private RichDialog d4;
+    private RichPanelFormLayout pfl3;
+    private RichInputText it5;
+    private RichInputText it6;
+    private RichInputDate id5;
+    private RichInputDate id6;
+    private RichSelectManyShuttle sms1;
+    private UISelectItems si1;
+    private List selectedItems;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -380,4 +400,133 @@ public class Role_Home {
     public RichTable getT2() {
         return t2;
     }
+
+    public void setB4(RichButton b4) {
+        this.b4 = b4;
+    }
+
+    public RichButton getB4() {
+        return b4;
+    }
+
+    public void setP4(RichPopup p4) {
+        this.p4 = p4;
+    }
+
+    public RichPopup getP4() {
+        return p4;
+    }
+
+    public void setD4(RichDialog d4) {
+        this.d4 = d4;
+    }
+
+    public RichDialog getD4() {
+        return d4;
+    }
+
+
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setId5(RichInputDate id5) {
+        this.id5 = id5;
+    }
+
+    public RichInputDate getId5() {
+        return id5;
+    }
+
+    public void setId6(RichInputDate id6) {
+        this.id6 = id6;
+    }
+
+    public RichInputDate getId6() {
+        return id6;
+    }
+
+    public void setSms1(RichSelectManyShuttle sms1) {
+        this.sms1 = sms1;
+    }
+
+    public RichSelectManyShuttle getSms1() {
+        return sms1;
+    }
+
+    public void setSi1(UISelectItems si1) {
+        this.si1 = si1;
+    }
+
+    public UISelectItems getSi1() {
+        return si1;
+    }
+
+    public void setSelectedItems(List selectedItems) {
+        List oldSelectedItems = this.selectedItems;
+        this.selectedItems = selectedItems;
+        
+        DCBindingContainer bindings=(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        DCIteratorBinding iterBind = bindings.findIteratorBinding("AllRoleUserPairUVO_AK1Iterator");
+        for (int newIndex = 0;newIndex<(this.selectedItems == null?0:this.selectedItems.size());newIndex++){
+            if(oldSelectedItems == null || !oldSelectedItems.contains(this.selectedItems.get(newIndex))){
+                    RowSetIterator rows=iterBind.getRowSetIterator();
+                    Row[] newlyAddedRows = rows.findByKey(new Key(new Object[]{null,this.selectedItems.get(newIndex)}), 1);
+                    if(newlyAddedRows!=null&&newlyAddedRows.length==1){
+                        newlyAddedRows[0].setAttribute("AreAssociated", true);
+                    }
+                }
+            }
+        
+        for(int oldIndex=0;oldIndex<(oldSelectedItems==null?0:oldSelectedItems.size());oldIndex++){
+            if(this.selectedItems==null||!this.selectedItems.contains(oldSelectedItems.get(oldIndex))){
+                RowSetIterator rows= iterBind.getRowSetIterator();
+                Row[] justRemovedRows = rows.findByKey(new Key(new Object[]{null,oldSelectedItems.get(oldIndex)}),1);
+                if(justRemovedRows!=null&justRemovedRows.length==1){
+                    justRemovedRows[0].setAttribute("AreAssociated", false);
+                }
+                                                                                                                     
+              }
+        }
+    }
+
+    public List getSelectedItems() {
+        if(selectedItems==null) {
+            selectedItems=new ArrayList();
+        }
+        else{
+            selectedItems.clear();
+        }
+        DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        DCIteratorBinding iterBind =  bindings.findIteratorBinding("AllRoleUserPairUVO_AK1Iterator");
+        Row[] rows=iterBind.getAllRowsInRange();
+        for(int index=0;index<(rows==null?0:rows.length);index++){
+            if((Boolean)rows[index].getAttribute("AreAssociated")){
+                selectedItems.add(rows[index].getAttribute("UserId"));
+            }
+        }
+        return selectedItems;
+    }
+    
+    
 }

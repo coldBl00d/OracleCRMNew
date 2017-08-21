@@ -68,14 +68,6 @@
                             <af:outputText value="#{row.LastName}"
                                            shortDesc="#{bindings.AKUsersU1.hints.LastName.tooltip}" id="ot4"/>
                         </af:column>
-                        <af:column sortProperty="#{bindings.AKUsersU1.hints.Gender.name}" sortable="true"
-                                   headerText="#{bindings.AKUsersU1.hints.Gender.label}" id="c5">
-                            <af:outputText value="#{row.Gender}" shortDesc="#{bindings.AKUsersU1.hints.Gender.tooltip}"
-                                           id="ot5">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.AKUsersU1.hints.Gender.format}"/>
-                            </af:outputText>
-                        </af:column>
                         <af:column sortProperty="#{bindings.AKUsersU1.hints.StartDate.name}" sortable="true"
                                    headerText="#{bindings.AKUsersU1.hints.StartDate.label}" id="c6">
                             <af:outputText value="#{row.StartDate}"

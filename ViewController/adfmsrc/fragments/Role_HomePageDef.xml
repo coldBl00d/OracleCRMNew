@@ -7,6 +7,8 @@
     <iterator Binds="RolesU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesU1Iterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="RolesU1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="AllRoleUserPairUVO_AK1" RangeSize="25" DataControl="AdminAppModuleDataControl"
+              id="AllRoleUserPairUVO_AK1Iterator"/>
   </executables>
   <bindings>
     <action IterBinding="RolesU1Iterator" id="CreateInsert" InstanceName="AdminAppModuleDataControl.RolesU1"
@@ -47,5 +49,14 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="AllRoleUserPairUVO_AK1Iterator" ListOperMode="multiSelect"
+          ListIter="AllRoleUserPairUVO_AK1Iterator" id="AllRoleUserPairUVO_AK1" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="UserRefId"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>

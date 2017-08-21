@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Footer -->
+                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.pgl2}">
+                    <af:panelHeader text="Managers" id="ph1"
+                                    binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.ph1}"/>
+                </af:panelGroupLayout>
+            </af:gridCell>
+            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelGroupLayout id="pgl3"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.pgl3}"
+                                     layout="vertical">
+                    <af:panelHeader text="Representatives" id="ph2"
+                                    binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.ph2}"
+                                    inlineStyle="height:62px;">
+                        <f:facet name="context"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="menuBar"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="info"/>
+                    </af:panelHeader>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_Manager_home-->
+</ui:composition>

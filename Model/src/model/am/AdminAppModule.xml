@@ -31,10 +31,22 @@
   <ViewUsage
     Name="AKUserFormU2"
     ViewObjectName="model.uvo.AKUserFormUVO"/>
+  <ViewUsage
+    Name="AllRoleUserPairUVO_AK1"
+    ViewObjectName="model.uvo.AllRoleUserPairUVO_AK"/>
+  <ViewUsage
+    Name="RoleUserUVO_AK2"
+    ViewObjectName="model.uvo.RoleUserUVO_AK"/>
   <ViewLinkUsage
     Name="AKUser_FormVL1"
     ViewLinkObjectName="model.vl.AKUser_FormVL"
     SrcViewUsageName="model.am.AdminAppModule.AKUsersU1"
     DstViewUsageName="model.am.AdminAppModule.AKUserFormU1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RoleUserVL_AK1"
+    ViewLinkObjectName="model.vl.RoleUserVL_AK"
+    SrcViewUsageName="model.am.AdminAppModule.RolesU1"
+    DstViewUsageName="model.am.AdminAppModule.AllRoleUserPairUVO_AK1"
     Reversed="false"/>
 </AppModule>
