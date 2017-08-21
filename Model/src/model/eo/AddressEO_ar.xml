@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AddressEO_ar"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ADDRESS"
+  AliasName="AddressEO_ar"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AddressId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Precision="18"
+    Scale="0"
+    Domain="oracle.jbo.domain.DBSequence"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="ADDRESS"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="AddressLine1"
+    Precision="255"
+    ColumnName="ADDRESS_LINE1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AddressLine2"
+    Precision="255"
+    ColumnName="ADDRESS_LINE2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AddressLine3"
+    Precision="255"
+    ColumnName="ADDRESS_LINE3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="CustomerEO_ar"
+    Association="model.eo.ShippingFk1ASSOC"
+    AssociationEnd="model.eo.ShippingFk1ASSOC.CustomerEO_ar"
+    AssociationOtherEnd="model.eo.ShippingFk1ASSOC.AddressEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar1"
+    Association="model.assoc.CustomerToPrimaryAddressAssoc_ar"
+    AssociationEnd="model.assoc.CustomerToPrimaryAddressAssoc_ar.CustomerEO_ar1"
+    AssociationOtherEnd="model.assoc.CustomerToPrimaryAddressAssoc_ar.AddressEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AddressPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.AddressEO_ar.AddressId"/>
+    </AttrArray>
+  </Key>
+</Entity>

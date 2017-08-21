@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_flows_ViewCustomer-->
+    <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.db1}">
+        <f:facet name="center">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl1}">
+                <af:gridRow marginTop="5px" id="gr1"
+                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gr1}" height="100%">
+                    <af:gridCell marginStart="5px" marginEnd="5px" id="gc1"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc1}" width="250px"
+                                 inlineStyle="border-right-color:ThreeDFace; border-right-width:thin;">
+                        <af:panelBox text="Company Overview" id="pb1"
+                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pb1}"
+                                     showDisclosure="false" type="flow" background="light"
+                                     inlineStyle="width:250px; height:400px;">
+                            <af:image source="#{resource['images:customer_image.png']}" id="i1"
+                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.i1}"
+                                      inlineStyle="width:104px;"/>
+                            <af:panelGroupLayout id="pgl2"
+                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
+                                                 layout="vertical">
+                                <af:outputText value="#{bindings.AccountName.inputValue}" id="ot1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
+                                               inlineStyle="font-size:xx-large; font-weight:bolder;"/>
+                                <af:outputText value="#{ bindings.AccountName1.inputValue}" id="ot6"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot6}"
+                                               inlineStyle="font-size:large; font-weight:bolder;"/>
+                                <af:spacer width="10" height="10" id="s3"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s3}"/>
+                                <af:outputLabel value="C.E.O" id="ol2"
+                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol2}"/>
+                                <af:outputText value="#{bindings.Ceo.inputValue}" id="ot2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
+                                               inlineStyle="font-size:large; font-weight:bold;"/>
+                                <af:spacer width="10" height="10" id="s1"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
+                                <af:outputLabel value="Primary Address" id="ol1"
+                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol1}"/>
+                                <af:outputText value="#{bindings.AddressLine1.inputValue}" id="ot3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot3}"/>
+                                <af:outputText value="#{bindings.AddressLine2.inputValue}" id="ot4"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot4}"/>
+                                <af:outputText value="#{bindings.AddressLine3.inputValue}" id="ot5"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot5}"/>
+                                <af:spacer width="10" height="10" id="s2"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
+                            </af:panelGroupLayout>
+                            <af:link text="Customer Home Page" id="l1"
+                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"
+                                     destination="#{bindings.AccountUrl.inputValue}"/>
+                        </af:panelBox>
+                    </af:gridCell>
+                    <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"
+                                 width="100%">
+                        <af:panelTabbed position="above" id="pt1"
+                                        binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pt1}">
+                            <af:showDetailItem id="tab1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"
+                                               disclosed="true"
+                                               icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}">
+                                <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t1}">
+                                    <af:button id="b1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b1}"
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                    <af:button id="b2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b2}"
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                    <af:button id="b3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b3}"
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl5"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl5}"/>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab4"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
+                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}">
+                                <af:toolbar id="t3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t3}">
+                                    <af:button id="b4"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b4}"
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                    <af:button id="b5"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b5}"
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                    <af:button id="b6"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b6}"
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl7"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl7}">
+                                    <af:table value="#{bindings.ContactsUVO_arVO1.collectionModel}" var="row"
+                                              rows="#{bindings.ContactsUVO_arVO1.rangeSize}"
+                                              emptyText="#{bindings.ContactsUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.ContactsUVO_arVO1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.ContactsUVO_arVO1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.ContactsUVO_arVO1.rangeSize}"
+                                              filterModel="#{bindings.ContactsUVO_arVO1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.ContactsUVO_arVO1Query.processQuery}"
+                                              varStatus="vs" id="t8"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}">
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.ContactName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.ContactName.label}"
+                                                   id="c17">
+                                            <af:outputText value="#{row.ContactName}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.ContactName.tooltip}"
+                                                           id="ot17"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.Gender.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.Gender.label}"
+                                                   id="c18">
+                                            <af:outputText value="#{row.Gender}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.Gender.tooltip}"
+                                                           id="ot18">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ContactsUVO_arVO1.hints.Gender.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.Email.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.Email.label}"
+                                                   id="c19">
+                                            <af:outputText value="#{row.Email}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.Email.tooltip}"
+                                                           id="ot19"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.label}"
+                                                   id="c20">
+                                            <af:outputText value="#{row.DepartmentName}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.tooltip}"
+                                                           id="ot20"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.label}"
+                                                   id="c21">
+                                            <af:outputText value="#{row.BuyingRole}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.tooltip}"
+                                                           id="ot21">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.label}"
+                                                   id="c22">
+                                            <af:outputText value="#{row.WorkNumber}"
+                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.tooltip}"
+                                                           id="ot22"/>
+                                        </af:column>
+                                        <af:column id="c9">
+                                            <af:button id="b13" icon="#{resource['images:ic_info_black_24dp_1x.png']}"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"
+                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}">
+                                <af:toolbar id="t4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t4}">
+                                    <af:button id="b7"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b7}"
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                    <af:button id="b8"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b8}"
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                    <af:button id="b9"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b9}"
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl6"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl6}"/>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
+                                               icon="#{resource['images:ic_note_add_black_24dp_1x.png']}">
+                                <af:toolbar id="t6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t6}">
+                                    <af:button id="b10"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b10}"
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                    <af:button id="b11"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b11}"
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                    <af:button id="b12"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b12}"
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl3"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl3}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+    </af:decorativeBox>
+</ui:composition>

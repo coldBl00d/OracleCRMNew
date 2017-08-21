@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustContactLinkEO_ar"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CUST_CONTACT_LK"
+  AliasName="CustContactLinkEO_ar"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AccId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="ACC_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUST_CONTACT_LK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUST_CONTACT_LK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Primary1"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="PRIMARY"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUST_CONTACT_LK"/>
+  <Key
+    Name="CustContactLkPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CUST_CONTACT_LK_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustContactLinkEO_ar.AccId"/>
+      <Item Value="model.eo.CustContactLinkEO_ar.ContactId"/>
+    </AttrArray>
+  </Key>
+</Entity>

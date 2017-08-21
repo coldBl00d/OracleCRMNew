@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1"
+                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl1}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.db1}">
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl2}">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.gr1}">
+                        <af:gridCell marginStart="5px" width="275px" id="gc1"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.gc1}">
+                            <af:panelBox text="Contact Details" id="pb1"
+                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pb1}"
+                                         background="light" inlineStyle="width:275px" showDisclosure="false">
+                                <f:facet name="toolbar"/>
+                                <af:image source="#{resource['images:contacts.png']}" id="i1"
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.i1}"
+                                          inlineStyle="width:104px;"/>
+                                <af:panelGroupLayout id="pgl3"
+                                                     binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl3}"
+                                                     layout="vertical" inlineStyle="width:266px;">
+                                    <af:inputText label="Name" id="it7"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it7}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Gender" id="it9"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it9}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Email" id="it4"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it4}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Phone" id="it5"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it5}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Title" id="it10"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it10}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Department" id="it11"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it11}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Buying Role" id="it6"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it6}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Influence" id="it8"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it8}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Address1" id="it1"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it1}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Address2" id="it2"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it2}"
+                                                  editable="onAccess"/>
+                                    <af:inputText label="Address3" id="it3"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it3}"
+                                                  editable="onAccess"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"
+                                     binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.gc2}">
+                            <af:panelTabbed position="above" id="pt1"
+                                            binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pt1}">
+                                <af:showDetailItem id="tab1" text="Oppertunity" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab1}"/>
+                                <af:showDetailItem id="tab2" text="Tasks"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab2}"/>
+                                <af:showDetailItem id="tab3" text="Notes"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab3}"/>
+                                <af:showDetailItem id="tab4" text="Interactions"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab4}"/>
+                                <af:showDetailItem id="tab5" text="Appointments"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab5}"/>
+                            </af:panelTabbed>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_viewcontact-->
+</ui:composition>

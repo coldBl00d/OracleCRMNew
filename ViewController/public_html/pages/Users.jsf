@@ -16,7 +16,7 @@
                                 <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Users.pl1}">
                                     <af:link text="Manage Cutomers" id="l1"
                                              binding="#{backingBeanScope.backing_pages_Users.l1}"
-                                             actionListener="#{backingBeanScope.Launcher.createCustomerActivity}"
+                                             actionListener="#{backingBeanScope.Launcher.manageCustomerActivity}"
                                              partialSubmit="true"/>
                                     <af:link text="link 2" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Users.l2}"/>

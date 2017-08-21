@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1" binding="#{backingBeanScope.backing_ContactsOverview.pgl1}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_ContactsOverview.db1}">
+            <f:facet name="top">
+                <af:toolbar id="t1" binding="#{backingBeanScope.backing_ContactsOverview.t1}">
+                    <af:button id="b1" binding="#{backingBeanScope.backing_ContactsOverview.b1}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                    <af:button id="b3" binding="#{backingBeanScope.backing_ContactsOverview.b3}"
+                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                    <af:button id="b2" binding="#{backingBeanScope.backing_ContactsOverview.b2}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.backing_ContactsOverview.qryId1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.backing_ContactsOverview.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </f:facet>
+            <f:facet name="center">
+                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                     binding="#{backingBeanScope.backing_ContactsOverview.pgl2}">
+                    <af:table value="#{bindings.ContactsUVO_arVO3.collectionModel}" var="row"
+                              rows="#{bindings.ContactsUVO_arVO3.rangeSize}"
+                              emptyText="#{bindings.ContactsUVO_arVO3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ContactsUVO_arVO3.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ContactsUVO_arVO3.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ContactsUVO_arVO3.rangeSize}"
+                              partialTriggers="::qryId1" id="t2"
+                              binding="#{backingBeanScope.backing_ContactsOverview.t2}">
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.ContactName.name}" sortable="true"
+                                   headerText="Name" id="c1">
+                            <af:outputText value="#{row.ContactName}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.ContactName.tooltip}"
+                                           id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.Gender.name}" sortable="true"
+                                   headerText="Gender" id="c2">
+                            <af:outputText value="#{row.Gender}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.Gender.tooltip}" id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ContactsUVO_arVO3.hints.Gender.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.WorkNumber.name}" sortable="true"
+                                   headerText="Phone" id="c3">
+                            <af:outputText value="#{row.WorkNumber}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.WorkNumber.tooltip}" id="ot3"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.Email.name}" sortable="true"
+                                   headerText="Email" id="c4">
+                            <af:outputText value="#{row.Email}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.Email.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.DepartmentName.name}"
+                                   sortable="true" headerText="Department" id="c5">
+                            <af:outputText value="#{row.DepartmentName}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.DepartmentName.tooltip}"
+                                           id="ot5"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.BuyingRole.name}" sortable="true"
+                                   headerText="Buying Role" id="c6">
+                            <af:outputText value="#{row.BuyingRole}"
+                                           shortDesc="#{bindings.ContactsUVO_arVO3.hints.BuyingRole.tooltip}" id="ot6">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ContactsUVO_arVO3.hints.BuyingRole.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_ContactsOverview-->
+</ui:composition>

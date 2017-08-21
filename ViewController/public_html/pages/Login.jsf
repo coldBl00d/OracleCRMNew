@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Login.jsf" id="d1" binding="#{backingBeanScope.backing_pages_Login.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_pages_Login.f1}">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_pages_Login.pgl1}">
+                <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="gr1"
+                            binding="#{backingBeanScope.backing_pages_Login.gr1}">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"
+                                 binding="#{backingBeanScope.backing_pages_Login.gc1}" halign="center" valign="middle">
+                        <af:panelBox text="Login" id="pb1" binding="#{backingBeanScope.backing_pages_Login.pb1}"
+                                     background="light">
+                            <f:facet name="toolbar"/>
+                            <af:inputText label="Username" id="it1"
+                                          binding="#{backingBeanScope.backing_pages_Login.it1}"
+                                          value="#{LoginBean.username}"/>
+                            <af:inputText label="Password" id="it2"
+                                          binding="#{backingBeanScope.backing_pages_Login.it2}"
+                                          value="#{LoginBean.password}"/>
+                            <af:button text="Login" id="b1" binding="#{backingBeanScope.backing_pages_Login.b1}"
+                                       action="#{LoginBean.doLogin}"/>
+                        </af:panelBox>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pages_Login-->
+</f:view>

@@ -13,6 +13,72 @@
         ResId="model.am.UserApplicationModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewUsage
+    Name="Customer"
+    ViewObjectName="model.uvo.CustomerListView_arVO"/>
+  <ViewUsage
+    Name="OppertunitiesOfCustomer"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="PrimaryContactDetail"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="CustomerParent"
+    ViewObjectName="model.uvo.CustomerListView_arVO"/>
+  <ViewUsage
+    Name="PrimaryAddress"
+    ViewObjectName="model.uvo.PrimaryAddressUVO_arVO"/>
+  <ViewUsage
+    Name="ContactsUVO_arVO1"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="TasksOfCustomer"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="OppertunityForOverview"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="ContactsUVO_arVO3"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="TaskUVO_arVO1"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewLinkUsage
+    Name="CustomerToOppertunityViewLink_ar1"
+    ViewLinkObjectName="model.vl.CustomerToOppertunityViewLink_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.PrimaryContactDetail"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToParentViewLink_ar1"
+    ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.CustomerParent"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToPrimaryAddressLink_ar1"
+    ViewLinkObjectName="model.vl.CustomerToPrimaryAddressLink_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.PrimaryAddress"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToContactsVL1"
+    ViewLinkObjectName="model.vl.CustomerToContactsVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.ContactsUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToTask1"
+    ViewLinkObjectName="model.vl.CustomerToTask"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.TasksOfCustomer"
+    Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

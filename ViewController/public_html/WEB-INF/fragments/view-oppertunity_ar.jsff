@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelGroupLayout layout="scroll" id="pgl1" binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl1}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_viewoppertunity_ar.db1}">
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl2}">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                binding="#{backingBeanScope.backing_viewoppertunity_ar.gr1}">
+                        <af:gridCell marginStart="5px" width="23%" id="gc1"
+                                     binding="#{backingBeanScope.backing_viewoppertunity_ar.gc1}">
+                            <af:panelBox text="Oppertunity Overview" id="pb1"
+                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pb1}"
+                                         showDisclosure="false" type="flow" background="light"
+                                     inlineStyle="width:275px;">
+                                <af:image source="#{resource['images:Oppertunity.png']}" shortDesc="Oppertunity" id="i1"
+                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.i1}"
+                                          inlineStyle="width:104px;"/>
+                                <af:panelGroupLayout id="pgl3"
+                                                     binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl3}"
+                                                     layout="vertical">
+                                    <af:panelGroupLayout id="pgl5"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl5}">
+                                        <af:inputText label="Name" id="it3"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it3}"
+                                                      editable="onAccess"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl4"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl4}">
+                                        <af:inputText label="Probablility" id="it2"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it2}"
+                                                      editable="onAccess"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl7"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl7}">
+                                        <af:inputText label="Revenue" id="it4"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it4}"
+                                                      editable="onAccess" rows="1"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl8"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl8}">
+                                        <af:inputText label="Best Case" id="it5"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it5}"
+                                                      editable="onAccess"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl9"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl9}">
+                                        <af:inputText label="Worst Case" id="it6"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it6}"
+                                                      editable="onAccess" columns="20"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl6"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl6}">
+                                        <af:inputText label="Budget" id="it1"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it1}"
+                                                      editable="onAccess"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl11"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl11}">
+                                        <af:inputText label="Duration" id="it8"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it8}"
+                                                      editable="onAccess"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl12"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl12}">
+                                        <af:inputComboboxListOfValues label="Risk"
+                                                                      popupTitle="Search and Result Dialog"
+                                                                      id="iclov1"
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov1}"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl13"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl13}">
+                                        <af:inputComboboxListOfValues label="Sale Stage" popupTitle="Search and Result Dialog"
+                                                                      id="iclov2"
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov2}"/>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl14"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl14}">
+                                        <af:inputComboboxListOfValues label="Sale Channel"
+                                                                      popupTitle="Search and Result Dialog" id="iclov3"
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov3}"/>
+                                    </af:panelGroupLayout>
+                                    <af:spacer width="10" height="10" id="s1"
+                                               binding="#{backingBeanScope.backing_viewoppertunity_ar.s1}"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="77%" marginEnd="5px" id="gc2"
+                                     binding="#{backingBeanScope.backing_viewoppertunity_ar.gc2}">
+                            <af:panelTabbed position="above" id="pt1"
+                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.pt1}">
+                                <af:showDetailItem id="tab4" text="Interactions" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
+                                    <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">
+                                        <af:button id="b4" binding="#{backingBeanScope.backing_viewoppertunity_ar.b4}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                        <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab3" text="Appointments"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab3}">
+                                    <af:toolbar id="t1" binding="#{backingBeanScope.backing_viewoppertunity_ar.t1}">
+                                        <af:button id="b1" binding="#{backingBeanScope.backing_viewoppertunity_ar.b1}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                        <af:button id="b3" binding="#{backingBeanScope.backing_viewoppertunity_ar.b3}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab1" text="Task"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
+                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
+                                        <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b8" binding="#{backingBeanScope.backing_viewoppertunity_ar.b8}"
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                        <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab2" text="Notes"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab2}">
+                                    <af:toolbar id="t4" binding="#{backingBeanScope.backing_viewoppertunity_ar.t4}">
+                                        <af:button id="b10" binding="#{backingBeanScope.backing_viewoppertunity_ar.b10}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b11" binding="#{backingBeanScope.backing_viewoppertunity_ar.b11}"
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                        <af:button id="b12" binding="#{backingBeanScope.backing_viewoppertunity_ar.b12}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                            </af:panelTabbed>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_viewoppertunity_ar-->
+</ui:composition>

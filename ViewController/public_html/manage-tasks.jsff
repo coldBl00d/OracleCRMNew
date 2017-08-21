@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1" binding="#{backingBeanScope.backing_managetasks.pgl1}">
+        <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_managetasks.pgl2}">
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                        binding="#{backingBeanScope.backing_managetasks.gr1}">
+                <af:gridCell marginStart="5px" width="50%" id="gc1"
+                             binding="#{backingBeanScope.backing_managetasks.gc1}">
+                    <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_managetasks.db1}">
+                        <f:facet name="top">
+                            <af:showDetailHeader text="Your Tasks" disclosed="true" id="sdh1"
+                                                 binding="#{backingBeanScope.backing_managetasks.sdh1}" type="flow"/>
+                        </f:facet>
+                        <f:facet name="center"/>
+                    </af:decorativeBox>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"
+                             binding="#{backingBeanScope.backing_managetasks.gc2}">
+                    <af:decorativeBox id="db2" binding="#{backingBeanScope.backing_managetasks.db2}">
+                        <f:facet name="top">
+                            <af:toolbar id="t2" binding="#{backingBeanScope.backing_managetasks.t2}">
+                                <af:button id="b1"
+                                           binding="#{backingBeanScope.backing_managetasks.b1}"
+                                           icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                <af:button id="b2"
+                                           binding="#{backingBeanScope.backing_managetasks.b2}"
+                                           icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                <af:button id="b3"
+                                           binding="#{backingBeanScope.backing_managetasks.b3}"
+                                           icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="center"/>
+                    </af:decorativeBox>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_managetasks-->
+</ui:composition>

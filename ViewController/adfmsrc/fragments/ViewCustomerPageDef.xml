@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="ViewCustomerPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerListIterator"/>
+    <iterator Binds="CustomerParent" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerParentIterator"/>
+    <iterator Binds="PrimaryAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="PrimaryAddressIterator"/>
+    <iterator Binds="ContactsUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="ContactsUVO_arVO1Iterator"/>
+    <searchRegion Binds="ContactsUVO_arVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContactsUVO_arVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomerListIterator" id="Ceo">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerParentIterator" id="AccountName1">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerListIterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ContactsUVO_arVO1Iterator" id="ContactsUVO_arVO1">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsUVO_arVO10">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="Email"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="BuyingRole"/>
+          <Item Value="WorkNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

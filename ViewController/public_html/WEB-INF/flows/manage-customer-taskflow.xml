@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="manage-customer-taskflow">
+    <default-activity>CustomerOverview</default-activity>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
+    <input-parameter-definition id="__3">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
+      <required/>
+    </input-parameter-definition>
+    <view id="CustomerOverview">
+      <page>/WEB-INF/fragments/CustomerOverview.jsff</page>
+    </view>
+    <task-flow-call id="view-customer-taskflow">
+      <task-flow-reference>
+        <document>/WEB-INF/flows/view-customer-taskflow.xml</document>
+        <id>view-customer-taskflow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>CustomerOverview</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>viewCustomer</from-outcome>
+        <to-activity-id>view-customer-taskflow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>
