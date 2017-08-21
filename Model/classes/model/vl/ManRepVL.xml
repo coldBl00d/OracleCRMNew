@@ -3,38 +3,38 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="ManagerUserVL_AK"
+  Name="ManRepVL"
   Version="12.2.1.12.24"
   InheritPersonalization="merge">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.vl.ManagerUserVL_AK_LABEL"/>
+        ResId="model.vl.ManRepVL_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="ManagerUVO_AK"
+    Name="ManagerU"
     Cardinality="1"
     Source="true"
-    Owner="model.uvo.ManagerUVO_AK">
+    Owner="model.uvo.ManagerUVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="ManagerUVO_AK"/>
+      <Attr Name="_finderName" Value="ManagerU"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.uvo.ManagerUVO_AK.UserId"/>
+      <Item Value="model.uvo.ManagerUVO.Managerid"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="AllManRepUVO_AK"
+    Name="AllManRepU"
     Cardinality="-1"
-    Owner="model.uvo.AllManRepUVO_AK">
+    Owner="model.uvo.AllManRepUVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="AllManRepUVO_AK"/>
+      <Attr Name="_finderName" Value="AllManRepU"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.uvo.AllManRepUVO_AK.ManagerId"/>
+      <Item Value="model.uvo.AllManRepUVO.Manid"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

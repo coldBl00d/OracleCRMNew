@@ -47,7 +47,8 @@
                               selectionListener="#{bindings.AKUsersU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.AKUsersU1.rangeSize}"
                               partialTriggers="::qryId1" id="t2"
-                              binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t2}">
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t2}"
+                              columnStretching="last">
                         <af:column sortProperty="#{bindings.AKUsersU1.hints.UserRefId.name}" sortable="true"
                                    headerText="#{bindings.AKUsersU1.hints.UserRefId.label}" id="c1">
                             <af:outputText value="#{row.UserRefId}"
@@ -223,7 +224,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.UName.hints.precision}"
                                           shortDesc="#{bindings.UName.hints.tooltip}" id="it10"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it10}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it10}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.UName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.UPassword.inputValue}"
@@ -232,13 +234,15 @@
                                           columns="30"
                                           maximumLength="#{bindings.UPassword.hints.precision}"
                                           shortDesc="#{bindings.UPassword.hints.tooltip}" id="it11"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it11}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it11}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.UPassword.validator}"/>
                             </af:inputText>
                             <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="#{bindings.Gender.label}"
                                                 required="#{bindings.Gender.hints.mandatory}"
                                                 shortDesc="#{bindings.Gender.hints.tooltip}" id="soc2"
-                                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.soc2}">
+                                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.soc2}"
+                                                editable="onAccess">
                                 <f:selectItems value="#{bindings.Gender.items}" id="si2"
                                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.si2}"/>
                                 <f:validator binding="#{bindings.Gender.validator}"/>
@@ -249,7 +253,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.FirstName.hints.precision}"
                                           shortDesc="#{bindings.FirstName.hints.tooltip}" id="it12"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it12}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it12}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.FirstName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.MiddleName.inputValue}"
@@ -258,7 +263,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.MiddleName.hints.precision}"
                                           shortDesc="#{bindings.MiddleName.hints.tooltip}" id="it13"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it13}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it13}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.MiddleName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.LastName.inputValue}"
@@ -267,7 +273,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.LastName.hints.precision}"
                                           shortDesc="#{bindings.LastName.hints.tooltip}" id="it14"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it14}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it14}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.LastName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
@@ -275,7 +282,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.Email.hints.precision}"
                                           shortDesc="#{bindings.Email.hints.tooltip}" id="it15"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it15}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it15}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.Email.validator}"/>
                             </af:inputText>
                             <af:inputDate value="#{bindings.StartDate.inputValue}"
@@ -283,7 +291,8 @@
                                           required="#{bindings.StartDate.hints.mandatory}"
                                           columns="#{bindings.StartDate.hints.displayWidth}"
                                           shortDesc="#{bindings.StartDate.hints.tooltip}" id="id3"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id3}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id3}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.StartDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
                             </af:inputDate>
@@ -291,7 +300,8 @@
                                           required="#{bindings.EndDate.hints.mandatory}"
                                           columns="#{bindings.EndDate.hints.displayWidth}"
                                           shortDesc="#{bindings.EndDate.hints.tooltip}" id="id4"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id4}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.id4}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.EndDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                             </af:inputDate>
@@ -302,7 +312,7 @@
                                           maximumLength="#{bindings.AddressLine1.hints.precision}"
                                           shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it16"
                                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it16}"
-                                          rows="2">
+                                          rows="2" editable="onAccess">
                                 <f:validator binding="#{bindings.AddressLine1.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.AddressLine2.inputValue}"
@@ -312,7 +322,7 @@
                                           maximumLength="#{bindings.AddressLine2.hints.precision}"
                                           shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it17"
                                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it17}"
-                                          rows="2">
+                                          rows="2" editable="onAccess">
                                 <f:validator binding="#{bindings.AddressLine2.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.AddressLine3.inputValue}"
@@ -322,7 +332,7 @@
                                           maximumLength="#{bindings.AddressLine3.hints.precision}"
                                           shortDesc="#{bindings.AddressLine3.hints.tooltip}" id="it18"
                                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it18}"
-                                          rows="2">
+                                          rows="2" editable="onAccess">
                                 <f:validator binding="#{bindings.AddressLine3.validator}"/>
                             </af:inputText>
                         </af:panelFormLayout>

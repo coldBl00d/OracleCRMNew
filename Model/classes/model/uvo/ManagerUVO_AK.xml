@@ -25,12 +25,12 @@
     USERS.LAST_NAME  
 FROM  
     USERS,  
-    ROLES,  
-    USER_ROLE_LINK  
+    USER_ROLE_LINK,  
+    ROLES  
 WHERE  
     USERS.USER_ID = USER_ROLE_LINK.USER_ID AND USER_ROLE_LINK.ROLE_ID = ROLES.ROLE_ID AND ROLES.ROLE_NAME = 'Manager']]></SQLQuery>
   <ViewAttribute
-    Name="UserId"
+    Name="ManagerId"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
@@ -38,7 +38,8 @@ WHERE
     ColumnType="LONGINT"
     AliasName="USER_ID"
     Expression="USER_ID"
-    SQLType="NUMERIC"/>
+    SQLType="NUMERIC"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UserRefId"
     IsUpdateable="false"
@@ -85,10 +86,10 @@ WHERE
     </DesignTime>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
-    <Item Value="UserId"/>
+    <Item Value="ManagerId"/>
   </AttrArray>
   <ViewLinkAccessor
-    Name="AllManRepUVO_AK"
+    Name="AllManRepPairUVO_AK"
     ViewLink="model.vl.ManagerUserVL_AK"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>

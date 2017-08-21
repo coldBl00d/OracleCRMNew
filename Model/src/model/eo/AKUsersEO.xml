@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="USERS"
   AliasName="AKUsersEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="UserId"
     Precision="18"
@@ -23,7 +24,8 @@
     IsUpdateable="while_insert"
     DefaultValue="@0"
     Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"/>
+    RetrievedOnInsert="true"
+    IsQueriable="false"/>
   <Attribute
     Name="UName"
     Precision="255"
@@ -31,10 +33,27 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USERS">
+    TableName="USERS"
+    IsQueriable="false"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.UName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:LengthValidationBean
+      Name="UNameRule0"
+      ResId="USERNAME_MUST_HAVE_ATLEAST_8_CHARACTERS_"
+      Description="usernameLength"
+      OnAttribute="UName"
+      CompareType="GREATERTHANEQUALTO"
+      DataType="CHARACTER"
+      CompareLength="8"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="UPassword"
@@ -43,10 +62,27 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USERS">
+    TableName="USERS"
+    IsQueriable="false"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.UPassword_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:LengthValidationBean
+      Name="UPasswordRule0"
+      ResId="PASSWORD_MUST_HAVE_ATLEAST_8_CHARACTERS_"
+      Description="PsswordLength"
+      OnAttribute="UPassword"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="8"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="UserRefId"
@@ -59,6 +95,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.UserRefId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="FirstName"
@@ -67,10 +109,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USERS">
+    TableName="USERS"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -79,10 +128,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="USERS">
+    TableName="USERS"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.LastName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="MiddleName"
@@ -95,6 +151,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.MiddleName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Gender"
@@ -111,14 +173,28 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USERS"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USERS"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AddressId"
     Precision="18"
@@ -127,7 +203,8 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="USERS"/>
+    TableName="USERS"
+    IsQueriable="false"/>
   <Attribute
     Name="PicId"
     Precision="18"
@@ -136,7 +213,8 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="USERS"/>
+    TableName="USERS"
+    IsQueriable="false"/>
   <Attribute
     Name="Email"
     Precision="255"
@@ -148,6 +226,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AKUsersEO.Email_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="AKAddress"
@@ -163,6 +247,13 @@
     AssociationOtherEnd="model.assoc.AKUser_PicASSOC.AKUsers"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Roles"
+    Association="model.assoc.User_RoleASSOC"
+    AssociationEnd="model.assoc.User_RoleASSOC.Roles"
+    AssociationOtherEnd="model.assoc.User_RoleASSOC.AKUsers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="UseraccountsPk"
     PrimaryKey="true">
@@ -173,4 +264,56 @@
       <Item Value="model.eo.AKUsersEO.UserId"/>
     </AttrArray>
   </Key>
+  <Key
+    Name="UsersFirstNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"FIRST_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="USERS_FIRST_NAME_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.AKUsersEO.FirstName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UsersLastNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="USERS_LAST_NAME_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.AKUsersEO.LastName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UsersUNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"U_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="USERS_UNAME_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.AKUsersEO.UName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UsersUPasswordCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"U_PASSWORD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="USERS_UPASSWORD_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.AKUsersEO.UPassword"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

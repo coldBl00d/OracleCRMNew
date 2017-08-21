@@ -22,19 +22,19 @@
       <Attr Name="_finderName" Value="ManagerUVO_AK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.uvo.ManagerUVO_AK.UserId"/>
+      <Item Value="model.uvo.ManagerUVO_AK.ManagerId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="AllManRepUVO_AK"
+    Name="AllManRepPairUVO_AK"
     Cardinality="-1"
-    Owner="model.uvo.AllManRepUVO_AK">
+    Owner="model.uvo.AllManRepPairUVO_AK">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="AllManRepUVO_AK"/>
+      <Attr Name="_finderName" Value="AllManRepPairUVO_AK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.uvo.AllManRepUVO_AK.ManagerId"/>
+      <Item Value="model.uvo.AllManRepPairUVO_AK.ManId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

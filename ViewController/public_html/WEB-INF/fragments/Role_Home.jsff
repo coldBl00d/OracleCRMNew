@@ -15,16 +15,12 @@
                     <af:button id="b2"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.b2}"
                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p3" align="startAfter" alignId="b2" triggerType="click"/>
+                        <af:showPopupBehavior popupId="p4" align="afterStart" alignId="b2"/>
                     </af:button>
                     <af:button id="b3"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.b3}"
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
                         <af:showPopupBehavior popupId="p2" align="startAfter"/>
-                    </af:button>
-                    <af:button text="View" id="b4"
-                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.b4}">
-                        <af:showPopupBehavior popupId="p4" align="afterStart" alignId="b4"/>
                     </af:button>
                     <af:spacer width="10" height="10" id="s1"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.s1}"/>
@@ -50,7 +46,8 @@
                               rowBandingInterval="0" selectedRowKeys="#{bindings.RolesU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.RolesU1.collectionModel.makeCurrent}" rowSelection="single"
                               fetchSize="#{bindings.RolesU1.rangeSize}" partialTriggers="::qryId1" id="t2"
-                              binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}">
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}"
+                              columnStretching="last">
                         <af:column sortProperty="#{bindings.RolesU1.hints.RoleName.name}" sortable="true"
                                    headerText="#{bindings.RolesU1.hints.RoleName.label}" id="c1">
                             <af:outputText value="#{row.RoleName}"
@@ -177,49 +174,55 @@
                 </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
                           binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p4}"
-                          contentDelivery="lazyUncached">
-                    <af:dialog id="d4" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d4}" type="ok">
+                          contentDelivery="lazyUncached"
+                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.cancelPopupListener}">
+                    <af:dialog id="d4" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d4}"
+                               type="okCancel"
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}">
                         <f:facet name="buttonBar"/>
                         <af:panelFormLayout id="pfl3"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pfl3}">
                             <af:inputText value="#{bindings.RoleName.inputValue}"
                                           label="#{bindings.RoleName.hints.label}"
-                                          required="#{bindings.RoleName.hints.mandatory}" readOnly="true"
-                                          columns="#{bindings.RoleName.hints.displayWidth}"
+                                          required="#{bindings.RoleName.hints.mandatory}"
+                                          columns="30"
                                           maximumLength="#{bindings.RoleName.hints.precision}"
                                           shortDesc="#{bindings.RoleName.hints.tooltip}" id="it5"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it5}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it5}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.RoleName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.RoleDescription.inputValue}"
                                           label="#{bindings.RoleDescription.hints.label}"
-                                          required="#{bindings.RoleDescription.hints.mandatory}" readOnly="true"
+                                          required="#{bindings.RoleDescription.hints.mandatory}"
                                           columns="28"
                                           maximumLength="#{bindings.RoleDescription.hints.precision}"
                                           shortDesc="#{bindings.RoleDescription.hints.tooltip}" id="it6"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it6}" rows="4">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it6}"
+                                          editable="onAccess" rows="4">
                                 <f:validator binding="#{bindings.RoleDescription.validator}"/>
                             </af:inputText>
-                            <af:inputDate value="#{bindings.StartDate.inputValue}" readOnly="true"
+                            <af:inputDate value="#{bindings.StartDate.inputValue}"
                                           label="#{bindings.StartDate.hints.label}"
                                           required="#{bindings.StartDate.hints.mandatory}"
                                           columns="#{bindings.StartDate.hints.displayWidth}"
                                           shortDesc="#{bindings.StartDate.hints.tooltip}" id="id5"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id5}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id5}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.StartDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
                             </af:inputDate>
-                            <af:inputDate value="#{bindings.EndDate.inputValue}" readOnly="true"
-                                          label="#{bindings.EndDate.hints.label}"
+                            <af:inputDate value="#{bindings.EndDate.inputValue}" label="#{bindings.EndDate.hints.label}"
                                           required="#{bindings.EndDate.hints.mandatory}"
                                           columns="#{bindings.EndDate.hints.displayWidth}"
                                           shortDesc="#{bindings.EndDate.hints.tooltip}" id="id6"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id6}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id6}"
+                                          editable="onAccess">
                                 <f:validator binding="#{bindings.EndDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                             </af:inputDate>
                         </af:panelFormLayout>
-                        <af:selectManyShuttle label="#{bindings.AllRoleUserPairUVO_AK1.label}" id="sms1"
+                        <af:selectManyShuttle id="sms1"
                                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.sms1}"
                                               value="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.selectedItems}"
                                               partialTriggers="t2">

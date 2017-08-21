@@ -73,17 +73,16 @@ public class Role_Home {
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t2;
-    private RichButton b4;
     private RichPopup p4;
     private RichDialog d4;
+    private RichSelectManyShuttle sms1;
+    private UISelectItems si1;
+    private List selectedItems;
     private RichPanelFormLayout pfl3;
     private RichInputText it5;
     private RichInputText it6;
     private RichInputDate id5;
     private RichInputDate id6;
-    private RichSelectManyShuttle sms1;
-    private UISelectItems si1;
-    private List selectedItems;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -401,13 +400,6 @@ public class Role_Home {
         return t2;
     }
 
-    public void setB4(RichButton b4) {
-        this.b4 = b4;
-    }
-
-    public RichButton getB4() {
-        return b4;
-    }
 
     public void setP4(RichPopup p4) {
         this.p4 = p4;
@@ -425,46 +417,6 @@ public class Role_Home {
         return d4;
     }
 
-
-    public void setPfl3(RichPanelFormLayout pfl3) {
-        this.pfl3 = pfl3;
-    }
-
-    public RichPanelFormLayout getPfl3() {
-        return pfl3;
-    }
-
-    public void setIt5(RichInputText it5) {
-        this.it5 = it5;
-    }
-
-    public RichInputText getIt5() {
-        return it5;
-    }
-
-    public void setIt6(RichInputText it6) {
-        this.it6 = it6;
-    }
-
-    public RichInputText getIt6() {
-        return it6;
-    }
-
-    public void setId5(RichInputDate id5) {
-        this.id5 = id5;
-    }
-
-    public RichInputDate getId5() {
-        return id5;
-    }
-
-    public void setId6(RichInputDate id6) {
-        this.id6 = id6;
-    }
-
-    public RichInputDate getId6() {
-        return id6;
-    }
 
     public void setSms1(RichSelectManyShuttle sms1) {
         this.sms1 = sms1;
@@ -527,6 +479,47 @@ public class Role_Home {
         }
         return selectedItems;
     }
-    
-    
+
+
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setId5(RichInputDate id5) {
+        this.id5 = id5;
+    }
+
+    public RichInputDate getId5() {
+        return id5;
+    }
+
+    public void setId6(RichInputDate id6) {
+        this.id6 = id6;
+    }
+
+    public RichInputDate getId6() {
+        return id6;
+    }
+
+
 }

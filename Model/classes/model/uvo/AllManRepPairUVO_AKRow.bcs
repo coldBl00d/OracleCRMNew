@@ -1,0 +1,12 @@
+//Groovy Scripts for model.uvo.AllManRepPairUVO_AK
+
+package model.uvo
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="AreAssociated")
+def AreAssociated_ExpressionScript_Expression()
+{
+UserManagerUVO_AK1.rowCount>0?true:false
+}
+

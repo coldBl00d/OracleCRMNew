@@ -45,7 +45,8 @@
     EntityUsage="AKUsersEO"
     AliasName="USER_ID"
     IsUpdateable="while_insert"
-    LOVName="LOV_UserId">
+    LOVName="LOV_UserId"
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -58,13 +59,15 @@
     PrecisionRule="true"
     EntityAttrName="UName"
     EntityUsage="AKUsersEO"
-    AliasName="U_NAME"/>
+    AliasName="U_NAME"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UPassword"
     PrecisionRule="true"
     EntityAttrName="UPassword"
     EntityUsage="AKUsersEO"
-    AliasName="U_PASSWORD"/>
+    AliasName="U_PASSWORD"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UserRefId"
     PrecisionRule="true"
@@ -112,13 +115,15 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="AKUsersEO"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="PicId"
     PrecisionRule="true"
     EntityAttrName="PicId"
     EntityUsage="AKUsersEO"
-    AliasName="PIC_ID"/>
+    AliasName="PIC_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"

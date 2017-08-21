@@ -72,19 +72,22 @@
     EntityAttrName="UserId"
     EntityUsage="AKUsersEO"
     AliasName="USER_ID"
-    IsUpdateable="while_insert"/>
+    IsUpdateable="while_insert"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UName"
     PrecisionRule="true"
     EntityAttrName="UName"
     EntityUsage="AKUsersEO"
-    AliasName="U_NAME"/>
+    AliasName="U_NAME"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UPassword"
     PrecisionRule="true"
     EntityAttrName="UPassword"
     EntityUsage="AKUsersEO"
-    AliasName="U_PASSWORD"/>
+    AliasName="U_PASSWORD"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="Gender"
     PrecisionRule="true"
@@ -146,7 +149,8 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="AKUsersEO"
-    AliasName="ADDRESS_ID1"/>
+    AliasName="ADDRESS_ID1"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="AddressId"
     IsNotNull="true"

@@ -37,6 +37,15 @@
   <ViewUsage
     Name="RoleUserUVO_AK2"
     ViewObjectName="model.uvo.RoleUserUVO_AK"/>
+  <ViewUsage
+    Name="ManagerU3"
+    ViewObjectName="model.uvo.ManagerUVO"/>
+  <ViewUsage
+    Name="AllManRepU1"
+    ViewObjectName="model.uvo.AllManRepUVO"/>
+  <ViewUsage
+    Name="UserManagerU1"
+    ViewObjectName="model.uvo.UserManagerUVO"/>
   <ViewLinkUsage
     Name="AKUser_FormVL1"
     ViewLinkObjectName="model.vl.AKUser_FormVL"
@@ -48,5 +57,11 @@
     ViewLinkObjectName="model.vl.RoleUserVL_AK"
     SrcViewUsageName="model.am.AdminAppModule.RolesU1"
     DstViewUsageName="model.am.AdminAppModule.AllRoleUserPairUVO_AK1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ManRepVL1"
+    ViewLinkObjectName="model.vl.ManRepVL"
+    SrcViewUsageName="model.am.AdminAppModule.ManagerU3"
+    DstViewUsageName="model.am.AdminAppModule.AllManRepU1"
     Reversed="false"/>
 </AppModule>

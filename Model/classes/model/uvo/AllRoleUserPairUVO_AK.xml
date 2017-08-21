@@ -92,7 +92,8 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="AKUsersEO"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
@@ -134,7 +135,8 @@
     PrecisionRule="true"
     EntityAttrName="PicId"
     EntityUsage="AKUsersEO"
-    AliasName="PIC_ID"/>
+    AliasName="PIC_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="StartDate1"
     PrecisionRule="true"
@@ -146,20 +148,23 @@
     PrecisionRule="true"
     EntityAttrName="UName"
     EntityUsage="AKUsersEO"
-    AliasName="U_NAME"/>
+    AliasName="U_NAME"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UPassword"
     PrecisionRule="true"
     EntityAttrName="UPassword"
     EntityUsage="AKUsersEO"
-    AliasName="U_PASSWORD"/>
+    AliasName="U_PASSWORD"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UserId"
     IsUpdateable="while_insert"
     PrecisionRule="true"
     EntityAttrName="UserId"
     EntityUsage="AKUsersEO"
-    AliasName="USER_ID"/>
+    AliasName="USER_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="UserRefId"
     PrecisionRule="true"

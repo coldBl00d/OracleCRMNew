@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="UserManagerUVO_AK"
+  Name="UserManagerUVO"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -13,24 +13,23 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.uvo.UserManagerUVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <Variable
-    Name="Bind_ManagerId"
+    Name="RepId"
     Kind="where"
     Type="java.lang.Integer"/>
   <Variable
-    Name="Bind_UserId"
+    Name="ManId"
     Kind="where"
     Type="java.lang.Integer"/>
   <EntityUsage
     Name="UserManagerEO"
     Entity="model.eo.UserManagerEO"/>
-  <ViewAttribute
-    Name="UserId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="UserId"
-    EntityUsage="UserManagerEO"
-    AliasName="USER_ID"/>
   <ViewAttribute
     Name="ManagerId"
     IsNotNull="true"
@@ -38,9 +37,16 @@
     EntityAttrName="ManagerId"
     EntityUsage="UserManagerEO"
     AliasName="MANAGER_ID"/>
+  <ViewAttribute
+    Name="UserId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="UserManagerEO"
+    AliasName="USER_ID"/>
   <ViewCriteria
-    Name="UserManagerUVO_AKCriteria"
-    ViewObjectName="model.uvo.UserManagerUVO_AK"
+    Name="UserManagerUVOCriteria"
+    ViewObjectName="model.uvo.UserManagerUVO"
     Conjunction="AND">
     <Properties Name="_Props">
       <CustomProperties>
@@ -62,26 +68,30 @@
       </CustomProperties>
     </Properties>
     <ViewCriteriaRow
-      Name="UserManagerUVO_AKCriteria_row_0"
+      Name="UserManagerUVOCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="UserManagerUVO_AKCriteria_UserManagerUVO_AKCriteria_row_0_UserId"
-        ViewAttribute="UserId"
+        Name="UserManagerUVOCriteria_UserManagerUVOCriteria_row_0_ManagerId"
+        ViewAttribute="ManagerId"
         Operator="="
         Conjunction="AND"
-        Value=":Bind_UserId"
+        Value=":ManId"
         GenerateIsNullClauseForBindVars="false"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="UserManagerUVO_AKCriteria_UserManagerUVO_AKCriteria_row_0_ManagerId"
-        ViewAttribute="ManagerId"
+        Name="UserManagerUVOCriteria_UserManagerUVOCriteria_row_0_UserId"
+        ViewAttribute="UserId"
         Operator="="
         Conjunction="AND"
-        Value=":Bind_ManagerId"
+        Value=":RepId"
         GenerateIsNullClauseForBindVars="false"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

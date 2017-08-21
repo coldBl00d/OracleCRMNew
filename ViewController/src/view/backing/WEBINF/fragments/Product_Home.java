@@ -86,6 +86,12 @@ public class Product_Home {
     private RichGridCell gc7;
     private RichToolbar t5;
     private RichToolbar t6;
+    private RichGridRow gr5;
+    private RichGridCell gc8;
+    private RichGridCell gc9;
+    private RichGridCell gc10;
+    private RichOutputText ot3;
+    private RichOutputText ot5;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -697,5 +703,53 @@ public class Product_Home {
 
     public RichToolbar getT6() {
         return t6;
+    }
+
+    public void setGr5(RichGridRow gr5) {
+        this.gr5 = gr5;
+    }
+
+    public RichGridRow getGr5() {
+        return gr5;
+    }
+
+    public void setGc8(RichGridCell gc8) {
+        this.gc8 = gc8;
+    }
+
+    public RichGridCell getGc8() {
+        return gc8;
+    }
+
+    public void setGc9(RichGridCell gc9) {
+        this.gc9 = gc9;
+    }
+
+    public RichGridCell getGc9() {
+        return gc9;
+    }
+
+    public void setGc10(RichGridCell gc10) {
+        this.gc10 = gc10;
+    }
+
+    public RichGridCell getGc10() {
+        return gc10;
+    }
+
+    public void setOt3(RichOutputText ot3) {
+        this.ot3 = ot3;
+    }
+
+    public RichOutputText getOt3() {
+        return ot3;
+    }
+
+    public void setOt5(RichOutputText ot5) {
+        this.ot5 = ot5;
+    }
+
+    public RichOutputText getOt5() {
+        return ot5;
     }
 }

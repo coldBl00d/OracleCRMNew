@@ -8,7 +8,43 @@
                 <af:panelGroupLayout layout="vertical" id="pgl2"
                                      binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.pgl2}">
                     <af:panelHeader text="Managers" id="ph1"
-                                    binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.ph1}"/>
+                                    binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.ph1}">
+                        <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                       value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                       model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                       queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                       binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.qryId1}">
+                            <f:facet name="end">
+                                <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.cl1}"/>
+                            </f:facet>
+                        </af:quickQuery>
+                    </af:panelHeader>
+                    <af:table value="#{bindings.ManagerU3.collectionModel}" var="row"
+                              rows="#{bindings.ManagerU3.rangeSize}"
+                              emptyText="#{bindings.ManagerU3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" selectedRowKeys="#{bindings.ManagerU3.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ManagerU3.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ManagerU3.rangeSize}"
+                              partialTriggers="::qryId1" id="t1"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.t1}"
+                              columnStretching="last">
+                        <af:column sortProperty="#{bindings.ManagerU3.hints.ManagerRef.name}" sortable="true"
+                                   headerText="#{bindings.ManagerU3.hints.ManagerRef.label}" id="c1" width="100">
+                            <af:outputText value="#{row.ManagerRef}"
+                                           shortDesc="#{bindings.ManagerU3.hints.ManagerRef.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ManagerU3.hints.FirstName.name}" sortable="true"
+                                   headerText="#{bindings.ManagerU3.hints.FirstName.label}" id="c2" width="142">
+                            <af:outputText value="#{row.FirstName}"
+                                           shortDesc="#{bindings.ManagerU3.hints.FirstName.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ManagerU3.hints.LastName.name}" sortable="true"
+                                   headerText="#{bindings.ManagerU3.hints.LastName.label}" id="c3" width="58">
+                            <af:outputText value="#{row.LastName}"
+                                           shortDesc="#{bindings.ManagerU3.hints.LastName.tooltip}" id="ot3"/>
+                        </af:column>
+                    </af:table>
                 </af:panelGroupLayout>
             </af:gridCell>
             <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc1">
@@ -25,6 +61,38 @@
                         <f:facet name="legend"/>
                         <f:facet name="info"/>
                     </af:panelHeader>
+                    <af:table value="#{bindings.AllManRepU1.collectionModel}" var="row"
+                              rows="#{bindings.AllManRepU1.rangeSize}"
+                              emptyText="#{bindings.AllManRepU1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.AllManRepU1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.AllManRepU1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.AllManRepU1.rangeSize}"
+                              filterModel="#{bindings.AllManRepU1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.AllManRepU1Query.processQuery}" varStatus="vs" id="t2"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.t2}"
+                              columnStretching="last" partialTriggers="::t1">
+                        <af:column sortProperty="#{bindings.AllManRepU1.hints.RepRefid.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.AllManRepU1.hints.RepRefid.label}" id="c4"
+                                   width="269">
+                            <af:inputText value="#{row.bindings.RepRefid.inputValue}"
+                                          label="#{bindings.AllManRepU1.hints.RepRefid.label}"
+                                          required="#{bindings.AllManRepU1.hints.RepRefid.mandatory}"
+                                          columns="#{bindings.AllManRepU1.hints.RepRefid.displayWidth}"
+                                          maximumLength="#{bindings.AllManRepU1.hints.RepRefid.precision}"
+                                          shortDesc="#{bindings.AllManRepU1.hints.RepRefid.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.RepRefid.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.AllManRepU1.hints.AreAssociated.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.AllManRepU1.hints.AreAssociated.label}"
+                                   id="c5" width="-69">
+                            <af:selectBooleanCheckbox value="#{row.bindings.AreAssociated.inputValue}"
+                                                      label="#{row.bindings.AreAssociated.label}"
+                                                      shortDesc="#{bindings.AllManRepU1.hints.AreAssociated.tooltip}"
+                                                      id="sbc1" autoSubmit="true"/>
+                        </af:column>
+                    </af:table>
                 </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>

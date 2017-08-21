@@ -33,22 +33,11 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CATEGORY">
+    TableName="CATEGORY"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
-    <validation:CompareValidationBean
-      Name="CategoryNameRule0"
-      ResId="ENTER_A_NAME"
-      OnAttribute="CategoryName"
-      OperandType="EXPR"
-      Inverse="true"
-      CompareType="EQUALTO">
-      <validation:TransientExpression
-        Name="ValidationRuleScript"
-        trustMode="untrusted"
-        CodeSourceName="CategoryEORow"/>
-    </validation:CompareValidationBean>
   </Attribute>
   <Attribute
     Name="CategoryDescription"
@@ -63,6 +52,18 @@
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
   </Attribute>
+  <Key
+    Name="CategoryCategoryNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CATEGORY_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CATEGORY_CATEGORY_NAME_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CategoryEO.CategoryName"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="CategoryPk"
     PrimaryKey="true">
