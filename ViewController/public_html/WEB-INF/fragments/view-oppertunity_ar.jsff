@@ -18,10 +18,42 @@
                                           inlineStyle="width:104px;"/>
                                 <af:panelGroupLayout id="pgl3"
                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl3}"
-                                                     layout="vertical">
+                                                     layout="horizontal">
+                                    <af:panelGroupLayout id="pgl4"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl4}"
+                                                         layout="vertical">
+                                        <af:inputText value="#{bindings.OpportunityName.inputValue}" simple="true"
+                                                      required="#{bindings.OpportunityName.hints.mandatory}"
+                                                      columns="#{bindings.OpportunityName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.OpportunityName.hints.precision}"
+                                                      shortDesc="#{bindings.OpportunityName.hints.tooltip}" id="it1"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it1}">
+                                            <f:validator binding="#{bindings.OpportunityName.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.OpportunityWinProb.inputValue}"
+                                                      required="#{bindings.OpportunityWinProb.hints.mandatory}"
+                                                      columns="#{bindings.OpportunityWinProb.hints.displayWidth}"
+                                                      maximumLength="#{bindings.OpportunityWinProb.hints.precision}"
+                                                      shortDesc="#{bindings.OpportunityWinProb.hints.tooltip}" id="it2"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it2}">
+                                            <f:validator binding="#{bindings.OpportunityWinProb.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OpportunityWinProb.format}"/>
+                                        </af:inputText>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl5"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl5}"/>
                                     <af:spacer width="10" height="10" id="s1"
                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.s1}"/>
                                 </af:panelGroupLayout>
+                                <af:inputText value="#{bindings.RiskLevel.inputValue}" simple="true"
+                                              required="#{bindings.RiskLevel.hints.mandatory}"
+                                              columns="#{bindings.RiskLevel.hints.displayWidth}"
+                                              maximumLength="#{bindings.RiskLevel.hints.precision}"
+                                              shortDesc="#{bindings.RiskLevel.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it3}">
+                                    <f:validator binding="#{bindings.RiskLevel.validator}"/>
+                                </af:inputText>
                                 <f:facet name="toolbar">
                                     <af:button actionListener="#{bindings.Commit.execute}"
                                                disabled="#{!bindings.Commit.enabled}" id="b13"

@@ -29,7 +29,7 @@
     Name="ContactsUVO_arVO3"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewUsage
-    Name="TaskUVO_arVO1"
+    Name="Tasks"
     ViewObjectName="model.uvo.TaskUVO_arVO"/>
   <ViewUsage
     Name="OppertunityOfCustomer"
