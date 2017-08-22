@@ -43,6 +43,18 @@
   <ViewUsage
     Name="TaskUVO_arVO1"
     ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="Creator"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Assignee"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="NotesUVO_arVO1"
+    ViewObjectName="model.uvo.NotesUVO_arVO"/>
+  <ViewUsage
+    Name="UserUVO_arVO1"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToOppertunityViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToOppertunityViewLink_ar"
@@ -78,6 +90,30 @@
     ViewLinkObjectName="model.vl.CustomerToTask"
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
     DstViewUsageName="model.am.UserApplicationModule.TasksOfCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToCreator1"
+    ViewLinkObjectName="model.vl.TaskToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.TasksOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.Creator"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToAssigneeVL_ar1"
+    ViewLinkObjectName="model.vl.TaskToAssigneeVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.TasksOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.Assignee"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToNoteVL1"
+    ViewLinkObjectName="model.vl.CustomerToNoteVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NotesToCreator1"
+    ViewLinkObjectName="model.vl.NotesToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
+    DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO1"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

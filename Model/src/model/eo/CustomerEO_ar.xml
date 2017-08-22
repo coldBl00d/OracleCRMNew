@@ -23,8 +23,7 @@
     ColumnType="NUMBER"
     TableName="CUSTOMER_ACCOUNTS"
     PrimaryKey="true"
-    RetrievedOnInsert="true"
-    IsNotNull="true"/>
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="AccountName"
     Precision="255"
@@ -169,6 +168,13 @@
     Association="model.assoc.CustomerToTaskAssoc"
     AssociationEnd="model.assoc.CustomerToTaskAssoc.TaskEO_ar"
     AssociationOtherEnd="model.assoc.CustomerToTaskAssoc.CustomerEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="NotesEO_ar"
+    Association="model.assoc.CustomerToNoteAssoc"
+    AssociationEnd="model.assoc.CustomerToNoteAssoc.NotesEO_ar"
+    AssociationOtherEnd="model.assoc.CustomerToNoteAssoc.CustomerEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

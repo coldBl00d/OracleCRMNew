@@ -98,6 +98,16 @@
     EntityAttrName="AccountId"
     EntityUsage="TaskEO_ar"
     AliasName="ACCOUNT_ID"/>
+  <ViewLinkAccessor
+    Name="UserUVO_ar"
+    ViewLink="model.vl.TaskToCreator"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserUVO_ar1"
+    ViewLink="model.vl.TaskToAssigneeVL_ar"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
   <DeclarativeWhereClause
     Name="DeclarativeWhereClause">
     <ViewCriteria

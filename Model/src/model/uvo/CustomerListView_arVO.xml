@@ -108,4 +108,9 @@
     ViewLink="model.vl.CustomerToTask"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NotesUVO_ar"
+    ViewLink="model.vl.CustomerToNoteVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

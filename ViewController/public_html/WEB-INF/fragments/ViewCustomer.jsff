@@ -73,7 +73,74 @@
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl5"
-                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl5}"/>
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl5}">
+                                    <af:table value="#{bindings.OppertunitiesOfCustomer.collectionModel}" var="row"
+                                              rows="#{bindings.OppertunitiesOfCustomer.rangeSize}"
+                                              emptyText="#{bindings.OppertunitiesOfCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              fetchSize="#{bindings.OppertunitiesOfCustomer.rangeSize}" id="t5"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}">
+                                        <af:column id="c12" headerText="Name">
+                                            <af:link text="#{row.OpportunityName}" id="l2"/>
+                                        </af:column>
+                                        <af:column id="c1" headerText="Win Probability">
+                                            <af:outputText value="#{row.OpportunityWinProb}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityWinProb.tooltip}"
+                                                           id="ot7">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityWinProb.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Close Date" id="c3">
+                                            <af:outputText value="#{row.OpportunityCloseDate}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityCloseDate.tooltip}"
+                                                           id="ot9">
+                                                <af:convertDateTime pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityCloseDate.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Sales Stage" id="c4">
+                                            <af:outputText value="#{row.SalesStage}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.SalesStage.tooltip}"
+                                                           id="ot8"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OppertunitiesOfCustomer.hints.Revenue.label}"
+                                                   id="c5">
+                                            <af:outputText value="#{row.Revenue}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.Revenue.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.Revenue.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Budget" id="c6">
+                                            <af:outputText value="#{row.BudgetAmount}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.BudgetAmount.tooltip}"
+                                                           id="ot11">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.BudgetAmount.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Duration" id="c7">
+                                            <af:outputText value="#{row.EstimatedDuration}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.EstimatedDuration.tooltip}"
+                                                           id="ot12">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.EstimatedDuration.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="Risk" id="c8">
+                                            <af:outputText value="#{row.RiskLevel}"
+                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.RiskLevel.tooltip}"
+                                                           id="ot13"/>
+                                        </af:column>
+                                        <af:column id="c2" headerText="Contact">
+                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}" id="l3"/>
+                                        </af:column>
+                                        <af:column id="c13" headerText="Creator">
+                                            <af:link text="#{row.AKUsersU.bindings.FirstName.inputValue}" id="l4"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
@@ -103,13 +170,8 @@
                                               queryListener="#{bindings.ContactsUVO_arVO1Query.processQuery}"
                                               varStatus="vs" id="t8"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}">
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.ContactName.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.ContactName.label}"
-                                                   id="c17">
-                                            <af:outputText value="#{row.ContactName}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.ContactName.tooltip}"
-                                                           id="ot17"/>
+                                        <af:column id="c10" headerText="Name">
+                                            <af:link text="#{row.ContactName}" id="l5"/>
                                         </af:column>
                                         <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.Gender.name}"
                                                    filterable="true" sortable="true"
@@ -157,9 +219,6 @@
                                                            shortDesc="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.tooltip}"
                                                            id="ot22"/>
                                         </af:column>
-                                        <af:column id="c9">
-                                            <af:button id="b13" icon="#{resource['images:ic_info_black_24dp_1x.png']}"/>
-                                        </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
@@ -178,7 +237,62 @@
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl6"
-                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl6}"/>
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl6}">
+                                    <af:table value="#{bindings.TaskUVO_arVO1.collectionModel}" var="row"
+                                              rows="#{bindings.TaskUVO_arVO1.rangeSize}"
+                                              emptyText="#{bindings.TaskUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.TaskUVO_arVO1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.TaskUVO_arVO1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.TaskUVO_arVO1.rangeSize}"
+                                              id="t7"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t7}">
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.name}"
+                                                   sortable="true" headerText="Name" id="c9" width="98">
+                                            <af:outputText value="#{row.ActivityTitle}"
+                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.tooltip}"
+                                                           id="ot14"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.StartDateTime.name}"
+                                                   sortable="true" headerText="Start Date" id="c11" width="102">
+                                            <af:outputText value="#{row.StartDateTime}"
+                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.StartDateTime.tooltip}"
+                                                           id="ot15">
+                                                <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.StartDateTime.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.name}"
+                                                   sortable="true" headerText="End Date" id="c14" width="100">
+                                            <af:outputText value="#{row.EndDueDateTime}"
+                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.tooltip}"
+                                                           id="ot16">
+                                                <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.name}"
+                                                   sortable="true" headerText="Priority" id="c15">
+                                            <af:outputText value="#{row.ATaskPriority}"
+                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.tooltip}"
+                                                           id="ot17"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.name}"
+                                                   sortable="true" headerText="Completion" id="c16">
+                                            <af:outputText value="#{row.ATaskCompletion}"
+                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.tooltip}"
+                                                           id="ot23">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column id="c24" headerText="Creator">
+                                            <af:link text="#{bindings.FirstName.inputValue}" id="l6"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.UserUVO_ar1.FirstName.name}"
+                                                   sortable="true" headerText="Assignee" id="c23">
+                                            <af:link text="#{bindings.FirstName1.inputValue}" id="l7"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab3"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
@@ -195,7 +309,44 @@
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl3"
-                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl3}"/>
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl3}">
+                                    <af:table value="#{bindings.NotesUVO_arVO1.collectionModel}" var="row"
+                                              rows="#{bindings.NotesUVO_arVO1.rangeSize}"
+                                              emptyText="#{bindings.NotesUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.NotesUVO_arVO1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.NotesUVO_arVO1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.NotesUVO_arVO1.rangeSize}"
+                                              id="t9"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t9}">
+                                        <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteTitle.name}"
+                                                   sortable="true" headerText="Title" id="c17">
+                                            <af:outputText value="#{row.NoteTitle}"
+                                                           shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteTitle.tooltip}"
+                                                           id="ot24"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteDate.name}"
+                                                   sortable="true" headerText="Date" id="c25">
+                                            <af:outputText value="#{row.NoteDate}"
+                                                           shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteDate.tooltip}"
+                                                           id="ot25">
+                                                <af:convertDateTime pattern="#{bindings.NotesUVO_arVO1.hints.NoteDate.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.FirstName.name}"
+                                                   sortable="true" headerText="Creator" id="c26">
+                                            <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                           shortDesc="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.FirstName.tooltip}"
+                                                           rendered="#{row.UserUVO_ar != null}" id="ot26"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.Email.name}"
+                                                   sortable="true" headerText="Email" id="c27">
+                                            <af:outputText value="#{row.UserUVO_ar.bindings.Email.inputValue}"
+                                                           shortDesc="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.Email.tooltip}"
+                                                           rendered="#{row.UserUVO_ar != null}" id="ot27"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>

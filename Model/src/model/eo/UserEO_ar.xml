@@ -153,6 +153,27 @@
     AssociationOtherEnd="model.assoc.UserToTaskAssoc_ar.UserEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar1"
+    Association="model.assoc.TaskToCreatorAssoc"
+    AssociationEnd="model.assoc.TaskToCreatorAssoc.TaskEO_ar1"
+    AssociationOtherEnd="model.assoc.TaskToCreatorAssoc.UserEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TaskEO_ar2"
+    Association="model.assoc.TaskToAssigneeAssoc"
+    AssociationEnd="model.assoc.TaskToAssigneeAssoc.TaskEO_ar2"
+    AssociationOtherEnd="model.assoc.TaskToAssigneeAssoc.UserEO_ar2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="NotesEO_ar"
+    Association="model.assoc.NotesToCreator"
+    AssociationEnd="model.assoc.NotesToCreator.NotesEO_ar"
+    AssociationOtherEnd="model.assoc.NotesToCreator.UserEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UseraccountsPk"
     PrimaryKey="true">

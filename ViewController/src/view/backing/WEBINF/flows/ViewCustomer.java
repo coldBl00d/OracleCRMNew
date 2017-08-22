@@ -77,6 +77,9 @@ public class ViewCustomer {
     private RichOutputLabel ol2;
     private RichPanelGroupLayout pgl7;
     private RichTable t8;
+    private RichTable t5;
+    private RichTable t7;
+    private RichTable t9;
 
     public ViewCustomer(){
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
@@ -501,5 +504,30 @@ public class ViewCustomer {
 
     public RichTable getT8() {
         return t8;
+    }
+
+    public void setT5(RichTable t5) {
+        this.t5 = t5;
+    }
+
+    public RichTable getT5() {
+        return t5;
+    }
+
+
+    public void setT7(RichTable t7) {
+        this.t7 = t7;
+    }
+
+    public RichTable getT7() {
+        return t7;
+    }
+
+    public void setT9(RichTable t9) {
+        this.t9 = t9;
+    }
+
+    public RichTable getT9() {
+        return t9;
     }
 }

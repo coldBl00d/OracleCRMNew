@@ -14,6 +14,13 @@
               id="ContactsUVO_arVO1Iterator"/>
     <searchRegion Binds="ContactsUVO_arVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContactsUVO_arVO1Query"/>
+    <iterator Binds="OppertunitiesOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OppertunitiesOfCustomerIterator"/>
+    <iterator Binds="TaskUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="TaskUVO_arVO1Iterator"/>
+    <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>
+    <iterator Binds="NotesUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="NotesUVO_arVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerListIterator" id="Ceo">
@@ -55,6 +62,76 @@
           <Item Value="DepartmentName"/>
           <Item Value="BuyingRole"/>
           <Item Value="WorkNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OppertunitiesOfCustomerIterator" id="OppertunitiesOfCustomer">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunitiesOfCustomer0">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="OpportunityCloseDate"/>
+          <Item Value="SalesStage"/>
+          <Item Value="Revenue"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="AKUsersU"/>
+          <Item Value="ContactsUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.AKUsersUVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
+        <AttrNames>
+          <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TaskUVO_arVO1Iterator" id="TaskUVO_arVO1">
+      <nodeDefinition DefName="model.uvo.TaskUVO_arVO" Name="TaskUVO_arVO10">
+        <AttrNames>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="ATaskPriority"/>
+          <Item Value="ATaskCompletion"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+          <Item Value="UserUVO_ar1"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CreatorIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="NotesUVO_arVO1Iterator" id="NotesUVO_arVO1">
+      <nodeDefinition DefName="model.uvo.NotesUVO_arVO" Name="NotesUVO_arVO10">
+        <AttrNames>
+          <Item Value="NoteTitle"/>
+          <Item Value="NoteDate"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="Email"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

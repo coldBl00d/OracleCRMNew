@@ -145,6 +145,20 @@
     AssociationOtherEnd="model.assoc.UserToTaskAssoc_ar.TaskEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UserEO_ar1"
+    Association="model.assoc.TaskToCreatorAssoc"
+    AssociationEnd="model.assoc.TaskToCreatorAssoc.UserEO_ar1"
+    AssociationOtherEnd="model.assoc.TaskToCreatorAssoc.TaskEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UserEO_ar2"
+    Association="model.assoc.TaskToAssigneeAssoc"
+    AssociationEnd="model.assoc.TaskToAssigneeAssoc.UserEO_ar2"
+    AssociationOtherEnd="model.assoc.TaskToAssigneeAssoc.TaskEO_ar2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

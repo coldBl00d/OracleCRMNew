@@ -150,9 +150,9 @@ public class CustomerOverview {
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("customerIdForView", custIter.getCurrentRowKeyString());
         m.put("tabContext", TabContext.getCurrentInstance());
-        m.put("customerId", row.getAttribute("AccountId"));
-        //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyString());
-        System.out.println("Customer id i got:"+row.getAttribute("AccountId"));
+        //m.put("customerId", row.getAttribute("AccountId"));
+        //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyStringValue());
+        //System.out.println("Customer id i got:"+row.getAttribute("CustomerId"));
         System.out.println(companyName);
         viewCustomerActivity(m, companyName);
         System.out.println("Done");
