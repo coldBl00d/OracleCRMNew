@@ -91,6 +91,7 @@ public class ViewCustomer {
     private RichTable t5;
     private RichTable t7;
     private RichTable t9;
+    private RichLink l8;
 
     public ViewCustomer(){
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
@@ -542,24 +543,24 @@ public class ViewCustomer {
         return t9;
     }
     
-    public String action(){
+    public String goOpportunity(){
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
         ViewObject vobj = iterator.getViewObject();
-        Row row = vobj.getCurrentRow();
-        String tabHeading = (String)row.getAttribute("OpportunityName");
+        Row row1 = iterator.getCurrentRow();
+        String tabHeading = (String)row1.getAttribute("OpportunityName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
-        m.put("PointerId", row.getAttribute("OpportunityId"));
+        m.put("PointerId", row1.getAttribute("OpportunityId"));
         //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyStringValue());
-        System.out.println("Customer id i got:"+row.getAttribute("OpportunityId"));
+        System.out.println("Oppertunity id i got:"+row1.getAttribute("OpportunityId"));
         System.out.println(tabHeading);
-        viewCustomerActivity(m, tabHeading);
+        viewOppertunityActivity(m, tabHeading);
         System.out.println("Done");
         return null;
     }
     
-    public void viewCustomerActivity(Map<String, Object> params, String companyName) 
+    public void viewOppertunityActivity(Map<String, Object> params, String companyName) 
       { 
         /** 
         * Example method when called repeatedly, will open another instance as 
@@ -602,5 +603,12 @@ public class ViewCustomer {
       
       
     }
-    
+
+    public void setL8(RichLink l8) {
+        this.l8 = l8;
+    }
+
+    public RichLink getL8() {
+        return l8;
+    }
 }

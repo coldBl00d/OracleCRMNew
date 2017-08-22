@@ -79,9 +79,11 @@
                                               emptyText="#{bindings.OppertunitiesOfCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
                                               fetchSize="#{bindings.OppertunitiesOfCustomer.rangeSize}" id="t5"
-                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}">
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
+                                              rowSelection="single">
                                         <af:column id="c12" headerText="Name">
-                                            <af:link text="#{row.OpportunityName}" id="l2"/>
+                                            <af:link text="#{row.OpportunityName}" id="l2"
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
                                         </af:column>
                                         <af:column id="c1" headerText="Win Probability">
                                             <af:outputText value="#{row.OpportunityWinProb}"
@@ -139,6 +141,7 @@
                                         <af:column id="c13" headerText="Creator">
                                             <af:link text="#{row.AKUsersU.bindings.FirstName.inputValue}" id="l4"/>
                                         </af:column>
+                                        <af:column id="c28"/>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
@@ -349,6 +352,8 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
+                        <af:link text="link 2" id="l8"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l8}"/>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

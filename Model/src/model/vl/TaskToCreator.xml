@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TaskToCreator"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="model.assoc.TaskToCreatorAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.vl.TaskToCreator_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TaskUVO_ar1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.uvo.TaskUVO_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TaskUVO_ar1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.TaskUVO_arVO.ACreatorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="UserUVO_ar"
+    Cardinality="1"
+    Owner="model.uvo.UserUVO_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="UserUVO_ar"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.UserUVO_arVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

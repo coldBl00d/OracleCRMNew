@@ -1,7 +1,12 @@
 package view.backing;
 
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichInputComboboxListOfValues;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
@@ -15,6 +20,11 @@ import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.jbo.Key;
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
+import oracle.jbo.ViewObject;
 
 public class Viewoppertunity_ar {
     private RichPanelGroupLayout pgl1;
@@ -68,6 +78,32 @@ public class Viewoppertunity_ar {
     private RichButton b10;
     private RichButton b11;
     private RichButton b12;
+    private RichPanelGroupLayout pgl10;
+    private RichInputDate id1;
+    private RichButton b13;
+
+
+    public Viewoppertunity_ar(){
+       setRow();
+       
+    }
+    
+    public void setRow(){
+        System.out.println("In constructor :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
+        if( ADFContext.getCurrent().getPageFlowScope().get("PointerId") != null){
+            String iteratorName = "OppertunityForOverviewIterator";
+            Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+            DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+            DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+            ViewObject vobj = iterator.getViewObject();
+            Key key = new Key(new Object[] {id});
+            RowSetIterator rsi = iterator.getRowSetIterator();
+            Row row = rsi.findByKey(key, 1)[0];
+            System.out.println(row.getAttribute("OpportunityName"));
+            rsi.setCurrentRow(row);  
+            System.out.println("Done with setting the poninter from Oppertunity Backing");
+        }
+    }
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
         this.pgl1 = pgl1;
@@ -480,5 +516,30 @@ public class Viewoppertunity_ar {
 
     public RichButton getB12() {
         return b12;
+    }
+
+    public void setPgl10(RichPanelGroupLayout pgl10) {
+        this.pgl10 = pgl10;
+    }
+
+    public RichPanelGroupLayout getPgl10() {
+        return pgl10;
+    }
+
+
+    public void setId1(RichInputDate id1) {
+        this.id1 = id1;
+    }
+
+    public RichInputDate getId1() {
+        return id1;
+    }
+
+    public void setB13(RichButton b13) {
+        this.b13 = b13;
+    }
+
+    public RichButton getB13() {
+        return b13;
     }
 }

@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <input-parameter-definition id="__2">
+      <name>PointerId</name>
+      <value>#{pageFlowScope.PointerId}</value>
+      <class>java.lang.Integer</class>
+    </input-parameter-definition>
     <view id="view-oppertunity_ar">
       <page>/WEB-INF/fragments/view-oppertunity_ar.jsff</page>
     </view>

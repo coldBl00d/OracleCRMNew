@@ -23,66 +23,147 @@
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl5}">
                                         <af:inputText label="Name" id="it3"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it3}"
-                                                      editable="onAccess"/>
+                                                      editable="onAccess" value="#{bindings.OpportunityName.inputValue}"
+                                                      required="#{bindings.OpportunityName.hints.mandatory}"
+                                                      columns="20"
+                                                      maximumLength="#{bindings.OpportunityName.hints.precision}"
+                                                      wrap="soft">
+                                            <f:validator binding="#{bindings.OpportunityName.validator}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl4"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl4}">
                                         <af:inputText label="Probablility" id="it2"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it2}"
-                                                      editable="onAccess"/>
+                                                      editable="onAccess"
+                                                      value="#{bindings.OpportunityWinProb.inputValue}"
+                                                      required="#{bindings.OpportunityWinProb.hints.mandatory}"
+                                                      columns="18"
+                                                      maximumLength="#{bindings.OpportunityWinProb.hints.precision}">
+                                            <f:validator binding="#{bindings.OpportunityWinProb.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OpportunityWinProb.format}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl7"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl7}">
                                         <af:inputText label="Revenue" id="it4"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it4}"
-                                                      editable="onAccess" rows="1"/>
+                                                      editable="onAccess" rows="1"
+                                                      value="#{bindings.Revenue.inputValue}"
+                                                      required="#{bindings.Revenue.hints.mandatory}"
+                                                      columns="20"
+                                                      maximumLength="#{bindings.Revenue.hints.precision}">
+                                            <f:validator binding="#{bindings.Revenue.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Revenue.format}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl8"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl8}">
                                         <af:inputText label="Best Case" id="it5"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it5}"
-                                                      editable="onAccess"/>
+                                                      editable="onAccess" value="#{bindings.BestCaseRevenue.inputValue}"
+                                                      required="#{bindings.BestCaseRevenue.hints.mandatory}"
+                                                      columns="19"
+                                                      maximumLength="#{bindings.BestCaseRevenue.hints.precision}">
+                                            <f:validator binding="#{bindings.BestCaseRevenue.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BestCaseRevenue.format}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl9"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl9}">
                                         <af:inputText label="Worst Case" id="it6"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it6}"
-                                                      editable="onAccess" columns="20"/>
+                                                      editable="onAccess"
+                                                      columns="18"
+                                                      value="#{bindings.WorstCaseRevenue.inputValue}"
+                                                      required="#{bindings.WorstCaseRevenue.hints.mandatory}"
+                                                      maximumLength="#{bindings.WorstCaseRevenue.hints.precision}">
+                                            <f:validator binding="#{bindings.WorstCaseRevenue.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.WorstCaseRevenue.format}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl6"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl6}">
                                         <af:inputText label="Budget" id="it1"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it1}"
-                                                      editable="onAccess"/>
+                                                      editable="onAccess" value="#{bindings.BudgetAmount.inputValue}"
+                                                      required="#{bindings.BudgetAmount.hints.mandatory}"
+                                                      columns="21"
+                                                      maximumLength="#{bindings.BudgetAmount.hints.precision}">
+                                            <f:validator binding="#{bindings.BudgetAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BudgetAmount.format}"/>
+                                        </af:inputText>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl11"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl11}">
                                         <af:inputText label="Duration" id="it8"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it8}"
-                                                      editable="onAccess"/>
+                                                      editable="onAccess"
+                                                      value="#{bindings.EstimatedDuration.inputValue}"
+                                                      required="#{bindings.EstimatedDuration.hints.mandatory}"
+                                                      columns="20"
+                                                      maximumLength="#{bindings.EstimatedDuration.hints.precision}">
+                                            <f:validator binding="#{bindings.EstimatedDuration.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.EstimatedDuration.format}"/>
+                                        </af:inputText>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl10"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl10}">
+                                        <af:inputDate value="#{bindings.OpportunityCloseDate.inputValue}"
+                                                      label="End Date"
+                                                      required="#{bindings.OpportunityCloseDate.hints.mandatory}"
+                                                      columns="17"
+                                                      shortDesc="#{bindings.OpportunityCloseDate.hints.tooltip}"
+                                                      id="id1"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.id1}">
+                                            <f:validator binding="#{bindings.OpportunityCloseDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.OpportunityCloseDate.format}"/>
+                                        </af:inputDate>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl12"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl12}">
                                         <af:inputComboboxListOfValues label="Risk"
                                                                       popupTitle="Search and Result Dialog"
                                                                       id="iclov1"
-                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov1}"/>
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov1}"
+                                                                      columns="22"/>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl13"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl13}">
-                                        <af:inputComboboxListOfValues label="Sale Stage" popupTitle="Search and Result Dialog"
-                                                                      id="iclov2"
-                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov2}"/>
+                                        <af:inputComboboxListOfValues label="Sales Stage"
+                                                                      popupTitle="Search and Select: #{bindings.SalesStage.hints.label}"
+                                                                      id="salesStageId"
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov2}"
+                                                                      value="#{bindings.SalesStage.inputValue}"
+                                                                      model="#{bindings.SalesStage.listOfValuesModel}"
+                                                                      required="#{bindings.SalesStage.hints.mandatory}"
+                                                                      columns="16"
+                                                                      shortDesc="#{bindings.SalesStage.hints.tooltip}">
+                                            <f:validator binding="#{bindings.SalesStage.validator}"/>
+                                        </af:inputComboboxListOfValues>
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl14"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl14}">
                                         <af:inputComboboxListOfValues label="Sale Channel"
                                                                       popupTitle="Search and Result Dialog" id="iclov3"
-                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov3}"/>
+                                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.iclov3}"
+                                                                      columns="15"/>
                                     </af:panelGroupLayout>
                                     <af:spacer width="10" height="10" id="s1"
                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.s1}"/>
                                 </af:panelGroupLayout>
+                                <f:facet name="toolbar">
+                                    <af:button actionListener="#{bindings.Commit.execute}"
+                                               disabled="#{!bindings.Commit.enabled}" id="b13"
+                                               binding="#{backingBeanScope.backing_viewoppertunity_ar.b13}"
+                                               icon="#{resource['images:save.png']}"/>
+                                </f:facet>
                             </af:panelBox>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="77%" marginEnd="5px" id="gc2"
