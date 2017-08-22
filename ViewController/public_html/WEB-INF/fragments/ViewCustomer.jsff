@@ -120,7 +120,9 @@
                                                action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
                                     <af:button id="b3"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b3}"
-                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"
+                                               actionListener="#{bindings.Delete1.execute}"
+                                               disabled="#{!bindings.Delete1.enabled}"/>
                                     <af:quickQuery label="Search" searchDesc="Search" id="qq1"
                                                    value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
                                                    model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
@@ -142,7 +144,7 @@
                                               selectionListener="#{bindings.OppertunityOfCustomer.collectionModel.makeCurrent}"
                                               rowSelection="single"
                                               fetchSize="#{bindings.OppertunityOfCustomer.rangeSize}"
-                                              partialTriggers="::qq1" id="t5"
+                                              partialTriggers="::qq1 ::b3" id="t5"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
                                               filterVisible="false">
                                         <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityName.label}"
@@ -472,7 +474,9 @@
                                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                     <af:button id="b16"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b16}"
-                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"
+                                               actionListener="#{bindings.Delete.execute}"
+                                               disabled="#{!bindings.Delete.enabled}"/>
                                     <af:quickQuery label="Search" searchDesc="Search" id="qq5"
                                                    value="#{bindings.ImplicitViewCriteriaQuery4.quickQueryDescriptor}"
                                                    model="#{bindings.ImplicitViewCriteriaQuery4.queryModel}"
@@ -493,7 +497,7 @@
                                               selectedRowKeys="#{bindings.Appointments.collectionModel.selectedRow}"
                                               selectionListener="#{bindings.Appointments.collectionModel.makeCurrent}"
                                               rowSelection="single" fetchSize="#{bindings.Appointments.rangeSize}"
-                                              partialTriggers="::qq5" id="t10"
+                                              partialTriggers="::qq5 ::b16" id="t10"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t10}">
                                         <af:column sortProperty="#{bindings.Appointments.hints.ActivityTitle.name}"
                                                    sortable="true"

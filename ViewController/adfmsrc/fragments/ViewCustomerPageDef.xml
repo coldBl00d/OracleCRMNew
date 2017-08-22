@@ -165,5 +165,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="AppointmentsIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="OppertunityOfCustomerIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
