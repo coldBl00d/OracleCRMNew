@@ -1,6 +1,12 @@
 package view.backing.WEBINF.flows;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
@@ -21,6 +27,11 @@ import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.jbo.Row;
+import oracle.jbo.ViewObject;
+
+import oracle.ui.pattern.dynamicShell.TabContext;
 
 
 public class ViewCustomer {
@@ -530,4 +541,66 @@ public class ViewCustomer {
     public RichTable getT9() {
         return t9;
     }
+    
+    public String action(){
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
+        ViewObject vobj = iterator.getViewObject();
+        Row row = vobj.getCurrentRow();
+        String tabHeading = (String)row.getAttribute("OpportunityName");
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+        m.put("PointerId", row.getAttribute("OpportunityId"));
+        //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyStringValue());
+        System.out.println("Customer id i got:"+row.getAttribute("OpportunityId"));
+        System.out.println(tabHeading);
+        viewCustomerActivity(m, tabHeading);
+        System.out.println("Done");
+        return null;
+    }
+    
+    public void viewCustomerActivity(Map<String, Object> params, String companyName) 
+      { 
+        /** 
+        * Example method when called repeatedly, will open another instance as 
+        * oppose to selecting a previously opened tab instance. Note the boolean 
+        * to create another tab instance is set to true. 
+        */ 
+        System.out.println("Calling activity");
+        _launchActivity( 
+          companyName, 
+          "/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow",  
+          true, params); 
+      } 
+    
+    private void _launchActivity(String title, String taskflowId, boolean newTab, Map<String, Object> params) 
+    { 
+      try 
+      { 
+        if (newTab) 
+        { 
+            System.out.println("Calling new tab");
+          TabContext.getCurrentInstance().addTab( 
+            title, 
+            taskflowId, params); 
+        } 
+        else 
+        { 
+          TabContext.getCurrentInstance().addOrSelectTab( 
+            title, 
+            taskflowId, params); 
+        } 
+      } 
+      catch (TabContext.TabOverflowException toe) 
+      { 
+        // causes a dialog to be displayed to the user saying that there are 
+        // too many tabs open - the new tab will not be opened... 
+        toe.handleDefault();  
+      } 
+      
+      System.out.println("Exiting launch activity");
+      
+      
+    }
+    
 }

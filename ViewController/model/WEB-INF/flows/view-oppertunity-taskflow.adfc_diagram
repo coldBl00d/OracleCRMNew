@@ -2,4 +2,23 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">view-oppertunity_ar</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">401.43945</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view-oppertunity_ar&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">346.09766</property>
+      <property
+         name="page">/WEB-INF/fragments/view-oppertunity_ar.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>
