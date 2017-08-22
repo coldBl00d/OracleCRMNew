@@ -5,9 +5,6 @@ import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
-import oracle.adf.view.rich.component.rich.input.RichInputComboboxListOfValues;
-import oracle.adf.view.rich.component.rich.input.RichInputDate;
-import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
@@ -36,26 +33,6 @@ public class Viewoppertunity_ar {
     private RichImage i1;
     private RichPanelGroupLayout pgl3;
     private RichPanelBox pb1;
-    private RichPanelGroupLayout pgl6;
-    private RichInputText it1;
-    private RichPanelGroupLayout pgl4;
-    private RichInputText it2;
-    private RichPanelGroupLayout pgl5;
-    private RichInputText it3;
-    private RichPanelGroupLayout pgl7;
-    private RichInputText it4;
-    private RichPanelGroupLayout pgl8;
-    private RichInputText it5;
-    private RichPanelGroupLayout pgl9;
-    private RichInputText it6;
-    private RichPanelGroupLayout pgl11;
-    private RichInputText it8;
-    private RichPanelGroupLayout pgl12;
-    private RichInputComboboxListOfValues iclov1;
-    private RichPanelGroupLayout pgl13;
-    private RichInputComboboxListOfValues iclov2;
-    private RichPanelGroupLayout pgl14;
-    private RichInputComboboxListOfValues iclov3;
     private RichPanelTabbed pt1;
     private RichShowDetailItem tab4;
     private RichShowDetailItem tab3;
@@ -78,14 +55,11 @@ public class Viewoppertunity_ar {
     private RichButton b10;
     private RichButton b11;
     private RichButton b12;
-    private RichPanelGroupLayout pgl10;
-    private RichInputDate id1;
     private RichButton b13;
-    private RichInputText it7;
 
 
     public Viewoppertunity_ar(){
-       setRow();
+       //setRow();
        
     }
     
@@ -178,170 +152,6 @@ public class Viewoppertunity_ar {
         return pb1;
     }
 
-
-    public void setPgl6(RichPanelGroupLayout pgl6) {
-        this.pgl6 = pgl6;
-    }
-
-    public RichPanelGroupLayout getPgl6() {
-        return pgl6;
-    }
-
-
-    public void setIt1(RichInputText it1) {
-        this.it1 = it1;
-    }
-
-    public RichInputText getIt1() {
-        return it1;
-    }
-
-    public void setPgl4(RichPanelGroupLayout pgl4) {
-        this.pgl4 = pgl4;
-    }
-
-    public RichPanelGroupLayout getPgl4() {
-        return pgl4;
-    }
-
-    public void setIt2(RichInputText it2) {
-        this.it2 = it2;
-    }
-
-    public RichInputText getIt2() {
-        return it2;
-    }
-
-    public void setPgl5(RichPanelGroupLayout pgl5) {
-        this.pgl5 = pgl5;
-    }
-
-    public RichPanelGroupLayout getPgl5() {
-        return pgl5;
-    }
-
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
-    }
-
-    public RichInputText getIt3() {
-        return it3;
-    }
-
-    public void setPgl7(RichPanelGroupLayout pgl7) {
-        this.pgl7 = pgl7;
-    }
-
-    public RichPanelGroupLayout getPgl7() {
-        return pgl7;
-    }
-
-    public void setIt4(RichInputText it4) {
-        this.it4 = it4;
-    }
-
-    public RichInputText getIt4() {
-        return it4;
-    }
-
-    public void setPgl8(RichPanelGroupLayout pgl8) {
-        this.pgl8 = pgl8;
-    }
-
-    public RichPanelGroupLayout getPgl8() {
-        return pgl8;
-    }
-
-    public void setIt5(RichInputText it5) {
-        this.it5 = it5;
-    }
-
-    public RichInputText getIt5() {
-        return it5;
-    }
-
-    public void setPgl9(RichPanelGroupLayout pgl9) {
-        this.pgl9 = pgl9;
-    }
-
-    public RichPanelGroupLayout getPgl9() {
-        return pgl9;
-    }
-
-    public void setIt6(RichInputText it6) {
-        this.it6 = it6;
-    }
-
-    public RichInputText getIt6() {
-        return it6;
-    }
-
-
-    public void setPgl11(RichPanelGroupLayout pgl11) {
-        this.pgl11 = pgl11;
-    }
-
-    public RichPanelGroupLayout getPgl11() {
-        return pgl11;
-    }
-
-    public void setIt8(RichInputText it8) {
-        this.it8 = it8;
-    }
-
-    public RichInputText getIt8() {
-        return it8;
-    }
-
-    public void setPgl12(RichPanelGroupLayout pgl12) {
-        this.pgl12 = pgl12;
-    }
-
-    public RichPanelGroupLayout getPgl12() {
-        return pgl12;
-    }
-
-
-    public void setIclov1(RichInputComboboxListOfValues iclov1) {
-        this.iclov1 = iclov1;
-    }
-
-    public RichInputComboboxListOfValues getIclov1() {
-        return iclov1;
-    }
-
-
-    public void setPgl13(RichPanelGroupLayout pgl13) {
-        this.pgl13 = pgl13;
-    }
-
-    public RichPanelGroupLayout getPgl13() {
-        return pgl13;
-    }
-
-    public void setIclov2(RichInputComboboxListOfValues iclov2) {
-        this.iclov2 = iclov2;
-    }
-
-    public RichInputComboboxListOfValues getIclov2() {
-        return iclov2;
-    }
-
-    public void setPgl14(RichPanelGroupLayout pgl14) {
-        this.pgl14 = pgl14;
-    }
-
-    public RichPanelGroupLayout getPgl14() {
-        return pgl14;
-    }
-
-    public void setIclov3(RichInputComboboxListOfValues iclov3) {
-        this.iclov3 = iclov3;
-    }
-
-    public RichInputComboboxListOfValues getIclov3() {
-        return iclov3;
-    }
 
     public void setPt1(RichPanelTabbed pt1) {
         this.pt1 = pt1;
@@ -519,22 +329,6 @@ public class Viewoppertunity_ar {
         return b12;
     }
 
-    public void setPgl10(RichPanelGroupLayout pgl10) {
-        this.pgl10 = pgl10;
-    }
-
-    public RichPanelGroupLayout getPgl10() {
-        return pgl10;
-    }
-
-
-    public void setId1(RichInputDate id1) {
-        this.id1 = id1;
-    }
-
-    public RichInputDate getId1() {
-        return id1;
-    }
 
     public void setB13(RichButton b13) {
         this.b13 = b13;
@@ -544,11 +338,5 @@ public class Viewoppertunity_ar {
         return b13;
     }
 
-    public void setIt7(RichInputText it7) {
-        this.it7 = it7;
-    }
 
-    public RichInputText getIt7() {
-        return it7;
-    }
 }

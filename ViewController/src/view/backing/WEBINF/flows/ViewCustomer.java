@@ -494,19 +494,21 @@ public class ViewCustomer {
     }
     
     public String goOpportunity(){
-        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
-        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("oppertunityId"));
-        //ViewObject vobj = iterator.getViewObject();
-        ViewObject obj = iterator.getViewObject();
-        Row row1 = iterator.getCurrentRow();
-        String tabHeading = (String)row1.getAttribute("OpportunityName");
+//        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+//        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
+//        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("oppertunityId"));
+//        //ViewObject vobj = iterator.getViewObject();
+//        ViewObject obj = iterator.getViewObject();
+//        Row row1 = iterator.getCurrentRow();
+        String tabHeading = "temp";
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
-        m.put("PointerId", row1.getAttribute("OpportunityId"));
+        System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
+        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+        m.put("PointerId", value);
         //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyStringValue());
-        System.out.println("Oppertunity id i got:"+row1.getAttribute("OpportunityId"));
-        System.out.println(tabHeading);
+        //System.out.println("Oppertunity id i got:"+row1.getAttribute("OpportunityId"));
+        //System.out.println(tabHeading);
         viewOppertunityActivity(m, tabHeading);
         System.out.println("Done");
         return null;

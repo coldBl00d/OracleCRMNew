@@ -112,6 +112,7 @@
           <Item Value="BudgetAmount"/>
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
+          <Item Value="OpportunityId"/>
         </AttrNames>
         <Accessors>
           <Item Value="ContactsUVO_ar"/>

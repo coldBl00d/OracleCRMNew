@@ -149,7 +149,11 @@
                                               filterVisible="false">
                                         <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityName.label}"
                                                    id="c1">
-                                            <af:outputText value="#{row.OpportunityName}" id="ot1"/>
+                                            <af:link text="#{row.OpportunityName}" id="l4"
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}">
+                                                <af:setPropertyListener from="#{row.OpportunityId}"
+                                                                        to="#{pageFlowScope.PointerId}" type="action"/>
+                                            </af:link>
                                         </af:column>
                                         <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityWinProb.label}"
                                                    id="c2">
@@ -212,14 +216,27 @@
                                                            shortDesc="#{bindings.OppertunityOfCustomer.hints.RiskLevel.tooltip}"
                                                            id="ot7"/>
                                         </af:column>
-                                        <af:column headerText="Contact"
-                                                   id="c12">
-                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}" id="l2"/>
+                                        <af:column headerText="Contact" id="c12">
+                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
+                                                     id="l2"/>
                                         </af:column>
-                                        <af:column headerText="Created By"
-                                                   id="c13">
+                                        <af:column headerText="Created By" id="c13">
                                             <af:link text="#{row.UserUVO_ar.bindings.FirstName.inputValue}" id="l3"
                                                      disabled="#{securityContext.userInRole['Manager']}"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityId.label}"
+                                                   id="c31" rendered="false">
+                                            <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
+                                                          label="#{bindings.OppertunityOfCustomer.hints.OpportunityId.label}"
+                                                          required="#{bindings.OppertunityOfCustomer.hints.OpportunityId.mandatory}"
+                                                          columns="#{bindings.OppertunityOfCustomer.hints.OpportunityId.displayWidth}"
+                                                          maximumLength="#{bindings.OppertunityOfCustomer.hints.OpportunityId.precision}"
+                                                          shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityId.tooltip}"
+                                                          id="it1">
+                                                <f:validator binding="#{row.bindings.OpportunityId.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityId.format}"/>
+                                            </af:inputText>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
