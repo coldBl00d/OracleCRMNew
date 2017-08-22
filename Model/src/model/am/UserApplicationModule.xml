@@ -17,12 +17,6 @@
     Name="Customer"
     ViewObjectName="model.uvo.CustomerListView_arVO"/>
   <ViewUsage
-    Name="OppertunitiesOfCustomer"
-    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
-  <ViewUsage
-    Name="PrimaryContactDetail"
-    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
-  <ViewUsage
     Name="CustomerParent"
     ViewObjectName="model.uvo.CustomerListView_arVO"/>
   <ViewUsage
@@ -55,18 +49,12 @@
   <ViewUsage
     Name="UserUVO_arVO1"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
-  <ViewLinkUsage
-    Name="CustomerToOppertunityViewLink_ar1"
-    ViewLinkObjectName="model.vl.CustomerToOppertunityViewLink_ar"
-    SrcViewUsageName="model.am.UserApplicationModule.Customer"
-    DstViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="OppertunityToPrimaryContactsVL_ar1"
-    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
-    SrcViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
-    DstViewUsageName="model.am.UserApplicationModule.PrimaryContactDetail"
-    Reversed="false"/>
+  <ViewUsage
+    Name="OppertunitiesOfCustomer"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="ContactsUVO_arVO2"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -114,6 +102,18 @@
     ViewLinkObjectName="model.vl.NotesToCreator"
     SrcViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
     DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToOppertunityViewLink_ar2"
+    ViewLinkObjectName="model.vl.CustomerToOppertunityViewLink_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunitiesOfCustomer"
+    DstViewUsageName="model.am.UserApplicationModule.ContactsUVO_arVO2"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

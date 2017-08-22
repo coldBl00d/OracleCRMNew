@@ -81,6 +81,7 @@ public class Viewoppertunity_ar {
     private RichPanelGroupLayout pgl10;
     private RichInputDate id1;
     private RichButton b13;
+    private RichInputText it7;
 
 
     public Viewoppertunity_ar(){
@@ -541,5 +542,13 @@ public class Viewoppertunity_ar {
 
     public RichButton getB13() {
         return b13;
+    }
+
+    public void setIt7(RichInputText it7) {
+        this.it7 = it7;
+    }
+
+    public RichInputText getIt7() {
+        return it7;
     }
 }

@@ -16,6 +16,15 @@
                                 <af:image source="#{resource['images:Oppertunity.png']}" shortDesc="Oppertunity" id="i1"
                                           binding="#{backingBeanScope.backing_viewoppertunity_ar.i1}"
                                           inlineStyle="width:104px;"/>
+                                <af:inputText value="#{bindings.OpportunityName1.inputValue}"
+                                              label="#{bindings.OpportunityName1.hints.label}"
+                                              required="#{bindings.OpportunityName1.hints.mandatory}"
+                                              columns="#{bindings.OpportunityName1.hints.displayWidth}"
+                                              maximumLength="#{bindings.OpportunityName1.hints.precision}"
+                                              shortDesc="#{bindings.OpportunityName1.hints.tooltip}" id="it7"
+                                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it7}">
+                                    <f:validator binding="#{bindings.OpportunityName1.validator}"/>
+                                </af:inputText>
                                 <af:panelGroupLayout id="pgl3"
                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl3}"
                                                      layout="vertical">

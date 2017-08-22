@@ -80,10 +80,16 @@
                                               rowBandingInterval="0"
                                               fetchSize="#{bindings.OppertunitiesOfCustomer.rangeSize}" id="t5"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
-                                              rowSelection="single">
+                                              rowSelection="single"
+                                              selectedRowKeys="#{bindings.OppertunitiesOfCustomer.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.OppertunitiesOfCustomer.collectionModel.makeCurrent}">
                                         <af:column id="c12" headerText="Name">
-                                            <af:link text="#{row.OpportunityName}" id="l2"
-                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
+                                            <af:link text="#{row.BudgetAmount}" id="l2"
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}">
+                                                <af:setPropertyListener from="#{row.OpportunityId}"
+                                                                        to="#{pageFlowScope.opportunityId}"
+                                                                        type="action"/>
+                                            </af:link>
                                         </af:column>
                                         <af:column id="c1" headerText="Win Probability">
                                             <af:outputText value="#{row.OpportunityWinProb}"
@@ -136,12 +142,26 @@
                                                            id="ot13"/>
                                         </af:column>
                                         <af:column id="c2" headerText="Contact">
-                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}" id="l3"/>
+                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
+                                                     id="l3"/>
                                         </af:column>
                                         <af:column id="c13" headerText="Creator">
                                             <af:link text="#{row.AKUsersU.bindings.FirstName.inputValue}" id="l4"/>
                                         </af:column>
-                                        <af:column id="c28"/>
+                                        <af:column headerText="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.label}"
+                                                   id="c28" rendered="false">
+                                            <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
+                                                          label="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.label}"
+                                                          required="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.mandatory}"
+                                                          columns="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.displayWidth}"
+                                                          maximumLength="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.precision}"
+                                                          shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.tooltip}"
+                                                          id="it1">
+                                                <f:validator binding="#{row.bindings.OpportunityId.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.format}"/>
+                                            </af:inputText>
+                                        </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
@@ -352,8 +372,6 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
-                        <af:link text="link 2" id="l8"
-                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l8}"/>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

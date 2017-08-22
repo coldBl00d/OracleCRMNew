@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="CustomerListIterator"/>
+              id="CustomerListIterator" Refresh="ifNeeded"/>
     <iterator Binds="CustomerParent" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CustomerParentIterator"/>
     <iterator Binds="PrimaryAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
@@ -15,7 +15,7 @@
     <searchRegion Binds="ContactsUVO_arVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContactsUVO_arVO1Query"/>
     <iterator Binds="OppertunitiesOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="OppertunitiesOfCustomerIterator"/>
+              id="OppertunitiesOfCustomerIterator" Refresh="ifNeeded"/>
     <iterator Binds="TaskUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="TaskUVO_arVO1Iterator"/>
     <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>
@@ -68,7 +68,6 @@
     <tree IterBinding="OppertunitiesOfCustomerIterator" id="OppertunitiesOfCustomer">
       <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunitiesOfCustomer0">
         <AttrNames>
-          <Item Value="OpportunityName"/>
           <Item Value="OpportunityWinProb"/>
           <Item Value="OpportunityCloseDate"/>
           <Item Value="SalesStage"/>
@@ -76,6 +75,7 @@
           <Item Value="BudgetAmount"/>
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
+          <Item Value="OpportunityId"/>
         </AttrNames>
         <Accessors>
           <Item Value="AKUsersU"/>
