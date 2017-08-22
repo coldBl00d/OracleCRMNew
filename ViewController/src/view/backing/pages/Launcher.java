@@ -18,7 +18,7 @@ public class Launcher {
             _launchActivity( 
               "Customer Detail", 
               "/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow",  
-              true); 
+              false); 
             
             return null;
             

@@ -41,14 +41,28 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.OpportunityWinProb_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="OpportunityCloseDate"
     ColumnName="OPPORTUNITY_CLOSE_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.OpportunityCloseDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="PrimaryContactId"
     Precision="18"
@@ -69,6 +83,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.SalesStage_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SalesMethod"
@@ -81,6 +101,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.SalesMethod_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Channel"
@@ -93,6 +119,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.Channel_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Revenue"
@@ -111,7 +143,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.BestCaseRevenue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="WorstCaseRevenue"
     Precision="18"
@@ -120,7 +159,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.WorstCaseRevenue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="BudgetAmount"
     Precision="18"
@@ -129,7 +175,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.BudgetAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EstimatedDuration"
     Precision="18"
@@ -138,7 +191,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.EstimatedDuration_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="RiskLevel"
     Precision="255"
@@ -150,6 +210,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.RiskLevel_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DecisionLevel"
@@ -162,6 +228,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.DecisionLevel_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatorId"
@@ -183,6 +255,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.OpportunityName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="CustomerEO_ar"
@@ -192,17 +270,17 @@
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <AccessorAttribute
-    Name="AKUsers"
-    Association="model.assoc.OppertunityToCreatorAssoc_ar"
-    AssociationEnd="model.assoc.OppertunityToCreatorAssoc_ar.AKUsers"
-    AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc_ar.OppertunityEO_ar"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
-  <AccessorAttribute
     Name="ContactsEO_ar"
     Association="model.assoc.OppertunityToPrimaryContact_assoc"
     AssociationEnd="model.assoc.OppertunityToPrimaryContact_assoc.ContactsEO_ar"
     AssociationOtherEnd="model.assoc.OppertunityToPrimaryContact_assoc.OppertunityEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UserEO_ar"
+    Association="model.assoc.OppertunityToCreatorAssoc"
+    AssociationEnd="model.assoc.OppertunityToCreatorAssoc.UserEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc.OppertunityEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
@@ -215,4 +293,8 @@
       <Item Value="model.eo.OppertunityEO_ar.OpportunityId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

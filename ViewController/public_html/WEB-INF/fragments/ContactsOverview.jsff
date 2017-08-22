@@ -34,7 +34,7 @@
                               selectionListener="#{bindings.ContactsUVO_arVO3.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ContactsUVO_arVO3.rangeSize}"
                               partialTriggers="::qryId1" id="t2"
-                              binding="#{backingBeanScope.backing_ContactsOverview.t2}">
+                              binding="#{backingBeanScope.backing_ContactsOverview.t2}" columnStretching="last">
                         <af:column sortProperty="#{bindings.ContactsUVO_arVO3.hints.ContactName.name}" sortable="true"
                                    headerText="Name" id="c1">
                             <af:outputText value="#{row.ContactName}"

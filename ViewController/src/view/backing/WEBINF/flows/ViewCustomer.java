@@ -10,6 +10,7 @@ import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
@@ -25,7 +26,6 @@ import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
-import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.jbo.Row;
@@ -41,8 +41,6 @@ public class ViewCustomer {
     private RichGridRow gr1;
     private RichGridCell gc1;
     private RichImage i1;
-    private RichOutputText ot1;
-    private RichOutputText ot2;
     private RichPanelGroupLayout pgl2;
     private RichLink l1;
     private RichGridCell gc5;
@@ -52,12 +50,8 @@ public class ViewCustomer {
     private RichShowDetailItem tab2;
     private RichShowDetailItem tab3;
     private RichShowDetailItem tab4;
-    private RichOutputText ot3;
-    private RichOutputText ot4;
-    private RichOutputText ot5;
     private RichSpacer s1;
     private RichSpacer s2;
-    private RichOutputText ot6;
     private RichPanelBox pb1;
     private RichToolbar t1;
     private RichButton b1;
@@ -82,15 +76,32 @@ public class ViewCustomer {
     private RichButton b10;
     private RichButton b11;
     private RichButton b12;
-    private RichPanelGroupLayout pgl5;
     private RichPanelGroupLayout pgl6;
     private RichOutputLabel ol1;
     private RichOutputLabel ol2;
     private RichPanelGroupLayout pgl7;
     private RichTable t8;
-    private RichTable t5;
-    private RichTable t7;
     private RichTable t9;
+    private RichInputText it2;
+    private RichInputText it3;
+    private RichSpacer s4;
+    private RichInputText it4;
+    private RichInputText it5;
+    private RichInputText it6;
+    private RichInputText it7;
+    private RichButton b13;
+    private RichOutputLabel ol3;
+    private RichPanelGroupLayout pgl9;
+    private RichQuickQuery qq1;
+    private RichCommandLink cl2;
+    private RichTable t5;
+    private RichQuickQuery qq2;
+    private RichCommandLink cl3;
+    private RichQuickQuery qq3;
+    private RichCommandLink cl4;
+    private RichQuickQuery qq4;
+    private RichCommandLink cl5;
+    private RichTable t7;
 
     public ViewCustomer(){
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
@@ -129,22 +140,6 @@ public class ViewCustomer {
         return i1;
     }
 
-
-    public void setOt1(RichOutputText ot1) {
-        this.ot1 = ot1;
-    }
-
-    public RichOutputText getOt1() {
-        return ot1;
-    }
-
-    public void setOt2(RichOutputText ot2) {
-        this.ot2 = ot2;
-    }
-
-    public RichOutputText getOt2() {
-        return ot2;
-    }
 
     public void setPgl2(RichPanelGroupLayout pgl2) {
         this.pgl2 = pgl2;
@@ -222,29 +217,6 @@ public class ViewCustomer {
         return tab4;
     }
 
-    public void setOt3(RichOutputText ot3) {
-        this.ot3 = ot3;
-    }
-
-    public RichOutputText getOt3() {
-        return ot3;
-    }
-
-    public void setOt4(RichOutputText ot4) {
-        this.ot4 = ot4;
-    }
-
-    public RichOutputText getOt4() {
-        return ot4;
-    }
-
-    public void setOt5(RichOutputText ot5) {
-        this.ot5 = ot5;
-    }
-
-    public RichOutputText getOt5() {
-        return ot5;
-    }
 
     public void setS1(RichSpacer s1) {
         this.s1 = s1;
@@ -262,13 +234,6 @@ public class ViewCustomer {
         return s2;
     }
 
-    public void setOt6(RichOutputText ot6) {
-        this.ot6 = ot6;
-    }
-
-    public RichOutputText getOt6() {
-        return ot6;
-    }
 
     public void setPb1(RichPanelBox pb1) {
         this.pb1 = pb1;
@@ -467,13 +432,6 @@ public class ViewCustomer {
         return b12;
     }
 
-    public void setPgl5(RichPanelGroupLayout pgl5) {
-        this.pgl5 = pgl5;
-    }
-
-    public RichPanelGroupLayout getPgl5() {
-        return pgl5;
-    }
 
     public void setPgl6(RichPanelGroupLayout pgl6) {
         this.pgl6 = pgl6;
@@ -517,22 +475,6 @@ public class ViewCustomer {
         return t8;
     }
 
-    public void setT5(RichTable t5) {
-        this.t5 = t5;
-    }
-
-    public RichTable getT5() {
-        return t5;
-    }
-
-
-    public void setT7(RichTable t7) {
-        this.t7 = t7;
-    }
-
-    public RichTable getT7() {
-        return t7;
-    }
 
     public void setT9(RichTable t9) {
         this.t9 = t9;
@@ -606,4 +548,168 @@ public class ViewCustomer {
     }
 
 
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setS4(RichSpacer s4) {
+        this.s4 = s4;
+    }
+
+    public RichSpacer getS4() {
+        return s4;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setIt7(RichInputText it7) {
+        this.it7 = it7;
+    }
+
+    public RichInputText getIt7() {
+        return it7;
+    }
+
+    public void setB13(RichButton b13) {
+        this.b13 = b13;
+    }
+
+    public RichButton getB13() {
+        return b13;
+    }
+
+    public void setOl3(RichOutputLabel ol3) {
+        this.ol3 = ol3;
+    }
+
+    public RichOutputLabel getOl3() {
+        return ol3;
+    }
+
+
+    public void setPgl9(RichPanelGroupLayout pgl9) {
+        this.pgl9 = pgl9;
+    }
+
+    public RichPanelGroupLayout getPgl9() {
+        return pgl9;
+    }
+
+
+    public void setQq1(RichQuickQuery qq1) {
+        this.qq1 = qq1;
+    }
+
+    public RichQuickQuery getQq1() {
+        return qq1;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+
+    public void setT5(RichTable t5) {
+        this.t5 = t5;
+    }
+
+    public RichTable getT5() {
+        return t5;
+    }
+
+
+    public void setQq2(RichQuickQuery qq2) {
+        this.qq2 = qq2;
+    }
+
+    public RichQuickQuery getQq2() {
+        return qq2;
+    }
+
+    public void setCl3(RichCommandLink cl3) {
+        this.cl3 = cl3;
+    }
+
+    public RichCommandLink getCl3() {
+        return cl3;
+    }
+
+
+    public void setQq3(RichQuickQuery qq3) {
+        this.qq3 = qq3;
+    }
+
+    public RichQuickQuery getQq3() {
+        return qq3;
+    }
+
+    public void setCl4(RichCommandLink cl4) {
+        this.cl4 = cl4;
+    }
+
+    public RichCommandLink getCl4() {
+        return cl4;
+    }
+
+
+    public void setQq4(RichQuickQuery qq4) {
+        this.qq4 = qq4;
+    }
+
+    public RichQuickQuery getQq4() {
+        return qq4;
+    }
+
+    public void setCl5(RichCommandLink cl5) {
+        this.cl5 = cl5;
+    }
+
+    public RichCommandLink getCl5() {
+        return cl5;
+    }
+
+    public void setT7(RichTable t7) {
+        this.t7 = t7;
+    }
+
+    public RichTable getT7() {
+        return t7;
+    }
 }

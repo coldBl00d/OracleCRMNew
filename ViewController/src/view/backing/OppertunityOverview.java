@@ -20,8 +20,9 @@ public class OppertunityOverview {
     private RichSpacer s2;
     private RichSpacer s3;
     private RichPanelGroupLayout pgl2;
-    private RichQuickQuery qryId1;
-    private RichCommandLink cl1;
+    private RichPanelGroupLayout pgl3;
+    private RichQuickQuery qryId2;
+    private RichCommandLink cl2;
     private RichTable t2;
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
@@ -105,20 +106,29 @@ public class OppertunityOverview {
     }
 
 
-    public void setQryId1(RichQuickQuery qryId1) {
-        this.qryId1 = qryId1;
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
     }
 
-    public RichQuickQuery getQryId1() {
-        return qryId1;
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
     }
 
-    public void setCl1(RichCommandLink cl1) {
-        this.cl1 = cl1;
+
+    public void setQryId2(RichQuickQuery qryId2) {
+        this.qryId2 = qryId2;
     }
 
-    public RichCommandLink getCl1() {
-        return cl1;
+    public RichQuickQuery getQryId2() {
+        return qryId2;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
     }
 
     public void setT2(RichTable t2) {

@@ -7,7 +7,7 @@
     <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="OppertunityForOverviewIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="OppertunityForOverviewIterator" id="ImplicitViewCriteriaQuery"/>
+                  Binds="OppertunityForOverviewIterator" id="ImplicitViewCriteriaQuery1"/>
   </executables>
   <bindings>
     <tree IterBinding="OppertunityForOverviewIterator" id="OppertunityForOverview">
@@ -23,6 +23,33 @@
           <Item Value="BudgetAmount"/>
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OppertunityForOverviewIterator" id="OppertunityForOverview1">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityForOverview10">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="OpportunityCloseDate"/>
+          <Item Value="SalesStage"/>
+          <Item Value="Revenue"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ContactsUVO_ar"/>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
+        <AttrNames>
+          <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

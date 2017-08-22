@@ -28,55 +28,108 @@
     PrecisionRule="true"
     EntityAttrName="AccountName"
     EntityUsage="CustomerEO_ar"
-    AliasName="ACCOUNT_NAME"/>
+    AliasName="ACCOUNT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.AccountName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountAddress"
     PrecisionRule="true"
     EntityAttrName="AccountAddress"
     EntityUsage="CustomerEO_ar"
-    AliasName="ACCOUNT_ADDRESS"/>
+    AliasName="ACCOUNT_ADDRESS"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.AccountAddress_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountUrl"
     PrecisionRule="true"
     EntityAttrName="AccountUrl"
     EntityUsage="CustomerEO_ar"
-    AliasName="ACCOUNT_URL"/>
+    AliasName="ACCOUNT_URL"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.AccountUrl_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ParentAccountId"
     PrecisionRule="true"
     EntityAttrName="ParentAccountId"
     EntityUsage="CustomerEO_ar"
-    AliasName="PARENT_ACCOUNT_ID"/>
+    AliasName="PARENT_ACCOUNT_ID"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.ParentAccountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ceo"
     PrecisionRule="true"
     EntityAttrName="Ceo"
     EntityUsage="CustomerEO_ar"
-    AliasName="CEO"/>
+    AliasName="CEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.Ceo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EmpCount"
     PrecisionRule="true"
     EntityAttrName="EmpCount"
     EntityUsage="CustomerEO_ar"
-    AliasName="EMP_COUNT"/>
+    AliasName="EMP_COUNT"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CustomerListView_arVO.EmpCount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PrimaryAddress"
     PrecisionRule="true"
     EntityAttrName="PrimaryAddress"
     EntityUsage="CustomerEO_ar"
-    AliasName="PRIMARY_ADDRESS"/>
+    AliasName="PRIMARY_ADDRESS"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="ShippingAddress"
     PrecisionRule="true"
     EntityAttrName="ShippingAddress"
     EntityUsage="CustomerEO_ar"
-    AliasName="SHIPPING_ADDRESS"/>
+    AliasName="SHIPPING_ADDRESS"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="PicId"
     PrecisionRule="true"
     EntityAttrName="PicId"
     EntityUsage="CustomerEO_ar"
-    AliasName="PIC_ID"/>
+    AliasName="PIC_ID"
+    IsQueriable="false"/>
   <ViewLinkAccessor
     Name="OppertunityUVO_ar"
     ViewLink="model.vl.CustomerToOppertunityViewLink_ar"
@@ -113,4 +166,8 @@
     ViewLink="model.vl.CustomerToNoteVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

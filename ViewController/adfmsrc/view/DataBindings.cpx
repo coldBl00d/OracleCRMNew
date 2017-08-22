@@ -20,6 +20,7 @@
           usageId="view_view_customer_taskflow_view_customer_taskflow_SetCurrentRowWithKey1PageDef"/>
     <page path="/WEB-INF/fragments/ViewCustomer.jsff" usageId="view_ViewCustomerPageDef"/>
     <page path="/WEB-INF/fragments/view-oppertunity_ar.jsff" usageId="view_view_oppertunity_arPageDef"/>
+    <page path="/WEB-INF/fragments/OppertunityOverview_ar.jsff" usageId="view_OppertunityOverview_arPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -35,6 +36,7 @@
           path="flows.view_customer_taskflow_view_customer_taskflow_SetCurrentRowWithKey1PageDef"/>
     <page id="view_ViewCustomerPageDef" path="fragments.ViewCustomerPageDef"/>
     <page id="view_view_oppertunity_arPageDef" path="fragments.view_oppertunity_arPageDef"/>
+    <page id="view_OppertunityOverview_arPageDef" path="fragments.OppertunityOverview_arPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

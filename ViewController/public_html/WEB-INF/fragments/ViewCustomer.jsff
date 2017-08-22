@@ -20,36 +20,84 @@
                                       inlineStyle="width:104px;"/>
                             <af:panelGroupLayout id="pgl2"
                                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
-                                                 layout="vertical">
-                                <af:outputText value="#{bindings.AccountName.inputValue}" id="ot1"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot1}"
-                                               inlineStyle="font-size:xx-large; font-weight:bolder;"/>
-                                <af:outputText value="#{ bindings.AccountName1.inputValue}" id="ot6"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot6}"
-                                               inlineStyle="font-size:large; font-weight:bolder;"/>
+                                                 layout="scroll">
+                                <af:inputText value="#{bindings.AccountName.inputValue}" simple="true"
+                                              required="#{bindings.AccountName.hints.mandatory}"
+                                              columns="#{bindings.AccountName.hints.displayWidth}"
+                                              maximumLength="#{bindings.AccountName.hints.precision}"
+                                              shortDesc="#{bindings.AccountName.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it2}"
+                                              inlineStyle="font-weight:bolder; font-size:xx-large;" editable="onAccess">
+                                    <f:validator binding="#{bindings.AccountName.validator}"/>
+                                </af:inputText>
                                 <af:spacer width="10" height="10" id="s3"
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s3}"/>
+                                <af:outputLabel value="Parent Company" id="ol3"
+                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol3}"/>
+                                <af:inputText value="#{bindings.AccountName1.inputValue}" simple="true"
+                                              required="#{bindings.AccountName1.hints.mandatory}"
+                                              columns="#{bindings.AccountName1.hints.displayWidth}"
+                                              maximumLength="#{bindings.AccountName1.hints.precision}"
+                                              shortDesc="#{bindings.AccountName1.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it3}"
+                                              inlineStyle="font-weight:bold; font-size:large;" editable="onAccess">
+                                    <f:validator binding="#{bindings.AccountName1.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s4"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s4}"/>
                                 <af:outputLabel value="C.E.O" id="ol2"
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol2}"/>
-                                <af:outputText value="#{bindings.Ceo.inputValue}" id="ot2"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot2}"
-                                               inlineStyle="font-size:large; font-weight:bold;"/>
+                                <af:inputText value="#{bindings.Ceo.inputValue}" simple="true"
+                                              required="#{bindings.Ceo.hints.mandatory}"
+                                              columns="#{bindings.Ceo.hints.displayWidth}"
+                                              maximumLength="#{bindings.Ceo.hints.precision}"
+                                              shortDesc="#{bindings.Ceo.hints.tooltip}" id="it4"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it4}"
+                                              inlineStyle="font-weight:bold;" editable="onAccess">
+                                    <f:validator binding="#{bindings.Ceo.validator}"/>
+                                </af:inputText>
                                 <af:spacer width="10" height="10" id="s1"
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
                                 <af:outputLabel value="Primary Address" id="ol1"
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol1}"/>
-                                <af:outputText value="#{bindings.AddressLine1.inputValue}" id="ot3"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot3}"/>
-                                <af:outputText value="#{bindings.AddressLine2.inputValue}" id="ot4"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot4}"/>
-                                <af:outputText value="#{bindings.AddressLine3.inputValue}" id="ot5"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot5}"/>
+                                <af:inputText value="#{bindings.AddressLine1.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine1.hints.mandatory}"
+                                              columns="30"
+                                              maximumLength="#{bindings.AddressLine1.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it5"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it5}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AddressLine2.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine2.hints.mandatory}"
+                                              columns="30"
+                                              maximumLength="#{bindings.AddressLine2.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it6"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it6}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AddressLine3.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine3.hints.mandatory}"
+                                              columns="30"
+                                              maximumLength="#{bindings.AddressLine3.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine3.hints.tooltip}" id="it7"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it7}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine3.validator}"/>
+                                </af:inputText>
                                 <af:spacer width="10" height="10" id="s2"
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
                             </af:panelGroupLayout>
                             <af:link text="Customer Home Page" id="l1"
                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"
                                      destination="#{bindings.AccountUrl.inputValue}"/>
+                            <f:facet name="toolbar">
+                                <af:button actionListener="#{bindings.Commit.execute}" id="b13"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b13}"
+                                           icon="#{resource['images:save.png']}"/>
+                            </f:facet>
                         </af:panelBox>
                     </af:gridCell>
                     <af:gridCell id="gc5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.gc5}"
@@ -60,110 +108,124 @@
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab1}"
                                                disclosed="true"
                                                icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}">
+                                               depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
+                                               text="Oppertunity">
                                 <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t1}">
                                     <af:button id="b1"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b1}"
                                                icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                     <af:button id="b2"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b2}"
-                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"
+                                               action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
                                     <af:button id="b3"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b3}"
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qq1"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq1}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl2"
+                                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl2}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
                                 </af:toolbar>
-                                <af:panelGroupLayout layout="vertical" id="pgl5"
-                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl5}">
-                                    <af:table value="#{bindings.OppertunitiesOfCustomer.collectionModel}" var="row"
-                                              rows="#{bindings.OppertunitiesOfCustomer.rangeSize}"
-                                              emptyText="#{bindings.OppertunitiesOfCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                <af:panelGroupLayout layout="vertical" id="pgl9"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl9}">
+                                    <af:table value="#{bindings.OppertunityOfCustomer.collectionModel}" var="row"
+                                              rows="#{bindings.OppertunityOfCustomer.rangeSize}"
+                                              emptyText="#{bindings.OppertunityOfCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
-                                              fetchSize="#{bindings.OppertunitiesOfCustomer.rangeSize}" id="t5"
-                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
+                                              selectedRowKeys="#{bindings.OppertunityOfCustomer.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.OppertunityOfCustomer.collectionModel.makeCurrent}"
                                               rowSelection="single"
-                                              selectedRowKeys="#{bindings.OppertunitiesOfCustomer.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.OppertunitiesOfCustomer.collectionModel.makeCurrent}">
-                                        <af:column id="c12" headerText="Name">
-                                            <af:link text="#{row.BudgetAmount}" id="l2"
-                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
+                                              fetchSize="#{bindings.OppertunityOfCustomer.rangeSize}"
+                                              partialTriggers="::qq1" id="t5"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
+                                              filterVisible="false">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityName.label}"
+                                                   id="c1">
+                                            <af:outputText value="#{row.OpportunityName}" id="ot1"/>
                                         </af:column>
-                                        <af:column id="c1" headerText="Win Probability">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityWinProb.label}"
+                                                   id="c2">
                                             <af:outputText value="#{row.OpportunityWinProb}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityWinProb.tooltip}"
-                                                           id="ot7">
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityWinProb.tooltip}"
+                                                           id="ot2">
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityWinProb.format}"/>
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityWinProb.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column headerText="Close Date" id="c3">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityCloseDate.label}"
+                                                   id="c3">
                                             <af:outputText value="#{row.OpportunityCloseDate}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityCloseDate.tooltip}"
-                                                           id="ot9">
-                                                <af:convertDateTime pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityCloseDate.format}"/>
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityCloseDate.tooltip}"
+                                                           id="ot3">
+                                                <af:convertDateTime pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityCloseDate.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column headerText="Sales Stage" id="c4">
-                                            <af:outputText value="#{row.SalesStage}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.SalesStage.tooltip}"
-                                                           id="ot8"/>
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.SalesStage.label}"
+                                                   id="c4">
+                                            <af:selectOneChoice value="#{row.bindings.SalesStage.inputValue}"
+                                                                label="#{row.bindings.SalesStage.label}"
+                                                                required="#{bindings.OppertunityOfCustomer.hints.SalesStage.mandatory}"
+                                                                shortDesc="#{bindings.OppertunityOfCustomer.hints.SalesStage.tooltip}"
+                                                                readOnly="true" id="soc1">
+                                                <f:selectItems value="#{row.bindings.SalesStage.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.SalesStage.validator}"/>
+                                            </af:selectOneChoice>
                                         </af:column>
-                                        <af:column headerText="#{bindings.OppertunitiesOfCustomer.hints.Revenue.label}"
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.Revenue.label}"
                                                    id="c5">
                                             <af:outputText value="#{row.Revenue}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.Revenue.tooltip}"
-                                                           id="ot10">
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.Revenue.tooltip}"
+                                                           id="ot4">
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.Revenue.format}"/>
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.Revenue.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column headerText="Budget" id="c6">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.BudgetAmount.label}"
+                                                   id="c6">
                                             <af:outputText value="#{row.BudgetAmount}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.BudgetAmount.tooltip}"
-                                                           id="ot11">
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.BudgetAmount.tooltip}"
+                                                           id="ot5">
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.BudgetAmount.format}"/>
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.BudgetAmount.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column headerText="Duration" id="c7">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.EstimatedDuration.label}"
+                                                   id="c7">
                                             <af:outputText value="#{row.EstimatedDuration}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.EstimatedDuration.tooltip}"
-                                                           id="ot12">
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.EstimatedDuration.tooltip}"
+                                                           id="ot6">
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.EstimatedDuration.format}"/>
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.EstimatedDuration.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column headerText="Risk" id="c8">
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.RiskLevel.label}"
+                                                   id="c8">
                                             <af:outputText value="#{row.RiskLevel}"
-                                                           shortDesc="#{bindings.OppertunitiesOfCustomer.hints.RiskLevel.tooltip}"
-                                                           id="ot13"/>
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.RiskLevel.tooltip}"
+                                                           id="ot7"/>
                                         </af:column>
-                                        <af:column id="c2" headerText="Contact">
-                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
-                                                     id="l3"/>
+                                        <af:column headerText="Contact"
+                                                   id="c12">
+                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}" id="l2"/>
                                         </af:column>
-                                        <af:column id="c13" headerText="Creator">
-                                            <af:link text="#{row.AKUsersU.bindings.FirstName.inputValue}" id="l4"/>
-                                        </af:column>
-                                        <af:column headerText="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.label}"
-                                                   id="c28" rendered="false">
-                                            <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
-                                                          label="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.label}"
-                                                          required="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.mandatory}"
-                                                          columns="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.displayWidth}"
-                                                          maximumLength="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.precision}"
-                                                          shortDesc="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.tooltip}"
-                                                          id="it1">
-                                                <f:validator binding="#{row.bindings.OpportunityId.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.OppertunitiesOfCustomer.hints.OpportunityId.format}"/>
-                                            </af:inputText>
+                                        <af:column headerText="Created By"
+                                                   id="c13">
+                                            <af:link text="#{row.UserUVO_ar.bindings.FirstName.inputValue}" id="l3"
+                                                     disabled="#{securityContext.userInRole['Manager']}"/>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab4}"
-                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}">
+                                               icon="#{resource['images:ic_account_box_black_24dp_1x.png']}"
+                                               text="Contacts">
                                 <af:toolbar id="t3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t3}">
                                     <af:button id="b4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b4}"
@@ -174,6 +236,17 @@
                                     <af:button id="b6"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b6}"
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qq2"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq2}"
+                                                   partialTriggers="::qq2">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl3"
+                                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl3}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl7"
                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl7}">
@@ -188,7 +261,8 @@
                                               filterVisible="true"
                                               queryListener="#{bindings.ContactsUVO_arVO1Query.processQuery}"
                                               varStatus="vs" id="t8"
-                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}">
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}"
+                                              partialTriggers="::qq2">
                                         <af:column id="c10" headerText="Name">
                                             <af:link text="#{row.ContactName}" id="l5"/>
                                         </af:column>
@@ -243,7 +317,8 @@
                             </af:showDetailItem>
                             <af:showDetailItem id="tab2"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab2}"
-                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}">
+                                               icon="#{resource['images:ic_assignment_black_24dp_1x.png']}"
+                                               text="Tasks">
                                 <af:toolbar id="t4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t4}">
                                     <af:button id="b7"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b7}"
@@ -254,68 +329,74 @@
                                     <af:button id="b9"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b9}"
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qq4"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery3.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery3.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery3.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq4}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl5"
+                                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl5}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl6"
                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl6}">
-                                    <af:table value="#{bindings.TaskUVO_arVO1.collectionModel}" var="row"
-                                              rows="#{bindings.TaskUVO_arVO1.rangeSize}"
-                                              emptyText="#{bindings.TaskUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                              rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.TaskUVO_arVO1.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.TaskUVO_arVO1.collectionModel.makeCurrent}"
-                                              rowSelection="single" fetchSize="#{bindings.TaskUVO_arVO1.rangeSize}"
-                                              id="t7"
+                                    <af:table value="#{bindings.CustomerTasks.collectionModel}" var="row"
+                                              rows="#{bindings.CustomerTasks.rangeSize}"
+                                              emptyText="#{bindings.CustomerTasks.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" fetchSize="#{bindings.CustomerTasks.rangeSize}"
+                                              partialTriggers="::qryId1" id="t7"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t7}">
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.name}"
-                                                   sortable="true" headerText="Name" id="c9" width="98">
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.ActivityTitle.label}"
+                                                   id="c9">
                                             <af:outputText value="#{row.ActivityTitle}"
-                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.tooltip}"
-                                                           id="ot14"/>
+                                                           shortDesc="#{bindings.CustomerTasks.hints.ActivityTitle.tooltip}"
+                                                           id="ot8"/>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.StartDateTime.name}"
-                                                   sortable="true" headerText="Start Date" id="c11" width="102">
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.StartDateTime.label}"
+                                                   id="c11">
                                             <af:outputText value="#{row.StartDateTime}"
-                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.StartDateTime.tooltip}"
-                                                           id="ot15">
-                                                <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.StartDateTime.format}"/>
+                                                           shortDesc="#{bindings.CustomerTasks.hints.StartDateTime.tooltip}"
+                                                           id="ot9">
+                                                <af:convertDateTime pattern="#{bindings.CustomerTasks.hints.StartDateTime.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.name}"
-                                                   sortable="true" headerText="End Date" id="c14" width="100">
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.EndDueDateTime.label}"
+                                                   id="c14">
                                             <af:outputText value="#{row.EndDueDateTime}"
-                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.tooltip}"
-                                                           id="ot16">
-                                                <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.format}"/>
+                                                           shortDesc="#{bindings.CustomerTasks.hints.EndDueDateTime.tooltip}"
+                                                           id="ot10">
+                                                <af:convertDateTime pattern="#{bindings.CustomerTasks.hints.EndDueDateTime.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.name}"
-                                                   sortable="true" headerText="Priority" id="c15">
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.ATaskPriority.label}"
+                                                   id="c15">
                                             <af:outputText value="#{row.ATaskPriority}"
-                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.tooltip}"
-                                                           id="ot17"/>
+                                                           shortDesc="#{bindings.CustomerTasks.hints.ATaskPriority.tooltip}"
+                                                           id="ot11"/>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.name}"
-                                                   sortable="true" headerText="Completion" id="c16">
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.ATaskCompletion.label}"
+                                                   id="c16">
                                             <af:outputText value="#{row.ATaskCompletion}"
-                                                           shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.tooltip}"
-                                                           id="ot23">
+                                                           shortDesc="#{bindings.CustomerTasks.hints.ATaskCompletion.tooltip}"
+                                                           id="ot12">
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.format}"/>
+                                                                  pattern="#{bindings.CustomerTasks.hints.ATaskCompletion.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column id="c24" headerText="Creator">
-                                            <af:link text="#{bindings.FirstName.inputValue}" id="l6"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.TaskUVO_arVO1.hints.UserUVO_ar1.FirstName.name}"
-                                                   sortable="true" headerText="Assignee" id="c23">
-                                            <af:link text="#{bindings.FirstName1.inputValue}" id="l7"/>
+                                        <af:column headerText="#{bindings.CustomerTasks.hints.UserUVO_ar.FirstName.label}"
+                                                   id="c23">
+                                            <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                           shortDesc="#{bindings.CustomerTasks.hints.UserUVO_ar.FirstName.tooltip}"
+                                                           rendered="#{row.UserUVO_ar != null}" id="ot13"/>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab3"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.tab3}"
-                                               icon="#{resource['images:ic_note_add_black_24dp_1x.png']}">
+                                               icon="#{resource['images:ic_note_add_black_24dp_1x.png']}" text="Notes">
                                 <af:toolbar id="t6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t6}">
                                     <af:button id="b10"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b10}"
@@ -326,6 +407,16 @@
                                     <af:button id="b12"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b12}"
                                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qq3"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery2.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq3}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl4"
+                                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl4}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl3"
                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl3}">

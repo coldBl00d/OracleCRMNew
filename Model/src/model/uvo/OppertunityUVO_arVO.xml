@@ -86,19 +86,22 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="AccId"
     PrecisionRule="true"
     EntityAttrName="AccId"
     EntityUsage="OppertunityEO_ar"
-    AliasName="ACC_ID"/>
+    AliasName="ACC_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="OpportunityWinProb"
     PrecisionRule="true"
     EntityAttrName="OpportunityWinProb"
     EntityUsage="OppertunityEO_ar"
-    AliasName="OPPORTUNITY_WIN_PROB">
+    AliasName="OPPORTUNITY_WIN_PROB"
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -310,6 +313,11 @@
   <ViewLinkAccessor
     Name="ContactsUVO_ar"
     ViewLink="model.vl.OppertunityToPrimaryContactsVL_ar"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserUVO_ar"
+    ViewLink="model.vl.OppertunityToCreatorVL_ar"
     Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
   <ResourceBundle>

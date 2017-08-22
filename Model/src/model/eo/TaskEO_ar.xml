@@ -31,10 +31,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ACTIVITY">
+    TableName="ACTIVITY"
+    DefaultValue="TASK">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.ActivityType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ActivityTitle"
@@ -47,6 +54,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.ActivityTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StartDateTime"
@@ -54,14 +67,28 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.StartDateTime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EndDueDateTime"
     ColumnName="END_DUE_DATE_TIME"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.EndDueDateTime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActivityDescription"
     Precision="1000"
@@ -73,6 +100,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.ActivityDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ATaskPriority"
@@ -85,6 +118,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.ATaskPriority_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AAppLocationId"
@@ -112,7 +151,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.TaskEO_ar.ATaskCompletion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ACreatorId"
     Precision="18"
@@ -169,4 +215,8 @@
       <Item Value="model.eo.TaskEO_ar.ActivityId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

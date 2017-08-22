@@ -68,6 +68,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.UserEO_ar.FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -108,14 +114,28 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USERS"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.UserEO_ar.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="USERS"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.UserEO_ar.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AddressId"
     Precision="18"
@@ -174,6 +194,13 @@
     AssociationOtherEnd="model.assoc.NotesToCreator.UserEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.OppertunityToCreatorAssoc"
+    AssociationEnd="model.assoc.OppertunityToCreatorAssoc.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc.UserEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UseraccountsPk"
     PrimaryKey="true">
@@ -184,4 +211,8 @@
       <Item Value="model.eo.UserEO_ar.UserId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

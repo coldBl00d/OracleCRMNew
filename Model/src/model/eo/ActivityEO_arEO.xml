@@ -32,6 +32,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.ActivityType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ActivityTitle"
@@ -44,6 +50,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.ActivityTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StartDateTime"
@@ -51,14 +63,28 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.StartDateTime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EndDueDateTime"
     ColumnName="END_DUE_DATE_TIME"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.EndDueDateTime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActivityDescription"
     Precision="1000"
@@ -70,6 +96,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.ActivityDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ATaskPriority"
@@ -82,6 +114,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.ATaskPriority_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AAppLocationId"
@@ -103,6 +141,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.AInterResolution_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ATaskAssigneeId"
@@ -121,7 +165,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ActivityEO_arEO.ATaskCompletion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ACreatorId"
     Precision="18"
@@ -141,4 +192,8 @@
       <Item Value="model.eo.ActivityEO_arEO.ActivityId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

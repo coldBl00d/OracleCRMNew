@@ -18,7 +18,7 @@
             </users>
             <roles>
                 <role>
-                    <name>AdminERole</name>
+                    <name>AdminRole</name>
                     <display-name>Admin E Role</display-name>
                     <members>
                         <member>
@@ -50,7 +50,7 @@
                         <members>
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
-                                <name>AdminERole</name>
+                                <name>AdminRole</name>
                             </member>
                         </members>
                     </app-role>

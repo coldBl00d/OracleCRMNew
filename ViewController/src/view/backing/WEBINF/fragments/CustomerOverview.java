@@ -5,16 +5,17 @@ import javax.faces.event.ActionEvent;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
-import oracle.adf.view.rich.component.rich.RichQuickQuery;
-import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
-import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import java.util.Map;
 import java.util.HashMap;
+
+import oracle.adf.view.rich.component.rich.RichQuickQuery;
+import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 
 import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
@@ -29,12 +30,13 @@ public class CustomerOverview {
     private RichButton b2;
     private RichButton b3;
     private RichPanelGroupLayout pgl2;
-    private RichQuickQuery qryId1;
-    private RichCommandLink cl1;
-    private RichTable t2;
     private RichSpacer s1;
     private RichSpacer s2;
     private RichSpacer s3;
+    private RichPanelGroupLayout pgl3;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t2;
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
         this.pgl1 = pgl1;
@@ -93,30 +95,6 @@ public class CustomerOverview {
     }
 
 
-    public void setQryId1(RichQuickQuery qryId1) {
-        this.qryId1 = qryId1;
-    }
-
-    public RichQuickQuery getQryId1() {
-        return qryId1;
-    }
-
-    public void setCl1(RichCommandLink cl1) {
-        this.cl1 = cl1;
-    }
-
-    public RichCommandLink getCl1() {
-        return cl1;
-    }
-
-    public void setT2(RichTable t2) {
-        this.t2 = t2;
-    }
-
-    public RichTable getT2() {
-        return t2;
-    }
-
     public void setS1(RichSpacer s1) {
         this.s1 = s1;
     }
@@ -143,7 +121,7 @@ public class CustomerOverview {
     
     public String action(){
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-        DCIteratorBinding custIter = bindings.findIteratorBinding("CustomerListIterator");
+        DCIteratorBinding custIter = bindings.findIteratorBinding("CustomerIterator");
         ViewObject obj = custIter.getViewObject();
         Row row = obj.getCurrentRow();
         String companyName = (String)row.getAttribute("AccountName");
@@ -204,4 +182,36 @@ public class CustomerOverview {
     }
 
 
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
+    }
+
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
+    }
+
+
+    public void setQryId1(RichQuickQuery qryId1) {
+        this.qryId1 = qryId1;
+    }
+
+    public RichQuickQuery getQryId1() {
+        return qryId1;
+    }
+
+    public void setCl1(RichCommandLink cl1) {
+        this.cl1 = cl1;
+    }
+
+    public RichCommandLink getCl1() {
+        return cl1;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
+    }
 }
