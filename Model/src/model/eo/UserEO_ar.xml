@@ -201,6 +201,13 @@
     AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc.UserEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Activity"
+    Association="model.assoc.AppointmentToCreatorAssoc"
+    AssociationEnd="model.assoc.AppointmentToCreatorAssoc.Activity"
+    AssociationOtherEnd="model.assoc.AppointmentToCreatorAssoc.UserEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UseraccountsPk"
     PrimaryKey="true">

@@ -458,6 +458,82 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
+                            <af:showDetailItem id="sdi1"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.sdi1}"
+                                               icon="#{resource['images:appointment1.png']}"
+                                               text="Appointments">
+                                <af:toolbar id="t11"
+                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t11}">
+                                    <af:button id="b14"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b14}"
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                    <af:button id="b15"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b15}"
+                                               icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                    <af:button id="b16"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b16}"
+                                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qq5"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery4.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery4.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery4.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq5}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl6"
+                                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl6}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                </af:toolbar>
+                                <af:panelGroupLayout layout="vertical" id="pgl5"
+                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl5}">
+                                    <af:table value="#{bindings.Appointments.collectionModel}" var="row"
+                                              rows="#{bindings.Appointments.rangeSize}"
+                                              emptyText="#{bindings.Appointments.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.Appointments.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.Appointments.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.Appointments.rangeSize}"
+                                              partialTriggers="::qq5" id="t10"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t10}">
+                                        <af:column sortProperty="#{bindings.Appointments.hints.ActivityTitle.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.Appointments.hints.ActivityTitle.label}"
+                                                   id="c24">
+                                            <af:outputText value="#{row.ActivityTitle}"
+                                                           shortDesc="#{bindings.Appointments.hints.ActivityTitle.tooltip}"
+                                                           id="ot14"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Appointments.hints.EndDueDateTime.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.Appointments.hints.EndDueDateTime.label}"
+                                                   id="c28">
+                                            <af:outputText value="#{row.EndDueDateTime}"
+                                                           shortDesc="#{bindings.Appointments.hints.EndDueDateTime.tooltip}"
+                                                           id="ot15">
+                                                <af:convertDateTime pattern="#{bindings.Appointments.hints.EndDueDateTime.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Appointments.hints.StartDateTime.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.Appointments.hints.StartDateTime.label}"
+                                                   id="c29">
+                                            <af:outputText value="#{row.StartDateTime}"
+                                                           shortDesc="#{bindings.Appointments.hints.StartDateTime.tooltip}"
+                                                           id="ot16">
+                                                <af:convertDateTime pattern="#{bindings.Appointments.hints.StartDateTime.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Appointments.hints.UserUVO_ar.FirstName.name}"
+                                                   sortable="true"
+                                                   headerText="Creator Name"
+                                                   id="c30">
+                                            <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                           shortDesc="#{bindings.Appointments.hints.UserUVO_ar.FirstName.tooltip}"
+                                                           rendered="#{row.UserUVO_ar != null}" id="ot17"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
+                            </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>

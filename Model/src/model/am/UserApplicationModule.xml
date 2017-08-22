@@ -55,6 +55,12 @@
   <ViewUsage
     Name="TaskCreator"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Appointments"
+    ViewObjectName="model.uvo.ActivityUVO_ar"/>
+  <ViewUsage
+    Name="AppointmentCreator"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -114,6 +120,18 @@
     ViewLinkObjectName="model.vl.TaskToCreator"
     SrcViewUsageName="model.am.UserApplicationModule.CustomerTasks"
     DstViewUsageName="model.am.UserApplicationModule.TaskCreator"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomerToAppointmentVL_ar1"
+    ViewLinkObjectName="model.vl.CustomerToAppointmentVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.Appointments"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AppointmentToCreatorVL1"
+    ViewLinkObjectName="model.vl.AppointmentToCreatorVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Appointments"
+    DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

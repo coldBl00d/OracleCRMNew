@@ -102,6 +102,15 @@ public class ViewCustomer {
     private RichQuickQuery qq4;
     private RichCommandLink cl5;
     private RichTable t7;
+    private RichShowDetailItem sdi1;
+    private RichToolbar t11;
+    private RichButton b14;
+    private RichButton b15;
+    private RichButton b16;
+    private RichPanelGroupLayout pgl5;
+    private RichQuickQuery qq5;
+    private RichCommandLink cl6;
+    private RichTable t10;
 
     public ViewCustomer(){
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
@@ -711,5 +720,79 @@ public class ViewCustomer {
 
     public RichTable getT7() {
         return t7;
+    }
+
+    public void setSdi1(RichShowDetailItem sdi1) {
+        this.sdi1 = sdi1;
+    }
+
+    public RichShowDetailItem getSdi1() {
+        return sdi1;
+    }
+
+    public void setT11(RichToolbar t11) {
+        this.t11 = t11;
+    }
+
+    public RichToolbar getT11() {
+        return t11;
+    }
+
+    public void setB14(RichButton b14) {
+        this.b14 = b14;
+    }
+
+    public RichButton getB14() {
+        return b14;
+    }
+
+    public void setB15(RichButton b15) {
+        this.b15 = b15;
+    }
+
+    public RichButton getB15() {
+        return b15;
+    }
+
+    public void setB16(RichButton b16) {
+        this.b16 = b16;
+    }
+
+    public RichButton getB16() {
+        return b16;
+    }
+
+
+    public void setPgl5(RichPanelGroupLayout pgl5) {
+        this.pgl5 = pgl5;
+    }
+
+    public RichPanelGroupLayout getPgl5() {
+        return pgl5;
+    }
+
+
+    public void setQq5(RichQuickQuery qq5) {
+        this.qq5 = qq5;
+    }
+
+    public RichQuickQuery getQq5() {
+        return qq5;
+    }
+
+    public void setCl6(RichCommandLink cl6) {
+        this.cl6 = cl6;
+    }
+
+    public RichCommandLink getCl6() {
+        return cl6;
+    }
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
     }
 }
