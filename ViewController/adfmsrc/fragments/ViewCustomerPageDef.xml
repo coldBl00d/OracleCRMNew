@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="CustomerListIterator" Refresh="ifNeeded"/>
+              id="CustomerListIterator" Refresh="default"/>
     <iterator Binds="CustomerParent" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CustomerParentIterator"/>
     <iterator Binds="PrimaryAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
@@ -15,7 +15,7 @@
     <searchRegion Binds="ContactsUVO_arVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContactsUVO_arVO1Query"/>
     <iterator Binds="OppertunitiesOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="OppertunitiesOfCustomerIterator" Refresh="ifNeeded"/>
+              id="OppertunitiesOfCustomerIterator" Refresh="default"/>
     <iterator Binds="TaskUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="TaskUVO_arVO1Iterator"/>
     <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>

@@ -85,11 +85,7 @@
                                               selectionListener="#{bindings.OppertunitiesOfCustomer.collectionModel.makeCurrent}">
                                         <af:column id="c12" headerText="Name">
                                             <af:link text="#{row.BudgetAmount}" id="l2"
-                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}">
-                                                <af:setPropertyListener from="#{row.OpportunityId}"
-                                                                        to="#{pageFlowScope.opportunityId}"
-                                                                        type="action"/>
-                                            </af:link>
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
                                         </af:column>
                                         <af:column id="c1" headerText="Win Probability">
                                             <af:outputText value="#{row.OpportunityWinProb}"

@@ -548,7 +548,7 @@ public class ViewCustomer {
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("oppertunityId"));
         //ViewObject vobj = iterator.getViewObject();
         ViewObject obj = iterator.getViewObject();
-        Row row1 = obj.getCurrentRow();
+        Row row1 = iterator.getCurrentRow();
         String tabHeading = (String)row1.getAttribute("OpportunityName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
