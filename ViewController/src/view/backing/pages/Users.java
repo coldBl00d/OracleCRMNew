@@ -25,6 +25,7 @@ public class Users {
     private RichLink l2;
     private RichLink l3;
     private RichRegion r1;
+    private RichLink l4;
 
     public void setPt1(RichPageTemplate pt1) {
         this.pt1 = pt1;
@@ -128,5 +129,13 @@ public class Users {
 
     public RichRegion getR1() {
         return r1;
+    }
+
+    public void setL4(RichLink l4) {
+        this.l4 = l4;
+    }
+
+    public RichLink getL4() {
+        return l4;
     }
 }

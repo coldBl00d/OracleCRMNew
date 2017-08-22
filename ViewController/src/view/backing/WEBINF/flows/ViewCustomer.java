@@ -1,6 +1,7 @@
 package view.backing.WEBINF.flows;
 
 
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -76,6 +77,10 @@ public class ViewCustomer {
     private RichOutputLabel ol2;
     private RichPanelGroupLayout pgl7;
     private RichTable t8;
+
+    public ViewCustomer(){
+        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
+    }
 
     public void setPgl1(RichPanelGridLayout pgl1) {
         this.pgl1 = pgl1;

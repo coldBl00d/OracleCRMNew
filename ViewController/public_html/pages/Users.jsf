@@ -18,10 +18,12 @@
                                              binding="#{backingBeanScope.backing_pages_Users.l1}"
                                              actionListener="#{backingBeanScope.Launcher.manageCustomerActivity}"
                                              partialSubmit="true"/>
-                                    <af:link text="link 2" id="l2"
+                                    <af:link text="Manage Oppertunities" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Users.l2}"/>
-                                    <af:link text="link 3" id="l3"
+                                    <af:link text="Manage Tasks" id="l3"
                                              binding="#{backingBeanScope.backing_pages_Users.l3}"/>
+                                    <af:link text="Manage Contacts" id="l4"
+                                             binding="#{backingBeanScope.backing_pages_Users.l4}"/>
                                 </af:panelList>
                             </af:panelGroupLayout>
                         </f:facet>

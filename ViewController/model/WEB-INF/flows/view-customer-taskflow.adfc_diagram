@@ -22,28 +22,28 @@
          name="exceptionHandler">false</property>
    </View>
    <MethodCall
-      id="MethodCall3">
+      id="MethodCall19">
       <property
-         name="activityId">setCustomerId</property>
+         name="activityId">SetCurrentRowWithKey1</property>
       <property
-         name="x">328.0</property>
+         name="x">190.6914</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>setCustomerId&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>SetCurrentRowWithKey1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">586.97656</property>
+         name="y">401.1494</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
-      from="MethodCall3"
+      id="ControlFlowCase20"
+      from="MethodCall19"
       to="View2">
       <property
-         name="fromOutcome">goViewCustomer</property>
+         name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">R50,369.0,586.626,625.0918,594.64355,L50</property>
+         name="sdm:polyPoints">R50,231.6914,400.79883,625.0918,594.64355,L50</property>
    </ControlFlowCase>
 </SDM>

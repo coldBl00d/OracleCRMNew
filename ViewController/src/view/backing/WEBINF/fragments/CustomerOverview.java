@@ -149,11 +149,13 @@ public class CustomerOverview {
         String companyName = (String)row.getAttribute("AccountName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("customerIdForView", custIter.getCurrentRowKeyString());
+        m.put("tabContext", TabContext.getCurrentInstance());
+        m.put("customerId", row.getAttribute("AccountId"));
         //System.out.println("Hey Im putting the value :"+custIter.getCurrentRowKeyString());
-        
+        System.out.println("Customer id i got:"+row.getAttribute("AccountId"));
+        System.out.println(companyName);
         viewCustomerActivity(m, companyName);
         System.out.println("Done");
-
         return null;
     }
     
@@ -164,6 +166,7 @@ public class CustomerOverview {
         * oppose to selecting a previously opened tab instance. Note the boolean 
         * to create another tab instance is set to true. 
         */ 
+        System.out.println("Calling activity");
         _launchActivity( 
           companyName, 
           "/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow",  
@@ -176,6 +179,7 @@ public class CustomerOverview {
       { 
         if (newTab) 
         { 
+            System.out.println("Calling new tab");
           TabContext.getCurrentInstance().addTab( 
             title, 
             taskflowId, params); 
@@ -194,8 +198,10 @@ public class CustomerOverview {
         toe.handleDefault();  
       } 
       
+      System.out.println("Exiting launch activity");
       
-    } 
+      
+    }
 
 
 }

@@ -15,6 +15,10 @@
     <page path="/WEB-INF/fragments/Product_Home.jsff" usageId="view_Product_HomePageDef"/>
     <page path="/WEB-INF/fragments/User_Home.jsff" usageId="view_User_HomePageDef"/>
     <page path="/WEB-INF/fragments/Manager_home.jsff" usageId="view_Manager_homePageDef"/>
+    <page path="/WEB-INF/fragments/CustomerOverview.jsff" usageId="view_CustomerOverviewPageDef"/>
+    <page path="/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow@SetCurrentRowWithKey1"
+          usageId="view_view_customer_taskflow_view_customer_taskflow_SetCurrentRowWithKey1PageDef"/>
+    <page path="/WEB-INF/fragments/ViewCustomer.jsff" usageId="view_ViewCustomerPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -25,12 +29,21 @@
     <page id="view_Product_HomePageDef" path="view.pageDefs.Product_HomePageDef"/>
     <page id="view_User_HomePageDef" path="fragments.User_HomePageDef"/>
     <page id="view_Manager_homePageDef" path="fragments.Manager_homePageDef"/>
+    <page id="view_CustomerOverviewPageDef" path="fragments.CustomerOverviewPageDef"/>
+    <page id="view_view_customer_taskflow_view_customer_taskflow_SetCurrentRowWithKey1PageDef"
+          path="flows.view_customer_taskflow_view_customer_taskflow_SetCurrentRowWithKey1PageDef"/>
+    <page id="view_ViewCustomerPageDef" path="fragments.ViewCustomerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AdminAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="UserApplicationModuleDataControl" Package="model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="UserApplicationModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

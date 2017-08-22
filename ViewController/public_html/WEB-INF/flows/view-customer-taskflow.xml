@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="view-customer-taskflow">
-    <default-activity>setCustomerId</default-activity>
+    <default-activity>SetCurrentRowWithKey1</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
-    <input-parameter-definition id="__3">
+    <input-parameter-definition id="__12">
       <name>customerIdForView</name>
       <value>#{pageFlowScope.customerIdForView}</value>
       <class>java.lang.String</class>
     </input-parameter-definition>
+    <input-parameter-definition id="__13">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
+    </input-parameter-definition>
     <view id="ViewCustomer">
       <page>/WEB-INF/fragments/ViewCustomer.jsff</page>
     </view>
-    <method-call id="setCustomerId">
+    <method-call id="SetCurrentRowWithKey1">
       <method>#{bindings.setCurrentRowWithKey.execute}</method>
       <outcome>
-        <fixed-outcome>goViewCustomer</fixed-outcome>
+        <fixed-outcome>setCurrentRowWithKey</fixed-outcome>
       </outcome>
     </method-call>
-    <control-flow-rule id="__1">
-      <from-activity-id>setCustomerId</from-activity-id>
-      <control-flow-case id="__2">
-        <from-outcome>goViewCustomer</from-outcome>
+    <control-flow-rule id="__16">
+      <from-activity-id>SetCurrentRowWithKey1</from-activity-id>
+      <control-flow-case id="__17">
         <to-activity-id>ViewCustomer</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

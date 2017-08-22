@@ -68,11 +68,9 @@
                                                   pattern="#{bindings.CustomerList.hints.EmpCount.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column id="c5" align="center">
-                            <af:button id="b4" icon="#{resource['images:ic_info_black_24dp_1x.png']}"
-                                       action="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.action}">
-                                
-                            </af:button>
+                        <af:column id="c5">
+                            <af:button text="button 1" id="b4"
+                                       action="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.action}"/>
                         </af:column>
                     </af:table>
                 </af:panelGroupLayout>

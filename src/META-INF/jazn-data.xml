@@ -168,6 +168,42 @@
                         <display-name>manage-team-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/manage-team-taskflow.xml#manage-team-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/manage-contacts-taskflow.xml#manage-contacts-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>manage-contacts-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/manage-contacts-taskflow.xml#manage-contacts-taskflow</description>
+                    </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/manage-oppertunity-taskflow.xml#manage-oppertunity-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>manage-oppertunity-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/manage-oppertunity-taskflow.xml#manage-oppertunity-taskflow</description>
+                    </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/manage-tasks-taskflow.xml#manage-tasks-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>manage-tasks-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/manage-tasks-taskflow.xml#manage-tasks-taskflow</description>
+                    </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-appointment-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow</description>
+                    </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-contact-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow</description>
+                    </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-oppertunity-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -302,6 +338,72 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/view-customer-taskflow.xml#view-customer-taskflow</resource-name>
                                 <display-name>view-customer-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-contacts-taskflow.xml#manage-contacts-taskflow</resource-name>
+                                <display-name>manage-contacts-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-oppertunity-taskflow.xml#manage-oppertunity-taskflow</resource-name>
+                                <display-name>manage-oppertunity-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-product-taskflow.xml#manage-product-taskflow</resource-name>
+                                <display-name>manage-product-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-role-taskflow.xml#manage-role-taskflow</resource-name>
+                                <display-name>manage-role-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-tasks-taskflow.xml#manage-tasks-taskflow</resource-name>
+                                <display-name>manage-tasks-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-team-taskflow.xml#manage-team-taskflow</resource-name>
+                                <display-name>manage-team-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-user-taskflow.xml#manage-user-taskflow</resource-name>
+                                <display-name>manage-user-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow</resource-name>
+                                <display-name>view-appointment-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow</resource-name>
+                                <display-name>view-contact-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow</resource-name>
+                                <display-name>view-oppertunity-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/welcome.xml#welcome</resource-name>
+                                <display-name>welcome(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>
