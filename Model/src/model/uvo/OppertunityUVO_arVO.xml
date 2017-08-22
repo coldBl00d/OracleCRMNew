@@ -14,46 +14,9 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <Variable
-    Name="OpertunityNameBindVariable"
+    Name="OpportunityIdForFilter"
     Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="model.uvo.OppertunityUVO_arVO.OpertunityNameBindVariable_LABEL"/>
-        <TOOLTIP
-          ResId="model.uvo.OppertunityUVO_arVO.OpertunityNameBindVariable_TOOLTIP"/>
-        <DISPLAYWIDTH
-          Value="30"/>
-        <DISPLAYHEIGHT
-          Value="1"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
-    Name="CreatorNameFilter"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="model.uvo.OppertunityUVO_arVO.CreatorNameFilter_LABEL"/>
-        <TOOLTIP
-          ResId="model.uvo.OppertunityUVO_arVO.CreatorNameFilter_TOOLTIP"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
-    Name="PrimaryContactName"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="model.uvo.OppertunityUVO_arVO.PrimaryContactName_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
+    Type="java.lang.Integer"/>
   <ViewAccessor
     Name="SalesStagesLookup_ar1"
     ViewObjectName="model.rvo.SalesStagesLookup_ar"
@@ -86,8 +49,7 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"
-    IsQueriable="false"/>
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
   <ViewAttribute
     Name="AccId"
     PrecisionRule="true"
@@ -303,6 +265,43 @@
           </ViewCriteriaRow>
         </ViewCriteria>
       </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="FilterById"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"
+    Conjunction="AND"
+    Mode="3">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="OppertunityUVO_arVOCriteria1_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="OpportunityId"
+        ViewAttribute="OpportunityId"
+        Operator="="
+        Conjunction="AND"
+        Value=":OpportunityIdForFilter"
+        IsBindVarValue="true"
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor

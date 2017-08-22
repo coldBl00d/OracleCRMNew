@@ -348,7 +348,7 @@
                                               rows="#{bindings.CustomerTasks.rangeSize}"
                                               emptyText="#{bindings.CustomerTasks.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0" fetchSize="#{bindings.CustomerTasks.rangeSize}"
-                                              partialTriggers="::qryId1" id="t7"
+                                              partialTriggers="::qq4" id="t7"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t7}">
                                         <af:column headerText="#{bindings.CustomerTasks.hints.ActivityTitle.label}"
                                                    id="c9">
