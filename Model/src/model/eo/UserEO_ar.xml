@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="USERS"
   AliasName="UserEO_ar"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="UserId"
     IsNotNull="true"
@@ -20,7 +21,14 @@
     Type="java.lang.Long"
     ColumnType="NUMBER"
     TableName="USERS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <validation:PreDefinedValidationBean
+      Name="UserIdRule0"
+      ResId="PLEASE_ENTER_A_VALUE"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
+  </Attribute>
   <Attribute
     Name="UName"
     Precision="255"
@@ -203,9 +211,9 @@
     IsUpdateable="true"/>
   <AccessorAttribute
     Name="Activity"
-    Association="model.assoc.AppointmentToCreatorAssoc"
-    AssociationEnd="model.assoc.AppointmentToCreatorAssoc.Activity"
-    AssociationOtherEnd="model.assoc.AppointmentToCreatorAssoc.UserEO_ar"
+    Association="model.assoc.AppointmentToCreator"
+    AssociationEnd="model.assoc.AppointmentToCreator.Activity"
+    AssociationOtherEnd="model.assoc.AppointmentToCreator.UserEO_ar1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

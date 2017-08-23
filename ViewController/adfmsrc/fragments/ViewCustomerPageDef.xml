@@ -6,10 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CustomerListIterator" Refresh="default"/>
-    <iterator Binds="CustomerContacts" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="ContactsUVO_arVO1Iterator"/>
-    <searchRegion Binds="ContactsUVO_arVO1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContactsUVO_arVO1Query"/>
     <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>
     <iterator Binds="CustomerNotes" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="NotesUVO_arVO1Iterator"/>
@@ -22,8 +18,6 @@
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OppertunityOfCustomerIterator" id="ImplicitViewCriteriaQuery"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="ContactsUVO_arVO1Iterator" id="ImplicitViewCriteriaQuery1"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="NotesUVO_arVO1Iterator" id="ImplicitViewCriteriaQuery2"/>
     <iterator Binds="CustomerTasks" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CustomerTasksIterator"/>
@@ -33,20 +27,12 @@
               id="AppointmentsIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="AppointmentsIterator" id="ImplicitViewCriteriaQuery4"/>
+    <iterator Binds="CustomerContacts" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerContactsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerContactsIterator" id="ImplicitViewCriteriaQuery1"/>
   </executables>
   <bindings>
-    <tree IterBinding="ContactsUVO_arVO1Iterator" id="ContactsUVO_arVO1">
-      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsUVO_arVO10">
-        <AttrNames>
-          <Item Value="ContactName"/>
-          <Item Value="Gender"/>
-          <Item Value="Email"/>
-          <Item Value="DepartmentName"/>
-          <Item Value="BuyingRole"/>
-          <Item Value="WorkNumber"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
       <AttrNames>
         <Item Value="FirstName"/>
@@ -169,5 +155,18 @@
     <action IterBinding="AppointmentsIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action IterBinding="OppertunityOfCustomerIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="CustomerContactsIterator" id="CustomerContacts">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="CustomerContacts0">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="WorkNumber"/>
+          <Item Value="Email"/>
+          <Item Value="Title"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

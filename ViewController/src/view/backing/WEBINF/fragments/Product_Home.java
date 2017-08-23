@@ -58,10 +58,6 @@ public class Product_Home {
     private RichButton b6;
     private RichGridRow gr4;
     private RichGridCell gc4;
-    private RichPanelGroupLayout pgl3;
-    private RichQuickQuery qryId2;
-    private RichCommandLink cl2;
-    private RichTable t4;
     private RichPopup p4;
     private RichPopup p5;
     private RichPopup p6;
@@ -92,6 +88,10 @@ public class Product_Home {
     private RichGridCell gc10;
     private RichOutputText ot3;
     private RichOutputText ot5;
+    private RichPanelGroupLayout pgl3;
+    private RichQuickQuery qryId2;
+    private RichCommandLink cl2;
+    private RichTable t4;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -416,39 +416,6 @@ public class Product_Home {
         return gc4;
     }
 
-    public void setPgl3(RichPanelGroupLayout pgl3) {
-        this.pgl3 = pgl3;
-    }
-
-    public RichPanelGroupLayout getPgl3() {
-        return pgl3;
-    }
-
-
-    public void setQryId2(RichQuickQuery qryId2) {
-        this.qryId2 = qryId2;
-    }
-
-    public RichQuickQuery getQryId2() {
-        return qryId2;
-    }
-
-    public void setCl2(RichCommandLink cl2) {
-        this.cl2 = cl2;
-    }
-
-    public RichCommandLink getCl2() {
-        return cl2;
-    }
-
-    public void setT4(RichTable t4) {
-        this.t4 = t4;
-    }
-
-    public RichTable getT4() {
-        return t4;
-    }
-
 
     public void insertCatPopupActionListener(ActionEvent actionEvent){
        
@@ -751,5 +718,38 @@ public class Product_Home {
 
     public RichOutputText getOt5() {
         return ot5;
+    }
+
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
+    }
+
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
+    }
+
+
+    public void setQryId2(RichQuickQuery qryId2) {
+        this.qryId2 = qryId2;
+    }
+
+    public RichQuickQuery getQryId2() {
+        return qryId2;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+
+    public void setT4(RichTable t4) {
+        this.t4 = t4;
+    }
+
+    public RichTable getT4() {
+        return t4;
     }
 }

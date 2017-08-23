@@ -47,19 +47,15 @@ public class Viewoppertunity_ar {
     private RichSpacer s1;
     private RichToolbar t1;
     private RichButton b1;
-    private RichButton b2;
     private RichButton b3;
     private RichToolbar t2;
     private RichButton b4;
-    private RichButton b5;
     private RichButton b6;
     private RichToolbar t3;
     private RichButton b7;
-    private RichButton b8;
     private RichButton b9;
     private RichToolbar t4;
     private RichButton b10;
-    private RichButton b11;
     private RichButton b12;
     private RichButton b13;
     private RichInputText it1;
@@ -90,6 +86,10 @@ public class Viewoppertunity_ar {
     private RichOutputLabel ol6;
     private RichOutputLabel ol7;
     private RichOutputLabel ol8;
+    private RichSpacer s2;
+    private RichSpacer s3;
+    private RichSpacer s4;
+    private RichSpacer s5;
 
 
     public Viewoppertunity_ar(){
@@ -251,13 +251,6 @@ public class Viewoppertunity_ar {
         return b1;
     }
 
-    public void setB2(RichButton b2) {
-        this.b2 = b2;
-    }
-
-    public RichButton getB2() {
-        return b2;
-    }
 
     public void setB3(RichButton b3) {
         this.b3 = b3;
@@ -283,13 +276,6 @@ public class Viewoppertunity_ar {
         return b4;
     }
 
-    public void setB5(RichButton b5) {
-        this.b5 = b5;
-    }
-
-    public RichButton getB5() {
-        return b5;
-    }
 
     public void setB6(RichButton b6) {
         this.b6 = b6;
@@ -315,13 +301,6 @@ public class Viewoppertunity_ar {
         return b7;
     }
 
-    public void setB8(RichButton b8) {
-        this.b8 = b8;
-    }
-
-    public RichButton getB8() {
-        return b8;
-    }
 
     public void setB9(RichButton b9) {
         this.b9 = b9;
@@ -347,13 +326,6 @@ public class Viewoppertunity_ar {
         return b10;
     }
 
-    public void setB11(RichButton b11) {
-        this.b11 = b11;
-    }
-
-    public RichButton getB11() {
-        return b11;
-    }
 
     public void setB12(RichButton b12) {
         this.b12 = b12;
@@ -597,5 +569,37 @@ public class Viewoppertunity_ar {
 
     public RichOutputLabel getOl8() {
         return ol8;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+    public void setS3(RichSpacer s3) {
+        this.s3 = s3;
+    }
+
+    public RichSpacer getS3() {
+        return s3;
+    }
+
+    public void setS4(RichSpacer s4) {
+        this.s4 = s4;
+    }
+
+    public RichSpacer getS4() {
+        return s4;
+    }
+
+    public void setS5(RichSpacer s5) {
+        this.s5 = s5;
+    }
+
+    public RichSpacer getS5() {
+        return s5;
     }
 }

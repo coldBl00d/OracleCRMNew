@@ -2,6 +2,7 @@ package view.backing.WEBINF.fragments;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.faces.component.UISelectItems;
@@ -43,6 +44,7 @@ import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 
 import org.apache.myfaces.trinidad.event.ReturnEvent;
+import org.apache.myfaces.trinidad.model.RowKeySet;
 
 public class Role_Home {
     private RichGridRow gr2;
@@ -520,6 +522,20 @@ public class Role_Home {
     public RichInputDate getId6() {
         return id6;
     }
-
+    public boolean isEditDisabled()  
+      {  
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();  
+        //DCIteratorBinding iter = (DCIteratorBinding) bindings.get("TableView1Iterator"); // iterator name from pageDef.  
+        RowKeySet rowSet1 = getT2().getSelectedRowKeys();  
+        if (rowSet1.getSize() == 0)  
+        {  
+            System.out.println("false");
+          return true;  
+        }  
+        else{
+            System.out.println("true");
+            return false;
+        }
+      }  
 
 }

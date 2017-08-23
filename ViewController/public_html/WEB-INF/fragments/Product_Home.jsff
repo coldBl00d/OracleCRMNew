@@ -58,7 +58,7 @@
                     </af:dialog>
                 </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p6"
-                          binding="#{backingBeanScope.backing_Product_Home.p6}">
+                          binding="#{backingBeanScope.backing_Product_Home.p6}" contentDelivery="lazyUncached">
                     <af:dialog id="d6" binding="#{backingBeanScope.backing_Product_Home.d6}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.deleteCatDialogListener}"
                                type="yesNo">
@@ -109,6 +109,16 @@
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
                         <af:showPopupBehavior popupId="p6" align="startAfter" alignId="b6"/>
                     </af:button>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
+                                   value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
+                                   binding="#{backingBeanScope.backing_Product_Home.qryId2}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl2"
+                                            binding="#{backingBeanScope.backing_Product_Home.cl2}"/>
+                        </f:facet>
+                    </af:quickQuery>
                 </af:toolbar>
             </af:gridCell>
         </af:gridRow>
@@ -128,18 +138,7 @@
                 </af:toolbar>
             </af:gridCell>
             <af:gridCell id="gc7" binding="#{backingBeanScope.backing_Product_Home.gc7}" width="60%">
-                <af:toolbar id="t6" binding="#{backingBeanScope.backing_Product_Home.t6}">
-                    <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
-                                   value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
-                                   model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
-                                   queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
-                                   binding="#{backingBeanScope.backing_Product_Home.qryId2}">
-                        <f:facet name="end">
-                            <af:commandLink text="Advanced" rendered="false" id="cl2"
-                                            binding="#{backingBeanScope.backing_Product_Home.cl2}"/>
-                        </f:facet>
-                    </af:quickQuery>
-                </af:toolbar>
+                <af:toolbar id="t6" binding="#{backingBeanScope.backing_Product_Home.t6}"/>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow id="gr2" binding="#{backingBeanScope.backing_Product_Home.gr2}" height="75%">
@@ -183,7 +182,8 @@
                 </af:panelGroupLayout>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                           binding="#{backingBeanScope.backing_Product_Home.p1}"
-                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}">
+                          popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}"
+                          contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_Product_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.insertDialogListener}">
                         <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Product_Home.pfl1}">
@@ -278,7 +278,7 @@
                     </af:dialog>
                 </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
-                          binding="#{backingBeanScope.backing_Product_Home.p3}">
+                          binding="#{backingBeanScope.backing_Product_Home.p3}" contentDelivery="lazyUncached">
                     <af:dialog id="d3" binding="#{backingBeanScope.backing_Product_Home.d3}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.deleteDialogListener}"
                                type="yesNo">
@@ -303,7 +303,13 @@
                         <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryName.name}" sortable="true"
                                    headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4">
                             <af:outputText value="#{row.CategoryName}"
-                                           shortDesc="#{bindings.CategoryU1.hints.CategoryName.tooltip}" id="ot7"/>
+                                           shortDesc="#{bindings.CategoryU1.hints.CategoryName.tooltip}" id="ot6"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryDescription.name}" sortable="true"
+                                   headerText="#{bindings.CategoryU1.hints.CategoryDescription.label}" id="c5">
+                            <af:outputText value="#{row.CategoryDescription}"
+                                           shortDesc="#{bindings.CategoryU1.hints.CategoryDescription.tooltip}"
+                                           id="ot7"/>
                         </af:column>
                     </af:table>
                 </af:panelGroupLayout>

@@ -47,7 +47,7 @@ public class Launcher {
         */ 
           
         _launchActivity( 
-          "Roles", 
+          "Role management", 
           "/WEB-INF/flows/manage-role-taskflow.xml#manage-role-taskflow",  
           true); 
       } 
@@ -60,7 +60,7 @@ public class Launcher {
         */ 
           
         _launchActivity( 
-          "Products", 
+          "Product management", 
           "/WEB-INF/flows/manage-product-taskflow.xml#manage-product-taskflow",  
           true); 
       } 
@@ -73,7 +73,7 @@ public class Launcher {
         */ 
           
         _launchActivity( 
-          "Users", 
+          "User management", 
           "/WEB-INF/flows/manage-user-taskflow.xml#manage-user-taskflow",  
           true); 
       } 
@@ -86,7 +86,7 @@ public class Launcher {
         */ 
           
         _launchActivity( 
-          "Teams", 
+          "Team management", 
           "/WEB-INF/flows/manage-team-taskflow.xml#manage-team-taskflow",  
           true); 
       } 

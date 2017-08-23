@@ -82,7 +82,6 @@ public class ViewCustomer {
     private RichOutputLabel ol1;
     private RichOutputLabel ol2;
     private RichPanelGroupLayout pgl7;
-    private RichTable t8;
     private RichTable t9;
     private RichInputText it2;
     private RichInputText it3;
@@ -97,8 +96,6 @@ public class ViewCustomer {
     private RichQuickQuery qq1;
     private RichCommandLink cl2;
     private RichTable t5;
-    private RichQuickQuery qq2;
-    private RichCommandLink cl3;
     private RichQuickQuery qq3;
     private RichCommandLink cl4;
     private RichQuickQuery qq4;
@@ -113,6 +110,10 @@ public class ViewCustomer {
     private RichQuickQuery qq5;
     private RichCommandLink cl6;
     private RichTable t10;
+    private RichPanelGroupLayout pgl8;
+    private RichQuickQuery qq2;
+    private RichCommandLink cl3;
+    private RichTable t8;
 
     public ViewCustomer(){
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
@@ -478,15 +479,6 @@ public class ViewCustomer {
     }
 
 
-    public void setT8(RichTable t8) {
-        this.t8 = t8;
-    }
-
-    public RichTable getT8() {
-        return t8;
-    }
-
-
     public void setT9(RichTable t9) {
         this.t9 = t9;
     }
@@ -671,23 +663,6 @@ public class ViewCustomer {
     }
 
 
-    public void setQq2(RichQuickQuery qq2) {
-        this.qq2 = qq2;
-    }
-
-    public RichQuickQuery getQq2() {
-        return qq2;
-    }
-
-    public void setCl3(RichCommandLink cl3) {
-        this.cl3 = cl3;
-    }
-
-    public RichCommandLink getCl3() {
-        return cl3;
-    }
-
-
     public void setQq3(RichQuickQuery qq3) {
         this.qq3 = qq3;
     }
@@ -801,5 +776,38 @@ public class ViewCustomer {
 
     public RichTable getT10() {
         return t10;
+    }
+
+    public void setPgl8(RichPanelGroupLayout pgl8) {
+        this.pgl8 = pgl8;
+    }
+
+    public RichPanelGroupLayout getPgl8() {
+        return pgl8;
+    }
+
+
+    public void setQq2(RichQuickQuery qq2) {
+        this.qq2 = qq2;
+    }
+
+    public RichQuickQuery getQq2() {
+        return qq2;
+    }
+
+    public void setCl3(RichCommandLink cl3) {
+        this.cl3 = cl3;
+    }
+
+    public RichCommandLink getCl3() {
+        return cl3;
+    }
+
+    public void setT8(RichTable t8) {
+        this.t8 = t8;
+    }
+
+    public RichTable getT8() {
+        return t8;
     }
 }

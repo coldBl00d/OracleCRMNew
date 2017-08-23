@@ -38,13 +38,6 @@
     </attributeValues>
     <list IterBinding="ProductsU1Iterator" StaticList="false" Uses="LOV_ProductCategory" id="ProductCategory"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <tree IterBinding="CategoryU1Iterator" id="CategoryU1">
-      <nodeDefinition DefName="model.uvo.CategoryUVO" Name="CategoryU10">
-        <AttrNames>
-          <Item Value="CategoryName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <attributeValues IterBinding="CategoryU1Iterator" id="CategoryName">
       <AttrNames>
         <Item Value="CategoryName"/>
@@ -66,5 +59,13 @@
     <action id="Commit" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
     <action id="Rollback" DataControl="AdminAppModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
+    <tree IterBinding="CategoryU1Iterator" id="CategoryU1">
+      <nodeDefinition DefName="model.uvo.CategoryUVO" Name="CategoryU10">
+        <AttrNames>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

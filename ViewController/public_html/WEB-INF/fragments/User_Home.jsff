@@ -96,7 +96,8 @@
             <af:gridCell id="gc3" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.gc3}">
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.p1}"
-                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}">
+                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}"
+                          contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertDialogListener}">
                         <af:panelFormLayout id="pfl1"
@@ -183,28 +184,28 @@
                             <af:inputText value="#{bindings.AddressLine11.inputValue}"
                                           label="#{bindings.AddressLine11.hints.label}"
                                           required="#{bindings.AddressLine11.hints.mandatory}"
-                                          columns="28"
+                                          columns="30"
                                           maximumLength="#{bindings.AddressLine11.hints.precision}"
                                           shortDesc="#{bindings.AddressLine11.hints.tooltip}" id="it7"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it7}" rows="2">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it7}" rows="1">
                                 <f:validator binding="#{bindings.AddressLine11.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.AddressLine21.inputValue}"
                                           label="#{bindings.AddressLine21.hints.label}"
                                           required="#{bindings.AddressLine21.hints.mandatory}"
-                                          columns="28"
+                                          columns="30"
                                           maximumLength="#{bindings.AddressLine21.hints.precision}"
                                           shortDesc="#{bindings.AddressLine21.hints.tooltip}" id="it8"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it8}" rows="2">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it8}" rows="1">
                                 <f:validator binding="#{bindings.AddressLine21.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.AddressLine31.inputValue}"
                                           label="#{bindings.AddressLine31.hints.label}"
                                           required="#{bindings.AddressLine31.hints.mandatory}"
-                                          columns="28"
+                                          columns="30"
                                           maximumLength="#{bindings.AddressLine31.hints.precision}"
                                           shortDesc="#{bindings.AddressLine31.hints.tooltip}" id="it9"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it9}" rows="2">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it9}" rows="1">
                                 <f:validator binding="#{bindings.AddressLine31.validator}"/>
                             </af:inputText>
                         </af:panelFormLayout>

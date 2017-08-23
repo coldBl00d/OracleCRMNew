@@ -49,6 +49,7 @@
                                binding="#{backingBeanScope.backing_pages_Users.r1}"/>
                 </f:facet>
                 <f:facet name="innerToolbar"/>
+                <f:attribute name="brandingTitle" value="Sales Force"/>
             </af:pageTemplate>
         </af:form>
     </af:document>

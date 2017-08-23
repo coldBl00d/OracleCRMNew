@@ -259,8 +259,7 @@
                                                    value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
                                                    model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
                                                    queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
-                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq2}"
-                                                   partialTriggers="::qq2">
+                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.qq2}">
                                         <f:facet name="end">
                                             <af:commandLink text="Advanced" rendered="false" id="cl3"
                                                             binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cl3}"/>
@@ -269,69 +268,86 @@
                                 </af:toolbar>
                                 <af:panelGroupLayout layout="vertical" id="pgl7"
                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl7}">
-                                    <af:table value="#{bindings.ContactsUVO_arVO1.collectionModel}" var="row"
-                                              rows="#{bindings.ContactsUVO_arVO1.rangeSize}"
-                                              emptyText="#{bindings.ContactsUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                              rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.ContactsUVO_arVO1.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.ContactsUVO_arVO1.collectionModel.makeCurrent}"
-                                              rowSelection="single" fetchSize="#{bindings.ContactsUVO_arVO1.rangeSize}"
-                                              filterModel="#{bindings.ContactsUVO_arVO1Query.queryDescriptor}"
-                                              filterVisible="true"
-                                              queryListener="#{bindings.ContactsUVO_arVO1Query.processQuery}"
-                                              varStatus="vs" id="t8"
-                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}"
-                                              partialTriggers="::qq2">
-                                        <af:column id="c10" headerText="Name">
-                                            <af:link text="#{row.ContactName}" id="l5"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.Gender.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.Gender.label}"
-                                                   id="c18">
-                                            <af:outputText value="#{row.Gender}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.Gender.tooltip}"
-                                                           id="ot18">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.ContactsUVO_arVO1.hints.Gender.format}"/>
-                                            </af:outputText>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.Email.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.Email.label}"
-                                                   id="c19">
-                                            <af:outputText value="#{row.Email}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.Email.tooltip}"
-                                                           id="ot19"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.label}"
-                                                   id="c20">
-                                            <af:outputText value="#{row.DepartmentName}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.DepartmentName.tooltip}"
-                                                           id="ot20"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.label}"
-                                                   id="c21">
-                                            <af:outputText value="#{row.BuyingRole}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.tooltip}"
-                                                           id="ot21">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.ContactsUVO_arVO1.hints.BuyingRole.format}"/>
-                                            </af:outputText>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.label}"
-                                                   id="c22">
-                                            <af:outputText value="#{row.WorkNumber}"
-                                                           shortDesc="#{bindings.ContactsUVO_arVO1.hints.WorkNumber.tooltip}"
-                                                           id="ot22"/>
-                                        </af:column>
-                                    </af:table>
+                                    <af:panelGroupLayout layout="vertical" id="pgl8"
+                                                         binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl8}">
+                                        <af:table value="#{bindings.CustomerContacts.collectionModel}" var="row"
+                                                  rows="#{bindings.CustomerContacts.rangeSize}"
+                                                  emptyText="#{bindings.CustomerContacts.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.CustomerContacts.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.CustomerContacts.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.CustomerContacts.rangeSize}"
+                                                  partialTriggers="::qq2" id="t8"
+                                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}">
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.ContactId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.ContactId.label}"
+                                                       id="c10" rendered="false">
+                                                <af:outputText value="#{row.ContactId}"
+                                                               shortDesc="#{bindings.CustomerContacts.hints.ContactId.tooltip}"
+                                                               id="ot1">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.CustomerContacts.hints.ContactId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.ContactName.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.ContactName.label}"
+                                                       id="c18">
+                                                <af:link text="#{row.ContactName}" id="l5"
+                                                         action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.Gender.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.Gender.label}"
+                                                       id="c19">
+                                                <af:selectOneChoice value="#{row.bindings.Gender.inputValue}"
+                                                                    label="#{row.bindings.Gender.label}"
+                                                                    required="#{bindings.CustomerContacts.hints.Gender.mandatory}"
+                                                                    shortDesc="#{bindings.CustomerContacts.hints.Gender.tooltip}"
+                                                                    readOnly="true" id="soc2">
+                                                    <f:selectItems value="#{row.bindings.Gender.items}" id="si2"/>
+                                                    <f:validator binding="#{row.bindings.Gender.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.WorkNumber.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.WorkNumber.label}"
+                                                       id="c20">
+                                                <af:outputText value="#{row.WorkNumber}"
+                                                               shortDesc="#{bindings.CustomerContacts.hints.WorkNumber.tooltip}"
+                                                               id="ot19"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.Email.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.Email.label}"
+                                                       id="c21">
+                                                <af:outputText value="#{row.Email}"
+                                                               shortDesc="#{bindings.CustomerContacts.hints.Email.tooltip}"
+                                                               id="ot20"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.Title.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.Title.label}"
+                                                       id="c22">
+                                                <af:outputText value="#{row.Title}"
+                                                               shortDesc="#{bindings.CustomerContacts.hints.Title.tooltip}"
+                                                               id="ot21">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.CustomerContacts.hints.Title.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CustomerContacts.hints.DepartmentName.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CustomerContacts.hints.DepartmentName.label}"
+                                                       id="c32">
+                                                <af:outputText value="#{row.DepartmentName}"
+                                                               shortDesc="#{bindings.CustomerContacts.hints.DepartmentName.tooltip}"
+                                                               id="ot22"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab2"

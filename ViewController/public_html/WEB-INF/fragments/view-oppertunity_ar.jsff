@@ -53,7 +53,8 @@
                                                       columns="25"
                                                       maximumLength="#{bindings.Revenue.hints.precision}"
                                                       shortDesc="#{bindings.Revenue.hints.tooltip}" id="it4"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it4}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it4}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.Revenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.Revenue.format}"/>
@@ -65,7 +66,8 @@
                                                       columns="25"
                                                       maximumLength="#{bindings.WorstCaseRevenue.hints.precision}"
                                                       shortDesc="#{bindings.WorstCaseRevenue.hints.tooltip}" id="it6"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it6}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it6}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.WorstCaseRevenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.WorstCaseRevenue.format}"/>
@@ -77,7 +79,8 @@
                                                       columns="25"
                                                       maximumLength="#{bindings.BestCaseRevenue.hints.precision}"
                                                       shortDesc="#{bindings.BestCaseRevenue.hints.tooltip}" id="it5"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it5}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it5}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.BestCaseRevenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.BestCaseRevenue.format}"/>
@@ -89,7 +92,8 @@
                                                       columns="25"
                                                       maximumLength="#{bindings.BudgetAmount.hints.precision}"
                                                       shortDesc="#{bindings.BudgetAmount.hints.tooltip}" id="it7"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it7}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it7}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.BudgetAmount.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.BudgetAmount.format}"/>
@@ -101,7 +105,8 @@
                                                       columns="22"
                                                       shortDesc="#{bindings.OpportunityCloseDate.hints.tooltip}"
                                                       id="id1"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.id1}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.id1}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.OpportunityCloseDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.OpportunityCloseDate.format}"/>
                                         </af:inputDate>
@@ -112,7 +117,8 @@
                                                       columns="25"
                                                       maximumLength="#{bindings.EstimatedDuration.hints.precision}"
                                                       shortDesc="#{bindings.EstimatedDuration.hints.tooltip}" id="it3"
-                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it3}">
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.it3}"
+                                                      editable="onAccess">
                                             <f:validator binding="#{bindings.EstimatedDuration.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.EstimatedDuration.format}"/>
@@ -120,7 +126,8 @@
                                     </af:panelGroupLayout>
                                     <af:panelGroupLayout id="pgl5"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl5}"
-                                                         layout="vertical" valign="top">
+                                                         layout="vertical" valign="top"
+                                                         inlineStyle="padding-left:30px;">
                                         <af:selectOneChoice value="#{bindings.RiskLevel.inputValue}"
                                                             label="#{bindings.RiskLevel.label}"
                                                             required="#{bindings.RiskLevel.hints.mandatory}"
@@ -131,6 +138,8 @@
                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.si1}"/>
                                             <f:validator binding="#{bindings.RiskLevel.validator}"/>
                                         </af:selectOneChoice>
+                                        <af:spacer width="10" height="10" id="s2"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.s2}"/>
                                         <af:selectOneChoice value="#{bindings.SalesMethod.inputValue}"
                                                             label="#{bindings.SalesMethod.label}"
                                                             required="#{bindings.SalesMethod.hints.mandatory}"
@@ -142,6 +151,8 @@
                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.si2}"/>
                                             <f:validator binding="#{bindings.SalesMethod.validator}"/>
                                         </af:selectOneChoice>
+                                        <af:spacer width="10" height="10" id="s3"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.s3}"/>
                                         <af:selectOneChoice value="#{bindings.SalesStage.inputValue}"
                                                             label="#{bindings.SalesStage.label}"
                                                             required="#{bindings.SalesStage.hints.mandatory}"
@@ -152,6 +163,8 @@
                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.si3}"/>
                                             <f:validator binding="#{bindings.SalesStage.validator}"/>
                                         </af:selectOneChoice>
+                                        <af:spacer width="10" height="10" id="s4"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.s4}"/>
                                         <af:selectOneChoice value="#{bindings.DecisionLevel.inputValue}"
                                                             label="#{bindings.DecisionLevel.label}"
                                                             required="#{bindings.DecisionLevel.hints.mandatory}"
@@ -163,6 +176,8 @@
                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.si4}"/>
                                             <f:validator binding="#{bindings.DecisionLevel.validator}"/>
                                         </af:selectOneChoice>
+                                        <af:spacer width="10" height="10" id="s5"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.s5}"/>
                                         <af:selectOneChoice value="#{bindings.Channel.inputValue}"
                                                             label="#{bindings.Channel.label}"
                                                             required="#{bindings.Channel.hints.mandatory}"
@@ -178,8 +193,7 @@
                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.s1}"/>
                                 </af:panelGroupLayout>
                                 <f:facet name="toolbar">
-                                    <af:button actionListener="#{bindings.Commit.execute}"
-                                               disabled="#{!bindings.Commit.enabled}" id="b13"
+                                    <af:button actionListener="#{bindings.Commit.execute}" id="b13"
                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.b13}"
                                                icon="#{resource['images:save.png']}"/>
                                 </f:facet>
@@ -194,8 +208,6 @@
                                     <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">
                                         <af:button id="b4" binding="#{backingBeanScope.backing_viewoppertunity_ar.b4}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                         <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
@@ -205,8 +217,6 @@
                                     <af:toolbar id="t1" binding="#{backingBeanScope.backing_viewoppertunity_ar.t1}">
                                         <af:button id="b1" binding="#{backingBeanScope.backing_viewoppertunity_ar.b1}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                         <af:button id="b3" binding="#{backingBeanScope.backing_viewoppertunity_ar.b3}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
@@ -216,8 +226,6 @@
                                     <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
                                         <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b8" binding="#{backingBeanScope.backing_viewoppertunity_ar.b8}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                         <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
@@ -227,8 +235,6 @@
                                     <af:toolbar id="t4" binding="#{backingBeanScope.backing_viewoppertunity_ar.t4}">
                                         <af:button id="b10" binding="#{backingBeanScope.backing_viewoppertunity_ar.b10}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b11" binding="#{backingBeanScope.backing_viewoppertunity_ar.b11}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                         <af:button id="b12" binding="#{backingBeanScope.backing_viewoppertunity_ar.b12}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>

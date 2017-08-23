@@ -71,7 +71,8 @@
                 </af:panelGroupLayout>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                           binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p1}"
-                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.cancelPopupListener}">
+                          popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.cancelPopupListener}"
+                          contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editDialogListener}"
                                type="okCancel">
