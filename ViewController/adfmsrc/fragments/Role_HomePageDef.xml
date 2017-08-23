@@ -4,7 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="RolesU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesU1Iterator"/>
+    <iterator Binds="RolesU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="RolesU1Iterator"
+              ChangeEventPolicy="none"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="RolesU1Iterator" id="ImplicitViewCriteriaQuery"/>
     <iterator Binds="AllRoleUserPairUVO_AK1" RangeSize="25" DataControl="AdminAppModuleDataControl"

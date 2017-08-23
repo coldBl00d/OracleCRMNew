@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserManager_ar"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USER_MANAGER"
+  AliasName="UserManager_ar"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="UserId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="USER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="USER_MANAGER"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ManagerId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="USER_MANAGER"
+    PrimaryKey="true"/>
+  <Key
+    Name="UserManagerPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="USER_MANAGER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.UserManager_ar.UserId"/>
+      <Item Value="model.eo.UserManager_ar.ManagerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

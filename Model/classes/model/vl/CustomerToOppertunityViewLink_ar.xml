@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerToOppertunityViewLink_ar"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="model.assoc.CustomerToOppertunityAssociation">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.vl.CustomerToOppertunityViewLink_ar_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CustomerListView_ar"
+    Cardinality="1"
+    Source="true"
+    Owner="model.uvo.CustomerListView_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CustomerListView_ar"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.CustomerListView_arVO.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OppertunityUVO_ar"
+    Cardinality="-1"
+    Owner="model.uvo.OppertunityUVO_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OppertunityUVO_ar"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.OppertunityUVO_arVO.CreatorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

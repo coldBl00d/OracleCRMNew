@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="ViewCustomerPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerListIterator" Refresh="default"/>
+    <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>
+    <iterator Binds="CustomerNotes" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="NotesUVO_arVO1Iterator"/>
+    <iterator Binds="CustomerParent" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerParentIterator"/>
+    <iterator Binds="PrimaryAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="PrimaryAddressIterator"/>
+    <iterator Binds="OppertunityOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OppertunityOfCustomerIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OppertunityOfCustomerIterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="NotesUVO_arVO1Iterator" id="ImplicitViewCriteriaQuery2"/>
+    <iterator Binds="CustomerTasks" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerTasksIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerTasksIterator" id="ImplicitViewCriteriaQuery3"/>
+    <iterator Binds="Appointments" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AppointmentsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="AppointmentsIterator" id="ImplicitViewCriteriaQuery4"/>
+    <iterator Binds="CustomerContacts" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CustomerContactsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerContactsIterator" id="ImplicitViewCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CreatorIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="NotesUVO_arVO1Iterator" id="NotesUVO_arVO1">
+      <nodeDefinition DefName="model.uvo.NotesUVO_arVO" Name="NotesUVO_arVO10">
+        <AttrNames>
+          <Item Value="NoteTitle"/>
+          <Item Value="NoteDate"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CustomerListIterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerParentIterator" id="AccountName1">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerParentIterator" id="Ceo">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="UserApplicationModuleDataControl"/>
+    <tree IterBinding="OppertunityOfCustomerIterator" id="OppertunityOfCustomer">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityOfCustomer0">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="OpportunityCloseDate"/>
+          <Item Value="SalesStage"/>
+          <Item Value="Revenue"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+          <Item Value="OpportunityId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ContactsUVO_ar"/>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
+        <AttrNames>
+          <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustomerTasksIterator" id="CustomerTasks">
+      <nodeDefinition DefName="model.uvo.TaskUVO_arVO" Name="CustomerTasks0">
+        <AttrNames>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="ATaskPriority"/>
+          <Item Value="ATaskCompletion"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AppointmentsIterator" id="Appointments">
+      <nodeDefinition DefName="model.uvo.ActivityUVO_ar" Name="Appointments0">
+        <AttrNames>
+          <Item Value="ActivityTitle"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="StartDateTime"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AppointmentsIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="OppertunityOfCustomerIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="CustomerContactsIterator" id="CustomerContacts">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="CustomerContacts0">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="WorkNumber"/>
+          <Item Value="Email"/>
+          <Item Value="Title"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="ContactsOverviewPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="ContactsUVO_arVO3Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsUVO_arVO3Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ContactsUVO_arVO3Iterator" id="ContactsUVO_arVO3">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsUVO_arVO30">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="WorkNumber"/>
+          <Item Value="Email"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="BuyingRole"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

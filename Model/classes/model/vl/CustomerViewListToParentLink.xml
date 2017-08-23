@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerViewListToParentLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="model.assoc.CustomerToParentAssoc_ar">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.vl.CustomerViewListToParentLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CustomerListOverviewPage"
+    Cardinality="1"
+    Source="true"
+    Owner="model.uvo.CustomerListOverviewPage">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CustomerListOverviewPage"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.CustomerListOverviewPage.ParentAccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ParentAccountIdCustomerListOverviewPage"
+    Cardinality="1"
+    Owner="model.uvo.CustomerListOverviewPage">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ParentAccountIdCustomerListOverviewPage"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.CustomerListOverviewPage.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

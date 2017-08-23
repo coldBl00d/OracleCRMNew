@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="view_oppertunity_arPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OppertunityForOverviewIterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="UserApplicationModuleDataControl"/>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="OpportunityName">
+      <AttrNames>
+        <Item Value="OpportunityName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="OpportunityWinProb">
+      <AttrNames>
+        <Item Value="OpportunityWinProb"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="Revenue">
+      <AttrNames>
+        <Item Value="Revenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="BestCaseRevenue">
+      <AttrNames>
+        <Item Value="BestCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="WorstCaseRevenue">
+      <AttrNames>
+        <Item Value="WorstCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="BudgetAmount">
+      <AttrNames>
+        <Item Value="BudgetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="OpportunityCloseDate">
+      <AttrNames>
+        <Item Value="OpportunityCloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_RiskLevel" id="RiskLevel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_SalesMethod" id="SalesMethod"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_SalesStage" id="SalesStage"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="EstimatedDuration">
+      <AttrNames>
+        <Item Value="EstimatedDuration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_DecisionLevel" id="DecisionLevel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_Channel" id="Channel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

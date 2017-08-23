@@ -45,9 +45,9 @@
                               emptyText="#{bindings.RolesU1.viewable ? 'No data to display.' : 'Access Denied.'}"
                               rowBandingInterval="0" selectedRowKeys="#{bindings.RolesU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.RolesU1.collectionModel.makeCurrent}" rowSelection="single"
-                              fetchSize="#{bindings.RolesU1.rangeSize}" partialTriggers="::qryId1" id="t2"
+                              fetchSize="#{bindings.RolesU1.rangeSize}" partialTriggers="::qryId1 ::b1 ::b2 ::b3" id="t2"
                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}"
-                              columnStretching="last">
+                              columnStretching="last" width="373">
                         <af:column sortProperty="#{bindings.RolesU1.hints.RoleName.name}" sortable="true"
                                    headerText="#{bindings.RolesU1.hints.RoleName.label}" id="c1">
                             <af:outputText value="#{row.RoleName}"

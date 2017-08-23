@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="view_contactPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="ContactIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContactIterator" id="ContactName">
+      <AttrNames>
+        <Item Value="ContactName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

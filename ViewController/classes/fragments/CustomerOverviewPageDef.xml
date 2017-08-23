@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="CustomerOverviewPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CustomerIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerIterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator id="OppertunityOfCustomerIterator" Binds="OppertunityOfCustomer"
+              DataControl="UserApplicationModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerIterator" id="Customer">
+      <nodeDefinition DefName="model.uvo.CustomerListView_arVO" Name="Customer0">
+        <AttrNames>
+          <Item Value="AccountName"/>
+          <Item Value="AccountUrl"/>
+          <Item Value="Ceo"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ParentAccountIdCustomerListView_ar"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
