@@ -497,7 +497,7 @@ public class ViewCustomer {
     
     public String goOpportunity(){
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
+        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunityOfCustomerIterator");
 //        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("oppertunityId"));
         ViewObject vobj = iterator.getViewObject();
         Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
@@ -505,7 +505,7 @@ public class ViewCustomer {
         RowSetIterator rsi = iterator.getRowSetIterator();
         Row row = rsi.findByKey(key, 1)[0];
         
-        String tabHeading = (String)row.getAttribute("OpportunityName");
+        String tabHeading = "Opp-"+(String)row.getAttribute("OpportunityName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
         System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
