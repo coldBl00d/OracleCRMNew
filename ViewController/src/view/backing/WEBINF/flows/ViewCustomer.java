@@ -519,9 +519,12 @@ public class ViewCustomer {
         System.out.println("Id passed on by view customer is "+ id);
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        ViewObject vobj = iterator.getViewObject();
+        
         Key key = new Key(new Object[] {id});
-        RowSetIterator rsi = iterator.getRowSetIterator();
-        Row row = rsi.findByKey(key, 1)[0];
+        Row row = vobj.getRow(key);
+        //RowSetIterator rsi = iterator.getRowSetIterator();
+        //Row row = rsi.findByKey(key, 1)[0];
         String tabHeading = "Contact-"+(String)row.getAttribute(fieldName);
         
         Map<String, Object > m = new HashMap<String, Object> ();
