@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="ConId"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <ViewAccessor
     Name="GenderUVO1"
     ViewObjectName="model.uvo.GenderUVO"
@@ -44,8 +48,7 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactsEO_ar"
-    AliasName="CONTACT_ID"
-    IsQueriable="false"/>
+    AliasName="CONTACT_ID"/>
   <ViewAttribute
     Name="ContactName"
     PrecisionRule="true"
@@ -129,6 +132,43 @@
     EntityUsage="ContactsEO_ar"
     AliasName="PIC_ID"
     IsQueriable="false"/>
+  <ViewCriteria
+    Name="FilterById"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"
+    Conjunction="AND"
+    Mode="3">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ContactsUVO_arVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ContactId"
+        ViewAttribute="ContactId"
+        Operator="="
+        Conjunction="AND"
+        Value=":ConId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="OppertunityUVO_ar"
     ViewLink="model.vl.OppertunityToPrimaryContactsVL_ar"

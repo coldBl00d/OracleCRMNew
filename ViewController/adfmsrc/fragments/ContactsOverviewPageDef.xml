@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="ContactsUVO_arVO3" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+    <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="ContactsUVO_arVO3Iterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="ContactsUVO_arVO3Iterator" id="ImplicitViewCriteriaQuery"/>

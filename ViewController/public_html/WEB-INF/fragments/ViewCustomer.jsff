@@ -296,7 +296,11 @@
                                                        headerText="#{bindings.CustomerContacts.hints.ContactName.label}"
                                                        id="c18">
                                                 <af:link text="#{row.ContactName}" id="l5"
-                                                         action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goOpportunity}"/>
+                                                         action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goContact}">
+                                                    <af:setPropertyListener from="#{row.ContactId}"
+                                                                            to="#{pageFlowScope.PointerId}"
+                                                                            type="action"/>
+                                                </af:link>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.CustomerContacts.hints.Gender.name}"
                                                        sortable="true"

@@ -23,6 +23,9 @@
     <page path="/WEB-INF/fragments/OppertunityOverview_ar.jsff" usageId="view_OppertunityOverview_arPageDef"/>
     <page path="/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow@ExecuteWithParams"
           usageId="view_view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow@ExecuteWithParams"
+          usageId="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/fragments/view-contact.jsff" usageId="view_view_contactPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -41,6 +44,9 @@
     <page id="view_OppertunityOverview_arPageDef" path="fragments.OppertunityOverview_arPageDef"/>
     <page id="view_view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"
           path="flows.view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"/>
+    <page id="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"
+          path="flows.view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
+    <page id="view_view_contactPageDef" path="fragments.view_contactPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

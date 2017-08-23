@@ -22,7 +22,12 @@
                                                      layout="vertical" inlineStyle="width:266px;">
                                     <af:inputText label="Name" id="it7"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it7}"
-                                                  editable="onAccess"/>
+                                                  editable="onAccess" value="#{bindings.ContactName.inputValue}"
+                                                  required="#{bindings.ContactName.hints.mandatory}"
+                                                  columns="#{bindings.ContactName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ContactName.hints.precision}">
+                                        <f:validator binding="#{bindings.ContactName.validator}"/>
+                                    </af:inputText>
                                     <af:inputText label="Gender" id="it9"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it9}"
                                                   editable="onAccess"/>

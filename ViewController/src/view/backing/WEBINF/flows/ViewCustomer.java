@@ -511,6 +511,33 @@ public class ViewCustomer {
         return null;
     }
     
+    public String goContact(){
+        String iteratorName = "CustomerContactsIterator";
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+        String fieldName = "ContactName";
+        
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        Key key = new Key(new Object[] {id});
+        RowSetIterator rsi = iterator.getRowSetIterator();
+        Row row = rsi.findByKey(key, 1)[0];
+        String tabHeading = "Contact-"+(String)row.getAttribute(fieldName);
+        
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+        m.put("PointerId", id);
+        
+        viewContactActivity(m, tabHeading);
+        return null;
+    }
+    
+    public void viewContactActivity(Map<String, Object> params, String tabHeading){
+        _launchActivity( 
+          tabHeading, 
+          "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow",  
+          true, params); 
+    }
+    
     public void viewOppertunityActivity(Map<String, Object> params, String companyName) 
       { 
         /** 

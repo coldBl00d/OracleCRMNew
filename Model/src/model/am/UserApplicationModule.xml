@@ -26,7 +26,7 @@
     Name="OppertunityForOverview"
     ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
   <ViewUsage
-    Name="ContactsUVO_arVO3"
+    Name="Contact"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewUsage
     Name="Tasks"

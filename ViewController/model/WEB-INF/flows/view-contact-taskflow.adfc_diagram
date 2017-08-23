@@ -2,4 +2,46 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">207.35156</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">499.34473</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">view-contact</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">592.3457</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view-contact&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">509.79883</property>
+      <property
+         name="page">/WEB-INF/fragments/view-contact.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,248.35156,498.99414,551.3457,509.44824,L50</property>
+   </ControlFlowCase>
 </SDM>
