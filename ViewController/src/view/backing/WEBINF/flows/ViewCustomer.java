@@ -541,7 +541,7 @@ public class ViewCustomer {
         _launchActivity( 
           tabHeading, 
           "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow",  
-          true, params); 
+          false, params); 
     }
     
     public void viewOppertunityActivity(Map<String, Object> params, String companyName) 
