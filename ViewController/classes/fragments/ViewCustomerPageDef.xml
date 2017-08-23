@@ -90,7 +90,6 @@
     <tree IterBinding="OppertunityOfCustomerIterator" id="OppertunityOfCustomer">
       <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityOfCustomer0">
         <AttrNames>
-          <Item Value="OpportunityName"/>
           <Item Value="OpportunityWinProb"/>
           <Item Value="OpportunityCloseDate"/>
           <Item Value="SalesStage"/>
@@ -99,6 +98,8 @@
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
           <Item Value="OpportunityId"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="OpportunityName"/>
         </AttrNames>
         <Accessors>
           <Item Value="ContactsUVO_ar"/>
