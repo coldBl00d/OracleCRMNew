@@ -28,7 +28,9 @@ import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
+import oracle.jbo.Key;
 import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 
 import oracle.ui.pattern.dynamicShell.TabContext;
@@ -494,13 +496,16 @@ public class ViewCustomer {
     }
     
     public String goOpportunity(){
-//        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-//        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding("OppertunitiesOfCustomerIterator");
 //        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("oppertunityId"));
-//        //ViewObject vobj = iterator.getViewObject();
-//        ViewObject obj = iterator.getViewObject();
-//        Row row1 = iterator.getCurrentRow();
-        String tabHeading = "temp";
+        ViewObject vobj = iterator.getViewObject();
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+        Key key = new Key(new Object[] {id});
+        RowSetIterator rsi = iterator.getRowSetIterator();
+        Row row = rsi.findByKey(key, 1)[0];
+        
+        String tabHeading = (String)row.getAttribute("OpportunityName");
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
         System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));

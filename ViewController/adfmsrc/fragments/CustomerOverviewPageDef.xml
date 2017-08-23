@@ -7,6 +7,8 @@
     <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CustomerIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CustomerIterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator id="OppertunityOfCustomerIterator" Binds="OppertunityOfCustomer"
+              DataControl="UserApplicationModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <tree IterBinding="CustomerIterator" id="Customer">

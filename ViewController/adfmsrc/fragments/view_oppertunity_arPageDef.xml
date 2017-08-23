@@ -20,10 +20,45 @@
         <Item Value="OpportunityWinProb"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="OppertunityForOverviewIterator" id="RiskLevel">
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="Revenue">
       <AttrNames>
-        <Item Value="RiskLevel"/>
+        <Item Value="Revenue"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="BestCaseRevenue">
+      <AttrNames>
+        <Item Value="BestCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="WorstCaseRevenue">
+      <AttrNames>
+        <Item Value="WorstCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="BudgetAmount">
+      <AttrNames>
+        <Item Value="BudgetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="OpportunityCloseDate">
+      <AttrNames>
+        <Item Value="OpportunityCloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_RiskLevel" id="RiskLevel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_SalesMethod" id="SalesMethod"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_SalesStage" id="SalesStage"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="OppertunityForOverviewIterator" id="EstimatedDuration">
+      <AttrNames>
+        <Item Value="EstimatedDuration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_DecisionLevel" id="DecisionLevel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_Channel" id="Channel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

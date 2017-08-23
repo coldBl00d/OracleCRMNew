@@ -21,14 +21,106 @@
     Name="SalesStagesLookup_ar1"
     ViewObjectName="model.rvo.SalesStagesLookup_ar"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="salesStageRVO1"
+    ViewObjectName="model.rvo.salesStageRVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="salesChannel1"
+    ViewObjectName="model.rvo.salesChannel"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Priority1"
+    ViewObjectName="model.rvo.Priority"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DecisionLevel1"
+    ViewObjectName="model.rvo.DecisionLevel"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SalesMethodRVO1"
+    ViewObjectName="model.rvo.SalesMethodRVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_SalesStage"
-    ListVOName="SalesStagesLookup_ar1"
+    ListVOName="salesStageRVO1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="SalesStage"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Channel"
+    ListVOName="salesChannel1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Channel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RiskLevel"
+    ListVOName="Priority1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RiskLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DecisionLevel"
+    ListVOName="DecisionLevel1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DecisionLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalesMethod"
+    ListVOName="SalesMethodRVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalesMethod"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -49,7 +141,7 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
   <ViewAttribute
     Name="AccId"
     PrecisionRule="true"
@@ -101,6 +193,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -109,13 +203,31 @@
     PrecisionRule="true"
     EntityAttrName="SalesMethod"
     EntityUsage="OppertunityEO_ar"
-    AliasName="SALES_METHOD"/>
+    AliasName="SALES_METHOD"
+    LOVName="LOV_SalesMethod">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Channel"
     PrecisionRule="true"
     EntityAttrName="Channel"
     EntityUsage="OppertunityEO_ar"
-    AliasName="CHANNEL"/>
+    AliasName="CHANNEL"
+    LOVName="LOV_Channel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Revenue"
     PrecisionRule="true"
@@ -158,11 +270,14 @@
     PrecisionRule="true"
     EntityAttrName="RiskLevel"
     EntityUsage="OppertunityEO_ar"
-    AliasName="RISK_LEVEL">
+    AliasName="RISK_LEVEL"
+    LOVName="LOV_RiskLevel">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.uvo.OppertunityUVO_arVO.RiskLevel_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -171,7 +286,15 @@
     PrecisionRule="true"
     EntityAttrName="DecisionLevel"
     EntityUsage="OppertunityEO_ar"
-    AliasName="DECISION_LEVEL"/>
+    AliasName="DECISION_LEVEL"
+    LOVName="LOV_DecisionLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatorId"
     PrecisionRule="true"

@@ -1,11 +1,15 @@
 package view.backing;
 
 
+import javax.faces.component.UISelectItems;
+
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
@@ -17,6 +21,7 @@ import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichImage;
+import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.jbo.Key;
@@ -59,9 +64,32 @@ public class Viewoppertunity_ar {
     private RichButton b13;
     private RichInputText it1;
     private RichInputText it2;
-    private RichInputText it3;
     private RichPanelGroupLayout pgl4;
     private RichPanelGroupLayout pgl5;
+    private RichInputText it4;
+    private RichInputText it5;
+    private RichInputText it6;
+    private RichInputText it7;
+    private RichInputDate id1;
+    private RichSelectOneChoice soc1;
+    private UISelectItems si1;
+    private RichSelectOneChoice soc2;
+    private UISelectItems si2;
+    private RichSelectOneChoice soc3;
+    private UISelectItems si3;
+    private RichInputText it3;
+    private RichSelectOneChoice soc4;
+    private UISelectItems si4;
+    private RichSelectOneChoice soc5;
+    private UISelectItems si5;
+    private RichOutputLabel ol1;
+    private RichOutputLabel ol2;
+    private RichOutputLabel ol3;
+    private RichOutputLabel ol4;
+    private RichOutputLabel ol5;
+    private RichOutputLabel ol6;
+    private RichOutputLabel ol7;
+    private RichOutputLabel ol8;
 
 
     public Viewoppertunity_ar(){
@@ -361,13 +389,6 @@ public class Viewoppertunity_ar {
         return it2;
     }
 
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
-    }
-
-    public RichInputText getIt3() {
-        return it3;
-    }
 
     public void setPgl4(RichPanelGroupLayout pgl4) {
         this.pgl4 = pgl4;
@@ -383,5 +404,198 @@ public class Viewoppertunity_ar {
 
     public RichPanelGroupLayout getPgl5() {
         return pgl5;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setIt7(RichInputText it7) {
+        this.it7 = it7;
+    }
+
+    public RichInputText getIt7() {
+        return it7;
+    }
+
+    public void setId1(RichInputDate id1) {
+        this.id1 = id1;
+    }
+
+    public RichInputDate getId1() {
+        return id1;
+    }
+
+    public void setSoc1(RichSelectOneChoice soc1) {
+        this.soc1 = soc1;
+    }
+
+    public RichSelectOneChoice getSoc1() {
+        return soc1;
+    }
+
+    public void setSi1(UISelectItems si1) {
+        this.si1 = si1;
+    }
+
+    public UISelectItems getSi1() {
+        return si1;
+    }
+
+
+    public void setSoc2(RichSelectOneChoice soc2) {
+        this.soc2 = soc2;
+    }
+
+    public RichSelectOneChoice getSoc2() {
+        return soc2;
+    }
+
+    public void setSi2(UISelectItems si2) {
+        this.si2 = si2;
+    }
+
+    public UISelectItems getSi2() {
+        return si2;
+    }
+
+    public void setSoc3(RichSelectOneChoice soc3) {
+        this.soc3 = soc3;
+    }
+
+    public RichSelectOneChoice getSoc3() {
+        return soc3;
+    }
+
+    public void setSi3(UISelectItems si3) {
+        this.si3 = si3;
+    }
+
+    public UISelectItems getSi3() {
+        return si3;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setSoc4(RichSelectOneChoice soc4) {
+        this.soc4 = soc4;
+    }
+
+    public RichSelectOneChoice getSoc4() {
+        return soc4;
+    }
+
+    public void setSi4(UISelectItems si4) {
+        this.si4 = si4;
+    }
+
+    public UISelectItems getSi4() {
+        return si4;
+    }
+
+    public void setSoc5(RichSelectOneChoice soc5) {
+        this.soc5 = soc5;
+    }
+
+    public RichSelectOneChoice getSoc5() {
+        return soc5;
+    }
+
+    public void setSi5(UISelectItems si5) {
+        this.si5 = si5;
+    }
+
+    public UISelectItems getSi5() {
+        return si5;
+    }
+
+    public void setOl1(RichOutputLabel ol1) {
+        this.ol1 = ol1;
+    }
+
+    public RichOutputLabel getOl1() {
+        return ol1;
+    }
+
+    public void setOl2(RichOutputLabel ol2) {
+        this.ol2 = ol2;
+    }
+
+    public RichOutputLabel getOl2() {
+        return ol2;
+    }
+
+    public void setOl3(RichOutputLabel ol3) {
+        this.ol3 = ol3;
+    }
+
+    public RichOutputLabel getOl3() {
+        return ol3;
+    }
+
+    public void setOl4(RichOutputLabel ol4) {
+        this.ol4 = ol4;
+    }
+
+    public RichOutputLabel getOl4() {
+        return ol4;
+    }
+
+    public void setOl5(RichOutputLabel ol5) {
+        this.ol5 = ol5;
+    }
+
+    public RichOutputLabel getOl5() {
+        return ol5;
+    }
+
+    public void setOl6(RichOutputLabel ol6) {
+        this.ol6 = ol6;
+    }
+
+    public RichOutputLabel getOl6() {
+        return ol6;
+    }
+
+    public void setOl7(RichOutputLabel ol7) {
+        this.ol7 = ol7;
+    }
+
+    public RichOutputLabel getOl7() {
+        return ol7;
+    }
+
+    public void setOl8(RichOutputLabel ol8) {
+        this.ol8 = ol8;
+    }
+
+    public RichOutputLabel getOl8() {
+        return ol8;
     }
 }
