@@ -216,27 +216,60 @@
                                                            shortDesc="#{bindings.OppertunityOfCustomer.hints.RiskLevel.tooltip}"
                                                            id="ot7"/>
                                         </af:column>
-                                        <af:column headerText="Contact" id="c12">
+                                        <af:column id="c34" headerText="Contact">
                                             <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
-                                                     id="l2"/>
+                                                     id="l6"
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goContact}">
+                                                <af:setPropertyListener from="#{row.PrimaryContactId}"
+                                                                        to="#{pageFlowScope.PointerId}" type="action"/>
+                                            </af:link>
+                                        </af:column>
+                                        <af:column headerText="Contact" id="c12" rendered="false">
+                                            <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
+                                                     id="l2"
+                                                     action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goContact}"/>
                                         </af:column>
                                         <af:column headerText="Created By" id="c13">
-                                            <af:link text="#{row.UserUVO_ar.bindings.FirstName.inputValue}" id="l3"
-                                                     disabled="#{securityContext.userInRole['Manager']}"/>
+                                            <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}" id="ot31"/>
                                         </af:column>
                                         <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityId.label}"
                                                    id="c31" rendered="false">
-                                            <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
-                                                          label="#{bindings.OppertunityOfCustomer.hints.OpportunityId.label}"
-                                                          required="#{bindings.OppertunityOfCustomer.hints.OpportunityId.mandatory}"
-                                                          columns="#{bindings.OppertunityOfCustomer.hints.OpportunityId.displayWidth}"
-                                                          maximumLength="#{bindings.OppertunityOfCustomer.hints.OpportunityId.precision}"
-                                                          shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityId.tooltip}"
-                                                          id="it1">
-                                                <f:validator binding="#{row.bindings.OpportunityId.validator}"/>
+                                            <af:outputText value="#{row.OpportunityId}"
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityId.tooltip}"
+                                                           id="ot18">
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityId.format}"/>
-                                            </af:inputText>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.OpportunityId}"
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityId.tooltip}"
+                                                           id="ot28">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityId.label}"
+                                                   id="c33" rendered="false">
+                                            <af:outputText value="#{row.OpportunityId}"
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityId.tooltip}"
+                                                           id="ot23">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.OpportunityId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.PrimaryContactId.label}"
+                                                   id="c35" rendered="false">
+                                            <af:outputText value="#{row.PrimaryContactId}"
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.PrimaryContactId.tooltip}"
+                                                           id="ot29">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OppertunityOfCustomer.hints.PrimaryContactId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityName.label}"
+                                                   id="c36" rendered="false">
+                                            <af:outputText value="#{row.OpportunityName}"
+                                                           shortDesc="#{bindings.OppertunityOfCustomer.hints.OpportunityName.tooltip}"
+                                                           id="ot30"/>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>

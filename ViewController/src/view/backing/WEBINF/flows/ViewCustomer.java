@@ -116,7 +116,7 @@ public class ViewCustomer {
     private RichTable t8;
 
     public ViewCustomer(){
-        System.out.println(ADFContext.getCurrent().getPageFlowScope().get("customerIdForView"));
+        
     }
 
     public void setPgl1(RichPanelGridLayout pgl1) {
@@ -516,6 +516,7 @@ public class ViewCustomer {
         Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
         String fieldName = "ContactName";
         
+        System.out.println("Id passed on by view customer is "+ id);
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
         Key key = new Key(new Object[] {id});
@@ -530,6 +531,8 @@ public class ViewCustomer {
         viewContactActivity(m, tabHeading);
         return null;
     }
+    
+    
     
     public void viewContactActivity(Map<String, Object> params, String tabHeading){
         _launchActivity( 
