@@ -210,10 +210,17 @@
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <AccessorAttribute
+    Name="Activity1"
+    Association="model.assoc.AttendeesUser"
+    AssociationEnd="model.assoc.AttendeesUser.Activity1"
+    AssociationOtherEnd="model.assoc.AttendeesUser.UserEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
     Name="Activity"
-    Association="model.assoc.AppointmentToCreator"
-    AssociationEnd="model.assoc.AppointmentToCreator.Activity"
-    AssociationOtherEnd="model.assoc.AppointmentToCreator.UserEO_ar1"
+    Association="model.assoc.AppointmentToCreatorAssoc"
+    AssociationEnd="model.assoc.AppointmentToCreatorAssoc.Activity"
+    AssociationOtherEnd="model.assoc.AppointmentToCreatorAssoc.UserEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

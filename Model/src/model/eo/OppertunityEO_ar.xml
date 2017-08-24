@@ -318,6 +318,27 @@
     AssociationOtherEnd="model.assoc.OppertunityToContactAssoc.OppertunityEO_ar1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar2"
+    Association="model.assoc.ContactToOppertunityAssoc"
+    AssociationEnd="model.assoc.ContactToOppertunityAssoc.ContactsEO_ar2"
+    AssociationOtherEnd="model.assoc.ContactToOppertunityAssoc.OppertunityEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar3"
+    Association="model.assoc.ContactToPrimerOppertunityAssoc"
+    AssociationEnd="model.assoc.ContactToPrimerOppertunityAssoc.ContactsEO_ar3"
+    AssociationOtherEnd="model.assoc.ContactToPrimerOppertunityAssoc.OppertunityEO_ar3"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar1"
+    Association="model.assoc.OppertunityToCustomerAssoc"
+    AssociationEnd="model.assoc.OppertunityToCustomerAssoc.CustomerEO_ar1"
+    AssociationOtherEnd="model.assoc.OppertunityToCustomerAssoc.OppertunityEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">
@@ -326,6 +347,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.OppertunityEO_ar.OpportunityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_OppertunityEO_ar">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CONTACTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_OPPERTUNITY_EO_AR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.OppertunityEO_ar.PrimaryContactId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

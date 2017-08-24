@@ -141,7 +141,7 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
   <ViewAttribute
     Name="AccId"
     PrecisionRule="true"
@@ -466,6 +466,11 @@
     Name="ContactsUVO_ar1"
     ViewLink="model.vl.OppertunityToContactVL"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerListView_ar"
+    ViewLink="model.vl.OppertunityToCustomerVL"
+    Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

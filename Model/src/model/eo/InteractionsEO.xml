@@ -20,7 +20,14 @@
     Type="java.lang.Long"
     ColumnType="NUMBER"
     TableName="ACTIVITY"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.InteractionsEO.ActivityId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActivityType"
     Precision="255"
@@ -163,7 +170,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.InteractionsEO.ATaskAssigneeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ATaskCompletion"
     Precision="18"
@@ -172,7 +186,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="ACTIVITY"/>
+    TableName="ACTIVITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.InteractionsEO.ATaskCompletion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ACreatorId"
     Precision="18"
@@ -205,6 +226,13 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="ContactsEO_ar2"
+    Association="model.assoc.ContactToInteractionAssoc"
+    AssociationEnd="model.assoc.ContactToInteractionAssoc.ContactsEO_ar2"
+    AssociationOtherEnd="model.assoc.ContactToInteractionAssoc.InteractionsEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

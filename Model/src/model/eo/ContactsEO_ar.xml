@@ -211,6 +211,41 @@
     AssociationOtherEnd="model.assoc.OppertunityToContactAssoc.ContactsEO_ar1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar2"
+    Association="model.assoc.ContactToOppertunityAssoc"
+    AssociationEnd="model.assoc.ContactToOppertunityAssoc.OppertunityEO_ar2"
+    AssociationOtherEnd="model.assoc.ContactToOppertunityAssoc.ContactsEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar3"
+    Association="model.assoc.ContactToPrimerOppertunityAssoc"
+    AssociationEnd="model.assoc.ContactToPrimerOppertunityAssoc.OppertunityEO_ar3"
+    AssociationOtherEnd="model.assoc.ContactToPrimerOppertunityAssoc.ContactsEO_ar3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar"
+    Association="model.assoc.ContactToTaskAssociation"
+    AssociationEnd="model.assoc.ContactToTaskAssociation.TaskEO_ar"
+    AssociationOtherEnd="model.assoc.ContactToTaskAssociation.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Activity1"
+    Association="model.assoc.ContactToAppointments"
+    AssociationEnd="model.assoc.ContactToAppointments.Activity1"
+    AssociationOtherEnd="model.assoc.ContactToAppointments.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Interactions"
+    Association="model.assoc.ContactToInteractionAssoc"
+    AssociationEnd="model.assoc.ContactToInteractionAssoc.InteractionsEO"
+    AssociationOtherEnd="model.assoc.ContactToInteractionAssoc.ContactsEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">
