@@ -4,6 +4,8 @@ import javax.faces.component.UISelectItems;
 import javax.faces.component.html.HtmlOutputLabel;
 
 import oracle.adf.share.ADFContext;
+import oracle.adf.view.rich.component.rich.RichQuickQuery;
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -15,6 +17,7 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 
 public class Viewcontact {
@@ -58,6 +61,10 @@ public class Viewcontact {
     private RichInputText it6;
     private RichInputText it7;
     private RichButton b1;
+    private RichPanelGroupLayout pgl4;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t1;
 
     public Viewcontact(){
         super();
@@ -384,5 +391,38 @@ public class Viewcontact {
 
     public RichButton getB1() {
         return b1;
+    }
+
+    public void setPgl4(RichPanelGroupLayout pgl4) {
+        this.pgl4 = pgl4;
+    }
+
+    public RichPanelGroupLayout getPgl4() {
+        return pgl4;
+    }
+
+
+    public void setQryId1(RichQuickQuery qryId1) {
+        this.qryId1 = qryId1;
+    }
+
+    public RichQuickQuery getQryId1() {
+        return qryId1;
+    }
+
+    public void setCl1(RichCommandLink cl1) {
+        this.cl1 = cl1;
+    }
+
+    public RichCommandLink getCl1() {
+        return cl1;
+    }
+
+    public void setT1(RichTable t1) {
+        this.t1 = t1;
+    }
+
+    public RichTable getT1() {
+        return t1;
     }
 }

@@ -123,6 +123,9 @@
   <ViewUsage
     Name="ContactsUVO_arVO1"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="PrimaryContact"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -284,6 +287,12 @@
     ViewLinkObjectName="model.vl.AppointmentToContactsVL"
     SrcViewUsageName="model.am.UserApplicationModule.AppointmentUVO1"
     DstViewUsageName="model.am.UserApplicationModule.ContactsUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.PrimaryContact"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

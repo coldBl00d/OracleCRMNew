@@ -8,6 +8,10 @@
     <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="ContactIterator"/>
     <iterator Binds="AddressOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="AddressOfCustomerIterator"/>
+    <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OppertunityForOverviewIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OppertunityForOverviewIterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerIterator" id="AccountName">
@@ -63,5 +67,30 @@
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="UserApplicationModuleDataControl"/>
+    <tree IterBinding="OppertunityForOverviewIterator" id="OppertunityForOverview">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityForOverview0">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="OpportunityId"/>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMethod"/>
+          <Item Value="Channel"/>
+          <Item Value="Revenue"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

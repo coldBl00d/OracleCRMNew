@@ -531,5 +531,21 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getAppointmentToContactsVL1() {
         return (ViewLinkImpl) findViewLink("AppointmentToContactsVL1");
     }
+
+    /**
+     * Container's getter for ContactsUVO_arVO2.
+     * @return ContactsUVO_arVO2
+     */
+    public ViewObjectImpl getPrimaryContact() {
+        return (ViewObjectImpl) findViewObject("PrimaryContact");
+    }
+
+    /**
+     * Container's getter for OppertunityToPrimaryContactsVL_ar1.
+     * @return OppertunityToPrimaryContactsVL_ar1
+     */
+    public ViewLinkImpl getOppertunityToPrimaryContactsVL_ar1() {
+        return (ViewLinkImpl) findViewLink("OppertunityToPrimaryContactsVL_ar1");
+    }
 }
 
