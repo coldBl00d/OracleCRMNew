@@ -116,4 +116,10 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1view-appointments.jsff-->
   </managed-bean>
+  <managed-bean id="__12">
+    <managed-bean-name>backing_WEBINF_fragments_InteractionDetail_ar</managed-bean-name>
+    <managed-bean-class>view.backing.WEBINF.fragments.InteractionDetail_ar</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/InteractionDetail_ar.jsff-->
+  </managed-bean>
 </adfc-config>

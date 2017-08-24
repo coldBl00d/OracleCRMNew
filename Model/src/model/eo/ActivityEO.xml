@@ -206,6 +206,13 @@
     AssociationOtherEnd="model.assoc.AppointmentToCreator.Activity"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.OppertunityToAppointment"
+    AssociationEnd="model.assoc.OppertunityToAppointment.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToAppointment.Activity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

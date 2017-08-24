@@ -203,6 +203,15 @@
                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.gc2}">
                             <af:panelTabbed position="above" id="pt1"
                                             binding="#{backingBeanScope.backing_viewoppertunity_ar.pt1}">
+                                <af:showDetailItem id="sdi1" text="Revenue Items" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}">
+                                    <af:toolbar id="t5" binding="#{backingBeanScope.backing_viewoppertunity_ar.t5}">
+                                        <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
                                 <af:showDetailItem id="tab4" text="Interactions" disclosed="true"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
                                     <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">

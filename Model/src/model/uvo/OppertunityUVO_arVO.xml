@@ -141,7 +141,7 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0"/>
   <ViewAttribute
     Name="AccId"
     PrecisionRule="true"
@@ -441,6 +441,26 @@
     Name="UserUVO_ar"
     ViewLink="model.vl.OppertunityToCreatorVL_ar"
     Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RevenueItemU"
+    ViewLink="model.vl.OppertunityToRevenueItemVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NotesUVO_ar"
+    ViewLink="model.vl.OppertunityToNoteVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TaskUVO_ar"
+    ViewLink="model.vl.OppertunityToTaskVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ActivityUVO_ar"
+    ViewLink="model.vl.OppertunityAppointmentVL"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

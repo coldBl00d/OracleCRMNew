@@ -59,7 +59,37 @@
     Name="Appointments"
     ViewObjectName="model.uvo.ActivityUVO_ar"/>
   <ViewUsage
-    Name="AppointmentCreator"
+    Name="OppCreator"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="OppPrimaryContact"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="RevenueItemsOfOpportunity"
+    ViewObjectName="model.uvo.RevenueItemUVO"/>
+  <ViewUsage
+    Name="ProductsInRevenueItems"
+    ViewObjectName="model.uvo.Products_ar"/>
+  <ViewUsage
+    Name="NotesOfOppertunity"
+    ViewObjectName="model.uvo.NotesUVO_arVO"/>
+  <ViewUsage
+    Name="NotesCreator2"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="TasksOfOppertunity"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="TaskAssignee2"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="TaskCreator2"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Appointments_o"
+    ViewObjectName="model.uvo.ActivityUVO_ar"/>
+  <ViewUsage
+    Name="AppointmentCreator_o"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
@@ -128,10 +158,70 @@
     DstViewUsageName="model.am.UserApplicationModule.Appointments"
     Reversed="false"/>
   <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OppCreator"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToCreatorVL_ar2"
+    ViewLinkObjectName="model.vl.OppertunityToCreatorVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OppPrimaryContact"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToRevenueItemVL1"
+    ViewLinkObjectName="model.vl.OppertunityToRevenueItemVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.RevenueItemsOfOpportunity"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RevenueItemToProductVL1"
+    ViewLinkObjectName="model.vl.RevenueItemToProductVL"
+    SrcViewUsageName="model.am.UserApplicationModule.RevenueItemsOfOpportunity"
+    DstViewUsageName="model.am.UserApplicationModule.ProductsInRevenueItems"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToNoteVL1"
+    ViewLinkObjectName="model.vl.OppertunityToNoteVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.NotesOfOppertunity"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NotesToCreator2"
+    ViewLinkObjectName="model.vl.NotesToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.NotesOfOppertunity"
+    DstViewUsageName="model.am.UserApplicationModule.NotesCreator2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToTaskVL1"
+    ViewLinkObjectName="model.vl.OppertunityToTaskVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.TasksOfOppertunity"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToAssigneeVL_ar1"
+    ViewLinkObjectName="model.vl.TaskToAssigneeVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.TasksOfOppertunity"
+    DstViewUsageName="model.am.UserApplicationModule.TaskAssignee2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToCreator2"
+    ViewLinkObjectName="model.vl.TaskToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.TasksOfOppertunity"
+    DstViewUsageName="model.am.UserApplicationModule.TaskCreator2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityAppointmentVL2"
+    ViewLinkObjectName="model.vl.OppertunityAppointmentVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.Appointments_o"
+    Reversed="false"/>
+  <ViewLinkUsage
     Name="AppointmentToCreatorVL1"
     ViewLinkObjectName="model.vl.AppointmentToCreatorVL"
-    SrcViewUsageName="model.am.UserApplicationModule.Appointments"
-    DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.Appointments_o"
+    DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator_o"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

@@ -283,6 +283,34 @@
     AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc.OppertunityEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="RevenueItem"
+    Association="model.assoc.OpportunityToRevenueItemAssoc"
+    AssociationEnd="model.assoc.OpportunityToRevenueItemAssoc.RevenueItem"
+    AssociationOtherEnd="model.assoc.OpportunityToRevenueItemAssoc.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="NotesEO_ar"
+    Association="model.assoc.OppertunityToNoteAssoc"
+    AssociationEnd="model.assoc.OppertunityToNoteAssoc.NotesEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToNoteAssoc.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar"
+    Association="model.assoc.OppertunityToTaskAssoc"
+    AssociationEnd="model.assoc.OppertunityToTaskAssoc.TaskEO_ar"
+    AssociationOtherEnd="model.assoc.OppertunityToTaskAssoc.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Activity"
+    Association="model.assoc.OppertunityToAppointment"
+    AssociationEnd="model.assoc.OppertunityToAppointment.Activity"
+    AssociationOtherEnd="model.assoc.OppertunityToAppointment.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">
