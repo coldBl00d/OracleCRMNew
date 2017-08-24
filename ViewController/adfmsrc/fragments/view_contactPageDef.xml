@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CustomerIterator"/>
     <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="ContactIterator"/>
+    <iterator Binds="AddressOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AddressOfCustomerIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerIterator" id="AccountName">
@@ -44,5 +46,22 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="ContactIterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="UserApplicationModuleDataControl"/>
   </bindings>
 </pageDefinition>

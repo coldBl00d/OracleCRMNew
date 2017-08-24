@@ -14,6 +14,7 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
+import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 
 public class Viewcontact {
@@ -54,6 +55,9 @@ public class Viewcontact {
     private UISelectItems si2;
     private RichSelectOneChoice soc3;
     private UISelectItems si3;
+    private RichInputText it6;
+    private RichInputText it7;
+    private RichButton b1;
 
     public Viewcontact(){
         super();
@@ -356,5 +360,29 @@ public class Viewcontact {
 
     public UISelectItems getSi3() {
         return si3;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setIt7(RichInputText it7) {
+        this.it7 = it7;
+    }
+
+    public RichInputText getIt7() {
+        return it7;
+    }
+
+    public void setB1(RichButton b1) {
+        this.b1 = b1;
+    }
+
+    public RichButton getB1() {
+        return b1;
     }
 }

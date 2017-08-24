@@ -13,7 +13,11 @@
                             <af:panelBox text="Contact Details" id="pb1"
                                          binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pb1}"
                                          background="light" inlineStyle="width:275px" showDisclosure="false">
-                                <f:facet name="toolbar"/>
+                                <f:facet name="toolbar">
+                                    <af:button actionListener="#{bindings.Commit.execute}" id="b1"
+                                               binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.b1}"
+                                               icon="#{resource['images:save.png']}"/>
+                                </f:facet>
                                 <af:image source="#{resource['images:contacts.png']}" id="i1"
                                           binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.i1}"
                                           inlineStyle="width:104px;"/>
@@ -117,13 +121,32 @@
                                     </af:selectOneChoice>
                                     <h:outputLabel value="Address" id="ol9"
                                                    binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol9}"/>
-                                    <af:inputText value="#{bindings.AccountName.inputValue}" simple="true"
-                                                  required="#{bindings.AccountName.hints.mandatory}" columns="20"
-                                                  maximumLength="#{bindings.AccountName.hints.precision}"
-                                                  shortDesc="#{bindings.AccountName.hints.tooltip}" id="it8"
+                                    <af:inputText value="#{bindings.AddressLine1.inputValue}" simple="true"
+                                                  required="#{bindings.AddressLine1.hints.mandatory}"
+                                                  columns="#{bindings.AddressLine1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.AddressLine1.hints.precision}"
+                                                  shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it8"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it8}"
                                                   editable="onAccess">
-                                        <f:validator binding="#{bindings.AccountName.validator}"/>
+                                        <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.AddressLine2.inputValue}" simple="true"
+                                                  required="#{bindings.AddressLine2.hints.mandatory}"
+                                                  columns="#{bindings.AddressLine2.hints.displayWidth}"
+                                                  maximumLength="#{bindings.AddressLine2.hints.precision}"
+                                                  shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it6"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it6}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.AddressLine3.inputValue}" simple="true"
+                                                  required="#{bindings.AddressLine3.hints.mandatory}"
+                                                  columns="#{bindings.AddressLine3.hints.displayWidth}"
+                                                  maximumLength="#{bindings.AddressLine3.hints.precision}"
+                                                  shortDesc="#{bindings.AddressLine3.hints.tooltip}" id="it7"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it7}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.AddressLine3.validator}"/>
                                     </af:inputText>
                                 </af:panelGroupLayout>
                             </af:panelBox>
