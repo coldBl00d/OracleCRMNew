@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactToOppertunityViewLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="model.assoc.ContactToOpportunityAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.vl.ContactToOppertunityViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ContactsUVO_ar1"
+    Cardinality="-1"
+    Source="true"
+    Owner="model.uvo.ContactsUVO_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ContactsUVO_ar1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.ContactsUVO_arVO.ContactId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OppertunityUVO_ar1"
+    Cardinality="-1"
+    Owner="model.uvo.OppertunityUVO_arVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OppertunityUVO_ar1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.uvo.OppertunityUVO_arVO.OpportunityId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

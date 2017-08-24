@@ -218,6 +218,27 @@
     AssociationOtherEnd="model.assoc.ContactsToNotes.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar"
+    Association="model.assoc.ContactToTasksAssoc"
+    AssociationEnd="model.assoc.ContactToTasksAssoc.TaskEO_ar"
+    AssociationOtherEnd="model.assoc.ContactToTasksAssoc.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ActivityEO_ar"
+    Association="model.assoc.ContactToInteractionsAssoc"
+    AssociationEnd="model.assoc.ContactToInteractionsAssoc.ActivityEO_ar"
+    AssociationOtherEnd="model.assoc.ContactToInteractionsAssoc.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ActivityEO_ar1"
+    Association="model.assoc.ContactsToAppointmentAssociation"
+    AssociationEnd="model.assoc.ContactsToAppointmentAssociation.ActivityEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactsToAppointmentAssociation.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">
