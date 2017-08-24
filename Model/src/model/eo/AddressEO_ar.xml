@@ -74,6 +74,34 @@
     AssociationOtherEnd="model.assoc.CustomerToPrimaryAddressAssoc_ar.AddressEO_ar1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.ContactAddress"
+    AssociationEnd="model.assoc.ContactAddress.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.ContactAddress.AddressEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar2"
+    Association="model.assoc.ShipAddressASSOC"
+    AssociationEnd="model.assoc.ShipAddressASSOC.CustomerEO_ar2"
+    AssociationOtherEnd="model.assoc.ShipAddressASSOC.AddressEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar3"
+    Association="model.assoc.PrimAddressASSOC"
+    AssociationEnd="model.assoc.PrimAddressASSOC.CustomerEO_ar3"
+    AssociationOtherEnd="model.assoc.PrimAddressASSOC.AddressEO_ar3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar4"
+    Association="model.assoc.CustShipASSOC"
+    AssociationEnd="model.assoc.CustShipASSOC.CustomerEO_ar4"
+    AssociationOtherEnd="model.assoc.CustShipASSOC.AddressEO_ar4"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AddressPk"
     PrimaryKey="true">

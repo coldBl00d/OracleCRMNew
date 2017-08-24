@@ -20,7 +20,7 @@
                                       inlineStyle="width:104px;"/>
                             <af:panelGroupLayout id="pgl2"
                                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl2}"
-                                                 layout="scroll">
+                                                 layout="scroll" inlineStyle="height:222px;">
                                 <af:inputText value="#{bindings.AccountName.inputValue}" simple="true"
                                               required="#{bindings.AccountName.hints.mandatory}"
                                               columns="#{bindings.AccountName.hints.displayWidth}"
@@ -47,14 +47,14 @@
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s4}"/>
                                 <af:outputLabel value="C.E.O" id="ol2"
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol2}"/>
-                                <af:inputText value="#{bindings.Ceo.inputValue}" simple="true"
-                                              required="#{bindings.Ceo.hints.mandatory}"
-                                              columns="#{bindings.Ceo.hints.displayWidth}"
-                                              maximumLength="#{bindings.Ceo.hints.precision}"
-                                              shortDesc="#{bindings.Ceo.hints.tooltip}" id="it4"
+                                <af:inputText value="#{bindings.Ceo1.inputValue}" simple="true"
+                                              required="#{bindings.Ceo1.hints.mandatory}"
+                                              columns="#{bindings.Ceo1.hints.displayWidth}"
+                                              maximumLength="#{bindings.Ceo1.hints.precision}"
+                                              shortDesc="#{bindings.Ceo1.hints.tooltip}" id="it4"
                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it4}"
                                               inlineStyle="font-weight:bold;" editable="onAccess">
-                                    <f:validator binding="#{bindings.Ceo.validator}"/>
+                                    <f:validator binding="#{bindings.Ceo1.validator}"/>
                                 </af:inputText>
                                 <af:spacer width="10" height="10" id="s1"
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s1}"/>
@@ -89,6 +89,42 @@
                                 </af:inputText>
                                 <af:spacer width="10" height="10" id="s2"
                                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s2}"/>
+                                <h:outputLabel value="Shipping Address" id="ol4"
+                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol4}"
+                                               style="font-weight:bold;"/>
+                                <af:inputText value="#{bindings.AddressLine12.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine12.hints.mandatory}"
+                                              columns="#{bindings.AddressLine12.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine12.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine12.hints.tooltip}" id="it16"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it16}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine12.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s5"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s5}"/>
+                                <af:inputText value="#{bindings.AddressLine22.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine22.hints.mandatory}"
+                                              columns="#{bindings.AddressLine22.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine22.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine22.hints.tooltip}" id="it17"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it17}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine22.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s6"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s6}"/>
+                                <af:inputText value="#{bindings.AddressLine32.inputValue}" simple="true"
+                                              required="#{bindings.AddressLine32.hints.mandatory}"
+                                              columns="#{bindings.AddressLine32.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine32.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine32.hints.tooltip}" id="it18"
+                                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it18}"
+                                              editable="onAccess">
+                                    <f:validator binding="#{bindings.AddressLine32.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s7"
+                                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s7}"/>
                             </af:panelGroupLayout>
                             <af:link text="Customer Home Page" id="l1"
                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.l1}"
@@ -109,7 +145,7 @@
                                                disclosed="true"
                                                icon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
                                                depressedIcon="#{resource['images:ic_assignment_late_black_24dp_1x.png']}"
-                                               text="Oppertunity">
+                                               text="Opportunity">
                                 <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t1}">
                                     <af:button id="b1"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b1}"
@@ -281,7 +317,10 @@
                                 <af:toolbar id="t3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t3}">
                                     <af:button id="b4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b4}"
-                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                               icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                        <af:showPopupBehavior popupId="contactInsert"
+                                                              align="afterStart" alignId="b4"/>
+                                    </af:button>
                                     <af:button id="b5"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b5}"
                                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
@@ -614,4 +653,115 @@
             </af:panelGridLayout>
         </f:facet>
     </af:decorativeBox>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="contactInsert"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p1}"
+              popupFetchListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertPopupFetchListener}"
+              contentDelivery="lazyUncached"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}">
+        <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d1}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertDialogListener}">
+            <f:facet name="buttonBar"/>
+            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl1}">
+                <af:inputText value="#{bindings.ContactName.inputValue}" label="#{bindings.ContactName.hints.label}"
+                              required="#{bindings.ContactName.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.ContactName.hints.precision}"
+                              shortDesc="#{bindings.ContactName.hints.tooltip}" id="it8"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it8}">
+                    <f:validator binding="#{bindings.ContactName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                              required="#{bindings.Email.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.Email.hints.precision}"
+                              shortDesc="#{bindings.Email.hints.tooltip}" id="it9"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it9}">
+                    <f:validator binding="#{bindings.Email.validator}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="#{bindings.Gender.label}"
+                                    required="#{bindings.Gender.hints.mandatory}"
+                                    shortDesc="#{bindings.Gender.hints.tooltip}" id="soc3"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc3}">
+                    <f:selectItems value="#{bindings.Gender.items}" id="si3"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si3}"/>
+                    <f:validator binding="#{bindings.Gender.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                              label="#{bindings.DepartmentName.hints.label}"
+                              required="#{bindings.DepartmentName.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.DepartmentName.hints.precision}"
+                              shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it10"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it10}">
+                    <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Title.inputValue}" label="#{bindings.Title.hints.label}"
+                              required="#{bindings.Title.hints.mandatory}"
+                              columns="#{bindings.Title.hints.displayWidth}"
+                              maximumLength="#{bindings.Title.hints.precision}"
+                              shortDesc="#{bindings.Title.hints.tooltip}" id="it1"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it1}">
+                    <f:validator binding="#{bindings.Title.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Title.format}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.BuyingRole.inputValue}" label="#{bindings.BuyingRole.label}"
+                                    required="#{bindings.BuyingRole.hints.mandatory}"
+                                    shortDesc="#{bindings.BuyingRole.hints.tooltip}" id="soc4"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc4}">
+                    <f:selectItems value="#{bindings.BuyingRole.items}" id="si4"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si4}"/>
+                    <f:validator binding="#{bindings.BuyingRole.validator}"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice value="#{bindings.InfluenceLevel.inputValue}"
+                                    label="#{bindings.InfluenceLevel.label}"
+                                    required="#{bindings.InfluenceLevel.hints.mandatory}"
+                                    shortDesc="#{bindings.InfluenceLevel.hints.tooltip}" id="soc5"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc5}">
+                    <f:selectItems value="#{bindings.InfluenceLevel.items}" id="si5"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si5}"/>
+                    <f:validator binding="#{bindings.InfluenceLevel.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.MobileNumber.inputValue}" label="#{bindings.MobileNumber.hints.label}"
+                              required="#{bindings.MobileNumber.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.MobileNumber.hints.precision}"
+                              shortDesc="#{bindings.MobileNumber.hints.tooltip}" id="it11"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it11}">
+                    <f:validator binding="#{bindings.MobileNumber.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.WorkNumber.inputValue}" label="#{bindings.WorkNumber.hints.label}"
+                              required="#{bindings.WorkNumber.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.WorkNumber.hints.precision}"
+                              shortDesc="#{bindings.WorkNumber.hints.tooltip}" id="it12"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it12}">
+                    <f:validator binding="#{bindings.WorkNumber.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine11.inputValue}" label="#{bindings.AddressLine11.hints.label}"
+                              required="#{bindings.AddressLine11.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine11.hints.precision}"
+                              shortDesc="#{bindings.AddressLine11.hints.tooltip}" id="it13"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it13}">
+                    <f:validator binding="#{bindings.AddressLine11.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine21.inputValue}" label="#{bindings.AddressLine21.hints.label}"
+                              required="#{bindings.AddressLine21.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine21.hints.precision}"
+                              shortDesc="#{bindings.AddressLine21.hints.tooltip}" id="it14"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it14}">
+                    <f:validator binding="#{bindings.AddressLine21.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine31.inputValue}" label="#{bindings.AddressLine31.hints.label}"
+                              required="#{bindings.AddressLine31.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine31.hints.precision}"
+                              shortDesc="#{bindings.AddressLine31.hints.tooltip}" id="it15"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it15}">
+                    <f:validator binding="#{bindings.AddressLine31.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+        </af:dialog>
+    </af:popup>
 </ui:composition>

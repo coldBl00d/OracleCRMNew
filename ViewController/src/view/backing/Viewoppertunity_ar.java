@@ -90,6 +90,7 @@ public class Viewoppertunity_ar {
     private RichSpacer s3;
     private RichSpacer s4;
     private RichSpacer s5;
+    private RichShowDetailItem sdi1;
 
 
     public Viewoppertunity_ar(){
@@ -601,5 +602,13 @@ public class Viewoppertunity_ar {
 
     public RichSpacer getS5() {
         return s5;
+    }
+
+    public void setSdi1(RichShowDetailItem sdi1) {
+        this.sdi1 = sdi1;
+    }
+
+    public RichShowDetailItem getSdi1() {
+        return sdi1;
     }
 }

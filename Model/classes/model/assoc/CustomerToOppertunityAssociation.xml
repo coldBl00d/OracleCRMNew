@@ -14,7 +14,8 @@
     Cardinality="1"
     Source="true"
     Owner="model.eo.CustomerEO_ar"
-    LockLevel="NONE">
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>

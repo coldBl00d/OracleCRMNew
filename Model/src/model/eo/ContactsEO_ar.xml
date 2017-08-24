@@ -190,6 +190,13 @@
     AssociationOtherEnd="model.assoc.CustomerToContactsAssoc_ar.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AddressEO_ar"
+    Association="model.assoc.ContactAddress"
+    AssociationEnd="model.assoc.ContactAddress.AddressEO_ar"
+    AssociationOtherEnd="model.assoc.ContactAddress.ContactsEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">
@@ -198,6 +205,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.ContactsEO_ar.ContactId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ContactsEO_ar">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CONTACTS_EO_AR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactsEO_ar.Address"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

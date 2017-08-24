@@ -36,5 +36,7 @@
     PrecisionRule="true"
     EntityAttrName="Primary1"
     EntityUsage="CustContactLinkEO_ar"
-    AliasName="PRIMARY"/>
+    AliasName="PRIMARY"
+    IsQueriable="false"
+    IsPersistent="false"/>
 </ViewObject>

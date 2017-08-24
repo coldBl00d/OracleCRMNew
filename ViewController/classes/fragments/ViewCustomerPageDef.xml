@@ -31,6 +31,10 @@
               id="CustomerContactsIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CustomerContactsIterator" id="ImplicitViewCriteriaQuery1"/>
+    <iterator Binds="CreateContact1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateContact1Iterator"/>
+    <iterator Binds="ShippingAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="ShippingAddressIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
@@ -65,24 +69,9 @@
         <Item Value="AccountName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="CustomerParentIterator" id="Ceo">
-      <AttrNames>
-        <Item Value="Ceo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine1">
       <AttrNames>
         <Item Value="AddressLine1"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine2">
-      <AttrNames>
-        <Item Value="AddressLine2"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine3">
-      <AttrNames>
-        <Item Value="AddressLine3"/>
       </AttrNames>
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -169,5 +158,95 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="CreateContact1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="ContactName">
+      <AttrNames>
+        <Item Value="ContactName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateContact1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_BuyingRole" id="BuyingRole"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_InfluenceLevel" id="InfluenceLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateContact1Iterator" id="MobileNumber">
+      <AttrNames>
+        <Item Value="MobileNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="WorkNumber">
+      <AttrNames>
+        <Item Value="WorkNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine11">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine21">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine31">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="populateCusConJun" RequiresUpdateModel="true" Action="invokeMethod" MethodName="populateCusConJun"
+                  IsViewObjectMethod="false" DataControl="UserApplicationModuleDataControl"
+                  InstanceName="bindings.populateCusConJun.dataControl.dataProvider">
+      <NamedData NDName="aId" NDType="java.lang.Integer"/>
+      <NamedData NDName="cId" NDType="java.lang.Integer"/>
+    </methodAction>
+    <action IterBinding="CreateContact1Iterator" id="CreateInsert"
+            InstanceName="UserApplicationModuleDataControl.CreateContact1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="CustomerListIterator" id="Ceo1">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryAddressIterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShippingAddressIterator" id="AddressLine12">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShippingAddressIterator" id="AddressLine22">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShippingAddressIterator" id="AddressLine32">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

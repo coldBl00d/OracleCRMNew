@@ -6,7 +6,12 @@
   Name="UserApplicationModule"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentClass="model.am.UserApplicationModuleImpl"
+  ComponentInterface="model.am.common.UserApplicationModule">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -21,7 +26,7 @@
     ViewObjectName="model.uvo.CustomerListView_arVO"/>
   <ViewUsage
     Name="PrimaryAddress"
-    ViewObjectName="model.uvo.PrimaryAddressUVO_arVO"/>
+    ViewObjectName="model.uvo.AddressUVO_arVO"/>
   <ViewUsage
     Name="OppertunityForOverview"
     ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
@@ -61,6 +66,18 @@
   <ViewUsage
     Name="AppointmentCreator"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="CustContactLinkUVO_ar1"
+    ViewObjectName="model.uvo.CustContactLinkUVO_arVO"/>
+  <ViewUsage
+    Name="CreateContact1"
+    ViewObjectName="model.uvo.CreateContact"/>
+  <ViewUsage
+    Name="CreateCustomerU1"
+    ViewObjectName="model.uvo.CreateCustomerUVO"/>
+  <ViewUsage
+    Name="ShippingAddress"
+    ViewObjectName="model.uvo.AddressUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -133,6 +150,34 @@
     SrcViewUsageName="model.am.UserApplicationModule.Appointments"
     DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="CreatContactVL1"
+    ViewLinkObjectName="model.vl.CreatContactVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.CreateContact1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustToShippingVL1"
+    ViewLinkObjectName="model.vl.CustToShippingVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.ShippingAddress"
+    Reversed="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="populateCusConJun"
+      MethodName="populateCusConJun">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="aId"
+        Type="java.lang.Integer"/>
+      <Parameter
+        Name="cId"
+        Type="java.lang.Integer"/>
+    </Method>
+  </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

@@ -239,6 +239,8 @@
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>
+                                <af:showDetailItem text="Items" id="sdi1"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}"/>
                             </af:panelTabbed>
                         </af:gridCell>
                     </af:gridRow>

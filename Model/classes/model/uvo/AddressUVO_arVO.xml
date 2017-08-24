@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="PrimaryAddressUVO_arVO"
+  Name="AddressUVO_arVO"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"

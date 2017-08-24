@@ -30,13 +30,13 @@
   <ViewLinkDefEnd
     Name="PrimaryAddressUVO_ar"
     Cardinality="1"
-    Owner="model.uvo.PrimaryAddressUVO_arVO">
+    Owner="model.uvo.AddressUVO_arVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_finderName" Value="PrimaryAddressUVO_ar"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.uvo.PrimaryAddressUVO_arVO.AddressId"/>
+      <Item Value="model.uvo.AddressUVO_arVO.AddressId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

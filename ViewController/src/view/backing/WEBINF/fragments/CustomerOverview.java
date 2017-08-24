@@ -13,11 +13,29 @@ import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import java.util.Map;
 import java.util.HashMap;
 
+import javax.faces.component.UISelectItems;
+
+import oracle.adf.view.rich.component.rich.RichDialog;
+import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
+import oracle.adf.view.rich.event.DialogEvent;
+
+import oracle.adf.view.rich.event.PopupCanceledEvent;
+
+import oracle.adf.view.rich.event.PopupFetchEvent;
+
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
 import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 
 import oracle.ui.pattern.dynamicShell.TabContext;
@@ -37,6 +55,24 @@ public class CustomerOverview {
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t2;
+    private RichPopup p1;
+    private RichDialog d1;
+    private RichPanelFormLayout pfl1;
+    private RichInputText it1;
+    private RichInputText it2;
+    private RichInputText it3;
+    private RichInputText it4;
+    private RichSelectOneChoice soc1;
+    private UISelectItems si1;
+    private RichInputText it5;
+    private RichInputText it6;
+    private RichInputText it7;
+    private RichInputText it8;
+    private RichInputText it9;
+    private RichInputText it10;
+    private RichPopup p2;
+    private RichDialog d2;
+    private RichOutputText ot5;
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
         this.pgl1 = pgl1;
@@ -213,5 +249,210 @@ public class CustomerOverview {
 
     public RichTable getT2() {
         return t2;
+    }
+
+    public void setP1(RichPopup p1) {
+        this.p1 = p1;
+    }
+
+    public RichPopup getP1() {
+        return p1;
+    }
+
+    public void setD1(RichDialog d1) {
+        this.d1 = d1;
+    }
+
+    public RichDialog getD1() {
+        return d1;
+    }
+
+    public void setPfl1(RichPanelFormLayout pfl1) {
+        this.pfl1 = pfl1;
+    }
+
+    public RichPanelFormLayout getPfl1() {
+        return pfl1;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setSoc1(RichSelectOneChoice soc1) {
+        this.soc1 = soc1;
+    }
+
+    public RichSelectOneChoice getSoc1() {
+        return soc1;
+    }
+
+    public void setSi1(UISelectItems si1) {
+        this.si1 = si1;
+    }
+
+    public UISelectItems getSi1() {
+        return si1;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+    public void setIt6(RichInputText it6) {
+        this.it6 = it6;
+    }
+
+    public RichInputText getIt6() {
+        return it6;
+    }
+
+    public void setIt7(RichInputText it7) {
+        this.it7 = it7;
+    }
+
+    public RichInputText getIt7() {
+        return it7;
+    }
+
+    public void setIt8(RichInputText it8) {
+        this.it8 = it8;
+    }
+
+    public RichInputText getIt8() {
+        return it8;
+    }
+
+    public void setIt9(RichInputText it9) {
+        this.it9 = it9;
+    }
+
+    public RichInputText getIt9() {
+        return it9;
+    }
+
+    public void setIt10(RichInputText it10) {
+        this.it10 = it10;
+    }
+
+    public RichInputText getIt10() {
+        return it10;
+    }
+    public void deleteDialogListener(DialogEvent dialogEvent) {
+                System.out.println(dialogEvent.getOutcome().name().equals("yes"));
+            if(dialogEvent.getOutcome().name().equals("yes")) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Delete");
+                operationBinding.execute();
+                operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                
+            } else if(dialogEvent.getOutcome().name().equals("no")){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
+    public void insertCustomerPopupFetchListener(PopupFetchEvent popupFetchEvent){
+        System.out.println(popupFetchEvent.getLaunchSourceClientId());
+        if(popupFetchEvent.getLaunchSourceClientId().contains("b1"))
+        {
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
+            operationBinding.execute();
+            
+            
+        }
+    }
+    
+    public void insertCustomerDialogListener(DialogEvent dialogEvent) {
+       
+            if(dialogEvent.getOutcome().name().equals("ok")==true) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateCustomerU1Iterator");
+                RowSetIterator rsi = iter.getRowSetIterator();
+                Row row = rsi.getCurrentRow();
+                row.setAttribute("PrimaryAddress",row.getAttribute("AddressId"));
+                row.setAttribute("ShippingAddress",row.getAttribute("AddressId1"));
+                operationBinding.execute();
+                
+            } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
+    public void cancelPopupListener(PopupCanceledEvent popupCanceledEvent){
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+        operationBinding.execute();
+        
+    }
+
+    public void setP2(RichPopup p2) {
+        this.p2 = p2;
+    }
+
+    public RichPopup getP2() {
+        return p2;
+    }
+
+    public void setD2(RichDialog d2) {
+        this.d2 = d2;
+    }
+
+    public RichDialog getD2() {
+        return d2;
+    }
+
+    public void setOt5(RichOutputText ot5) {
+        this.ot5 = ot5;
+    }
+
+    public RichOutputText getOt5() {
+        return ot5;
     }
 }

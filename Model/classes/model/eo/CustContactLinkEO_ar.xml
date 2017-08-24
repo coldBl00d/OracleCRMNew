@@ -34,14 +34,14 @@
     PrimaryKey="true"/>
   <Attribute
     Name="Primary1"
-    IsNotNull="true"
     Precision="18"
     Scale="0"
-    ColumnName="PRIMARY"
+    ColumnName="&quot;Synchronize:Fix_SQL&quot;"
     SQLType="NUMERIC"
     Type="java.lang.Long"
-    ColumnType="NUMBER"
-    TableName="CUST_CONTACT_LK"/>
+    ColumnType="$none$"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <Key
     Name="CustContactLkPk"
     PrimaryKey="true">

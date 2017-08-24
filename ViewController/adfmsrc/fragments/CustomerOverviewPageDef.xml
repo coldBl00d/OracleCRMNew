@@ -9,6 +9,8 @@
                   Binds="CustomerIterator" id="ImplicitViewCriteriaQuery"/>
     <iterator id="OppertunityOfCustomerIterator" Binds="OppertunityOfCustomer"
               DataControl="UserApplicationModuleDataControl" RangeSize="25"/>
+    <iterator Binds="CreateCustomerU1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateCustomerU1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="CustomerIterator" id="Customer">
@@ -23,5 +25,66 @@
         </Accessors>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AccountUrl">
+      <AttrNames>
+        <Item Value="AccountUrl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="Ceo">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="EmpCount">
+      <AttrNames>
+        <Item Value="EmpCount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateCustomerU1Iterator" StaticList="false" Uses="LOV_ParentAccountId" id="ParentAccountId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine11">
+      <AttrNames>
+        <Item Value="AddressLine11"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine21">
+      <AttrNames>
+        <Item Value="AddressLine21"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateCustomerU1Iterator" id="AddressLine31">
+      <AttrNames>
+        <Item Value="AddressLine31"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CreateCustomerU1Iterator" id="CreateInsert"
+            InstanceName="UserApplicationModuleDataControl.CreateCustomerU1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomerIterator" id="Delete" InstanceName="UserApplicationModuleDataControl.Customer"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

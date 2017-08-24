@@ -8,14 +8,18 @@
                 <af:toolbar id="t1" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.t1}">
                     <af:button id="b1"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b1}"
-                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="insertCustomer" align="afterStart" alignId="b1"/>
+                    </af:button>
                     <af:button id="b2"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b2}"
                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"
                                action="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.action}"/>
                     <af:button id="b3"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b3}"
-                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                        <af:showPopupBehavior popupId="deleteCustomer"/>
+                    </af:button>
                     <af:spacer width="10" height="10" id="s1"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.s1}"/>
                     <af:spacer width="10" height="10" id="s2"
@@ -46,7 +50,7 @@
                                   selectedRowKeys="#{bindings.Customer.collectionModel.selectedRow}"
                                   selectionListener="#{bindings.Customer.collectionModel.makeCurrent}"
                                   rowSelection="single" fetchSize="#{bindings.Customer.rangeSize}"
-                                  partialTriggers="::qryId1" id="t2"
+                                  partialTriggers="::qryId1 ::d1 ::insertCustomer ::deleteCustomer ::d2" id="t2"
                                   binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.t2}"
                                   columnStretching="last">
                             <af:column sortProperty="#{bindings.Customer.hints.AccountName.name}" sortable="true"
@@ -79,4 +83,123 @@
         </af:decorativeBox>
     </af:panelGroupLayout>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_fragments_CustomerOverview-->
+    <af:popup childCreation="deferred" autoCancel="disabled" id="insertCustomer"
+              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.p1}"
+              popupFetchListener="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.insertCustomerPopupFetchListener}"
+              contentDelivery="lazyUncached"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.cancelPopupListener}">
+        <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.d1}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.insertCustomerDialogListener}"
+                   title="Create customer account">
+            <f:facet name="buttonBar"/>
+            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.pfl1}">
+                <af:inputText value="#{bindings.AccountName.inputValue}" label="#{bindings.AccountName.hints.label}"
+                              required="#{bindings.AccountName.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AccountName.hints.precision}"
+                              shortDesc="#{bindings.AccountName.hints.tooltip}" id="it1"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it1}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AccountName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AccountUrl.inputValue}" label="#{bindings.AccountUrl.hints.label}"
+                              required="#{bindings.AccountUrl.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AccountUrl.hints.precision}"
+                              shortDesc="#{bindings.AccountUrl.hints.tooltip}" id="it2"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it2}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AccountUrl.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Ceo.inputValue}" label="#{bindings.Ceo.hints.label}"
+                              required="#{bindings.Ceo.hints.mandatory}" columns="30"
+                              maximumLength="#{bindings.Ceo.hints.precision}" shortDesc="#{bindings.Ceo.hints.tooltip}"
+                              id="it3" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it3}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.Ceo.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.EmpCount.inputValue}" label="#{bindings.EmpCount.hints.label}"
+                              required="#{bindings.EmpCount.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.EmpCount.hints.precision}"
+                              shortDesc="#{bindings.EmpCount.hints.tooltip}" id="it4"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it4}">
+                    <f:validator binding="#{bindings.EmpCount.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpCount.format}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.ParentAccountId.inputValue}"
+                                    label="#{bindings.ParentAccountId.label}"
+                                    required="#{bindings.ParentAccountId.hints.mandatory}"
+                                    shortDesc="#{bindings.ParentAccountId.hints.tooltip}" id="soc1"
+                                    binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.soc1}">
+                    <f:selectItems value="#{bindings.ParentAccountId.items}" id="si1"
+                                   binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.si1}"/>
+                    <f:validator binding="#{bindings.ParentAccountId.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.AddressLine1.inputValue}" label="#{bindings.AddressLine1.hints.label}"
+                              required="#{bindings.AddressLine1.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine1.hints.precision}"
+                              shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it5"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it5}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine2.inputValue}" label="#{bindings.AddressLine2.hints.label}"
+                              required="#{bindings.AddressLine2.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine2.hints.precision}"
+                              shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it6"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it6}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine3.inputValue}" label="#{bindings.AddressLine3.hints.label}"
+                              required="#{bindings.AddressLine3.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine3.hints.precision}"
+                              shortDesc="#{bindings.AddressLine3.hints.tooltip}" id="it7"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it7}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AddressLine3.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine11.inputValue}" label="#{bindings.AddressLine11.hints.label}"
+                              required="#{bindings.AddressLine11.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine11.hints.precision}"
+                              shortDesc="#{bindings.AddressLine11.hints.tooltip}" id="it8"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it8}">
+                    <f:validator binding="#{bindings.AddressLine11.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine21.inputValue}" label="#{bindings.AddressLine21.hints.label}"
+                              required="#{bindings.AddressLine21.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine21.hints.precision}"
+                              shortDesc="#{bindings.AddressLine21.hints.tooltip}" id="it9"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it9}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AddressLine21.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine31.inputValue}" label="#{bindings.AddressLine31.hints.label}"
+                              required="#{bindings.AddressLine31.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine31.hints.precision}"
+                              shortDesc="#{bindings.AddressLine31.hints.tooltip}" id="it10"
+                              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.it10}"
+                              showRequired="true">
+                    <f:validator binding="#{bindings.AddressLine31.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="deleteCustomer"
+              binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.p2}">
+        <af:dialog id="d2" binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.d2}" type="yesNo"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.deleteDialogListener}"
+                   title="Delete Customer Account">
+            <af:outputText value="Are you sure you want to delete?" id="ot5"
+                           binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.ot5}"/>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
 </ui:composition>

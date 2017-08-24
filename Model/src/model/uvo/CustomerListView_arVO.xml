@@ -166,6 +166,16 @@
     ViewLink="model.vl.CustomerToNoteVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CreateContact"
+    ViewLink="model.vl.CreatContactVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AddressUVO_ar"
+    ViewLink="model.vl.CustToShippingVL"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
