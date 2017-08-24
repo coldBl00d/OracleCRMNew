@@ -3,13 +3,13 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="BuyingRoles"
+  Name="InfluenceLevel"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
-  RowClass="model.rvo.BuyingRolesRowImpl"
-  ComponentClass="model.rvo.BuyingRolesImpl"
+  RowClass="model.rvo.InfluenceLevelRowImpl"
+  ComponentClass="model.rvo.InfluenceLevelImpl"
   PageIterMode="Full">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll"/>
@@ -19,16 +19,12 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.rvo.BuyingRoles_LABEL"/>
+        ResId="model.rvo.InfluenceLevel_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT   
-    LOOKUP.LOOKUP_ID,   
-    LOOKUP.VALUE   
-FROM   
-    LOOKUP   
-WHERE   
-    LOOKUP.TYPE = 'br']]></SQLQuery>
+  <SQLQuery><![CDATA[select *  
+from lookup  
+where type = 'il']]></SQLQuery>
   <ViewAttribute
     Name="LookupId"
     IsUpdateable="false"
@@ -49,6 +45,21 @@ WHERE
     ColumnType="VARCHAR2"
     AliasName="VALUE"
     Expression="VALUE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYPE"
+    Expression="TYPE"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>

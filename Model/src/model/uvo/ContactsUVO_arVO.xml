@@ -21,6 +21,14 @@
     Name="GenderUVO1"
     ViewObjectName="model.uvo.GenderUVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BuyingRoles1"
+    ViewObjectName="model.rvo.BuyingRoles"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="InfluenceLevel1"
+    ViewObjectName="model.rvo.InfluenceLevel"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Gender"
     ListVOName="GenderUVO1"
@@ -33,6 +41,42 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="LookupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BuyingRole"
+    ListVOName="BuyingRoles1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BuyingRole"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_InfluenceLevel"
+    ListVOName="InfluenceLevel1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InfluenceLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Value"/>
@@ -117,14 +161,30 @@
     EntityAttrName="BuyingRole"
     EntityUsage="ContactsEO_ar"
     AliasName="BUYING_ROLE"
-    IsQueriable="false"/>
+    IsQueriable="false"
+    LOVName="LOV_BuyingRole">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InfluenceLevel"
     PrecisionRule="true"
     EntityAttrName="InfluenceLevel"
     EntityUsage="ContactsEO_ar"
     AliasName="INFLUENCE_LEVEL"
-    IsQueriable="false"/>
+    IsQueriable="false"
+    LOVName="LOV_InfluenceLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PicId"
     PrecisionRule="true"
@@ -180,5 +240,10 @@
     ViewLink="model.vl.CustomerToContactsVL"
     Type="oracle.jbo.RowIterator"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AddressUVO_ar"
+    ViewLink="model.vl.ContactToAddressVL"
+    Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
 </ViewObject>

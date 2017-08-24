@@ -1,6 +1,11 @@
 package view.backing.WEBINF.fragments;
 
+import javax.faces.component.UISelectItems;
+import javax.faces.component.html.HtmlOutputLabel;
+
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichGridRow;
@@ -21,23 +26,39 @@ public class Viewcontact {
     private RichPanelBox pb1;
     private RichImage i1;
     private RichPanelGroupLayout pgl3;
-    private RichInputText it1;
-    private RichInputText it2;
-    private RichInputText it3;
-    private RichInputText it4;
-    private RichInputText it5;
-    private RichInputText it6;
-    private RichInputText it7;
-    private RichInputText it8;
-    private RichInputText it9;
-    private RichInputText it10;
-    private RichInputText it11;
     private RichPanelTabbed pt1;
     private RichShowDetailItem tab1;
     private RichShowDetailItem tab2;
     private RichShowDetailItem tab3;
     private RichShowDetailItem tab4;
     private RichShowDetailItem tab5;
+    private HtmlOutputLabel ol1;
+    private HtmlOutputLabel ol2;
+    private HtmlOutputLabel ol3;
+    private HtmlOutputLabel ol4;
+    private HtmlOutputLabel ol5;
+    private HtmlOutputLabel ol6;
+    private HtmlOutputLabel ol7;
+    private HtmlOutputLabel ol8;
+    private HtmlOutputLabel ol9;
+    private RichInputText it1;
+    private RichInputText it2;
+    private RichInputText it3;
+    private RichInputText it4;
+    private RichInputText it5;
+    private RichInputText it8;
+    private RichInputText it9;
+    private RichSelectOneChoice soc1;
+    private UISelectItems si1;
+    private RichSelectOneChoice soc2;
+    private UISelectItems si2;
+    private RichSelectOneChoice soc3;
+    private UISelectItems si3;
+
+    public Viewcontact(){
+        super();
+        System.out.println("Pointer Id is :"+ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
+    }
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
         this.pgl1 = pgl1;
@@ -111,93 +132,6 @@ public class Viewcontact {
         return pgl3;
     }
 
-    public void setIt1(RichInputText it1) {
-        this.it1 = it1;
-    }
-
-    public RichInputText getIt1() {
-        return it1;
-    }
-
-    public void setIt2(RichInputText it2) {
-        this.it2 = it2;
-    }
-
-    public RichInputText getIt2() {
-        return it2;
-    }
-
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
-    }
-
-    public RichInputText getIt3() {
-        return it3;
-    }
-
-    public void setIt4(RichInputText it4) {
-        this.it4 = it4;
-    }
-
-    public RichInputText getIt4() {
-        return it4;
-    }
-
-    public void setIt5(RichInputText it5) {
-        this.it5 = it5;
-    }
-
-    public RichInputText getIt5() {
-        return it5;
-    }
-
-    public void setIt6(RichInputText it6) {
-        this.it6 = it6;
-    }
-
-    public RichInputText getIt6() {
-        return it6;
-    }
-
-    public void setIt7(RichInputText it7) {
-        this.it7 = it7;
-    }
-
-    public RichInputText getIt7() {
-        return it7;
-    }
-
-    public void setIt8(RichInputText it8) {
-        this.it8 = it8;
-    }
-
-    public RichInputText getIt8() {
-        return it8;
-    }
-
-    public void setIt9(RichInputText it9) {
-        this.it9 = it9;
-    }
-
-    public RichInputText getIt9() {
-        return it9;
-    }
-
-    public void setIt10(RichInputText it10) {
-        this.it10 = it10;
-    }
-
-    public RichInputText getIt10() {
-        return it10;
-    }
-
-    public void setIt11(RichInputText it11) {
-        this.it11 = it11;
-    }
-
-    public RichInputText getIt11() {
-        return it11;
-    }
 
     public void setPt1(RichPanelTabbed pt1) {
         this.pt1 = pt1;
@@ -245,5 +179,182 @@ public class Viewcontact {
 
     public RichShowDetailItem getTab5() {
         return tab5;
+    }
+
+    public void setOl1(HtmlOutputLabel ol1) {
+        this.ol1 = ol1;
+    }
+
+    public HtmlOutputLabel getOl1() {
+        return ol1;
+    }
+
+    public void setOl2(HtmlOutputLabel ol2) {
+        this.ol2 = ol2;
+    }
+
+    public HtmlOutputLabel getOl2() {
+        return ol2;
+    }
+
+    public void setOl3(HtmlOutputLabel ol3) {
+        this.ol3 = ol3;
+    }
+
+    public HtmlOutputLabel getOl3() {
+        return ol3;
+    }
+
+    public void setOl4(HtmlOutputLabel ol4) {
+        this.ol4 = ol4;
+    }
+
+    public HtmlOutputLabel getOl4() {
+        return ol4;
+    }
+
+    public void setOl5(HtmlOutputLabel ol5) {
+        this.ol5 = ol5;
+    }
+
+    public HtmlOutputLabel getOl5() {
+        return ol5;
+    }
+
+    public void setOl6(HtmlOutputLabel ol6) {
+        this.ol6 = ol6;
+    }
+
+    public HtmlOutputLabel getOl6() {
+        return ol6;
+    }
+
+    public void setOl7(HtmlOutputLabel ol7) {
+        this.ol7 = ol7;
+    }
+
+    public HtmlOutputLabel getOl7() {
+        return ol7;
+    }
+
+    public void setOl8(HtmlOutputLabel ol8) {
+        this.ol8 = ol8;
+    }
+
+    public HtmlOutputLabel getOl8() {
+        return ol8;
+    }
+
+    public void setOl9(HtmlOutputLabel ol9) {
+        this.ol9 = ol9;
+    }
+
+    public HtmlOutputLabel getOl9() {
+        return ol9;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
+
+
+    public void setIt8(RichInputText it8) {
+        this.it8 = it8;
+    }
+
+    public RichInputText getIt8() {
+        return it8;
+    }
+
+    public void setIt9(RichInputText it9) {
+        this.it9 = it9;
+    }
+
+    public RichInputText getIt9() {
+        return it9;
+    }
+
+    public void setSoc1(RichSelectOneChoice soc1) {
+        this.soc1 = soc1;
+    }
+
+    public RichSelectOneChoice getSoc1() {
+        return soc1;
+    }
+
+    public void setSi1(UISelectItems si1) {
+        this.si1 = si1;
+    }
+
+    public UISelectItems getSi1() {
+        return si1;
+    }
+
+    public void setSoc2(RichSelectOneChoice soc2) {
+        this.soc2 = soc2;
+    }
+
+    public RichSelectOneChoice getSoc2() {
+        return soc2;
+    }
+
+    public void setSi2(UISelectItems si2) {
+        this.si2 = si2;
+    }
+
+    public UISelectItems getSi2() {
+        return si2;
+    }
+
+    public void setSoc3(RichSelectOneChoice soc3) {
+        this.soc3 = soc3;
+    }
+
+    public RichSelectOneChoice getSoc3() {
+        return soc3;
+    }
+
+    public void setSi3(UISelectItems si3) {
+        this.si3 = si3;
+    }
+
+    public UISelectItems getSi3() {
+        return si3;
     }
 }

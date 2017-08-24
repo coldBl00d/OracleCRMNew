@@ -352,5 +352,21 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getContactRVOVL1() {
         return (ViewLinkImpl) findViewLink("ContactRVOVL1");
     }
+
+    /**
+     * Container's getter for AddressUVO_arVO1.
+     * @return AddressUVO_arVO1
+     */
+    public ViewObjectImpl getAddressOfCustomer() {
+        return (ViewObjectImpl) findViewObject("AddressOfCustomer");
+    }
+
+    /**
+     * Container's getter for ContactToAddressVL1.
+     * @return ContactToAddressVL1
+     */
+    public ViewLinkImpl getContactToAddressVL1() {
+        return (ViewLinkImpl) findViewLink("ContactToAddressVL1");
+    }
 }
 

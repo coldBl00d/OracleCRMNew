@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
     <af:panelGroupLayout layout="scroll" id="pgl1"
                          binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl1}">
         <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.db1}">
@@ -20,44 +20,111 @@
                                 <af:panelGroupLayout id="pgl3"
                                                      binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl3}"
                                                      layout="vertical" inlineStyle="width:266px;">
-                                    <af:inputText label="Name" id="it7"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it7}"
-                                                  editable="onAccess" value="#{bindings.ContactName.inputValue}"
-                                                  required="#{bindings.ContactName.hints.mandatory}"
-                                                  columns="#{bindings.ContactName.hints.displayWidth}"
-                                                  maximumLength="#{bindings.ContactName.hints.precision}">
-                                        <f:validator binding="#{bindings.ContactName.validator}"/>
-                                    </af:inputText>
-                                    <af:inputText label="Gender" id="it9"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it9}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Email" id="it4"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it4}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Phone" id="it5"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it5}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Title" id="it10"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it10}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Department" id="it11"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it11}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Buying Role" id="it6"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it6}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Influence" id="it8"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it8}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Address1" id="it1"
+                                    <h:outputLabel value="Name" id="ol1"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol1}"/>
+                                    <af:inputText value="#{bindings.AccountName.inputValue}" simple="true"
+                                                  required="#{bindings.AccountName.hints.mandatory}"
+                                                  columns="20"
+                                                  maximumLength="#{bindings.AccountName.hints.precision}"
+                                                  shortDesc="#{bindings.AccountName.hints.tooltip}" id="it1"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it1}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Address2" id="it2"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.AccountName.validator}"/>
+                                    </af:inputText>
+                                    <h:outputLabel value="Gender" id="ol2"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol2}"/>
+                                    <af:selectOneChoice value="#{bindings.Gender.inputValue}"
+                                                        required="#{bindings.Gender.hints.mandatory}"
+                                                        shortDesc="#{bindings.Gender.hints.tooltip}" id="soc3"
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc3}">
+                                        <f:selectItems value="#{bindings.Gender.items}" id="si3"
+                                                       binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si3}"/>
+                                        <f:validator binding="#{bindings.Gender.validator}"/>
+                                    </af:selectOneChoice>
+                                    <h:outputLabel value="Email" id="ol3"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol3}"/>
+                                    <af:inputText value="#{bindings.Email.inputValue}" simple="true"
+                                                  required="#{bindings.AccountName.hints.mandatory}"
+                                                  columns="#{bindings.Email.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Email.hints.precision}"
+                                                  shortDesc="#{bindings.Email.hints.tooltip}" id="it2"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it2}"
-                                                  editable="onAccess"/>
-                                    <af:inputText label="Address3" id="it3"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.Email.validator}"/>
+                                    </af:inputText>
+                                    <h:outputLabel value="Phone" id="ol4"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol4}"/>
+                                    <af:inputText value="#{bindings.MobileNumber.inputValue}" simple="true"
+                                                  required="#{bindings.MobileNumber.hints.mandatory}"
+                                                  columns="#{bindings.MobileNumber.hints.displayWidth}"
+                                                  maximumLength="#{bindings.MobileNumber.hints.precision}"
+                                                  shortDesc="#{bindings.MobileNumber.hints.tooltip}" id="it3"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it3}"
-                                                  editable="onAccess"/>
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.MobileNumber.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.WorkNumber.inputValue}" simple="true"
+                                                  required="#{bindings.WorkNumber.hints.mandatory}"
+                                                  columns="#{bindings.WorkNumber.hints.displayWidth}"
+                                                  maximumLength="#{bindings.WorkNumber.hints.precision}"
+                                                  shortDesc="#{bindings.WorkNumber.hints.tooltip}" id="it9"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it9}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.WorkNumber.validator}"/>
+                                    </af:inputText>
+                                    <h:outputLabel value="Title" id="ol5"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol5}"/>
+                                    <af:inputText value="#{bindings.Title.inputValue}" simple="true"
+                                                  required="#{bindings.Title.hints.mandatory}"
+                                                  columns="#{bindings.Title.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Title.hints.precision}"
+                                                  shortDesc="#{bindings.Title.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it4}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.Title.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Title.format}"/>
+                                    </af:inputText>
+                                    <h:outputLabel value="Department" id="ol6"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol6}"/>
+                                    <af:inputText value="#{bindings.DepartmentName.inputValue}" simple="true"
+                                                  required="#{bindings.DepartmentName.hints.mandatory}"
+                                                  columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                                  shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it5"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it5}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                                    </af:inputText>
+                                    <h:outputLabel value="Buying Role" id="ol7"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol7}"/>
+                                    <af:selectOneChoice value="#{bindings.BuyingRole.inputValue}"
+                                                        required="#{bindings.BuyingRole.hints.mandatory}"
+                                                        shortDesc="#{bindings.BuyingRole.hints.tooltip}" id="soc1"
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc1}">
+                                        <f:selectItems value="#{bindings.BuyingRole.items}" id="si1"
+                                                       binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si1}"/>
+                                        <f:validator binding="#{bindings.BuyingRole.validator}"/>
+                                    </af:selectOneChoice>
+                                    <h:outputLabel value="Influence" id="ol8"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol8}"/>
+                                    <af:selectOneChoice value="#{bindings.InfluenceLevel.inputValue}"
+                                                        required="#{bindings.InfluenceLevel.hints.mandatory}"
+                                                        shortDesc="#{bindings.InfluenceLevel.hints.tooltip}" id="soc2"
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc2}">
+                                        <f:selectItems value="#{bindings.InfluenceLevel.items}" id="si2"
+                                                       binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si2}"/>
+                                        <f:validator binding="#{bindings.InfluenceLevel.validator}"/>
+                                    </af:selectOneChoice>
+                                    <h:outputLabel value="Address" id="ol9"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.ol9}"/>
+                                    <af:inputText value="#{bindings.AccountName.inputValue}" simple="true"
+                                                  required="#{bindings.AccountName.hints.mandatory}" columns="20"
+                                                  maximumLength="#{bindings.AccountName.hints.precision}"
+                                                  shortDesc="#{bindings.AccountName.hints.tooltip}" id="it8"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it8}"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.AccountName.validator}"/>
+                                    </af:inputText>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                         </af:gridCell>

@@ -197,6 +197,13 @@
     AssociationOtherEnd="model.assoc.ContactAddress.ContactsEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AddressEO_ar1"
+    Association="model.assoc.ContactToAddressAssoc"
+    AssociationEnd="model.assoc.ContactToAddressAssoc.AddressEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToAddressAssoc.ContactsEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">
