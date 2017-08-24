@@ -206,6 +206,34 @@
     AssociationOtherEnd="model.assoc.AppointmentToCreator.Activity"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.AppToOp"
+    AssociationEnd="model.assoc.AppToOp.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.AppToOp.Activity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="UserEO_ar2"
+    Association="model.assoc.AppToUs"
+    AssociationEnd="model.assoc.AppToUs.UserEO_ar2"
+    AssociationOtherEnd="model.assoc.AppToUs.Activity1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.AppToContacts"
+    AssociationEnd="model.assoc.AppToContacts.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.AppToContacts.Activity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.ContactToAppoint"
+    AssociationEnd="model.assoc.ContactToAppoint.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToAppoint.Activity1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

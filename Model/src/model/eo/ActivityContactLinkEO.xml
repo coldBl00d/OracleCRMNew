@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ActivityContactLinkEO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ACTIVITY_CONTACT_LINK"
+  AliasName="ActivityContactLinkEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ActivityId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="ACTIVITY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACTIVITY_CONTACT_LINK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACTIVITY_CONTACT_LINK"
+    PrimaryKey="true"/>
+  <Key
+    Name="ActivityContactLinkPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ACTIVITY_CONTACT_LINK_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ActivityContactLinkEO.ContactId"/>
+      <Item Value="model.eo.ActivityContactLinkEO.ActivityId"/>
+    </AttrArray>
+  </Key>
+</Entity>

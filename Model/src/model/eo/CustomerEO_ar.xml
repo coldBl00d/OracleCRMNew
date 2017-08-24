@@ -177,6 +177,27 @@
     AssociationOtherEnd="model.assoc.CustomerToNoteAssoc.CustomerEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.OppToCust"
+    AssociationEnd="model.assoc.OppToCust.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.OppToCust.CustomerEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Activity"
+    Association="model.assoc.CustomerToAppointment_Assoc_ar"
+    AssociationEnd="model.assoc.CustomerToAppointment_Assoc_ar.Activity"
+    AssociationOtherEnd="model.assoc.CustomerToAppointment_Assoc_ar.CustomerEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.ConToCustomer"
+    AssociationEnd="model.assoc.ConToCustomer.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.ConToCustomer.CustomerEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ConToCustomer"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ContactsEO_ar1"
+    Cardinality="-1"
+    Source="true"
+    Owner="model.eo.ContactsEO_ar"
+    LockLevel="NONE"
+    IntersectEntity="model.eo.CustContactLinkEO_ar">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ContactsEO_ar1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactsEO_ar.ContactId"/>
+    </AttrArray>
+    <AttrArray Name="IntersectAttributes">
+      <Item Value="model.eo.CustContactLinkEO_ar.ContactId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="CustomerEO_ar1"
+    Cardinality="-1"
+    Owner="model.eo.CustomerEO_ar"
+    IntersectEntity="model.eo.CustContactLinkEO_ar">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CustomerEO_ar1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerEO_ar.AccountId"/>
+    </AttrArray>
+    <AttrArray Name="IntersectAttributes">
+      <Item Value="model.eo.CustContactLinkEO_ar.ContactId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

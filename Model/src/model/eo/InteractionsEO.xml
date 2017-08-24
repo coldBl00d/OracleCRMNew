@@ -205,6 +205,13 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.ConToInter"
+    AssociationEnd="model.assoc.ConToInter.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.ConToInter.Interactions"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

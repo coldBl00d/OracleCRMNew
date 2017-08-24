@@ -93,6 +93,13 @@
     ColumnType="NUMBER"
     TableName="PRODUCTS"
     IsNotNull="true"/>
+  <AccessorAttribute
+    Name="RevenueItems"
+    Association="model.assoc.RevToProduct"
+    AssociationEnd="model.assoc.RevToProduct.RevenueItems"
+    AssociationOtherEnd="model.assoc.RevToProduct.Products"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ProductsPk"
     PrimaryKey="true">

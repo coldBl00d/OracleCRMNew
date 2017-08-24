@@ -190,6 +190,62 @@
     AssociationOtherEnd="model.assoc.CustomerToContactsAssoc_ar.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Activity"
+    Association="model.assoc.AppToContacts"
+    AssociationEnd="model.assoc.AppToContacts.Activity"
+    AssociationOtherEnd="model.assoc.AppToContacts.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.OppToContacts"
+    AssociationEnd="model.assoc.OppToContacts.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.OppToContacts.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Activity1"
+    Association="model.assoc.ContactToAppoint"
+    AssociationEnd="model.assoc.ContactToAppoint.Activity1"
+    AssociationOtherEnd="model.assoc.ContactToAppoint.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Interactions"
+    Association="model.assoc.ConToInter"
+    AssociationEnd="model.assoc.ConToInter.Interactions"
+    AssociationOtherEnd="model.assoc.ConToInter.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar2"
+    Association="model.assoc.ConToOpper"
+    AssociationEnd="model.assoc.ConToOpper.OppertunityEO_ar2"
+    AssociationOtherEnd="model.assoc.ConToOpper.ContactsEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar"
+    Association="model.assoc.ConToTask"
+    AssociationEnd="model.assoc.ConToTask.TaskEO_ar"
+    AssociationOtherEnd="model.assoc.ConToTask.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar1"
+    Association="model.assoc.ConToCustomer"
+    AssociationEnd="model.assoc.ConToCustomer.CustomerEO_ar1"
+    AssociationOtherEnd="model.assoc.ConToCustomer.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar3"
+    Association="model.assoc.ConToPrimeOpper"
+    AssociationEnd="model.assoc.ConToPrimeOpper.OppertunityEO_ar3"
+    AssociationOtherEnd="model.assoc.ConToPrimeOpper.ContactsEO_ar3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">

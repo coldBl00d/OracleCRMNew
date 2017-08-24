@@ -205,6 +205,20 @@
     AssociationOtherEnd="model.assoc.TaskToAssigneeAssoc.TaskEO_ar2"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar"
+    Association="model.assoc.OppToTask"
+    AssociationEnd="model.assoc.OppToTask.OppertunityEO_ar"
+    AssociationOtherEnd="model.assoc.OppToTask.TaskEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.ConToTask"
+    AssociationEnd="model.assoc.ConToTask.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.ConToTask.TaskEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">
