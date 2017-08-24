@@ -260,23 +260,9 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         row.setAttribute("ContactId", cId);
         vo.insertRow(row);
         this.getDBTransaction().commit();
+        this.getDBTransaction().clearEntityCache(null);
     }
 
-    /**
-     * Container's getter for CreateContact1.
-     * @return CreateContact1
-     */
-    public ViewObjectImpl getCreateContact1() {
-        return (ViewObjectImpl) findViewObject("CreateContact1");
-    }
-
-    /**
-     * Container's getter for CreatContactVL1.
-     * @return CreatContactVL1
-     */
-    public ViewLinkImpl getCreatContactVL1() {
-        return (ViewLinkImpl) findViewLink("CreatContactVL1");
-    }
 
     /**
      * Container's getter for CreateCustomerU1.
@@ -334,6 +320,15 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewLinkImpl) findViewLink("RevenueItemToProductVL1");
     }
 
+
+    /**
+     * Container's getter for CreateContact1.
+     * @return CreateContact1
+     */
+    public ViewObjectImpl getCreateContact1() {
+        return (ViewObjectImpl) findViewObject("CreateContact1");
+    }
+
     /**
      * Container's getter for CreateOpportunity1.
      * @return CreateOpportunity1
@@ -343,11 +338,19 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     }
 
     /**
-     * Container's getter for CreateOpportunityVL1.
-     * @return CreateOpportunityVL1
+     * Container's getter for ContactR1.
+     * @return ContactR1
      */
-    public ViewLinkImpl getCreateOpportunityVL1() {
-        return (ViewLinkImpl) findViewLink("CreateOpportunityVL1");
+    public ViewObjectImpl getContactR1() {
+        return (ViewObjectImpl) findViewObject("ContactR1");
+    }
+
+    /**
+     * Container's getter for ContactRVOVL1.
+     * @return ContactRVOVL1
+     */
+    public ViewLinkImpl getContactRVOVL1() {
+        return (ViewLinkImpl) findViewLink("ContactRVOVL1");
     }
 }
 

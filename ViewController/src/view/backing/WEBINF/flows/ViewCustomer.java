@@ -35,6 +35,7 @@ import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.adf.view.rich.event.DialogEvent;
@@ -130,22 +131,6 @@ public class ViewCustomer {
     private RichTable t8;
     private RichPopup p1;
     private RichDialog d1;
-    private RichPanelFormLayout pfl1;
-    private RichInputText it1;
-    private RichInputText it8;
-    private RichInputText it9;
-    private RichSelectOneChoice soc3;
-    private UISelectItems si3;
-    private RichInputText it10;
-    private RichSelectOneChoice soc4;
-    private UISelectItems si4;
-    private RichSelectOneChoice soc5;
-    private UISelectItems si5;
-    private RichInputText it11;
-    private RichInputText it12;
-    private RichInputText it13;
-    private RichInputText it14;
-    private RichInputText it15;
     private RichInputText it6;
     private RichInputText it7;
     private HtmlOutputLabel ol4;
@@ -155,15 +140,29 @@ public class ViewCustomer {
     private RichSpacer s5;
     private RichSpacer s6;
     private RichSpacer s7;
-    private RichPopup p2;
+
+    private RichPanelFormLayout pfl1;
+    private RichInputText it8;
+    private RichSelectOneChoice soc3;
+    private UISelectItems si3;
+    private RichInputText it9;
+    private RichInputText it10;
+    private RichSelectOneChoice soc4;
+    private UISelectItems si4;
+    private RichSelectOneChoice soc5;
+    private UISelectItems si5;
+    private RichSelectOneChoice soc12;
+    private UISelectItems si12;
+    private RichInputText it11;
+    private RichInputText it12;
+    private RichInputText it13;
+    private RichInputText it14;
+    private RichInputText it15;
     private RichDialog d2;
-    private RichPanelGroupLayout pgl10;
     private RichPanelFormLayout pfl2;
+    private RichInputText it1;
     private RichInputText it19;
     private RichInputText it20;
-    private RichInputText it21;
-    private RichSelectOneChoice soc6;
-    private UISelectItems si6;
     private RichSelectOneChoice soc7;
     private UISelectItems si7;
     private RichSelectOneChoice soc8;
@@ -175,7 +174,11 @@ public class ViewCustomer {
     private RichSelectOneChoice soc11;
     private UISelectItems si11;
     private RichInputDate id1;
-    private RichInputText it22;
+    private RichInputText it21;
+    private RichPopup p3;
+    private RichDialog d3;
+    private RichOutputText ot32;
+    private RichPopup p4;
 
     public ViewCustomer(){
         
@@ -930,6 +933,7 @@ public class ViewCustomer {
                 op.execute();
                 operationBinding.execute();
                 
+                
             } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
               
                 BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -945,6 +949,71 @@ public class ViewCustomer {
         operationBinding.execute();
         
     }
+    
+    
+    
+    public void insertOppPopupFetchListener(PopupFetchEvent popupFetchEvent){
+        System.out.println(popupFetchEvent.getLaunchSourceClientId());
+        if(popupFetchEvent.getLaunchSourceClientId().contains("b1"))
+        {
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert1");
+            operationBinding.execute();
+            
+            
+            
+        }
+    }
+    public void insertOppDialogListener(DialogEvent dialogEvent) {
+       
+            if(dialogEvent.getOutcome().name().equals("ok")==true) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerListIterator");
+                Row row1 = iter.getCurrentRow();
+                DCIteratorBinding iter1 = bindings2.findIteratorBinding("CreateOpportunity1Iterator");
+                RowSetIterator rsi = iter1.getRowSetIterator();
+                Row row = rsi.getCurrentRow();
+                row.setAttribute("AccId", row1.getAttribute("AccountId"));
+                operationBinding.execute();
+                
+                
+            } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
+    public void cancelOppPopupListener(PopupCanceledEvent popupCanceledEvent){
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+        operationBinding.execute();
+        
+    }
+    public void deleteOppDialogListener(DialogEvent dialogEvent) {
+            if(dialogEvent.getOutcome().name().equals("yes")) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Delete1");
+                operationBinding.execute();
+                operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                
+            } else if(dialogEvent.getOutcome().name().equals("no")){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
 
     public void setD1(RichDialog d1) {
         this.d1 = d1;
@@ -954,133 +1023,6 @@ public class ViewCustomer {
         return d1;
     }
 
-    public void setPfl1(RichPanelFormLayout pfl1) {
-        this.pfl1 = pfl1;
-    }
-
-    public RichPanelFormLayout getPfl1() {
-        return pfl1;
-    }
-
-    public void setIt1(RichInputText it1) {
-        this.it1 = it1;
-    }
-
-    public RichInputText getIt1() {
-        return it1;
-    }
-
-    public void setIt8(RichInputText it8) {
-        this.it8 = it8;
-    }
-
-    public RichInputText getIt8() {
-        return it8;
-    }
-
-    public void setIt9(RichInputText it9) {
-        this.it9 = it9;
-    }
-
-    public RichInputText getIt9() {
-        return it9;
-    }
-
-    public void setSoc3(RichSelectOneChoice soc3) {
-        this.soc3 = soc3;
-    }
-
-    public RichSelectOneChoice getSoc3() {
-        return soc3;
-    }
-
-    public void setSi3(UISelectItems si3) {
-        this.si3 = si3;
-    }
-
-    public UISelectItems getSi3() {
-        return si3;
-    }
-
-    public void setIt10(RichInputText it10) {
-        this.it10 = it10;
-    }
-
-    public RichInputText getIt10() {
-        return it10;
-    }
-
-    public void setSoc4(RichSelectOneChoice soc4) {
-        this.soc4 = soc4;
-    }
-
-    public RichSelectOneChoice getSoc4() {
-        return soc4;
-    }
-
-    public void setSi4(UISelectItems si4) {
-        this.si4 = si4;
-    }
-
-    public UISelectItems getSi4() {
-        return si4;
-    }
-
-    public void setSoc5(RichSelectOneChoice soc5) {
-        this.soc5 = soc5;
-    }
-
-    public RichSelectOneChoice getSoc5() {
-        return soc5;
-    }
-
-    public void setSi5(UISelectItems si5) {
-        this.si5 = si5;
-    }
-
-    public UISelectItems getSi5() {
-        return si5;
-    }
-
-    public void setIt11(RichInputText it11) {
-        this.it11 = it11;
-    }
-
-    public RichInputText getIt11() {
-        return it11;
-    }
-
-    public void setIt12(RichInputText it12) {
-        this.it12 = it12;
-    }
-
-    public RichInputText getIt12() {
-        return it12;
-    }
-
-    public void setIt13(RichInputText it13) {
-        this.it13 = it13;
-    }
-
-    public RichInputText getIt13() {
-        return it13;
-    }
-
-    public void setIt14(RichInputText it14) {
-        this.it14 = it14;
-    }
-
-    public RichInputText getIt14() {
-        return it14;
-    }
-
-    public void setIt15(RichInputText it15) {
-        this.it15 = it15;
-    }
-
-    public RichInputText getIt15() {
-        return it15;
-    }
 
     public void setIt6(RichInputText it6) {
         this.it6 = it6;
@@ -1154,13 +1096,144 @@ public class ViewCustomer {
         return s7;
     }
 
-    public void setP2(RichPopup p2) {
-        this.p2 = p2;
+
+    public void setPfl1(RichPanelFormLayout pfl1) {
+        this.pfl1 = pfl1;
     }
 
-    public RichPopup getP2() {
-        return p2;
+    public RichPanelFormLayout getPfl1() {
+        return pfl1;
     }
+
+
+    public void setIt8(RichInputText it8) {
+        this.it8 = it8;
+    }
+
+    public RichInputText getIt8() {
+        return it8;
+    }
+
+    public void setSoc3(RichSelectOneChoice soc3) {
+        this.soc3 = soc3;
+    }
+
+    public RichSelectOneChoice getSoc3() {
+        return soc3;
+    }
+
+    public void setSi3(UISelectItems si3) {
+        this.si3 = si3;
+    }
+
+    public UISelectItems getSi3() {
+        return si3;
+    }
+
+    public void setIt9(RichInputText it9) {
+        this.it9 = it9;
+    }
+
+    public RichInputText getIt9() {
+        return it9;
+    }
+
+    public void setIt10(RichInputText it10) {
+        this.it10 = it10;
+    }
+
+    public RichInputText getIt10() {
+        return it10;
+    }
+
+    public void setSoc4(RichSelectOneChoice soc4) {
+        this.soc4 = soc4;
+    }
+
+    public RichSelectOneChoice getSoc4() {
+        return soc4;
+    }
+
+    public void setSi4(UISelectItems si4) {
+        this.si4 = si4;
+    }
+
+    public UISelectItems getSi4() {
+        return si4;
+    }
+
+    public void setSoc5(RichSelectOneChoice soc5) {
+        this.soc5 = soc5;
+    }
+
+    public RichSelectOneChoice getSoc5() {
+        return soc5;
+    }
+
+    public void setSi5(UISelectItems si5) {
+        this.si5 = si5;
+    }
+
+    public UISelectItems getSi5() {
+        return si5;
+    }
+
+    public void setSoc12(RichSelectOneChoice soc12) {
+        this.soc12 = soc12;
+    }
+
+    public RichSelectOneChoice getSoc12() {
+        return soc12;
+    }
+
+    public void setSi12(UISelectItems si12) {
+        this.si12 = si12;
+    }
+
+    public UISelectItems getSi12() {
+        return si12;
+    }
+
+    public void setIt11(RichInputText it11) {
+        this.it11 = it11;
+    }
+
+    public RichInputText getIt11() {
+        return it11;
+    }
+
+    public void setIt12(RichInputText it12) {
+        this.it12 = it12;
+    }
+
+    public RichInputText getIt12() {
+        return it12;
+    }
+
+    public void setIt13(RichInputText it13) {
+        this.it13 = it13;
+    }
+
+    public RichInputText getIt13() {
+        return it13;
+    }
+
+    public void setIt14(RichInputText it14) {
+        this.it14 = it14;
+    }
+
+    public RichInputText getIt14() {
+        return it14;
+    }
+
+    public void setIt15(RichInputText it15) {
+        this.it15 = it15;
+    }
+
+    public RichInputText getIt15() {
+        return it15;
+    }
+
 
     public void setD2(RichDialog d2) {
         this.d2 = d2;
@@ -1170,22 +1243,20 @@ public class ViewCustomer {
         return d2;
     }
 
-
-    public void setPgl10(RichPanelGroupLayout pgl10) {
-        this.pgl10 = pgl10;
-    }
-
-    public RichPanelGroupLayout getPgl10() {
-        return pgl10;
-    }
-
-
     public void setPfl2(RichPanelFormLayout pfl2) {
         this.pfl2 = pfl2;
     }
 
     public RichPanelFormLayout getPfl2() {
         return pfl2;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
     }
 
     public void setIt19(RichInputText it19) {
@@ -1196,36 +1267,13 @@ public class ViewCustomer {
         return it19;
     }
 
+
     public void setIt20(RichInputText it20) {
         this.it20 = it20;
     }
 
     public RichInputText getIt20() {
         return it20;
-    }
-
-    public void setIt21(RichInputText it21) {
-        this.it21 = it21;
-    }
-
-    public RichInputText getIt21() {
-        return it21;
-    }
-
-    public void setSoc6(RichSelectOneChoice soc6) {
-        this.soc6 = soc6;
-    }
-
-    public RichSelectOneChoice getSoc6() {
-        return soc6;
-    }
-
-    public void setSi6(UISelectItems si6) {
-        this.si6 = si6;
-    }
-
-    public UISelectItems getSi6() {
-        return si6;
     }
 
     public void setSoc7(RichSelectOneChoice soc7) {
@@ -1316,11 +1364,45 @@ public class ViewCustomer {
         return id1;
     }
 
-    public void setIt22(RichInputText it22) {
-        this.it22 = it22;
+    public void setIt21(RichInputText it21) {
+        this.it21 = it21;
     }
 
-    public RichInputText getIt22() {
-        return it22;
+    public RichInputText getIt21() {
+        return it21;
     }
+
+    public void setP3(RichPopup p3) {
+        this.p3 = p3;
+    }
+
+    public RichPopup getP3() {
+        return p3;
+    }
+
+    public void setD3(RichDialog d3) {
+        this.d3 = d3;
+    }
+
+    public RichDialog getD3() {
+        return d3;
+    }
+
+    public void setOt32(RichOutputText ot32) {
+        this.ot32 = ot32;
+    }
+
+    public RichOutputText getOt32() {
+        return ot32;
+    }
+
+    public void setP4(RichPopup p4) {
+        this.p4 = p4;
+    }
+
+    public RichPopup getP4() {
+        return p4;
+    }
+
+
 }

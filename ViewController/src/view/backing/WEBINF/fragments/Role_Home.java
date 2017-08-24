@@ -229,13 +229,6 @@ public class Role_Home {
                 operationBinding.execute();
                 operationBinding = bindings.getOperationBinding("Commit");
                 operationBinding.execute();
-                DCBindingContainer bc = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
-                DCIteratorBinding  itr= ( DCIteratorBinding)bc.findIteratorBinding("RolesU1Itearator");
-                try{itr.executeQuery();
-                }
-                catch(NullPointerException e){
-                    System.out.print(true);
-                }
                 
             } else if(dialogEvent.getOutcome().name().equals("no")){
               

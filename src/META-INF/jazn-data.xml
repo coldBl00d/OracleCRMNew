@@ -15,6 +15,12 @@
                     <credentials>{903}x8T5JYV23LFvgf+knSuRFGPRIDcylDtw</credentials>
                     <display-name>Sam</display-name>
                 </user>
+                <user>
+                    <name>sarep</name>
+                    <credentials>{903}AxxEh+9WKOGd0yqrPW+mE4eutHx2Qdf2</credentials>
+                    <display-name>Sales Rep</display-name>
+                    <description></description>
+                </user>
             </users>
             <roles>
                 <role>
@@ -28,11 +34,21 @@
                     </members>
                 </role>
                 <role>
-                    <name>Managers</name>
+                    <name>MAN</name>
                     <members>
                         <member>
                             <type>user</type>
                             <name>sam</name>
+                        </member>
+                    </members>
+                </role>
+                <role>
+                    <name>SA_REP</name>
+                    <display-name>Sales Representative</display-name>
+                    <members>
+                        <member>
+                            <type>user</type>
+                            <name>sarep</name>
                         </member>
                     </members>
                 </role>
@@ -60,7 +76,7 @@
                         <members>
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
-                                <name>Managers</name>
+                                <name>MAN</name>
                             </member>
                         </members>
                     </app-role>

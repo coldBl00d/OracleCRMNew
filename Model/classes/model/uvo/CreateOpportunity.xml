@@ -45,6 +45,12 @@
     AMUsageName="UserApplicationModule"
     ViewInstanceName="CustomerContacts"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UserApplicationModule_ContactR1_1"
+    ViewObjectName="model.rvo.ContactRVO"
+    AMUsageName="UserApplicationModule"
+    ViewInstanceName="ContactR1"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Channel"
     ListVOName="salesChannel1"
@@ -132,7 +138,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PrimaryContactId"
-    ListVOName="UserApplicationModule_CustomerContacts1"
+    ListVOName="UserApplicationModule_ContactR1_1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

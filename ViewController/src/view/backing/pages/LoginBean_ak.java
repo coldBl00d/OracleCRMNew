@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import weblogic.security.URLCallbackHandler;
 import weblogic.security.services.Authentication;
+import oracle.adf.share.ADFContext;
 
 import weblogic.servlet.security.ServletAuthentication;
 
@@ -29,6 +30,9 @@ public class LoginBean_ak {
     private String username; 
     private String password;
     private String LANDING_PAGE = "/pages/Admin.jsf";
+
+    private String LANDING_PAGE_ADMIN = "/pages/Admin.jsf";
+    private String LANDING_PAGE_REP_AND_MANAGER =  "/pages/Users.jsf";
 
     public void setUsername(String username) {
         this.username = username;
@@ -54,12 +58,14 @@ public class LoginBean_ak {
             Subject mySubject = Authentication.login(handler);
             ServletAuthentication.runAs(mySubject, request);
             ServletAuthentication.generateNewSessionID(request);
-            String loginUrl = "/adfAuthentication?success_url=/faces" + LANDING_PAGE;
+                String loginUrl = "/adfAuthentication?success_url=/faces"+LANDING_PAGE;
             //ctx.getViewRoot().getViewId();
                 System.out.println("Login url :"+loginUrl);
             HttpServletResponse response = 
                        (HttpServletResponse)ctx.getExternalContext().getResponse();
-                sendForward(request, response, loginUrl);
+                
+            
+            sendForward(request, response, loginUrl);
             }catch(FailedLoginException e){
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR,
                                                         "Incorrect Username or Password",
@@ -72,10 +78,17 @@ public class LoginBean_ak {
             return null;
     }
     
-    private void sendForward(HttpServletRequest request, 
-                                  HttpServletResponse response,
-                                  String forwardUrl){
+    private void sendForward(HttpServletRequest request,  HttpServletResponse response, String forwardUrl){
+        
+        String roles[] = ADFContext.getCurrent().getSecurityContext().getUserRoles();
+        for(String s : roles){
+            System.out.println(s);
+        }
+        
+       
+        
            FacesContext ctx = FacesContext.getCurrentInstance();
+           
            RequestDispatcher dispatcher = request.getRequestDispatcher(forwardUrl);
            try {
              dispatcher.forward(request, response);

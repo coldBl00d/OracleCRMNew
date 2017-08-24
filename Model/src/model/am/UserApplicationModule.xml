@@ -70,9 +70,6 @@
     Name="CustContactLinkUVO_ar1"
     ViewObjectName="model.uvo.CustContactLinkUVO_arVO"/>
   <ViewUsage
-    Name="CreateContact1"
-    ViewObjectName="model.uvo.CreateContact"/>
-  <ViewUsage
     Name="CreateCustomerU1"
     ViewObjectName="model.uvo.CreateCustomerUVO"/>
   <ViewUsage
@@ -85,8 +82,14 @@
     Name="ProductsName"
     ViewObjectName="model.uvo.ProductsUVO"/>
   <ViewUsage
+    Name="CreateContact1"
+    ViewObjectName="model.uvo.CreateContact"/>
+  <ViewUsage
     Name="CreateOpportunity1"
     ViewObjectName="model.uvo.CreateOpportunity"/>
+  <ViewUsage
+    Name="ContactR1"
+    ViewObjectName="model.rvo.ContactRVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -160,12 +163,6 @@
     DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="CreatContactVL1"
-    ViewLinkObjectName="model.vl.CreatContactVL"
-    SrcViewUsageName="model.am.UserApplicationModule.Customer"
-    DstViewUsageName="model.am.UserApplicationModule.CreateContact1"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="CustToShippingVL1"
     ViewLinkObjectName="model.vl.CustToShippingVL"
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
@@ -184,10 +181,10 @@
     DstViewUsageName="model.am.UserApplicationModule.ProductsName"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="CreateOpportunityVL1"
-    ViewLinkObjectName="model.vl.CreateOpportunityVL"
+    Name="ContactRVOVL1"
+    ViewLinkObjectName="model.vl.ContactRVOVL"
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
-    DstViewUsageName="model.am.UserApplicationModule.CreateOpportunity1"
+    DstViewUsageName="model.am.UserApplicationModule.ContactR1"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

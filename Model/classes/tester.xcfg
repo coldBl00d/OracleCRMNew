@@ -33,5 +33,23 @@
          <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>
          <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
+      <AppModuleConfig name="15E1502ABBA" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.UserApplicationModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" JDBCName="oraclecrm" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="UserApplicationModuleLocal" jbo.project="model.Model">
+         <Database jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle" JDBCDataSource="java:comp/env/jdbc/oraclecrmDS"/>
+         <Security AppModuleJndiName="model.am.UserApplicationModule"/>
+         <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="15E1508A2C3" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.UserApplicationModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" JDBCName="oraclecrm" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="UserApplicationModuleLocal" jbo.project="model.Model">
+         <Database jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle" JDBCDataSource="java:comp/env/jdbc/oraclecrmDS"/>
+         <Security AppModuleJndiName="model.am.UserApplicationModule"/>
+         <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="15E150996B1" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.UserApplicationModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" JDBCName="oraclecrm" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="UserApplicationModuleLocal" jbo.project="model.Model">
+         <Database jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle" JDBCDataSource="java:comp/env/jdbc/oraclecrmDS"/>
+         <Security AppModuleJndiName="model.am.UserApplicationModule"/>
+         <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
    </AppModuleConfigBag>
 </BC4JConfig>

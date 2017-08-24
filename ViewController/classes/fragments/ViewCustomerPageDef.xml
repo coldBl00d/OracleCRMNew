@@ -35,6 +35,8 @@
               id="CreateContact1Iterator"/>
     <iterator Binds="ShippingAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="ShippingAddressIterator"/>
+    <iterator Binds="CreateOpportunity1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateOpportunity1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
@@ -142,9 +144,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="AppointmentsIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action IterBinding="OppertunityOfCustomerIterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <tree IterBinding="CustomerContactsIterator" id="CustomerContacts">
       <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="CustomerContacts0">
         <AttrNames>
@@ -158,11 +157,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="CreateContact1Iterator" id="Title">
-      <AttrNames>
-        <Item Value="Title"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="CreateContact1Iterator" id="ContactName">
       <AttrNames>
         <Item Value="ContactName"/>
@@ -175,49 +169,12 @@
     </attributeValues>
     <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="CreateContact1Iterator" id="DepartmentName">
-      <AttrNames>
-        <Item Value="DepartmentName"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_BuyingRole" id="BuyingRole"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_InfluenceLevel" id="InfluenceLevel"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="CreateContact1Iterator" id="MobileNumber">
-      <AttrNames>
-        <Item Value="MobileNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CreateContact1Iterator" id="WorkNumber">
-      <AttrNames>
-        <Item Value="WorkNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine11">
-      <AttrNames>
-        <Item Value="AddressLine1"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine21">
-      <AttrNames>
-        <Item Value="AddressLine2"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine31">
-      <AttrNames>
-        <Item Value="AddressLine3"/>
-      </AttrNames>
-    </attributeValues>
     <methodAction id="populateCusConJun" RequiresUpdateModel="true" Action="invokeMethod" MethodName="populateCusConJun"
                   IsViewObjectMethod="false" DataControl="UserApplicationModuleDataControl"
                   InstanceName="bindings.populateCusConJun.dataControl.dataProvider">
       <NamedData NDName="aId" NDType="java.lang.Integer"/>
       <NamedData NDName="cId" NDType="java.lang.Integer"/>
     </methodAction>
-    <action IterBinding="CreateContact1Iterator" id="CreateInsert"
-            InstanceName="UserApplicationModuleDataControl.CreateContact1"
-            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <attributeValues IterBinding="CustomerListIterator" id="Ceo1">
       <AttrNames>
         <Item Value="Ceo"/>
@@ -248,5 +205,90 @@
         <Item Value="AddressLine3"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_SalesStage" id="SalesStage"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateContact1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_BuyingRole" id="BuyingRole"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_InfluenceLevel" id="InfluenceLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateContact1Iterator" StaticList="false" Uses="LOV_Title" id="Title" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateContact1Iterator" id="WorkNumber">
+      <AttrNames>
+        <Item Value="WorkNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="MobileNumber">
+      <AttrNames>
+        <Item Value="MobileNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine11">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine21">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateContact1Iterator" id="AddressLine31">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityName">
+      <AttrNames>
+        <Item Value="OpportunityName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityWinProb">
+      <AttrNames>
+        <Item Value="OpportunityWinProb"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="BudgetAmount">
+      <AttrNames>
+        <Item Value="BudgetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_DecisionLevel" id="DecisionLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_SalesMethod" id="SalesMethod"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_RiskLevel" id="RiskLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_Channel" id="Channel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityCloseDate">
+      <AttrNames>
+        <Item Value="OpportunityCloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="EstimatedDuration">
+      <AttrNames>
+        <Item Value="EstimatedDuration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CreateContact1Iterator" id="CreateInsert"
+            InstanceName="UserApplicationModuleDataControl.CreateContact1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CreateOpportunity1Iterator" id="CreateInsert1"
+            InstanceName="UserApplicationModuleDataControl.CreateOpportunity1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomerContactsIterator" id="Delete"
+            InstanceName="UserApplicationModuleDataControl.CustomerContacts"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="OppertunityOfCustomerIterator" id="Delete1"
+            InstanceName="UserApplicationModuleDataControl.OppertunityOfCustomer"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

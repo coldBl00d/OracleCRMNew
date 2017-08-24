@@ -181,6 +181,11 @@
     ViewLink="model.vl.CreateOpportunityVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ContactR"
+    ViewLink="model.vl.ContactRVOVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
