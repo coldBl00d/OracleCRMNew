@@ -32,8 +32,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ROLES"
-    IsNotNull="true">
+    TableName="ROLES">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
@@ -56,16 +55,14 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ROLES"
-    IsNotNull="true"/>
+    TableName="ROLES"/>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ROLES"
-    IsNotNull="true">
+    TableName="ROLES">
     <validation:PreDefinedValidationBean
       Name="EndDateRule1"
       ResId="ENTER_A_VALID_END_DATE"
@@ -102,18 +99,6 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
-    Name="RolesEndDateCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"END_DATE" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="ROLES_END_DATE_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.eo.RolesEO.EndDate"/>
-    </AttrArray>
-  </Key>
-  <Key
     Name="RolesPk"
     PrimaryKey="true">
     <DesignTime>
@@ -121,30 +106,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.RolesEO.RoleId"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="RolesRoleNameCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"ROLE_NAME" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="ROLES_ROLE_NAME_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.eo.RolesEO.RoleName"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="RolesStartDateCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"START_DATE" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="ROLES_START_DATE_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.eo.RolesEO.StartDate"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

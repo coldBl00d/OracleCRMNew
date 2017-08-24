@@ -85,7 +85,8 @@
                                           columns="30"
                                           maximumLength="#{bindings.RoleName.hints.precision}"
                                           shortDesc="#{bindings.RoleName.hints.tooltip}" id="it1"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it1}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it1}"
+                                          showRequired="true">
                                 <f:validator binding="#{bindings.RoleName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.RoleDescription.inputValue}"
@@ -102,7 +103,8 @@
                                           required="#{bindings.StartDate.hints.mandatory}"
                                           columns="#{bindings.StartDate.hints.displayWidth}"
                                           shortDesc="#{bindings.StartDate.hints.tooltip}" id="id1"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id1}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id1}"
+                                          showRequired="true">
                                 <f:validator binding="#{bindings.StartDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
                             </af:inputDate>
@@ -110,7 +112,8 @@
                                           required="#{bindings.EndDate.hints.mandatory}"
                                           columns="#{bindings.EndDate.hints.displayWidth}"
                                           shortDesc="#{bindings.EndDate.hints.tooltip}" id="id2"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id2}">
+                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id2}"
+                                          showRequired="true">
                                 <f:validator binding="#{bindings.EndDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                             </af:inputDate>
