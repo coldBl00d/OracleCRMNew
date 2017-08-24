@@ -204,6 +204,20 @@
     AssociationOtherEnd="model.assoc.ContactToAddressAssoc.ContactsEO_ar1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.ContactToOpportunityAssoc"
+    AssociationEnd="model.assoc.ContactToOpportunityAssoc.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToOpportunityAssoc.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="NotesEO_ar"
+    Association="model.assoc.ContactsToNotes"
+    AssociationEnd="model.assoc.ContactsToNotes.NotesEO_ar"
+    AssociationOtherEnd="model.assoc.ContactsToNotes.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">

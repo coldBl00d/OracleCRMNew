@@ -290,6 +290,20 @@
     AssociationOtherEnd="model.assoc.OppertunityToRevenueItemAssoc.OppertunityEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.ContactToOpportunityAssoc"
+    AssociationEnd="model.assoc.ContactToOpportunityAssoc.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToOpportunityAssoc.OppertunityEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TaskEO_ar"
+    Association="model.assoc.OpportunityToTask"
+    AssociationEnd="model.assoc.OpportunityToTask.TaskEO_ar"
+    AssociationOtherEnd="model.assoc.OpportunityToTask.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">

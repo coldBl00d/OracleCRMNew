@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactToNotesEo"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CONTACT_NOTES_LINK"
+  AliasName="ContactToNotesEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="NoteId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="NOTE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CONTACT_NOTES_LINK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CONTACT_NOTES_LINK"
+    PrimaryKey="true"/>
+  <Key
+    Name="ContactNotesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CONTACT_NOTES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactToNotesEo.NoteId"/>
+      <Item Value="model.eo.ContactToNotesEo.ContactId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -97,6 +97,13 @@
     AssociationOtherEnd="model.assoc.NotesToCreator.NotesEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.ContactsToNotes"
+    AssociationEnd="model.assoc.ContactsToNotes.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.ContactsToNotes.NotesEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="NotesPk"
     PrimaryKey="true">
