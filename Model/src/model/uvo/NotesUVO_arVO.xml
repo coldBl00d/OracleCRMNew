@@ -52,4 +52,9 @@
     ViewLink="model.vl.NotesToCreator"
     Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserUVO_ar1"
+    ViewLink="model.vl.NoteToCreator"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
 </ViewObject>

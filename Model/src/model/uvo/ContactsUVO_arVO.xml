@@ -181,4 +181,29 @@
     Type="oracle.jbo.RowIterator"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ActivityUVO_ar"
+    ViewLink="model.vl.CustToAppoint"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OppertunityUVO_ar1"
+    ViewLink="model.vl.ConToOpper"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TaskUVO_ar"
+    ViewLink="model.vl.ConToTasks"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerListView_ar1"
+    ViewLink="model.vl.ConToCust"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OppertunityUVO_ar2"
+    ViewLink="model.vl.ConToPrimeOpper"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

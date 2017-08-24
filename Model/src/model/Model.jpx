@@ -14,7 +14,6 @@
     <Attr Name="_NamedConnection" Value="oraclecrm"/>
     <Attr Name="_appModuleNames0" Value="model.am.AdminAppModule"/>
     <Attr Name="_appModuleNames1" Value="model.am.UserApplicationModule"/>
-    <Attr Name="_appModuleNames2" Value="model.eo.AppModuleAM"/>
   </DesignTime>
   <Containee
     Name="am"
@@ -40,7 +39,6 @@
       <Attr Name="_EO" Value="true"/>
       <Attr Name="_AS" Value="true"/>
       <Attr Name="_VO" Value="true"/>
-      <Attr Name="_AM" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

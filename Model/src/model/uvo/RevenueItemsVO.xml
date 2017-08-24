@@ -60,4 +60,9 @@
     EntityAttrName="SettledPrice"
     EntityUsage="RevenueItemsEO"
     AliasName="SETTLED_PRICE"/>
+  <ViewLinkAccessor
+    Name="ProductsU"
+    ViewLink="model.vl.RevToProduct"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -99,4 +99,48 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <DeclarativeWhereClause
+    Name="DeclarativeWhereClause">
+    <ViewCriteria
+      Name="InteractionsUVOWhereCriteria"
+      ViewObjectName="model.uvo.InteractionsUVO"
+      Conjunction="AND"
+      Mode="3">
+      <ViewCriteriaRow
+        Name="InteractionsUVOWhereCriteria_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItemCompound
+          Name="ActivityType"
+          ViewAttribute="ActivityType">
+          <ViewCriteria
+            Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder"
+            ViewObjectName="model.uvo.InteractionsUVO"
+            Conjunction="OR">
+            <ViewCriteriaRow
+              Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_0"
+              Conjunction="AND">
+              <ViewCriteriaItem
+                Name="ActivityType"
+                ViewAttribute="ActivityType"
+                Operator="&lt;>"
+                Conjunction="AND"
+                Value="APPOINTMENT"
+                Required="Optional"/>
+            </ViewCriteriaRow>
+            <ViewCriteriaRow
+              Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_1"
+              Conjunction="AND">
+              <ViewCriteriaItem
+                Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_1_ActivityType"
+                ViewAttribute="ActivityType"
+                Operator="&lt;>"
+                Conjunction="AND"
+                Value="TASK"
+                Required="Optional"/>
+            </ViewCriteriaRow>
+          </ViewCriteria>
+        </ViewCriteriaItemCompound>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </DeclarativeWhereClause>
 </ViewObject>
