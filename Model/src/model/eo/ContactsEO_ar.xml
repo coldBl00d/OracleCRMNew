@@ -239,6 +239,13 @@
     AssociationOtherEnd="model.assoc.ContactsToAppointmentAssociation.ContactsEO_ar1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ActivityEO_ar2"
+    Association="model.assoc.AppointmentToContacts"
+    AssociationEnd="model.assoc.AppointmentToContacts.ActivityEO_ar2"
+    AssociationOtherEnd="model.assoc.AppointmentToContacts.ContactsEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">

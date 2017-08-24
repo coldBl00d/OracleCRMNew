@@ -71,6 +71,16 @@
     EntityAttrName="ActivityType"
     EntityUsage="ActivityEO_arEO"
     AliasName="ACTIVITY_TYPE1"/>
+  <ViewLinkAccessor
+    Name="ContactsUVO_ar"
+    ViewLink="model.vl.AppointmentToContactsVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserUVO_ar"
+    ViewLink="model.vl.AppointmentToUsersVl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

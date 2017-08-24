@@ -2,6 +2,7 @@ package model.am;
 
 import model.am.common.UserApplicationModule;
 
+
 import model.uvo.TaskUVO_arVOImpl;
 
 import oracle.jbo.Row;
@@ -367,6 +368,168 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
      */
     public ViewLinkImpl getContactToAddressVL1() {
         return (ViewLinkImpl) findViewLink("ContactToAddressVL1");
+    }
+
+    /**
+     * Container's getter for OppertunityUVO_arVO1.
+     * @return OppertunityUVO_arVO1
+     */
+    public ViewObjectImpl getOppertunityUVO_arVO1() {
+        return (ViewObjectImpl) findViewObject("OppertunityUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for ContactToOppertunityViewLink1.
+     * @return ContactToOppertunityViewLink1
+     */
+    public ViewLinkImpl getContactToOppertunityViewLink1() {
+        return (ViewLinkImpl) findViewLink("ContactToOppertunityViewLink1");
+    }
+
+    /**
+     * Container's getter for TaskUVO_arVO1.
+     * @return TaskUVO_arVO1
+     */
+    public TaskUVO_arVOImpl getTaskUVO_arVO1() {
+        return (TaskUVO_arVOImpl) findViewObject("TaskUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for ContactToTask1.
+     * @return ContactToTask1
+     */
+    public ViewLinkImpl getContactToTask1() {
+        return (ViewLinkImpl) findViewLink("ContactToTask1");
+    }
+
+    /**
+     * Container's getter for NotesUVO_arVO1.
+     * @return NotesUVO_arVO1
+     */
+    public ViewObjectImpl getNotesUVO_arVO1() {
+        return (ViewObjectImpl) findViewObject("NotesUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for ContactToNoteVL1.
+     * @return ContactToNoteVL1
+     */
+    public ViewLinkImpl getContactToNoteVL1() {
+        return (ViewLinkImpl) findViewLink("ContactToNoteVL1");
+    }
+
+    /**
+     * Container's getter for InteractionsUVO1.
+     * @return InteractionsUVO1
+     */
+    public ViewObjectImpl getInteractionsUVO1() {
+        return (ViewObjectImpl) findViewObject("InteractionsUVO1");
+    }
+
+    /**
+     * Container's getter for ContactsToInteractions1.
+     * @return ContactsToInteractions1
+     */
+    public ViewLinkImpl getContactsToInteractions1() {
+        return (ViewLinkImpl) findViewLink("ContactsToInteractions1");
+    }
+
+    /**
+     * Container's getter for AppointmentUVO1.
+     * @return AppointmentUVO1
+     */
+    public ViewObjectImpl getAppointmentUVO1() {
+        return (ViewObjectImpl) findViewObject("AppointmentUVO1");
+    }
+
+    /**
+     * Container's getter for ContactToAppointmentVL1.
+     * @return ContactToAppointmentVL1
+     */
+    public ViewLinkImpl getContactToAppointmentVL1() {
+        return (ViewLinkImpl) findViewLink("ContactToAppointmentVL1");
+    }
+
+    /**
+     * Container's getter for UserUVO_arVO1.
+     * @return UserUVO_arVO1
+     */
+    public ViewObjectImpl getCreator2() {
+        return (ViewObjectImpl) findViewObject("Creator2");
+    }
+
+    /**
+     * Container's getter for TaskToCreator2.
+     * @return TaskToCreator2
+     */
+    public ViewLinkImpl getTaskToCreator2() {
+        return (ViewLinkImpl) findViewLink("TaskToCreator2");
+    }
+
+
+    /**
+     * Container's getter for UserUVO_arVO3.
+     * @return UserUVO_arVO3
+     */
+    public ViewObjectImpl getAssignee2() {
+        return (ViewObjectImpl) findViewObject("Assignee2");
+    }
+
+    /**
+     * Container's getter for TaskToAssigneeVL_ar2.
+     * @return TaskToAssigneeVL_ar2
+     */
+    public ViewLinkImpl getTaskToAssigneeVL_ar2() {
+        return (ViewLinkImpl) findViewLink("TaskToAssigneeVL_ar2");
+    }
+
+    /**
+     * Container's getter for UserUVO_arVO1.
+     * @return UserUVO_arVO1
+     */
+    public ViewObjectImpl getCreator3() {
+        return (ViewObjectImpl) findViewObject("Creator3");
+    }
+
+    /**
+     * Container's getter for NotesToCreator2.
+     * @return NotesToCreator2
+     */
+    public ViewLinkImpl getNotesToCreator2() {
+        return (ViewLinkImpl) findViewLink("NotesToCreator2");
+    }
+
+
+    /**
+     * Container's getter for UserUVO_arVO1.
+     * @return UserUVO_arVO1
+     */
+    public ViewObjectImpl getUserUVO_arVO1() {
+        return (ViewObjectImpl) findViewObject("UserUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for AppointmentToUsersVl1.
+     * @return AppointmentToUsersVl1
+     */
+    public ViewLinkImpl getAppointmentToUsersVl1() {
+        return (ViewLinkImpl) findViewLink("AppointmentToUsersVl1");
+    }
+
+    /**
+     * Container's getter for ContactsUVO_arVO1.
+     * @return ContactsUVO_arVO1
+     */
+    public ViewObjectImpl getContactsUVO_arVO1() {
+        return (ViewObjectImpl) findViewObject("ContactsUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for AppointmentToContactsVL1.
+     * @return AppointmentToContactsVL1
+     */
+    public ViewLinkImpl getAppointmentToContactsVL1() {
+        return (ViewLinkImpl) findViewLink("AppointmentToContactsVL1");
     }
 }
 
