@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="InteractionsUVO"
+  Name="Interaction"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -16,7 +16,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.uvo.InteractionsUVO_LABEL"/>
+        ResId="model.uvo.Interaction_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
@@ -102,22 +102,22 @@
   <DeclarativeWhereClause
     Name="DeclarativeWhereClause">
     <ViewCriteria
-      Name="InteractionsUVOWhereCriteria"
-      ViewObjectName="model.uvo.InteractionsUVO"
+      Name="InteractionWhereCriteria"
+      ViewObjectName="model.uvo.Interaction"
       Conjunction="AND"
       Mode="3">
       <ViewCriteriaRow
-        Name="InteractionsUVOWhereCriteria_row_0"
+        Name="InteractionWhereCriteria_row_0"
         UpperColumns="1">
         <ViewCriteriaItemCompound
           Name="ActivityType"
           ViewAttribute="ActivityType">
           <ViewCriteria
-            Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder"
-            ViewObjectName="model.uvo.InteractionsUVO"
+            Name="InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_itemHolder"
+            ViewObjectName="model.uvo.Interaction"
             Conjunction="OR">
             <ViewCriteriaRow
-              Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_0"
+              Name="InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_itemHolder_row_0"
               Conjunction="AND">
               <ViewCriteriaItem
                 Name="ActivityType"
@@ -128,10 +128,10 @@
                 Required="Optional"/>
             </ViewCriteriaRow>
             <ViewCriteriaRow
-              Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_1"
+              Name="InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_itemHolder_row_1"
               Conjunction="AND">
               <ViewCriteriaItem
-                Name="InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_InteractionsUVOWhereCriteria_InteractionsUVOWhereCriteria_row_0_ActivityType_itemHolder_row_1_ActivityType"
+                Name="InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_itemHolder_InteractionWhereCriteria_InteractionWhereCriteria_row_0_ActivityType_itemHolder_row_1_ActivityType"
                 ViewAttribute="ActivityType"
                 Operator="&lt;>"
                 Conjunction="AND"

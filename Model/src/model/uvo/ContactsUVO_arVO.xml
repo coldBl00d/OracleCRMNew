@@ -206,4 +206,9 @@
     ViewLink="model.vl.ConToPrimeOpper"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Interaction"
+    ViewLink="model.vl.ConToInter"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -28,15 +28,15 @@
   <AssociationEnd
     Name="Activity"
     Cardinality="-1"
-    Owner="model.eo.ActivityEO">
+    Owner="model.eo.AppointmentsEO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="Activity"/>
-      <Attr Name="_foreignKey" Value="model.eo.ActivityEO.fk_ActivityEO"/>
+      <Attr Name="_foreignKey" Value="model.eo.AppointmentsEO.fk_ActivityEO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.ActivityEO.AccountId"/>
+      <Item Value="model.eo.AppointmentsEO.AccountId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

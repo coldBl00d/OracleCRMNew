@@ -21,7 +21,7 @@
   </Properties>
   <EntityUsage
     Name="ActivityEO"
-    Entity="model.eo.ActivityEO"/>
+    Entity="model.eo.AppointmentsEO"/>
   <ViewAttribute
     Name="AAppLocationId"
     PrecisionRule="true"

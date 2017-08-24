@@ -32,7 +32,7 @@
   <AssociationEnd
     Name="Activity"
     Cardinality="-1"
-    Owner="model.eo.ActivityEO"
+    Owner="model.eo.AppointmentsEO"
     IntersectEntity="model.eo.ActivityOpportunityLinkEO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
@@ -40,7 +40,7 @@
       <Attr Name="_finderName" Value="Activity"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.ActivityEO.ActivityId"/>
+      <Item Value="model.eo.AppointmentsEO.ActivityId"/>
     </AttrArray>
     <AttrArray Name="IntersectAttributes">
       <Item Value="model.eo.ActivityOpportunityLinkEO.ActivityId"/>

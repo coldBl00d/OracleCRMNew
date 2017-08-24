@@ -212,13 +212,6 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute
-    Name="Interactions"
-    Association="model.assoc.ConToInter"
-    AssociationEnd="model.assoc.ConToInter.Interactions"
-    AssociationOtherEnd="model.assoc.ConToInter.ContactsEO_ar"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
     Name="OppertunityEO_ar2"
     Association="model.assoc.ConToOpper"
     AssociationEnd="model.assoc.ConToOpper.OppertunityEO_ar2"
@@ -244,6 +237,13 @@
     Association="model.assoc.ConToPrimeOpper"
     AssociationEnd="model.assoc.ConToPrimeOpper.OppertunityEO_ar3"
     AssociationOtherEnd="model.assoc.ConToPrimeOpper.ContactsEO_ar3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ActivityEO_ar"
+    Association="model.assoc.ConToInter"
+    AssociationEnd="model.assoc.ConToInter.ActivityEO_ar"
+    AssociationOtherEnd="model.assoc.ConToInter.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

@@ -13,7 +13,7 @@
     Name="Activity"
     Cardinality="1"
     Source="true"
-    Owner="model.eo.ActivityEO"
+    Owner="model.eo.AppointmentsEO"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
@@ -22,7 +22,7 @@
       <Attr Name="_finderName" Value="Activity"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.ActivityEO.ACreatorId"/>
+      <Item Value="model.eo.AppointmentsEO.ACreatorId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd

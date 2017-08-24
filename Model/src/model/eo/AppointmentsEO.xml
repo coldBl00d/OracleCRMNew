@@ -3,7 +3,7 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="ActivityEO"
+  Name="AppointmentsEO"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
@@ -47,7 +47,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.ActivityTitle_LABEL"/>
+          ResId="model.eo.AppointmentsEO.ActivityTitle_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -61,7 +61,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.StartDateTime_LABEL"/>
+          ResId="model.eo.AppointmentsEO.StartDateTime_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -75,7 +75,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.EndDueDateTime_LABEL"/>
+          ResId="model.eo.AppointmentsEO.EndDueDateTime_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -93,7 +93,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.ActivityDescription_LABEL"/>
+          ResId="model.eo.AppointmentsEO.ActivityDescription_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -111,7 +111,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.ATaskPriority_LABEL"/>
+          ResId="model.eo.AppointmentsEO.ATaskPriority_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -138,7 +138,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.AInterResolution_LABEL"/>
+          ResId="model.eo.AppointmentsEO.AInterResolution_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -163,7 +163,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.ActivityEO.ATaskCompletion_LABEL"/>
+          ResId="model.eo.AppointmentsEO.ATaskCompletion_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -241,7 +241,7 @@
       <Attr Name="_DBObjectName" Value="ACTIVITY_PK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.ActivityEO.ActivityId"/>
+      <Item Value="model.eo.AppointmentsEO.ActivityId"/>
     </AttrArray>
   </Key>
   <Key
@@ -252,7 +252,7 @@
       <Attr Name="_DBObjectName" Value="FK_ACTIVITY_EO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.ActivityEO.AccountId"/>
+      <Item Value="model.eo.AppointmentsEO.AccountId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
