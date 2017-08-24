@@ -191,6 +191,13 @@
     AssociationOtherEnd="model.assoc.CustomerToAppointment_Assoc_ar.CustomerEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.ContactToCustomerAssoc"
+    AssociationEnd="model.assoc.ContactToCustomerAssoc.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToCustomerAssoc.CustomerEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">

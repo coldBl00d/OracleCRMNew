@@ -139,6 +139,9 @@
   <ViewUsage
     Name="AttendeeUser2"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Customer4"
+    ViewObjectName="model.uvo.CustomerListView_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -366,6 +369,12 @@
     ViewLinkObjectName="model.vl.AttendeeUserVL"
     SrcViewUsageName="model.am.UserApplicationModule.Appointments_o"
     DstViewUsageName="model.am.UserApplicationModule.AttendeeUser2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToCustomerViewLink1"
+    ViewLinkObjectName="model.vl.ContactToCustomerViewLink"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.Customer4"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

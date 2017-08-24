@@ -206,4 +206,9 @@
     ViewLink="model.vl.ContactsToTaskVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustomerListView_ar1"
+    ViewLink="model.vl.ContactToCustomerViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
