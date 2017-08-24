@@ -35,6 +35,7 @@ public class salesStageRVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int VALUE = AttributesEnum.Value.index();
 
     /**

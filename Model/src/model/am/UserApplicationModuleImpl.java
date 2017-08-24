@@ -301,5 +301,53 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getCustToShippingVL1() {
         return (ViewLinkImpl) findViewLink("CustToShippingVL1");
     }
+
+    /**
+     * Container's getter for RevenueItemsU1.
+     * @return RevenueItemsU1
+     */
+    public ViewObjectImpl getRevenueItemsOfOpportunity() {
+        return (ViewObjectImpl) findViewObject("RevenueItemsOfOpportunity");
+    }
+
+    /**
+     * Container's getter for OpportunityToRevenueItemVL1.
+     * @return OpportunityToRevenueItemVL1
+     */
+    public ViewLinkImpl getOpportunityToRevenueItemVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityToRevenueItemVL1");
+    }
+
+    /**
+     * Container's getter for ProductsU1.
+     * @return ProductsU1
+     */
+    public ViewObjectImpl getProductsName() {
+        return (ViewObjectImpl) findViewObject("ProductsName");
+    }
+
+    /**
+     * Container's getter for RevenueItemToProductVL1.
+     * @return RevenueItemToProductVL1
+     */
+    public ViewLinkImpl getRevenueItemToProductVL1() {
+        return (ViewLinkImpl) findViewLink("RevenueItemToProductVL1");
+    }
+
+    /**
+     * Container's getter for CreateOpportunity1.
+     * @return CreateOpportunity1
+     */
+    public ViewObjectImpl getCreateOpportunity1() {
+        return (ViewObjectImpl) findViewObject("CreateOpportunity1");
+    }
+
+    /**
+     * Container's getter for CreateOpportunityVL1.
+     * @return CreateOpportunityVL1
+     */
+    public ViewLinkImpl getCreateOpportunityVL1() {
+        return (ViewLinkImpl) findViewLink("CreateOpportunityVL1");
+    }
 }
 

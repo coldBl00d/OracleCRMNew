@@ -283,6 +283,13 @@
     AssociationOtherEnd="model.assoc.OppertunityToCreatorAssoc.OppertunityEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="RevenueItems"
+    Association="model.assoc.OppertunityToRevenueItemAssoc"
+    AssociationEnd="model.assoc.OppertunityToRevenueItemAssoc.RevenueItems"
+    AssociationOtherEnd="model.assoc.OppertunityToRevenueItemAssoc.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">

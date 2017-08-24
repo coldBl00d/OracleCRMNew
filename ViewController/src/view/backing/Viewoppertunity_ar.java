@@ -91,6 +91,10 @@ public class Viewoppertunity_ar {
     private RichSpacer s4;
     private RichSpacer s5;
     private RichShowDetailItem sdi1;
+    private RichShowDetailItem sdi2;
+    private RichToolbar t5;
+    private RichButton b2;
+    private RichButton b5;
 
 
     public Viewoppertunity_ar(){
@@ -610,5 +614,37 @@ public class Viewoppertunity_ar {
 
     public RichShowDetailItem getSdi1() {
         return sdi1;
+    }
+
+    public void setSdi2(RichShowDetailItem sdi2) {
+        this.sdi2 = sdi2;
+    }
+
+    public RichShowDetailItem getSdi2() {
+        return sdi2;
+    }
+
+    public void setT5(RichToolbar t5) {
+        this.t5 = t5;
+    }
+
+    public RichToolbar getT5() {
+        return t5;
+    }
+
+    public void setB2(RichButton b2) {
+        this.b2 = b2;
+    }
+
+    public RichButton getB2() {
+        return b2;
+    }
+
+    public void setB5(RichButton b5) {
+        this.b5 = b5;
+    }
+
+    public RichButton getB5() {
+        return b5;
     }
 }

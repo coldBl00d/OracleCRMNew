@@ -176,6 +176,11 @@
     ViewLink="model.vl.CustToShippingVL"
     Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CreateOpportunity"
+    ViewLink="model.vl.CreateOpportunityVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

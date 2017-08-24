@@ -203,6 +203,15 @@
                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.gc2}">
                             <af:panelTabbed position="above" id="pt1"
                                             binding="#{backingBeanScope.backing_viewoppertunity_ar.pt1}">
+                                <af:showDetailItem id="tab1" text="Items"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
+                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
+                                        <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
                                 <af:showDetailItem id="tab4" text="Interactions" disclosed="true"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
                                     <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">
@@ -221,15 +230,6 @@
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="tab1" text="Task"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
-                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
-                                        <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
-                                    </af:toolbar>
-                                </af:showDetailItem>
                                 <af:showDetailItem id="tab2" text="Notes"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab2}">
                                     <af:toolbar id="t4" binding="#{backingBeanScope.backing_viewoppertunity_ar.t4}">
@@ -241,6 +241,15 @@
                                 </af:showDetailItem>
                                 <af:showDetailItem text="Items" id="sdi1"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}"/>
+                                <af:showDetailItem id="sdi2" text="Task"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi2}">
+                                    <af:toolbar id="t5" binding="#{backingBeanScope.backing_viewoppertunity_ar.t5}">
+                                        <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
                             </af:panelTabbed>
                         </af:gridCell>
                     </af:gridRow>

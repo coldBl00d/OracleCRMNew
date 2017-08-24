@@ -78,6 +78,15 @@
   <ViewUsage
     Name="ShippingAddress"
     ViewObjectName="model.uvo.AddressUVO_arVO"/>
+  <ViewUsage
+    Name="RevenueItemsOfOpportunity"
+    ViewObjectName="model.uvo.RevenueItemsUVO"/>
+  <ViewUsage
+    Name="ProductsName"
+    ViewObjectName="model.uvo.ProductsUVO"/>
+  <ViewUsage
+    Name="CreateOpportunity1"
+    ViewObjectName="model.uvo.CreateOpportunity"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -161,6 +170,24 @@
     ViewLinkObjectName="model.vl.CustToShippingVL"
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
     DstViewUsageName="model.am.UserApplicationModule.ShippingAddress"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityToRevenueItemVL1"
+    ViewLinkObjectName="model.vl.OpportunityToRevenueItemVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.RevenueItemsOfOpportunity"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RevenueItemToProductVL1"
+    ViewLinkObjectName="model.vl.RevenueItemToProductVL"
+    SrcViewUsageName="model.am.UserApplicationModule.RevenueItemsOfOpportunity"
+    DstViewUsageName="model.am.UserApplicationModule.ProductsName"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CreateOpportunityVL1"
+    ViewLinkObjectName="model.vl.CreateOpportunityVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.CreateOpportunity1"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

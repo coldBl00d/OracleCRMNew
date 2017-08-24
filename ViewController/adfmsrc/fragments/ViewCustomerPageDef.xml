@@ -35,6 +35,8 @@
               id="CreateContact1Iterator"/>
     <iterator Binds="ShippingAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="ShippingAddressIterator"/>
+    <iterator Binds="CreateOpportunity1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateOpportunity1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
@@ -246,6 +248,43 @@
     <attributeValues IterBinding="ShippingAddressIterator" id="AddressLine32">
       <AttrNames>
         <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityName">
+      <AttrNames>
+        <Item Value="OpportunityName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="BudgetAmount">
+      <AttrNames>
+        <Item Value="BudgetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityWinProb">
+      <AttrNames>
+        <Item Value="OpportunityWinProb"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_PrimaryContactId"
+          id="PrimaryContactId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_Channel" id="Channel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_DecisionLevel" id="DecisionLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_RiskLevel" id="RiskLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_SalesMethod" id="SalesMethod"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_SalesStage" id="SalesStage"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="OpportunityCloseDate">
+      <AttrNames>
+        <Item Value="OpportunityCloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateOpportunity1Iterator" id="EstimatedDuration">
+      <AttrNames>
+        <Item Value="EstimatedDuration"/>
       </AttrNames>
     </attributeValues>
   </bindings>

@@ -37,6 +37,8 @@
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+      <Attr Name="_VO" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee
@@ -53,6 +55,7 @@
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee
@@ -63,4 +66,17 @@
       <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
+  <Containee
+    Name="vo"
+    PackageName="model.vo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppModuleUsage
+    Name="UserApplicationModule"
+    FullName="model.am.UserApplicationModule"
+    ConfigurationName="model.am.null"
+    SharedScope="2"/>
 </JboProject>

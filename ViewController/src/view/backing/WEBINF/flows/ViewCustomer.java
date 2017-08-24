@@ -16,6 +16,7 @@ import oracle.adf.view.rich.component.rich.RichDialog;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -154,6 +155,27 @@ public class ViewCustomer {
     private RichSpacer s5;
     private RichSpacer s6;
     private RichSpacer s7;
+    private RichPopup p2;
+    private RichDialog d2;
+    private RichPanelGroupLayout pgl10;
+    private RichPanelFormLayout pfl2;
+    private RichInputText it19;
+    private RichInputText it20;
+    private RichInputText it21;
+    private RichSelectOneChoice soc6;
+    private UISelectItems si6;
+    private RichSelectOneChoice soc7;
+    private UISelectItems si7;
+    private RichSelectOneChoice soc8;
+    private UISelectItems si8;
+    private RichSelectOneChoice soc9;
+    private UISelectItems si9;
+    private RichSelectOneChoice soc10;
+    private UISelectItems si10;
+    private RichSelectOneChoice soc11;
+    private UISelectItems si11;
+    private RichInputDate id1;
+    private RichInputText it22;
 
     public ViewCustomer(){
         
@@ -1130,5 +1152,175 @@ public class ViewCustomer {
 
     public RichSpacer getS7() {
         return s7;
+    }
+
+    public void setP2(RichPopup p2) {
+        this.p2 = p2;
+    }
+
+    public RichPopup getP2() {
+        return p2;
+    }
+
+    public void setD2(RichDialog d2) {
+        this.d2 = d2;
+    }
+
+    public RichDialog getD2() {
+        return d2;
+    }
+
+
+    public void setPgl10(RichPanelGroupLayout pgl10) {
+        this.pgl10 = pgl10;
+    }
+
+    public RichPanelGroupLayout getPgl10() {
+        return pgl10;
+    }
+
+
+    public void setPfl2(RichPanelFormLayout pfl2) {
+        this.pfl2 = pfl2;
+    }
+
+    public RichPanelFormLayout getPfl2() {
+        return pfl2;
+    }
+
+    public void setIt19(RichInputText it19) {
+        this.it19 = it19;
+    }
+
+    public RichInputText getIt19() {
+        return it19;
+    }
+
+    public void setIt20(RichInputText it20) {
+        this.it20 = it20;
+    }
+
+    public RichInputText getIt20() {
+        return it20;
+    }
+
+    public void setIt21(RichInputText it21) {
+        this.it21 = it21;
+    }
+
+    public RichInputText getIt21() {
+        return it21;
+    }
+
+    public void setSoc6(RichSelectOneChoice soc6) {
+        this.soc6 = soc6;
+    }
+
+    public RichSelectOneChoice getSoc6() {
+        return soc6;
+    }
+
+    public void setSi6(UISelectItems si6) {
+        this.si6 = si6;
+    }
+
+    public UISelectItems getSi6() {
+        return si6;
+    }
+
+    public void setSoc7(RichSelectOneChoice soc7) {
+        this.soc7 = soc7;
+    }
+
+    public RichSelectOneChoice getSoc7() {
+        return soc7;
+    }
+
+    public void setSi7(UISelectItems si7) {
+        this.si7 = si7;
+    }
+
+    public UISelectItems getSi7() {
+        return si7;
+    }
+
+    public void setSoc8(RichSelectOneChoice soc8) {
+        this.soc8 = soc8;
+    }
+
+    public RichSelectOneChoice getSoc8() {
+        return soc8;
+    }
+
+    public void setSi8(UISelectItems si8) {
+        this.si8 = si8;
+    }
+
+    public UISelectItems getSi8() {
+        return si8;
+    }
+
+    public void setSoc9(RichSelectOneChoice soc9) {
+        this.soc9 = soc9;
+    }
+
+    public RichSelectOneChoice getSoc9() {
+        return soc9;
+    }
+
+    public void setSi9(UISelectItems si9) {
+        this.si9 = si9;
+    }
+
+    public UISelectItems getSi9() {
+        return si9;
+    }
+
+    public void setSoc10(RichSelectOneChoice soc10) {
+        this.soc10 = soc10;
+    }
+
+    public RichSelectOneChoice getSoc10() {
+        return soc10;
+    }
+
+    public void setSi10(UISelectItems si10) {
+        this.si10 = si10;
+    }
+
+    public UISelectItems getSi10() {
+        return si10;
+    }
+
+    public void setSoc11(RichSelectOneChoice soc11) {
+        this.soc11 = soc11;
+    }
+
+    public RichSelectOneChoice getSoc11() {
+        return soc11;
+    }
+
+    public void setSi11(UISelectItems si11) {
+        this.si11 = si11;
+    }
+
+    public UISelectItems getSi11() {
+        return si11;
+    }
+
+    public void setId1(RichInputDate id1) {
+        this.id1 = id1;
+    }
+
+    public RichInputDate getId1() {
+        return id1;
+    }
+
+    public void setIt22(RichInputText it22) {
+        this.it22 = it22;
+    }
+
+    public RichInputText getIt22() {
+        return it22;
     }
 }
