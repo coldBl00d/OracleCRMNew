@@ -45,6 +45,12 @@
           ResId="model.eo.AKUsersEO.UName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="UNameRule1"
+      ResId="PLEASE_ENTER_A_VALID_VALUE_FOR_USERNAME_"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
     <validation:LengthValidationBean
       Name="UNameRule0"
       ResId="USERNAME_MUST_HAVE_ATLEAST_8_CHARACTERS_"
@@ -74,6 +80,12 @@
           ResId="model.eo.AKUsersEO.UPassword_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="UPasswordRule1"
+      ResId="PLEASE_ENTER_A_VALID_VALUE_FOR_PASSWORD"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
     <validation:LengthValidationBean
       Name="UPasswordRule0"
       ResId="PASSWORD_MUST_HAVE_ATLEAST_8_CHARACTERS_"
@@ -120,6 +132,12 @@
           ResId="model.eo.AKUsersEO.FirstName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="FirstNameRule0"
+      ResId="PLEASE_ENTER_YOUR_FIRST_NAME"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -139,6 +157,12 @@
           ResId="model.eo.AKUsersEO.LastName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="LastNameRule0"
+      ResId="PLEASE_ENTER_YOUR_LAST_NAME"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
   </Attribute>
   <Attribute
     Name="MiddleName"
@@ -194,6 +218,27 @@
           ResId="model.eo.AKUsersEO.EndDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="EndDateRule0"
+      ResId="THE_END_DATE_IS_BEFORE_THE_START_DATE"
+      Description="Check if > than start date"
+      OnAttribute="EndDate"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.uvo.AKUsersUVO.StartDate"/>
+    <validation:CompareValidationBean
+      Name="EndDateRule1"
+      Description="Check with current date"
+      OnAttribute="EndDate"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO">
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="untrusted"
+        CodeSourceName="AKUsersEORow"/>
+    </validation:CompareValidationBean>
   </Attribute>
   <Attribute
     Name="AddressId"
@@ -232,6 +277,12 @@
           ResId="model.eo.AKUsersEO.Email_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="PLEASE_ENTER_A_VALID_EMAIL_ADDRESS"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
   </Attribute>
   <AccessorAttribute
     Name="AKAddress"

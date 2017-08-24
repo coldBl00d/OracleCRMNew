@@ -1,0 +1,12 @@
+//Groovy Scripts for model.eo.AKUsersEO
+
+package model.eo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="EndDateRule1", attributeName="EndDate")
+def EndDate_EndDateRule1_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate
+}
+

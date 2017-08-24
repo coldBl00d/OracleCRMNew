@@ -57,20 +57,7 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="ROLES"
-    IsNotNull="true">
-    <validation:CompareValidationBean
-      Name="StartDate_Current"
-      ResId="PLEASE_ENTER_A_DATE"
-      OnAttribute="StartDate"
-      OperandType="EXPR"
-      Inverse="true"
-      CompareType="EQUALTO">
-      <validation:TransientExpression
-        Name="ValidationRuleScript"
-        trustMode="untrusted"
-        CodeSourceName="RolesEORow"/>
-    </validation:CompareValidationBean>
-  </Attribute>
+    IsNotNull="true"/>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
@@ -79,6 +66,12 @@
     ColumnType="DATE"
     TableName="ROLES"
     IsNotNull="true">
+    <validation:PreDefinedValidationBean
+      Name="EndDateRule1"
+      ResId="ENTER_A_VALID_END_DATE"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
     <validation:CompareValidationBean
       Name="EndDate_Start"
       ResId="THE_DATE_IS_BEHIND_THE_START_DATE_YOU_CHOSE"
@@ -87,6 +80,19 @@
       Inverse="false"
       CompareType="GREATERTHANEQUALTO"
       CompareValue="model.uvo.RolesUVO.StartDate"/>
+    <validation:CompareValidationBean
+      Name="EndDateRule0"
+      ResId="END_DATE_LIES_BEFORE_THE_CURRENT_DATE"
+      Description="Cuurent"
+      OnAttribute="EndDate"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO">
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="untrusted"
+        CodeSourceName="RolesEORow"/>
+    </validation:CompareValidationBean>
   </Attribute>
   <AccessorAttribute
     Name="AKUsers"

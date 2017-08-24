@@ -20,7 +20,7 @@
                     <af:button id="b3"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.b3}"
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p2" align="startAfter"/>
+                        <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b3"/>
                     </af:button>
                     <af:spacer width="10" height="10" id="s1"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.s1}"/>
@@ -37,7 +37,7 @@
                 </af:toolbar>
             </af:gridCell>
         </af:gridRow>
-        <af:gridRow id="gr2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gr2}" height="95%">
+        <af:gridRow id="gr2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gr2}" height="90%">
             <af:gridCell id="gc2" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.gc2}">
                 <af:panelGroupLayout layout="vertical" id="pgl2"
                                      binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pgl2}">
@@ -45,7 +45,8 @@
                               emptyText="#{bindings.RolesU1.viewable ? 'No data to display.' : 'Access Denied.'}"
                               rowBandingInterval="0" selectedRowKeys="#{bindings.RolesU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.RolesU1.collectionModel.makeCurrent}" rowSelection="single"
-                              fetchSize="#{bindings.RolesU1.rangeSize}" partialTriggers="::qryId1 ::b1 ::b2 ::b3" id="t2"
+                              fetchSize="#{bindings.RolesU1.rangeSize}"
+                              partialTriggers="::qryId1 ::p1 ::d1 ::d2 ::p4 ::d4" id="t2"
                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}"
                               columnStretching="last" width="373">
                         <af:column sortProperty="#{bindings.RolesU1.hints.RoleName.name}" sortable="true"
@@ -75,7 +76,7 @@
                           contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editDialogListener}"
-                               type="okCancel">
+                               type="okCancel" title="Create Role">
                         <af:panelFormLayout id="pfl1"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pfl1}">
                             <af:inputText value="#{bindings.RoleName.inputValue}"
@@ -127,59 +128,14 @@
                                        inlineStyle="font-size:large;"/>
                     </af:dialog>
                 </af:popup>
-                <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
-                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p3}" partialTriggers="t2"
-                          contentDelivery="lazyUncached">
-                    <af:dialog id="d3" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d3}"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}">
-                        <af:panelFormLayout id="pfl2"
-                                            binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pfl2}">
-                            <af:inputText value="#{bindings.RoleName.inputValue}"
-                                          label="#{bindings.RoleName.hints.label}"
-                                          required="#{bindings.RoleName.hints.mandatory}"
-                                          columns="30"
-                                          maximumLength="#{bindings.RoleName.hints.precision}"
-                                          shortDesc="#{bindings.RoleName.hints.tooltip}" id="it3"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it3}">
-                                <f:validator binding="#{bindings.RoleName.validator}"/>
-                            </af:inputText>
-                            <af:inputText value="#{bindings.RoleDescription.inputValue}"
-                                          label="#{bindings.RoleDescription.hints.label}"
-                                          required="#{bindings.RoleDescription.hints.mandatory}"
-                                          columns="28"
-                                          maximumLength="#{bindings.RoleDescription.hints.precision}"
-                                          shortDesc="#{bindings.RoleDescription.hints.tooltip}" id="it4"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.it4}" rows="4">
-                                <f:validator binding="#{bindings.RoleDescription.validator}"/>
-                            </af:inputText>
-                            <af:inputDate value="#{bindings.StartDate.inputValue}"
-                                          label="#{bindings.StartDate.hints.label}"
-                                          required="#{bindings.StartDate.hints.mandatory}"
-                                          columns="#{bindings.StartDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.StartDate.hints.tooltip}" id="id3"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id3}">
-                                <f:validator binding="#{bindings.StartDate.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
-                            </af:inputDate>
-                            <af:inputDate value="#{bindings.EndDate.inputValue}" label="#{bindings.EndDate.hints.label}"
-                                          required="#{bindings.EndDate.hints.mandatory}"
-                                          columns="#{bindings.EndDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.EndDate.hints.tooltip}" id="id4"
-                                          binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.id4}">
-                                <f:validator binding="#{bindings.EndDate.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
-                            </af:inputDate>
-                        </af:panelFormLayout>
-                        <f:facet name="buttonBar"/>
-                    </af:dialog>
-                </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
                           binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.p4}"
                           contentDelivery="lazyUncached"
                           popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.cancelPopupListener}">
                     <af:dialog id="d4" binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.d4}"
                                type="okCancel"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.editorsDialogListener}"
+                               title="Edit Role">
                         <f:facet name="buttonBar"/>
                         <af:panelFormLayout id="pfl3"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.pfl3}">
@@ -223,6 +179,11 @@
                                 <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                             </af:inputDate>
                         </af:panelFormLayout>
+                        <af:spacer width="10" height="40" id="s2"
+                                   binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.s2}"/>
+                        <af:outputText value=" Assign to Role  " id="ot5"
+                                       binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.ot5}"
+                                       inlineStyle="font-size:large; font-weight:bold;"/>
                         <af:selectManyShuttle id="sms1"
                                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.sms1}"
                                               value="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.selectedItems}"

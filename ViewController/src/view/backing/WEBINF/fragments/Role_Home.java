@@ -11,6 +11,7 @@ import javax.faces.event.ActionEvent;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.model.binding.DCIteratorBindingDef;
 import oracle.adf.view.rich.component.rich.RichDialog;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
@@ -64,13 +65,6 @@ public class Role_Home {
     private RichInputText it2;
     private RichInputDate id1;
     private RichInputDate id2;
-    private RichPopup p3;
-    private RichDialog d3;
-    private RichPanelFormLayout pfl2;
-    private RichInputText it3;
-    private RichInputText it4;
-    private RichInputDate id3;
-    private RichInputDate id4;
     private RichPanelGroupLayout pgl2;
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
@@ -85,6 +79,8 @@ public class Role_Home {
     private RichInputText it6;
     private RichInputDate id5;
     private RichInputDate id6;
+    private RichOutputText ot5;
+    private RichSpacer s2;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -191,20 +187,23 @@ public class Role_Home {
     
     public void editDialogListener(DialogEvent dialogEvent) {
        
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
             if(dialogEvent.getOutcome().name().equals("ok")==true) {
                
-                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                
                 OperationBinding operationBinding = bindings.getOperationBinding("Commit");
                 operationBinding.execute();
                
                 
             } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
               
-                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        
                 OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
                 operationBinding.execute();
                 
             }
+            
+            
        
     }
     public void editorsDialogListener(DialogEvent dialogEvent) {
@@ -214,6 +213,7 @@ public class Role_Home {
                 BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
                 OperationBinding operationBinding = bindings.getOperationBinding("Commit");
                 operationBinding.execute();
+                
                
                 
             } 
@@ -228,6 +228,13 @@ public class Role_Home {
                 operationBinding.execute();
                 operationBinding = bindings.getOperationBinding("Commit");
                 operationBinding.execute();
+                DCBindingContainer bc = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+                DCIteratorBinding  itr= ( DCIteratorBinding)bc.findIteratorBinding("RolesU1Itearator");
+                try{itr.executeQuery();
+                }
+                catch(NullPointerException e){
+                    System.out.print(true);
+                }
                 
             } else if(dialogEvent.getOutcome().name().equals("no")){
               
@@ -310,62 +317,6 @@ public class Role_Home {
 
     public RichInputDate getId2() {
         return id2;
-    }
-
-    public void setP3(RichPopup p3) {
-        this.p3 = p3;
-    }
-
-    public RichPopup getP3() {
-        return p3;
-    }
-
-    public void setD3(RichDialog d3) {
-        this.d3 = d3;
-    }
-
-    public RichDialog getD3() {
-        return d3;
-    }
-
-    public void setPfl2(RichPanelFormLayout pfl2) {
-        this.pfl2 = pfl2;
-    }
-
-    public RichPanelFormLayout getPfl2() {
-        return pfl2;
-    }
-
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
-    }
-
-    public RichInputText getIt3() {
-        return it3;
-    }
-
-    public void setIt4(RichInputText it4) {
-        this.it4 = it4;
-    }
-
-    public RichInputText getIt4() {
-        return it4;
-    }
-
-    public void setId3(RichInputDate id3) {
-        this.id3 = id3;
-    }
-
-    public RichInputDate getId3() {
-        return id3;
-    }
-
-    public void setId4(RichInputDate id4) {
-        this.id4 = id4;
-    }
-
-    public RichInputDate getId4() {
-        return id4;
     }
 
 
@@ -536,6 +487,21 @@ public class Role_Home {
             System.out.println("true");
             return false;
         }
-      }  
+      }
 
+    public void setOt5(RichOutputText ot5) {
+        this.ot5 = ot5;
+    }
+
+    public RichOutputText getOt5() {
+        return ot5;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
 }
