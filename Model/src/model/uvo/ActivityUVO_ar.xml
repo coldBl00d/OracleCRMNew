@@ -122,6 +122,11 @@
     ViewLink="model.vl.AppointmentToCreatorVL"
     Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ContactsUVO_ar"
+    ViewLink="model.vl.AppointmentToAtendeeVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

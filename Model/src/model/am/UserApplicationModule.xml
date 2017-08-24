@@ -91,6 +91,18 @@
   <ViewUsage
     Name="AppointmentCreator_o"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="AppointmentCreator"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Attendees"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="Attendees2"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="OppertunityContacts"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -222,6 +234,30 @@
     ViewLinkObjectName="model.vl.AppointmentToCreatorVL"
     SrcViewUsageName="model.am.UserApplicationModule.Appointments_o"
     DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator_o"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AppointmentToCreatorVL2"
+    ViewLinkObjectName="model.vl.AppointmentToCreatorVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Appointments"
+    DstViewUsageName="model.am.UserApplicationModule.AppointmentCreator"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AppointmentToAtendeeVL1"
+    ViewLinkObjectName="model.vl.AppointmentToAtendeeVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Appointments"
+    DstViewUsageName="model.am.UserApplicationModule.Attendees"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AppointmentToAtendeeVL2"
+    ViewLinkObjectName="model.vl.AppointmentToAtendeeVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Appointments_o"
+    DstViewUsageName="model.am.UserApplicationModule.Attendees2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToContactVL1"
+    ViewLinkObjectName="model.vl.OppertunityToContactVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OppertunityContacts"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

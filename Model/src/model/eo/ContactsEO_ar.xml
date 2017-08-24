@@ -190,6 +190,27 @@
     AssociationOtherEnd="model.assoc.CustomerToContactsAssoc_ar.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Activity"
+    Association="model.assoc.AppointmentAtendeeAssoc"
+    AssociationEnd="model.assoc.AppointmentAtendeeAssoc.Activity"
+    AssociationOtherEnd="model.assoc.AppointmentAtendeeAssoc.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ActivityContactLinkEO_arEO"
+    Association="model.assoc.AppointmentAtendeeAssocDestination"
+    AssociationEnd="model.assoc.AppointmentAtendeeAssocDestination.ActivityContactLinkEO_arEO"
+    AssociationOtherEnd="model.assoc.AppointmentAtendeeAssocDestination.ContactsEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.OppertunityToContactAssoc"
+    AssociationEnd="model.assoc.OppertunityToContactAssoc.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.OppertunityToContactAssoc.ContactsEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">

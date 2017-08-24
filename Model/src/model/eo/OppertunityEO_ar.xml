@@ -311,6 +311,13 @@
     AssociationOtherEnd="model.assoc.OppertunityToAppointment.OppertunityEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.OppertunityToContactAssoc"
+    AssociationEnd="model.assoc.OppertunityToContactAssoc.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.OppertunityToContactAssoc.OppertunityEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">
