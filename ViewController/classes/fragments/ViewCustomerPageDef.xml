@@ -290,5 +290,12 @@
             DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Rollback" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
+    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_PrimaryContactId"
+          id="PrimaryContactId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <methodAction id="executeCriteria" RequiresUpdateModel="true" Action="invokeMethod" MethodName="executeCriteria"
+                  IsViewObjectMethod="false" DataControl="UserApplicationModuleDataControl"
+                  InstanceName="bindings.executeCriteria.dataControl.dataProvider">
+      <NamedData NDName="cId" NDType="java.lang.Integer"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

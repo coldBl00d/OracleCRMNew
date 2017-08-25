@@ -29,7 +29,7 @@ public class LoginBean_ak {
     
     private String username; 
     private String password;
-    private String LANDING_PAGE = "/pages/Admin.jsf";
+    private String LANDING_PAGE = "/pages/Home.jsf";
 
     private String LANDING_PAGE_ADMIN = "/pages/Admin.jsf";
     private String LANDING_PAGE_REP_AND_MANAGER =  "/pages/Users.jsf";

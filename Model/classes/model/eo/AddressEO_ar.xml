@@ -35,6 +35,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AddressEO_ar.AddressLine1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AddressLine2"
@@ -47,6 +53,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AddressEO_ar.AddressLine2_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AddressLine3"
@@ -59,6 +71,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.AddressEO_ar.AddressLine3_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="CustomerEO_ar"
@@ -102,6 +120,13 @@
     AssociationOtherEnd="model.assoc.CustShipASSOC.AddressEO_ar4"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar1"
+    Association="model.assoc.ContactToAddressAssoc"
+    AssociationEnd="model.assoc.ContactToAddressAssoc.ContactsEO_ar1"
+    AssociationOtherEnd="model.assoc.ContactToAddressAssoc.AddressEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AddressPk"
     PrimaryKey="true">
@@ -112,4 +137,8 @@
       <Item Value="model.eo.AddressEO_ar.AddressId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

@@ -33,10 +33,6 @@ public class Product_Home {
     private RichButton b1;
     private RichButton b2;
     private RichButton b3;
-    private RichPanelGroupLayout pgl2;
-    private RichQuickQuery qryId1;
-    private RichCommandLink cl1;
-    private RichTable t2;
     private RichPopup p1;
     private RichPopup p2;
     private RichDialog d1;
@@ -92,6 +88,10 @@ public class Product_Home {
     private RichQuickQuery qryId2;
     private RichCommandLink cl2;
     private RichTable t4;
+    private RichPanelGroupLayout pgl2;
+    private RichQuickQuery qryId3;
+    private RichCommandLink cl3;
+    private RichTable t2;
 
     public void setGr2(RichGridRow gr2) {
         this.gr2 = gr2;
@@ -139,39 +139,6 @@ public class Product_Home {
 
     public RichButton getB3() {
         return b3;
-    }
-
-    public void setPgl2(RichPanelGroupLayout pgl2) {
-        this.pgl2 = pgl2;
-    }
-
-    public RichPanelGroupLayout getPgl2() {
-        return pgl2;
-    }
-
-
-    public void setQryId1(RichQuickQuery qryId1) {
-        this.qryId1 = qryId1;
-    }
-
-    public RichQuickQuery getQryId1() {
-        return qryId1;
-    }
-
-    public void setCl1(RichCommandLink cl1) {
-        this.cl1 = cl1;
-    }
-
-    public RichCommandLink getCl1() {
-        return cl1;
-    }
-
-    public void setT2(RichTable t2) {
-        this.t2 = t2;
-    }
-
-    public RichTable getT2() {
-        return t2;
     }
 
 
@@ -751,5 +718,38 @@ public class Product_Home {
 
     public RichTable getT4() {
         return t4;
+    }
+
+    public void setPgl2(RichPanelGroupLayout pgl2) {
+        this.pgl2 = pgl2;
+    }
+
+    public RichPanelGroupLayout getPgl2() {
+        return pgl2;
+    }
+
+
+    public void setQryId3(RichQuickQuery qryId3) {
+        this.qryId3 = qryId3;
+    }
+
+    public RichQuickQuery getQryId3() {
+        return qryId3;
+    }
+
+    public void setCl3(RichCommandLink cl3) {
+        this.cl3 = cl3;
+    }
+
+    public RichCommandLink getCl3() {
+        return cl3;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
     }
 }

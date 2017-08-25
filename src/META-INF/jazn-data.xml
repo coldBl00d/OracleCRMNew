@@ -220,6 +220,24 @@
                         <display-name>view-oppertunity-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>pages.HomePageDef</name>
+                        <type-name-ref>RegionResourceType</type-name-ref>
+                        <display-name>Home (pages)</display-name>
+                        <description>pages.HomePageDef</description>
+                    </resource>
+                    <resource>
+                        <name>view.pageDefs.SalesDashboardPageDef</name>
+                        <type-name-ref>RegionResourceType</type-name-ref>
+                        <display-name>SalesDashboard (view.pageDefs)</display-name>
+                        <description>view.pageDefs.SalesDashboardPageDef</description>
+                    </resource>
+                    <resource>
+                        <name>fragments.SalesDashboardPageDef</name>
+                        <type-name-ref>RegionResourceType</type-name-ref>
+                        <display-name>SalesDashboard (fragments)</display-name>
+                        <description>fragments.SalesDashboardPageDef</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -301,6 +319,12 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/manage-team-taskflow.xml#manage-team-taskflow</resource-name>
                                 <display-name>manage-team-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>RegionResourceType</type-name-ref>
+                                <resource-name>pages.HomePageDef</resource-name>
+                                <display-name>Home (pages)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>
@@ -420,6 +444,24 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/welcome.xml#welcome</resource-name>
                                 <display-name>welcome(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>RegionResourceType</type-name-ref>
+                                <resource-name>pages.HomePageDef</resource-name>
+                                <display-name>Home (pages)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>RegionResourceType</type-name-ref>
+                                <resource-name>view.pageDefs.SalesDashboardPageDef</resource-name>
+                                <display-name>SalesDashboard (view.pageDefs)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>RegionResourceType</type-name-ref>
+                                <resource-name>fragments.SalesDashboardPageDef</resource-name>
+                                <display-name>SalesDashboard (fragments)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

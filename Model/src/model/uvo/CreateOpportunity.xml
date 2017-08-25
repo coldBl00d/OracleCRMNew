@@ -55,6 +55,10 @@
     Name="CustContact1"
     ViewObjectName="model.rvo.CustContact"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustContactRVO1"
+    ViewObjectName="model.rvo.CustContactRVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Channel"
     ListVOName="salesChannel1"
@@ -142,7 +146,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PrimaryContactId"
-    ListVOName="CustContact1"
+    ListVOName="CustContactRVO1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

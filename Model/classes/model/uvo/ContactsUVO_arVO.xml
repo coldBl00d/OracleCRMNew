@@ -21,6 +21,14 @@
     Name="GenderUVO1"
     ViewObjectName="model.uvo.GenderUVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BuyingRoles1"
+    ViewObjectName="model.rvo.BuyingRoles"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="InfluenceLevel1"
+    ViewObjectName="model.rvo.InfluenceLevel"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Gender"
     ListVOName="GenderUVO1"
@@ -29,6 +37,42 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BuyingRole"
+    ListVOName="BuyingRoles1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BuyingRole"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_InfluenceLevel"
+    ListVOName="InfluenceLevel1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InfluenceLevel"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -48,7 +92,14 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactsEO_ar"
-    AliasName="CONTACT_ID"/>
+    AliasName="CONTACT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContactName"
     PrecisionRule="true"
@@ -76,13 +127,27 @@
     EntityAttrName="WorkNumber"
     EntityUsage="ContactsEO_ar"
     AliasName="WORK_NUMBER"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="ContactsEO_ar"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Title"
     PrecisionRule="true"
@@ -96,42 +161,86 @@
     EntityAttrName="DepartmentName"
     EntityUsage="ContactsEO_ar"
     AliasName="DEPARTMENT_NAME"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address"
     PrecisionRule="true"
     EntityAttrName="Address"
     EntityUsage="ContactsEO_ar"
     AliasName="ADDRESS"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MobileNumber"
     PrecisionRule="true"
     EntityAttrName="MobileNumber"
     EntityUsage="ContactsEO_ar"
     AliasName="MOBILE_NUMBER"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BuyingRole"
     PrecisionRule="true"
     EntityAttrName="BuyingRole"
     EntityUsage="ContactsEO_ar"
     AliasName="BUYING_ROLE"
-    IsQueriable="false"/>
+    IsQueriable="false"
+    LOVName="LOV_BuyingRole">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InfluenceLevel"
     PrecisionRule="true"
     EntityAttrName="InfluenceLevel"
     EntityUsage="ContactsEO_ar"
     AliasName="INFLUENCE_LEVEL"
-    IsQueriable="false"/>
+    IsQueriable="false"
+    LOVName="LOV_InfluenceLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PicId"
     PrecisionRule="true"
     EntityAttrName="PicId"
     EntityUsage="ContactsEO_ar"
     AliasName="PIC_ID"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="FilterById"
     ViewObjectName="model.uvo.ContactsUVO_arVO"
@@ -180,5 +289,35 @@
     ViewLink="model.vl.CustomerToContactsVL"
     Type="oracle.jbo.RowIterator"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AddressUVO_ar"
+    ViewLink="model.vl.ContactToAddressVL"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OppertunityUVO_ar1"
+    ViewLink="model.vl.ContactToOppertunityViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TaskUVO_ar"
+    ViewLink="model.vl.ContactToTask"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NotesUVO_ar"
+    ViewLink="model.vl.ContactToNoteVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InteractionsU"
+    ViewLink="model.vl.ContactsToInteractions"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentU"
+    ViewLink="model.vl.ContactToAppointmentVL"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

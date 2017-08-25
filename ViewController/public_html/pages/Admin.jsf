@@ -37,12 +37,17 @@
                 <f:facet name="globalSearch"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Admin.np1}">
+                        <af:commandNavigationItem id="cni1" text="Home"
+                                                  binding="#{backingBeanScope.backing_pages_Admin.cni1}"
+                                                  partialSubmit="true" partialTriggers="::np1" action="goUsers"/>
                         <af:commandNavigationItem id="ni1" text="Admin" selected="true"
                                                   binding="#{backingBeanScope.backing_pages_Admin.ni1}"
-                                                  partialSubmit="true" partialTriggers="::np1"/>
+                                                  partialSubmit="true" partialTriggers="::np1"
+                                                  rendered="#{securityContext.userInRole['AdminRole']}"/>
                         <af:commandNavigationItem id="ni2" text="User"
                                                   binding="#{backingBeanScope.backing_pages_Admin.ni2}"
-                                                  partialSubmit="true" partialTriggers="::np1" action="goUsers"/>
+                                                  partialSubmit="true" partialTriggers="::np1" action="goUsers"
+                                                  rendered="#{securityContext.userInRole['MAN,SA_REP']}"/>
                     </af:navigationPane>
                 </f:facet>
                 <f:facet name="welcome">

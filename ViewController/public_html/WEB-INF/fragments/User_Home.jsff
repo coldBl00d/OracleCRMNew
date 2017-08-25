@@ -46,7 +46,7 @@
                               rowBandingInterval="0" selectedRowKeys="#{bindings.AKUsersU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.AKUsersU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.AKUsersU1.rangeSize}"
-                              partialTriggers="::qryId1 ::p1 ::d1 ::p4 ::d3" id="t2"
+                              partialTriggers="::qryId1 ::p1 ::d1 ::p4 ::d3 ::p2 ::d2" id="t2"
                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t2}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.AKUsersU1.hints.UserRefId.name}" sortable="true"
@@ -99,7 +99,8 @@
                           popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}"
                           contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d1}"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertDialogListener}"
+                               title="Insert User">
                         <af:panelFormLayout id="pfl1"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pfl1}">
                             <af:inputText value="#{bindings.UName1.inputValue}" label="#{bindings.UName1.hints.label}"
@@ -217,7 +218,8 @@
                           contentDelivery="lazyUncached"
                           popupCanceledListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.cancelPopupListener}">
                     <af:dialog id="d2" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d2}"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.editDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.editDialogListener}"
+                               title="Edit User">
                         <af:panelFormLayout id="pfl2"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pfl2}">
                             <af:inputText value="#{bindings.UName.inputValue}" label="#{bindings.UName.hints.label}"
@@ -236,7 +238,7 @@
                                           maximumLength="#{bindings.UPassword.hints.precision}"
                                           shortDesc="#{bindings.UPassword.hints.tooltip}" id="it11"
                                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.it11}"
-                                          editable="onAccess">
+                                          editable="onAccess" secret="true">
                                 <f:validator binding="#{bindings.UPassword.validator}"/>
                             </af:inputText>
                             <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="#{bindings.Gender.label}"
@@ -343,7 +345,8 @@
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
                           binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.p4}">
                     <af:dialog id="d3" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d3}" type="yesNo"
-                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.deleteDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.deleteDialogListener}"
+                               title="Delete User">
                         <f:facet name="buttonBar"/>
                         <af:outputText value="Are you sure you want to delete?" id="ot9"
                                        binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.ot9}"/>

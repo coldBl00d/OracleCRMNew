@@ -4,23 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="ProductsU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="ProductsU1Iterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="ProductsU1Iterator" id="ImplicitViewCriteriaQuery"/>
-    <iterator Binds="CategoryU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="CategoryU1Iterator"/>
+    <iterator Binds="ProductsU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="ProductsU1Iterator"
+              ChangeEventPolicy="none"/>
+    <iterator Binds="CategoryU1" RangeSize="25" DataControl="AdminAppModuleDataControl" id="CategoryU1Iterator"
+              ChangeEventPolicy="none"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CategoryU1Iterator" id="ImplicitViewCriteriaQuery1"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ProductsU1Iterator" id="ImplicitViewCriteriaQuery2"/>
   </executables>
   <bindings>
-    <tree IterBinding="ProductsU1Iterator" id="ProductsU1">
-      <nodeDefinition DefName="model.uvo.ProductsUVO" Name="ProductsU10">
-        <AttrNames>
-          <Item Value="ProductName"/>
-          <Item Value="ProductPrice"/>
-          <Item Value="ProductCategory"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <attributeValues IterBinding="ProductsU1Iterator" id="ProductName">
       <AttrNames>
         <Item Value="ProductName"/>
@@ -64,6 +57,15 @@
         <AttrNames>
           <Item Value="CategoryName"/>
           <Item Value="CategoryDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ProductsU1Iterator" id="ProductsU1">
+      <nodeDefinition DefName="model.uvo.ProductsUVO" Name="ProductsU10">
+        <AttrNames>
+          <Item Value="ProductName"/>
+          <Item Value="ProductPrice"/>
+          <Item Value="ProductCategory"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

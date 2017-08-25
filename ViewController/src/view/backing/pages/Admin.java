@@ -26,6 +26,7 @@ public class Admin {
     private RichLink l3;
     private RichRegion r1;
     private RichLink l4;
+    private RichCommandNavigationItem cni1;
 
     public void setPt1(RichPageTemplate pt1) {
         this.pt1 = pt1;
@@ -138,5 +139,13 @@ public class Admin {
 
     public RichLink getL4() {
         return l4;
+    }
+
+    public void setCni1(RichCommandNavigationItem cni1) {
+        this.cni1 = cni1;
+    }
+
+    public RichCommandNavigationItem getCni1() {
+        return cni1;
     }
 }

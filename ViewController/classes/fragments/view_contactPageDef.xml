@@ -4,13 +4,100 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="Customer" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CustomerIterator"/>
     <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="ContactIterator"/>
+    <iterator Binds="AddressOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AddressOfCustomerIterator"/>
+    <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OppertunityForOverviewIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OppertunityForOverviewIterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="ContactIterator" id="ContactName">
+    <attributeValues IterBinding="CustomerIterator" id="AccountName">
       <AttrNames>
-        <Item Value="ContactName"/>
+        <Item Value="AccountName"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ContactIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactIterator" id="MobileNumber">
+      <AttrNames>
+        <Item Value="MobileNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactIterator" id="WorkNumber">
+      <AttrNames>
+        <Item Value="WorkNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactIterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactIterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContactIterator" StaticList="false" Uses="LOV_BuyingRole" id="BuyingRole" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContactIterator" StaticList="false" Uses="LOV_InfluenceLevel" id="InfluenceLevel"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContactIterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressOfCustomerIterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="UserApplicationModuleDataControl"/>
+    <tree IterBinding="OppertunityForOverviewIterator" id="OppertunityForOverview">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityForOverview0">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="OpportunityId"/>
+          <Item Value="AccId"/>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="OpportunityCloseDate"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="SalesStage"/>
+          <Item Value="Revenue"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ContactsUVO_ar"/>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

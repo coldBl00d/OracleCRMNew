@@ -90,6 +90,54 @@
   <ViewUsage
     Name="ContactR1"
     ViewObjectName="model.rvo.ContactRVO"/>
+  <ViewUsage
+    Name="AddressOfCustomer"
+    ViewObjectName="model.uvo.AddressUVO_arVO"/>
+  <ViewUsage
+    Name="OppertunityUVO_arVO1"
+    ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="TaskUVO_arVO1"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="NotesUVO_arVO1"
+    ViewObjectName="model.uvo.NotesUVO_arVO"/>
+  <ViewUsage
+    Name="InteractionsUVO1"
+    ViewObjectName="model.uvo.InteractionsUVO"/>
+  <ViewUsage
+    Name="AppointmentUVO1"
+    ViewObjectName="model.uvo.AppointmentUVO"/>
+  <ViewUsage
+    Name="Creator2"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Assignee2"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Creator3"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="PrimaryContact"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="FutureForecastViewObjVO_rs1"
+    ViewObjectName="model.uvo.FutureForecastViewObjVO_rs"/>
+  <ViewUsage
+    Name="PastQuarterSalesViewObjVO_rs1"
+    ViewObjectName="model.uvo.PastQuarterSalesViewObjVO_rs"/>
+  <ViewUsage
+    Name="ProductStatViewObjVO_rs1"
+    ViewObjectName="model.uvo.ProductStatViewObjVO_rs"/>
+  <ViewUsage
+    Name="SalesRepDashboardViewObjVO_rs1"
+    ViewObjectName="model.uvo.SalesRepDashboardViewObjVO_rs"/>
+  <ViewUsage
+    Name="SalesRepGraphViewObjVO_rs1"
+    ViewObjectName="model.uvo.SalesRepGraphViewObjVO_rs"/>
+  <ViewUsage
+    Name="CustContact1"
+    ViewObjectName="model.rvo.CustContact"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -186,6 +234,66 @@
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
     DstViewUsageName="model.am.UserApplicationModule.ContactR1"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToAddressVL1"
+    ViewLinkObjectName="model.vl.ContactToAddressVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.AddressOfCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToOppertunityViewLink1"
+    ViewLinkObjectName="model.vl.ContactToOppertunityViewLink"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.OppertunityUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToTask1"
+    ViewLinkObjectName="model.vl.ContactToTask"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.TaskUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToNoteVL1"
+    ViewLinkObjectName="model.vl.ContactToNoteVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactsToInteractions1"
+    ViewLinkObjectName="model.vl.ContactsToInteractions"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.InteractionsUVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContactToAppointmentVL1"
+    ViewLinkObjectName="model.vl.ContactToAppointmentVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Contact"
+    DstViewUsageName="model.am.UserApplicationModule.AppointmentUVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToCreator2"
+    ViewLinkObjectName="model.vl.TaskToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.TaskUVO_arVO1"
+    DstViewUsageName="model.am.UserApplicationModule.Creator2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToAssigneeVL_ar2"
+    ViewLinkObjectName="model.vl.TaskToAssigneeVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.TaskUVO_arVO1"
+    DstViewUsageName="model.am.UserApplicationModule.Assignee2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NotesToCreator2"
+    ViewLinkObjectName="model.vl.NotesToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
+    DstViewUsageName="model.am.UserApplicationModule.Creator3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OppertunityToPrimaryContactsVL_ar1"
+    ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.PrimaryContact"
+    Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">
     <Method
@@ -197,6 +305,16 @@
       <Parameter
         Name="aId"
         Type="java.lang.Integer"/>
+      <Parameter
+        Name="cId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="executeCriteria"
+      MethodName="executeCriteria">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
       <Parameter
         Name="cId"
         Type="java.lang.Integer"/>

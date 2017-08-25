@@ -6,6 +6,9 @@
   <view id="Users">
     <page>/pages/Users.jsf</page>
   </view>
+  <view id="Home">
+    <page>/pages/Home.jsf</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__2">
@@ -15,6 +18,10 @@
     <control-flow-case id="__3">
       <from-outcome>goUsers</from-outcome>
       <to-activity-id>Users</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__24">
+      <from-outcome>goHome</from-outcome>
+      <to-activity-id>Home</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__4">

@@ -8,7 +8,8 @@
                           binding="#{backingBeanScope.backing_Product_Home.p4}"
                           popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}">
                     <af:dialog id="d4" binding="#{backingBeanScope.backing_Product_Home.d4}"
-                               dialogListener="#{backingBeanScope.backing_Product_Home.insertCatDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_Product_Home.insertCatDialogListener}"
+                               title="Insert Category">
                         <f:facet name="buttonBar"/>
                         <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_Product_Home.pfl3}">
                             <af:inputText value="#{bindings.CategoryName.inputValue}"
@@ -35,7 +36,8 @@
                           popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}"
                           contentDelivery="lazyUncached">
                     <af:dialog id="d5" binding="#{backingBeanScope.backing_Product_Home.d5}"
-                               dialogListener="#{backingBeanScope.backing_Product_Home.editCatDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_Product_Home.editCatDialogListener}"
+                               title="Edit Category">
                         <f:facet name="buttonBar"/>
                         <af:panelFormLayout id="pfl4" binding="#{backingBeanScope.backing_Product_Home.pfl4}">
                             <af:inputText value="#{bindings.CategoryName.inputValue}"
@@ -61,7 +63,7 @@
                           binding="#{backingBeanScope.backing_Product_Home.p6}" contentDelivery="lazyUncached">
                     <af:dialog id="d6" binding="#{backingBeanScope.backing_Product_Home.d6}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.deleteCatDialogListener}"
-                               type="yesNo">
+                               type="yesNo" title="Delete Category">
                         <f:facet name="buttonBar"/>
                         <af:outputText value="Are you sure you want to delete?" id="ot8"
                                        binding="#{backingBeanScope.backing_Product_Home.ot8}"
@@ -125,14 +127,14 @@
         <af:gridRow id="gr3" binding="#{backingBeanScope.backing_Product_Home.gr3}" height="10%">
             <af:gridCell id="gc3" binding="#{backingBeanScope.backing_Product_Home.gc3}" width="40%">
                 <af:toolbar id="t5" binding="#{backingBeanScope.backing_Product_Home.t5}">
-                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
-                                   binding="#{backingBeanScope.backing_Product_Home.qryId1}">
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId3"
+                                   value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery2.processQuery}"
+                                   binding="#{backingBeanScope.backing_Product_Home.qryId3}">
                         <f:facet name="end">
-                            <af:commandLink text="Advanced" rendered="false" id="cl1"
-                                            binding="#{backingBeanScope.backing_Product_Home.cl1}"/>
+                            <af:commandLink text="Advanced" rendered="false" id="cl3"
+                                            binding="#{backingBeanScope.backing_Product_Home.cl3}"/>
                         </f:facet>
                     </af:quickQuery>
                 </af:toolbar>
@@ -152,7 +154,7 @@
                               selectedRowKeys="#{bindings.ProductsU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.ProductsU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ProductsU1.rangeSize}"
-                              partialTriggers="::qryId1 ::d1 ::p1 ::d3 ::ot4" id="t2" binding="#{backingBeanScope.backing_Product_Home.t2}"
+                              partialTriggers="::qryId3 ::p1 ::d1 ::p2 ::d2 ::p3 ::d3" id="t2" binding="#{backingBeanScope.backing_Product_Home.t2}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.ProductsU1.hints.ProductName.name}" sortable="true"
                                    headerText="#{bindings.ProductsU1.hints.ProductName.label}" id="c1">
@@ -173,7 +175,7 @@
                                                 label="#{row.bindings.ProductCategory.label}"
                                                 required="#{bindings.ProductsU1.hints.ProductCategory.mandatory}"
                                                 shortDesc="#{bindings.ProductsU1.hints.ProductCategory.tooltip}"
-                                                id="soc3">
+                                                readOnly="true" id="soc3">
                                 <f:selectItems value="#{row.bindings.ProductCategory.items}" id="si3"/>
                                 <f:validator binding="#{row.bindings.ProductCategory.validator}"/>
                             </af:selectOneChoice>
@@ -185,7 +187,8 @@
                           popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}"
                           contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_Product_Home.d1}"
-                               dialogListener="#{backingBeanScope.backing_Product_Home.insertDialogListener}">
+                               dialogListener="#{backingBeanScope.backing_Product_Home.insertDialogListener}"
+                               title="Insert Product">
                         <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Product_Home.pfl1}">
                             <af:inputText value="#{bindings.ProductName.inputValue}"
                                           label="#{bindings.ProductName.hints.label}"
@@ -234,7 +237,7 @@
                           contentDelivery="lazyUncached">
                     <af:dialog id="d2" binding="#{backingBeanScope.backing_Product_Home.d2}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.editDialogListener}"
-                               partialTriggers="t2">
+                               partialTriggers="t2" title="Edit product">
                         <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_Product_Home.pfl2}">
                             <af:inputText value="#{bindings.ProductName.inputValue}"
                                           label="#{bindings.ProductName.hints.label}"
@@ -281,7 +284,7 @@
                           binding="#{backingBeanScope.backing_Product_Home.p3}" contentDelivery="lazyUncached">
                     <af:dialog id="d3" binding="#{backingBeanScope.backing_Product_Home.d3}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.deleteDialogListener}"
-                               type="yesNo">
+                               type="yesNo" title="Delete product">
                         <f:facet name="buttonBar"/>
                         <af:outputText value="Are you sure you want to delete?" id="ot4"
                                        binding="#{backingBeanScope.backing_Product_Home.ot4}"/>
@@ -298,7 +301,7 @@
                               selectedRowKeys="#{bindings.CategoryU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.CategoryU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.CategoryU1.rangeSize}"
-                              partialTriggers="::qryId2 ::p4 ::d4 ::p6 ::d6" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}"
+                              partialTriggers="::p4 ::d4 ::p6 ::d6 ::qryId2 ::p5 ::d5" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryName.name}" sortable="true"
                                    headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4">

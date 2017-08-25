@@ -24,8 +24,14 @@
     IsUpdateable="while_insert"
     DefaultValue="@0"
     Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"
-    IsQueriable="false"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ProductName"
     Precision="255"
@@ -63,6 +69,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ProductPrice"
@@ -74,6 +86,12 @@
     ColumnType="NUMBER"
     TableName="PRODUCTS"
     IsNotNull="true">
+    <validation:PreDefinedValidationBean
+      Name="ProductPriceRule0"
+      ResId="ENTER_A_VALID_PRICE"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
     <validation:CompareValidationBean
       Name="ProductPriceRule"
       ResId="ENTER_A_PRICE_GREATER_THAN_ZERO"

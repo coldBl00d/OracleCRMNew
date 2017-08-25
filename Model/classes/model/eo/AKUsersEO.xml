@@ -24,8 +24,14 @@
     IsUpdateable="while_insert"
     DefaultValue="@0"
     Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"
-    IsQueriable="false"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="UName"
     Precision="255"
@@ -34,8 +40,8 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="USERS"
-    IsQueriable="false"
-    IsNotNull="true">
+    IsNotNull="true"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
@@ -69,8 +75,8 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="USERS"
-    IsQueriable="false"
-    IsNotNull="true">
+    IsNotNull="true"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
@@ -179,6 +185,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.AKUsersEO.MiddleName_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -248,8 +256,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="USERS"
-    IsQueriable="false"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="PicId"
     Precision="18"
@@ -258,8 +272,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="USERS"
-    IsQueriable="false"/>
+    TableName="USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Email"
     Precision="255"
@@ -275,6 +295,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.AKUsersEO.Email_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
     <validation:RegExpValidationBean

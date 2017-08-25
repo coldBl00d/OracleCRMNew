@@ -46,7 +46,7 @@
                               rowBandingInterval="0" selectedRowKeys="#{bindings.RolesU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.RolesU1.collectionModel.makeCurrent}" rowSelection="single"
                               fetchSize="#{bindings.RolesU1.rangeSize}"
-                              partialTriggers="::qryId1 ::p1 ::d1 ::d2 ::p4 ::d4" id="t2"
+                              partialTriggers="::qryId1 ::p1 ::d1 ::d2 ::p4 ::d4 ::p2" id="t2"
                               binding="#{backingBeanScope.backing_WEBINF_fragments_Role_Home.t2}"
                               columnStretching="last" width="373">
                         <af:column sortProperty="#{bindings.RolesU1.hints.RoleName.name}" sortable="true"

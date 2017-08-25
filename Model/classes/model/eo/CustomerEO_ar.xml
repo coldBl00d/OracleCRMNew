@@ -23,7 +23,14 @@
     ColumnType="NUMBER"
     TableName="CUSTOMER_ACCOUNTS"
     PrimaryKey="true"
-    RetrievedOnInsert="true"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.AccountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AccountName"
     Precision="255"
@@ -35,6 +42,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.AccountName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AccountAddress"
@@ -56,6 +69,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.AccountUrl_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ParentAccountId"
@@ -65,7 +84,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="CUSTOMER_ACCOUNTS"/>
+    TableName="CUSTOMER_ACCOUNTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.ParentAccountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Ceo"
     Precision="255"
@@ -77,6 +103,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.Ceo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="EmpCount"
@@ -86,7 +118,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="CUSTOMER_ACCOUNTS"/>
+    TableName="CUSTOMER_ACCOUNTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.CustomerEO_ar.EmpCount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="PrimaryAddress"
     Precision="18"
@@ -205,6 +244,13 @@
     AssociationOtherEnd="model.assoc.CustShipASSOC.CustomerEO_ar4"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.SalesRepDashboardAssociationASSOC_rs"
+    AssociationEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.CustomerEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">
@@ -262,4 +308,8 @@
       <Item Value="model.eo.CustomerEO_ar.PrimaryAddress"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

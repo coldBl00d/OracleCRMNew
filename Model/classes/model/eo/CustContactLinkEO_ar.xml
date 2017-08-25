@@ -42,6 +42,13 @@
     ColumnType="$none$"
     IsQueriable="false"
     IsPersistent="false"/>
+  <AccessorAttribute
+    Name="ContactsEO_ar"
+    Association="model.assoc.CustContactLOVAssoc"
+    AssociationEnd="model.assoc.CustContactLOVAssoc.ContactsEO_ar"
+    AssociationOtherEnd="model.assoc.CustContactLOVAssoc.CustContactLinkEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="CustContactLkPk"
     PrimaryKey="true">

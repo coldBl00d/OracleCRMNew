@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="SalesDashboardPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SalesRepGraphViewObjVO_rs1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="SalesRepGraphViewObjVO_rs1Iterator"/>
+    <iterator Binds="PastQuarterSalesViewObjVO_rs1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="PastQuarterSalesViewObjVO_rs1Iterator"/>
+    <iterator Binds="FutureForecastViewObjVO_rs1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="FutureForecastViewObjVO_rs1Iterator"/>
+    <iterator Binds="ProductStatViewObjVO_rs1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="ProductStatViewObjVO_rs1Iterator"/>
+    <iterator Binds="SalesRepDashboardViewObjVO_rs1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="SalesRepDashboardViewObjVO_rs1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SalesRepGraphViewObjVO_rs1Iterator" id="SalesRepGraphViewObjVO_rs1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.uvo.SalesRepGraphViewObjVO_rs" Name="SalesRepGraphViewObjVO_rs1">
+        <AttrNames>
+          <Item Value="Revenue"/>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PastQuarterSalesViewObjVO_rs1Iterator" id="PastQuarterSalesViewObjVO_rs1"
+          ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.uvo.PastQuarterSalesViewObjVO_rs" Name="PastQuarterSalesViewObjVO_rs1">
+        <AttrNames>
+          <Item Value="Total"/>
+          <Item Value="Qtr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="FutureForecastViewObjVO_rs1Iterator" id="FutureForecastViewObjVO_rs1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.uvo.FutureForecastViewObjVO_rs" Name="FutureForecastViewObjVO_rs1">
+        <AttrNames>
+          <Item Value="Revenue"/>
+          <Item Value="OpportunityName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ProductStatViewObjVO_rs1Iterator" id="ProductStatViewObjVO_rs1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.uvo.ProductStatViewObjVO_rs" Name="ProductStatViewObjVO_rs1">
+        <AttrNames>
+          <Item Value="Quantity"/>
+          <Item Value="ProductName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SalesRepDashboardViewObjVO_rs1Iterator" id="SalesRepDashboardViewObjVO_rs1"
+          ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.uvo.SalesRepDashboardViewObjVO_rs" Name="SalesRepDashboardViewObjVO_rs1">
+        <AttrNames>
+          <Item Value="Revenue"/>
+          <Item Value="AccountName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

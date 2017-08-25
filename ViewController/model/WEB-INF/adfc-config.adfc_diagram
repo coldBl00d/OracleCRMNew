@@ -1,26 +1,31 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="x">88.01758</property>
+      <property
+         name="y">83.5</property>
+   </OverallProperties>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule2">
       <property
          name="activityId">*</property>
       <property
-         name="x">533.0</property>
+         name="x">241.03516</property>
       <property
-         name="y">171.29883</property>
+         name="y">84.0</property>
    </WildcardControlFlowRule>
    <View
       id="View3">
       <property
          name="activityId">Admin</property>
       <property
-         name="x">379.0</property>
+         name="x">387.03516</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Admin&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">371.59766</property>
+         name="y">251.20117</property>
       <property
          name="page">/pages/Admin.jsf</property>
       <property
@@ -31,11 +36,11 @@
       <property
          name="activityId">Users</property>
       <property
-         name="x">673.0</property>
+         name="x">241.03516</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Users&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">364.59766</property>
+         name="y">251.20117</property>
       <property
          name="page">/pages/Users.jsf</property>
       <property
@@ -49,7 +54,7 @@
       <property
          name="fromOutcome">goAdmin</property>
       <property
-         name="sdm:polyPoints">B43,529.5,213.94824,379.0,317.94824,T50</property>
+         name="sdm:polyPoints">R50,277.03516,84.149414,387.03516,196.85059,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -59,6 +64,31 @@
       <property
          name="fromOutcome">goUsers</property>
       <property
-         name="sdm:polyPoints">B57,536.5,213.94824,673.0,310.94824,T50</property>
+         name="sdm:polyPoints">B50,241.03516,126.649414,241.03516,196.85059,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View7">
+      <property
+         name="activityId">Home</property>
+      <property
+         name="x">95.03516</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">251.20117</property>
+      <property
+         name="page">/pages/Home.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="WildcardControlFlowRule2"
+      to="View7">
+      <property
+         name="fromOutcome">goHome</property>
+      <property
+         name="sdm:polyPoints">L50,205.03516,84.149414,95.03516,196.85059,T50</property>
    </ControlFlowCase>
 </SDM>

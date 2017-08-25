@@ -6,6 +6,21 @@
             <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
                              binding="#{backingBeanScope.backing_pages_Home3.pt1}">
                 <f:facet name="welcome"/>
+                <f:facet name="globalToolbar"/>
+                <f:facet name="globalTabs">
+                    <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Home3.np1}">
+                        <af:commandNavigationItem id="ni1" text="Home" selected="true"
+                                                  binding="#{backingBeanScope.backing_pages_Home3.ni1}"
+                                                  action="goHome"/>
+                        <af:commandNavigationItem id="ni2" text="Admin"
+                                                  binding="#{backingBeanScope.backing_pages_Home3.ni2}" action="goAdmin"
+                                                  rendered="#{securityContext.userInRole['AdminRole']}"/>
+                        <af:commandNavigationItem id="ni3" text="User"
+                                                  binding="#{backingBeanScope.backing_pages_Home3.ni3}" action="goUsers"
+                                                  rendered="#{securityContext.userInRole['MAN,SA_REP']}"/>
+                    </af:navigationPane>
+                </f:facet>
+                <f:attribute name="brandingTitle" value="Sales Force"/>
             </af:pageTemplate>
         </af:form>
     </af:document>

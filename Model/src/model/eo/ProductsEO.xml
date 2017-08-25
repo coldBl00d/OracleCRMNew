@@ -86,6 +86,12 @@
     ColumnType="NUMBER"
     TableName="PRODUCTS"
     IsNotNull="true">
+    <validation:PreDefinedValidationBean
+      Name="ProductPriceRule0"
+      ResId="ENTER_A_VALID_PRICE"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
     <validation:CompareValidationBean
       Name="ProductPriceRule"
       ResId="ENTER_A_PRICE_GREATER_THAN_ZERO"
