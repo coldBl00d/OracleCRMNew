@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <test>
+  <Description rdf:about="view-oppertunity-taskflow" xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <customizationAllowed xmlns="http://xmlns.oracle.com/mds">
+      false
+    </customizationAllowed>
+  </Description>
 </test>

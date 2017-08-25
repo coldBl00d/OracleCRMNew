@@ -262,7 +262,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         row.setAttribute("ContactId", cId);
         vo.insertRow(row);
         this.getDBTransaction().commit();
-        this.getDBTransaction().clearEntityCache(null);
     }
 
 
