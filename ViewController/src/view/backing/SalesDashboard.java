@@ -6,7 +6,7 @@ import oracle.adf.view.faces.bi.component.chart.UILegend;
 import oracle.adf.view.faces.bi.component.chart.UILineChart;
 import oracle.adf.view.faces.bi.component.chart.UIPieChart;
 import oracle.adf.view.faces.bi.component.chart.UIPieDataItem;
-import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout ;
 
 public class SalesDashboard {
     private RichPanelGroupLayout pgl2;
