@@ -181,6 +181,7 @@ public class ViewCustomer {
     private RichPopup p4;
     private RichSelectOneChoice soc6;
     private UISelectItems si6;
+    private RichPanelGroupLayout pgl10;
 
     public ViewCustomer(){
         
@@ -1427,5 +1428,13 @@ public class ViewCustomer {
 
     public UISelectItems getSi6() {
         return si6;
+    }
+
+    public void setPgl10(RichPanelGroupLayout pgl10) {
+        this.pgl10 = pgl10;
+    }
+
+    public RichPanelGroupLayout getPgl10() {
+        return pgl10;
     }
 }
