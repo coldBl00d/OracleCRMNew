@@ -584,6 +584,7 @@ public class ViewCustomer {
         String iteratorName = "CustomerContactsIterator";
         Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
         String fieldName = "ContactName";
+        //String PointerName = "ContactId";
         
         System.out.println("Id passed on by view customer is "+ id);
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      

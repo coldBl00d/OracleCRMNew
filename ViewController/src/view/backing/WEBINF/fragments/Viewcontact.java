@@ -1,8 +1,14 @@
 package view.backing.WEBINF.fragments;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.faces.component.UISelectItems;
 import javax.faces.component.html.HtmlOutputLabel;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
@@ -19,6 +25,12 @@ import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
+
+import oracle.jbo.Key;
+import oracle.jbo.Row;
+import oracle.jbo.ViewObject;
+
+import oracle.ui.pattern.dynamicShell.TabContext;
 
 public class Viewcontact {
     private RichPanelGroupLayout pgl1;
@@ -69,6 +81,145 @@ public class Viewcontact {
     public Viewcontact(){
         super();
         System.out.println("Pointer Id is :"+ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
+    }
+    
+//    public String goOpportunity(){
+//        String iteratorName = "OppertunityForOverviewIterator";
+//        String fieldToFetchWithTheId = "OpportunityName";
+//        String pageFlowVariableName = "OppertunityId";
+//        String taskFlow = "/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow";
+//        String pointerName = "PointerId";
+//        
+//        
+//        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
+//        
+//        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+//        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+//        ViewObject vobj = iterator.getViewObject();
+//        Key key = new Key(new Object[] {id});
+//        Row row = vobj.getRow(key);
+//        
+//        //RowSetIterator rsi = iterator.getRowSetIterator();
+//        //Row row = rsi.findByKey(key, 1)[0];
+//        
+//        String tabHeading = "Opp-"+(String)row.getAttribute(fieldToFetchWithTheId);
+//        Map<String, Object > m = new HashMap<String, Object> ();
+//        m.put("tabContext", TabContext.getCurrentInstance());
+//        System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName));
+//        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
+//        m.put(pointerName, value);
+//        openTab(m, tabHeading, taskFlow);
+//        System.out.println("Done");
+//        return null;
+//    }
+    
+        public String goOpportunity(){
+        String iteratorName = "OppertunityForOverviewIterator";
+        String fieldName = "OpportunityName";
+        String PointerName = "OpportunityId";
+        
+        
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        ViewObject vobj = iterator.getViewObject();
+        Key key = new Key(new Object[] {id});
+        Row row = vobj.getRow(key);
+        
+        //RowSetIterator rsi = iterator.getRowSetIterator();
+        //Row row = rsi.findByKey(key, 1)[0];
+        
+        String tabHeading = "Opp-"+(String)row.getAttribute(fieldName);
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+        System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
+        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+        m.put("PointerId", value);
+        viewOppertunityActivity(m, tabHeading);
+        System.out.println("Done");
+        return null;
+    }
+    public void viewOppertunityActivity(Map<String, Object> params, String companyName) 
+      { 
+        /** 
+        * Example method when called repeatedly, will open another instance as 
+        * oppose to selecting a previously opened tab instance. Note the boolean 
+        * to create another tab instance is set to true. 
+        */ 
+        System.out.println("Calling activity");
+        _launchActivity( 
+          companyName, 
+          "/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow",  
+          true, params); 
+      } 
+    
+    public String goContact(){
+        String iteratorName = "CustomerContactsIterator";
+        String pageFlowVariableName = "ContactId";
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
+        String fieldToFetchWithTheId = "ContactName";
+        String taskFlow = "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow";
+        String pointerName = "PointerId";
+        
+        System.out.println("Id passed on by view customer is "+ id);
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        ViewObject vobj = iterator.getViewObject();
+        Key key = new Key(new Object[] {id});
+        Row row = vobj.getRow(key);
+        String tabHeading = "Contact-"+(String)row.getAttribute(fieldToFetchWithTheId);
+        
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+        m.put(pointerName, id);
+        
+        openTab(m, tabHeading,taskFlow);
+        return null;
+    }
+    
+    public void openTab(Map<String, Object> params, String companyName, String taskFlow) 
+      { 
+        /** 
+        * Example method when called repeatedly, will open another instance as 
+        * oppose to selecting a previously opened tab instance. Note the boolean 
+        * to create another tab instance is set to true. 
+        */ 
+        System.out.println("Calling activity");
+        _launchActivity( 
+          companyName, 
+          taskFlow,  
+          true, params); 
+      } 
+    
+    private void _launchActivity(String title, String taskflowId, boolean newTab, Map<String, Object> params) 
+    { 
+      try 
+      { 
+        if (newTab) 
+        { 
+            System.out.println("Calling new tab");
+          TabContext.getCurrentInstance().addTab( 
+            title, 
+            taskflowId, params); 
+        } 
+        else 
+        { 
+          TabContext.getCurrentInstance().addOrSelectTab( 
+            title, 
+            taskflowId, params); 
+        } 
+      } 
+      catch (TabContext.TabOverflowException toe) 
+      { 
+        // causes a dialog to be displayed to the user saying that there are 
+        // too many tabs open - the new tab will not be opened... 
+        toe.handleDefault();  
+      } 
+      
+      System.out.println("Exiting launch activity");
+      
+      
     }
 
     public void setPgl1(RichPanelGroupLayout pgl1) {
@@ -417,6 +568,7 @@ public class Viewcontact {
     public RichCommandLink getCl1() {
         return cl1;
     }
+
 
     public void setT1(RichTable t1) {
         this.t1 = t1;

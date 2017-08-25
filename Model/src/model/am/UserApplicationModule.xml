@@ -118,12 +118,6 @@
     Name="Creator3"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewUsage
-    Name="UserUVO_arVO1"
-    ViewObjectName="model.uvo.UserUVO_arVO"/>
-  <ViewUsage
-    Name="ContactsUVO_arVO1"
-    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
-  <ViewUsage
     Name="PrimaryContact"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewLinkUsage
@@ -275,18 +269,6 @@
     ViewLinkObjectName="model.vl.NotesToCreator"
     SrcViewUsageName="model.am.UserApplicationModule.NotesUVO_arVO1"
     DstViewUsageName="model.am.UserApplicationModule.Creator3"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="AppointmentToUsersVl1"
-    ViewLinkObjectName="model.vl.AppointmentToUsersVl"
-    SrcViewUsageName="model.am.UserApplicationModule.AppointmentUVO1"
-    DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO1"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="AppointmentToContactsVL1"
-    ViewLinkObjectName="model.vl.AppointmentToContactsVL"
-    SrcViewUsageName="model.am.UserApplicationModule.AppointmentUVO1"
-    DstViewUsageName="model.am.UserApplicationModule.ContactsUVO_arVO1"
     Reversed="false"/>
   <ViewLinkUsage
     Name="OppertunityToPrimaryContactsVL_ar1"

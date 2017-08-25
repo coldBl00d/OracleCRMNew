@@ -72,19 +72,26 @@
         <AttrNames>
           <Item Value="OpportunityName"/>
           <Item Value="OpportunityId"/>
+          <Item Value="AccId"/>
           <Item Value="OpportunityWinProb"/>
+          <Item Value="OpportunityCloseDate"/>
           <Item Value="PrimaryContactId"/>
           <Item Value="SalesStage"/>
-          <Item Value="SalesMethod"/>
-          <Item Value="Channel"/>
           <Item Value="Revenue"/>
           <Item Value="BudgetAmount"/>
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
         </AttrNames>
         <Accessors>
+          <Item Value="ContactsUVO_ar"/>
           <Item Value="UserUVO_ar"/>
         </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+        </AttrNames>
       </nodeDefinition>
       <nodeDefinition DefName="model.uvo.UserUVO_arVO">
         <AttrNames>

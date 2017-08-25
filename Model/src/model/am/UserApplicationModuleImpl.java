@@ -501,38 +501,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
 
 
     /**
-     * Container's getter for UserUVO_arVO1.
-     * @return UserUVO_arVO1
-     */
-    public ViewObjectImpl getUserUVO_arVO1() {
-        return (ViewObjectImpl) findViewObject("UserUVO_arVO1");
-    }
-
-    /**
-     * Container's getter for AppointmentToUsersVl1.
-     * @return AppointmentToUsersVl1
-     */
-    public ViewLinkImpl getAppointmentToUsersVl1() {
-        return (ViewLinkImpl) findViewLink("AppointmentToUsersVl1");
-    }
-
-    /**
-     * Container's getter for ContactsUVO_arVO1.
-     * @return ContactsUVO_arVO1
-     */
-    public ViewObjectImpl getContactsUVO_arVO1() {
-        return (ViewObjectImpl) findViewObject("ContactsUVO_arVO1");
-    }
-
-    /**
-     * Container's getter for AppointmentToContactsVL1.
-     * @return AppointmentToContactsVL1
-     */
-    public ViewLinkImpl getAppointmentToContactsVL1() {
-        return (ViewLinkImpl) findViewLink("AppointmentToContactsVL1");
-    }
-
-    /**
      * Container's getter for ContactsUVO_arVO2.
      * @return ContactsUVO_arVO2
      */
