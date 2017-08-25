@@ -120,6 +120,21 @@
   <ViewUsage
     Name="PrimaryContact"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="FutureForecastViewObjVO_rs1"
+    ViewObjectName="model.uvo.FutureForecastViewObjVO_rs"/>
+  <ViewUsage
+    Name="PastQuarterSalesViewObjVO_rs1"
+    ViewObjectName="model.uvo.PastQuarterSalesViewObjVO_rs"/>
+  <ViewUsage
+    Name="ProductStatViewObjVO_rs1"
+    ViewObjectName="model.uvo.ProductStatViewObjVO_rs"/>
+  <ViewUsage
+    Name="SalesRepDashboardViewObjVO_rs1"
+    ViewObjectName="model.uvo.SalesRepDashboardViewObjVO_rs"/>
+  <ViewUsage
+    Name="SalesRepGraphViewObjVO_rs1"
+    ViewObjectName="model.uvo.SalesRepGraphViewObjVO_rs"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"

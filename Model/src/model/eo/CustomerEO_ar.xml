@@ -205,6 +205,13 @@
     AssociationOtherEnd="model.assoc.CustShipASSOC.CustomerEO_ar4"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OppertunityEO_ar1"
+    Association="model.assoc.SalesRepDashboardAssociationASSOC_rs"
+    AssociationEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.OppertunityEO_ar1"
+    AssociationOtherEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.CustomerEO_ar1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">

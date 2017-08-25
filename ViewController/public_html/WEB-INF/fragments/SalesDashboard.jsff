@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1">
+        <af:panelGroupLayout id="pgl2" layout="horizontal">
+            <af:panelGroupLayout id="pgl4" inlineStyle="height:250px;width:500px;">
+                <dvt:barChart id="barChart1" var="row" value="#{bindings.SalesRepGraphViewObjVO_rs1.collectionModel}"
+                              inlineStyle="height:250px;width:500px;" rendered="false">
+                    <dvt:chartLegend id="cl1"/>
+                    <f:facet name="dataStamp">
+                        <dvt:chartDataItem id="di1" series="#{bindings.SalesRepGraphViewObjVO_rs1.hints.Revenue.label}"
+                                           value="#{row.Revenue}" group="#{row.FirstName}"/>
+                    </f:facet>
+                </dvt:barChart>
+                <dvt:barChart id="barChart3" var="row"
+                              value="#{bindings.SalesRepDashboardViewObjVO_rs1.collectionModel}"
+                              inlineStyle="height:250px;width:500px;" title="Sales Rep DashBoard">
+                    <dvt:chartLegend id="cl5"/>
+                    <f:facet name="dataStamp">
+                        <dvt:chartDataItem id="di5"
+                                           series="#{bindings.SalesRepDashboardViewObjVO_rs1.hints.Revenue.label}"
+                                           value="#{row.Revenue}" group="#{row.AccountName}"/>
+                    </f:facet>
+                </dvt:barChart>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl5" inlineStyle="height:250px;width:500px;">
+                <dvt:pieChart id="pieChart1" var="row"
+                              value="#{bindings.PastQuarterSalesViewObjVO_rs1.collectionModel}"
+                              inlineStyle="height:250px;width:500px;">
+                    <dvt:chartLegend id="cl2"/>
+                    <dvt:pieDataItem id="di2" label="#{row.Qtr}" value="#{row.Total}"/>
+                </dvt:pieChart>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="height:250px;width:1000px;">
+            <af:panelGroupLayout id="pgl6" inlineStyle="height:250px;width:500px;">
+                <dvt:lineChart id="lineChart1" var="row"
+                               value="#{bindings.FutureForecastViewObjVO_rs1.collectionModel}"
+                               inlineStyle="height:250px;width:500px;" title="Future Forecast">
+                    <dvt:chartLegend id="cl3"/>
+                    <f:facet name="dataStamp">
+                        <dvt:chartDataItem id="di3" series="#{bindings.FutureForecastViewObjVO_rs1.hints.Revenue.label}"
+                                           value="#{row.Revenue}" group="#{row.OpportunityName}"/>
+                    </f:facet>
+                </dvt:lineChart>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl7" inlineStyle="height:250px;width:500px;">
+                <dvt:barChart id="barChart2" var="row" value="#{bindings.ProductStatViewObjVO_rs1.collectionModel}"
+                              inlineStyle="height:250px;width:500px;">
+                    <dvt:chartLegend id="cl4"/>
+                    <f:facet name="dataStamp">
+                        <dvt:chartDataItem id="di4" series="#{bindings.ProductStatViewObjVO_rs1.hints.Quantity.label}"
+                                           value="#{row.Quantity}" group="#{row.ProductName}"/>
+                    </f:facet>
+                </dvt:barChart>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+    </af:panelGroupLayout>
+</ui:composition>

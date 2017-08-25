@@ -515,5 +515,45 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getOppertunityToPrimaryContactsVL_ar1() {
         return (ViewLinkImpl) findViewLink("OppertunityToPrimaryContactsVL_ar1");
     }
+
+    /**
+     * Container's getter for FutureForecastViewObjVO_rs1.
+     * @return FutureForecastViewObjVO_rs1
+     */
+    public ViewObjectImpl getFutureForecastViewObjVO_rs1() {
+        return (ViewObjectImpl) findViewObject("FutureForecastViewObjVO_rs1");
+    }
+
+    /**
+     * Container's getter for PastQuarterSalesViewObjVO_rs1.
+     * @return PastQuarterSalesViewObjVO_rs1
+     */
+    public ViewObjectImpl getPastQuarterSalesViewObjVO_rs1() {
+        return (ViewObjectImpl) findViewObject("PastQuarterSalesViewObjVO_rs1");
+    }
+
+    /**
+     * Container's getter for ProductStatViewObjVO_rs1.
+     * @return ProductStatViewObjVO_rs1
+     */
+    public ViewObjectImpl getProductStatViewObjVO_rs1() {
+        return (ViewObjectImpl) findViewObject("ProductStatViewObjVO_rs1");
+    }
+
+    /**
+     * Container's getter for SalesRepDashboardViewObjVO_rs1.
+     * @return SalesRepDashboardViewObjVO_rs1
+     */
+    public ViewObjectImpl getSalesRepDashboardViewObjVO_rs1() {
+        return (ViewObjectImpl) findViewObject("SalesRepDashboardViewObjVO_rs1");
+    }
+
+    /**
+     * Container's getter for SalesRepGraphViewObjVO_rs1.
+     * @return SalesRepGraphViewObjVO_rs1
+     */
+    public ViewObjectImpl getSalesRepGraphViewObjVO_rs1() {
+        return (ViewObjectImpl) findViewObject("SalesRepGraphViewObjVO_rs1");
+    }
 }
 

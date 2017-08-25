@@ -304,6 +304,20 @@
     AssociationOtherEnd="model.assoc.OpportunityToTask.OppertunityEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar1"
+    Association="model.assoc.SalesRepDashboardAssociationASSOC_rs"
+    AssociationEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.CustomerEO_ar1"
+    AssociationOtherEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.OppertunityEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UserEO_ar1"
+    Association="model.assoc.SalesRepGraphAssociationASSOC_rs"
+    AssociationEnd="model.assoc.SalesRepGraphAssociationASSOC_rs.UserEO_ar1"
+    AssociationOtherEnd="model.assoc.SalesRepGraphAssociationASSOC_rs.OppertunityEO_ar1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="OpportunityPk"
     PrimaryKey="true">
@@ -312,6 +326,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.OppertunityEO_ar.OpportunityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_OppertunityEO_ar">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUSTOMER_ACCOUNT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_OPPERTUNITY_EO_AR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.OppertunityEO_ar.AccId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

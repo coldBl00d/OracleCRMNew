@@ -5,6 +5,8 @@
     <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
              className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
     <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
   </definitionFactories>
   <pageMap>
     <page path="/WEB-INF/fragments/Role_Home.jsff" usageId="view_Role_HomePageDef"/>
@@ -26,6 +28,8 @@
     <page path="/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow@ExecuteWithParams"
           usageId="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/fragments/view-contact.jsff" usageId="view_view_contactPageDef"/>
+    <page path="/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef"/>
+    <page path="/WEB-INF/fragments/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -47,6 +51,8 @@
     <page id="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"
           path="flows.view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
     <page id="view_view_contactPageDef" path="fragments.view_contactPageDef"/>
+    <page id="view_SalesDashboardPageDef" path="view.pageDefs.SalesDashboardPageDef"/>
+    <page id="view_SalesDashboardPageDef1" path="fragments.SalesDashboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"
