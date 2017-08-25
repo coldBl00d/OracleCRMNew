@@ -138,6 +138,9 @@
   <ViewUsage
     Name="CustContact1"
     ViewObjectName="model.rvo.CustContact"/>
+  <ViewUsage
+    Name="AppointmentDisplay"
+    ViewObjectName="model.uvo.AppointmentUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"

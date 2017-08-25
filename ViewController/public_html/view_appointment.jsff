@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:decorativeBox id="db1">
+        <f:facet name="center">
+            <af:panelGroupLayout layout="scroll" id="pgl1">
+                <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                        <af:gridCell marginStart="5px" width="275px" id="gc1">
+                            <af:panelBox text="Appointment Details" id="pb1" background="light"
+                                         inlineStyle="width:275px">
+                                <f:facet name="toolbar">
+                                    <af:button id="b1" icon="#{resource['images:save.png']}"/>
+                                </f:facet>
+                                <af:image source="#{resource['images:appointment.png']}" id="i1"
+                                          inlineStyle="width:104px;"/>
+                                <af:panelGroupLayout id="pgl3" layout="vertical">
+                                    <af:outputLabel value="Appointment Name" id="ol1"/>
+                                    <af:inputText value="#{bindings.ActivityTitle.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityTitle.hints.mandatory}"
+                                                  columns="#{bindings.ActivityTitle.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityTitle.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it1"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.ActivityTitle.validator}"/>
+                                    </af:inputText>
+                                    <af:outputLabel value="Appointment Creator" id="ol2"/>
+                                    <af:outputLabel value="Appointment Start Time" id="ol3"/>
+                                    <af:outputLabel value="Appointment End Time" id="ol4"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:decorativeBox>
+</ui:composition>

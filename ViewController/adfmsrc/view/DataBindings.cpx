@@ -31,6 +31,7 @@
     <page path="/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef"/>
     <page path="/WEB-INF/fragments/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef1"/>
     <page path="/pages/Home.jsf" usageId="view_HomePageDef"/>
+    <page path="/view_appointment.jsff" usageId="view_view_appointmentPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -55,6 +56,7 @@
     <page id="view_SalesDashboardPageDef" path="view.pageDefs.SalesDashboardPageDef"/>
     <page id="view_SalesDashboardPageDef1" path="fragments.SalesDashboardPageDef"/>
     <page id="view_HomePageDef" path="pages.HomePageDef"/>
+    <page id="view_view_appointmentPageDef" path="view.pageDefs.view_appointmentPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

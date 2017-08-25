@@ -571,5 +571,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewObjectImpl getCustContact1() {
         return (ViewObjectImpl) findViewObject("CustContact1");
     }
+
+    /**
+     * Container's getter for AppointmentUVO2.
+     * @return AppointmentUVO2
+     */
+    public ViewObjectImpl getAppointmentDisplay() {
+        return (ViewObjectImpl) findViewObject("AppointmentDisplay");
+    }
 }
 
