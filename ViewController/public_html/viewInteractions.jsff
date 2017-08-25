@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1">
+        <af:decorativeBox id="db1">
+            <f:facet name="top"/>
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                        <af:gridCell marginStart="5px" width="275px" id="gc1">
+                            <af:panelBox text="Interaction Details" id="pb1" showDisclosure="false" background="light"
+                                         inlineStyle="width:275px;">
+                                <f:facet name="toolbar">
+                                    <af:button id="b1" icon="#{resource['images:save.png']}"/>
+                                </f:facet>
+                                <af:image source="#{resource['images:interactionsIcon.png']}" id="i1"
+                                          inlineStyle="width:104px;"/>
+                                <af:panelGroupLayout id="pgl3" layout="vertical">
+                                    <af:outputLabel value="Name" id="ol3"/>
+                                    <af:outputLabel value="Type" id="ol2"/>
+                                    <af:outputLabel value="outputLabel1" id="ol1"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"/>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+</ui:composition>

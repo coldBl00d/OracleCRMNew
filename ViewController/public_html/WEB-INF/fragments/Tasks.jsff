@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
+    <af:panelGroupLayout layout="scroll" id="pgl1">
+        <af:decorativeBox id="db1">
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                        <af:gridCell marginStart="5px" width="275px" id="gc1">
+                            <af:panelBox text="Task Detail" id="pb1" background="light" inlineStyle="width:275px;"
+                                         showDisclosure="false">
+                                <f:facet name="toolbar">
+                                    <af:button id="b1" icon="#{resource['images:save.png']}"/>
+                                </f:facet>
+                                <af:image source="#{resource['images:Tasks.png']}" id="i1" inlineStyle="width:104px"/>
+                                <af:panelGroupLayout id="pgl3" layout="vertical">
+                                    <af:outputLabel id="ol1" value="#{viewcontrollerBundle.TASK_NAME}"/>
+                                    <af:outputLabel value="#{viewcontrollerBundle.DUE_DATE}" id="ol2"/>
+                                    <af:outputLabel value="#{viewcontrollerBundle.DESCRIPTION_}" id="ol3"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"/>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+</ui:composition>
