@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CONTACTS"
   AliasName="ContactsEO_ar"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="ContactId"
     IsUpdateable="while_insert"
@@ -23,7 +24,14 @@
     ColumnType="NUMBER"
     TableName="CONTACTS"
     PrimaryKey="true"
-    RetrievedOnInsert="true"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.ContactsEO_ar.ContactId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ContactName"
     Precision="255"
@@ -39,6 +47,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.ContactsEO_ar.ContactName_LABEL"/>
+        <LABEL_PLURAL
+          ResId="model.eo.ContactsEO_ar.ContactName_LABEL_PLURAL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -66,8 +76,16 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.ContactsEO_ar.WorkNumber_LABEL"/>
+        <LABEL_PLURAL
+          ResId="model.eo.ContactsEO_ar.WorkNumber_LABEL_PLURAL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RegExpValidationBean
+      Name="WorkNumberRule0"
+      ResId="ENTER_A_VALID_10_DIGIT_PHONE_NUMBER"
+      OnAttribute="WorkNumber"
+      Pattern="[0-9]{10}"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Email"
@@ -80,6 +98,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="ENTER_A_VALID_E_MAIL_ADDRESS"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Title"
@@ -134,6 +158,12 @@
           ResId="model.eo.ContactsEO_ar.MobileNumber_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RegExpValidationBean
+      Name="MobileNumberRule0"
+      ResId="ENTER_A_VALID_10_DIGIT_PHONE_NUMBER"
+      OnAttribute="MobileNumber"
+      Pattern="[0-9]{10}"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="BuyingRole"
@@ -244,6 +274,13 @@
     Association="model.assoc.AppointmentToContacts"
     AssociationEnd="model.assoc.AppointmentToContacts.ActivityEO_ar2"
     AssociationOtherEnd="model.assoc.AppointmentToContacts.ContactsEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustContactLinkEO_ar"
+    Association="model.assoc.CustContactLOVAssoc"
+    AssociationEnd="model.assoc.CustContactLOVAssoc.CustContactLinkEO_ar"
+    AssociationOtherEnd="model.assoc.CustContactLOVAssoc.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

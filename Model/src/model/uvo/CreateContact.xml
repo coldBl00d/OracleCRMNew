@@ -35,6 +35,10 @@
     Name="Title1"
     ViewObjectName="model.uvo.Title"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BuyingRoles2"
+    ViewObjectName="model.rvo.BuyingRoles"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_BuyingRole"
     ListVOName="BuyingRoles1"
@@ -93,6 +97,23 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Title"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BuyingRole1"
+    ListVOName="BuyingRoles2"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BuyingRole"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">

@@ -7,5 +7,7 @@ import oracle.jbo.ApplicationModule;
 // ---------------------------------------------------------------------
 public interface UserApplicationModule extends ApplicationModule {
     void populateCusConJun(Integer aId, Integer cId);
+
+    void executeCriteria(Integer cId);
 }
 

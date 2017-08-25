@@ -46,7 +46,7 @@
                               rowBandingInterval="0" selectedRowKeys="#{bindings.AKUsersU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.AKUsersU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.AKUsersU1.rangeSize}"
-                              partialTriggers="::qryId1" id="t2"
+                              partialTriggers="::qryId1 ::p1 ::d1 ::p4 ::d3" id="t2"
                               binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.t2}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.AKUsersU1.hints.UserRefId.name}" sortable="true"

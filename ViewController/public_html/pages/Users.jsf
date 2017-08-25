@@ -14,14 +14,12 @@
                             <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_pages_Users.pgl1}"
                                                  layout="vertical">
                                 <af:panelList id="pl1" binding="#{backingBeanScope.backing_pages_Users.pl1}">
-                                    <af:link text="Manage Cutomers" id="l1"
+                                    <af:link text="Manage Customers" id="l1"
                                              binding="#{backingBeanScope.backing_pages_Users.l1}"
                                              actionListener="#{backingBeanScope.Launcher.manageCustomerActivity}"
                                              partialSubmit="true"/>
                                     <af:link text="Manage Opportunities" id="l2"
                                              binding="#{backingBeanScope.backing_pages_Users.l2}"/>
-                                    <af:link text="Manage Tasks" id="l3"
-                                             binding="#{backingBeanScope.backing_pages_Users.l3}"/>
                                     <af:link text="Manage Contacts" id="l4"
                                              binding="#{backingBeanScope.backing_pages_Users.l4}"/>
                                 </af:panelList>

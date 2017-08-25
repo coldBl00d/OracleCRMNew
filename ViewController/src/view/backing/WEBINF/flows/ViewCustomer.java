@@ -179,6 +179,8 @@ public class ViewCustomer {
     private RichDialog d3;
     private RichOutputText ot32;
     private RichPopup p4;
+    private RichSelectOneChoice soc6;
+    private UISelectItems si6;
 
     public ViewCustomer(){
         
@@ -967,6 +969,7 @@ public class ViewCustomer {
             
             
             
+            
         }
     }
     public void insertOppDialogListener(DialogEvent dialogEvent) {
@@ -1410,4 +1413,19 @@ public class ViewCustomer {
     }
 
 
+    public void setSoc6(RichSelectOneChoice soc6) {
+        this.soc6 = soc6;
+    }
+
+    public RichSelectOneChoice getSoc6() {
+        return soc6;
+    }
+
+    public void setSi6(UISelectItems si6) {
+        this.si6 = si6;
+    }
+
+    public UISelectItems getSi6() {
+        return si6;
+    }
 }

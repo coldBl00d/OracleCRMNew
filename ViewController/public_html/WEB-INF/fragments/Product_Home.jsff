@@ -152,7 +152,7 @@
                               selectedRowKeys="#{bindings.ProductsU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.ProductsU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ProductsU1.rangeSize}"
-                              partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.backing_Product_Home.t2}"
+                              partialTriggers="::qryId1 ::d1 ::p1 ::d3 ::ot4" id="t2" binding="#{backingBeanScope.backing_Product_Home.t2}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.ProductsU1.hints.ProductName.name}" sortable="true"
                                    headerText="#{bindings.ProductsU1.hints.ProductName.label}" id="c1">
@@ -298,7 +298,7 @@
                               selectedRowKeys="#{bindings.CategoryU1.collectionModel.selectedRow}"
                               selectionListener="#{bindings.CategoryU1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.CategoryU1.rangeSize}"
-                              partialTriggers="::qryId2" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}"
+                              partialTriggers="::qryId2 ::p4 ::d4 ::p6 ::d6" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryName.name}" sortable="true"
                                    headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4">

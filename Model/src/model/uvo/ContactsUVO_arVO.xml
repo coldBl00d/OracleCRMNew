@@ -92,7 +92,14 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactsEO_ar"
-    AliasName="CONTACT_ID"/>
+    AliasName="CONTACT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContactName"
     PrecisionRule="true"
@@ -120,13 +127,27 @@
     EntityAttrName="WorkNumber"
     EntityUsage="ContactsEO_ar"
     AliasName="WORK_NUMBER"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="ContactsEO_ar"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Title"
     PrecisionRule="true"
@@ -140,21 +161,42 @@
     EntityAttrName="DepartmentName"
     EntityUsage="ContactsEO_ar"
     AliasName="DEPARTMENT_NAME"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address"
     PrecisionRule="true"
     EntityAttrName="Address"
     EntityUsage="ContactsEO_ar"
     AliasName="ADDRESS"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MobileNumber"
     PrecisionRule="true"
     EntityAttrName="MobileNumber"
     EntityUsage="ContactsEO_ar"
     AliasName="MOBILE_NUMBER"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BuyingRole"
     PrecisionRule="true"
@@ -191,7 +233,14 @@
     EntityAttrName="PicId"
     EntityUsage="ContactsEO_ar"
     AliasName="PIC_ID"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="FilterById"
     ViewObjectName="model.uvo.ContactsUVO_arVO"

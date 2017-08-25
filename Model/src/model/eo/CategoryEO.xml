@@ -24,8 +24,14 @@
     IsUpdateable="while_insert"
     DefaultValue="@0"
     Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"
-    IsQueriable="false"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CategoryName"
     Precision="255"
@@ -46,11 +52,16 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CATEGORY"
-    IsQueriable="false">
+    TableName="CATEGORY">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Key
     Name="CategoryCategoryNameCheck">

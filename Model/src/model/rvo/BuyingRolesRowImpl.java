@@ -37,6 +37,7 @@ public class BuyingRolesRowImpl extends ViewRowImpl {
         }
     }
 
+
     public static final int LOOKUPID = AttributesEnum.LookupId.index();
     public static final int VALUE = AttributesEnum.Value.index();
 

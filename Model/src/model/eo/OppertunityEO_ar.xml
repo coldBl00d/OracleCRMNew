@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="OPPORTUNITY"
   AliasName="OppertunityEO_ar"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="OpportunityId"
     IsUpdateable="while_insert"
@@ -23,7 +24,16 @@
     ColumnType="NUMBER"
     TableName="OPPORTUNITY"
     PrimaryKey="true"
-    RetrievedOnInsert="true"/>
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.OpportunityId_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AccId"
     Precision="18"
@@ -32,7 +42,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.AccId_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="OpportunityWinProb"
     Precision="18"
@@ -71,7 +90,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.PrimaryContactId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SalesStage"
     Precision="255"
@@ -134,7 +160,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.Revenue_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="BestCaseRevenue"
     Precision="18"
@@ -148,6 +183,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.OppertunityEO_ar.BestCaseRevenue_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -164,6 +201,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.OppertunityEO_ar.WorstCaseRevenue_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -180,8 +219,18 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.OppertunityEO_ar.BudgetAmount_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="BudgetAmountRule0"
+      ResId="PLEASE_ENTER_A_BUDGET_AMOOUNT_GREATER_THAN_0"
+      OnAttribute="BudgetAmount"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
   </Attribute>
   <Attribute
     Name="EstimatedDuration"
@@ -243,7 +292,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.OppertunityEO_ar.CreatorId_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="OpportunityName"
     Precision="255"

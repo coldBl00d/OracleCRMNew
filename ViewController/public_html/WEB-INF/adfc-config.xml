@@ -128,4 +128,10 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Home.jsf-->
   </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name>backing_pages_Home3</managed-bean-name>
+    <managed-bean-class>view.backing.pages.Home3</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1pages/Home.jsf-->
+  </managed-bean>
 </adfc-config>

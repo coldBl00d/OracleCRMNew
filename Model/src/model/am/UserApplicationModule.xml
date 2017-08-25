@@ -135,6 +135,9 @@
   <ViewUsage
     Name="SalesRepGraphViewObjVO_rs1"
     ViewObjectName="model.uvo.SalesRepGraphViewObjVO_rs"/>
+  <ViewUsage
+    Name="CustContact1"
+    ViewObjectName="model.rvo.CustContact"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -302,6 +305,16 @@
       <Parameter
         Name="aId"
         Type="java.lang.Integer"/>
+      <Parameter
+        Name="cId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="executeCriteria"
+      MethodName="executeCriteria">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
       <Parameter
         Name="cId"
         Type="java.lang.Integer"/>

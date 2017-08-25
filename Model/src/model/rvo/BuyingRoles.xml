@@ -22,13 +22,13 @@
         ResId="model.rvo.BuyingRoles_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT   
-    LOOKUP.LOOKUP_ID,   
-    LOOKUP.VALUE   
-FROM   
-    LOOKUP   
-WHERE   
-    LOOKUP.TYPE = 'br']]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT  
+    LOOKUP.LOOKUP_ID,  
+    LOOKUP.VALUE  
+FROM  
+    LOOKUP  
+WHERE  
+    LOOKUP.TYPE = 'BuyingRole']]></SQLQuery>
   <ViewAttribute
     Name="LookupId"
     IsUpdateable="false"

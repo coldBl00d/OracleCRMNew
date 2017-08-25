@@ -23,7 +23,6 @@ public class Users {
     private RichLink l1;
     private RichPanelList pl1;
     private RichLink l2;
-    private RichLink l3;
     private RichRegion r1;
     private RichLink l4;
 
@@ -115,13 +114,6 @@ public class Users {
         return l2;
     }
 
-    public void setL3(RichLink l3) {
-        this.l3 = l3;
-    }
-
-    public RichLink getL3() {
-        return l3;
-    }
 
     public void setR1(RichRegion r1) {
         this.r1 = r1;

@@ -6,6 +6,7 @@ import model.am.common.UserApplicationModule;
 import model.uvo.TaskUVO_arVOImpl;
 
 import oracle.jbo.Row;
+import oracle.jbo.ViewCriteria;
 import oracle.jbo.server.ApplicationModuleImpl;
 import oracle.jbo.server.ViewLinkImpl;
 import oracle.jbo.server.ViewObjectImpl;
@@ -554,6 +555,22 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
      */
     public ViewObjectImpl getSalesRepGraphViewObjVO_rs1() {
         return (ViewObjectImpl) findViewObject("SalesRepGraphViewObjVO_rs1");
+    }
+    
+    public void executeCriteria(Integer cId){
+        ViewObjectImpl vo = getCustContact1();
+        ViewCriteria vc = vo.getViewCriteria("CustContactCriteria");
+        vo.applyViewCriteria(vc);
+        vo.setNamedWhereClauseParam("AccountID",cId);
+        vo.executeQuery();
+    }
+
+    /**
+     * Container's getter for CustContact1.
+     * @return CustContact1
+     */
+    public ViewObjectImpl getCustContact1() {
+        return (ViewObjectImpl) findViewObject("CustContact1");
     }
 }
 

@@ -3,7 +3,8 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr1">
-            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc2">
+            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc2"
+                         rendered="#{securityContext.userInRole['MAN']}">
                 <!-- Footer -->
                 <af:panelGroupLayout layout="vertical" id="pgl2"
                                      binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.pgl2}">
@@ -47,7 +48,8 @@
                     </af:table>
                 </af:panelGroupLayout>
             </af:gridCell>
-            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc1">
+            <af:gridCell width="50%" halign="stretch" valign="stretch" id="gc1"
+                         rendered="#{securityContext.userInRole['SA_REP']}">
                 <!-- Content -->
                 <af:panelGroupLayout id="pgl3"
                                      binding="#{backingBeanScope.backing_WEBINF_fragments_Manager_home.pgl3}"

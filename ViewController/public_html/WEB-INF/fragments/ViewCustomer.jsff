@@ -792,6 +792,15 @@
                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it1}">
                     <f:validator binding="#{bindings.OpportunityName.validator}"/>
                 </af:inputText>
+                <af:selectOneChoice value="#{bindings.PrimaryContactId.inputValue}"
+                                    label="#{bindings.PrimaryContactId.label}"
+                                    required="#{bindings.PrimaryContactId.hints.mandatory}"
+                                    shortDesc="#{bindings.PrimaryContactId.hints.tooltip}" id="soc6"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc6}">
+                    <f:selectItems value="#{bindings.PrimaryContactId.items}" id="si6"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si6}"/>
+                    <f:validator binding="#{bindings.PrimaryContactId.validator}"/>
+                </af:selectOneChoice>
                 <af:inputText value="#{bindings.OpportunityWinProb.inputValue}"
                               label="#{bindings.OpportunityWinProb.hints.label}"
                               required="#{bindings.OpportunityWinProb.hints.mandatory}" columns="30"

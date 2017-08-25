@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Home.jsf" id="d1" binding="#{backingBeanScope.backing_pages_Home3.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_pages_Home3.f1}">
+            <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
+                             binding="#{backingBeanScope.backing_pages_Home3.pt1}">
+                <f:facet name="welcome"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pages_Home3-->
+</f:view>
