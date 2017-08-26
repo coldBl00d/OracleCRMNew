@@ -118,14 +118,18 @@ public class Viewoppertunity_ar {
     private RichLink l1;
     private RichOutputText ot18;
     private RichOutputText ot19;
-    private RichPanelGroupLayout pgl6;
-    private RichQuickQuery qryId1;
-    private RichCommandLink cl1;
-    private RichTable t7;
     private RichPanelGroupLayout pgl7;
     private RichQuickQuery qryId2;
     private RichCommandLink cl2;
     private RichTable t10;
+    private RichPanelGroupLayout pgl6;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t7;
+    private RichPanelGroupLayout pgl8;
+    private RichQuickQuery qryId3;
+    private RichCommandLink cl3;
+    private RichTable t11;
 
 
     public Viewoppertunity_ar(){
@@ -879,6 +883,40 @@ public class Viewoppertunity_ar {
       
     }
 
+
+    public void setPgl7(RichPanelGroupLayout pgl7) {
+        this.pgl7 = pgl7;
+    }
+
+    public RichPanelGroupLayout getPgl7() {
+        return pgl7;
+    }
+
+
+    public void setQryId2(RichQuickQuery qryId2) {
+        this.qryId2 = qryId2;
+    }
+
+    public RichQuickQuery getQryId2() {
+        return qryId2;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
+    }
+
     public void setPgl6(RichPanelGroupLayout pgl6) {
         this.pgl6 = pgl6;
     }
@@ -912,36 +950,36 @@ public class Viewoppertunity_ar {
         return t7;
     }
 
-    public void setPgl7(RichPanelGroupLayout pgl7) {
-        this.pgl7 = pgl7;
+    public void setPgl8(RichPanelGroupLayout pgl8) {
+        this.pgl8 = pgl8;
     }
 
-    public RichPanelGroupLayout getPgl7() {
-        return pgl7;
+    public RichPanelGroupLayout getPgl8() {
+        return pgl8;
     }
 
 
-    public void setQryId2(RichQuickQuery qryId2) {
-        this.qryId2 = qryId2;
+    public void setQryId3(RichQuickQuery qryId3) {
+        this.qryId3 = qryId3;
     }
 
-    public RichQuickQuery getQryId2() {
-        return qryId2;
+    public RichQuickQuery getQryId3() {
+        return qryId3;
     }
 
-    public void setCl2(RichCommandLink cl2) {
-        this.cl2 = cl2;
+    public void setCl3(RichCommandLink cl3) {
+        this.cl3 = cl3;
     }
 
-    public RichCommandLink getCl2() {
-        return cl2;
+    public RichCommandLink getCl3() {
+        return cl3;
     }
 
-    public void setT10(RichTable t10) {
-        this.t10 = t10;
+    public void setT11(RichTable t11) {
+        this.t11 = t11;
     }
 
-    public RichTable getT10() {
-        return t10;
+    public RichTable getT11() {
+        return t11;
     }
 }

@@ -244,6 +244,12 @@
                         <display-name>view-task-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-interactions-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -474,6 +480,12 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow</resource-name>
                                 <display-name>view-task-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow</resource-name>
+                                <display-name>view-interactions-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

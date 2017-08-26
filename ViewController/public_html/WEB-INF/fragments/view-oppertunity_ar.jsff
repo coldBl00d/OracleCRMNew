@@ -384,17 +384,17 @@
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId1}">
+                                            <f:facet name="end">
+                                                <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl1}"/>
+                                            </f:facet>
+                                        </af:quickQuery>
                                     </af:toolbar>
-                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId1}">
-                                        <f:facet name="end">
-                                            <af:commandLink text="Advanced" rendered="false" id="cl1"
-                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.cl1}"/>
-                                        </f:facet>
-                                    </af:quickQuery>
                                     <af:panelGroupLayout layout="vertical" id="pgl6"
                                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl6}">
                                         <af:table value="#{bindings.OpportunityInteractions.collectionModel}" var="row"
@@ -408,32 +408,31 @@
                                                        id="c9">
                                                 <af:outputText value="#{row.ActivityTitle}"
                                                                shortDesc="#{bindings.OpportunityInteractions.hints.ActivityTitle.tooltip}"
-                                                               id="ot20"/>
-                                            </af:column>
-                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.ACreatorId.label}"
-                                                       id="c10">
-                                                <af:link text="#{row.ACreatorId}" id="l2">
+                                                               id="ot20" rendered="false"/>
+                                                <af:link text="#{row.ActivityTitle}" id="l2"
+                                                         action="#{backingBeanScope.backing_viewoppertunity_ar.goInteraction}">
                                                     <af:setPropertyListener from="#{row.ActivityId}"
-                                                                            to="#{row.InteractionId}" type="action"/>
+                                                                            to="#{pageFlowScope.InteractionId}"
+                                                                            type="action"/>
                                                 </af:link>
                                             </af:column>
-                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.AInterResolution.label}"
-                                                       id="c11">
-                                                <af:outputText value="#{row.AInterResolution}"
-                                                               shortDesc="#{bindings.OpportunityInteractions.hints.AInterResolution.tooltip}"
-                                                               id="ot22"/>
-                                            </af:column>
                                             <af:column headerText="#{bindings.OpportunityInteractions.hints.ActivityId.label}"
-                                                       id="c12" rendered="false">
+                                                       id="c10" rendered="false">
                                                 <af:outputText value="#{row.ActivityId}"
                                                                shortDesc="#{bindings.OpportunityInteractions.hints.ActivityId.tooltip}"
-                                                               id="ot23">
+                                                               id="ot22">
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.OpportunityInteractions.hints.ActivityId.format}"/>
                                                 </af:outputText>
                                             </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.ActivityType.label}"
+                                                       id="c11">
+                                                <af:outputText value="#{row.ActivityType}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.ActivityType.tooltip}"
+                                                               id="ot23"/>
+                                            </af:column>
                                             <af:column headerText="#{bindings.OpportunityInteractions.hints.EndDueDateTime.label}"
-                                                       id="c13">
+                                                       id="c12">
                                                 <af:outputText value="#{row.EndDueDateTime}"
                                                                shortDesc="#{bindings.OpportunityInteractions.hints.EndDueDateTime.tooltip}"
                                                                id="ot24">
@@ -441,18 +440,18 @@
                                                 </af:outputText>
                                             </af:column>
                                             <af:column headerText="#{bindings.OpportunityInteractions.hints.StartDateTime.label}"
-                                                       id="c14">
+                                                       id="c13">
                                                 <af:outputText value="#{row.StartDateTime}"
                                                                shortDesc="#{bindings.OpportunityInteractions.hints.StartDateTime.tooltip}"
                                                                id="ot25">
                                                     <af:convertDateTime pattern="#{bindings.OpportunityInteractions.hints.StartDateTime.format}"/>
                                                 </af:outputText>
                                             </af:column>
-                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.UserUVO_ar.FirstName.label}"
-                                                       id="c15">
-                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
-                                                               shortDesc="#{bindings.OpportunityInteractions.hints.UserUVO_ar.FirstName.tooltip}"
-                                                               rendered="#{row.UserUVO_ar != null}" id="ot26"/>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.AInterResolution.label}"
+                                                       id="c14">
+                                                <af:outputText value="#{row.AInterResolution}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.AInterResolution.tooltip}"
+                                                               id="ot26"/>
                                             </af:column>
                                         </af:table>
                                     </af:panelGroupLayout>
@@ -580,7 +579,66 @@
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b12" binding="#{backingBeanScope.backing_viewoppertunity_ar.b12}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId3"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery2.processQuery}"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId3}">
+                                            <f:facet name="end">
+                                                <af:commandLink text="Advanced" rendered="false" id="cl3"
+                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl3}"/>
+                                            </f:facet>
+                                        </af:quickQuery>
                                     </af:toolbar>
+                                    <af:panelGroupLayout layout="vertical" id="pgl8"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl8}">
+                                        <af:table value="#{bindings.OpportunityNotes.collectionModel}" var="row"
+                                                  rows="#{bindings.OpportunityNotes.rangeSize}"
+                                                  emptyText="#{bindings.OpportunityNotes.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.OpportunityNotes.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.OpportunityNotes.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.OpportunityNotes.rangeSize}"
+                                                  partialTriggers="::qryId3" id="t11"
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t11}">
+                                            <af:column sortProperty="#{bindings.OpportunityNotes.hints.NoteId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityNotes.hints.NoteId.label}"
+                                                       id="c15">
+                                                <af:outputText value="#{row.NoteId}"
+                                                               shortDesc="#{bindings.OpportunityNotes.hints.NoteId.tooltip}"
+                                                               id="ot27">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.OpportunityNotes.hints.NoteId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityNotes.hints.NoteDate.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityNotes.hints.NoteDate.label}"
+                                                       id="c22">
+                                                <af:outputText value="#{row.NoteDate}"
+                                                               shortDesc="#{bindings.OpportunityNotes.hints.NoteDate.tooltip}"
+                                                               id="ot29">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityNotes.hints.NoteDate.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityNotes.hints.NoteTitle.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityNotes.hints.NoteTitle.label}"
+                                                       id="c23">
+                                                <af:link text="#{row.NoteTitle}" id="l4"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityNotes.hints.UserUVO_ar.FirstName.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityNotes.hints.UserUVO_ar.FirstName.label}"
+                                                       id="c24">
+                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.OpportunityNotes.hints.UserUVO_ar.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar != null}" id="ot31"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi2" text="Task"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi2}">

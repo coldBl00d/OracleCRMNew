@@ -10,14 +10,18 @@
               id="RevenueItemsOfOpportunityIterator"/>
     <iterator Binds="PrimaryContact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="PrimaryContactIterator"/>
-    <iterator Binds="OpportunityInteractions" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="OpportunityInteractionsIterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="OpportunityInteractionsIterator" id="ImplicitViewCriteriaQuery"/>
     <iterator Binds="ContactsOfOpportunity" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="ContactsOfOpportunityIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="ContactsOfOpportunityIterator" id="ImplicitViewCriteriaQuery1"/>
+    <iterator Binds="OpportunityInteractions" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunityInteractionsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunityInteractionsIterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="OpportunityNotes" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunityNotesIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunityNotesIterator" id="ImplicitViewCriteriaQuery2"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -103,26 +107,6 @@
         <Item Value="ContactId"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="OpportunityInteractionsIterator" id="OpportunityInteractions">
-      <nodeDefinition DefName="model.uvo.InteractionsUVO" Name="OpportunityInteractions0">
-        <AttrNames>
-          <Item Value="ActivityTitle"/>
-          <Item Value="ACreatorId"/>
-          <Item Value="AInterResolution"/>
-          <Item Value="ActivityId"/>
-          <Item Value="EndDueDateTime"/>
-          <Item Value="StartDateTime"/>
-        </AttrNames>
-        <Accessors>
-          <Item Value="UserUVO_ar"/>
-        </Accessors>
-      </nodeDefinition>
-      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
-        <AttrNames>
-          <Item Value="FirstName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="ContactsOfOpportunityIterator" id="ContactsOfOpportunity">
       <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsOfOpportunity0">
         <AttrNames>
@@ -132,6 +116,35 @@
           <Item Value="Title"/>
           <Item Value="BuyingRole"/>
           <Item Value="InfluenceLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunityInteractionsIterator" id="OpportunityInteractions">
+      <nodeDefinition DefName="model.uvo.InteractionsUVO" Name="OpportunityInteractions0">
+        <AttrNames>
+          <Item Value="ActivityTitle"/>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityType"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="AInterResolution"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunityNotesIterator" id="OpportunityNotes">
+      <nodeDefinition DefName="model.uvo.NotesUVO_arVO" Name="OpportunityNotes0">
+        <AttrNames>
+          <Item Value="NoteId"/>
+          <Item Value="NoteDate"/>
+          <Item Value="NoteTitle"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

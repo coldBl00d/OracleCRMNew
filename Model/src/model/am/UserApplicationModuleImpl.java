@@ -703,21 +703,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewLinkImpl) findViewLink("TaskToCreator3");
     }
 
-    /**
-     * Container's getter for UserUVO_arVO4.
-     * @return UserUVO_arVO4
-     */
-    public ViewObjectImpl getUserUVO_arVO4() {
-        return (ViewObjectImpl) findViewObject("UserUVO_arVO4");
-    }
-
-    /**
-     * Container's getter for InteractionCreatorVL1.
-     * @return InteractionCreatorVL1
-     */
-    public ViewLinkImpl getInteractionCreatorVL1() {
-        return (ViewLinkImpl) findViewLink("InteractionCreatorVL1");
-    }
 
     /**
      * Container's getter for InteractionsUVO2.

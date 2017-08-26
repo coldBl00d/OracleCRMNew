@@ -45,7 +45,7 @@
          <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>
          <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
-      <AppModuleConfig name="15E1EC54B8A" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.UserApplicationModule" jbo.project="model.Model" BC4JConfigName="UserApplicationModuleLocal" JDBCName="oraclecrm" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+      <AppModuleConfig name="15E1EF5FDEB" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/oraclecrmDS" ApplicationName="model.am.UserApplicationModule" jbo.project="model.Model" BC4JConfigName="UserApplicationModuleLocal" JDBCName="oraclecrm" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
          <Database JDBCDataSource="java:comp/env/jdbc/oraclecrmDS" jbo.SQLBuilder="Oracle" jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
          <Security AppModuleJndiName="model.am.UserApplicationModule"/>
          <Tester FullProxyInterfaceName="model.am.common.UserApplicationModule"/>

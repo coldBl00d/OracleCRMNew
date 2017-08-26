@@ -166,9 +166,6 @@
     Name="Creator"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewUsage
-    Name="UserUVO_arVO4"
-    ViewObjectName="model.uvo.UserUVO_arVO"/>
-  <ViewUsage
     Name="InteractionsDisplay"
     ViewObjectName="model.uvo.InteractionsUVO"/>
   <ViewLinkUsage
@@ -368,12 +365,6 @@
     ViewLinkObjectName="model.vl.TaskToCreator"
     SrcViewUsageName="model.am.UserApplicationModule.OpportunityTask"
     DstViewUsageName="model.am.UserApplicationModule.Creator"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="InteractionCreatorVL1"
-    ViewLinkObjectName="model.vl.InteractionCreatorVL"
-    SrcViewUsageName="model.am.UserApplicationModule.OpportunityInteractions"
-    DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO4"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">
