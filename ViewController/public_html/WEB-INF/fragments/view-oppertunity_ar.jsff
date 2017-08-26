@@ -278,54 +278,12 @@
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
                                             </af:outputText>
-                                            <af:outputText value="#{row.WinProbability}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
-                                                           id="ot17">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.WinProbability}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
-                                                           id="ot9">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.WinProbability}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
-                                                           id="ot16">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.WinProbability}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
-                                                           id="ot12">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
-                                            </af:outputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.label}"
                                                    id="c5">
                                             <af:outputText value="#{row.Quantity}"
                                                            shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
                                                            id="ot13">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.Quantity}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
-                                                           id="ot5">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.Quantity}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
-                                                           id="ot4">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.Quantity}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
-                                                           id="ot8">
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
                                             </af:outputText>
@@ -338,30 +296,12 @@
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
                                             </af:outputText>
-                                            <af:outputText value="#{row.SettledPrice}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.tooltip}"
-                                                           id="ot14">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.SettledPrice}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.tooltip}"
-                                                           id="ot10">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
-                                            </af:outputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.label}"
                                                    id="c7">
                                             <af:outputText value="#{row.BestCaseRevenue}"
                                                            shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.tooltip}"
                                                            id="ot6">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.format}"/>
-                                            </af:outputText>
-                                            <af:outputText value="#{row.BestCaseRevenue}"
-                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.tooltip}"
-                                                           id="ot11">
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.format}"/>
                                             </af:outputText>
