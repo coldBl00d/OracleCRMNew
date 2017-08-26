@@ -587,7 +587,86 @@
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId4"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery3.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery3.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery3.processQuery}"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId4}">
+                                            <f:facet name="end">
+                                                <af:commandLink text="Advanced" rendered="false" id="cl4"
+                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl4}"/>
+                                            </f:facet>
+                                        </af:quickQuery>
                                     </af:toolbar>
+                                    <af:panelGroupLayout layout="vertical" id="pgl9"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl9}">
+                                        <af:table value="#{bindings.OpportunityTask.collectionModel}" var="row"
+                                                  rows="#{bindings.OpportunityTask.rangeSize}"
+                                                  emptyText="#{bindings.OpportunityTask.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  fetchSize="#{bindings.OpportunityTask.rangeSize}"
+                                                  partialTriggers="::qryId4" id="t12"
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t12}">
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.ActivityId.label}"
+                                                       id="c25" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.ActivityId.tooltip}"
+                                                               id="ot4">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.OpportunityTask.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.ActivityTitle.label}"
+                                                       id="c26">
+                                                <af:link text="#{row.ActivityTitle}" id="l5"
+                                                         action="#{backingBeanScope.backing_viewoppertunity_ar.goTask}">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.TaskId}" type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.StartDateTime.label}"
+                                                       id="c27">
+                                                <af:outputText value="#{row.StartDateTime}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.StartDateTime.tooltip}"
+                                                               id="ot8">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityTask.hints.StartDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.EndDueDateTime.label}"
+                                                       id="c28">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.EndDueDateTime.tooltip}"
+                                                               id="ot9">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityTask.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.ATaskPriority.label}"
+                                                       id="c29">
+                                                <af:outputText value="#{row.ATaskPriority}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.ATaskPriority.tooltip}"
+                                                               id="ot10"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityTask.hints.ATaskCompletion.label}"
+                                                       id="c30">
+                                                <af:outputText value="#{row.ATaskCompletion}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.ATaskCompletion.tooltip}"
+                                                               id="ot11">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.OpportunityTask.hints.ATaskCompletion.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="Creator" id="c31">
+                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.UserUVO_ar.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar != null}" id="ot12"/>
+                                            </af:column>
+                                            <af:column headerText="Assigned To" id="c32">
+                                                <af:outputText value="#{row.UserUVO_ar1.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.OpportunityTask.hints.UserUVO_ar1.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar1 != null}" id="ot14"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi4" text="Documents"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi4}">

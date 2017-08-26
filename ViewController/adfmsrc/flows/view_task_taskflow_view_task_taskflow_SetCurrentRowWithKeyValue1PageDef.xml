@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24"
-                id="view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef" Package="flows"
+                id="view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValue1PageDef" Package="flows"
                 SkipValidation="true">
   <parameters/>
   <executables>
@@ -10,7 +10,7 @@
   <bindings>
     <action IterBinding="TaskForDisplayIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
             Action="setCurrentRowWithKeyValue">
-      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.TaskId}" NDType="java.lang.String"/>
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.PointerId}" NDType="java.lang.String"/>
     </action>
   </bindings>
 </pageDefinition>

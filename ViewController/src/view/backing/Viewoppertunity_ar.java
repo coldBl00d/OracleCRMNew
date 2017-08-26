@@ -130,6 +130,10 @@ public class Viewoppertunity_ar {
     private RichQuickQuery qryId3;
     private RichCommandLink cl3;
     private RichTable t11;
+    private RichPanelGroupLayout pgl9;
+    private RichQuickQuery qryId4;
+    private RichCommandLink cl4;
+    private RichTable t12;
 
 
     public Viewoppertunity_ar(){
@@ -806,6 +810,14 @@ public class Viewoppertunity_ar {
         return null;
     }
     
+    public String goTask(){
+        goPlace("OpportunityTaskIterator",
+            "ActivityTitle",
+            "PointerId","TaskId", 
+            "/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
+        return null;
+    }
+    
     public String goPlace(String iteratorName, String fieldName, String PointerName,String currentScopePointerName,  String taskflowId){
         
         System.out.println("Setting iterator as "+ iteratorName);
@@ -981,5 +993,38 @@ public class Viewoppertunity_ar {
 
     public RichTable getT11() {
         return t11;
+    }
+
+    public void setPgl9(RichPanelGroupLayout pgl9) {
+        this.pgl9 = pgl9;
+    }
+
+    public RichPanelGroupLayout getPgl9() {
+        return pgl9;
+    }
+
+
+    public void setQryId4(RichQuickQuery qryId4) {
+        this.qryId4 = qryId4;
+    }
+
+    public RichQuickQuery getQryId4() {
+        return qryId4;
+    }
+
+    public void setCl4(RichCommandLink cl4) {
+        this.cl4 = cl4;
+    }
+
+    public RichCommandLink getCl4() {
+        return cl4;
+    }
+
+    public void setT12(RichTable t12) {
+        this.t12 = t12;
+    }
+
+    public RichTable getT12() {
+        return t12;
     }
 }

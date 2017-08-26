@@ -22,6 +22,10 @@
               id="OpportunityNotesIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OpportunityNotesIterator" id="ImplicitViewCriteriaQuery2"/>
+    <iterator Binds="OpportunityTask" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunityTaskIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunityTaskIterator" id="ImplicitViewCriteriaQuery3"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -140,6 +144,27 @@
         </AttrNames>
         <Accessors>
           <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunityTaskIterator" id="OpportunityTask">
+      <nodeDefinition DefName="model.uvo.TaskUVO_arVO" Name="OpportunityTask0">
+        <AttrNames>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="ATaskPriority"/>
+          <Item Value="ATaskCompletion"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+          <Item Value="UserUVO_ar1"/>
         </Accessors>
       </nodeDefinition>
       <nodeDefinition DefName="model.uvo.UserUVO_arVO">
