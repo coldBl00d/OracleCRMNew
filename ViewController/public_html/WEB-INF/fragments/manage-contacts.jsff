@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout layout="scroll" id="pgl1" binding="#{backingBeanScope.ManageCotnacts.pgl1}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.ManageCotnacts.db1}">
+            <f:facet name="top">
+                <af:toolbar id="t1" binding="#{backingBeanScope.ManageCotnacts.t1}">
+                    <af:button id="b1" binding="#{backingBeanScope.ManageCotnacts.b1}"
+                               icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                    <af:button id="b2" binding="#{backingBeanScope.ManageCotnacts.b2}"
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.ManageCotnacts.qryId1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.ManageCotnacts.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:toolbar>
+            </f:facet>
+            <f:facet name="center">
+                <af:panelGroupLayout layout="vertical" id="pgl2" binding="#{backingBeanScope.ManageCotnacts.pgl2}">
+                    <af:table value="#{bindings.ContactList.collectionModel}" var="row"
+                              rows="#{bindings.ContactList.rangeSize}"
+                              emptyText="#{bindings.ContactList.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ContactList.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ContactList.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ContactList.rangeSize}"
+                              partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.ManageCotnacts.t2}">
+                        <af:column headerText="#{bindings.ContactList.hints.ContactId.label}" id="c1" rendered="false">
+                            <af:outputText value="#{row.ContactId}"
+                                           shortDesc="#{bindings.ContactList.hints.ContactId.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ContactList.hints.ContactId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.ContactList.hints.ContactName.label}" id="c2">
+                            <af:outputText value="#{row.ContactName}"
+                                           shortDesc="#{bindings.ContactList.hints.ContactName.tooltip}" id="ot2"
+                                           rendered="false"/>
+                            <af:link text="#{row.ContactName}" id="l1"
+                                     action="#{backingBeanScope.ManageCotnacts.goContact}">
+                                <af:setPropertyListener from="#{row.ContactId}" to="#{pageFlowScope.ContactId}"
+                                                        type="action"/>
+                            </af:link>
+                        </af:column>
+                        <af:column headerText="#{bindings.ContactList.hints.Gender.label}" id="c3">
+                            <af:selectOneChoice value="#{row.bindings.Gender.inputValue}"
+                                                label="#{row.bindings.Gender.label}"
+                                                required="#{bindings.ContactList.hints.Gender.mandatory}"
+                                                shortDesc="#{bindings.ContactList.hints.Gender.tooltip}" readOnly="true"
+                                                id="soc1">
+                                <f:selectItems value="#{row.bindings.Gender.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Gender.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="#{bindings.ContactList.hints.BuyingRole.label}" id="c4">
+                            <af:selectOneChoice value="#{row.bindings.BuyingRole.inputValue}"
+                                                label="#{row.bindings.BuyingRole.label}"
+                                                required="#{bindings.ContactList.hints.BuyingRole.mandatory}"
+                                                shortDesc="#{bindings.ContactList.hints.BuyingRole.tooltip}"
+                                                readOnly="true" id="soc2">
+                                <f:selectItems value="#{row.bindings.BuyingRole.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.BuyingRole.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="#{bindings.ContactList.hints.InfluenceLevel.label}" id="c5">
+                            <af:selectOneChoice value="#{row.bindings.InfluenceLevel.inputValue}"
+                                                label="#{row.bindings.InfluenceLevel.label}"
+                                                required="#{bindings.ContactList.hints.InfluenceLevel.mandatory}"
+                                                shortDesc="#{bindings.ContactList.hints.InfluenceLevel.tooltip}"
+                                                readOnly="true" id="soc3">
+                                <f:selectItems value="#{row.bindings.InfluenceLevel.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.InfluenceLevel.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:ManageCotnacts-->
+</ui:composition>

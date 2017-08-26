@@ -8,6 +8,22 @@ import oracle.ui.pattern.dynamicShell.TabContext;
 
 public class Launcher {
     
+    public String manageContactsActivity() { 
+            /** 
+            * Example method when called repeatedly, will open another instance as 
+            * oppose to selecting a previously opened tab instance. Note the boolean 
+            * to create another tab instance is set to true. 
+            */ 
+              
+            _launchActivity( 
+              "Contacts", 
+              "/WEB-INF/flows/manage-contacts-taskflow.xml#manage-contacts-taskflow",  
+              false); 
+            
+            return null;
+            
+          } 
+    
     public String manageOpportunityActivity() { 
             /** 
             * Example method when called repeatedly, will open another instance as 
@@ -16,7 +32,7 @@ public class Launcher {
             */ 
               
             _launchActivity( 
-              "Customer Detail", 
+              "Opportunities", 
               "/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow",  
               false); 
             

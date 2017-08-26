@@ -153,4 +153,10 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/manage_opportunity.jsff-->
   </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name>ManageCotnacts</managed-bean-name>
+    <managed-bean-class>view.backing.WEBINF.fragments.MangeContactsBean</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/manage-contacts.jsff-->
+  </managed-bean>
 </adfc-config>

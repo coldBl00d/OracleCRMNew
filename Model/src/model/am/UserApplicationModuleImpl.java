@@ -721,5 +721,12 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     }
 
 
+    /**
+     * Container's getter for ContactsUVO_arVO1.
+     * @return ContactsUVO_arVO1
+     */
+    public ViewObjectImpl getContactList() {
+        return (ViewObjectImpl) findViewObject("ContactList");
+    }
 }
 

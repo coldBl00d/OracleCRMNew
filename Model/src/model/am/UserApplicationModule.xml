@@ -171,6 +171,9 @@
   <ViewUsage
     Name="OpportunityListForDisplay"
     ViewObjectName="model.uvo.OppertunityUVO_arVO"/>
+  <ViewUsage
+    Name="ContactList"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"

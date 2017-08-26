@@ -41,6 +41,7 @@
     <page path="/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow@SetCurrentRowWithKeyValue"
           usageId="view_view_contact_taskflow_view_contact_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page path="/WEB-INF/fragments/manage_opportunity.jsff" usageId="view_manage_opportunityPageDef"/>
+    <page path="/WEB-INF/fragments/manage-contacts.jsff" usageId="view_manage_contactsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -75,6 +76,7 @@
     <page id="view_view_contact_taskflow_view_contact_taskflow_SetCurrentRowWithKeyValuePageDef"
           path="flows.view_contact_taskflow_view_contact_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page id="view_manage_opportunityPageDef" path="fragments.manage_opportunityPageDef"/>
+    <page id="view_manage_contactsPageDef" path="fragments.manage_contactsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

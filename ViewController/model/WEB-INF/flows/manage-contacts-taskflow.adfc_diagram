@@ -2,4 +2,23 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">manage-contacts</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">266.0254</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>manage-contacts&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">188.09766</property>
+      <property
+         name="page">/WEB-INF/fragments/manage-contacts.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

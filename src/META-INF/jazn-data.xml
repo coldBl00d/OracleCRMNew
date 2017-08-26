@@ -382,12 +382,6 @@
                             </member-resource>
                             <member-resource>
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
-                                <resource-name>/WEB-INF/flows/manage-contact-taskflow.xml#manage-contact-taskflow</resource-name>
-                                <display-name>manage-contact-taskflow(/WEB-INF/flows)</display-name>
-                                <actions>view</actions>
-                            </member-resource>
-                            <member-resource>
-                                <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/manage-customer-taskflow.xml#manage-customer-taskflow</resource-name>
                                 <display-name>manage-customer-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>

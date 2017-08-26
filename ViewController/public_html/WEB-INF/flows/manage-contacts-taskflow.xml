@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="manage-contacts-taskflow">
+    <default-activity>manage-contacts</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <input-parameter-definition id="__1">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
+    </input-parameter-definition>
+    <view id="manage-contacts">
+      <page>/WEB-INF/fragments/manage-contacts.jsff</page>
+    </view>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

@@ -22,7 +22,8 @@
                                              binding="#{backingBeanScope.backing_pages_Users.l2}"
                                              action="#{backingBeanScope.Launcher.manageOpportunityActivity}"/>
                                     <af:link text="Manage Contacts" id="l4"
-                                             binding="#{backingBeanScope.backing_pages_Users.l4}"/>
+                                             binding="#{backingBeanScope.backing_pages_Users.l4}"
+                                             action="#{backingBeanScope.Launcher.manageContactsActivity}"/>
                                 </af:panelList>
                             </af:panelGroupLayout>
                         </f:facet>
