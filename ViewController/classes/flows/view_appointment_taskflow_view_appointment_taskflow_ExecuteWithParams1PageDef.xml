@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24"
+                id="view_appointment_taskflow_view_appointment_taskflow_ExecuteWithParams1PageDef" Package="flows"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="AppointmentDisplay" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AppointmentDisplayIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AppointmentDisplayIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="AppointmentId" NDValue="#{pageFlowScope.AppointmentId.intValue}" NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
+</pageDefinition>

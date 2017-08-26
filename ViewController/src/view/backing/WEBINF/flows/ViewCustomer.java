@@ -89,7 +89,6 @@ public class ViewCustomer {
     private RichButton b6;
     private RichToolbar t4;
     private RichButton b7;
-    private RichButton b8;
     private RichButton b9;
     private RichToolbar t6;
     private RichButton b10;
@@ -463,13 +462,6 @@ public class ViewCustomer {
         return b7;
     }
 
-    public void setB8(RichButton b8) {
-        this.b8 = b8;
-    }
-
-    public RichButton getB8() {
-        return b8;
-    }
 
     public void setB9(RichButton b9) {
         this.b9 = b9;
@@ -611,7 +603,7 @@ public class ViewCustomer {
     String iteratorName = "AppointmentDisplayIterator";
     String fieldName = "ActivityTitle";
     String PointerName = "AppointmentId";
-    String taskflowId = "view-appointment-taskflow.xml#view-appointment-taskflow";
+    String taskflowId = "WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow";
     
         System.out.println("Setting iterator as "+ iteratorName);
         System.out.println("Setting field to fetch from database as "+ fieldName);
@@ -644,11 +636,59 @@ public class ViewCustomer {
     m.put("tabContext", TabContext.getCurrentInstance());
     System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
     Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
-    m.put(PointerName, value);
+    m.put(PointerName, id);
     launchTab(m, tabHeading, taskflowId);
     System.out.println("Called tab with taskflow id "+ taskflowId);
     System.out.println("Done");
     return null;
+    }
+    
+    public String goTask(){
+        goPlace("CustomerTasksIterator",
+                "ActivityTitle",
+                "TaskId",
+                "WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
+        return null;
+    }
+    
+    public String goPlace(String iteratorName, String fieldName, String PointerName, String taskflowId){
+        
+        System.out.println("Setting iterator as "+ iteratorName);
+        System.out.println("Setting field to fetch from database as "+ fieldName);
+        System.out.println("Setting pointer name as " + PointerName);
+        System.out.println("Make sure that the taskflow variable in the destination taskflow is "+ PointerName);
+        System.out.println("Make sure that the pageFlowScope variable containing the id is "+ PointerName);
+    
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        System.out.println("Found the id from the pageflow to be "+ id);
+    
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        ViewObject vobj = iterator.getViewObject();
+        Key key = new Key(new Object[] {id});
+        if(vobj == null){
+            System.out.println("The view object returned null");
+            return null;
+        }
+        Row row[] = vobj.findByKey(key, 1);
+    //Row row = vobj.getRow(key);
+        if(row[0] == null){
+            System.out.println("The row object returned null");
+            return null;
+        }
+    
+        System.out.println("Row identified") ;
+        String tabHeading = (String)row[0].getAttribute(fieldName);
+        System.out.println("Fetched "+ fieldName) ;
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+        System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
+        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        m.put(PointerName, id);
+        launchTab(m, tabHeading, taskflowId);
+        System.out.println("Called tab with taskflow id "+ taskflowId);
+        System.out.println("Done");
+        return null;
     }
     
     public void launchTab(Map<String, Object> params, String tabHeading, String taskFlow){

@@ -441,9 +441,6 @@
                                         <af:button id="b7"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b7}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b8"
-                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b8}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
                                         <af:button id="b9"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b9}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
@@ -470,7 +467,11 @@
                                                        id="c9">
                                                 <af:outputText value="#{row.ActivityTitle}"
                                                                shortDesc="#{bindings.CustomerTasks.hints.ActivityTitle.tooltip}"
-                                                               id="ot8"/>
+                                                               id="ot8" rendered="false"/>
+                                                <af:link text="#{row.ActivityTitle}" id="l8">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.TaskId}" type="action"/>
+                                                </af:link>
                                             </af:column>
                                             <af:column headerText="#{bindings.CustomerTasks.hints.StartDateTime.label}"
                                                        id="c11">
@@ -503,11 +504,29 @@
                                                                       pattern="#{bindings.CustomerTasks.hints.ATaskCompletion.format}"/>
                                                 </af:outputText>
                                             </af:column>
-                                            <af:column headerText="#{bindings.CustomerTasks.hints.UserUVO_ar.FirstName.label}"
-                                                       id="c23">
+                                            <af:column headerText="Assigned By" id="c23">
                                                 <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
                                                                shortDesc="#{bindings.CustomerTasks.hints.UserUVO_ar.FirstName.tooltip}"
                                                                rendered="#{row.UserUVO_ar != null}" id="ot13"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.CustomerTasks.hints.ActivityId.label}"
+                                                       id="c44" rendered="false">
+                                                <af:inputText value="#{row.bindings.ActivityId.inputValue}"
+                                                              label="#{bindings.CustomerTasks.hints.ActivityId.label}"
+                                                              required="#{bindings.CustomerTasks.hints.ActivityId.mandatory}"
+                                                              columns="#{bindings.CustomerTasks.hints.ActivityId.displayWidth}"
+                                                              maximumLength="#{bindings.CustomerTasks.hints.ActivityId.precision}"
+                                                              shortDesc="#{bindings.CustomerTasks.hints.ActivityId.tooltip}"
+                                                              id="it22">
+                                                    <f:validator binding="#{row.bindings.ActivityId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.CustomerTasks.hints.ActivityId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="Assigned To" id="c45">
+                                                <af:outputText value="#{row.UserUVO_ar1.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.CustomerTasks.hints.UserUVO_ar1.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar1 != null}"/>
                                             </af:column>
                                         </af:table>
                                     </af:panelGroupLayout>

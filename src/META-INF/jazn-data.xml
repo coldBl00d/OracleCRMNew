@@ -238,6 +238,12 @@
                         <display-name>SalesDashboard (fragments)</display-name>
                         <description>fragments.SalesDashboardPageDef</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>view-task-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -462,6 +468,12 @@
                                 <type-name-ref>RegionResourceType</type-name-ref>
                                 <resource-name>fragments.SalesDashboardPageDef</resource-name>
                                 <display-name>SalesDashboard (fragments)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow</resource-name>
+                                <display-name>view-task-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

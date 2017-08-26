@@ -565,5 +565,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewObjectImpl getAppointmentDisplay() {
         return (ViewObjectImpl) findViewObject("AppointmentDisplay");
     }
+
+    /**
+     * Container's getter for TaskUVO_arVO2.
+     * @return TaskUVO_arVO2
+     */
+    public TaskUVO_arVOImpl getTaskForDisplay() {
+        return (TaskUVO_arVOImpl) findViewObject("TaskForDisplay");
+    }
 }
 

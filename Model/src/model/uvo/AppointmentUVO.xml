@@ -78,12 +78,13 @@
   <ViewCriteria
     Name="FilterById"
     ViewObjectName="model.uvo.AppointmentUVO"
-    Conjunction="AND">
+    Conjunction="AND"
+    Mode="3">
     <Properties Name="_Props">
       <CustomProperties>
         <Property
           Name="autoExecute"
-          Value="false"/>
+          Value="true"/>
         <Property
           Name="mode"
           Value="Basic"/>
@@ -108,7 +109,8 @@
         Conjunction="AND"
         Value=":AppointmentId"
         IsBindVarValue="true"
-        Required="Optional"/>
+        Required="Required"
+        ValidateBindVars="true"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor

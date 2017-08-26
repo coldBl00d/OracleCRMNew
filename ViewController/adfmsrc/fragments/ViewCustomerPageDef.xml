@@ -118,9 +118,11 @@
           <Item Value="EndDueDateTime"/>
           <Item Value="ATaskPriority"/>
           <Item Value="ATaskCompletion"/>
+          <Item Value="ActivityId"/>
         </AttrNames>
         <Accessors>
           <Item Value="UserUVO_ar"/>
+          <Item Value="UserUVO_ar1"/>
         </Accessors>
       </nodeDefinition>
       <nodeDefinition DefName="model.uvo.UserUVO_arVO">

@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="AppointmentUVO"
+  Name="Appointments_new"
   Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -16,7 +16,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.uvo.AppointmentUVO_LABEL"/>
+        ResId="model.uvo.Appointments_new_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
@@ -26,6 +26,48 @@
   <EntityUsage
     Name="ActivityEO_arEO"
     Entity="model.eo.ActivityEO_arEO"/>
+  <ViewAttribute
+    Name="AAppLocationId"
+    PrecisionRule="true"
+    EntityAttrName="AAppLocationId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_APP_LOCATION_ID"/>
+  <ViewAttribute
+    Name="ACreatorId"
+    PrecisionRule="true"
+    EntityAttrName="ACreatorId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_CREATOR_ID"/>
+  <ViewAttribute
+    Name="AInterResolution"
+    PrecisionRule="true"
+    EntityAttrName="AInterResolution"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_INTER_RESOLUTION"/>
+  <ViewAttribute
+    Name="ATaskAssigneeId"
+    PrecisionRule="true"
+    EntityAttrName="ATaskAssigneeId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_ASSIGNEE_ID"/>
+  <ViewAttribute
+    Name="ATaskCompletion"
+    PrecisionRule="true"
+    EntityAttrName="ATaskCompletion"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_COMPLETION"/>
+  <ViewAttribute
+    Name="ATaskPriority"
+    PrecisionRule="true"
+    EntityAttrName="ATaskPriority"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_PRIORITY"/>
+  <ViewAttribute
+    Name="ActivityDescription"
+    PrecisionRule="true"
+    EntityAttrName="ActivityDescription"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACTIVITY_DESCRIPTION"/>
   <ViewAttribute
     Name="ActivityId"
     IsNotNull="true"
@@ -40,17 +82,11 @@
     EntityUsage="ActivityEO_arEO"
     AliasName="ACTIVITY_TITLE"/>
   <ViewAttribute
-    Name="ActivityDescription"
+    Name="ActivityType"
     PrecisionRule="true"
-    EntityAttrName="ActivityDescription"
+    EntityAttrName="ActivityType"
     EntityUsage="ActivityEO_arEO"
-    AliasName="ACTIVITY_DESCRIPTION"/>
-  <ViewAttribute
-    Name="StartDateTime"
-    PrecisionRule="true"
-    EntityAttrName="StartDateTime"
-    EntityUsage="ActivityEO_arEO"
-    AliasName="START_DATE_TIME"/>
+    AliasName="ACTIVITY_TYPE"/>
   <ViewAttribute
     Name="EndDueDateTime"
     PrecisionRule="true"
@@ -58,26 +94,14 @@
     EntityUsage="ActivityEO_arEO"
     AliasName="END_DUE_DATE_TIME"/>
   <ViewAttribute
-    Name="AAppLocationId"
+    Name="StartDateTime"
     PrecisionRule="true"
-    EntityAttrName="AAppLocationId"
+    EntityAttrName="StartDateTime"
     EntityUsage="ActivityEO_arEO"
-    AliasName="A_APP_LOCATION_ID"/>
-  <ViewAttribute
-    Name="ActivityType"
-    PrecisionRule="true"
-    EntityAttrName="ActivityType"
-    EntityUsage="ActivityEO_arEO"
-    AliasName="ACTIVITY_TYPE"/>
-  <ViewAttribute
-    Name="ActivityType1"
-    PrecisionRule="true"
-    EntityAttrName="ActivityType"
-    EntityUsage="ActivityEO_arEO"
-    AliasName="ACTIVITY_TYPE1"/>
+    AliasName="START_DATE_TIME"/>
   <ViewCriteria
-    Name="FilterById"
-    ViewObjectName="model.uvo.AppointmentUVO"
+    Name="Appointments_newCriteria"
+    ViewObjectName="model.uvo.Appointments_new"
     Conjunction="AND"
     Mode="3">
     <Properties Name="_Props">
@@ -100,8 +124,15 @@
       </CustomProperties>
     </Properties>
     <ViewCriteriaRow
-      Name="AppointmentUVOCriteria_row_0"
+      Name="Appointments_newCriteria_row_0"
       UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Appointments_newCriteria_Appointments_newCriteria_row_0_AAppLocationId"
+        ViewAttribute="AAppLocationId"
+        Operator="="
+        Conjunction="AND"
+        Value="APPOINTMENT"
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="ActivityId"
         ViewAttribute="ActivityId"
@@ -109,42 +140,11 @@
         Conjunction="AND"
         Value=":AppointmentId"
         IsBindVarValue="true"
-        Required="Required"
-        ValidateBindVars="true"/>
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
-  <ViewLinkAccessor
-    Name="ContactsUVO_ar"
-    ViewLink="model.vl.AppointmentToContactsVL"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="UserUVO_ar"
-    ViewLink="model.vl.AppointmentToUsersVl"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <DeclarativeWhereClause
-    Name="DeclarativeWhereClause">
-    <ViewCriteria
-      Name="AppointmentUVOWhereCriteria"
-      ViewObjectName="model.uvo.AppointmentUVO"
-      Conjunction="AND"
-      Mode="3">
-      <ViewCriteriaRow
-        Name="AppointmentUVOWhereCriteria_row_0"
-        UpperColumns="1">
-        <ViewCriteriaItem
-          Name="ActivityType"
-          ViewAttribute="ActivityType"
-          Operator="="
-          Conjunction="AND"
-          Value="APPOINTMENT"
-          Required="Optional"/>
-      </ViewCriteriaRow>
-    </ViewCriteria>
-  </DeclarativeWhereClause>
 </ViewObject>

@@ -138,6 +138,9 @@
   <ViewUsage
     Name="AppointmentDisplay"
     ViewObjectName="model.uvo.AppointmentUVO"/>
+  <ViewUsage
+    Name="TaskForDisplay"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"

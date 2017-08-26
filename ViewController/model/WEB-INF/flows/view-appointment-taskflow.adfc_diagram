@@ -2,21 +2,6 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
-   <MethodCall
-      id="MethodCall2">
-      <property
-         name="activityId">ExecuteWithParams</property>
-      <property
-         name="x">-262.64844</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="y">283.1377</property>
-      <property
-         name="exceptionHandler">false</property>
-   </MethodCall>
    <View
       id="View3">
       <property
@@ -24,26 +9,41 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">147.36328</property>
+         name="x">111.36328</property>
       <property
          name="start">false</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>view_appointment&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">272.09766</property>
+         name="y">343.39648</property>
       <property
          name="page">/view_appointment.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <MethodCall
+      id="MethodCall13">
+      <property
+         name="activityId">SetCurrentRowWithKeyValue</property>
+      <property
+         name="x">-207.2998</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SetCurrentRowWithKeyValue&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">453.79883</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
-      from="MethodCall2"
+      id="ControlFlowCase15"
+      from="MethodCall13"
       to="View3">
       <property
-         name="fromOutcome">ExecuteWithParams</property>
+         name="fromOutcome">setCurrentRowWithKeyValue</property>
       <property
-         name="sdm:polyPoints">R50,-221.64844,282.7871,106.36328,271.74707,L50</property>
+         name="sdm:polyPoints">R50,-166.2998,453.44824,70.36328,343.0459,L50</property>
    </ControlFlowCase>
 </SDM>

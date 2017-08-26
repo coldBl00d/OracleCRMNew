@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24"
+                id="view_appointment_taskflow_view_appointment_taskflow_SetCurrentRowWithKeyValuePageDef"
+                Package="flows" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="AppointmentDisplay" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AppointmentDisplayIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AppointmentDisplayIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.AppointmentId}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

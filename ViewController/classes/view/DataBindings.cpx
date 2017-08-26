@@ -31,6 +31,12 @@
     <page path="/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef"/>
     <page path="/WEB-INF/fragments/SalesDashboard.jsff" usageId="view_SalesDashboardPageDef1"/>
     <page path="/pages/Home.jsf" usageId="view_HomePageDef"/>
+    <page path="/view_appointment.jsff" usageId="view_view_appointmentPageDef"/>
+    <page path="/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow@SetCurrentRowWithKeyValue"
+          usageId="view_view_appointment_taskflow_view_appointment_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page path="/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow@SetCurrentRowWithKeyValue"
+          usageId="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page path="/WEB-INF/fragments/Tasks.jsff" usageId="view_TasksPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -55,6 +61,12 @@
     <page id="view_SalesDashboardPageDef" path="view.pageDefs.SalesDashboardPageDef"/>
     <page id="view_SalesDashboardPageDef1" path="fragments.SalesDashboardPageDef"/>
     <page id="view_HomePageDef" path="pages.HomePageDef"/>
+    <page id="view_view_appointmentPageDef" path="view.pageDefs.view_appointmentPageDef"/>
+    <page id="view_view_appointment_taskflow_view_appointment_taskflow_SetCurrentRowWithKeyValuePageDef"
+          path="flows.view_appointment_taskflow_view_appointment_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page id="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"
+          path="flows.view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page id="view_TasksPageDef" path="fragments.TasksPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"
