@@ -22,6 +22,7 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
+import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
@@ -94,9 +95,14 @@ public class Viewcontact {
     private RichCommandLink cl2;
     private RichTable t2;
     private RichPanelGroupLayout pgl7;
+    private RichTable t3;
+    private RichToolbar t4;
+    private RichButton b2;
+    private RichButton b3;
+    private RichPanelGroupLayout pgl8;
     private RichQuickQuery qryId3;
     private RichCommandLink cl3;
-    private RichTable t3;
+    private RichTable t5;
 
     public Viewcontact(){
         super();
@@ -115,7 +121,7 @@ public class Viewcontact {
     
     
     public String goInteraction(){
-        goPlace("OpportunityInteractionsIterator",
+        goPlace("InteractionsUVO1Iterator",
             "ActivityTitle",
             "PointerId","InteractionId", 
             "/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow");
@@ -707,6 +713,47 @@ public class Viewcontact {
     }
 
 
+    public void setT3(RichTable t3) {
+        this.t3 = t3;
+    }
+
+    public RichTable getT3() {
+        return t3;
+    }
+
+    public void setT4(RichToolbar t4) {
+        this.t4 = t4;
+    }
+
+    public RichToolbar getT4() {
+        return t4;
+    }
+
+    public void setB2(RichButton b2) {
+        this.b2 = b2;
+    }
+
+    public RichButton getB2() {
+        return b2;
+    }
+
+    public void setB3(RichButton b3) {
+        this.b3 = b3;
+    }
+
+    public RichButton getB3() {
+        return b3;
+    }
+
+    public void setPgl8(RichPanelGroupLayout pgl8) {
+        this.pgl8 = pgl8;
+    }
+
+    public RichPanelGroupLayout getPgl8() {
+        return pgl8;
+    }
+
+
     public void setQryId3(RichQuickQuery qryId3) {
         this.qryId3 = qryId3;
     }
@@ -723,11 +770,11 @@ public class Viewcontact {
         return cl3;
     }
 
-    public void setT3(RichTable t3) {
-        this.t3 = t3;
+    public void setT5(RichTable t5) {
+        this.t5 = t5;
     }
 
-    public RichTable getT3() {
-        return t3;
+    public RichTable getT5() {
+        return t5;
     }
 }
