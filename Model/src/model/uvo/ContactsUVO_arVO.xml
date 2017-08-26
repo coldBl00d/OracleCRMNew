@@ -94,10 +94,7 @@
     EntityUsage="ContactsEO_ar"
     AliasName="CONTACT_ID">
     <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
+      <SchemaBasedProperties/>
     </Properties>
   </ViewAttribute>
   <ViewAttribute

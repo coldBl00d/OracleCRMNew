@@ -6,6 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="OppertunityForOverviewIterator"/>
+    <iterator Binds="RevenueItemsOfOpportunity" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="RevenueItemsOfOpportunityIterator"/>
+    <iterator Binds="PrimaryContact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="PrimaryContactIterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -60,5 +64,36 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="OppertunityForOverviewIterator" StaticList="false" Uses="LOV_Channel" id="Channel"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="RevenueItemsOfOpportunityIterator" id="RevenueItemsOfOpportunity">
+      <nodeDefinition DefName="model.uvo.RevenueItemsUVO" Name="RevenueItemsOfOpportunity0">
+        <AttrNames>
+          <Item Value="WinProbability"/>
+          <Item Value="Quantity"/>
+          <Item Value="SettledPrice"/>
+          <Item Value="BestCaseRevenue"/>
+          <Item Value="WorseCaseRevenue"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ProductsU"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.ProductsUVO">
+        <AttrNames>
+          <Item Value="ProductName"/>
+          <Item Value="ProductCategory"/>
+          <Item Value="ProductPrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PrimaryContactIterator" id="ContactName">
+      <AttrNames>
+        <Item Value="ContactName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrimaryContactIterator" id="ContactId">
+      <AttrNames>
+        <Item Value="ContactId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

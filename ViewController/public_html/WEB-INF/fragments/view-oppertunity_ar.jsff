@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:panelGroupLayout layout="scroll" id="pgl1" binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl1}">
         <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_viewoppertunity_ar.db1}">
             <f:facet name="center">
@@ -33,6 +35,26 @@
                                                       editable="onAccess">
                                             <f:validator binding="#{bindings.OpportunityName.validator}"/>
                                         </af:inputText>
+                                        <af:outputLabel id="ol9"
+                                                        binding="#{backingBeanScope.backing_viewoppertunity_ar.ol9}"
+                                                        value="#{viewcontrollerBundle.PRIMARY_CONTACT_}"/>
+                                        <af:link text="#{bindings.ContactName.inputValue}" id="l1"
+                                                 binding="#{backingBeanScope.backing_viewoppertunity_ar.l1}"
+                                                 action="#{backingBeanScope.backing_viewoppertunity_ar.goContact}">
+                                            <af:setPropertyListener from="#{bindings.ContactId.inputValue}"
+                                                                    to="#{pageFlowScope.ContactId}" type="action"/>
+                                        </af:link>
+                                        <af:outputText value="#{bindings.ContactId.inputValue}"
+                                                       shortDesc="#{bindings.ContactId.hints.tooltip}" id="ot19"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.ot19}"
+                                                       rendered="false">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ContactId.format}"/>
+                                        </af:outputText>
+                                        <af:outputText value="#{bindings.ContactName.inputValue}"
+                                                       shortDesc="#{bindings.ContactName.hints.tooltip}" id="ot18"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.ot18}"
+                                                       rendered="false"/>
                                         <af:outputLabel value="Win Probability" id="ol2"
                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.ol2}"/>
                                         <af:inputText value="#{bindings.OpportunityWinProb.inputValue}"
@@ -203,21 +225,173 @@
                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.gc2}">
                             <af:panelTabbed position="above" id="pt1"
                                             binding="#{backingBeanScope.backing_viewoppertunity_ar.pt1}">
-                                <af:showDetailItem id="tab1" text="Items"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
-                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
-                                        <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
+                                <af:showDetailItem id="tab4" text="Items" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
+                                    <af:toolbar id="t6" binding="#{backingBeanScope.backing_viewoppertunity_ar.t6}">
+                                        <af:button id="b8" binding="#{backingBeanScope.backing_viewoppertunity_ar.b8}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
+                                        <af:button id="b18" binding="#{backingBeanScope.backing_viewoppertunity_ar.b18}"
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                        <af:button id="b11" binding="#{backingBeanScope.backing_viewoppertunity_ar.b11}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
+                                    <af:table value="#{bindings.RevenueItemsOfOpportunity.collectionModel}" var="row"
+                                              rows="#{bindings.RevenueItemsOfOpportunity.rangeSize}"
+                                              emptyText="#{bindings.RevenueItemsOfOpportunity.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              fetchSize="#{bindings.RevenueItemsOfOpportunity.rangeSize}" id="t9"
+                                              binding="#{backingBeanScope.backing_viewoppertunity_ar.t9}"
+                                              columnStretching="last">
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductName.label}"
+                                                   id="c1">
+                                            <af:outputText value="#{row.ProductsU.bindings.ProductName.inputValue}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductName.tooltip}"
+                                                           rendered="#{row.ProductsU != null}" id="ot1"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductCategory.label}"
+                                                   id="c2">
+                                            <af:selectOneChoice value="#{row.ProductsU.bindings.ProductCategory.inputValue}"
+                                                                label="#{row.ProductsU.bindings.ProductCategory.label}"
+                                                                required="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductCategory.mandatory}"
+                                                                shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductCategory.tooltip}"
+                                                                readOnly="true" rendered="#{row.ProductsU != null}"
+                                                                id="soc6">
+                                                <f:selectItems value="#{row.ProductsU.bindings.ProductCategory.items}"
+                                                               id="si6"/>
+                                                <f:validator binding="#{row.ProductsU.bindings.ProductCategory.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductPrice.label}"
+                                                   id="c3">
+                                            <af:outputText value="#{row.ProductsU.bindings.ProductPrice.inputValue}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductPrice.tooltip}"
+                                                           rendered="#{row.ProductsU != null}" id="ot2">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductPrice.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.label}"
+                                                   id="c4">
+                                            <af:outputText value="#{row.WinProbability}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
+                                                           id="ot3">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.WinProbability}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
+                                                           id="ot17">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.WinProbability}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
+                                                           id="ot9">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.WinProbability}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
+                                                           id="ot16">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.WinProbability}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.tooltip}"
+                                                           id="ot12">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WinProbability.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.label}"
+                                                   id="c5">
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
+                                                           id="ot13">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
+                                                           id="ot5">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
+                                                           id="ot4">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.tooltip}"
+                                                           id="ot8">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.label}"
+                                                   id="c6">
+                                            <af:outputText value="#{row.SettledPrice}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.tooltip}"
+                                                           id="ot15">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.SettledPrice}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.tooltip}"
+                                                           id="ot14">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.SettledPrice}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.SettledPrice.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.label}"
+                                                   id="c7">
+                                            <af:outputText value="#{row.BestCaseRevenue}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.tooltip}"
+                                                           id="ot6">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.format}"/>
+                                            </af:outputText>
+                                            <af:outputText value="#{row.BestCaseRevenue}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.tooltip}"
+                                                           id="ot11">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.BestCaseRevenue.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.WorseCaseRevenue.label}"
+                                                   id="c8">
+                                            <af:outputText value="#{row.WorseCaseRevenue}"
+                                                           shortDesc="#{bindings.RevenueItemsOfOpportunity.hints.WorseCaseRevenue.tooltip}"
+                                                           id="ot7">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RevenueItemsOfOpportunity.hints.WorseCaseRevenue.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="tab4" text="Interactions" disclosed="true"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
+                                <af:showDetailItem id="tab1" text="Interactions"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
                                     <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">
                                         <af:button id="b4" binding="#{backingBeanScope.backing_viewoppertunity_ar.b4}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Contacts" id="sdi1"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}">
+                                    <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
+                                        <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>
@@ -239,14 +413,30 @@
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>
-                                <af:showDetailItem text="Items" id="sdi1"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}"/>
                                 <af:showDetailItem id="sdi2" text="Task"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi2}">
                                     <af:toolbar id="t5" binding="#{backingBeanScope.backing_viewoppertunity_ar.t5}">
                                         <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi3" text="Interactions" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi3}">
+                                    <af:toolbar id="t7" binding="#{backingBeanScope.backing_viewoppertunity_ar.t7}">
+                                        <af:button id="b14" binding="#{backingBeanScope.backing_viewoppertunity_ar.b14}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b15" binding="#{backingBeanScope.backing_viewoppertunity_ar.b15}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    </af:toolbar>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi4" text="Documents"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi4}">
+                                    <af:toolbar id="t8" binding="#{backingBeanScope.backing_viewoppertunity_ar.t8}">
+                                        <af:button id="b16" binding="#{backingBeanScope.backing_viewoppertunity_ar.b16}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b17" binding="#{backingBeanScope.backing_viewoppertunity_ar.b17}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>

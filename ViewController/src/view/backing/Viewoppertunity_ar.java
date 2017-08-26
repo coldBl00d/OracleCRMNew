@@ -1,12 +1,16 @@
 package view.backing;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.faces.component.UISelectItems;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
@@ -20,14 +24,18 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.jbo.Key;
 import oracle.jbo.Row;
 import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
+
+import oracle.ui.pattern.dynamicShell.TabContext;
 
 public class Viewoppertunity_ar {
     private RichPanelGroupLayout pgl1;
@@ -95,6 +103,23 @@ public class Viewoppertunity_ar {
     private RichToolbar t5;
     private RichButton b2;
     private RichButton b5;
+    private RichToolbar t6;
+    private RichButton b8;
+    private RichButton b11;
+    private RichShowDetailItem sdi4;
+    private RichToolbar t8;
+    private RichButton b16;
+    private RichButton b17;
+    private RichShowDetailItem sdi3;
+    private RichToolbar t7;
+    private RichButton b14;
+    private RichButton b15;
+    private RichTable t9;
+    private RichButton b18;
+    private RichOutputLabel ol9;
+    private RichLink l1;
+    private RichOutputText ot18;
+    private RichOutputText ot19;
 
 
     public Viewoppertunity_ar(){
@@ -647,4 +672,226 @@ public class Viewoppertunity_ar {
     public RichButton getB5() {
         return b5;
     }
+
+    public void setT6(RichToolbar t6) {
+        this.t6 = t6;
+    }
+
+    public RichToolbar getT6() {
+        return t6;
+    }
+
+    public void setB8(RichButton b8) {
+        this.b8 = b8;
+    }
+
+    public RichButton getB8() {
+        return b8;
+    }
+
+    public void setB11(RichButton b11) {
+        this.b11 = b11;
+    }
+
+    public RichButton getB11() {
+        return b11;
+    }
+
+    public void setSdi4(RichShowDetailItem sdi4) {
+        this.sdi4 = sdi4;
+    }
+
+    public RichShowDetailItem getSdi4() {
+        return sdi4;
+    }
+
+    public void setT8(RichToolbar t8) {
+        this.t8 = t8;
+    }
+
+    public RichToolbar getT8() {
+        return t8;
+    }
+
+    public void setB16(RichButton b16) {
+        this.b16 = b16;
+    }
+
+    public RichButton getB16() {
+        return b16;
+    }
+
+    public void setB17(RichButton b17) {
+        this.b17 = b17;
+    }
+
+    public RichButton getB17() {
+        return b17;
+    }
+
+    public void setSdi3(RichShowDetailItem sdi3) {
+        this.sdi3 = sdi3;
+    }
+
+    public RichShowDetailItem getSdi3() {
+        return sdi3;
+    }
+
+    public void setT7(RichToolbar t7) {
+        this.t7 = t7;
+    }
+
+    public RichToolbar getT7() {
+        return t7;
+    }
+
+    public void setB14(RichButton b14) {
+        this.b14 = b14;
+    }
+
+    public RichButton getB14() {
+        return b14;
+    }
+
+    public void setB15(RichButton b15) {
+        this.b15 = b15;
+    }
+
+    public RichButton getB15() {
+        return b15;
+    }
+
+    public void setT9(RichTable t9) {
+        this.t9 = t9;
+    }
+
+    public RichTable getT9() {
+        return t9;
+    }
+
+    public void setB18(RichButton b18) {
+        this.b18 = b18;
+    }
+
+    public RichButton getB18() {
+        return b18;
+    }
+
+    public void setOl9(RichOutputLabel ol9) {
+        this.ol9 = ol9;
+    }
+
+    public RichOutputLabel getOl9() {
+        return ol9;
+    }
+
+    public void setL1(RichLink l1) {
+        this.l1 = l1;
+    }
+
+    public RichLink getL1() {
+        return l1;
+    }
+
+    public void setOt18(RichOutputText ot18) {
+        this.ot18 = ot18;
+    }
+
+    public RichOutputText getOt18() {
+        return ot18;
+    }
+
+    public void setOt19(RichOutputText ot19) {
+        this.ot19 = ot19;
+    }
+
+    public RichOutputText getOt19() {
+        return ot19;
+    }
+    
+    public String goContact(){
+        goPlace("PrimaryContactIterator",
+            "ContactName",
+            "PointerId","ContactId", 
+            "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow");
+        return null;
+    }
+    
+    public String goPlace(String iteratorName, String fieldName, String PointerName,String currentScopePointerName,  String taskflowId){
+        
+        System.out.println("Setting iterator as "+ iteratorName);
+        System.out.println("Setting field to fetch from database as "+ fieldName);
+        System.out.println("Setting pointer name as " + PointerName);
+        System.out.println("Make sure that the taskflow variable in the destination taskflow is "+ PointerName);
+        System.out.println("Make sure that the pageFlowScope variable containing the id is "+ currentScopePointerName);
+    
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(currentScopePointerName).toString());
+        System.out.println("Found the id from " +currentScopePointerName+" pageflow to be "+ id);
+    
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        ViewObject vobj = iterator.getViewObject();
+        Key key = new Key(new Object[] {id});
+        if(vobj == null){
+            System.out.println("The view object returned null");
+            return null;
+        }
+        Row row[] = vobj.findByKey(key, 1);
+    //Row row = vobj.getRow(key);
+        if(row[0] == null){
+            System.out.println("The row object returned null");
+            return null;
+        }
+    
+        System.out.println("Row identified") ;
+        String tabHeading = (String)row[0].getAttribute(fieldName);
+        System.out.println("Fetched "+ fieldName) ;
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+       // System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
+        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        m.put(PointerName, id);
+        launchTab(m, tabHeading, taskflowId);
+        System.out.println("Called tab with taskflow id "+ taskflowId);
+        System.out.println("Done");
+        return null;
+    }
+    
+    public void launchTab(Map<String, Object> params, String tabHeading, String taskFlow){
+        _launchActivity( 
+          tabHeading,
+          taskFlow,
+          true, params); 
+    }
+    
+    private void _launchActivity(String title, String taskflowId, boolean newTab, Map<String, Object> params) 
+    { 
+      try 
+      { 
+        if (newTab) 
+        { 
+            System.out.println("Calling new tab");
+          TabContext.getCurrentInstance().addTab( 
+            title, 
+            taskflowId, params); 
+        } 
+        else 
+        { 
+          TabContext.getCurrentInstance().addOrSelectTab( 
+            title, 
+            taskflowId, params); 
+        } 
+      } 
+      catch (TabContext.TabOverflowException toe) 
+      { 
+        // causes a dialog to be displayed to the user saying that there are 
+        // too many tabs open - the new tab will not be opened... 
+        toe.handleDefault();  
+      } 
+      
+      System.out.println("Exiting launch activity");
+      
+      
+    }
+    
 }

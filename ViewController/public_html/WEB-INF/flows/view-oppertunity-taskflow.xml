@@ -3,12 +3,17 @@
   <task-flow-definition id="view-oppertunity-taskflow">
     <default-activity>ExecuteWithParams</default-activity>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
     <input-parameter-definition id="__2">
       <name>PointerId</name>
       <value>#{pageFlowScope.PointerId}</value>
       <class>java.lang.Integer</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__4">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
     </input-parameter-definition>
     <view id="view-oppertunity_ar">
       <page>/WEB-INF/fragments/view-oppertunity_ar.jsff</page>
