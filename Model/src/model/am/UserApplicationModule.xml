@@ -156,6 +156,18 @@
   <ViewUsage
     Name="OpportunityNotes"
     ViewObjectName="model.uvo.NotesUVO_arVO"/>
+  <ViewUsage
+    Name="UserUVO_arVO1"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Assigned"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="Creator"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="UserUVO_arVO4"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -335,6 +347,30 @@
     ViewLinkObjectName="model.vl.OpportunityToNotesVL"
     SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
     DstViewUsageName="model.am.UserApplicationModule.OpportunityNotes"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NotesToCreator3"
+    ViewLinkObjectName="model.vl.NotesToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.OpportunityNotes"
+    DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToAssigneeVL_ar1"
+    ViewLinkObjectName="model.vl.TaskToAssigneeVL_ar"
+    SrcViewUsageName="model.am.UserApplicationModule.OpportunityTask"
+    DstViewUsageName="model.am.UserApplicationModule.Assigned"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TaskToCreator3"
+    ViewLinkObjectName="model.vl.TaskToCreator"
+    SrcViewUsageName="model.am.UserApplicationModule.OpportunityTask"
+    DstViewUsageName="model.am.UserApplicationModule.Creator"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InteractionCreatorVL1"
+    ViewLinkObjectName="model.vl.InteractionCreatorVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OpportunityInteractions"
+    DstViewUsageName="model.am.UserApplicationModule.UserUVO_arVO4"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

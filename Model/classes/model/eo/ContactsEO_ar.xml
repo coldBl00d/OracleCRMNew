@@ -283,13 +283,6 @@
     AssociationOtherEnd="model.assoc.CustContactLOVAssoc.ContactsEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="OppertunityEO_ar2"
-    Association="model.assoc.OpportunityToContactAssoc"
-    AssociationEnd="model.assoc.OpportunityToContactAssoc.OppertunityEO_ar2"
-    AssociationOtherEnd="model.assoc.OpportunityToContactAssoc.ContactsEO_ar2"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <Key
     Name="ContactsPk"
     PrimaryKey="true">

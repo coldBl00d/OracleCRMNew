@@ -655,5 +655,68 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     }
 
 
+    /**
+     * Container's getter for UserUVO_arVO1.
+     * @return UserUVO_arVO1
+     */
+    public ViewObjectImpl getUserUVO_arVO1() {
+        return (ViewObjectImpl) findViewObject("UserUVO_arVO1");
+    }
+
+    /**
+     * Container's getter for NotesToCreator3.
+     * @return NotesToCreator3
+     */
+    public ViewLinkImpl getNotesToCreator3() {
+        return (ViewLinkImpl) findViewLink("NotesToCreator3");
+    }
+
+    /**
+     * Container's getter for UserUVO_arVO2.
+     * @return UserUVO_arVO2
+     */
+    public ViewObjectImpl getAssigned() {
+        return (ViewObjectImpl) findViewObject("Assigned");
+    }
+
+    /**
+     * Container's getter for TaskToAssigneeVL_ar1.
+     * @return TaskToAssigneeVL_ar1
+     */
+    public ViewLinkImpl getTaskToAssigneeVL_ar1() {
+        return (ViewLinkImpl) findViewLink("TaskToAssigneeVL_ar1");
+    }
+
+    /**
+     * Container's getter for UserUVO_arVO3.
+     * @return UserUVO_arVO3
+     */
+    public ViewObjectImpl getCreator() {
+        return (ViewObjectImpl) findViewObject("Creator");
+    }
+
+    /**
+     * Container's getter for TaskToCreator3.
+     * @return TaskToCreator3
+     */
+    public ViewLinkImpl getTaskToCreator3() {
+        return (ViewLinkImpl) findViewLink("TaskToCreator3");
+    }
+
+    /**
+     * Container's getter for UserUVO_arVO4.
+     * @return UserUVO_arVO4
+     */
+    public ViewObjectImpl getUserUVO_arVO4() {
+        return (ViewObjectImpl) findViewObject("UserUVO_arVO4");
+    }
+
+    /**
+     * Container's getter for InteractionCreatorVL1.
+     * @return InteractionCreatorVL1
+     */
+    public ViewLinkImpl getInteractionCreatorVL1() {
+        return (ViewLinkImpl) findViewLink("InteractionCreatorVL1");
+    }
 }
 
