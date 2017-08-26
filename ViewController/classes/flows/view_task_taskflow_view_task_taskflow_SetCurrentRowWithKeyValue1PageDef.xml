@@ -4,11 +4,10 @@
                 SkipValidation="true">
   <parameters/>
   <executables>
-    <iterator Binds="TaskForDisplay" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="TaskForDisplayIterator"/>
+    <iterator Binds="Tasks" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="TasksIterator"/>
   </executables>
   <bindings>
-    <action IterBinding="TaskForDisplayIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+    <action IterBinding="TasksIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
             Action="setCurrentRowWithKeyValue">
       <NamedData NDName="rowKey" NDValue="#{pageFlowScope.PointerId}" NDType="java.lang.String"/>
     </action>

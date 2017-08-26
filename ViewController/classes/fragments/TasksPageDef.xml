@@ -4,11 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TaskForDisplay" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="TaskForDisplayIterator"/>
+    <iterator Binds="Tasks" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="TasksIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="TaskForDisplayIterator" id="ActivityTitle">
+    <attributeValues IterBinding="TasksIterator" id="ActivityTitle1">
       <AttrNames>
         <Item Value="ActivityTitle"/>
       </AttrNames>

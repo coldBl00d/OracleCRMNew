@@ -22,13 +22,13 @@
                                                      binding="#{backingBeanScope.ViewTask.pgl3}">
                                     <af:outputLabel id="ol1" value="#{viewcontrollerBundle.TASK_NAME}"
                                                     binding="#{backingBeanScope.ViewTask.ol1}"/>
-                                    <af:inputText value="#{bindings.ActivityTitle.inputValue}" simple="true"
-                                                  required="#{bindings.ActivityTitle.hints.mandatory}"
-                                                  columns="#{bindings.ActivityTitle.hints.displayWidth}"
-                                                  maximumLength="#{bindings.ActivityTitle.hints.precision}"
-                                                  shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it1"
+                                    <af:inputText value="#{bindings.ActivityTitle1.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityTitle1.hints.mandatory}"
+                                                  columns="#{bindings.ActivityTitle1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityTitle1.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityTitle1.hints.tooltip}" id="it1"
                                                   binding="#{backingBeanScope.ViewTask.it1}" editable="onAccess">
-                                        <f:validator binding="#{bindings.ActivityTitle.validator}"/>
+                                        <f:validator binding="#{bindings.ActivityTitle1.validator}"/>
                                     </af:inputText>
                                     <af:outputLabel value="#{viewcontrollerBundle.DUE_DATE}" id="ol2"
                                                     binding="#{backingBeanScope.ViewTask.ol2}"/>
