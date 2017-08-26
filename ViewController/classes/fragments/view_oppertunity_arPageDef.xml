@@ -10,6 +10,10 @@
               id="RevenueItemsOfOpportunityIterator"/>
     <iterator Binds="PrimaryContact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="PrimaryContactIterator"/>
+    <iterator Binds="OpportunityInteractions" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunityInteractionsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunityInteractionsIterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -95,5 +99,25 @@
         <Item Value="ContactId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="OpportunityInteractionsIterator" id="OpportunityInteractions">
+      <nodeDefinition DefName="model.uvo.InteractionsUVO" Name="OpportunityInteractions0">
+        <AttrNames>
+          <Item Value="ActivityTitle"/>
+          <Item Value="ACreatorId"/>
+          <Item Value="AInterResolution"/>
+          <Item Value="ActivityId"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="StartDateTime"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

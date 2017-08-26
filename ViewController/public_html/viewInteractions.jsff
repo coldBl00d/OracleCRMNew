@@ -17,6 +17,8 @@
                                           inlineStyle="width:104px;"/>
                                 <af:panelGroupLayout id="pgl3" layout="vertical">
                                     <af:outputLabel value="Name" id="ol3"/>
+                                    <af:outputText value="#{bindings.ActivityTitle.inputValue}"
+                                                   shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="ot1"/>
                                     <af:outputLabel value="Type" id="ol2"/>
                                     <af:outputLabel value="outputLabel1" id="ol1"/>
                                 </af:panelGroupLayout>

@@ -385,6 +385,77 @@
                                         <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId1}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                            binding="#{backingBeanScope.backing_viewoppertunity_ar.cl1}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                    <af:panelGroupLayout layout="vertical" id="pgl6"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl6}">
+                                        <af:table value="#{bindings.OpportunityInteractions.collectionModel}" var="row"
+                                                  rows="#{bindings.OpportunityInteractions.rangeSize}"
+                                                  emptyText="#{bindings.OpportunityInteractions.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  fetchSize="#{bindings.OpportunityInteractions.rangeSize}"
+                                                  partialTriggers="::qryId1" id="t7"
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t7}">
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.ActivityTitle.label}"
+                                                       id="c9">
+                                                <af:outputText value="#{row.ActivityTitle}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.ActivityTitle.tooltip}"
+                                                               id="ot20"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.ACreatorId.label}"
+                                                       id="c10">
+                                                <af:link text="#{row.ACreatorId}" id="l2">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{row.InteractionId}" type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.AInterResolution.label}"
+                                                       id="c11">
+                                                <af:outputText value="#{row.AInterResolution}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.AInterResolution.tooltip}"
+                                                               id="ot22"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.ActivityId.label}"
+                                                       id="c12" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.ActivityId.tooltip}"
+                                                               id="ot23">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.OpportunityInteractions.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.EndDueDateTime.label}"
+                                                       id="c13">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.EndDueDateTime.tooltip}"
+                                                               id="ot24">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityInteractions.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.StartDateTime.label}"
+                                                       id="c14">
+                                                <af:outputText value="#{row.StartDateTime}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.StartDateTime.tooltip}"
+                                                               id="ot25">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityInteractions.hints.StartDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.OpportunityInteractions.hints.UserUVO_ar.FirstName.label}"
+                                                       id="c15">
+                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.OpportunityInteractions.hints.UserUVO_ar.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar != null}" id="ot26"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem text="Contacts" id="sdi1"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}">
@@ -419,15 +490,6 @@
                                         <af:button id="b2" binding="#{backingBeanScope.backing_viewoppertunity_ar.b2}"
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b5" binding="#{backingBeanScope.backing_viewoppertunity_ar.b5}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
-                                    </af:toolbar>
-                                </af:showDetailItem>
-                                <af:showDetailItem id="sdi3" text="Interactions" disclosed="true"
-                                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi3}">
-                                    <af:toolbar id="t7" binding="#{backingBeanScope.backing_viewoppertunity_ar.t7}">
-                                        <af:button id="b14" binding="#{backingBeanScope.backing_viewoppertunity_ar.b14}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b15" binding="#{backingBeanScope.backing_viewoppertunity_ar.b15}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>

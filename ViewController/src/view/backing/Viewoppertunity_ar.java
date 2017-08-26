@@ -10,6 +10,7 @@ import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
+import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
@@ -24,6 +25,7 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
@@ -110,16 +112,16 @@ public class Viewoppertunity_ar {
     private RichToolbar t8;
     private RichButton b16;
     private RichButton b17;
-    private RichShowDetailItem sdi3;
-    private RichToolbar t7;
-    private RichButton b14;
-    private RichButton b15;
     private RichTable t9;
     private RichButton b18;
     private RichOutputLabel ol9;
     private RichLink l1;
     private RichOutputText ot18;
     private RichOutputText ot19;
+    private RichPanelGroupLayout pgl6;
+    private RichQuickQuery qryId1;
+    private RichCommandLink cl1;
+    private RichTable t7;
 
 
     public Viewoppertunity_ar(){
@@ -729,37 +731,6 @@ public class Viewoppertunity_ar {
         return b17;
     }
 
-    public void setSdi3(RichShowDetailItem sdi3) {
-        this.sdi3 = sdi3;
-    }
-
-    public RichShowDetailItem getSdi3() {
-        return sdi3;
-    }
-
-    public void setT7(RichToolbar t7) {
-        this.t7 = t7;
-    }
-
-    public RichToolbar getT7() {
-        return t7;
-    }
-
-    public void setB14(RichButton b14) {
-        this.b14 = b14;
-    }
-
-    public RichButton getB14() {
-        return b14;
-    }
-
-    public void setB15(RichButton b15) {
-        this.b15 = b15;
-    }
-
-    public RichButton getB15() {
-        return b15;
-    }
 
     public void setT9(RichTable t9) {
         this.t9 = t9;
@@ -814,6 +785,14 @@ public class Viewoppertunity_ar {
             "ContactName",
             "PointerId","ContactId", 
             "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow");
+        return null;
+    }
+    
+    public String goInteraction(){
+        goPlace("OpportunityInteractionsIterator",
+            "ActivityTitle",
+            "PointerId","InteractionId", 
+            "/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow");
         return null;
     }
     
@@ -893,5 +872,37 @@ public class Viewoppertunity_ar {
       
       
     }
-    
+
+    public void setPgl6(RichPanelGroupLayout pgl6) {
+        this.pgl6 = pgl6;
+    }
+
+    public RichPanelGroupLayout getPgl6() {
+        return pgl6;
+    }
+
+
+    public void setQryId1(RichQuickQuery qryId1) {
+        this.qryId1 = qryId1;
+    }
+
+    public RichQuickQuery getQryId1() {
+        return qryId1;
+    }
+
+    public void setCl1(RichCommandLink cl1) {
+        this.cl1 = cl1;
+    }
+
+    public RichCommandLink getCl1() {
+        return cl1;
+    }
+
+    public void setT7(RichTable t7) {
+        this.t7 = t7;
+    }
+
+    public RichTable getT7() {
+        return t7;
+    }
 }

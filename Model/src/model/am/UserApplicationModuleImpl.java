@@ -718,5 +718,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getInteractionCreatorVL1() {
         return (ViewLinkImpl) findViewLink("InteractionCreatorVL1");
     }
+
+    /**
+     * Container's getter for InteractionsUVO2.
+     * @return InteractionsUVO2
+     */
+    public ViewObjectImpl getInteractionsDisplay() {
+        return (ViewObjectImpl) findViewObject("InteractionsDisplay");
+    }
 }
 

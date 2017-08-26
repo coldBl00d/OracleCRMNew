@@ -37,6 +37,9 @@
     <page path="/WEB-INF/fragments/Tasks.jsff" usageId="view_TasksPageDef"/>
     <page path="/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow@SetCurrentRowWithKeyValue"
           usageId="view_view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page path="/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow@SetCurrentRowWithKeyValue"
+          usageId="view_view_interactions_taskflow_view_interactions_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page path="/viewInteractions.jsff" usageId="view_viewInteractionsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -67,6 +70,9 @@
     <page id="view_TasksPageDef" path="fragments.TasksPageDef"/>
     <page id="view_view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"
           path="flows.view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page id="view_view_interactions_taskflow_view_interactions_taskflow_SetCurrentRowWithKeyValuePageDef"
+          path="flows.view_interactions_taskflow_view_interactions_taskflow_SetCurrentRowWithKeyValuePageDef"/>
+    <page id="view_viewInteractionsPageDef" path="view.pageDefs.viewInteractionsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

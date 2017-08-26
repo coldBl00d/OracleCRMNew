@@ -168,6 +168,9 @@
   <ViewUsage
     Name="UserUVO_arVO4"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="InteractionsDisplay"
+    ViewObjectName="model.uvo.InteractionsUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
