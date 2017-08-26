@@ -356,21 +356,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewLinkImpl) findViewLink("ContactToAddressVL1");
     }
 
-    /**
-     * Container's getter for OppertunityUVO_arVO1.
-     * @return OppertunityUVO_arVO1
-     */
-    public ViewObjectImpl getOppertunityUVO_arVO1() {
-        return (ViewObjectImpl) findViewObject("OppertunityUVO_arVO1");
-    }
-
-    /**
-     * Container's getter for ContactToOppertunityViewLink1.
-     * @return ContactToOppertunityViewLink1
-     */
-    public ViewLinkImpl getContactToOppertunityViewLink1() {
-        return (ViewLinkImpl) findViewLink("ContactToOppertunityViewLink1");
-    }
 
     /**
      * Container's getter for TaskUVO_arVO1.
@@ -727,6 +712,39 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
      */
     public ViewObjectImpl getContactList() {
         return (ViewObjectImpl) findViewObject("ContactList");
+    }
+
+
+    /**
+     * Container's getter for OppertunityUVO_arVO1.
+     * @return OppertunityUVO_arVO1
+     */
+    public ViewObjectImpl getOpportunitiesOfContact() {
+        return (ViewObjectImpl) findViewObject("OpportunitiesOfContact");
+    }
+
+    /**
+     * Container's getter for ContactToOppertunityViewLink2.
+     * @return ContactToOppertunityViewLink2
+     */
+    public ViewLinkImpl getContactToOppertunityViewLink2() {
+        return (ViewLinkImpl) findViewLink("ContactToOppertunityViewLink2");
+    }
+
+    /**
+     * Container's getter for ContactsUVO_arVO1.
+     * @return ContactsUVO_arVO1
+     */
+    public ViewObjectImpl getPrimaryContact2() {
+        return (ViewObjectImpl) findViewObject("PrimaryContact2");
+    }
+
+    /**
+     * Container's getter for OppertunityToPrimaryContactsVL_ar3.
+     * @return OppertunityToPrimaryContactsVL_ar3
+     */
+    public ViewLinkImpl getOppertunityToPrimaryContactsVL_ar3() {
+        return (ViewLinkImpl) findViewLink("OppertunityToPrimaryContactsVL_ar3");
     }
 }
 

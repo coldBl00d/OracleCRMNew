@@ -8,10 +8,12 @@
     <iterator Binds="Contact" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="ContactIterator"/>
     <iterator Binds="AddressOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="AddressOfCustomerIterator"/>
-    <iterator Binds="OppertunityForOverview" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="OppertunityForOverviewIterator"/>
+    <iterator id="OpportunityOfContactsIterator" Binds="OppertunityOfCustomer"
+              DataControl="UserApplicationModuleDataControl" RangeSize="25"/>
+    <iterator Binds="OpportunitiesOfContact" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunitiesOfContactIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="OppertunityForOverviewIterator" id="ImplicitViewCriteriaQuery"/>
+                  Binds="OpportunitiesOfContactIterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerIterator" id="AccountName">
@@ -67,35 +69,52 @@
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="UserApplicationModuleDataControl"/>
-    <tree IterBinding="OppertunityForOverviewIterator" id="OppertunityForOverview">
-      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityForOverview0">
+    <attributeValues IterBinding="ContactIterator" id="ContactName">
+      <AttrNames>
+        <Item Value="ContactName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="OpportunityOfContactsIterator" id="OppertunityOfCustomer">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OppertunityOfCustomer0">
+        <AttrNames>
+          <Item Value="OpportunityWinProb"/>
+          <Item Value="Channel"/>
+          <Item Value="DecisionLevel"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="OpportunityCloseDate"/>
+          <Item Value="OpportunityName"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="RiskLevel"/>
+          <Item Value="SalesMethod"/>
+          <Item Value="SalesStage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunitiesOfContactIterator" id="OpportunitiesOfContact">
+      <nodeDefinition DefName="model.uvo.OppertunityUVO_arVO" Name="OpportunitiesOfContact0">
         <AttrNames>
           <Item Value="OpportunityName"/>
           <Item Value="OpportunityId"/>
-          <Item Value="AccId"/>
           <Item Value="OpportunityWinProb"/>
           <Item Value="OpportunityCloseDate"/>
           <Item Value="PrimaryContactId"/>
           <Item Value="SalesStage"/>
-          <Item Value="Revenue"/>
-          <Item Value="BudgetAmount"/>
           <Item Value="EstimatedDuration"/>
           <Item Value="RiskLevel"/>
         </AttrNames>
         <Accessors>
+          <Item Value="AKUsersU"/>
           <Item Value="ContactsUVO_ar"/>
-          <Item Value="UserUVO_ar"/>
         </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.AKUsersUVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
       </nodeDefinition>
       <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
         <AttrNames>
-          <Item Value="ContactId"/>
           <Item Value="ContactName"/>
-        </AttrNames>
-      </nodeDefinition>
-      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
-        <AttrNames>
-          <Item Value="FirstName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

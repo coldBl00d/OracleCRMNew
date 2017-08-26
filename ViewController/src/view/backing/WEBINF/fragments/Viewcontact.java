@@ -20,11 +20,14 @@ import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelHeader;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichImage;
+
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.jbo.Key;
 import oracle.jbo.Row;
@@ -57,7 +60,6 @@ public class Viewcontact {
     private HtmlOutputLabel ol7;
     private HtmlOutputLabel ol8;
     private HtmlOutputLabel ol9;
-    private RichInputText it1;
     private RichInputText it2;
     private RichInputText it3;
     private RichInputText it4;
@@ -73,7 +75,19 @@ public class Viewcontact {
     private RichInputText it6;
     private RichInputText it7;
     private RichButton b1;
+    private RichInputText it10;
+    private RichSpacer s1;
+    private RichSpacer s2;
+    private RichSpacer s3;
+    private RichSpacer s4;
+    private RichSpacer s5;
+    private RichSpacer s6;
+    private RichSpacer s7;
+    private RichSpacer s8;
+    private RichSpacer s9;
     private RichPanelGroupLayout pgl4;
+    private RichPanelGroupLayout pgl5;
+    private RichPanelHeader ph1;
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t1;
@@ -83,114 +97,99 @@ public class Viewcontact {
         System.out.println("Pointer Id is :"+ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
     }
     
-//    public String goOpportunity(){
-//        String iteratorName = "OppertunityForOverviewIterator";
-//        String fieldToFetchWithTheId = "OpportunityName";
-//        String pageFlowVariableName = "OppertunityId";
-//        String taskFlow = "/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow";
-//        String pointerName = "PointerId";
-//        
-//        
-//        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
-//        
-//        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-//        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
-//        ViewObject vobj = iterator.getViewObject();
-//        Key key = new Key(new Object[] {id});
-//        Row row = vobj.getRow(key);
-//        
-//        //RowSetIterator rsi = iterator.getRowSetIterator();
-//        //Row row = rsi.findByKey(key, 1)[0];
-//        
-//        String tabHeading = "Opp-"+(String)row.getAttribute(fieldToFetchWithTheId);
-//        Map<String, Object > m = new HashMap<String, Object> ();
-//        m.put("tabContext", TabContext.getCurrentInstance());
-//        System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName));
-//        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
-//        m.put(pointerName, value);
-//        openTab(m, tabHeading, taskFlow);
-//        System.out.println("Done");
-//        return null;
-//    }
+    public String goOpportunity(){
+        goPlace("OpportunitiesOfContactIterator",
+                "OpportunityName",
+                "PointerId",
+                "OpportunityId",
+                "WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow");
+        
+        return null;
+    }
     
-        public String goOpportunity(){
-        String iteratorName = "OppertunityForOverviewIterator";
-        String fieldName = "OpportunityName";
-        String PointerName = "OpportunityId";
+    
+    public String goInteraction(){
+        goPlace("OpportunityInteractionsIterator",
+            "ActivityTitle",
+            "PointerId","InteractionId", 
+            "/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow");
+        return null;
+    }
+    
+    public String goTask(){
+        goPlace("OpportunityTaskIterator",
+            "ActivityTitle",
+            "PointerId","TaskId", 
+            "/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
+        return null;
+    }
+    
+    public String goAppointment(){
+        goPlace("OpportunitiesOfContactIterator",
+            "ActivityTitle",
+            "AppointmentId","AppointmentId", 
+            "/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow");
+        return null;
+    }
+    
+    public String goContact(){
+        goPlace("ContactListIterator",
+            "ContactName",
+            "PointerId","ContactId", 
+            "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow");
+        return null;
+    }
+    
+    public String goPlace(String iteratorName, String fieldName, String PointerName,String currentScopePointerName,  String taskflowId){
         
-        
-        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
-        
+        System.out.println("Setting iterator as "+ iteratorName);
+        System.out.println("Setting field to fetch from database as "+ fieldName);
+        System.out.println("Setting pointer name as " + PointerName);
+        System.out.println("Make sure that the taskflow variable in the destination taskflow is "+ PointerName);
+        System.out.println("Make sure that the pageFlowScope variable containing the id is "+ currentScopePointerName);
+    
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(currentScopePointerName).toString());
+        System.out.println("Found the id from " +currentScopePointerName+" pageflow to be "+ id);
+    
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        if(iterator == null){
+            System.out.println("The iterator returned null");
+            return null;
+        }
         ViewObject vobj = iterator.getViewObject();
         Key key = new Key(new Object[] {id});
-        Row row = vobj.getRow(key);
-        
-        //RowSetIterator rsi = iterator.getRowSetIterator();
-        //Row row = rsi.findByKey(key, 1)[0];
-        
-        String tabHeading = "Opp-"+(String)row.getAttribute(fieldName);
+        if(vobj == null){
+            System.out.println("The view object returned null");
+            return null;
+        }
+        Row row[] = vobj.findByKey(key, 1);
+    //Row row = vobj.getRow(key);
+        if(row[0] == null){
+            System.out.println("The row object returned null");
+            return null;
+        }
+    
+        System.out.println("Row identified") ;
+        String tabHeading = (String)row[0].getAttribute(fieldName);
+        System.out.println("Fetched "+ fieldName) ;
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
-        System.out.println("Pointer id in go :" + ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
-        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
-        m.put("PointerId", value);
-        viewOppertunityActivity(m, tabHeading);
+       // System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
+        //Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        m.put(PointerName, id);
+        launchTab(m, tabHeading, taskflowId);
+        System.out.println("Called tab with taskflow id "+ taskflowId);
         System.out.println("Done");
         return null;
     }
-    public void viewOppertunityActivity(Map<String, Object> params, String companyName) 
-      { 
-        /** 
-        * Example method when called repeatedly, will open another instance as 
-        * oppose to selecting a previously opened tab instance. Note the boolean 
-        * to create another tab instance is set to true. 
-        */ 
-        System.out.println("Calling activity");
-        _launchActivity( 
-          companyName, 
-          "/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow",  
-          true, params); 
-      } 
     
-    public String goContact(){
-        String iteratorName = "CustomerContactsIterator";
-        String pageFlowVariableName = "ContactId";
-        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(pageFlowVariableName).toString());
-        String fieldToFetchWithTheId = "ContactName";
-        String taskFlow = "/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow";
-        String pointerName = "PointerId";
-        
-        System.out.println("Id passed on by view customer is "+ id);
-        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
-        ViewObject vobj = iterator.getViewObject();
-        Key key = new Key(new Object[] {id});
-        Row row = vobj.getRow(key);
-        String tabHeading = "Contact-"+(String)row.getAttribute(fieldToFetchWithTheId);
-        
-        Map<String, Object > m = new HashMap<String, Object> ();
-        m.put("tabContext", TabContext.getCurrentInstance());
-        m.put(pointerName, id);
-        
-        openTab(m, tabHeading,taskFlow);
-        return null;
+    public void launchTab(Map<String, Object> params, String tabHeading, String taskFlow){
+        _launchActivity( 
+          tabHeading,
+          taskFlow,
+          true, params); 
     }
-    
-    public void openTab(Map<String, Object> params, String companyName, String taskFlow) 
-      { 
-        /** 
-        * Example method when called repeatedly, will open another instance as 
-        * oppose to selecting a previously opened tab instance. Note the boolean 
-        * to create another tab instance is set to true. 
-        */ 
-        System.out.println("Calling activity");
-        _launchActivity( 
-          companyName, 
-          taskFlow,  
-          true, params); 
-      } 
     
     private void _launchActivity(String title, String taskflowId, boolean newTab, Map<String, Object> params) 
     { 
@@ -221,7 +220,7 @@ public class Viewcontact {
       
       
     }
-
+          
     public void setPgl1(RichPanelGroupLayout pgl1) {
         this.pgl1 = pgl1;
     }
@@ -415,13 +414,6 @@ public class Viewcontact {
         return ol9;
     }
 
-    public void setIt1(RichInputText it1) {
-        this.it1 = it1;
-    }
-
-    public RichInputText getIt1() {
-        return it1;
-    }
 
     public void setIt2(RichInputText it2) {
         this.it2 = it2;
@@ -544,6 +536,87 @@ public class Viewcontact {
         return b1;
     }
 
+
+    public void setIt10(RichInputText it10) {
+        this.it10 = it10;
+    }
+
+    public RichInputText getIt10() {
+        return it10;
+    }
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+    public void setS3(RichSpacer s3) {
+        this.s3 = s3;
+    }
+
+    public RichSpacer getS3() {
+        return s3;
+    }
+
+    public void setS4(RichSpacer s4) {
+        this.s4 = s4;
+    }
+
+    public RichSpacer getS4() {
+        return s4;
+    }
+
+    public void setS5(RichSpacer s5) {
+        this.s5 = s5;
+    }
+
+    public RichSpacer getS5() {
+        return s5;
+    }
+
+    public void setS6(RichSpacer s6) {
+        this.s6 = s6;
+    }
+
+    public RichSpacer getS6() {
+        return s6;
+    }
+
+    public void setS7(RichSpacer s7) {
+        this.s7 = s7;
+    }
+
+    public RichSpacer getS7() {
+        return s7;
+    }
+
+    public void setS8(RichSpacer s8) {
+        this.s8 = s8;
+    }
+
+    public RichSpacer getS8() {
+        return s8;
+    }
+
+    public void setS9(RichSpacer s9) {
+        this.s9 = s9;
+    }
+
+    public RichSpacer getS9() {
+        return s9;
+    }
+
     public void setPgl4(RichPanelGroupLayout pgl4) {
         this.pgl4 = pgl4;
     }
@@ -552,6 +625,22 @@ public class Viewcontact {
         return pgl4;
     }
 
+
+    public void setPgl5(RichPanelGroupLayout pgl5) {
+        this.pgl5 = pgl5;
+    }
+
+    public RichPanelGroupLayout getPgl5() {
+        return pgl5;
+    }
+
+    public void setPh1(RichPanelHeader ph1) {
+        this.ph1 = ph1;
+    }
+
+    public RichPanelHeader getPh1() {
+        return ph1;
+    }
 
     public void setQryId1(RichQuickQuery qryId1) {
         this.qryId1 = qryId1;
@@ -568,7 +657,6 @@ public class Viewcontact {
     public RichCommandLink getCl1() {
         return cl1;
     }
-
 
     public void setT1(RichTable t1) {
         this.t1 = t1;
