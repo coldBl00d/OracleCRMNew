@@ -867,7 +867,7 @@ public class Viewoppertunity_ar {
         Map<String, Object > m = new HashMap<String, Object> ();
         m.put("tabContext", TabContext.getCurrentInstance());
        // System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
-        Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+        //Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
         m.put(PointerName, id);
         launchTab(m, tabHeading, taskflowId);
         System.out.println("Called tab with taskflow id "+ taskflowId);

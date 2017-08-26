@@ -2,21 +2,6 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
-   <MethodCall
-      id="MethodCall2">
-      <property
-         name="activityId">ExecuteWithParams</property>
-      <property
-         name="x">207.35156</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="y">499.34473</property>
-      <property
-         name="exceptionHandler">false</property>
-   </MethodCall>
    <View
       id="View3">
       <property
@@ -34,14 +19,29 @@
       <property
          name="exceptionHandler">false</property>
    </View>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">SetCurrentRowWithKeyValue</property>
+      <property
+         name="x">374.7002</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SetCurrentRowWithKeyValue&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">380.1494</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
-      from="MethodCall2"
+      id="ControlFlowCase6"
+      from="MethodCall5"
       to="View3">
       <property
-         name="fromOutcome">ExecuteWithParams</property>
+         name="fromOutcome">setCurrentRowWithKeyValue</property>
       <property
-         name="sdm:polyPoints">R50,248.35156,498.99414,551.3457,509.44824,L50</property>
+         name="sdm:polyPoints">R50,415.7002,379.79883,551.3457,509.44824,L50</property>
    </ControlFlowCase>
 </SDM>

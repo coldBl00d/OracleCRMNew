@@ -374,9 +374,9 @@
                                                            headerText="#{bindings.CustomerContacts.hints.ContactName.label}"
                                                            id="c18">
                                                     <af:link text="#{row.ContactName}" id="l5"
-                                                             action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goContact}">
+                                                             action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goContactv2}">
                                                         <af:setPropertyListener from="#{row.ContactId}"
-                                                                                to="#{pageFlowScope.PointerId}"
+                                                                                to="#{pageFlowScope.ContactId}"
                                                                                 type="action"/>
                                                     </af:link>
                                                 </af:column>

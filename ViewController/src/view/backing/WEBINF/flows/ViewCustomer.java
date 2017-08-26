@@ -575,29 +575,30 @@ public class ViewCustomer {
         return null;
     }
     
-    public String goContact(){
-        String iteratorName = "CustomerContactsIterator";
-        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
-        String fieldName = "ContactName";
-        //String PointerName = "ContactId";
-        
-        
-        
-        System.out.println("Id passed on by view customer is "+ id);
-        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
-        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
-        ViewObject vobj = iterator.getViewObject();
-        Key key = new Key(new Object[] {id});
-        Row row = vobj.getRow(key);
-        String tabHeading = "Contact-"+(String)row.getAttribute(fieldName);
-        
-        Map<String, Object > m = new HashMap<String, Object> ();
-        m.put("tabContext", TabContext.getCurrentInstance());
-        m.put("PointerId", id);
-        
-        viewContactActivity(m, tabHeading);
-        return null;
-    }
+//    public String goContact(){
+//        String iteratorName = "CustomerContactsIterator";
+//        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get("PointerId").toString());
+//        String fieldName = "ContactName";
+//        //String PointerName = "ContactId";
+//        
+//        
+//        
+//        System.out.println("Id passed on by view customer is "+ id);
+//        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+//        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+//        ViewObject vobj = iterator.getViewObject();
+//        Key key = new Key(new Object[] {id});
+//        Row row = vobj.getRow(key);
+//        String tabHeading = "Contact-"+(String)row.getAttribute(fieldName);
+//        
+//        Map<String, Object > m = new HashMap<String, Object> ();
+//        m.put("tabContext", TabContext.getCurrentInstance());
+//        m.put("PointerId", id);
+//        
+//        viewContactActivity(m, tabHeading);
+//        return null;
+//    }
+
     
     public String goAppointments(){
     String iteratorName = "AppointmentDisplayIterator";
@@ -648,6 +649,58 @@ public class ViewCustomer {
                 "ActivityTitle",
                 "TaskId",
                 "WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
+        return null;
+    }
+    
+    public String goContactv2(){
+        goPlacev2("CustomerContactsIterator",
+                "ContactName",
+                "PointerId","ContactId",
+                "WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow");
+        return null;
+    }
+    
+    public String goPlacev2(String iteratorName, String fieldName, String PointerName,String currentScopePointerName,  String taskflowId){
+        
+        System.out.println("Setting iterator as "+ iteratorName);
+        System.out.println("Setting field to fetch from database as "+ fieldName);
+        System.out.println("Setting pointer name as " + PointerName);
+        System.out.println("Make sure that the taskflow variable in the destination taskflow is "+ PointerName);
+        System.out.println("Make sure that the pageFlowScope variable containing the id is "+ currentScopePointerName);
+    
+        Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(currentScopePointerName).toString());
+        System.out.println("Found the id from " +currentScopePointerName+" pageflow to be "+ id);
+    
+        DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+        DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        if(iterator == null){
+            System.out.println("The iterator returned null");
+            return null;
+        }
+        ViewObject vobj = iterator.getViewObject();
+        Key key = new Key(new Object[] {id});
+        if(vobj == null){
+            System.out.println("The view object returned null");
+            return null;
+        }
+        Row row[] = vobj.findByKey(key, 1);
+    //Row row = vobj.getRow(key);
+        if(row[0] == null){
+            System.out.println("The row object returned null");
+            return null;
+        }
+    
+        System.out.println("Row identified") ;
+        String tabHeading = (String)row[0].getAttribute(fieldName);
+        System.out.println("Fetched "+ fieldName) ;
+        Map<String, Object > m = new HashMap<String, Object> ();
+        m.put("tabContext", TabContext.getCurrentInstance());
+       // System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
+        
+        m.put(PointerName, id);
+        launchTab(m, tabHeading, taskflowId);
+        System.out.println("Called tab with taskflow id "+ taskflowId);
+        System.out.println("Done");
         return null;
     }
     
