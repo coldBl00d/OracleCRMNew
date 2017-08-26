@@ -9,11 +9,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">592.3457</property>
+         name="x">694.8149</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>view-contact&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">509.79883</property>
+         name="y">279.46808</property>
       <property
          name="page">/WEB-INF/fragments/view-contact.jsff</property>
       <property
@@ -42,6 +42,6 @@
       <property
          name="fromOutcome">setCurrentRowWithKeyValue</property>
       <property
-         name="sdm:polyPoints">R50,415.7002,379.79883,551.3457,509.44824,L50</property>
+         name="sdm:polyPoints">R50,415.7002,379.79883,653.8149,279.1175,L50</property>
    </ControlFlowCase>
 </SDM>

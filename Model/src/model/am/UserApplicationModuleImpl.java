@@ -719,5 +719,7 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewObjectImpl getOpportunityListForDisplay() {
         return (ViewObjectImpl) findViewObject("OpportunityListForDisplay");
     }
+
+
 }
 

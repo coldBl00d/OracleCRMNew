@@ -250,6 +250,12 @@
                         <display-name>view-interactions-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>manage-opportunity-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -486,6 +492,12 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/view-interactions-taskflow.xml#view-interactions-taskflow</resource-name>
                                 <display-name>view-interactions-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow</resource-name>
+                                <display-name>manage-opportunity-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

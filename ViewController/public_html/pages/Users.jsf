@@ -19,7 +19,8 @@
                                              actionListener="#{backingBeanScope.Launcher.manageCustomerActivity}"
                                              partialSubmit="true"/>
                                     <af:link text="Manage Opportunities" id="l2"
-                                             binding="#{backingBeanScope.backing_pages_Users.l2}"/>
+                                             binding="#{backingBeanScope.backing_pages_Users.l2}"
+                                             action="#{backingBeanScope.Launcher.manageOpportunityActivity}"/>
                                     <af:link text="Manage Contacts" id="l4"
                                              binding="#{backingBeanScope.backing_pages_Users.l4}"/>
                                 </af:panelList>

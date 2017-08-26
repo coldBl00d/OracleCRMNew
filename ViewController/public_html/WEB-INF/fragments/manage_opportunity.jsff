@@ -25,108 +25,135 @@
                 <af:panelGroupLayout layout="vertical" id="pgl2" binding="#{backingBeanScope.ManageOpportunity.pgl2}">
                     <af:panelGroupLayout layout="vertical" id="pgl3"
                                          binding="#{backingBeanScope.ManageOpportunity.pgl3}">
-                        <af:table value="#{bindings.OpportunityListForDisplay.collectionModel}" var="row"
-                                  rows="#{bindings.OpportunityListForDisplay.rangeSize}"
-                                  emptyText="#{bindings.OpportunityListForDisplay.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                  rowBandingInterval="0"
-                                  selectedRowKeys="#{bindings.OpportunityListForDisplay.collectionModel.selectedRow}"
-                                  selectionListener="#{bindings.OpportunityListForDisplay.collectionModel.makeCurrent}"
-                                  rowSelection="single" fetchSize="#{bindings.OpportunityListForDisplay.rangeSize}"
-                                  partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.ManageOpportunity.t2}">
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityName.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityName.label}"
-                                       id="c1">
-                                <af:outputText value="#{row.OpportunityName}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityName.tooltip}"
-                                               id="ot1"/>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.label}"
-                                       id="c2">
-                                <af:outputText value="#{row.OpportunityWinProb}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.tooltip}"
-                                               id="ot2">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.format}"/>
-                                </af:outputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.label}"
-                                       id="c3">
-                                <af:outputText value="#{row.OpportunityCloseDate}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.tooltip}"
-                                               id="ot3">
-                                    <af:convertDateTime pattern="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.format}"/>
-                                </af:outputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.label}"
-                                       id="c4">
-                                <af:selectOneChoice value="#{row.bindings.PrimaryContactId.inputValue}"
-                                                    label="#{row.bindings.PrimaryContactId.label}"
-                                                    required="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.mandatory}"
-                                                    shortDesc="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.tooltip}"
-                                                    readOnly="true" id="soc1">
-                                    <f:selectItems value="#{row.bindings.PrimaryContactId.items}" id="si1"/>
-                                    <f:validator binding="#{row.bindings.PrimaryContactId.validator}"/>
-                                </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.SalesStage.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.SalesStage.label}"
-                                       id="c5">
-                                <af:selectOneChoice value="#{row.bindings.SalesStage.inputValue}"
-                                                    label="#{row.bindings.SalesStage.label}"
-                                                    required="#{bindings.OpportunityListForDisplay.hints.SalesStage.mandatory}"
-                                                    shortDesc="#{bindings.OpportunityListForDisplay.hints.SalesStage.tooltip}"
-                                                    readOnly="true" id="soc2">
-                                    <f:selectItems value="#{row.bindings.SalesStage.items}" id="si2"/>
-                                    <f:validator binding="#{row.bindings.SalesStage.validator}"/>
-                                </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.label}"
-                                       id="c6">
-                                <af:outputText value="#{row.EstimatedDuration}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.tooltip}"
-                                               id="ot4">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.format}"/>
-                                </af:outputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.RiskLevel.name}"
-                                       sortable="true"
-                                       headerText="#{bindings.OpportunityListForDisplay.hints.RiskLevel.label}" id="c7">
-                                <af:selectOneChoice value="#{row.bindings.RiskLevel.inputValue}"
-                                                    label="#{row.bindings.RiskLevel.label}"
-                                                    required="#{bindings.OpportunityListForDisplay.hints.RiskLevel.mandatory}"
-                                                    shortDesc="#{bindings.OpportunityListForDisplay.hints.RiskLevel.tooltip}"
-                                                    readOnly="true" id="soc3">
-                                    <f:selectItems value="#{row.bindings.RiskLevel.items}" id="si3"/>
-                                    <f:validator binding="#{row.bindings.RiskLevel.validator}"/>
-                                </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.UserUVO_ar.FirstName.name}"
-                                       sortable="true" headerText="Created By" id="c8">
-                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.UserUVO_ar.FirstName.tooltip}"
-                                               rendered="#{row.UserUVO_ar != null}" id="ot5"/>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.name}"
-                                       sortable="true" headerText="Contact" id="c9">
-                                <af:outputText value="#{row.ContactsUVO_ar.bindings.ContactId.inputValue}"
-                                               shortDesc="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.tooltip}"
-                                               rendered="#{row.ContactsUVO_ar != null}" id="ot6">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.format}"/>
-                                </af:outputText>
-                            </af:column>
-                        </af:table>
+                        <af:panelGroupLayout layout="vertical" id="pgl4"
+                                             binding="#{backingBeanScope.ManageOpportunity.pgl4}">
+                            <af:table value="#{bindings.OpportunityListForDisplay.collectionModel}" var="row"
+                                      rows="#{bindings.OpportunityListForDisplay.rangeSize}"
+                                      emptyText="#{bindings.OpportunityListForDisplay.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.OpportunityListForDisplay.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.OpportunityListForDisplay.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.OpportunityListForDisplay.rangeSize}"
+                                      partialTriggers="::qryId1" id="t2"
+                                      binding="#{backingBeanScope.ManageOpportunity.t2}">
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityName.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityName.label}"
+                                           id="c1">
+                                    <af:outputText value="#{row.OpportunityName}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityName.tooltip}"
+                                                   id="ot1" rendered="false"/>
+                                    <af:link text="#{row.OpportunityName}" id="l1"
+                                             action="#{backingBeanScope.ManageOpportunity.goOpportunity}">
+                                        <af:setPropertyListener from="#{row.OpportunityId}"
+                                                                to="#{pageFlowScope.OpportunityId}" type="action"/>
+                                    </af:link>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.label}"
+                                           id="c2">
+                                    <af:outputText value="#{row.OpportunityWinProb}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.tooltip}"
+                                                   id="ot2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.OpportunityListForDisplay.hints.OpportunityWinProb.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.label}"
+                                           id="c3">
+                                    <af:outputText value="#{row.OpportunityCloseDate}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.tooltip}"
+                                                   id="ot3">
+                                        <af:convertDateTime pattern="#{bindings.OpportunityListForDisplay.hints.OpportunityCloseDate.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.label}"
+                                           id="c4" rendered="false">
+                                    <af:outputText value="#{row.PrimaryContactId}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.tooltip}"
+                                                   id="ot4">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.OpportunityListForDisplay.hints.PrimaryContactId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.SalesStage.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.SalesStage.label}"
+                                           id="c5">
+                                    <af:outputText value="#{row.SalesStage}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.SalesStage.tooltip}"
+                                                   id="ot5"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.label}"
+                                           id="c6">
+                                    <af:outputText value="#{row.EstimatedDuration}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.tooltip}"
+                                                   id="ot6">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.OpportunityListForDisplay.hints.EstimatedDuration.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.RiskLevel.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.RiskLevel.label}"
+                                           id="c7">
+                                    <af:outputText value="#{row.RiskLevel}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.RiskLevel.tooltip}"
+                                                   id="ot7"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.UserUVO_ar.FirstName.name}"
+                                           sortable="true" headerText="Created By" id="c8">
+                                    <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.UserUVO_ar.FirstName.tooltip}"
+                                                   rendered="true" id="ot8"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.label}"
+                                           id="c9" rendered="false">
+                                    <af:outputText value="#{row.ContactsUVO_ar.bindings.ContactId.inputValue}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.tooltip}"
+                                                   rendered="#{row.ContactsUVO_ar != null}" id="ot9">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactName.name}"
+                                           sortable="false" headerText="Primary Contact" id="c10" rendered="true">
+                                    <af:outputText value="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}"
+                                                   shortDesc="#{bindings.OpportunityListForDisplay.hints.ContactsUVO_ar.ContactName.tooltip}"
+                                                   rendered="false" id="ot10"/>
+                                    <af:link text="#{row.ContactsUVO_ar.bindings.ContactName.inputValue}" id="l3"
+                                             action="#{backingBeanScope.ManageOpportunity.goContacts}">
+                                        <af:setPropertyListener from="#{row.PrimaryContactId}"
+                                                                to="#{pageFlowScope.PrimaryContactId}" type="action"/>
+                                    </af:link>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityId.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityId.label}"
+                                           id="c11">
+                                    <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
+                                                  label="#{bindings.OpportunityListForDisplay.hints.OpportunityId.label}"
+                                                  required="#{bindings.OpportunityListForDisplay.hints.OpportunityId.mandatory}"
+                                                  columns="#{bindings.OpportunityListForDisplay.hints.OpportunityId.displayWidth}"
+                                                  maximumLength="#{bindings.OpportunityListForDisplay.hints.OpportunityId.precision}"
+                                                  shortDesc="#{bindings.OpportunityListForDisplay.hints.OpportunityId.tooltip}"
+                                                  id="it1">
+                                        <f:validator binding="#{row.bindings.OpportunityId.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.OpportunityListForDisplay.hints.OpportunityId.format}"/>
+                                    </af:inputText>
+                                </af:column>
+                            </af:table>
+                        </af:panelGroupLayout>
                     </af:panelGroupLayout>
                 </af:panelGroupLayout>
             </f:facet>
