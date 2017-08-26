@@ -26,6 +26,10 @@
               id="OpportunityTaskIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OpportunityTaskIterator" id="ImplicitViewCriteriaQuery3"/>
+    <iterator Binds="OpportunityAppointments" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="OpportunityAppointmentsIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunityAppointmentsIterator" id="ImplicitViewCriteriaQuery4"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -170,6 +174,16 @@
       <nodeDefinition DefName="model.uvo.UserUVO_arVO">
         <AttrNames>
           <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunityAppointmentsIterator" id="OpportunityAppointments">
+      <nodeDefinition DefName="model.uvo.AppointmentUVO" Name="OpportunityAppointments0">
+        <AttrNames>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

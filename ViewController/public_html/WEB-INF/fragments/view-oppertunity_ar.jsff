@@ -510,7 +510,76 @@
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b3" binding="#{backingBeanScope.backing_viewoppertunity_ar.b3}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId5"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery4.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery4.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery4.processQuery}"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId5}">
+                                            <f:facet name="end">
+                                                <af:commandLink text="Advanced" rendered="false" id="cl5"
+                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl5}"/>
+                                            </f:facet>
+                                        </af:quickQuery>
                                     </af:toolbar>
+                                    <af:panelGroupLayout layout="vertical" id="pgl10"
+                                                         binding="#{backingBeanScope.backing_viewoppertunity_ar.pgl10}">
+                                        <af:table value="#{bindings.OpportunityAppointments.collectionModel}" var="row"
+                                                  rows="#{bindings.OpportunityAppointments.rangeSize}"
+                                                  emptyText="#{bindings.OpportunityAppointments.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.OpportunityAppointments.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.OpportunityAppointments.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.OpportunityAppointments.rangeSize}"
+                                                  partialTriggers="::qryId5" id="t13"
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t13}">
+                                            <af:column sortProperty="#{bindings.OpportunityAppointments.hints.ActivityId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityAppointments.hints.ActivityId.label}"
+                                                       id="c33" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.OpportunityAppointments.hints.ActivityId.tooltip}"
+                                                               id="ot5">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.OpportunityAppointments.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityAppointments.hints.ActivityTitle.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityAppointments.hints.ActivityTitle.label}"
+                                                       id="c34">
+                                                <af:outputText value="#{row.ActivityTitle}"
+                                                               shortDesc="#{bindings.OpportunityAppointments.hints.ActivityTitle.tooltip}"
+                                                               id="ot16" rendered="false"/>
+                                                <af:link text="#{row.ActivityTitle}" id="l6"
+                                                         action="#{backingBeanScope.backing_viewoppertunity_ar.goAppointment}">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.AppointmentId}"
+                                                                            type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityAppointments.hints.StartDateTime.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityAppointments.hints.StartDateTime.label}"
+                                                       id="c35">
+                                                <af:outputText value="#{row.StartDateTime}"
+                                                               shortDesc="#{bindings.OpportunityAppointments.hints.StartDateTime.tooltip}"
+                                                               id="ot17">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityAppointments.hints.StartDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.OpportunityAppointments.hints.EndDueDateTime.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.OpportunityAppointments.hints.EndDueDateTime.label}"
+                                                       id="c36">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.OpportunityAppointments.hints.EndDueDateTime.tooltip}"
+                                                               id="ot30">
+                                                    <af:convertDateTime pattern="#{bindings.OpportunityAppointments.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab2" text="Notes"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab2}">

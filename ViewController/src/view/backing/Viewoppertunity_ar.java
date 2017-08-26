@@ -134,6 +134,10 @@ public class Viewoppertunity_ar {
     private RichQuickQuery qryId4;
     private RichCommandLink cl4;
     private RichTable t12;
+    private RichPanelGroupLayout pgl10;
+    private RichQuickQuery qryId5;
+    private RichCommandLink cl5;
+    private RichTable t13;
 
 
     public Viewoppertunity_ar(){
@@ -818,6 +822,15 @@ public class Viewoppertunity_ar {
         return null;
     }
     
+    public String goAppointment(){
+        goPlace("OpportunityAppointmentsIterator",
+            "ActivityTitle",
+            "AppointmentId","AppointmentId", 
+            "/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow");
+        return null;
+    }
+    
+    
     public String goPlace(String iteratorName, String fieldName, String PointerName,String currentScopePointerName,  String taskflowId){
         
         System.out.println("Setting iterator as "+ iteratorName);
@@ -831,6 +844,10 @@ public class Viewoppertunity_ar {
     
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+        if(iterator == null){
+            System.out.println("The iterator returned null");
+            return null;
+        }
         ViewObject vobj = iterator.getViewObject();
         Key key = new Key(new Object[] {id});
         if(vobj == null){
@@ -1026,5 +1043,38 @@ public class Viewoppertunity_ar {
 
     public RichTable getT12() {
         return t12;
+    }
+
+    public void setPgl10(RichPanelGroupLayout pgl10) {
+        this.pgl10 = pgl10;
+    }
+
+    public RichPanelGroupLayout getPgl10() {
+        return pgl10;
+    }
+
+
+    public void setQryId5(RichQuickQuery qryId5) {
+        this.qryId5 = qryId5;
+    }
+
+    public RichQuickQuery getQryId5() {
+        return qryId5;
+    }
+
+    public void setCl5(RichCommandLink cl5) {
+        this.cl5 = cl5;
+    }
+
+    public RichCommandLink getCl5() {
+        return cl5;
+    }
+
+    public void setT13(RichTable t13) {
+        this.t13 = t13;
+    }
+
+    public RichTable getT13() {
+        return t13;
     }
 }
