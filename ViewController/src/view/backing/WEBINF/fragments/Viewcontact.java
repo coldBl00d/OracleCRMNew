@@ -93,6 +93,10 @@ public class Viewcontact {
     private RichQuickQuery qryId2;
     private RichCommandLink cl2;
     private RichTable t2;
+    private RichPanelGroupLayout pgl7;
+    private RichQuickQuery qryId3;
+    private RichCommandLink cl3;
+    private RichTable t3;
 
     public Viewcontact(){
         super();
@@ -692,5 +696,38 @@ public class Viewcontact {
 
     public RichTable getT2() {
         return t2;
+    }
+
+    public void setPgl7(RichPanelGroupLayout pgl7) {
+        this.pgl7 = pgl7;
+    }
+
+    public RichPanelGroupLayout getPgl7() {
+        return pgl7;
+    }
+
+
+    public void setQryId3(RichQuickQuery qryId3) {
+        this.qryId3 = qryId3;
+    }
+
+    public RichQuickQuery getQryId3() {
+        return qryId3;
+    }
+
+    public void setCl3(RichCommandLink cl3) {
+        this.cl3 = cl3;
+    }
+
+    public RichCommandLink getCl3() {
+        return cl3;
+    }
+
+    public void setT3(RichTable t3) {
+        this.t3 = t3;
+    }
+
+    public RichTable getT3() {
+        return t3;
     }
 }

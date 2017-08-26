@@ -393,7 +393,75 @@
                                     </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab3" text="Notes"
-                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab3}"/>
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab3}">
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId3"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery2.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.qryId3}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl3"
+                                                            binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.cl3}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                    <af:panelGroupLayout layout="vertical" id="pgl7"
+                                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl7}">
+                                        <af:table value="#{bindings.NotesUVO_arVO1.collectionModel}" var="row"
+                                                  rows="#{bindings.NotesUVO_arVO1.rangeSize}"
+                                                  emptyText="#{bindings.NotesUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.NotesUVO_arVO1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.NotesUVO_arVO1.collectionModel.makeCurrent}"
+                                                  rowSelection="single" fetchSize="#{bindings.NotesUVO_arVO1.rangeSize}"
+                                                  partialTriggers="::qryId3" id="t3"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t3}">
+                                            <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.NotesUVO_arVO1.hints.NoteId.label}"
+                                                       id="c19" rendered="false">
+                                                <af:outputText value="#{row.NoteId}"
+                                                               shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteId.tooltip}"
+                                                               id="ot19">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.NotesUVO_arVO1.hints.NoteId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteTitle.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.NotesUVO_arVO1.hints.NoteTitle.label}"
+                                                       id="c20">
+                                                <af:outputText value="#{row.NoteTitle}"
+                                                               shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteTitle.tooltip}"
+                                                               id="ot20" rendered="false"/>
+                                                <af:link text="#{row.NoteTitle}" id="l4"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteDate.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.NotesUVO_arVO1.hints.NoteDate.label}"
+                                                       id="c21">
+                                                <af:outputText value="#{row.NoteDate}"
+                                                               shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteDate.tooltip}"
+                                                               id="ot21">
+                                                    <af:convertDateTime pattern="#{bindings.NotesUVO_arVO1.hints.NoteDate.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteContent.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.NotesUVO_arVO1.hints.NoteContent.label}"
+                                                       id="c22" rendered="false">
+                                                <af:outputText value="#{row.NoteContent}"
+                                                               shortDesc="#{bindings.NotesUVO_arVO1.hints.NoteContent.tooltip}"
+                                                               id="ot22"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.FirstName.name}"
+                                                       sortable="true" headerText="Created By" id="c23">
+                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.NotesUVO_arVO1.hints.UserUVO_ar.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar != null}" id="ot23"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
                                 <af:showDetailItem id="tab4" text="Interactions"
                                                    binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab4}"/>
                                 <af:showDetailItem id="tab5" text="Appointments"
