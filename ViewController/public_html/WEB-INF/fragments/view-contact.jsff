@@ -309,7 +309,89 @@
                                     </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab2" text="Tasks"
-                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab2}"/>
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab2}">
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.qryId2}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl2"
+                                                            binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.cl2}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                    <af:panelGroupLayout layout="vertical" id="pgl6"
+                                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl6}">
+                                        <af:table value="#{bindings.TaskUVO_arVO1.collectionModel}" var="row"
+                                                  rows="#{bindings.TaskUVO_arVO1.rangeSize}"
+                                                  emptyText="#{bindings.TaskUVO_arVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0" fetchSize="#{bindings.TaskUVO_arVO1.rangeSize}"
+                                                  partialTriggers="::qryId2" id="t2"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t2}">
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.ActivityId.label}"
+                                                       id="c11" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.ActivityId.tooltip}"
+                                                               id="ot11">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TaskUVO_arVO1.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.label}"
+                                                       id="c12">
+                                                <af:outputText value="#{row.ActivityTitle}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.ActivityTitle.tooltip}"
+                                                               id="ot12" rendered="false"/>
+                                                <af:link text="#{row.ActivityTitle}" id="l3"
+                                                         action="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.goTask}">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.TaskId}" type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.StartDateTime.label}"
+                                                       id="c13">
+                                                <af:outputText value="#{row.StartDateTime}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.StartDateTime.tooltip}"
+                                                               id="ot13">
+                                                    <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.StartDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.label}"
+                                                       id="c14">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.tooltip}"
+                                                               id="ot14">
+                                                    <af:convertDateTime pattern="#{bindings.TaskUVO_arVO1.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.label}"
+                                                       id="c15">
+                                                <af:outputText value="#{row.ATaskPriority}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskPriority.tooltip}"
+                                                               id="ot15"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.label}"
+                                                       id="c16">
+                                                <af:outputText value="#{row.ATaskCompletion}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.tooltip}"
+                                                               id="ot16">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TaskUVO_arVO1.hints.ATaskCompletion.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="Assigned To" id="c17">
+                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.UserUVO_ar.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar != null}" id="ot17"/>
+                                            </af:column>
+                                            <af:column headerText="Created By" id="c18">
+                                                <af:outputText value="#{row.UserUVO_ar1.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.TaskUVO_arVO1.hints.UserUVO_ar1.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar1 != null}" id="ot18"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
                                 <af:showDetailItem id="tab3" text="Notes"
                                                    binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab3}"/>
                                 <af:showDetailItem id="tab4" text="Interactions"

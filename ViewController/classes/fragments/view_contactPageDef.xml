@@ -14,6 +14,10 @@
               id="OpportunitiesOfContactIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OpportunitiesOfContactIterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="TaskUVO_arVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="TaskUVO_arVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TaskUVO_arVO1Iterator" id="ImplicitViewCriteriaQuery1"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerIterator" id="AccountName">
@@ -115,6 +119,27 @@
       <nodeDefinition DefName="model.uvo.ContactsUVO_arVO">
         <AttrNames>
           <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TaskUVO_arVO1Iterator" id="TaskUVO_arVO1">
+      <nodeDefinition DefName="model.uvo.TaskUVO_arVO" Name="TaskUVO_arVO10">
+        <AttrNames>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="ATaskPriority"/>
+          <Item Value="ATaskCompletion"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar"/>
+          <Item Value="UserUVO_ar1"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

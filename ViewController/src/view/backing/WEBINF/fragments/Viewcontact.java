@@ -20,7 +20,6 @@ import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
-import oracle.adf.view.rich.component.rich.layout.RichPanelHeader;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
@@ -87,10 +86,13 @@ public class Viewcontact {
     private RichSpacer s9;
     private RichPanelGroupLayout pgl4;
     private RichPanelGroupLayout pgl5;
-    private RichPanelHeader ph1;
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t1;
+    private RichPanelGroupLayout pgl6;
+    private RichQuickQuery qryId2;
+    private RichCommandLink cl2;
+    private RichTable t2;
 
     public Viewcontact(){
         super();
@@ -117,7 +119,7 @@ public class Viewcontact {
     }
     
     public String goTask(){
-        goPlace("OpportunityTaskIterator",
+        goPlace("TaskUVO_arVO1Iterator",
             "ActivityTitle",
             "PointerId","TaskId", 
             "/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
@@ -634,13 +636,6 @@ public class Viewcontact {
         return pgl5;
     }
 
-    public void setPh1(RichPanelHeader ph1) {
-        this.ph1 = ph1;
-    }
-
-    public RichPanelHeader getPh1() {
-        return ph1;
-    }
 
     public void setQryId1(RichQuickQuery qryId1) {
         this.qryId1 = qryId1;
@@ -664,5 +659,38 @@ public class Viewcontact {
 
     public RichTable getT1() {
         return t1;
+    }
+
+    public void setPgl6(RichPanelGroupLayout pgl6) {
+        this.pgl6 = pgl6;
+    }
+
+    public RichPanelGroupLayout getPgl6() {
+        return pgl6;
+    }
+
+
+    public void setQryId2(RichQuickQuery qryId2) {
+        this.qryId2 = qryId2;
+    }
+
+    public RichQuickQuery getQryId2() {
+        return qryId2;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
     }
 }

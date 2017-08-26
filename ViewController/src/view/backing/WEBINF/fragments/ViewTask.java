@@ -29,7 +29,7 @@ public class ViewTask {
     private RichInputText it1;
 
     public ViewTask() {
-        System.out.println("Task id  from page flow scope :" +ADFContext.getCurrent().getPageFlowScope().get("TaskId"));
+        System.out.println("Task id  from page flow scope view task page :" +ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
     }
 
     public void setGc2(RichGridCell gc2) {

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="view-task-taskflow">
-    <default-activity>SetCurrentRowWithKeyValue1</default-activity>
+    <default-activity>SetCurrentRowWithKeyValue</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
     <input-parameter-definition id="__1">
       <name>PointerId</name>
-      <value>#{pageFlowScope.TaskId}</value>
+      <value>#{pageFlowScope.PointerId}</value>
       <class>java.lang.Integer</class>
     </input-parameter-definition>
     <input-parameter-definition id="__2">
@@ -18,15 +18,15 @@
     <view id="Tasks">
       <page>/WEB-INF/fragments/Tasks.jsff</page>
     </view>
-    <method-call id="SetCurrentRowWithKeyValue1">
+    <method-call id="SetCurrentRowWithKeyValue">
       <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
       <outcome>
         <fixed-outcome>setCurrentRowWithKeyValue</fixed-outcome>
       </outcome>
     </method-call>
-    <control-flow-rule id="__5">
-      <from-activity-id>SetCurrentRowWithKeyValue1</from-activity-id>
-      <control-flow-case id="__6">
+    <control-flow-rule id="__3">
+      <from-activity-id>SetCurrentRowWithKeyValue</from-activity-id>
+      <control-flow-case id="__4">
         <from-outcome>setCurrentRowWithKeyValue</from-outcome>
         <to-activity-id>Tasks</to-activity-id>
       </control-flow-case>
