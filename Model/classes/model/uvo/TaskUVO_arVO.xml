@@ -126,10 +126,10 @@
           Value="TASK"
           Required="Optional"/>
         <ViewCriteriaItem
-          Name="ATaskAssigneeId"
-          ViewAttribute="ATaskAssigneeId"
+          Name="ACreatorId"
+          ViewAttribute="ACreatorId"
           Operator="="
-          Conjunction="AND"
+          Conjunction="OR"
           Value=":customerIdFilter"
           IsBindVarValue="true"
           Required="Optional"

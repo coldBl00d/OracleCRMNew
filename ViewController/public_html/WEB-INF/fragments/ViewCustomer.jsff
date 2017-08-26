@@ -468,7 +468,8 @@
                                                 <af:outputText value="#{row.ActivityTitle}"
                                                                shortDesc="#{bindings.CustomerTasks.hints.ActivityTitle.tooltip}"
                                                                id="ot8" rendered="false"/>
-                                                <af:link text="#{row.ActivityTitle}" id="l8">
+                                                <af:link text="#{row.ActivityTitle}" id="l8"
+                                                         action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goTask}">
                                                     <af:setPropertyListener from="#{row.ActivityId}"
                                                                             to="#{pageFlowScope.TaskId}" type="action"/>
                                                 </af:link>
