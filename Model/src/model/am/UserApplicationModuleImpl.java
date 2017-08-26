@@ -711,5 +711,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewObjectImpl getInteractionsDisplay() {
         return (ViewObjectImpl) findViewObject("InteractionsDisplay");
     }
+
+    /**
+     * Container's getter for OppertunityUVO_arVO2.
+     * @return OppertunityUVO_arVO2
+     */
+    public ViewObjectImpl getOpportunityListForDisplay() {
+        return (ViewObjectImpl) findViewObject("OpportunityListForDisplay");
+    }
 }
 
