@@ -545,7 +545,7 @@
                                             <af:column sortProperty="#{bindings.OpportunityNotes.hints.NoteId.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.OpportunityNotes.hints.NoteId.label}"
-                                                       id="c15">
+                                                       id="c15" rendered="false">
                                                 <af:outputText value="#{row.NoteId}"
                                                                shortDesc="#{bindings.OpportunityNotes.hints.NoteId.tooltip}"
                                                                id="ot27">
