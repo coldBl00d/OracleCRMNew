@@ -141,6 +141,21 @@
   <ViewUsage
     Name="TaskForDisplay"
     ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="OpportunityInteractions"
+    ViewObjectName="model.uvo.InteractionsUVO"/>
+  <ViewUsage
+    Name="OpportunityAppointments"
+    ViewObjectName="model.uvo.AppointmentUVO"/>
+  <ViewUsage
+    Name="OpportunityTask"
+    ViewObjectName="model.uvo.TaskUVO_arVO"/>
+  <ViewUsage
+    Name="ContactsOfOpportunity"
+    ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="OpportunityNotes"
+    ViewObjectName="model.uvo.NotesUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -290,6 +305,36 @@
     ViewLinkObjectName="model.vl.OppertunityToPrimaryContactsVL_ar"
     SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
     DstViewUsageName="model.am.UserApplicationModule.PrimaryContact"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityInteractionVL1"
+    ViewLinkObjectName="model.vl.OpportunityInteractionVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OpportunityInteractions"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityAppointmentVL1"
+    ViewLinkObjectName="model.vl.OpportunityAppointmentVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OpportunityAppointments"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityToTaskVL1"
+    ViewLinkObjectName="model.vl.OpportunityToTaskVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OpportunityTask"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityToContactVL1"
+    ViewLinkObjectName="model.vl.OpportunityToContactVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.ContactsOfOpportunity"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OpportunityToNotesVL1"
+    ViewLinkObjectName="model.vl.OpportunityToNotesVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.OpportunityNotes"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

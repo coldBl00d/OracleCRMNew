@@ -573,5 +573,87 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public TaskUVO_arVOImpl getTaskForDisplay() {
         return (TaskUVO_arVOImpl) findViewObject("TaskForDisplay");
     }
+
+    /**
+     * Container's getter for InteractionsUVO2.
+     * @return InteractionsUVO2
+     */
+    public ViewObjectImpl getOpportunityInteractions() {
+        return (ViewObjectImpl) findViewObject("OpportunityInteractions");
+    }
+
+    /**
+     * Container's getter for OpportunityInteractionVL1.
+     * @return OpportunityInteractionVL1
+     */
+    public ViewLinkImpl getOpportunityInteractionVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityInteractionVL1");
+    }
+
+    /**
+     * Container's getter for AppointmentUVO2.
+     * @return AppointmentUVO2
+     */
+    public ViewObjectImpl getOpportunityAppointments() {
+        return (ViewObjectImpl) findViewObject("OpportunityAppointments");
+    }
+
+    /**
+     * Container's getter for OpportunityAppointmentVL1.
+     * @return OpportunityAppointmentVL1
+     */
+    public ViewLinkImpl getOpportunityAppointmentVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityAppointmentVL1");
+    }
+
+    /**
+     * Container's getter for TaskUVO_arVO2.
+     * @return TaskUVO_arVO2
+     */
+    public TaskUVO_arVOImpl getOpportunityTask() {
+        return (TaskUVO_arVOImpl) findViewObject("OpportunityTask");
+    }
+
+    /**
+     * Container's getter for OpportunityToTaskVL1.
+     * @return OpportunityToTaskVL1
+     */
+    public ViewLinkImpl getOpportunityToTaskVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityToTaskVL1");
+    }
+
+    /**
+     * Container's getter for ContactsUVO_arVO1.
+     * @return ContactsUVO_arVO1
+     */
+    public ViewObjectImpl getContactsOfOpportunity() {
+        return (ViewObjectImpl) findViewObject("ContactsOfOpportunity");
+    }
+
+    /**
+     * Container's getter for OpportunityToContactVL1.
+     * @return OpportunityToContactVL1
+     */
+    public ViewLinkImpl getOpportunityToContactVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityToContactVL1");
+    }
+
+    /**
+     * Container's getter for NotesUVO_arVO2.
+     * @return NotesUVO_arVO2
+     */
+    public ViewObjectImpl getOpportunityNotes() {
+        return (ViewObjectImpl) findViewObject("OpportunityNotes");
+    }
+
+    /**
+     * Container's getter for OpportunityToNotesVL1.
+     * @return OpportunityToNotesVL1
+     */
+    public ViewLinkImpl getOpportunityToNotesVL1() {
+        return (ViewLinkImpl) findViewLink("OpportunityToNotesVL1");
+    }
+
+
 }
 
