@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="view-appointment-taskflow">
+    <default-activity>ExecuteWithParams</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <input-parameter-definition id="__1">
+      <name>AppointmentId</name>
+      <value>#{pageFlowScope.AppointmentId}</value>
+      <class>java.lang.Integer</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__5">
+      <name>tabContext</name>
+      <value>#{pageFlowScope.tabContext}</value>
+      <class>com.ui.pattern.dynamicShell.TabContext</class>
+    </input-parameter-definition>
+    <managed-bean id="__4">
+      <managed-bean-name>ViewAppointmnets</managed-bean-name>
+      <managed-bean-class>view.backing.WEBINF.fragments.ViewAppointments</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="view_appointment">
+      <page>/view_appointment.jsff</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>view_appointment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

@@ -19,6 +19,10 @@
         ResId="model.uvo.AppointmentUVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="AppointmentId"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <EntityUsage
     Name="ActivityEO_arEO"
     Entity="model.eo.ActivityEO_arEO"/>
@@ -71,6 +75,42 @@
     EntityAttrName="ActivityType"
     EntityUsage="ActivityEO_arEO"
     AliasName="ACTIVITY_TYPE1"/>
+  <ViewCriteria
+    Name="FilterById"
+    ViewObjectName="model.uvo.AppointmentUVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AppointmentUVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ActivityId"
+        ViewAttribute="ActivityId"
+        Operator="="
+        Conjunction="AND"
+        Value=":AppointmentId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactsUVO_ar"
     ViewLink="model.vl.AppointmentToContactsVL"

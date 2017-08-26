@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_WEBINF_flows_ViewCustomer-->
     <af:panelGroupLayout id="pgl10" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pgl10}"
                          layout="scroll">
@@ -613,41 +614,106 @@
                                                   selectedRowKeys="#{bindings.Appointments.collectionModel.selectedRow}"
                                                   selectionListener="#{bindings.Appointments.collectionModel.makeCurrent}"
                                                   rowSelection="single" fetchSize="#{bindings.Appointments.rangeSize}"
-                                                  partialTriggers="::qq5 ::b16" id="t10"
+                                                  id="t10"
                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t10}">
+                                            <af:column id="c43" headerText="Name">
+                                                <af:link text="#{row.ActivityTitle}" id="l7"
+                                                         action="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.goAppointments}">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.AppointmentId}"
+                                                                            type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.AAppLocationId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.AAppLocationId.label}"
+                                                       id="c24" rendered="false">
+                                                <af:outputText value="#{row.AAppLocationId}"
+                                                               shortDesc="#{bindings.Appointments.hints.AAppLocationId.tooltip}"
+                                                               id="ot14">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Appointments.hints.AAppLocationId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.ACreatorId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.ACreatorId.label}"
+                                                       id="c28" rendered="false">
+                                                <af:outputText value="#{row.ACreatorId}"
+                                                               shortDesc="#{bindings.Appointments.hints.ACreatorId.tooltip}"
+                                                               id="ot15">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Appointments.hints.ACreatorId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.AccountId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.AccountId.label}"
+                                                       id="c29" rendered="false">
+                                                <af:outputText value="#{row.AccountId}"
+                                                               shortDesc="#{bindings.Appointments.hints.AccountId.tooltip}"
+                                                               id="ot16">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Appointments.hints.AccountId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.ActivityDescription.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.ActivityDescription.label}"
+                                                       id="c30" rendered="false">
+                                                <af:outputText value="#{row.ActivityDescription}"
+                                                               shortDesc="#{bindings.Appointments.hints.ActivityDescription.tooltip}"
+                                                               id="ot17"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.ActivityId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.ActivityId.label}"
+                                                       id="c37" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.Appointments.hints.ActivityId.tooltip}"
+                                                               id="ot33">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Appointments.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
                                             <af:column sortProperty="#{bindings.Appointments.hints.ActivityTitle.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.Appointments.hints.ActivityTitle.label}"
-                                                       id="c24">
+                                                       id="c38" rendered="false">
                                                 <af:outputText value="#{row.ActivityTitle}"
                                                                shortDesc="#{bindings.Appointments.hints.ActivityTitle.tooltip}"
-                                                               id="ot14"/>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.Appointments.hints.EndDueDateTime.name}"
-                                                       sortable="true"
-                                                       headerText="#{bindings.Appointments.hints.EndDueDateTime.label}"
-                                                       id="c28">
-                                                <af:outputText value="#{row.EndDueDateTime}"
-                                                               shortDesc="#{bindings.Appointments.hints.EndDueDateTime.tooltip}"
-                                                               id="ot15">
-                                                    <af:convertDateTime pattern="#{bindings.Appointments.hints.EndDueDateTime.format}"/>
-                                                </af:outputText>
+                                                               id="ot34"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.Appointments.hints.StartDateTime.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.Appointments.hints.StartDateTime.label}"
-                                                       id="c29">
+                                                       id="c40">
                                                 <af:outputText value="#{row.StartDateTime}"
                                                                shortDesc="#{bindings.Appointments.hints.StartDateTime.tooltip}"
-                                                               id="ot16">
+                                                               id="ot36">
                                                     <af:convertDateTime pattern="#{bindings.Appointments.hints.StartDateTime.format}"/>
                                                 </af:outputText>
                                             </af:column>
-                                            <af:column sortProperty="#{bindings.Appointments.hints.UserUVO_ar.FirstName.name}"
-                                                       sortable="true" headerText="Creator Name" id="c30">
-                                                <af:outputText value="#{row.UserUVO_ar.bindings.FirstName.inputValue}"
-                                                               shortDesc="#{bindings.Appointments.hints.UserUVO_ar.FirstName.tooltip}"
-                                                               rendered="#{row.UserUVO_ar != null}" id="ot17"/>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.EndDueDateTime.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.EndDueDateTime.label}"
+                                                       id="c39">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.Appointments.hints.EndDueDateTime.tooltip}"
+                                                               id="ot35">
+                                                    <af:convertDateTime pattern="#{bindings.Appointments.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column id="c42" headerText="#{viewcontrollerBundle.Creator}">
+                                                <af:link text="#{row.UserUVO_ar1.bindings.FirstName.inputValue}" id="l3"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.Appointments.hints.UserUVO_ar1.FirstName.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.Appointments.hints.UserUVO_ar1.FirstName.label}"
+                                                       id="c41" rendered="false">
+                                                <af:outputText value="#{row.UserUVO_ar1.bindings.FirstName.inputValue}"
+                                                               shortDesc="#{bindings.Appointments.hints.UserUVO_ar1.FirstName.tooltip}"
+                                                               rendered="#{row.UserUVO_ar1 != null}" id="ot37"/>
                                             </af:column>
                                         </af:table>
                                     </af:panelGroupLayout>

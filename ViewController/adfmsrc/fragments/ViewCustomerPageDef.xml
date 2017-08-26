@@ -37,6 +37,8 @@
               id="ShippingAddressIterator"/>
     <iterator Binds="CreateOpportunity1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CreateOpportunity1Iterator"/>
+    <iterator id="AppointmentDisplayIterator" Binds="AppointmentDisplay" DataControl="UserApplicationModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
@@ -116,23 +118,6 @@
           <Item Value="EndDueDateTime"/>
           <Item Value="ATaskPriority"/>
           <Item Value="ATaskCompletion"/>
-        </AttrNames>
-        <Accessors>
-          <Item Value="UserUVO_ar"/>
-        </Accessors>
-      </nodeDefinition>
-      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
-        <AttrNames>
-          <Item Value="FirstName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="AppointmentsIterator" id="Appointments">
-      <nodeDefinition DefName="model.uvo.ActivityUVO_ar" Name="Appointments0">
-        <AttrNames>
-          <Item Value="ActivityTitle"/>
-          <Item Value="EndDueDateTime"/>
-          <Item Value="StartDateTime"/>
         </AttrNames>
         <Accessors>
           <Item Value="UserUVO_ar"/>
@@ -297,5 +282,27 @@
                   InstanceName="bindings.executeCriteria.dataControl.dataProvider">
       <NamedData NDName="cId" NDType="java.lang.Integer"/>
     </methodAction>
+    <tree IterBinding="AppointmentsIterator" id="Appointments">
+      <nodeDefinition DefName="model.uvo.ActivityUVO_ar" Name="Appointments0">
+        <AttrNames>
+          <Item Value="AAppLocationId"/>
+          <Item Value="ACreatorId"/>
+          <Item Value="AccountId"/>
+          <Item Value="ActivityDescription"/>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityTitle"/>
+          <Item Value="EndDueDateTime"/>
+          <Item Value="StartDateTime"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UserUVO_ar1"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO">
+        <AttrNames>
+          <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

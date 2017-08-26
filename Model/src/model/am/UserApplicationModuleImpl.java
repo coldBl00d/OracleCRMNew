@@ -143,13 +143,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewObjectImpl) findViewObject("Appointments");
     }
 
-    /**
-     * Container's getter for AppointmentCreator.
-     * @return AppointmentCreator
-     */
-    public ViewObjectImpl getAppointmentCreator() {
-        return (ViewObjectImpl) findViewObject("AppointmentCreator");
-    }
 
     /**
      * Container's getter for CustContactLinkUVO_ar1.
@@ -247,14 +240,7 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewLinkImpl) findViewLink("CustomerToAppointmentVL_ar1");
     }
 
-    /**
-     * Container's getter for AppointmentToCreatorVL1.
-     * @return AppointmentToCreatorVL1
-     */
-    public ViewLinkImpl getAppointmentToCreatorVL1() {
-        return (ViewLinkImpl) findViewLink("AppointmentToCreatorVL1");
-    }
-    
+
     public void populateCusConJun(Integer aId,Integer cId){
         ViewObjectImpl vo= getCustContactLinkUVO_ar1();
         Row row = vo.createRow();

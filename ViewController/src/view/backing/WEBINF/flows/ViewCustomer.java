@@ -124,7 +124,6 @@ public class ViewCustomer {
     private RichPanelGroupLayout pgl5;
     private RichQuickQuery qq5;
     private RichCommandLink cl6;
-    private RichTable t10;
     private RichPanelGroupLayout pgl8;
     private RichQuickQuery qq2;
     private RichCommandLink cl3;
@@ -182,6 +181,7 @@ public class ViewCustomer {
     private RichSelectOneChoice soc6;
     private UISelectItems si6;
     private RichPanelGroupLayout pgl10;
+    private RichTable t10;
 
     public ViewCustomer(){
         
@@ -589,6 +589,8 @@ public class ViewCustomer {
         String fieldName = "ContactName";
         //String PointerName = "ContactId";
         
+        
+        
         System.out.println("Id passed on by view customer is "+ id);
         DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
         DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
@@ -604,6 +606,58 @@ public class ViewCustomer {
         viewContactActivity(m, tabHeading);
         return null;
     }
+    
+    public String goAppointments(){
+    String iteratorName = "AppointmentDisplayIterator";
+    String fieldName = "ActivityTitle";
+    String PointerName = "AppointmentId";
+    String taskflowId = "view-appointment-taskflow.xml#view-appointment-taskflow";
+    
+        System.out.println("Setting iterator as "+ iteratorName);
+        System.out.println("Setting field to fetch from database as "+ fieldName);
+        System.out.println("Setting pointer name as " + PointerName);
+        System.out.println("Make sure that the taskflow variable in the destination taskflow is "+ PointerName);
+        System.out.println("Make sure that the pageFlowScope variable containing the id is "+ PointerName);
+    
+    Integer id = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+    System.out.println("Found the id from the pageflow to be "+ id);
+    
+    DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+    DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+    ViewObject vobj = iterator.getViewObject();
+    Key key = new Key(new Object[] {id});
+    if(vobj == null){
+        System.out.println("The view object returned null");
+        return null;
+    }
+    Row row[] = vobj.findByKey(key, 1);
+    //Row row = vobj.getRow(key);
+    if(row[0] == null){
+        System.out.println("The row object returned null");
+        return null;
+    }
+    
+    System.out.println("Row identified") ;
+    String tabHeading = "Appointment-"+(String)row[0].getAttribute(fieldName);
+        System.out.println("Fetched "+ fieldName) ;
+    Map<String, Object > m = new HashMap<String, Object> ();
+    m.put("tabContext", TabContext.getCurrentInstance());
+    System.out.println("Fetched from pageFlowScope as  :" + ADFContext.getCurrent().getPageFlowScope().get(PointerName));
+    Integer value = Integer.parseInt(ADFContext.getCurrent().getPageFlowScope().get(PointerName).toString());
+    m.put(PointerName, value);
+    launchTab(m, tabHeading, taskflowId);
+    System.out.println("Called tab with taskflow id "+ taskflowId);
+    System.out.println("Done");
+    return null;
+    }
+    
+    public void launchTab(Map<String, Object> params, String tabHeading, String taskFlow){
+        _launchActivity( 
+          tabHeading,
+          taskFlow,
+          true, params); 
+    }
+    
     
     
     
@@ -858,13 +912,6 @@ public class ViewCustomer {
         return cl6;
     }
 
-    public void setT10(RichTable t10) {
-        this.t10 = t10;
-    }
-
-    public RichTable getT10() {
-        return t10;
-    }
 
     public void setPgl8(RichPanelGroupLayout pgl8) {
         this.pgl8 = pgl8;
@@ -1436,5 +1483,13 @@ public class ViewCustomer {
 
     public RichPanelGroupLayout getPgl10() {
         return pgl10;
+    }
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
     }
 }

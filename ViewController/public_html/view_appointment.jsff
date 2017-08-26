@@ -1,39 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-    <af:decorativeBox id="db1">
-        <f:facet name="center">
-            <af:panelGroupLayout layout="scroll" id="pgl1">
-                <af:panelGridLayout id="pgl2">
-                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
-                        <af:gridCell marginStart="5px" width="275px" id="gc1">
+    <af:panelGroupLayout id="pgl4" binding="#{backingBeanScope.ViewAppointmnets.pgl4}">
+        <af:decorativeBox id="db1" binding="#{backingBeanScope.ViewAppointmnets.db1}">
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.ViewAppointmnets.pgl2}">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                binding="#{backingBeanScope.ViewAppointmnets.gr1}">
+                        <af:gridCell marginStart="5px" width="275px" id="gc1"
+                                     binding="#{backingBeanScope.ViewAppointmnets.gc1}">
                             <af:panelBox text="Appointment Details" id="pb1" background="light"
-                                         inlineStyle="width:275px">
+                                         inlineStyle="width:275px" binding="#{backingBeanScope.ViewAppointmnets.pb1}">
                                 <f:facet name="toolbar">
-                                    <af:button id="b1" icon="#{resource['images:save.png']}"/>
+                                    <af:button id="b1" icon="#{resource['images:save.png']}"
+                                               binding="#{backingBeanScope.ViewAppointmnets.b1}"/>
                                 </f:facet>
                                 <af:image source="#{resource['images:appointment.png']}" id="i1"
-                                          inlineStyle="width:104px;"/>
-                                <af:panelGroupLayout id="pgl3" layout="vertical">
-                                    <af:outputLabel value="Appointment Name" id="ol1"/>
+                                          inlineStyle="width:104px;" binding="#{backingBeanScope.ViewAppointmnets.i1}"/>
+                                <af:panelGroupLayout id="pgl3" layout="vertical"
+                                                     binding="#{backingBeanScope.ViewAppointmnets.pgl3}">
+                                    <af:outputLabel value="Appointment Name" id="ol1"
+                                                    binding="#{backingBeanScope.ViewAppointmnets.ol1}"/>
                                     <af:inputText value="#{bindings.ActivityTitle.inputValue}" simple="true"
                                                   required="#{bindings.ActivityTitle.hints.mandatory}"
                                                   columns="#{bindings.ActivityTitle.hints.displayWidth}"
                                                   maximumLength="#{bindings.ActivityTitle.hints.precision}"
                                                   shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it1"
-                                                  editable="onAccess">
+                                                  editable="onAccess"
+                                                  binding="#{backingBeanScope.ViewAppointmnets.it1}">
                                         <f:validator binding="#{bindings.ActivityTitle.validator}"/>
                                     </af:inputText>
-                                    <af:outputLabel value="Appointment Creator" id="ol2"/>
-                                    <af:outputLabel value="Appointment Start Time" id="ol3"/>
-                                    <af:outputLabel value="Appointment End Time" id="ol4"/>
+                                    <af:outputLabel value="Appointment Creator" id="ol2"
+                                                    binding="#{backingBeanScope.ViewAppointmnets.ol2}"/>
+                                    <af:outputLabel value="Appointment Start Time" id="ol3"
+                                                    binding="#{backingBeanScope.ViewAppointmnets.ol3}"/>
+                                    <af:outputLabel value="Appointment End Time" id="ol4"
+                                                    binding="#{backingBeanScope.ViewAppointmnets.ol4}"/>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"
+                                     binding="#{backingBeanScope.ViewAppointmnets.gc2}"/>
                     </af:gridRow>
                 </af:panelGridLayout>
-            </af:panelGroupLayout>
-        </f:facet>
-    </af:decorativeBox>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:ViewAppointmnets-->
 </ui:composition>
