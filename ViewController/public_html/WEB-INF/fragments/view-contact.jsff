@@ -33,7 +33,8 @@
                                                   columns="#{bindings.ContactName.hints.displayWidth}"
                                                   maximumLength="#{bindings.ContactName.hints.precision}"
                                                   shortDesc="#{bindings.ContactName.hints.tooltip}" id="it10"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it10}">
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.it10}"
+                                                  editable="onAccess">
                                         <f:validator binding="#{bindings.ContactName.validator}"/>
                                     </af:inputText>
                                     <h:outputLabel value="Gender" id="ol2"
@@ -43,7 +44,8 @@
                                     <af:selectOneChoice value="#{bindings.Gender.inputValue}"
                                                         required="#{bindings.Gender.hints.mandatory}"
                                                         shortDesc="#{bindings.Gender.hints.tooltip}" id="soc3"
-                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc3}">
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc3}"
+                                                        editable="onAccess">
                                         <f:selectItems value="#{bindings.Gender.items}" id="si3"
                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si3}"/>
                                         <f:validator binding="#{bindings.Gender.validator}"/>
@@ -117,7 +119,8 @@
                                     <af:selectOneChoice value="#{bindings.BuyingRole.inputValue}"
                                                         required="#{bindings.BuyingRole.hints.mandatory}"
                                                         shortDesc="#{bindings.BuyingRole.hints.tooltip}" id="soc1"
-                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc1}">
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc1}"
+                                                        editable="onAccess">
                                         <f:selectItems value="#{bindings.BuyingRole.items}" id="si1"
                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si1}"/>
                                         <f:validator binding="#{bindings.BuyingRole.validator}"/>
@@ -129,7 +132,8 @@
                                     <af:selectOneChoice value="#{bindings.InfluenceLevel.inputValue}"
                                                         required="#{bindings.InfluenceLevel.hints.mandatory}"
                                                         shortDesc="#{bindings.InfluenceLevel.hints.tooltip}" id="soc2"
-                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc2}">
+                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.soc2}"
+                                                        editable="onAccess">
                                         <f:selectItems value="#{bindings.InfluenceLevel.items}" id="si2"
                                                        binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.si2}"/>
                                         <f:validator binding="#{bindings.InfluenceLevel.validator}"/>
@@ -403,7 +407,7 @@
                                                   selectedRowKeys="#{bindings.NotesUVO_arVO1.collectionModel.selectedRow}"
                                                   selectionListener="#{bindings.NotesUVO_arVO1.collectionModel.makeCurrent}"
                                                   rowSelection="single" fetchSize="#{bindings.NotesUVO_arVO1.rangeSize}"
-                                                  partialTriggers="::qryId3" id="t3"
+                                                  partialTriggers="::qryId4" id="t3"
                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t3}">
                                             <af:column sortProperty="#{bindings.NotesUVO_arVO1.hints.NoteId.name}"
                                                        sortable="true"
@@ -454,14 +458,8 @@
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab4" text="Interactions"
                                                    binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab4}">
-                                    <af:toolbar id="t4"
-                                                binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t4}">
-                                        <af:button id="b2"
-                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.b2}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
-                                        <af:button id="b3"
-                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.b3}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                    <af:panelGroupLayout layout="vertical" id="pgl8"
+                                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl8}">
                                         <af:quickQuery label="Search" searchDesc="Search" id="qryId3"
                                                        value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
@@ -472,9 +470,6 @@
                                                                 binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.cl3}"/>
                                             </f:facet>
                                         </af:quickQuery>
-                                    </af:toolbar>
-                                    <af:panelGroupLayout layout="vertical" id="pgl8"
-                                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl8}">
                                         <af:table value="#{bindings.InteractionsUVO1.collectionModel}" var="row"
                                                   rows="#{bindings.InteractionsUVO1.rangeSize}"
                                                   emptyText="#{bindings.InteractionsUVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -558,7 +553,75 @@
                                     </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab5" text="Appointments"
-                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab5}"/>
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.tab5}">
+                                    <af:toolbar id="t4"
+                                                binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t4}">
+                                        <af:button id="b2"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.b2}"
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                        <af:button id="b3"
+                                                   binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.b3}"
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId4"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery3.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery3.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery3.processQuery}"
+                                                       binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.qryId4}">
+                                            <f:facet name="end">
+                                                <af:commandLink text="Advanced" rendered="false" id="cl4"
+                                                                binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.cl4}"/>
+                                            </f:facet>
+                                        </af:quickQuery>
+                                    </af:toolbar>
+                                    <af:panelGroupLayout layout="vertical" id="pgl9"
+                                                         binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.pgl9}">
+                                        <af:table value="#{bindings.AppointmentUVO1.collectionModel}" var="row"
+                                                  rows="#{bindings.AppointmentUVO1.rangeSize}"
+                                                  emptyText="#{bindings.AppointmentUVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  fetchSize="#{bindings.AppointmentUVO1.rangeSize}"
+                                                  partialTriggers="::qryId4" id="t6"
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t6}">
+                                            <af:column headerText="#{bindings.AppointmentUVO1.hints.ActivityId.label}"
+                                                       id="c31" rendered="false">
+                                                <af:outputText value="#{row.ActivityId}"
+                                                               shortDesc="#{bindings.AppointmentUVO1.hints.ActivityId.tooltip}"
+                                                               id="ot31" rendered="false">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.AppointmentUVO1.hints.ActivityId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.AppointmentUVO1.hints.ActivityTitle.label}"
+                                                       id="c32">
+                                                <af:outputText value="#{row.ActivityTitle}"
+                                                               shortDesc="#{bindings.AppointmentUVO1.hints.ActivityTitle.tooltip}"
+                                                               id="ot32" rendered="false"/>
+                                                <af:link text="#{row.ActivityTitle}" id="l6"
+                                                         action="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.goAppointment}">
+                                                    <af:setPropertyListener from="#{row.ActivityId}"
+                                                                            to="#{pageFlowScope.AppointmentId}"
+                                                                            type="action"/>
+                                                </af:link>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.AppointmentUVO1.hints.StartDateTime.label}"
+                                                       id="c33">
+                                                <af:outputText value="#{row.StartDateTime}"
+                                                               shortDesc="#{bindings.AppointmentUVO1.hints.StartDateTime.tooltip}"
+                                                               id="ot33">
+                                                    <af:convertDateTime pattern="#{bindings.AppointmentUVO1.hints.StartDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.AppointmentUVO1.hints.EndDueDateTime.label}"
+                                                       id="c34">
+                                                <af:outputText value="#{row.EndDueDateTime}"
+                                                               shortDesc="#{bindings.AppointmentUVO1.hints.EndDueDateTime.tooltip}"
+                                                               id="ot34">
+                                                    <af:convertDateTime pattern="#{bindings.AppointmentUVO1.hints.EndDueDateTime.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
                             </af:panelTabbed>
                         </af:gridCell>
                     </af:gridRow>

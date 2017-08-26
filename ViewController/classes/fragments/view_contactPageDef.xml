@@ -24,6 +24,10 @@
               id="InteractionsUVO1Iterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="InteractionsUVO1Iterator" id="ImplicitViewCriteriaQuery2"/>
+    <iterator Binds="AppointmentUVO1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="AppointmentUVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="AppointmentUVO1Iterator" id="ImplicitViewCriteriaQuery3"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CustomerIterator" id="AccountName">
@@ -177,6 +181,16 @@
           <Item Value="StartDateTime"/>
           <Item Value="EndDueDateTime"/>
           <Item Value="AInterResolution"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AppointmentUVO1Iterator" id="AppointmentUVO1">
+      <nodeDefinition DefName="model.uvo.AppointmentUVO" Name="AppointmentUVO10">
+        <AttrNames>
+          <Item Value="ActivityId"/>
+          <Item Value="ActivityTitle"/>
+          <Item Value="StartDateTime"/>
+          <Item Value="EndDueDateTime"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

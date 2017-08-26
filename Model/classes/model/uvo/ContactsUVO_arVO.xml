@@ -92,11 +92,7 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="ContactsEO_ar"
-    AliasName="CONTACT_ID">
-    <Properties>
-      <SchemaBasedProperties/>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTACT_ID"/>
   <ViewAttribute
     Name="ContactName"
     PrecisionRule="true"

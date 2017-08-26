@@ -21,6 +21,7 @@
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_finderName" Value="ContactsUVO_ar"/>
+      <Attr Name="_minCardinality" Value="1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.uvo.ContactsUVO_arVO.ContactId"/>

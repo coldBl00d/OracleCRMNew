@@ -10,7 +10,8 @@
                         <af:gridCell marginStart="5px" width="275px" id="gc1"
                                      binding="#{backingBeanScope.ViewAppointmnets.gc1}">
                             <af:panelBox text="Appointment Details" id="pb1" background="light"
-                                         inlineStyle="width:275px" binding="#{backingBeanScope.ViewAppointmnets.pb1}">
+                                         inlineStyle="width:275px" binding="#{backingBeanScope.ViewAppointmnets.pb1}"
+                                         showDisclosure="false">
                                 <f:facet name="toolbar">
                                     <af:button id="b1" icon="#{resource['images:save.png']}"
                                                binding="#{backingBeanScope.ViewAppointmnets.b1}"/>

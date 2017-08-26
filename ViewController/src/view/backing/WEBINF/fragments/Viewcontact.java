@@ -100,9 +100,13 @@ public class Viewcontact {
     private RichButton b2;
     private RichButton b3;
     private RichPanelGroupLayout pgl8;
+    private RichTable t5;
     private RichQuickQuery qryId3;
     private RichCommandLink cl3;
-    private RichTable t5;
+    private RichPanelGroupLayout pgl9;
+    private RichQuickQuery qryId4;
+    private RichCommandLink cl4;
+    private RichTable t6;
 
     public Viewcontact(){
         super();
@@ -137,7 +141,7 @@ public class Viewcontact {
     }
     
     public String goAppointment(){
-        goPlace("OpportunitiesOfContactIterator",
+        goPlace("AppointmentUVO1Iterator",
             "ActivityTitle",
             "AppointmentId","AppointmentId", 
             "/WEB-INF/flows/view-appointment-taskflow.xml#view-appointment-taskflow");
@@ -754,6 +758,15 @@ public class Viewcontact {
     }
 
 
+    public void setT5(RichTable t5) {
+        this.t5 = t5;
+    }
+
+    public RichTable getT5() {
+        return t5;
+    }
+
+
     public void setQryId3(RichQuickQuery qryId3) {
         this.qryId3 = qryId3;
     }
@@ -770,11 +783,36 @@ public class Viewcontact {
         return cl3;
     }
 
-    public void setT5(RichTable t5) {
-        this.t5 = t5;
+    public void setPgl9(RichPanelGroupLayout pgl9) {
+        this.pgl9 = pgl9;
     }
 
-    public RichTable getT5() {
-        return t5;
+    public RichPanelGroupLayout getPgl9() {
+        return pgl9;
+    }
+
+
+    public void setQryId4(RichQuickQuery qryId4) {
+        this.qryId4 = qryId4;
+    }
+
+    public RichQuickQuery getQryId4() {
+        return qryId4;
+    }
+
+    public void setCl4(RichCommandLink cl4) {
+        this.cl4 = cl4;
+    }
+
+    public RichCommandLink getCl4() {
+        return cl4;
+    }
+
+    public void setT6(RichTable t6) {
+        this.t6 = t6;
+    }
+
+    public RichTable getT6() {
+        return t6;
     }
 }

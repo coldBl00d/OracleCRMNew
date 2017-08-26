@@ -26,7 +26,7 @@
       <Item Value="model.eo.ContactsEO_ar.ContactId"/>
     </AttrArray>
     <AttrArray Name="IntersectAttributes">
-      <Item Value="model.eo.ActivityToContactsLinkEO.ActivityId"/>
+      <Item Value="model.eo.ActivityToContactsLinkEO.ContactId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -43,7 +43,7 @@
       <Item Value="model.eo.ActivityEO_arEO.ActivityId"/>
     </AttrArray>
     <AttrArray Name="IntersectAttributes">
-      <Item Value="model.eo.ActivityToContactsLinkEO.ContactId"/>
+      <Item Value="model.eo.ActivityToContactsLinkEO.ActivityId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>
