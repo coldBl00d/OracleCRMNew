@@ -139,7 +139,7 @@
                                 <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityId.name}"
                                            sortable="true"
                                            headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityId.label}"
-                                           id="c11">
+                                           id="c11" rendered="false">
                                     <af:inputText value="#{row.bindings.OpportunityId.inputValue}"
                                                   label="#{bindings.OpportunityListForDisplay.hints.OpportunityId.label}"
                                                   required="#{bindings.OpportunityListForDisplay.hints.OpportunityId.mandatory}"
