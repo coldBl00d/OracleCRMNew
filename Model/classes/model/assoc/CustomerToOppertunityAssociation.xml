@@ -35,7 +35,7 @@
       <Attr Name="_finderName" Value="OppertunityEO_ar"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.OppertunityEO_ar.CreatorId"/>
+      <Item Value="model.eo.OppertunityEO_ar.AccId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

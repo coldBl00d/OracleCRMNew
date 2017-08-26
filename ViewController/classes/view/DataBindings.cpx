@@ -23,8 +23,6 @@
     <page path="/WEB-INF/fragments/ViewCustomer.jsff" usageId="view_ViewCustomerPageDef"/>
     <page path="/WEB-INF/fragments/view-oppertunity_ar.jsff" usageId="view_view_oppertunity_arPageDef"/>
     <page path="/WEB-INF/fragments/OppertunityOverview_ar.jsff" usageId="view_OppertunityOverview_arPageDef"/>
-    <page path="/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow@ExecuteWithParams"
-          usageId="view_view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/flows/view-contact-taskflow.xml#view-contact-taskflow@ExecuteWithParams"
           usageId="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/fragments/view-contact.jsff" usageId="view_view_contactPageDef"/>
@@ -37,6 +35,8 @@
     <page path="/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow@SetCurrentRowWithKeyValue"
           usageId="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page path="/WEB-INF/fragments/Tasks.jsff" usageId="view_TasksPageDef"/>
+    <page path="/WEB-INF/flows/view-oppertunity-taskflow.xml#view-oppertunity-taskflow@SetCurrentRowWithKeyValue"
+          usageId="view_view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -53,8 +53,6 @@
     <page id="view_ViewCustomerPageDef" path="fragments.ViewCustomerPageDef"/>
     <page id="view_view_oppertunity_arPageDef" path="fragments.view_oppertunity_arPageDef"/>
     <page id="view_OppertunityOverview_arPageDef" path="fragments.OppertunityOverview_arPageDef"/>
-    <page id="view_view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"
-          path="flows.view_oppertunity_taskflow_view_oppertunity_taskflow_ExecuteWithParamsPageDef"/>
     <page id="view_view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"
           path="flows.view_contact_taskflow_view_contact_taskflow_ExecuteWithParamsPageDef"/>
     <page id="view_view_contactPageDef" path="fragments.view_contactPageDef"/>
@@ -67,6 +65,8 @@
     <page id="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"
           path="flows.view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page id="view_TasksPageDef" path="fragments.TasksPageDef"/>
+    <page id="view_view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"
+          path="flows.view_oppertunity_taskflow_view_oppertunity_taskflow_SetCurrentRowWithKeyValuePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"
