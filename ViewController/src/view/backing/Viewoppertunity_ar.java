@@ -122,6 +122,10 @@ public class Viewoppertunity_ar {
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t7;
+    private RichPanelGroupLayout pgl7;
+    private RichQuickQuery qryId2;
+    private RichCommandLink cl2;
+    private RichTable t10;
 
 
     public Viewoppertunity_ar(){
@@ -788,6 +792,8 @@ public class Viewoppertunity_ar {
         return null;
     }
     
+    
+    
     public String goInteraction(){
         goPlace("OpportunityInteractionsIterator",
             "ActivityTitle",
@@ -904,5 +910,38 @@ public class Viewoppertunity_ar {
 
     public RichTable getT7() {
         return t7;
+    }
+
+    public void setPgl7(RichPanelGroupLayout pgl7) {
+        this.pgl7 = pgl7;
+    }
+
+    public RichPanelGroupLayout getPgl7() {
+        return pgl7;
+    }
+
+
+    public void setQryId2(RichQuickQuery qryId2) {
+        this.qryId2 = qryId2;
+    }
+
+    public RichQuickQuery getQryId2() {
+        return qryId2;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
     }
 }

@@ -14,6 +14,10 @@
               id="OpportunityInteractionsIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OpportunityInteractionsIterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="ContactsOfOpportunity" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="ContactsOfOpportunityIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsOfOpportunityIterator" id="ImplicitViewCriteriaQuery1"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -116,6 +120,18 @@
       <nodeDefinition DefName="model.uvo.UserUVO_arVO">
         <AttrNames>
           <Item Value="FirstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ContactsOfOpportunityIterator" id="ContactsOfOpportunity">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsOfOpportunity0">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="Title"/>
+          <Item Value="BuyingRole"/>
+          <Item Value="InfluenceLevel"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
