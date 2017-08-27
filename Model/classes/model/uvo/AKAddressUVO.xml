@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="AKAddressEO"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="AddressLine1"
     PrecisionRule="true"
@@ -41,4 +42,9 @@
     EntityAttrName="AddressLine3"
     EntityUsage="AKAddressEO"
     AliasName="ADDRESS_LINE3"/>
+  <ViewLinkAccessor
+    Name="CustomerListView_ar"
+    ViewLink="model.uvo.ShippingFkVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

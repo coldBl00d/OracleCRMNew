@@ -206,6 +206,13 @@
     AssociationOtherEnd="model.assoc.AppointmentToCreator.Activity"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AltCust"
+    Association="model.eo.fk_ActivityEOASSOC"
+    AssociationEnd="model.eo.fk_ActivityEOASSOC.AltCust"
+    AssociationOtherEnd="model.eo.fk_ActivityEOASSOC.Activity"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">

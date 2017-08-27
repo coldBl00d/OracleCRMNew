@@ -39,6 +39,8 @@
               id="CreateOpportunity1Iterator"/>
     <iterator id="AppointmentDisplayIterator" Binds="AppointmentDisplay" DataControl="UserApplicationModuleDataControl"
               RangeSize="25"/>
+    <iterator Binds="AltCustContactU1" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="AltCustContactU1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CreatorIterator" id="FirstName">
@@ -277,8 +279,6 @@
             DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Rollback" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
-    <list IterBinding="CreateOpportunity1Iterator" StaticList="false" Uses="LOV_PrimaryContactId"
-          id="PrimaryContactId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <methodAction id="executeCriteria" RequiresUpdateModel="true" Action="invokeMethod" MethodName="executeCriteria"
                   IsViewObjectMethod="false" DataControl="UserApplicationModuleDataControl"
                   InstanceName="bindings.executeCriteria.dataControl.dataProvider">
@@ -306,5 +306,21 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="CreateOpportunity1Iterator" id="PrimaryContactId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="false" ListIter="AltCustContactU1Iterator" NullValueFlag="end"
+          NullValueId="PrimaryContactId_null">
+      <AttrNames>
+        <Item Value="PrimaryContactId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="ContactId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="ContactName"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle" PropertiesFile="view.ViewControllerBundle"/>
+  </ResourceBundle>
 </pageDefinition>

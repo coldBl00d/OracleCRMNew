@@ -39,26 +39,6 @@
     Name="salesStageRVO1"
     ViewObjectName="model.rvo.salesStageRVO"
     RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="UserApplicationModule_CustomerContacts1"
-    ViewObjectName="model.uvo.ContactsUVO_arVO"
-    AMUsageName="UserApplicationModule"
-    ViewInstanceName="CustomerContacts"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="UserApplicationModule_ContactR1_1"
-    ViewObjectName="model.rvo.ContactRVO"
-    AMUsageName="UserApplicationModule"
-    ViewInstanceName="ContactR1"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="CustContact1"
-    ViewObjectName="model.rvo.CustContact"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="CustContactRVO1"
-    ViewObjectName="model.rvo.CustContactRVO"
-    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Channel"
     ListVOName="salesChannel1"
@@ -141,23 +121,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Value"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_PrimaryContactId"
-    ListVOName="CustContactRVO1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PrimaryContactId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ContactId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ContactName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -252,15 +215,7 @@
     PrecisionRule="true"
     EntityAttrName="PrimaryContactId"
     EntityUsage="OppertunityEO_ar"
-    AliasName="PRIMARY_CONTACT_ID"
-    LOVName="LOV_PrimaryContactId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="PRIMARY_CONTACT_ID"/>
   <ViewAttribute
     Name="Revenue"
     PrecisionRule="true"

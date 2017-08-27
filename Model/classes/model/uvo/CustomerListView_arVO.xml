@@ -221,6 +221,11 @@
     ViewLink="model.vl.ContactRVOVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AltCustContactU"
+    ViewLink="model.vl.AltCustContactVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

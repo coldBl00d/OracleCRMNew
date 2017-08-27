@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CUSTOMER_ACCOUNTS"
   AliasName="CustomerEO_ar"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="AccountId"
     IsUpdateable="while_insert"
@@ -38,7 +39,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CUSTOMER_ACCOUNTS">
+    TableName="CUSTOMER_ACCOUNTS"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
@@ -48,6 +50,12 @@
           ResId="model.eo.CustomerEO_ar.AccountName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="AccountNameRule0"
+      ResId="ENTER_AN_ACCOUNT_NAME"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
   </Attribute>
   <Attribute
     Name="AccountAddress"
@@ -251,6 +259,13 @@
     AssociationOtherEnd="model.assoc.SalesRepDashboardAssociationASSOC_rs.CustomerEO_ar1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AltContacts"
+    Association="model.assoc.AltCustContactASSOC"
+    AssociationEnd="model.assoc.AltCustContactASSOC.AltContacts"
+    AssociationOtherEnd="model.assoc.AltCustContactASSOC.CustomerEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustomerAccountPk"
     PrimaryKey="true">
@@ -271,6 +286,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.CustomerEO_ar.AccountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CustomerAccountsAccountNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ACCOUNT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_ACCOUNTS_ACCOUNT_NAME"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerEO_ar.AccountName"/>
     </AttrArray>
   </Key>
   <Key

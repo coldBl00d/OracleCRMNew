@@ -85,9 +85,6 @@
     Name="CreateOpportunity1"
     ViewObjectName="model.uvo.CreateOpportunity"/>
   <ViewUsage
-    Name="ContactR1"
-    ViewObjectName="model.rvo.ContactRVO"/>
-  <ViewUsage
     Name="AddressOfCustomer"
     ViewObjectName="model.uvo.AddressUVO_arVO"/>
   <ViewUsage
@@ -129,9 +126,6 @@
   <ViewUsage
     Name="SalesRepGraphViewObjVO_rs1"
     ViewObjectName="model.uvo.SalesRepGraphViewObjVO_rs"/>
-  <ViewUsage
-    Name="CustContact1"
-    ViewObjectName="model.rvo.CustContact"/>
   <ViewUsage
     Name="AppointmentDisplay"
     ViewObjectName="model.uvo.AppointmentUVO"/>
@@ -180,6 +174,9 @@
   <ViewUsage
     Name="UserForLogin"
     ViewObjectName="model.uvo.UserUVO_arVO"/>
+  <ViewUsage
+    Name="AltCustContactU1"
+    ViewObjectName="model.uvo.AltCustContactUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -263,12 +260,6 @@
     ViewLinkObjectName="model.vl.RevenueItemToProductVL"
     SrcViewUsageName="model.am.UserApplicationModule.RevenueItemsOfOpportunity"
     DstViewUsageName="model.am.UserApplicationModule.ProductsName"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="ContactRVOVL1"
-    ViewLinkObjectName="model.vl.ContactRVOVL"
-    SrcViewUsageName="model.am.UserApplicationModule.Customer"
-    DstViewUsageName="model.am.UserApplicationModule.ContactR1"
     Reversed="false"/>
   <ViewLinkUsage
     Name="ContactToAddressVL1"
@@ -384,6 +375,12 @@
     SrcViewUsageName="model.am.UserApplicationModule.OpportunitiesOfContact"
     DstViewUsageName="model.am.UserApplicationModule.PrimaryContact2"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="AltCustContactVL1"
+    ViewLinkObjectName="model.vl.AltCustContactVL"
+    SrcViewUsageName="model.am.UserApplicationModule.Customer"
+    DstViewUsageName="model.am.UserApplicationModule.AltCustContactU1"
+    Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">
     <Method
@@ -395,16 +392,6 @@
       <Parameter
         Name="aId"
         Type="java.lang.Integer"/>
-      <Parameter
-        Name="cId"
-        Type="java.lang.Integer"/>
-    </Method>
-    <Method
-      Name="executeCriteria"
-      MethodName="executeCriteria">
-      <Return
-        Name="_return_type_"
-        Type="void"/>
       <Parameter
         Name="cId"
         Type="java.lang.Integer"/>

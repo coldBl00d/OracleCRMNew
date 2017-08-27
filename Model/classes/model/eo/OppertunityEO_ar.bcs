@@ -1,0 +1,12 @@
+//Groovy Scripts for model.eo.OppertunityEO_ar
+
+package model.eo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="OpportunityCloseDateRule0", attributeName="OpportunityCloseDate")
+def OpportunityCloseDate_OpportunityCloseDateRule0_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate
+}
+

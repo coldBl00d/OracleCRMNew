@@ -88,6 +88,13 @@
     AssociationOtherEnd="model.assoc.AKUser_AddressASSOC.AKAddress"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CustomerEO_ar"
+    Association="model.eo.ShippingFkASSOC"
+    AssociationEnd="model.eo.ShippingFkASSOC.CustomerEO_ar"
+    AssociationOtherEnd="model.eo.ShippingFkASSOC.AKAddress"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="AddressAddressLine1Check">
     <DesignTime>

@@ -33,6 +33,7 @@ import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
+import oracle.adf.view.rich.component.rich.output.RichActiveOutputText;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
@@ -135,8 +136,6 @@ public class ViewCustomer {
     private RichInputText it16;
     private RichInputText it17;
     private RichInputText it18;
-    private RichSpacer s5;
-    private RichSpacer s6;
     private RichSpacer s7;
 
     private RichPanelFormLayout pfl1;
@@ -177,10 +176,13 @@ public class ViewCustomer {
     private RichDialog d3;
     private RichOutputText ot32;
     private RichPopup p4;
-    private RichSelectOneChoice soc6;
-    private UISelectItems si6;
     private RichPanelGroupLayout pgl10;
     private RichTable t10;
+    private RichSelectOneChoice soc6;
+    private UISelectItems si6;
+    private RichPopup p2;
+    private RichDialog d4;
+    private RichActiveOutputText aot1;
 
     public ViewCustomer(){
         
@@ -1091,6 +1093,25 @@ public class ViewCustomer {
             }
        
     }
+    
+    public void deleteDialogListener(DialogEvent dialogEvent) {
+            if(dialogEvent.getOutcome().name().equals("yes")) {
+               
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Delete");
+                operationBinding.execute();
+                operationBinding = bindings.getOperationBinding("Commit");
+                operationBinding.execute();
+                
+            } else if(dialogEvent.getOutcome().name().equals("no")){
+              
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                operationBinding.execute();
+                
+            }
+       
+    }
     public void cancelPopupListener(PopupCanceledEvent popupCanceledEvent){
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
         OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
@@ -1127,6 +1148,7 @@ public class ViewCustomer {
                 RowSetIterator rsi = iter1.getRowSetIterator();
                 Row row = rsi.getCurrentRow();
                 row.setAttribute("AccId", row1.getAttribute("AccountId"));
+                row.setAttribute("CreatorId",Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
                 operationBinding.execute();
                 
                 
@@ -1221,21 +1243,6 @@ public class ViewCustomer {
         return it18;
     }
 
-    public void setS5(RichSpacer s5) {
-        this.s5 = s5;
-    }
-
-    public RichSpacer getS5() {
-        return s5;
-    }
-
-    public void setS6(RichSpacer s6) {
-        this.s6 = s6;
-    }
-
-    public RichSpacer getS6() {
-        return s6;
-    }
 
     public void setS7(RichSpacer s7) {
         this.s7 = s7;
@@ -1554,6 +1561,22 @@ public class ViewCustomer {
     }
 
 
+    public void setPgl10(RichPanelGroupLayout pgl10) {
+        this.pgl10 = pgl10;
+    }
+
+    public RichPanelGroupLayout getPgl10() {
+        return pgl10;
+    }
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
+    }
+
     public void setSoc6(RichSelectOneChoice soc6) {
         this.soc6 = soc6;
     }
@@ -1570,19 +1593,27 @@ public class ViewCustomer {
         return si6;
     }
 
-    public void setPgl10(RichPanelGroupLayout pgl10) {
-        this.pgl10 = pgl10;
+    public void setP2(RichPopup p2) {
+        this.p2 = p2;
     }
 
-    public RichPanelGroupLayout getPgl10() {
-        return pgl10;
+    public RichPopup getP2() {
+        return p2;
     }
 
-    public void setT10(RichTable t10) {
-        this.t10 = t10;
+    public void setD4(RichDialog d4) {
+        this.d4 = d4;
     }
 
-    public RichTable getT10() {
-        return t10;
+    public RichDialog getD4() {
+        return d4;
+    }
+
+    public void setAot1(RichActiveOutputText aot1) {
+        this.aot1 = aot1;
+    }
+
+    public RichActiveOutputText getAot1() {
+        return aot1;
     }
 }

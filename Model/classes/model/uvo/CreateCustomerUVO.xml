@@ -23,10 +23,15 @@
     Name="CustomerListOverviewPage1"
     ViewObjectName="model.uvo.CustomerListOverviewPage"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AltCustUVO1"
+    ViewObjectName="model.uvo.AltCustUVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ParentAccountId"
-    ListVOName="CustomerListOverviewPage1"
-    NullValueFlag="none"
+    ListVOName="AltCustUVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ParentAccountId"/>
@@ -158,7 +163,14 @@
     PrecisionRule="true"
     EntityAttrName="AddressLine1"
     EntityUsage="AddressEO_ar"
-    AliasName="ADDRESS_LINE1"/>
+    AliasName="ADDRESS_LINE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CreateCustomerUVO.AddressLine1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressLine2"
     PrecisionRule="true"
@@ -183,7 +195,14 @@
     PrecisionRule="true"
     EntityAttrName="AddressLine1"
     EntityUsage="AddressEO_ar1"
-    AliasName="ADDRESS_LINE11"/>
+    AliasName="ADDRESS_LINE11">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CreateCustomerUVO.AddressLine11_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressLine21"
     PrecisionRule="true"

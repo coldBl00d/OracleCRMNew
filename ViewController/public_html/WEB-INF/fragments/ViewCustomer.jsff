@@ -101,8 +101,6 @@
                                                   editable="onAccess">
                                         <f:validator binding="#{bindings.AddressLine12.validator}"/>
                                     </af:inputText>
-                                    <af:spacer width="10" height="10" id="s5"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s5}"/>
                                     <af:inputText value="#{bindings.AddressLine22.inputValue}" simple="true"
                                                   required="#{bindings.AddressLine22.hints.mandatory}" columns="30"
                                                   maximumLength="#{bindings.AddressLine22.hints.precision}"
@@ -111,8 +109,6 @@
                                                   editable="onAccess">
                                         <f:validator binding="#{bindings.AddressLine22.validator}"/>
                                     </af:inputText>
-                                    <af:spacer width="10" height="10" id="s6"
-                                               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s6}"/>
                                     <af:inputText value="#{bindings.AddressLine32.inputValue}" simple="true"
                                                   required="#{bindings.AddressLine32.hints.mandatory}" columns="30"
                                                   maximumLength="#{bindings.AddressLine32.hints.precision}"
@@ -159,7 +155,7 @@
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b3}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"
                                                    actionListener="#{bindings.Delete1.execute}">
-                                            <af:showPopupBehavior popupId="p3" align="afterStart" alignId="b3"/>
+                                            <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b3"/>
                                         </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qq1"
                                                        value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
@@ -182,7 +178,7 @@
                                                   selectionListener="#{bindings.OppertunityOfCustomer.collectionModel.makeCurrent}"
                                                   rowSelection="single"
                                                   fetchSize="#{bindings.OppertunityOfCustomer.rangeSize}"
-                                                  partialTriggers="::qq1 ::b3" id="t5"
+                                                  partialTriggers="::qq1 ::d4 ::p2 ::d2 ::p4" id="t5"
                                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t5}"
                                                   filterVisible="false">
                                             <af:column headerText="#{bindings.OppertunityOfCustomer.hints.OpportunityName.label}"
@@ -967,6 +963,18 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.EstimatedDuration.format}"/>
                 </af:inputText>
             </af:panelFormLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p2}"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}">
+        <af:dialog id="d4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d4}"
+                   title="Delete opportunity"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteOppDialogListener}"
+                   type="yesNo">
+            <f:facet name="buttonBar"/>
+            <af:activeOutputText value="Are you sure you want to delete?" id="aot1"
+                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.aot1}"/>
         </af:dialog>
     </af:popup>
 </ui:composition>

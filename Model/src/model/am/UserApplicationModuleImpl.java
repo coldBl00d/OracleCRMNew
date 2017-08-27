@@ -324,21 +324,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewObjectImpl) findViewObject("CreateOpportunity1");
     }
 
-    /**
-     * Container's getter for ContactR1.
-     * @return ContactR1
-     */
-    public ViewObjectImpl getContactR1() {
-        return (ViewObjectImpl) findViewObject("ContactR1");
-    }
-
-    /**
-     * Container's getter for ContactRVOVL1.
-     * @return ContactRVOVL1
-     */
-    public ViewLinkImpl getContactRVOVL1() {
-        return (ViewLinkImpl) findViewLink("ContactRVOVL1");
-    }
 
     /**
      * Container's getter for AddressUVO_arVO1.
@@ -527,21 +512,8 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         return (ViewObjectImpl) findViewObject("SalesRepGraphViewObjVO_rs1");
     }
     
-    public void executeCriteria(Integer cId){
-        ViewObjectImpl vo = getCustContact1();
-        ViewCriteria vc = vo.getViewCriteria("CustContactCriteria");
-        vo.applyViewCriteria(vc);
-        vo.setNamedWhereClauseParam("AccountID",cId);
-        vo.executeQuery();
-    }
+   
 
-    /**
-     * Container's getter for CustContact1.
-     * @return CustContact1
-     */
-    public ViewObjectImpl getCustContact1() {
-        return (ViewObjectImpl) findViewObject("CustContact1");
-    }
 
     /**
      * Container's getter for AppointmentUVO2.
@@ -753,6 +725,22 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
      */
     public ViewObjectImpl getUserForLogin() {
         return (ViewObjectImpl) findViewObject("UserForLogin");
+    }
+
+    /**
+     * Container's getter for AltCustContactU1.
+     * @return AltCustContactU1
+     */
+    public ViewObjectImpl getAltCustContactU1() {
+        return (ViewObjectImpl) findViewObject("AltCustContactU1");
+    }
+
+    /**
+     * Container's getter for AltCustContactVL1.
+     * @return AltCustContactVL1
+     */
+    public ViewLinkImpl getAltCustContactVL1() {
+        return (ViewLinkImpl) findViewLink("AltCustContactVL1");
     }
 }
 
