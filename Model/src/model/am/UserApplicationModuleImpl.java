@@ -742,5 +742,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getAltCustContactVL1() {
         return (ViewLinkImpl) findViewLink("AltCustContactVL1");
     }
+
+    /**
+     * Container's getter for CreateItemsForOpportunityU1.
+     * @return CreateItemsForOpportunityU1
+     */
+    public ViewObjectImpl getCreateItemsForOpportunityU1() {
+        return (ViewObjectImpl) findViewObject("CreateItemsForOpportunityU1");
+    }
 }
 

@@ -30,6 +30,8 @@
               id="OpportunityAppointmentsIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="OpportunityAppointmentsIterator" id="ImplicitViewCriteriaQuery4"/>
+    <iterator Binds="CreateItemsForOpportunityU1" RangeSize="10" DataControl="UserApplicationModuleDataControl"
+              id="CreateItemsForOpportunityU1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -187,5 +189,65 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="CreateItemsForOpportunityU1Iterator" id="CreateInsert"
+            InstanceName="UserApplicationModuleDataControl.CreateItemsForOpportunityU1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Rollback" DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <action IterBinding="RevenueItemsOfOpportunityIterator" id="Delete"
+            InstanceName="UserApplicationModuleDataControl.RevenueItemsOfOpportunity"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="CreateItemsForOpportunityU1Iterator" StaticList="false" Uses="LOV_ProductId" id="ProductId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateItemsForOpportunityU1Iterator" id="Quantity">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateItemsForOpportunityU1Iterator" id="WinProbability">
+      <AttrNames>
+        <Item Value="WinProbability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateItemsForOpportunityU1Iterator" id="WorseCaseRevenue">
+      <AttrNames>
+        <Item Value="WorseCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateItemsForOpportunityU1Iterator" id="SettledPrice">
+      <AttrNames>
+        <Item Value="SettledPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateItemsForOpportunityU1Iterator" id="BestCaseRevenue1">
+      <AttrNames>
+        <Item Value="BestCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RevenueItemsOfOpportunityIterator" id="WinProbability1">
+      <AttrNames>
+        <Item Value="WinProbability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RevenueItemsOfOpportunityIterator" id="Quantity1">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RevenueItemsOfOpportunityIterator" id="BestCaseRevenue2">
+      <AttrNames>
+        <Item Value="BestCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RevenueItemsOfOpportunityIterator" id="SettledPrice1">
+      <AttrNames>
+        <Item Value="SettledPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RevenueItemsOfOpportunityIterator" id="WorseCaseRevenue1">
+      <AttrNames>
+        <Item Value="WorseCaseRevenue"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

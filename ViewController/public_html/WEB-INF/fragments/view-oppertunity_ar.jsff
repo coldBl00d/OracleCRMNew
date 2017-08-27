@@ -11,7 +11,7 @@
                                 binding="#{backingBeanScope.backing_viewoppertunity_ar.gr1}">
                         <af:gridCell marginStart="5px" width="500px" id="gc1"
                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.gc1}">
-                            <af:panelBox text="Oppertunity Overview" id="pb1"
+                            <af:panelBox text="Opportunity Overview" id="pb1"
                                          binding="#{backingBeanScope.backing_viewoppertunity_ar.pb1}"
                                          showDisclosure="false" type="flow" background="light"
                                      inlineStyle="width:500px;">
@@ -76,7 +76,7 @@
                                                       maximumLength="#{bindings.Revenue.hints.precision}"
                                                       shortDesc="#{bindings.Revenue.hints.tooltip}" id="it4"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it4}"
-                                                      editable="onAccess">
+                                                      editable="onAccess" partialTriggers="p1 d1">
                                             <f:validator binding="#{bindings.Revenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.Revenue.format}"/>
@@ -89,7 +89,7 @@
                                                       maximumLength="#{bindings.WorstCaseRevenue.hints.precision}"
                                                       shortDesc="#{bindings.WorstCaseRevenue.hints.tooltip}" id="it6"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it6}"
-                                                      editable="onAccess">
+                                                      editable="onAccess" partialTriggers="p1 d1">
                                             <f:validator binding="#{bindings.WorstCaseRevenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.WorstCaseRevenue.format}"/>
@@ -102,7 +102,7 @@
                                                       maximumLength="#{bindings.BestCaseRevenue.hints.precision}"
                                                       shortDesc="#{bindings.BestCaseRevenue.hints.tooltip}" id="it5"
                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.it5}"
-                                                      editable="onAccess">
+                                                      editable="onAccess" partialTriggers="p1 d1">
                                             <f:validator binding="#{bindings.BestCaseRevenue.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.BestCaseRevenue.format}"/>
@@ -229,11 +229,17 @@
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab4}">
                                     <af:toolbar id="t6" binding="#{backingBeanScope.backing_viewoppertunity_ar.t6}">
                                         <af:button id="b8" binding="#{backingBeanScope.backing_viewoppertunity_ar.b8}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p1" align="afterStart" alignId="b8"/>
+                                        </af:button>
                                         <af:button id="b18" binding="#{backingBeanScope.backing_viewoppertunity_ar.b18}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b18"/>
+                                        </af:button>
                                         <af:button id="b11" binding="#{backingBeanScope.backing_viewoppertunity_ar.b11}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p3" align="afterStart" alignId="b11"/>
+                                        </af:button>
                                     </af:toolbar>
                                     <af:table value="#{bindings.RevenueItemsOfOpportunity.collectionModel}" var="row"
                                               rows="#{bindings.RevenueItemsOfOpportunity.rangeSize}"
@@ -241,7 +247,8 @@
                                               rowBandingInterval="0"
                                               fetchSize="#{bindings.RevenueItemsOfOpportunity.rangeSize}" id="t9"
                                               binding="#{backingBeanScope.backing_viewoppertunity_ar.t9}"
-                                              columnStretching="last">
+                                              columnStretching="last" columnSelection="single"
+                                              partialTriggers="::p1 ::p2 ::p3 ::d1 ::d2 ::d3">
                                         <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductName.label}"
                                                    id="c1">
                                             <af:outputText value="#{row.ProductsU.bindings.ProductName.inputValue}"
@@ -754,4 +761,137 @@
         </af:decorativeBox>
     </af:panelGroupLayout>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_viewoppertunity_ar-->
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p1}"
+              popupFetchListener="#{backingBeanScope.backing_viewoppertunity_ar.insertPopupFetchListener}"
+              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}">
+        <af:dialog id="d1" binding="#{backingBeanScope.backing_viewoppertunity_ar.d1}" title="Insert item"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertDialogListener}">
+            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl1}">
+                <af:selectOneChoice value="#{bindings.ProductId.inputValue}" label="#{bindings.ProductId.label}"
+                                    required="#{bindings.ProductId.hints.mandatory}"
+                                    shortDesc="#{bindings.ProductId.hints.tooltip}" id="soc10"
+                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.soc10}">
+                    <f:selectItems value="#{bindings.ProductId.items}" id="si10"
+                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.si10}"/>
+                    <f:validator binding="#{bindings.ProductId.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.Quantity.inputValue}" label="#{bindings.Quantity.hints.label}"
+                              required="#{bindings.Quantity.hints.mandatory}"
+                              columns="#{bindings.Quantity.hints.displayWidth}"
+                              maximumLength="#{bindings.Quantity.hints.precision}"
+                              shortDesc="#{bindings.Quantity.hints.tooltip}" id="it8"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it8}">
+                    <f:validator binding="#{bindings.Quantity.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Quantity.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.WinProbability.inputValue}"
+                              label="#{bindings.WinProbability.hints.label}"
+                              required="#{bindings.WinProbability.hints.mandatory}"
+                              columns="#{bindings.WinProbability.hints.displayWidth}"
+                              maximumLength="#{bindings.WinProbability.hints.precision}"
+                              shortDesc="#{bindings.WinProbability.hints.tooltip}" id="it9"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it9}">
+                    <f:validator binding="#{bindings.WinProbability.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.WinProbability.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.WorseCaseRevenue.inputValue}"
+                              label="#{bindings.WorseCaseRevenue.hints.label}"
+                              required="#{bindings.WorseCaseRevenue.hints.mandatory}"
+                              columns="#{bindings.WorseCaseRevenue.hints.displayWidth}"
+                              maximumLength="#{bindings.WorseCaseRevenue.hints.precision}"
+                              shortDesc="#{bindings.WorseCaseRevenue.hints.tooltip}" id="it10"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it10}">
+                    <f:validator binding="#{bindings.WorseCaseRevenue.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.WorseCaseRevenue.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.SettledPrice.inputValue}" label="#{bindings.SettledPrice.hints.label}"
+                              required="#{bindings.SettledPrice.hints.mandatory}"
+                              columns="#{bindings.SettledPrice.hints.displayWidth}"
+                              maximumLength="#{bindings.SettledPrice.hints.precision}"
+                              shortDesc="#{bindings.SettledPrice.hints.tooltip}" id="it11"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it11}">
+                    <f:validator binding="#{bindings.SettledPrice.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.SettledPrice.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.BestCaseRevenue1.inputValue}"
+                              label="#{bindings.BestCaseRevenue1.hints.label}"
+                              required="#{bindings.BestCaseRevenue1.hints.mandatory}"
+                              columns="#{bindings.BestCaseRevenue1.hints.displayWidth}"
+                              maximumLength="#{bindings.BestCaseRevenue1.hints.precision}"
+                              shortDesc="#{bindings.BestCaseRevenue1.hints.tooltip}" id="it12"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it12}">
+                    <f:validator binding="#{bindings.BestCaseRevenue1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.BestCaseRevenue1.format}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p2}"
+              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}">
+        <af:dialog id="d2" binding="#{backingBeanScope.backing_viewoppertunity_ar.d2}"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.editDialogListener}">
+            <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl2}">
+                <af:inputText value="#{bindings.WinProbability1.inputValue}"
+                              label="#{bindings.WinProbability1.hints.label}"
+                              required="#{bindings.WinProbability1.hints.mandatory}"
+                              columns="#{bindings.WinProbability1.hints.displayWidth}"
+                              maximumLength="#{bindings.WinProbability1.hints.precision}"
+                              shortDesc="#{bindings.WinProbability1.hints.tooltip}" id="it13"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it13}" editable="onAccess">
+                    <f:validator binding="#{bindings.WinProbability1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.WinProbability1.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Quantity1.inputValue}" label="#{bindings.Quantity1.hints.label}"
+                              required="#{bindings.Quantity1.hints.mandatory}"
+                              columns="#{bindings.Quantity1.hints.displayWidth}"
+                              maximumLength="#{bindings.Quantity1.hints.precision}"
+                              shortDesc="#{bindings.Quantity1.hints.tooltip}" id="it14"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it14}" editable="onAccess">
+                    <f:validator binding="#{bindings.Quantity1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Quantity1.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.BestCaseRevenue2.inputValue}"
+                              label="#{bindings.BestCaseRevenue2.hints.label}"
+                              required="#{bindings.BestCaseRevenue2.hints.mandatory}"
+                              columns="#{bindings.BestCaseRevenue2.hints.displayWidth}"
+                              maximumLength="#{bindings.BestCaseRevenue2.hints.precision}"
+                              shortDesc="#{bindings.BestCaseRevenue2.hints.tooltip}" id="it15"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it15}" editable="onAccess">
+                    <f:validator binding="#{bindings.BestCaseRevenue2.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.BestCaseRevenue2.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.SettledPrice1.inputValue}" label="#{bindings.SettledPrice1.hints.label}"
+                              required="#{bindings.SettledPrice1.hints.mandatory}"
+                              columns="#{bindings.SettledPrice1.hints.displayWidth}"
+                              maximumLength="#{bindings.SettledPrice1.hints.precision}"
+                              shortDesc="#{bindings.SettledPrice1.hints.tooltip}" id="it16"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it16}" editable="onAccess">
+                    <f:validator binding="#{bindings.SettledPrice1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.SettledPrice1.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.WorseCaseRevenue1.inputValue}"
+                              label="#{bindings.WorseCaseRevenue1.hints.label}"
+                              required="#{bindings.WorseCaseRevenue1.hints.mandatory}"
+                              columns="#{bindings.WorseCaseRevenue1.hints.displayWidth}"
+                              maximumLength="#{bindings.WorseCaseRevenue1.hints.precision}"
+                              shortDesc="#{bindings.WorseCaseRevenue1.hints.tooltip}" id="it17"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it17}" editable="onAccess">
+                    <f:validator binding="#{bindings.WorseCaseRevenue1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.WorseCaseRevenue1.format}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p3}">
+        <af:dialog id="d3" binding="#{backingBeanScope.backing_viewoppertunity_ar.d3}" type="yesNo">
+            <f:facet name="buttonBar"/>
+            <af:activeOutputText value="Are you sure you want to delete?" id="aot1"
+                                 binding="#{backingBeanScope.backing_viewoppertunity_ar.aot1}"/>
+        </af:dialog>
+    </af:popup>
 </ui:composition>

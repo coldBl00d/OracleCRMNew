@@ -177,6 +177,9 @@
   <ViewUsage
     Name="AltCustContactU1"
     ViewObjectName="model.uvo.AltCustContactUVO"/>
+  <ViewUsage
+    Name="CreateItemsForOpportunityU1"
+    ViewObjectName="model.uvo.CreateItemsForOpportunityUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
