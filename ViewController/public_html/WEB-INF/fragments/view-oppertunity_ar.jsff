@@ -248,7 +248,8 @@
                                               fetchSize="#{bindings.RevenueItemsOfOpportunity.rangeSize}" id="t9"
                                               binding="#{backingBeanScope.backing_viewoppertunity_ar.t9}"
                                               columnStretching="last" columnSelection="single"
-                                              partialTriggers="::p1 ::p2 ::p3 ::d1 ::d2 ::d3">
+                                              partialTriggers="::p1 ::d1 ::p2 ::d2 ::p3 ::d3" rowSelection="single"
+                                              selectionListener="#{bindings.RevenueItemsOfOpportunity.treeModel.makeCurrent}">
                                         <af:column headerText="#{bindings.RevenueItemsOfOpportunity.hints.ProductsU.ProductName.label}"
                                                    id="c1">
                                             <af:outputText value="#{row.ProductsU.bindings.ProductName.inputValue}"
@@ -764,7 +765,8 @@
     <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
               binding="#{backingBeanScope.backing_viewoppertunity_ar.p1}"
               popupFetchListener="#{backingBeanScope.backing_viewoppertunity_ar.insertPopupFetchListener}"
-              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}">
+              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}"
+              contentDelivery="lazyUncached">
         <af:dialog id="d1" binding="#{backingBeanScope.backing_viewoppertunity_ar.d1}" title="Insert item"
                    dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertDialogListener}">
             <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl1}">
@@ -830,7 +832,8 @@
     </af:popup>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
               binding="#{backingBeanScope.backing_viewoppertunity_ar.p2}"
-              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}">
+              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}"
+              contentDelivery="lazyUncached">
         <af:dialog id="d2" binding="#{backingBeanScope.backing_viewoppertunity_ar.d2}"
                    dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.editDialogListener}">
             <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl2}">
@@ -887,8 +890,9 @@
         </af:dialog>
     </af:popup>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
-              binding="#{backingBeanScope.backing_viewoppertunity_ar.p3}">
-        <af:dialog id="d3" binding="#{backingBeanScope.backing_viewoppertunity_ar.d3}" type="yesNo">
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p3}" contentDelivery="lazyUncached">
+        <af:dialog id="d3" binding="#{backingBeanScope.backing_viewoppertunity_ar.d3}" type="yesNo"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.deleteDialogListener}">
             <f:facet name="buttonBar"/>
             <af:activeOutputText value="Are you sure you want to delete?" id="aot1"
                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.aot1}"/>

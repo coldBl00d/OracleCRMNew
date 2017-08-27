@@ -1169,6 +1169,7 @@ public class Viewoppertunity_ar {
                     Row row1 = iter1.getCurrentRow();
                     row1.setAttribute("OppurtunityId",row.getAttribute("OpportunityId"));
                     operationBinding.execute();
+                    iter1 = (DCIteratorBinding) bc.findIteratorBinding("RevenueItemsOfOpportunityIterator");
                     ViewObject vo = iter1.getViewObject();
                     int Brev=0, Rev=0, Wrev=0;
                     for(int i=0;i<vo.getEstimatedRowCount();i++){
@@ -1176,13 +1177,14 @@ public class Viewoppertunity_ar {
                         int qty = Integer.parseInt(row2.getAttribute("Quantity").toString());
                         Brev = Brev + qty*Integer.parseInt(row2.getAttribute("BestCaseRevenue").toString());
                         Rev = Rev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
-                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
+                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("WorseCaseRevenue").toString());
                         
                     }
                     row.setAttribute("BestCaseRevenue",Brev);
                     row.setAttribute("Revenue",Rev);
                     row.setAttribute("WorstCaseRevenue",Wrev);
                     operationBinding.execute();
+                    iter1.executeQuery();
                     
                     
                     
@@ -1206,7 +1208,7 @@ public class Viewoppertunity_ar {
                     DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityForOverviewIterator");                    RowSetIterator rsi = iter.getRowSetIterator();
                     Row row = iter.getCurrentRow();
                     DCBindingContainer bc = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
-                    DCIteratorBinding iter1 = (DCIteratorBinding) bc.findIteratorBinding("CreateItemsForOpportunityU1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding) bc.findIteratorBinding("RevenueItemsOfOpportunityIterator");
                     ViewObject vo = iter1.getViewObject();
                     int Brev=0, Rev=0, Wrev=0;
                     for(int i=0;i<vo.getEstimatedRowCount();i++){
@@ -1214,14 +1216,14 @@ public class Viewoppertunity_ar {
                         int qty = Integer.parseInt(row2.getAttribute("Quantity").toString());
                         Brev = Brev + qty*Integer.parseInt(row2.getAttribute("BestCaseRevenue").toString());
                         Rev = Rev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
-                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
+                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("WorseCaseRevenue").toString());
                         
                     }
                     row.setAttribute("BestCaseRevenue",Brev);
                     row.setAttribute("Revenue",Rev);
                     row.setAttribute("WorstCaseRevenue",Wrev);
                     operationBinding.execute();
-                    
+                    iter1.executeQuery();
                     
                     
                 } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
@@ -1248,7 +1250,7 @@ public class Viewoppertunity_ar {
                     DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityForOverviewIterator");                    RowSetIterator rsi = iter.getRowSetIterator();
                     Row row = iter.getCurrentRow();
                     DCBindingContainer bc = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
-                    DCIteratorBinding iter1 = (DCIteratorBinding) bc.findIteratorBinding("CreateItemsForOpportunityU1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding) bc.findIteratorBinding("RevenueItemsOfOpportunityIterator");
                     ViewObject vo = iter1.getViewObject();
                     int Brev=0, Rev=0, Wrev=0;
                     for(int i=0;i<vo.getEstimatedRowCount();i++){
@@ -1256,14 +1258,14 @@ public class Viewoppertunity_ar {
                         int qty = Integer.parseInt(row2.getAttribute("Quantity").toString());
                         Brev = Brev + qty*Integer.parseInt(row2.getAttribute("BestCaseRevenue").toString());
                         Rev = Rev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
-                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("SettledPrice").toString());
+                        Wrev = Wrev + qty*Integer.parseInt(row2.getAttribute("WorseCaseRevenue").toString());
                         
                     }
                     row.setAttribute("BestCaseRevenue",Brev);
                     row.setAttribute("Revenue",Rev);
                     row.setAttribute("WorstCaseRevenue",Wrev);
                     operationBinding.execute();
-                    
+                    iter1.executeQuery();
                 } else if(dialogEvent.getOutcome().name().equals("no")){
                   
                     BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
