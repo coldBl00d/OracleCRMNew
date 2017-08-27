@@ -49,7 +49,8 @@
     PrecisionRule="true"
     EntityAttrName="ActivityId"
     EntityUsage="ActivityEO_arEO"
-    AliasName="ACTIVITY_ID"/>
+    AliasName="ACTIVITY_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="ActivityTitle"
     PrecisionRule="true"
@@ -127,6 +128,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="AInterResolution"
+    PrecisionRule="true"
+    EntityAttrName="AInterResolution"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_INTER_RESOLUTION"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

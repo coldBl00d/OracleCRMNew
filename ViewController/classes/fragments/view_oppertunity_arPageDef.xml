@@ -297,5 +297,13 @@
       <NamedData NDName="aId" NDType="java.lang.Integer"/>
       <NamedData NDName="oId" NDType="java.lang.Integer"/>
     </methodAction>
+    <attributeValues IterBinding="CreateInteractionU1Iterator" id="AInterResolution">
+      <AttrNames>
+        <Item Value="AInterResolution"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="OpportunityInteractionsIterator" id="Delete1"
+            InstanceName="UserApplicationModuleDataControl.OpportunityInteractions"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

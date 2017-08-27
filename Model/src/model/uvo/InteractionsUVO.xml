@@ -70,7 +70,8 @@
     PrecisionRule="true"
     EntityAttrName="ActivityId"
     EntityUsage="ActivityEO_arEO"
-    AliasName="ACTIVITY_ID"/>
+    AliasName="ACTIVITY_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="ActivityTitle"
     PrecisionRule="true"
@@ -88,13 +89,31 @@
     PrecisionRule="true"
     EntityAttrName="EndDueDateTime"
     EntityUsage="ActivityEO_arEO"
-    AliasName="END_DUE_DATE_TIME"/>
+    AliasName="END_DUE_DATE_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.uvo.InteractionsUVO.EndDueDateTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.uvo.InteractionsUVO.EndDueDateTime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StartDateTime"
     PrecisionRule="true"
     EntityAttrName="StartDateTime"
     EntityUsage="ActivityEO_arEO"
-    AliasName="START_DATE_TIME"/>
+    AliasName="START_DATE_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.uvo.InteractionsUVO.StartDateTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.uvo.InteractionsUVO.StartDateTime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

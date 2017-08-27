@@ -908,12 +908,13 @@
               popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}"
               contentDelivery="lazyUncached">
         <af:dialog id="d4" binding="#{backingBeanScope.backing_viewoppertunity_ar.d4}"
-                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertInterDialogListener}">
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertInterDialogListener}"
+                   title="Create Interaction">
             <f:facet name="buttonBar"/>
             <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl3}">
                 <af:inputText value="#{bindings.ActivityTitle.inputValue}" label="#{bindings.ActivityTitle.hints.label}"
                               required="#{bindings.ActivityTitle.hints.mandatory}"
-                              columns="#{bindings.ActivityTitle.hints.displayWidth}"
+                              columns="30"
                               maximumLength="#{bindings.ActivityTitle.hints.precision}"
                               shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it18"
                               binding="#{backingBeanScope.backing_viewoppertunity_ar.it18}">
@@ -955,11 +956,20 @@
                 <af:inputText value="#{bindings.ActivityDescription.inputValue}"
                               label="#{bindings.ActivityDescription.hints.label}"
                               required="#{bindings.ActivityDescription.hints.mandatory}"
-                              columns="#{bindings.ActivityDescription.hints.displayWidth}"
+                              columns="28"
                               maximumLength="#{bindings.ActivityDescription.hints.precision}"
                               shortDesc="#{bindings.ActivityDescription.hints.tooltip}" id="it19"
-                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it19}">
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it19}" rows="3">
                     <f:validator binding="#{bindings.ActivityDescription.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AInterResolution.inputValue}"
+                              label="#{bindings.AInterResolution.hints.label}"
+                              required="#{bindings.AInterResolution.hints.mandatory}"
+                              columns="28"
+                              maximumLength="#{bindings.AInterResolution.hints.precision}"
+                              shortDesc="#{bindings.AInterResolution.hints.tooltip}" id="it20"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it20}" rows="3">
+                    <f:validator binding="#{bindings.AInterResolution.validator}"/>
                 </af:inputText>
             </af:panelFormLayout>
         </af:dialog>

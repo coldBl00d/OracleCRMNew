@@ -185,6 +185,7 @@ public class Viewoppertunity_ar {
     private RichPopup p5;
     private RichDialog d5;
     private RichOutputText ot32;
+    private RichInputText it20;
 
 
     public Viewoppertunity_ar(){
@@ -1309,21 +1310,23 @@ public class Viewoppertunity_ar {
     public void insertInterDialogListener(DialogEvent dialogEvent) {
            
                 if(dialogEvent.getOutcome().name().equals("ok")==true) {
-                   
+                   System.out.println("Enter commit");
                     BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
                     OperationBinding operationBinding = bindings.getOperationBinding("Commit");
                     DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
                     DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateInteractionU1Iterator");
-                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityInteractionsIterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityForOverviewIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityInteractionsIterator");
                     Row row = iter.getCurrentRow();
                     Row row1 = iter1.getCurrentRow();
+                    System.out.println("Before commit");
                     row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
                     operationBinding.execute();
                     OperationBinding op = bindings.getOperationBinding("populateAcOppJun");
-                    op.getParamsMap().put("aId", row.getAttribute("ActivityId"));
-                    op.getParamsMap().put("oId", row1.getAttribute("OpportunityId"));
+                    op.getParamsMap().put("aId", Integer.parseInt(row.getAttribute("ActivityId").toString()));
+                    op.getParamsMap().put("oId", Integer.parseInt(row1.getAttribute("OpportunityId").toString()));
                     op.execute();
-                    iter1.executeQuery();
+                    iter2.executeQuery();
                     
                     
                     
@@ -1603,5 +1606,13 @@ public class Viewoppertunity_ar {
 
     public RichOutputText getOt32() {
         return ot32;
+    }
+
+    public void setIt20(RichInputText it20) {
+        this.it20 = it20;
+    }
+
+    public RichInputText getIt20() {
+        return it20;
     }
 }
