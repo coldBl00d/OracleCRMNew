@@ -35,7 +35,7 @@
                                       selectionListener="#{bindings.OpportunityListForDisplay.collectionModel.makeCurrent}"
                                       rowSelection="single" fetchSize="#{bindings.OpportunityListForDisplay.rangeSize}"
                                       partialTriggers="::qryId1" id="t2"
-                                      binding="#{backingBeanScope.ManageOpportunity.t2}">
+                                      binding="#{backingBeanScope.ManageOpportunity.t2}" columnStretching="last">
                                 <af:column sortProperty="#{bindings.OpportunityListForDisplay.hints.OpportunityName.name}"
                                            sortable="true"
                                            headerText="#{bindings.OpportunityListForDisplay.hints.OpportunityName.label}"

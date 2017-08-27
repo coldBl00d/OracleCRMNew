@@ -30,7 +30,8 @@
                               selectedRowKeys="#{bindings.ContactList.collectionModel.selectedRow}"
                               selectionListener="#{bindings.ContactList.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ContactList.rangeSize}"
-                              partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.ManageCotnacts.t2}">
+                              partialTriggers="::qryId1" id="t2" binding="#{backingBeanScope.ManageCotnacts.t2}"
+                              columnStretching="last">
                         <af:column headerText="#{bindings.ContactList.hints.ContactId.label}" id="c1" rendered="false">
                             <af:outputText value="#{row.ContactId}"
                                            shortDesc="#{bindings.ContactList.hints.ContactId.tooltip}" id="ot1">

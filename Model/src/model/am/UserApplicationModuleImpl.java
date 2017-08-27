@@ -746,5 +746,13 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getOppertunityToPrimaryContactsVL_ar3() {
         return (ViewLinkImpl) findViewLink("OppertunityToPrimaryContactsVL_ar3");
     }
+
+    /**
+     * Container's getter for UserUVO_arVO2.
+     * @return UserUVO_arVO2
+     */
+    public ViewObjectImpl getUserForLogin() {
+        return (ViewObjectImpl) findViewObject("UserForLogin");
+    }
 }
 

@@ -1,5 +1,9 @@
 package view.backing.pages;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.fragment.RichPageTemplate;
@@ -10,6 +14,10 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelList;
 import oracle.adf.view.rich.component.rich.nav.RichCommandNavigationItem;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.nav.RichNavigationPane;
+
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
+import oracle.jbo.ViewObject;
 
 public class Admin {
     private RichPageTemplate pt1;
@@ -27,6 +35,35 @@ public class Admin {
     private RichRegion r1;
     private RichLink l4;
     private RichCommandNavigationItem cni1;
+
+    public Admin(){
+        setUser();
+    }
+
+    public void setUser(){
+        String iteratorName = "UserForLoginIterator";
+        String userName = ADFContext.getCurrent().getSecurityContext().getUserName();
+        System.out.println(userName);
+        if((ADFContext.getCurrent().getSessionScope().get("CURRENT_USERNAME"))== null){
+            ADFContext.getCurrent().getSessionScope().put("CURRENT_USERNAME", userName);
+            DCBindingContainer bindings =(DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();                      
+            DCIteratorBinding iterator = bindings.findIteratorBinding(iteratorName);
+            ViewObject vobj = iterator.getViewObject();
+            
+            RowSetIterator iter =  vobj.createRowSetIterator(null);
+            while(iter.hasNext()){
+                Row r = iter.next();
+                System.out.println(r.getAttribute("UName"));
+                if(((String)r.getAttribute("UName")).equals(userName)){
+                    ADFContext.getCurrent().getSessionScope().put("CURRENT_USER_ID", r.getAttribute("UserId"));
+                    System.out.println("Found user id for "+ userName + " = "+r.getAttribute("UserId") );
+                    break;
+                }
+            }
+            iter.closeRowSetIterator();
+        }
+        
+    }
 
     public void setPt1(RichPageTemplate pt1) {
         this.pt1 = pt1;

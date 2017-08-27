@@ -357,7 +357,8 @@
                                                       rowSelection="single"
                                                       fetchSize="#{bindings.CustomerContacts.rangeSize}"
                                                       partialTriggers="::qq2" id="t8"
-                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}">
+                                                      binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t8}"
+                                                      columnStretching="last">
                                                 <af:column sortProperty="#{bindings.CustomerContacts.hints.ContactId.name}"
                                                            sortable="true"
                                                            headerText="#{bindings.CustomerContacts.hints.ContactId.label}"

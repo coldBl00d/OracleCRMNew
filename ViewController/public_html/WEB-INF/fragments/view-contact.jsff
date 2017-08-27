@@ -581,7 +581,8 @@
                                                   rowBandingInterval="0"
                                                   fetchSize="#{bindings.AppointmentUVO1.rangeSize}"
                                                   partialTriggers="::qryId4" id="t6"
-                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t6}">
+                                                  binding="#{backingBeanScope.backing_WEBINF_fragments_viewcontact.t6}"
+                                                  columnStretching="last">
                                             <af:column headerText="#{bindings.AppointmentUVO1.hints.ActivityId.label}"
                                                        id="c31" rendered="false">
                                                 <af:outputText value="#{row.ActivityId}"

@@ -6,6 +6,28 @@
     <taskFlow id="welcome1" taskFlowId="/WEB-INF/flows/welcome.xml#welcome" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
               <page id="pt1" path="oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition"/>
+    <iterator Binds="UserForLogin" RangeSize="10" DataControl="UserApplicationModuleDataControl"
+              id="UserForLoginIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="UserForLoginIterator" id="UserForLogin">
+      <nodeDefinition DefName="model.uvo.UserUVO_arVO" Name="UserForLogin0">
+        <AttrNames>
+          <Item Value="UserId"/>
+          <Item Value="AddressId"/>
+          <Item Value="Email"/>
+          <Item Value="EndDate"/>
+          <Item Value="FirstName"/>
+          <Item Value="Gender"/>
+          <Item Value="LastName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="PicId"/>
+          <Item Value="StartDate"/>
+          <Item Value="UName"/>
+          <Item Value="UPassword"/>
+          <Item Value="UserRefId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

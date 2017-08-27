@@ -177,6 +177,9 @@
   <ViewUsage
     Name="PrimaryContact2"
     ViewObjectName="model.uvo.ContactsUVO_arVO"/>
+  <ViewUsage
+    Name="UserForLogin"
+    ViewObjectName="model.uvo.UserUVO_arVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"

@@ -37,16 +37,17 @@
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Users.np1}">
                         <af:commandNavigationItem id="cni1" text="Home"
                                                   binding="#{backingBeanScope.backing_pages_Users.cni1}"
-                                                  partialSubmit="true" partialTriggers="::np1" action="goAdmin"
-                                                  rendered="#{securityContext.userInRole['AdminRole']}"/>
+                                                  partialSubmit="true" partialTriggers="::np1" action="goHome"
+                                                  rendered="true"/>
                         <af:commandNavigationItem id="ni1" text="Admin" 
                                                   binding="#{backingBeanScope.backing_pages_Users.ni1}"
-                                                  partialSubmit="true" partialTriggers="::np1" action="goAdmin"
+                                                  partialSubmit="true" partialTriggers="::np1"
                                                   rendered="#{securityContext.userInRole['AdminRole']}"/>
                         <af:commandNavigationItem id="ni2" text="Users" 
                                                   binding="#{backingBeanScope.backing_pages_Users.ni2}"
                                                   partialSubmit="true" partialTriggers="::np1"
-                                                  selected="true"/>
+                                                  selected="true"
+                                                  rendered="#{securityContext.userInRole['MAN,SA_REP']}"/>
                     </af:navigationPane>
                 </f:facet>
                 <f:facet name="welcome">
