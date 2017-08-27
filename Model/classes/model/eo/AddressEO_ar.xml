@@ -127,6 +127,13 @@
     AssociationOtherEnd="model.assoc.ContactToAddressAssoc.AddressEO_ar1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ActivityEO_ar"
+    Association="model.assoc.AppoLocASSOC"
+    AssociationEnd="model.assoc.AppoLocASSOC.ActivityEO_ar"
+    AssociationOtherEnd="model.assoc.AppoLocASSOC.AddressEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="AddressPk"
     PrimaryKey="true">

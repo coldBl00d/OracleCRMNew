@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CreateTask"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.uvo.CreateTask_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="UserUVO_arVO1"
+    ViewObjectName="model.uvo.UserUVO_arVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Priority1"
+    ViewObjectName="model.rvo.Priority"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ATaskAssigneeId"
+    ListVOName="UserUVO_arVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ATaskAssigneeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UserRefId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ATaskPriority"
+    ListVOName="Priority1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ATaskPriority"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ActivityEO_arEO"
+    Entity="model.eo.ActivityEO_arEO"/>
+  <ViewAttribute
+    Name="ActivityId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="ActivityId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACTIVITY_ID"/>
+  <ViewAttribute
+    Name="ActivityTitle"
+    PrecisionRule="true"
+    EntityAttrName="ActivityTitle"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACTIVITY_TITLE"/>
+  <ViewAttribute
+    Name="ActivityType"
+    PrecisionRule="true"
+    EntityAttrName="ActivityType"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACTIVITY_TYPE"
+    DefaultValue="TASK"/>
+  <ViewAttribute
+    Name="EndDueDateTime"
+    PrecisionRule="true"
+    EntityAttrName="EndDueDateTime"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="END_DUE_DATE_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CreateTask.EndDueDateTime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ATaskPriority"
+    PrecisionRule="true"
+    EntityAttrName="ATaskPriority"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_PRIORITY"
+    LOVName="LOV_ATaskPriority">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActivityDescription"
+    PrecisionRule="true"
+    EntityAttrName="ActivityDescription"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACTIVITY_DESCRIPTION"/>
+  <ViewAttribute
+    Name="ATaskAssigneeId"
+    PrecisionRule="true"
+    EntityAttrName="ATaskAssigneeId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_ASSIGNEE_ID"
+    LOVName="LOV_ATaskAssigneeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.CreateTask.ATaskAssigneeId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ATaskCompletion"
+    PrecisionRule="true"
+    EntityAttrName="ATaskCompletion"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_TASK_COMPLETION"/>
+  <ViewAttribute
+    Name="ACreatorId"
+    PrecisionRule="true"
+    EntityAttrName="ACreatorId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="A_CREATOR_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

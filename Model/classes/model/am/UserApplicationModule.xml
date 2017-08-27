@@ -186,6 +186,18 @@
   <ViewUsage
     Name="ActivityOpportunityLink1"
     ViewObjectName="model.uvo.ActivityOpportunityLink"/>
+  <ViewUsage
+    Name="CreateAppointmentU1"
+    ViewObjectName="model.uvo.CreateAppointmentUVO"/>
+  <ViewUsage
+    Name="CreateTask1"
+    ViewObjectName="model.uvo.CreateTask"/>
+  <ViewUsage
+    Name="CreateNotesU1"
+    ViewObjectName="model.uvo.CreateNotesUVO"/>
+  <ViewUsage
+    Name="OpportunityNoteU1"
+    ViewObjectName="model.uvo.OpportunityNoteUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -413,6 +425,19 @@
         Type="void"/>
       <Parameter
         Name="aId"
+        Type="java.lang.Integer"/>
+      <Parameter
+        Name="oId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="populateNoteOppJun"
+      MethodName="populateNoteOppJun">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="nId"
         Type="java.lang.Integer"/>
       <Parameter
         Name="oId"

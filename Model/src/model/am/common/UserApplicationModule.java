@@ -9,5 +9,7 @@ public interface UserApplicationModule extends ApplicationModule {
     void populateCusConJun(Integer aId, Integer cId);
 
     void populateAcOppJun(Integer aId, Integer oId);
+
+    void populateNoteOppJun(Integer nId, Integer oId);
 }
 

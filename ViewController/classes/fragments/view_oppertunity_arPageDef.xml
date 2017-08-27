@@ -34,6 +34,12 @@
               id="CreateItemsForOpportunityU1Iterator"/>
     <iterator Binds="CreateInteractionU1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="CreateInteractionU1Iterator"/>
+    <iterator Binds="CreateAppointmentU1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateAppointmentU1Iterator"/>
+    <iterator Binds="CreateTask1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateTask1Iterator"/>
+    <iterator Binds="CreateNotesU1" RangeSize="10" DataControl="UserApplicationModuleDataControl"
+              id="CreateNotesU1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -305,5 +311,99 @@
     <action IterBinding="OpportunityInteractionsIterator" id="Delete1"
             InstanceName="UserApplicationModuleDataControl.OpportunityInteractions"
             DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="ActivityTitle1">
+      <AttrNames>
+        <Item Value="ActivityTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="StartDateTime1">
+      <AttrNames>
+        <Item Value="StartDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="EndDueDateTime1">
+      <AttrNames>
+        <Item Value="EndDueDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateAppointmentU1Iterator" id="AddressLine3">
+      <AttrNames>
+        <Item Value="AddressLine3"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CreateAppointmentU1Iterator" id="CreateInsert2"
+            InstanceName="UserApplicationModuleDataControl.CreateAppointmentU1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="OpportunityAppointmentsIterator" id="Delete2"
+            InstanceName="UserApplicationModuleDataControl.OpportunityAppointments"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="CreateTask1Iterator" id="ActivityTitle2">
+      <AttrNames>
+        <Item Value="ActivityTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateTask1Iterator" StaticList="false" Uses="LOV_ATaskPriority" id="ATaskPriority1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateTask1Iterator" id="EndDueDateTime2">
+      <AttrNames>
+        <Item Value="EndDueDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateTask1Iterator" id="ActivityDescription1">
+      <AttrNames>
+        <Item Value="ActivityDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateTask1Iterator" StaticList="false" Uses="LOV_ATaskAssigneeId" id="ATaskAssigneeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateTask1Iterator" id="ATaskCompletion">
+      <AttrNames>
+        <Item Value="ATaskCompletion"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CreateTask1Iterator" id="CreateInsert3"
+            InstanceName="UserApplicationModuleDataControl.CreateTask1" DataControl="UserApplicationModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="OpportunityTaskIterator" id="Delete3"
+            InstanceName="UserApplicationModuleDataControl.OpportunityTask"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="CreateNotesU1Iterator" id="CreateInsert4"
+            InstanceName="UserApplicationModuleDataControl.CreateNotesU1" DataControl="UserApplicationModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="OpportunityNotesIterator" id="Delete4"
+            InstanceName="UserApplicationModuleDataControl.OpportunityNotes"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="populateNoteOppJun" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="populateNoteOppJun" IsViewObjectMethod="false"
+                  DataControl="UserApplicationModuleDataControl"
+                  InstanceName="bindings.populateNoteOppJun.dataControl.dataProvider">
+      <NamedData NDName="nId" NDType="java.lang.Integer"/>
+      <NamedData NDName="oId" NDType="java.lang.Integer"/>
+    </methodAction>
+    <attributeValues IterBinding="CreateNotesU1Iterator" id="NoteTitle">
+      <AttrNames>
+        <Item Value="NoteTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateNotesU1Iterator" id="NoteDate">
+      <AttrNames>
+        <Item Value="NoteDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateNotesU1Iterator" id="NoteContent">
+      <AttrNames>
+        <Item Value="NoteContent"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

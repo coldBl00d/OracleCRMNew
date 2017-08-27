@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="ACTIVITY"
   AliasName="ActivityEO_arEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="ActivityId"
     Precision="18"
@@ -175,6 +176,14 @@
           ResId="model.eo.ActivityEO_arEO.ATaskCompletion_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RangeValidationBean
+      Name="ATaskCompletionRule0"
+      ResId="COMPLETION_IS_A_VALUE_BETWEEN_0_AND_100"
+      OnAttribute="ATaskCompletion"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="0"
+      MaxValue="100"/>
   </Attribute>
   <Attribute
     Name="ACreatorId"
@@ -213,6 +222,13 @@
     AssociationOtherEnd="model.assoc.AppointmentToUsers.ActivityEO_ar"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AddressEO_ar"
+    Association="model.assoc.AppoLocASSOC"
+    AssociationEnd="model.assoc.AppoLocASSOC.AddressEO_ar"
+    AssociationOtherEnd="model.assoc.AppoLocASSOC.ActivityEO_ar"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="ActivityPk"
     PrimaryKey="true">
@@ -221,6 +237,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.ActivityEO_arEO.ActivityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ActivityEO_arEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ACTIVITY_EO_AR_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ActivityEO_arEO.AAppLocationId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

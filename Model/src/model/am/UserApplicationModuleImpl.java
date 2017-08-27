@@ -775,5 +775,46 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         vo.insertRow(row);
         this.getDBTransaction().commit();
     }
+
+    /**
+     * Container's getter for CreateAppointmentU1.
+     * @return CreateAppointmentU1
+     */
+    public ViewObjectImpl getCreateAppointmentU1() {
+        return (ViewObjectImpl) findViewObject("CreateAppointmentU1");
+    }
+
+    /**
+     * Container's getter for CreateTask1.
+     * @return CreateTask1
+     */
+    public ViewObjectImpl getCreateTask1() {
+        return (ViewObjectImpl) findViewObject("CreateTask1");
+    }
+
+    /**
+     * Container's getter for CreateNotesU1.
+     * @return CreateNotesU1
+     */
+    public ViewObjectImpl getCreateNotesU1() {
+        return (ViewObjectImpl) findViewObject("CreateNotesU1");
+    }
+
+    /**
+     * Container's getter for OpportunityNoteU1.
+     * @return OpportunityNoteU1
+     */
+    public ViewObjectImpl getOpportunityNoteU1() {
+        return (ViewObjectImpl) findViewObject("OpportunityNoteU1");
+    }
+    public void populateNoteOppJun(Integer nId,Integer oId){
+        ViewObjectImpl vo= getOpportunityNoteU1();
+        Row row = vo.createRow();
+        row.setAttribute("NoteId", nId);
+        row.setAttribute("OpportunityId", oId);
+        vo.insertRow(row);
+        this.getDBTransaction().commit();
+    }
+
 }
 
