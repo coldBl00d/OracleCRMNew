@@ -35,6 +35,7 @@ public class Users {
     private RichRegion r1;
     private RichLink l4;
     private RichCommandNavigationItem cni1;
+    private RichLink l3;
 
     public Users(){
         super();
@@ -177,5 +178,13 @@ public class Users {
 
     public RichCommandNavigationItem getCni1() {
         return cni1;
+    }
+
+    public void setL3(RichLink l3) {
+        this.l3 = l3;
+    }
+
+    public RichLink getL3() {
+        return l3;
     }
 }

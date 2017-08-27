@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="Users.jsf" id="d1" binding="#{backingBeanScope.backing_pages_Users.d1}">
         <af:form id="f1" binding="#{backingBeanScope.backing_pages_Users.f1}">
             <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
@@ -29,7 +31,10 @@
                         </f:facet>
                     </af:decorativeBox>
                 </f:facet>
-                <f:facet name="globalLinks"/>
+                <f:facet name="globalLinks">
+                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l3" binding="#{backingBeanScope.backing_pages_Users.l3}"
+                             action="#{LoginBean.onLogout}"/>
+                </f:facet>
                 <f:facet name="status"/>
                 <f:facet name="globalToolbar"/>
                 <f:facet name="globalSearch"/>

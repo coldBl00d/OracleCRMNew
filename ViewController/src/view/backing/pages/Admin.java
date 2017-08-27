@@ -35,6 +35,7 @@ public class Admin {
     private RichRegion r1;
     private RichLink l4;
     private RichCommandNavigationItem cni1;
+    private RichLink l5;
 
     public Admin(){
         setUser();
@@ -184,5 +185,13 @@ public class Admin {
 
     public RichCommandNavigationItem getCni1() {
         return cni1;
+    }
+
+    public void setL5(RichLink l5) {
+        this.l5 = l5;
+    }
+
+    public RichLink getL5() {
+        return l5;
     }
 }

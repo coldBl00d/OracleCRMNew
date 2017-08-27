@@ -8,6 +8,7 @@ import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.fragment.RichPageTemplate;
 import oracle.adf.view.rich.component.rich.nav.RichCommandNavigationItem;
+import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.nav.RichNavigationPane;
 
 import oracle.jbo.Row;
@@ -22,6 +23,7 @@ public class Home3 {
     private RichCommandNavigationItem ni1;
     private RichCommandNavigationItem ni2;
     private RichCommandNavigationItem ni3;
+    private RichLink l1;
 
     public Home3 (){  
         super();
@@ -108,5 +110,13 @@ public class Home3 {
 
     public RichCommandNavigationItem getNi3() {
         return ni3;
+    }
+
+    public void setL1(RichLink l1) {
+        this.l1 = l1;
+    }
+
+    public RichLink getL1() {
+        return l1;
     }
 }

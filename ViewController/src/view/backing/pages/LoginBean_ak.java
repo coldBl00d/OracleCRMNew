@@ -108,5 +108,19 @@ public class LoginBean_ak {
           FacesContext.getCurrentInstance().addMessage(null, msg);
           e.printStackTrace();
         }
+        
+    public String onLogout() {
+      FacesContext fctx = FacesContext.getCurrentInstance();
+      ExternalContext ectx = fctx.getExternalContext();
+      String url = ectx.getRequestContextPath()+ 
+                 "/adfAuthentication?logout=true&end_url=/faces/pages/Login.jsf";     
+      try {
+        ectx.redirect(url);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      fctx.responseComplete();
+      return null;
+    }
     
 }
