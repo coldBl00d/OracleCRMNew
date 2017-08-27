@@ -7,7 +7,10 @@
         <af:form id="f1" binding="#{backingBeanScope.backing_pages_Home3.f1}">
             <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
                              binding="#{backingBeanScope.backing_pages_Home3.pt1}">
-                <f:facet name="welcome"/>
+                <f:facet name="welcome">
+                    <af:region value="#{bindings.hometaskflow1.regionModel}" id="r1"
+                               binding="#{backingBeanScope.backing_pages_Home3.r1}"/>
+                </f:facet>
                 <f:facet name="globalToolbar"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Home3.np1}">

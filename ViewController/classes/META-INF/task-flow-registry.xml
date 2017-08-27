@@ -44,4 +44,5 @@
       <input-parameter name="tabContext"/>
    </task-flow-descriptor>
    <task-flow-descriptor path="WEB-INF/flows/welcome.xml" id="welcome" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/home-taskflow.xml" id="home-taskflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
 </task-flow-registry>

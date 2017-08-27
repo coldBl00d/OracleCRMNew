@@ -5,6 +5,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="UserForLogin" RangeSize="10" DataControl="UserApplicationModuleDataControl"
               id="UserForLoginIterator"/>
+    <taskFlow id="hometaskflow1" taskFlowId="/WEB-INF/home-taskflow.xml#home-taskflow" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="UserForLoginIterator" id="UserForLogin">

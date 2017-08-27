@@ -9,7 +9,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"
                                  binding="#{backingBeanScope.backing_pages_Login.gc1}" halign="center" valign="middle">
                         <af:panelBox text="Login" id="pb1" binding="#{backingBeanScope.backing_pages_Login.pb1}"
-                                     background="light">
+                                     background="light" showDisclosure="false">
                             <f:facet name="toolbar"/>
                             <af:inputText label="Username" id="it1"
                                           binding="#{backingBeanScope.backing_pages_Login.it1}"
