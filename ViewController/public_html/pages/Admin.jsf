@@ -33,13 +33,13 @@
                         </f:facet>
                     </af:decorativeBox>
                 </f:facet>
-                <f:facet name="globalLinks"/>
+                <f:facet name="globalLinks">
+                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l5"
+                             binding="#{backingBeanScope.backing_pages_Admin.l5}" action="#{LoginBean.onLogout}"/>
+                </f:facet>
                 <f:facet name="status"/>
                 <f:facet name="globalToolbar"/>
-                <f:facet name="globalSearch">
-                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l5" binding="#{backingBeanScope.backing_pages_Admin.l5}"
-                             action="#{LoginBean.onLogout}"/>
-                </f:facet>
+                <f:facet name="globalSearch"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Admin.np1}">
                         <af:commandNavigationItem id="cni1" text="Home"

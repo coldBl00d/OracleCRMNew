@@ -18,17 +18,17 @@
         ResId="model.uvo.PastQuarterSalesViewObjVO_rs_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT TO_CHAR(opportunity_close_date, 'yyyy-q') as qtr,sum(revenue) as total from opportunity  WHERE EXTRACT( YEAR FROM opportunity_close_date) >= EXTRACT(YEAR FROM sysdate)-1 and opportunity_close_date <= sysdate  GROUP BY to_char(opportunity_close_date,'yyyy-q')]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT TO_CHAR(opportunity_close_date, 'yyyy-q') as Quarter ,sum(revenue) as total from opportunity  WHERE EXTRACT( YEAR FROM opportunity_close_date) >= EXTRACT(YEAR FROM sysdate)-1 and ((extract( year from opportunity_close_date)<extract(year from sysdate)) and (to_char(opportunity_close_date,'Q')>=to_char(sysdate,'Q'))) or ((extract( year from opportunity_close_date)=extract(year from sysdate))and (to_char(opportunity_close_date,'Q')<to_char(sysdate,'Q'))) GROUP BY to_char(opportunity_close_date,'yyyy-q')]]></SQLQuery>
   <ViewAttribute
-    Name="Qtr"
+    Name="Quarter"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Precision="255"
+    Precision="6"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="QTR"
-    Expression="QTR"
+    AliasName="QUARTER"
+    Expression="QUARTER"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="6"/>

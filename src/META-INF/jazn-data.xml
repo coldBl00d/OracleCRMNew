@@ -256,6 +256,12 @@
                         <display-name>manage-opportunity-taskflow(/WEB-INF/flows)</display-name>
                         <description>/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/SalesDashboard_rs.xml#SalesDashboard_rs</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>SalesDashboard_rs(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/SalesDashboard_rs.xml#SalesDashboard_rs</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -492,6 +498,18 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/flows/manage-opportunity-taskflow.xml#manage-opportunity-taskflow</resource-name>
                                 <display-name>manage-opportunity-taskflow(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/SalesDashboard_rs.xml#SalesDashboard_rs</resource-name>
+                                <display-name>SalesDashboard_rs(/WEB-INF/flows)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/manage-contact-taskflow.xml#manage-contact-taskflow</resource-name>
+                                <display-name>manage-contact-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

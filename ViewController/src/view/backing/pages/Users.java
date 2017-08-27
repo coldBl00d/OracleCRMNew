@@ -32,10 +32,10 @@ public class Users {
     private RichLink l1;
     private RichPanelList pl1;
     private RichLink l2;
-    private RichRegion r1;
     private RichLink l4;
     private RichCommandNavigationItem cni1;
     private RichLink l3;
+    private RichRegion r1;
 
     public Users(){
         super();
@@ -156,14 +156,6 @@ public class Users {
     }
 
 
-    public void setR1(RichRegion r1) {
-        this.r1 = r1;
-    }
-
-    public RichRegion getR1() {
-        return r1;
-    }
-
     public void setL4(RichLink l4) {
         this.l4 = l4;
     }
@@ -186,5 +178,13 @@ public class Users {
 
     public RichLink getL3() {
         return l3;
+    }
+
+    public void setR1(RichRegion r1) {
+        this.r1 = r1;
+    }
+
+    public RichRegion getR1() {
+        return r1;
     }
 }

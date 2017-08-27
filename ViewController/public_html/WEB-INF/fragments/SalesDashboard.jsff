@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
-    <af:panelGroupLayout layout="scroll" id="pgl1">
+    <af:panelGroupLayout layout="scroll" id="pgl1" halign="center">
         <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:panelGroupLayout id="pgl4" inlineStyle="height:250px;width:500px;">
                 <dvt:barChart id="barChart1" var="row" value="#{bindings.SalesRepGraphViewObjVO_rs1.collectionModel}"
-                              inlineStyle="height:250px;width:500px;" rendered="false">
+                              inlineStyle="height:250px;width:500px;" rendered="#{securityContext.userInRole['MAN']}"
+                              title="Representative Graph">
                     <dvt:chartLegend id="cl1"/>
                     <f:facet name="dataStamp">
                         <dvt:chartDataItem id="di1" series="#{bindings.SalesRepGraphViewObjVO_rs1.hints.Revenue.label}"
@@ -14,7 +15,8 @@
                 </dvt:barChart>
                 <dvt:barChart id="barChart3" var="row"
                               value="#{bindings.SalesRepDashboardViewObjVO_rs1.collectionModel}"
-                              inlineStyle="height:250px;width:500px;" title="Sales Rep DashBoard">
+                              inlineStyle="height:250px;width:500px;" title="Sales Rep DashBoard"
+                              rendered="#{securityContext.userInRole['SA_REP']}">
                     <dvt:chartLegend id="cl5"/>
                     <f:facet name="dataStamp">
                         <dvt:chartDataItem id="di5"
@@ -23,15 +25,24 @@
                     </f:facet>
                 </dvt:barChart>
             </af:panelGroupLayout>
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:spacer width="10" height="10" id="s3"/>
+            <af:spacer width="10" height="10" id="s4"/>
             <af:panelGroupLayout id="pgl5" inlineStyle="height:250px;width:500px;">
                 <dvt:pieChart id="pieChart1" var="row"
                               value="#{bindings.PastQuarterSalesViewObjVO_rs1.collectionModel}"
-                              inlineStyle="height:250px;width:500px;">
+                              inlineStyle="height:250px;width:500px;" title="Previous Quarter Sales">
                     <dvt:chartLegend id="cl2"/>
-                    <dvt:pieDataItem id="di2" label="#{row.Qtr}" value="#{row.Total}"/>
+                    <dvt:pieDataItem id="di2" label="#{row.Quarter}" value="#{row.Total}"/>
                 </dvt:pieChart>
             </af:panelGroupLayout>
         </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s15"/>
+        <af:spacer width="10" height="10" id="s16"/>
+        <af:spacer width="10" height="10" id="s17"/>
+        <af:spacer width="10" height="10" id="s23"/>
+        <af:spacer width="10" height="10" id="s24"/>
         <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="height:250px;width:1000px;">
             <af:panelGroupLayout id="pgl6" inlineStyle="height:250px;width:500px;">
                 <dvt:lineChart id="lineChart1" var="row"
@@ -44,9 +55,16 @@
                     </f:facet>
                 </dvt:lineChart>
             </af:panelGroupLayout>
+            <af:spacer width="10" height="10" id="s8"/>
+            <af:spacer width="10" height="10" id="s9"/>
+            <af:spacer width="10" height="10" id="s10"/>
+            <af:spacer width="10" height="10" id="s11"/>
+            <af:spacer width="10" height="10" id="s12"/>
+            <af:spacer width="10" height="10" id="s13"/>
+            <af:spacer width="10" height="10" id="s14"/>
             <af:panelGroupLayout id="pgl7" inlineStyle="height:250px;width:500px;">
                 <dvt:barChart id="barChart2" var="row" value="#{bindings.ProductStatViewObjVO_rs1.collectionModel}"
-                              inlineStyle="height:250px;width:500px;">
+                              inlineStyle="height:250px;width:500px;" title="Product Statistics">
                     <dvt:chartLegend id="cl4"/>
                     <f:facet name="dataStamp">
                         <dvt:chartDataItem id="di4" series="#{bindings.ProductStatViewObjVO_rs1.hints.Quantity.label}"
