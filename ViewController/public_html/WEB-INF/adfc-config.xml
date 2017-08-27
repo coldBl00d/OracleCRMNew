@@ -159,4 +159,10 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1WEB-INF/fragments/manage-contacts.jsff-->
   </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name>backing_AdminDashboard</managed-bean-name>
+    <managed-bean-class>view.backing.AdminDashboard</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1AdminDashboard.jsff-->
+  </managed-bean>
 </adfc-config>

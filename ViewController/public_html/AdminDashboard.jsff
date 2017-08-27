@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_AdminDashboard.pgl1}">
+        <af:gridRow height="100%" id="gr1" binding="#{backingBeanScope.backing_AdminDashboard.gr1}">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1"
+                         binding="#{backingBeanScope.backing_AdminDashboard.gc1}">
+                <!-- Content -->
+                <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.backing_AdminDashboard.pgl2}"
+                                     layout="horizontal" halign="center" valign="middle">
+                    <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.backing_AdminDashboard.pgl3}"
+                                         layout="horizontal">
+                        <af:panelGroupLayout id="pgl4" binding="#{backingBeanScope.backing_AdminDashboard.pgl4}"
+                                             layout="horizontal">
+                            <af:panelBox text="Users" id="pb1"
+                                         binding="#{backingBeanScope.backing_AdminDashboard.pb1}"
+                                         showDisclosure="false"
+                                         icon="#{resource['images:icons8-Online Support-64.png']}"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl5" binding="#{backingBeanScope.backing_AdminDashboard.pgl5}">
+                            <af:panelBox id="pb2"
+                                         binding="#{backingBeanScope.backing_AdminDashboard.pb2}" showDisclosure="false"
+                                         icon="#{resource['images:002-eight.png']}"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl6" binding="#{backingBeanScope.backing_AdminDashboard.pgl6}"
+                                         layout="horizontal">
+                        <af:panelGroupLayout id="pgl7" binding="#{backingBeanScope.backing_AdminDashboard.pgl7}"
+                                             layout="horizontal">
+                            <af:panelBox id="pb3"
+                                         binding="#{backingBeanScope.backing_AdminDashboard.pb3}"
+                                         icon="#{resource['images:icons8-User Group Man Man-64.png']}"
+                                         showDisclosure="false"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl8" binding="#{backingBeanScope.backing_AdminDashboard.pgl8}">
+                            <af:panelBox id="pb4"
+                                         binding="#{backingBeanScope.backing_AdminDashboard.pb4}"
+                                         showDisclosure="false" icon="#{resource['images:002-eight.png']}"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl9" binding="#{backingBeanScope.backing_AdminDashboard.pgl9}"
+                                         layout="horizontal">
+                        <af:panelGroupLayout id="pgl10" binding="#{backingBeanScope.backing_AdminDashboard.pgl10}"
+                                             layout="horizontal">
+                            <af:panelBox id="pb6"
+                                         binding="#{backingBeanScope.backing_AdminDashboard.pb6}"
+                                         icon="#{resource['images:icons8-Shopping Cart-64.png']}"
+                                         showDisclosure="false"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl11" binding="#{backingBeanScope.backing_AdminDashboard.pgl11}">
+                            <af:panelGroupLayout id="pgl12" binding="#{backingBeanScope.backing_AdminDashboard.pgl12}">
+                                <af:panelBox id="pb5"
+                                             binding="#{backingBeanScope.backing_AdminDashboard.pb5}"
+                                             showDisclosure="false" icon="#{resource['images:001-nine.png']}"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_AdminDashboard-->
+</ui:composition>

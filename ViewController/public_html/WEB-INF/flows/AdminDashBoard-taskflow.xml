@@ -6,7 +6,7 @@
       <shared/>
     </data-control-scope>
     <view id="AdminDashboard">
-      <page>/WEB-INF/fragments/AdminDashboard.jsff</page>
+      <page>/AdminDashboard.jsff</page>
     </view>
     <use-page-fragments/>
   </task-flow-definition>

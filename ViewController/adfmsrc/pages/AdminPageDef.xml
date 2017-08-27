@@ -6,7 +6,8 @@
               <page id="pt1" path="oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition"/>
     <iterator Binds="UserForLogin" RangeSize="10" DataControl="UserApplicationModuleDataControl"
               id="UserForLoginIterator"/>
-    <taskFlow id="hometaskflow1" taskFlowId="/WEB-INF/home-taskflow.xml#home-taskflow" activation="deferred"
+    <taskFlow id="AdminDashBoardtaskflow1"
+              taskFlowId="/WEB-INF/flows/AdminDashBoard-taskflow.xml#AdminDashBoard-taskflow" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
