@@ -171,6 +171,20 @@ public class Viewoppertunity_ar {
     private RichInputText it17;
     private RichDialog d3;
     private RichActiveOutputText aot1;
+    private RichPopup p4;
+    private RichDialog d4;
+    private RichPanelFormLayout pfl3;
+    private RichInputText it18;
+    private RichSelectOneChoice soc11;
+    private UISelectItems si11;
+    private RichInputDate id2;
+    private RichInputDate id3;
+    private RichInputText it19;
+    private RichSelectOneChoice soc12;
+    private UISelectItems si12;
+    private RichPopup p5;
+    private RichDialog d5;
+    private RichOutputText ot32;
 
 
     public Viewoppertunity_ar(){
@@ -1282,6 +1296,67 @@ public class Viewoppertunity_ar {
            
        }
 
+
+    public void insertInterPopupFetchListener(PopupFetchEvent popupFetchEvent){
+            System.out.println(popupFetchEvent.getLaunchSourceClientId());
+            
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert1");
+                operationBinding.execute();
+                
+           
+        }
+    public void insertInterDialogListener(DialogEvent dialogEvent) {
+           
+                if(dialogEvent.getOutcome().name().equals("ok")==true) {
+                   
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateInteractionU1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityInteractionsIterator");
+                    Row row = iter.getCurrentRow();
+                    Row row1 = iter1.getCurrentRow();
+                    row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
+                    operationBinding.execute();
+                    OperationBinding op = bindings.getOperationBinding("populateAcOppJun");
+                    op.getParamsMap().put("aId", row.getAttribute("ActivityId"));
+                    op.getParamsMap().put("oId", row1.getAttribute("OpportunityId"));
+                    op.execute();
+                    iter1.executeQuery();
+                    
+                    
+                    
+                } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void deleteInterDialogListener(DialogEvent dialogEvent) {
+                if(dialogEvent.getOutcome().name().equals("yes")) {
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityInteractionsIterator");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete1");
+                    operationBinding.execute();
+                    operationBinding = bindings.getOperationBinding("Commit");
+                    operationBinding.execute();
+                    iter.executeQuery();
+                    
+                } else if(dialogEvent.getOutcome().name().equals("no")){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    
     public void setPfl1(RichPanelFormLayout pfl1) {
         this.pfl1 = pfl1;
     }
@@ -1416,5 +1491,117 @@ public class Viewoppertunity_ar {
 
     public RichActiveOutputText getAot1() {
         return aot1;
+    }
+
+    public void setP4(RichPopup p4) {
+        this.p4 = p4;
+    }
+
+    public RichPopup getP4() {
+        return p4;
+    }
+
+    public void setD4(RichDialog d4) {
+        this.d4 = d4;
+    }
+
+    public RichDialog getD4() {
+        return d4;
+    }
+
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
+
+    public void setIt18(RichInputText it18) {
+        this.it18 = it18;
+    }
+
+    public RichInputText getIt18() {
+        return it18;
+    }
+
+    public void setSoc11(RichSelectOneChoice soc11) {
+        this.soc11 = soc11;
+    }
+
+    public RichSelectOneChoice getSoc11() {
+        return soc11;
+    }
+
+    public void setSi11(UISelectItems si11) {
+        this.si11 = si11;
+    }
+
+    public UISelectItems getSi11() {
+        return si11;
+    }
+
+    public void setId2(RichInputDate id2) {
+        this.id2 = id2;
+    }
+
+    public RichInputDate getId2() {
+        return id2;
+    }
+
+    public void setId3(RichInputDate id3) {
+        this.id3 = id3;
+    }
+
+    public RichInputDate getId3() {
+        return id3;
+    }
+
+    public void setIt19(RichInputText it19) {
+        this.it19 = it19;
+    }
+
+    public RichInputText getIt19() {
+        return it19;
+    }
+
+    public void setSoc12(RichSelectOneChoice soc12) {
+        this.soc12 = soc12;
+    }
+
+    public RichSelectOneChoice getSoc12() {
+        return soc12;
+    }
+
+    public void setSi12(UISelectItems si12) {
+        this.si12 = si12;
+    }
+
+    public UISelectItems getSi12() {
+        return si12;
+    }
+
+    public void setP5(RichPopup p5) {
+        this.p5 = p5;
+    }
+
+    public RichPopup getP5() {
+        return p5;
+    }
+
+    public void setD5(RichDialog d5) {
+        this.d5 = d5;
+    }
+
+    public RichDialog getD5() {
+        return d5;
+    }
+
+    public void setOt32(RichOutputText ot32) {
+        this.ot32 = ot32;
+    }
+
+    public RichOutputText getOt32() {
+        return ot32;
     }
 }

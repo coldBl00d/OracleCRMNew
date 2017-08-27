@@ -32,6 +32,8 @@
                   Binds="OpportunityAppointmentsIterator" id="ImplicitViewCriteriaQuery4"/>
     <iterator Binds="CreateItemsForOpportunityU1" RangeSize="10" DataControl="UserApplicationModuleDataControl"
               id="CreateItemsForOpportunityU1Iterator"/>
+    <iterator Binds="CreateInteractionU1" RangeSize="25" DataControl="UserApplicationModuleDataControl"
+              id="CreateInteractionU1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -249,5 +251,51 @@
         <Item Value="WorseCaseRevenue"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="CreateInteractionU1Iterator" id="ActivityTitle">
+      <AttrNames>
+        <Item Value="ActivityTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateInteractionU1Iterator" StaticList="false" Uses="LOV_ATaskPriority" id="ATaskPriority"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CreateInteractionU1Iterator" id="StartDateTime">
+      <AttrNames>
+        <Item Value="StartDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateInteractionU1Iterator" id="EndDueDateTime">
+      <AttrNames>
+        <Item Value="EndDueDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateInteractionU1Iterator" id="ActivityDescription">
+      <AttrNames>
+        <Item Value="ActivityDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CreateInteractionU1Iterator" id="ActivityType" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="ActivityType"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Phone"/>
+        <Item Value="E-mail"/>
+        <Item Value="Fax"/>
+        <Item Value="Chat"/>
+        <Item Value="Meeting"/>
+        <Item Value="Web Conference"/>
+        <Item Value="Other"/>
+      </ValueList>
+    </list>
+    <action IterBinding="CreateInteractionU1Iterator" id="CreateInsert1"
+            InstanceName="UserApplicationModuleDataControl.CreateInteractionU1"
+            DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <methodAction id="populateAcOppJun" RequiresUpdateModel="true" Action="invokeMethod" MethodName="populateAcOppJun"
+                  IsViewObjectMethod="false" DataControl="UserApplicationModuleDataControl"
+                  InstanceName="bindings.populateAcOppJun.dataControl.dataProvider">
+      <NamedData NDName="aId" NDType="java.lang.Integer"/>
+      <NamedData NDName="oId" NDType="java.lang.Integer"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

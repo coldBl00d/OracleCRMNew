@@ -180,6 +180,12 @@
   <ViewUsage
     Name="CreateItemsForOpportunityU1"
     ViewObjectName="model.uvo.CreateItemsForOpportunityUVO"/>
+  <ViewUsage
+    Name="CreateInteractionU1"
+    ViewObjectName="model.uvo.CreateInteractionUVO"/>
+  <ViewUsage
+    Name="ActivityOpportunityLink1"
+    ViewObjectName="model.uvo.ActivityOpportunityLink"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -397,6 +403,19 @@
         Type="java.lang.Integer"/>
       <Parameter
         Name="cId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="populateAcOppJun"
+      MethodName="populateAcOppJun">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="aId"
+        Type="java.lang.Integer"/>
+      <Parameter
+        Name="oId"
         Type="java.lang.Integer"/>
     </Method>
   </ClientInterface>

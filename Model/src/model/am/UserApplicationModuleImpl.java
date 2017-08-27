@@ -750,5 +750,30 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewObjectImpl getCreateItemsForOpportunityU1() {
         return (ViewObjectImpl) findViewObject("CreateItemsForOpportunityU1");
     }
+
+    /**
+     * Container's getter for CreateInteractionU1.
+     * @return CreateInteractionU1
+     */
+    public ViewObjectImpl getCreateInteractionU1() {
+        return (ViewObjectImpl) findViewObject("CreateInteractionU1");
+    }
+
+    /**
+     * Container's getter for ActivityOpportunityLink1.
+     * @return ActivityOpportunityLink1
+     */
+    public ViewObjectImpl getActivityOpportunityLink1() {
+        return (ViewObjectImpl) findViewObject("ActivityOpportunityLink1");
+    }
+    
+    public void populateAcOppJun(Integer aId,Integer oId){
+        ViewObjectImpl vo= getActivityOpportunityLink1();
+        Row row = vo.createRow();
+        row.setAttribute("ActivityId", aId);
+        row.setAttribute("OpportunityId", oId);
+        vo.insertRow(row);
+        this.getDBTransaction().commit();
+    }
 }
 

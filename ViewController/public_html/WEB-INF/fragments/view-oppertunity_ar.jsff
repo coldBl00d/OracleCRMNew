@@ -329,9 +329,13 @@
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.tab1}">
                                     <af:toolbar id="t2" binding="#{backingBeanScope.backing_viewoppertunity_ar.t2}">
                                         <af:button id="b4" binding="#{backingBeanScope.backing_viewoppertunity_ar.b4}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p4" align="afterStart" alignId="b4"/>
+                                        </af:button>
                                         <af:button id="b6" binding="#{backingBeanScope.backing_viewoppertunity_ar.b6}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p5" align="afterStart" alignId="b6"/>
+                                        </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
                                                        value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
@@ -896,6 +900,76 @@
             <f:facet name="buttonBar"/>
             <af:activeOutputText value="Are you sure you want to delete?" id="aot1"
                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.aot1}"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p4}"
+              popupFetchListener="#{backingBeanScope.backing_viewoppertunity_ar.insertInterPopupFetchListener}"
+              popupCanceledListener="#{backingBeanScope.backing_viewoppertunity_ar.cancelPopupListener}"
+              contentDelivery="lazyUncached">
+        <af:dialog id="d4" binding="#{backingBeanScope.backing_viewoppertunity_ar.d4}"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertInterDialogListener}">
+            <f:facet name="buttonBar"/>
+            <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_viewoppertunity_ar.pfl3}">
+                <af:inputText value="#{bindings.ActivityTitle.inputValue}" label="#{bindings.ActivityTitle.hints.label}"
+                              required="#{bindings.ActivityTitle.hints.mandatory}"
+                              columns="#{bindings.ActivityTitle.hints.displayWidth}"
+                              maximumLength="#{bindings.ActivityTitle.hints.precision}"
+                              shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it18"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it18}">
+                    <f:validator binding="#{bindings.ActivityTitle.validator}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.ActivityType.inputValue}" label="#{bindings.ActivityType.label}"
+                                    required="#{bindings.ActivityType.hints.mandatory}"
+                                    shortDesc="#{bindings.ActivityType.hints.tooltip}" id="soc12"
+                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.soc12}">
+                    <f:selectItems value="#{bindings.ActivityType.items}" id="si12"
+                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.si12}"/>
+                    <f:validator binding="#{bindings.ActivityType.validator}"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice value="#{bindings.ATaskPriority.inputValue}" label="#{bindings.ATaskPriority.label}"
+                                    required="#{bindings.ATaskPriority.hints.mandatory}"
+                                    shortDesc="#{bindings.ATaskPriority.hints.tooltip}" id="soc11"
+                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.soc11}">
+                    <f:selectItems value="#{bindings.ATaskPriority.items}" id="si11"
+                                   binding="#{backingBeanScope.backing_viewoppertunity_ar.si11}"/>
+                    <f:validator binding="#{bindings.ATaskPriority.validator}"/>
+                </af:selectOneChoice>
+                <af:inputDate value="#{bindings.StartDateTime.inputValue}" label="#{bindings.StartDateTime.hints.label}"
+                              required="#{bindings.StartDateTime.hints.mandatory}"
+                              columns="#{bindings.StartDateTime.hints.displayWidth}"
+                              shortDesc="#{bindings.StartDateTime.hints.tooltip}" id="id2"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.id2}">
+                    <f:validator binding="#{bindings.StartDateTime.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.StartDateTime.format}"/>
+                </af:inputDate>
+                <af:inputDate value="#{bindings.EndDueDateTime.inputValue}"
+                              label="#{bindings.EndDueDateTime.hints.label}"
+                              required="#{bindings.EndDueDateTime.hints.mandatory}"
+                              columns="#{bindings.EndDueDateTime.hints.displayWidth}"
+                              shortDesc="#{bindings.EndDueDateTime.hints.tooltip}" id="id3"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.id3}">
+                    <f:validator binding="#{bindings.EndDueDateTime.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.EndDueDateTime.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.ActivityDescription.inputValue}"
+                              label="#{bindings.ActivityDescription.hints.label}"
+                              required="#{bindings.ActivityDescription.hints.mandatory}"
+                              columns="#{bindings.ActivityDescription.hints.displayWidth}"
+                              maximumLength="#{bindings.ActivityDescription.hints.precision}"
+                              shortDesc="#{bindings.ActivityDescription.hints.tooltip}" id="it19"
+                              binding="#{backingBeanScope.backing_viewoppertunity_ar.it19}">
+                    <f:validator binding="#{bindings.ActivityDescription.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p5"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p5}" contentDelivery="lazyUncached">
+        <af:dialog id="d5" binding="#{backingBeanScope.backing_viewoppertunity_ar.d5}" type="yesNo"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.deleteInterDialogListener}">
+            <f:facet name="buttonBar"/>
+            <af:outputText value="Are you sure you want to delete?" id="ot32" binding="#{backingBeanScope.backing_viewoppertunity_ar.ot32}"/>
         </af:dialog>
     </af:popup>
 </ui:composition>
