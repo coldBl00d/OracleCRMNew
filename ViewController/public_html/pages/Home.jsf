@@ -14,21 +14,22 @@
                 <f:facet name="globalToolbar"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Home3.np1}">
-                        <af:commandNavigationItem id="ni1" text="Home" selected="true"
+                        <af:commandNavigationItem id="ni1" text="#{viewcontrollerBundle.WELCOME}" selected="true"
                                                   binding="#{backingBeanScope.backing_pages_Home3.ni1}"
                                                   action="goHome"/>
                         <af:commandNavigationItem id="ni2" text="Admin"
                                                   binding="#{backingBeanScope.backing_pages_Home3.ni2}" action="goAdmin"
                                                   rendered="#{securityContext.userInRole['AdminRole']}"/>
-                        <af:commandNavigationItem id="ni3" text="User"
+                        <af:commandNavigationItem id="ni3" text="#{viewcontrollerBundle.HOME}"
                                                   binding="#{backingBeanScope.backing_pages_Home3.ni3}" action="goUsers"
                                                   rendered="#{securityContext.userInRole['MAN,SA_REP']}"/>
                     </af:navigationPane>
                 </f:facet>
                 <f:attribute name="brandingTitle" value="Sales Force"/>
-                <f:facet name="globalLinks">
-                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l1" binding="#{backingBeanScope.backing_pages_Home3.l1}"
-                             action="#{LoginBean.onLogout}"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="status">
+                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l1"
+                             binding="#{backingBeanScope.backing_pages_Home3.l1}" action="#{LoginBean.onLogout}"/>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

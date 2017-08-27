@@ -1,5 +1,7 @@
 package view.backing.pages;
 
+import javax.faces.component.html.HtmlOutputLabel;
+
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
@@ -32,10 +34,11 @@ public class Admin {
     private RichLink l1;
     private RichLink l2;
     private RichLink l3;
-    private RichRegion r1;
     private RichLink l4;
     private RichCommandNavigationItem cni1;
     private RichLink l5;
+    private HtmlOutputLabel ol1;
+    private RichRegion r1;
 
     public Admin(){
         setUser();
@@ -163,13 +166,6 @@ public class Admin {
         return l3;
     }
 
-    public void setR1(RichRegion r1) {
-        this.r1 = r1;
-    }
-
-    public RichRegion getR1() {
-        return r1;
-    }
 
     public void setL4(RichLink l4) {
         this.l4 = l4;
@@ -193,5 +189,21 @@ public class Admin {
 
     public RichLink getL5() {
         return l5;
+    }
+
+    public void setOl1(HtmlOutputLabel ol1) {
+        this.ol1 = ol1;
+    }
+
+    public HtmlOutputLabel getOl1() {
+        return ol1;
+    }
+
+    public void setR1(RichRegion r1) {
+        this.r1 = r1;
+    }
+
+    public RichRegion getR1() {
+        return r1;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-        xmlns:c="http://java.sun.com/jsp/jstl/core">
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:h="http://java.sun.com/jsf/html">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="Admin.jsf" id="d1" binding="#{backingBeanScope.backing_pages_Admin.d1}">
         <af:form id="f1" binding="#{backingBeanScope.backing_pages_Admin.f1}">
@@ -34,15 +34,17 @@
                     </af:decorativeBox>
                 </f:facet>
                 <f:facet name="globalLinks">
+                    <h:outputLabel value="#{sessionScope.CURRENT_USER_NAME}" id="ol1" binding="#{backingBeanScope.backing_pages_Admin.ol1}"/>
+                </f:facet>
+                <f:facet name="status">
                     <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l5"
                              binding="#{backingBeanScope.backing_pages_Admin.l5}" action="#{LoginBean.onLogout}"/>
                 </f:facet>
-                <f:facet name="status"/>
                 <f:facet name="globalToolbar"/>
                 <f:facet name="globalSearch"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Admin.np1}">
-                        <af:commandNavigationItem id="cni1" text="Home"
+                        <af:commandNavigationItem id="cni1" text="#{viewcontrollerBundle.WELCOME}"
                                                   binding="#{backingBeanScope.backing_pages_Admin.cni1}"
                                                   partialSubmit="true" partialTriggers="::np1" action="goHome"/>
                         <af:commandNavigationItem id="ni1" text="Admin" selected="true"
@@ -50,14 +52,14 @@
                                                   partialSubmit="true" partialTriggers="::np1"
                                                   rendered="#{securityContext.userInRole['AdminRole']}"
                                                   action="goAdmin"/>
-                        <af:commandNavigationItem id="ni2" text="User"
+                        <af:commandNavigationItem id="ni2" text="#{viewcontrollerBundle.HOME}"
                                                   binding="#{backingBeanScope.backing_pages_Admin.ni2}"
                                                   partialSubmit="true" partialTriggers="::np1" action="goUsers"
                                                   rendered="#{securityContext.userInRole['MAN,SA_REP']}"/>
                     </af:navigationPane>
                 </f:facet>
                 <f:facet name="welcome">
-                    <af:region value="#{bindings.welcome1.regionModel}" id="r1"
+                    <af:region value="#{bindings.hometaskflow1.regionModel}" id="r1"
                                binding="#{backingBeanScope.backing_pages_Admin.r1}"/>
                 </f:facet>
                 <f:facet name="innerToolbar"/>

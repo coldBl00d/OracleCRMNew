@@ -31,16 +31,16 @@
                         </f:facet>
                     </af:decorativeBox>
                 </f:facet>
-                <f:facet name="globalLinks">
-                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l3" binding="#{backingBeanScope.backing_pages_Users.l3}"
-                             action="#{LoginBean.onLogout}"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="status">
+                    <af:link text="#{viewcontrollerBundle.LOGOUT}" id="l3"
+                             binding="#{backingBeanScope.backing_pages_Users.l3}" action="#{LoginBean.onLogout}"/>
                 </f:facet>
-                <f:facet name="status"/>
                 <f:facet name="globalToolbar"/>
                 <f:facet name="globalSearch"/>
                 <f:facet name="globalTabs">
                     <af:navigationPane hint="tabs" id="np1" binding="#{backingBeanScope.backing_pages_Users.np1}">
-                        <af:commandNavigationItem id="cni1" text="Home"
+                        <af:commandNavigationItem id="cni1" text="#{viewcontrollerBundle.WELCOME}"
                                                   binding="#{backingBeanScope.backing_pages_Users.cni1}"
                                                   partialSubmit="true" partialTriggers="::np1" action="goHome"
                                                   rendered="true"/>
@@ -48,7 +48,7 @@
                                                   binding="#{backingBeanScope.backing_pages_Users.ni1}"
                                                   partialSubmit="true" partialTriggers="::np1"
                                                   rendered="#{securityContext.userInRole['AdminRole']}"/>
-                        <af:commandNavigationItem id="ni2" text="Users" 
+                        <af:commandNavigationItem id="ni2" text="#{viewcontrollerBundle.HOME}" 
                                                   binding="#{backingBeanScope.backing_pages_Users.ni2}"
                                                   partialSubmit="true" partialTriggers="::np1"
                                                   selected="true"

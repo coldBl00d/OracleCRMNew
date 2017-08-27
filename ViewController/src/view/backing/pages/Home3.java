@@ -122,6 +122,7 @@ public class Home3 {
         return l1;
     }
 
+
     public void setR1(RichRegion r1) {
         this.r1 = r1;
     }
