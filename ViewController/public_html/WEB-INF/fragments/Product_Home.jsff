@@ -9,7 +9,7 @@
                           popupCanceledListener="#{backingBeanScope.backing_Product_Home.cancelPopupListener}">
                     <af:dialog id="d4" binding="#{backingBeanScope.backing_Product_Home.d4}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.insertCatDialogListener}"
-                               title="Insert Category">
+                               title="Create Category">
                         <f:facet name="buttonBar"/>
                         <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_Product_Home.pfl3}">
                             <af:inputText value="#{bindings.CategoryName.inputValue}"
@@ -84,15 +84,15 @@
                     <af:button id="b1" binding="#{backingBeanScope.backing_Product_Home.b1}"
                                icon="#{resource['images:ic_add_black_24dp_1x.png']}"
                                actionListener="#{backingBeanScope.backing_Product_Home.insertPopupActionListener}">
-                        <af:showPopupBehavior popupId="p1" triggerType="click" align="startAfter" alignId="b1"/>
+                        <af:showPopupBehavior popupId="p1" triggerType="click"/>
                     </af:button>
                     <af:button id="b2" binding="#{backingBeanScope.backing_Product_Home.b2}"
                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p2" align="startAfter" alignId="b2"/>
+                        <af:showPopupBehavior popupId="p2"/>
                     </af:button>
                     <af:button id="b3" binding="#{backingBeanScope.backing_Product_Home.b3}"
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p3" align="startAfter" alignId="b3"/>
+                        <af:showPopupBehavior popupId="p3"/>
                     </af:button>
                 </af:toolbar>
             </af:gridCell>
@@ -101,15 +101,15 @@
                     <af:button id="b4" binding="#{backingBeanScope.backing_Product_Home.b4}"
                                icon="#{resource['images:ic_add_black_24dp_1x.png']}"
                                actionListener="#{backingBeanScope.backing_Product_Home.insertCatPopupActionListener}">
-                        <af:showPopupBehavior popupId="p4" triggerType="click" align="startAfter" alignId="b4"/>
+                        <af:showPopupBehavior popupId="p4" triggerType="click"/>
                     </af:button>
                     <af:button id="b5" binding="#{backingBeanScope.backing_Product_Home.b5}"
                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p5" align="startAfter" alignId="b5"/>
+                        <af:showPopupBehavior popupId="p5"/>
                     </af:button>
                     <af:button id="b6" binding="#{backingBeanScope.backing_Product_Home.b6}"
                                icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p6" align="startAfter" alignId="b6"/>
+                        <af:showPopupBehavior popupId="p6"/>
                     </af:button>
                     <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
                                    value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
@@ -146,7 +146,7 @@
         <af:gridRow id="gr2" binding="#{backingBeanScope.backing_Product_Home.gr2}" height="75%">
             <af:gridCell id="gc2" binding="#{backingBeanScope.backing_Product_Home.gc2}" width="40%">
                 <af:panelGroupLayout layout="vertical" id="pgl2"
-                                     binding="#{backingBeanScope.backing_Product_Home.pgl2}">
+                                     binding="#{backingBeanScope.backing_Product_Home.pgl2}" inlineStyle="width:533px;">
                     <af:table value="#{bindings.ProductsU1.collectionModel}" var="row"
                               rows="#{bindings.ProductsU1.rangeSize}"
                               emptyText="#{bindings.ProductsU1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -188,7 +188,7 @@
                           contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_Product_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_Product_Home.insertDialogListener}"
-                               title="Insert Product">
+                               title="Create Product">
                         <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Product_Home.pfl1}">
                             <af:inputText value="#{bindings.ProductName.inputValue}"
                                           label="#{bindings.ProductName.hints.label}"
@@ -293,7 +293,7 @@
             </af:gridCell>
             <af:gridCell id="gc5" binding="#{backingBeanScope.backing_Product_Home.gc5}" width="60%">
                 <af:panelGroupLayout layout="vertical" id="pgl3"
-                                     binding="#{backingBeanScope.backing_Product_Home.pgl3}">
+                                     binding="#{backingBeanScope.backing_Product_Home.pgl3}" inlineStyle="width:540px;">
                     <af:table value="#{bindings.CategoryU1.collectionModel}" var="row"
                               rows="#{bindings.CategoryU1.rangeSize}"
                               emptyText="#{bindings.CategoryU1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -304,12 +304,13 @@
                               partialTriggers="::p4 ::d4 ::p6 ::d6 ::qryId2 ::p5 ::d5" id="t4" binding="#{backingBeanScope.backing_Product_Home.t4}"
                               columnStretching="last">
                         <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryName.name}" sortable="true"
-                                   headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4">
+                                   headerText="#{bindings.CategoryU1.hints.CategoryName.label}" id="c4" width="100">
                             <af:outputText value="#{row.CategoryName}"
                                            shortDesc="#{bindings.CategoryU1.hints.CategoryName.tooltip}" id="ot6"/>
                         </af:column>
                         <af:column sortProperty="#{bindings.CategoryU1.hints.CategoryDescription.name}" sortable="true"
-                                   headerText="#{bindings.CategoryU1.hints.CategoryDescription.label}" id="c5">
+                                   headerText="#{bindings.CategoryU1.hints.CategoryDescription.label}" id="c5"
+                                   width="101">
                             <af:outputText value="#{row.CategoryDescription}"
                                            shortDesc="#{bindings.CategoryU1.hints.CategoryDescription.tooltip}"
                                            id="ot7"/>

@@ -38,15 +38,15 @@
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s3}"/>
                                     <af:outputLabel value="Parent Company" id="ol3"
                                                     binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ol3}"/>
-                                    <af:inputText value="#{bindings.AccountName1.inputValue}" simple="true"
-                                                  required="#{bindings.AccountName1.hints.mandatory}"
-                                                  columns="#{bindings.AccountName1.hints.displayWidth}"
-                                                  maximumLength="#{bindings.AccountName1.hints.precision}"
-                                                  shortDesc="#{bindings.AccountName1.hints.tooltip}" id="it3"
-                                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it3}"
-                                                  inlineStyle="font-weight:bold; font-size:large;" editable="onAccess">
-                                        <f:validator binding="#{bindings.AccountName1.validator}"/>
-                                    </af:inputText>
+                                    <af:selectOneChoice value="#{bindings.ParentAccountId.inputValue}"
+                                                        required="#{bindings.ParentAccountId.hints.mandatory}"
+                                                        shortDesc="#{bindings.ParentAccountId.hints.tooltip}"
+                                                        id="soc15"
+                                                        binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc15}">
+                                        <f:selectItems value="#{bindings.ParentAccountId.items}" id="si15"
+                                                       binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si15}"/>
+                                        <f:validator binding="#{bindings.ParentAccountId.validator}"/>
+                                    </af:selectOneChoice>
                                     <af:spacer width="10" height="10" id="s4"
                                                binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.s4}"/>
                                     <af:outputLabel value="C.E.O" id="ol2"

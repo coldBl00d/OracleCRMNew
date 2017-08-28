@@ -226,6 +226,7 @@ public class Viewoppertunity_ar {
     private RichQuickQuery qryId6;
     private RichCommandLink cl6;
     private RichTable t10;
+    private RichDialog d13;
 
 
     public Viewoppertunity_ar(){
@@ -1576,20 +1577,14 @@ public class Viewoppertunity_ar {
                     BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
                     OperationBinding operationBinding = bindings.getOperationBinding("Commit");
                     DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
-                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateNotesU1Iterator");
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityContactLink1Iterator");
                     DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityForOverviewIterator");
-                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityNotesIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("ContactsOfOpportunityIterator");
                     Row row = iter.getCurrentRow();
                     Row row1 = iter1.getCurrentRow();
                     System.out.println("Before commit");
-                    
-                    row.setAttribute("NoteCreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
+                    row.setAttribute("OppertunityId", Integer.parseInt(row1.getAttribute("OpportunityId").toString()));
                     operationBinding.execute();
-                    
-                    OperationBinding op = bindings.getOperationBinding("populateNoteOppJun");
-                    op.getParamsMap().put("nId", Integer.parseInt(row.getAttribute("NoteId").toString()));
-                    op.getParamsMap().put("oId", Integer.parseInt(row1.getAttribute("OpportunityId").toString()));
-                    op.execute();
                     iter2.executeQuery();
                     
                     
@@ -1603,16 +1598,27 @@ public class Viewoppertunity_ar {
                 }
            
         }
-    public void insertX(DialogEvent dialogEvent) {
+    public void deleteContact(DialogEvent dialogEvent) {
                 if(dialogEvent.getOutcome().name().equals("yes")) {
-                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
-                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OpportunityNotesIterator");
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityForOverviewIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("ContactsOfOpportunityIterator");
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("OppertunityContactLink1Iterator");
+                    Row row2 = iter2.getCurrentRow();
+                    Row row1 = iter1.getCurrentRow();
+                    
+                    int oId = Integer.parseInt(row1.getAttribute("OpportunityId").toString());
+                    int cId = Integer.parseInt(row2.getAttribute("ContactId").toString());
+                    Key key = new Key(new Object[]{oId,cId});
+                    ViewObject vo = iter.getViewObject();
+                    Row[] row =vo.findByKey(key, 1);
+                    iter.setCurrentRowWithKey(key.toStringFormat(true));
                     BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
-                    OperationBinding operationBinding = bindings.getOperationBinding("Delete4");
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete5");
                     operationBinding.execute();
                     operationBinding = bindings.getOperationBinding("Commit");
                     operationBinding.execute();
-                    iter.executeQuery();
+                    iter2.executeQuery();
                     
                 } else if(dialogEvent.getOutcome().name().equals("no")){
                   
@@ -2232,5 +2238,13 @@ public class Viewoppertunity_ar {
 
     public RichTable getT10() {
         return t10;
+    }
+
+    public void setD13(RichDialog d13) {
+        this.d13 = d13;
+    }
+
+    public RichDialog getD13() {
+        return d13;
     }
 }

@@ -17,7 +17,8 @@
                                action="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.action}"/>
                     <af:button id="b3"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_CustomerOverview.b3}"
-                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                               icon="#{resource['images:ic_delete_black_24dp_1x.png']}"
+                               rendered="#{securityContext.userInRole['MAN']}">
                         <af:showPopupBehavior popupId="deleteCustomer"/>
                     </af:button>
                     <af:spacer width="10" height="10" id="s1"

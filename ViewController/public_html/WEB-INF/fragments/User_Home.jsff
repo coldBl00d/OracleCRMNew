@@ -10,12 +10,12 @@
                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b1}"
                                icon="#{resource['images:ic_add_black_24dp_1x.png']}"
                                actionListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertPopupActionListener}">
-                        <af:showPopupBehavior popupId="p1" align="afterStart" alignId="b1" triggerType="click"/>
+                        <af:showPopupBehavior popupId="p1" triggerType="click"/>
                     </af:button>
                     <af:button id="b2"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b2}"
                                icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
-                        <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b2"/>
+                        <af:showPopupBehavior popupId="p2"/>
                     </af:button>
                     <af:button id="b3"
                                binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.b3}"
@@ -100,7 +100,7 @@
                           contentDelivery="lazyUncached">
                     <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.d1}"
                                dialogListener="#{backingBeanScope.backing_WEBINF_fragments_User_Home.insertDialogListener}"
-                               title="Insert User">
+                               title="Create User">
                         <af:panelFormLayout id="pfl1"
                                             binding="#{backingBeanScope.backing_WEBINF_fragments_User_Home.pfl1}">
                             <af:inputText value="#{bindings.UName1.inputValue}" label="#{bindings.UName1.hints.label}"

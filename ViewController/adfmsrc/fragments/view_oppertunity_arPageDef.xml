@@ -421,5 +421,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="OppertunityContactLink1Iterator" id="CreateInsert5"
+            InstanceName="AdminAppModuleDataControl.OppertunityContactLink1" DataControl="AdminAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="OppertunityContactLink1Iterator" id="Delete5"
+            InstanceName="AdminAppModuleDataControl.OppertunityContactLink1" DataControl="AdminAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

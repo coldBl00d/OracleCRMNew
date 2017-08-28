@@ -9,8 +9,6 @@
     <iterator Binds="Creator" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="CreatorIterator"/>
     <iterator Binds="CustomerNotes" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="NotesUVO_arVO1Iterator"/>
-    <iterator Binds="CustomerParent" RangeSize="25" DataControl="UserApplicationModuleDataControl"
-              id="CustomerParentIterator"/>
     <iterator Binds="PrimaryAddress" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="PrimaryAddressIterator"/>
     <iterator Binds="OppertunityOfCustomer" RangeSize="25" DataControl="UserApplicationModuleDataControl"
@@ -72,11 +70,6 @@
       </nodeDefinition>
     </tree>
     <attributeValues IterBinding="CustomerListIterator" id="AccountName">
-      <AttrNames>
-        <Item Value="AccountName"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CustomerParentIterator" id="AccountName1">
       <AttrNames>
         <Item Value="AccountName"/>
       </AttrNames>
@@ -433,6 +426,8 @@
             DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="AppointmentsIterator" id="Delete4" InstanceName="UserApplicationModuleDataControl.Appointments"
             DataControl="UserApplicationModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="CustomerListIterator" StaticList="false" Uses="LOV_ParentAccountId" id="ParentAccountId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
   <ResourceBundle>
     <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle" PropertiesFile="view.ViewControllerBundle"/>

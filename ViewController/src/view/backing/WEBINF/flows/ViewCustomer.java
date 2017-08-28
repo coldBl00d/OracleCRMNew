@@ -101,7 +101,6 @@ public class ViewCustomer {
     private RichPanelGroupLayout pgl7;
     private RichTable t9;
     private RichInputText it2;
-    private RichInputText it3;
     private RichSpacer s4;
     private RichInputText it4;
     private RichInputText it5;
@@ -224,6 +223,8 @@ public class ViewCustomer {
     private RichInputText it33;
     private RichDialog d11;
     private RichOutputText ot40;
+    private RichSelectOneChoice soc15;
+    private UISelectItems si15;
 
     public ViewCustomer(){
         
@@ -857,13 +858,6 @@ public class ViewCustomer {
         return it2;
     }
 
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
-    }
-
-    public RichInputText getIt3() {
-        return it3;
-    }
 
     public void setS4(RichSpacer s4) {
         this.s4 = s4;
@@ -2196,5 +2190,22 @@ public class ViewCustomer {
 
     public RichOutputText getOt40() {
         return ot40;
+    }
+
+
+    public void setSoc15(RichSelectOneChoice soc15) {
+        this.soc15 = soc15;
+    }
+
+    public RichSelectOneChoice getSoc15() {
+        return soc15;
+    }
+
+    public void setSi15(UISelectItems si15) {
+        this.si15 = si15;
+    }
+
+    public UISelectItems getSi15() {
+        return si15;
     }
 }

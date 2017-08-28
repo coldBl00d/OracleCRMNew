@@ -415,9 +415,13 @@
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi1}">
                                     <af:toolbar id="t3" binding="#{backingBeanScope.backing_viewoppertunity_ar.t3}">
                                         <af:button id="b7" binding="#{backingBeanScope.backing_viewoppertunity_ar.b7}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p12"/>
+                                        </af:button>
                                         <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p13"/>
+                                        </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qryId6"
                                                        value="#{bindings.ImplicitViewCriteriaQuery5.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery5.queryModel}"
@@ -1209,5 +1213,9 @@
         </af:dialog>
     </af:popup>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p13"
-              binding="#{backingBeanScope.backing_viewoppertunity_ar.p13}"/>
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p13}">
+        <af:dialog id="d13" binding="#{backingBeanScope.backing_viewoppertunity_ar.d13}" title="Remove contact">
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
 </ui:composition>
