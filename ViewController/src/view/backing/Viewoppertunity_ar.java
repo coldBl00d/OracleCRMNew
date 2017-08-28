@@ -130,10 +130,6 @@ public class Viewoppertunity_ar {
     private RichLink l1;
     private RichOutputText ot18;
     private RichOutputText ot19;
-    private RichPanelGroupLayout pgl7;
-    private RichQuickQuery qryId2;
-    private RichCommandLink cl2;
-    private RichTable t10;
     private RichPanelGroupLayout pgl6;
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
@@ -226,6 +222,10 @@ public class Viewoppertunity_ar {
     private RichDialog d12;
     private RichSelectOneChoice soc15;
     private UISelectItems si15;
+    private RichPanelGroupLayout pgl7;
+    private RichQuickQuery qryId6;
+    private RichCommandLink cl6;
+    private RichTable t10;
 
 
     public Viewoppertunity_ar(){
@@ -1000,39 +1000,6 @@ public class Viewoppertunity_ar {
       
     }
 
-
-    public void setPgl7(RichPanelGroupLayout pgl7) {
-        this.pgl7 = pgl7;
-    }
-
-    public RichPanelGroupLayout getPgl7() {
-        return pgl7;
-    }
-
-
-    public void setQryId2(RichQuickQuery qryId2) {
-        this.qryId2 = qryId2;
-    }
-
-    public RichQuickQuery getQryId2() {
-        return qryId2;
-    }
-
-    public void setCl2(RichCommandLink cl2) {
-        this.cl2 = cl2;
-    }
-
-    public RichCommandLink getCl2() {
-        return cl2;
-    }
-
-    public void setT10(RichTable t10) {
-        this.t10 = t10;
-    }
-
-    public RichTable getT10() {
-        return t10;
-    }
 
     public void setPgl6(RichPanelGroupLayout pgl6) {
         this.pgl6 = pgl6;
@@ -2231,5 +2198,39 @@ public class Viewoppertunity_ar {
 
     public UISelectItems getSi15() {
         return si15;
+    }
+
+    public void setPgl7(RichPanelGroupLayout pgl7) {
+        this.pgl7 = pgl7;
+    }
+
+    public RichPanelGroupLayout getPgl7() {
+        return pgl7;
+    }
+
+
+    public void setQryId6(RichQuickQuery qryId6) {
+        this.qryId6 = qryId6;
+    }
+
+    public RichQuickQuery getQryId6() {
+        return qryId6;
+    }
+
+    public void setCl6(RichCommandLink cl6) {
+        this.cl6 = cl6;
+    }
+
+    public RichCommandLink getCl6() {
+        return cl6;
+    }
+
+
+    public void setT10(RichTable t10) {
+        this.t10 = t10;
+    }
+
+    public RichTable getT10() {
+        return t10;
     }
 }

@@ -418,14 +418,14 @@
                                                    icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b9" binding="#{backingBeanScope.backing_viewoppertunity_ar.b9}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
-                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
-                                                       value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
-                                                       model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
-                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}"
-                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId2}">
+                                        <af:quickQuery label="Search" searchDesc="Search" id="qryId6"
+                                                       value="#{bindings.ImplicitViewCriteriaQuery5.quickQueryDescriptor}"
+                                                       model="#{bindings.ImplicitViewCriteriaQuery5.queryModel}"
+                                                       queryListener="#{bindings.ImplicitViewCriteriaQuery5.processQuery}"
+                                                       binding="#{backingBeanScope.backing_viewoppertunity_ar.qryId6}">
                                             <f:facet name="end">
-                                                <af:commandLink text="Advanced" rendered="false" id="cl2"
-                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl2}"/>
+                                                <af:commandLink text="Advanced" rendered="false" id="cl6"
+                                                                binding="#{backingBeanScope.backing_viewoppertunity_ar.cl6}"/>
                                             </f:facet>
                                         </af:quickQuery>
                                     </af:toolbar>
@@ -438,14 +438,12 @@
                                                   selectedRowKeys="#{bindings.ContactsOfOpportunity.collectionModel.selectedRow}"
                                                   selectionListener="#{bindings.ContactsOfOpportunity.collectionModel.makeCurrent}"
                                                   rowSelection="single"
-                                                  fetchSize="#{bindings.ContactsOfOpportunity.rangeSize}"
-                                                  partialTriggers="::qryId2" id="t10"
-                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t10}"
-                                                  editingMode="readOnly">
+                                                  fetchSize="#{bindings.ContactsOfOpportunity.rangeSize}" id="t10"
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t10}">
                                             <af:column sortProperty="#{bindings.ContactsOfOpportunity.hints.ContactId.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.ContactsOfOpportunity.hints.ContactId.label}"
-                                                       id="c16" rendered="false">
+                                                       id="c16">
                                                 <af:outputText value="#{row.ContactId}"
                                                                shortDesc="#{bindings.ContactsOfOpportunity.hints.ContactId.tooltip}"
                                                                id="ot21">
@@ -457,12 +455,9 @@
                                                        sortable="true"
                                                        headerText="#{bindings.ContactsOfOpportunity.hints.ContactName.label}"
                                                        id="c17">
-                                                <af:link text="#{row.ContactName}" id="l3"
-                                                         action="#{backingBeanScope.backing_viewoppertunity_ar.goContact}">
-                                                    <af:setPropertyListener from="#{row.ContactId}"
-                                                                            to="#{pageFlowScope.ContactId}"
-                                                                            type="action"/>
-                                                </af:link>
+                                                <af:outputText value="#{row.ContactName}"
+                                                               shortDesc="#{bindings.ContactsOfOpportunity.hints.ContactName.tooltip}"
+                                                               id="ot28"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.ContactsOfOpportunity.hints.Gender.name}"
                                                        sortable="true"
@@ -483,7 +478,7 @@
                                                        id="c19">
                                                 <af:outputText value="#{row.Title}"
                                                                shortDesc="#{bindings.ContactsOfOpportunity.hints.Title.tooltip}"
-                                                               id="ot28">
+                                                               id="ot33">
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.ContactsOfOpportunity.hints.Title.format}"/>
                                                 </af:outputText>

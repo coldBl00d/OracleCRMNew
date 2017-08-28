@@ -77,7 +77,13 @@
                             </af:panelBox>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"
-                                     binding="#{backingBeanScope.ViewTask.gc2}"/>
+                                     binding="#{backingBeanScope.ViewTask.gc2}">
+                            <af:panelTabbed position="above" id="pt1" binding="#{backingBeanScope.ViewTask.pt1}">
+                                <af:showDetailItem id="tab1" text="Contacts" disclosed="true"
+                                                   binding="#{backingBeanScope.ViewTask.tab1}"/>
+                                <af:showDetailItem id="tab2" text="Users" binding="#{backingBeanScope.ViewTask.tab2}"/>
+                            </af:panelTabbed>
+                        </af:gridCell>
                     </af:gridRow>
                 </af:panelGridLayout>
             </f:facet>

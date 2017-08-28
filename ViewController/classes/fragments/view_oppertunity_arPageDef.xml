@@ -12,8 +12,6 @@
               id="PrimaryContactIterator"/>
     <iterator Binds="ContactsOfOpportunity" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="ContactsOfOpportunityIterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="ContactsOfOpportunityIterator" id="ImplicitViewCriteriaQuery1"/>
     <iterator Binds="OpportunityInteractions" RangeSize="25" DataControl="UserApplicationModuleDataControl"
               id="OpportunityInteractionsIterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
@@ -44,6 +42,8 @@
               id="OppertunityContactLink1Iterator"/>
     <iterator Binds="AltCustContactU2" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
               id="AltCustContactU2Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsOfOpportunityIterator" id="ImplicitViewCriteriaQuery5"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -129,18 +129,6 @@
         <Item Value="ContactId"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="ContactsOfOpportunityIterator" id="ContactsOfOpportunity">
-      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsOfOpportunity0">
-        <AttrNames>
-          <Item Value="ContactId"/>
-          <Item Value="ContactName"/>
-          <Item Value="Gender"/>
-          <Item Value="Title"/>
-          <Item Value="BuyingRole"/>
-          <Item Value="InfluenceLevel"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="OpportunityInteractionsIterator" id="OpportunityInteractions">
       <nodeDefinition DefName="model.uvo.InteractionsUVO" Name="OpportunityInteractions0">
         <AttrNames>
@@ -421,5 +409,17 @@
         <Item Value="ContactName"/>
       </ListDisplayAttrNames>
     </list>
+    <tree IterBinding="ContactsOfOpportunityIterator" id="ContactsOfOpportunity">
+      <nodeDefinition DefName="model.uvo.ContactsUVO_arVO" Name="ContactsOfOpportunity0">
+        <AttrNames>
+          <Item Value="ContactId"/>
+          <Item Value="ContactName"/>
+          <Item Value="Gender"/>
+          <Item Value="Title"/>
+          <Item Value="BuyingRole"/>
+          <Item Value="InfluenceLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
