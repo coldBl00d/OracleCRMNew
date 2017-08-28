@@ -816,5 +816,20 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         this.getDBTransaction().commit();
     }
 
+    /**
+     * Container's getter for CustNoteLinkU1.
+     * @return CustNoteLinkU1
+     */
+    public ViewObjectImpl getCustNoteLinkU1() {
+        return (ViewObjectImpl) findViewObject("CustNoteLinkU1");
+    }
+    public void populateCustNoteJun(Integer cId,Integer nId){
+        ViewObjectImpl vo= getCustNoteLinkU1();
+        Row row = vo.createRow();
+        row.setAttribute("NoteId", nId);
+        row.setAttribute("CustId", cId);
+        vo.insertRow(row);
+        this.getDBTransaction().commit();
+    }
 }
 

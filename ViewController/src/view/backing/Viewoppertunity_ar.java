@@ -1355,6 +1355,7 @@ public class Viewoppertunity_ar {
                     Row row = iter.getCurrentRow();
                     Row row1 = iter1.getCurrentRow();
                     System.out.println("Before commit");
+                    row.setAttribute("AccountId",Integer.parseInt(row1.getAttribute("AccId").toString()));
                     row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
                     operationBinding.execute();
                     OperationBinding op = bindings.getOperationBinding("populateAcOppJun");
@@ -1417,6 +1418,7 @@ public class Viewoppertunity_ar {
                     Row row1 = iter1.getCurrentRow();
                     System.out.println("Before commit");
                     
+                    row.setAttribute("AccountId",Integer.parseInt(row1.getAttribute("AccId").toString()));
                     row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
                     operationBinding.execute();
                     row.setAttribute("AAppLocationId", Integer.parseInt(row.getAttribute("AddressId").toString()));
@@ -1481,7 +1483,7 @@ public class Viewoppertunity_ar {
                     Row row = iter.getCurrentRow();
                     Row row1 = iter1.getCurrentRow();
                     System.out.println("Before commit");
-                    
+                    row.setAttribute("AccountId",Integer.parseInt(row1.getAttribute("AccId").toString()));
                     row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
                     operationBinding.execute();
                     

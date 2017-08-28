@@ -183,6 +183,47 @@ public class ViewCustomer {
     private RichPopup p2;
     private RichDialog d4;
     private RichActiveOutputText aot1;
+    private RichPopup p5;
+    private RichPopup p6;
+    private RichDialog d5;
+    private RichPanelFormLayout pfl3;
+    private RichInputText it23;
+    private RichInputDate id2;
+    private RichSelectOneChoice soc13;
+    private UISelectItems si13;
+    private RichInputText it25;
+    private RichSelectOneChoice soc14;
+    private UISelectItems si14;
+    private RichInputText it26;
+    private RichDialog d6;
+    private RichOutputText ot38;
+    private RichPopup p7;
+    private RichPopup p8;
+    private RichDialog d7;
+    private RichPanelFormLayout pfl4;
+    private RichInputText it27;
+    private RichInputDate id3;
+    private RichInputText it28;
+    private RichDialog d8;
+    private RichOutputText ot39;
+    private RichPopup p9;
+    private RichDialog d9;
+    private RichPanelFormLayout pfl5;
+    private RichInputDate id4;
+    private RichInputText it30;
+    private RichInputText it31;
+    private RichPopup p10;
+    private RichPopup p11;
+    private RichDialog d10;
+    private RichPanelFormLayout pfl6;
+    private RichInputText it24;
+    private RichInputDate id5;
+    private RichInputDate id6;
+    private RichInputText it29;
+    private RichInputText it32;
+    private RichInputText it33;
+    private RichDialog d11;
+    private RichOutputText ot40;
 
     public ViewCustomer(){
         
@@ -1615,5 +1656,545 @@ public class ViewCustomer {
 
     public RichActiveOutputText getAot1() {
         return aot1;
+    }
+
+    public void setP5(RichPopup p5) {
+        this.p5 = p5;
+    }
+
+    public RichPopup getP5() {
+        return p5;
+    }
+
+    public void setP6(RichPopup p6) {
+        this.p6 = p6;
+    }
+
+    public RichPopup getP6() {
+        return p6;
+    }
+    public void insertTaskPopupFetchListener(PopupFetchEvent popupFetchEvent){
+            System.out.println(popupFetchEvent.getLaunchSourceClientId());
+            
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert2");
+                operationBinding.execute();
+                
+           
+        }
+    public void insertTaskDialogListener(DialogEvent dialogEvent) {
+           
+                if(dialogEvent.getOutcome().name().equals("ok")==true) {
+                   System.out.println("Enter commit");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateTask1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerListIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerTasksIterator");
+                    Row row = iter.getCurrentRow();
+                    Row row1 = iter1.getCurrentRow();
+                    
+                    System.out.println("Before commit");
+                    row.setAttribute("AccountId",Integer.parseInt(row1.getAttribute("AccountId").toString()));
+                    row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
+                    operationBinding.execute();
+                
+                    iter2.executeQuery();
+                    
+                    
+                    
+                } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void deleteTaskDialogListener(DialogEvent dialogEvent) {
+                if(dialogEvent.getOutcome().name().equals("yes")) {
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerTasksIterator");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete2");
+                    operationBinding.execute();
+                    operationBinding = bindings.getOperationBinding("Commit");
+                    operationBinding.execute();
+                    iter.executeQuery();
+                    
+                } else if(dialogEvent.getOutcome().name().equals("no")){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    
+    public void insertNotePopupFetchListener(PopupFetchEvent popupFetchEvent){
+            System.out.println(popupFetchEvent.getLaunchSourceClientId());
+            
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert3");
+                operationBinding.execute();
+                
+           
+        }
+    public void insertNoteDialogListener(DialogEvent dialogEvent) {
+           
+                if(dialogEvent.getOutcome().name().equals("ok")==true) {
+                   System.out.println("Enter commit");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateNotesU1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerListIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("NotesUVO_arVO1Iterator");
+                    Row row = iter.getCurrentRow();
+                    Row row1 = iter1.getCurrentRow();
+                    
+                    System.out.println("Before commit");
+                    
+                    row.setAttribute("NoteCreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
+                    operationBinding.execute();
+                    OperationBinding op = bindings.getOperationBinding("populateCustNoteJun");
+                    op.getParamsMap().put("nId", Integer.parseInt(row.getAttribute("NoteId").toString()));
+                    op.getParamsMap().put("cId", Integer.parseInt(row1.getAttribute("AccountId").toString()));
+                    op.execute();
+                
+                    iter2.executeQuery();
+                    
+                    
+                    
+                } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void deleteNoteDialogListener(DialogEvent dialogEvent) {
+                if(dialogEvent.getOutcome().name().equals("yes")) {
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("NotesUVO_arVO1Iterator");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete3");
+                    operationBinding.execute();
+                    operationBinding = bindings.getOperationBinding("Commit");
+                    operationBinding.execute();
+                    iter.executeQuery();
+                    
+                } else if(dialogEvent.getOutcome().name().equals("no")){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void editNoteDialogListener(DialogEvent dialogEvent) {
+           
+                if(dialogEvent.getOutcome().name().equals("ok")==true) {
+                   System.out.println("Enter commit");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                    operationBinding.execute();
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("NotesUVO_arVO1Iterator");
+                   
+                    iter2.executeQuery();
+                    
+                    
+                    
+                } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void insertAppoPopupFetchListener(PopupFetchEvent popupFetchEvent){
+            System.out.println(popupFetchEvent.getLaunchSourceClientId());
+            
+                BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert4");
+                operationBinding.execute();
+                
+           
+        }
+    public void insertAppoDialogListener(DialogEvent dialogEvent) {
+           
+                if(dialogEvent.getOutcome().name().equals("ok")==true) {
+                   System.out.println("Enter commit");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("CreateAppointmentU1Iterator");
+                    DCIteratorBinding iter1 = (DCIteratorBinding)bindings2.findIteratorBinding("CustomerListIterator");
+                    DCIteratorBinding iter2 = (DCIteratorBinding)bindings2.findIteratorBinding("AppointmentsIterator");
+                    Row row = iter.getCurrentRow();
+                    Row row1 = iter1.getCurrentRow();
+                    System.out.println("Before commit");
+                    
+                    row.setAttribute("AccountId",Integer.parseInt(row1.getAttribute("AccountId").toString()));
+                    row.setAttribute("ACreatorId", Integer.parseInt(ADFContext.getCurrent().getSessionScope().get("CURRENT_USER_ID").toString()));
+                    operationBinding.execute();
+                    row.setAttribute("AAppLocationId", Integer.parseInt(row.getAttribute("AddressId").toString()));
+                    operationBinding.execute();
+                    
+                    iter2.executeQuery();
+                    
+                    
+                    
+                } else if(dialogEvent.getOutcome().name().equals("Closed")==true){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+    public void deleteAppoDialogListener(DialogEvent dialogEvent) {
+                if(dialogEvent.getOutcome().name().equals("yes")) {
+                    DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+                    DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("AppointmentsIterator");
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete4");
+                    operationBinding.execute();
+                    operationBinding = bindings.getOperationBinding("Commit");
+                    operationBinding.execute();
+                    iter.executeQuery();
+                    
+                } else if(dialogEvent.getOutcome().name().equals("no")){
+                  
+                    BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+                    OperationBinding operationBinding = bindings.getOperationBinding("Rollback");
+                    operationBinding.execute();
+                    
+                }
+           
+        }
+
+    public void setD5(RichDialog d5) {
+        this.d5 = d5;
+    }
+
+    public RichDialog getD5() {
+        return d5;
+    }
+
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
+
+    public void setIt23(RichInputText it23) {
+        this.it23 = it23;
+    }
+
+    public RichInputText getIt23() {
+        return it23;
+    }
+
+
+    public void setId2(RichInputDate id2) {
+        this.id2 = id2;
+    }
+
+    public RichInputDate getId2() {
+        return id2;
+    }
+
+    public void setSoc13(RichSelectOneChoice soc13) {
+        this.soc13 = soc13;
+    }
+
+    public RichSelectOneChoice getSoc13() {
+        return soc13;
+    }
+
+    public void setSi13(UISelectItems si13) {
+        this.si13 = si13;
+    }
+
+    public UISelectItems getSi13() {
+        return si13;
+    }
+
+    public void setIt25(RichInputText it25) {
+        this.it25 = it25;
+    }
+
+    public RichInputText getIt25() {
+        return it25;
+    }
+
+    public void setSoc14(RichSelectOneChoice soc14) {
+        this.soc14 = soc14;
+    }
+
+    public RichSelectOneChoice getSoc14() {
+        return soc14;
+    }
+
+    public void setSi14(UISelectItems si14) {
+        this.si14 = si14;
+    }
+
+    public UISelectItems getSi14() {
+        return si14;
+    }
+
+    public void setIt26(RichInputText it26) {
+        this.it26 = it26;
+    }
+
+    public RichInputText getIt26() {
+        return it26;
+    }
+
+    public void setD6(RichDialog d6) {
+        this.d6 = d6;
+    }
+
+    public RichDialog getD6() {
+        return d6;
+    }
+
+    public void setOt38(RichOutputText ot38) {
+        this.ot38 = ot38;
+    }
+
+    public RichOutputText getOt38() {
+        return ot38;
+    }
+
+    public void setP7(RichPopup p7) {
+        this.p7 = p7;
+    }
+
+    public RichPopup getP7() {
+        return p7;
+    }
+
+    public void setP8(RichPopup p8) {
+        this.p8 = p8;
+    }
+
+    public RichPopup getP8() {
+        return p8;
+    }
+
+    public void setD7(RichDialog d7) {
+        this.d7 = d7;
+    }
+
+    public RichDialog getD7() {
+        return d7;
+    }
+
+    public void setPfl4(RichPanelFormLayout pfl4) {
+        this.pfl4 = pfl4;
+    }
+
+    public RichPanelFormLayout getPfl4() {
+        return pfl4;
+    }
+
+    public void setIt27(RichInputText it27) {
+        this.it27 = it27;
+    }
+
+    public RichInputText getIt27() {
+        return it27;
+    }
+
+    public void setId3(RichInputDate id3) {
+        this.id3 = id3;
+    }
+
+    public RichInputDate getId3() {
+        return id3;
+    }
+
+    public void setIt28(RichInputText it28) {
+        this.it28 = it28;
+    }
+
+    public RichInputText getIt28() {
+        return it28;
+    }
+
+
+    public void setD8(RichDialog d8) {
+        this.d8 = d8;
+    }
+
+    public RichDialog getD8() {
+        return d8;
+    }
+
+    public void setOt39(RichOutputText ot39) {
+        this.ot39 = ot39;
+    }
+
+    public RichOutputText getOt39() {
+        return ot39;
+    }
+
+    public void setP9(RichPopup p9) {
+        this.p9 = p9;
+    }
+
+    public RichPopup getP9() {
+        return p9;
+    }
+
+    public void setD9(RichDialog d9) {
+        this.d9 = d9;
+    }
+
+    public RichDialog getD9() {
+        return d9;
+    }
+
+    public void setPfl5(RichPanelFormLayout pfl5) {
+        this.pfl5 = pfl5;
+    }
+
+    public RichPanelFormLayout getPfl5() {
+        return pfl5;
+    }
+
+    public void setId4(RichInputDate id4) {
+        this.id4 = id4;
+    }
+
+    public RichInputDate getId4() {
+        return id4;
+    }
+
+    public void setIt30(RichInputText it30) {
+        this.it30 = it30;
+    }
+
+    public RichInputText getIt30() {
+        return it30;
+    }
+
+    public void setIt31(RichInputText it31) {
+        this.it31 = it31;
+    }
+
+    public RichInputText getIt31() {
+        return it31;
+    }
+
+    public void setP10(RichPopup p10) {
+        this.p10 = p10;
+    }
+
+    public RichPopup getP10() {
+        return p10;
+    }
+
+    public void setP11(RichPopup p11) {
+        this.p11 = p11;
+    }
+
+    public RichPopup getP11() {
+        return p11;
+    }
+
+    public void setD10(RichDialog d10) {
+        this.d10 = d10;
+    }
+
+    public RichDialog getD10() {
+        return d10;
+    }
+
+    public void setPfl6(RichPanelFormLayout pfl6) {
+        this.pfl6 = pfl6;
+    }
+
+    public RichPanelFormLayout getPfl6() {
+        return pfl6;
+    }
+
+    public void setIt24(RichInputText it24) {
+        this.it24 = it24;
+    }
+
+    public RichInputText getIt24() {
+        return it24;
+    }
+
+    public void setId5(RichInputDate id5) {
+        this.id5 = id5;
+    }
+
+    public RichInputDate getId5() {
+        return id5;
+    }
+
+    public void setId6(RichInputDate id6) {
+        this.id6 = id6;
+    }
+
+    public RichInputDate getId6() {
+        return id6;
+    }
+
+    public void setIt29(RichInputText it29) {
+        this.it29 = it29;
+    }
+
+    public RichInputText getIt29() {
+        return it29;
+    }
+
+    public void setIt32(RichInputText it32) {
+        this.it32 = it32;
+    }
+
+    public RichInputText getIt32() {
+        return it32;
+    }
+
+    public void setIt33(RichInputText it33) {
+        this.it33 = it33;
+    }
+
+    public RichInputText getIt33() {
+        return it33;
+    }
+
+    public void setD11(RichDialog d11) {
+        this.d11 = d11;
+    }
+
+    public RichDialog getD11() {
+        return d11;
+    }
+
+    public void setOt40(RichOutputText ot40) {
+        this.ot40 = ot40;
+    }
+
+    public RichOutputText getOt40() {
+        return ot40;
     }
 }

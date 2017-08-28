@@ -11,5 +11,7 @@ public interface UserApplicationModule extends ApplicationModule {
     void populateAcOppJun(Integer aId, Integer oId);
 
     void populateNoteOppJun(Integer nId, Integer oId);
+
+    void populateCustNoteJun(Integer cId, Integer nId);
 }
 

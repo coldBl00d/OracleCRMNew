@@ -198,6 +198,9 @@
   <ViewUsage
     Name="OpportunityNoteU1"
     ViewObjectName="model.uvo.OpportunityNoteUVO"/>
+  <ViewUsage
+    Name="CustNoteLinkU1"
+    ViewObjectName="model.uvo.CustNoteLinkUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -441,6 +444,19 @@
         Type="java.lang.Integer"/>
       <Parameter
         Name="oId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="populateCustNoteJun"
+      MethodName="populateCustNoteJun">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="cId"
+        Type="java.lang.Integer"/>
+      <Parameter
+        Name="nId"
         Type="java.lang.Integer"/>
     </Method>
   </ClientInterface>

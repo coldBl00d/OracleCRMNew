@@ -52,7 +52,7 @@
     EntityAttrName="ActivityType"
     EntityUsage="ActivityEO_arEO"
     AliasName="ACTIVITY_TYPE"
-    DefaultValue="'APPOINTMENT'"/>
+    DefaultValue="APPOINTMENT"/>
   <ViewAttribute
     Name="ActivityTitle"
     PrecisionRule="true"
@@ -133,6 +133,12 @@
     EntityAttrName="ACreatorId"
     EntityUsage="ActivityEO_arEO"
     AliasName="A_CREATOR_ID"/>
+  <ViewAttribute
+    Name="AccountId"
+    PrecisionRule="true"
+    EntityAttrName="AccountId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACCOUNT_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

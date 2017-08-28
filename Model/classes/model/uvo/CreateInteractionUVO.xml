@@ -134,6 +134,12 @@
     EntityAttrName="AInterResolution"
     EntityUsage="ActivityEO_arEO"
     AliasName="A_INTER_RESOLUTION"/>
+  <ViewAttribute
+    Name="AccountId"
+    PrecisionRule="true"
+    EntityAttrName="AccountId"
+    EntityUsage="ActivityEO_arEO"
+    AliasName="ACCOUNT_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

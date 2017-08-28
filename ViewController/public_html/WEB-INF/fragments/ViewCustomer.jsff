@@ -437,10 +437,14 @@
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t4}">
                                         <af:button id="b7"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b7}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p5" align="afterStart" alignId="b7"/>
+                                        </af:button>
                                         <af:button id="b9"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b9}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p6" align="afterStart" alignId="b9"/>
+                                        </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qq4"
                                                        value="#{bindings.ImplicitViewCriteriaQuery3.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery3.queryModel}"
@@ -537,13 +541,19 @@
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t6}">
                                         <af:button id="b10"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b10}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p7" align="afterStart" alignId="b10"/>
+                                        </af:button>
                                         <af:button id="b11"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b11}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p9" align="afterStart" alignId="b11"/>
+                                        </af:button>
                                         <af:button id="b12"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b12}"
-                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_delete_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p8" align="afterStart" alignId="b12"/>
+                                        </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qq3"
                                                        value="#{bindings.ImplicitViewCriteriaQuery2.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery2.queryModel}"
@@ -602,7 +612,9 @@
                                                 binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.t11}">
                                         <af:button id="b14"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b14}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
+                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}">
+                                            <af:showPopupBehavior popupId="p10" align="afterStart" alignId="b14"/>
+                                        </af:button>
                                         <af:button id="b15"
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b15}"
                                                    icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"/>
@@ -610,7 +622,9 @@
                                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.b16}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"
                                                    actionListener="#{bindings.Delete.execute}"
-                                                   disabled="#{!bindings.Delete.enabled}"/>
+                                                   disabled="#{!bindings.Delete.enabled}">
+                                            <af:showPopupBehavior popupId="p11" align="afterStart" alignId="b16"/>
+                                        </af:button>
                                         <af:quickQuery label="Search" searchDesc="Search" id="qq5"
                                                        value="#{bindings.ImplicitViewCriteriaQuery4.quickQueryDescriptor}"
                                                        model="#{bindings.ImplicitViewCriteriaQuery4.queryModel}"
@@ -748,7 +762,8 @@
               contentDelivery="lazyUncached"
               popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}">
         <af:dialog id="d1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d1}"
-                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertDialogListener}">
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertDialogListener}"
+                   title="Create contact">
             <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl1}">
                 <af:inputText value="#{bindings.ContactName.inputValue}" label="#{bindings.ContactName.hints.label}"
                               required="#{bindings.ContactName.hints.mandatory}"
@@ -855,7 +870,8 @@
     <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
               binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p3}" contentDelivery="lazyUncached">
         <af:dialog id="d3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d3}" type="yesNo"
-                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteOppDialogListener}">
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteOppDialogListener}"
+                   title="Delete contact">
             <f:facet name="buttonBar"/>
             <af:outputText value="Are you sure you want to delete?" id="ot32"
                            binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot32}"/>
@@ -867,7 +883,8 @@
               popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelOppPopupListener}"
               contentDelivery="lazyUncached">
         <af:dialog id="d2" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d2}"
-                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertOppDialogListener}">
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertOppDialogListener}"
+                   title="Create opportunity">
             <f:facet name="buttonBar"/>
             <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl2}">
                 <af:inputText value="#{bindings.OpportunityName.inputValue}"
@@ -975,6 +992,237 @@
             <f:facet name="buttonBar"/>
             <af:activeOutputText value="Are you sure you want to delete?" id="aot1"
                                  binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.aot1}"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p5"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p5}" contentDelivery="lazyUncached"
+              popupFetchListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertTaskPopupFetchListener}"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}">
+        <af:dialog id="d5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d5}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertTaskDialogListener}"
+                   title="Create task">
+            <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl3}">
+                <af:inputText value="#{bindings.ActivityTitle.inputValue}" label="#{bindings.ActivityTitle.hints.label}"
+                              required="#{bindings.ActivityTitle.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.ActivityTitle.hints.precision}"
+                              shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it23"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it23}">
+                    <f:validator binding="#{bindings.ActivityTitle.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.EndDueDateTime.inputValue}"
+                              label="#{bindings.EndDueDateTime.hints.label}"
+                              required="#{bindings.EndDueDateTime.hints.mandatory}"
+                              columns="#{bindings.EndDueDateTime.hints.displayWidth}"
+                              shortDesc="#{bindings.EndDueDateTime.hints.tooltip}" id="id2"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.id2}">
+                    <f:validator binding="#{bindings.EndDueDateTime.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.EndDueDateTime.format}"/>
+                </af:inputDate>
+                <af:selectOneChoice value="#{bindings.ATaskPriority.inputValue}" label="#{bindings.ATaskPriority.label}"
+                                    required="#{bindings.ATaskPriority.hints.mandatory}"
+                                    shortDesc="#{bindings.ATaskPriority.hints.tooltip}" id="soc13"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc13}">
+                    <f:selectItems value="#{bindings.ATaskPriority.items}" id="si13"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si13}"/>
+                    <f:validator binding="#{bindings.ATaskPriority.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.ActivityDescription.inputValue}"
+                              label="#{bindings.ActivityDescription.hints.label}"
+                              required="#{bindings.ActivityDescription.hints.mandatory}"
+                              columns="28"
+                              maximumLength="#{bindings.ActivityDescription.hints.precision}"
+                              shortDesc="#{bindings.ActivityDescription.hints.tooltip}" id="it25"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it25}" rows="3">
+                    <f:validator binding="#{bindings.ActivityDescription.validator}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.ATaskAssigneeId.inputValue}"
+                                    label="#{bindings.ATaskAssigneeId.label}"
+                                    required="#{bindings.ATaskAssigneeId.hints.mandatory}"
+                                    shortDesc="#{bindings.ATaskAssigneeId.hints.tooltip}" id="soc14"
+                                    binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.soc14}">
+                    <f:selectItems value="#{bindings.ATaskAssigneeId.items}" id="si14"
+                                   binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.si14}"/>
+                    <f:validator binding="#{bindings.ATaskAssigneeId.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.ATaskCompletion.inputValue}"
+                              label="#{bindings.ATaskCompletion.hints.label}"
+                              required="#{bindings.ATaskCompletion.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.ATaskCompletion.hints.precision}"
+                              shortDesc="#{bindings.ATaskCompletion.hints.tooltip}" id="it26"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it26}">
+                    <f:validator binding="#{bindings.ATaskCompletion.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ATaskCompletion.format}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p6"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p6}" contentDelivery="lazyUncached">
+        <af:dialog id="d6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d6}" type="yesNo"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteTaskDialogListener}"
+                   title="Delete task">
+            <af:outputText value="Are you sure you want to delete?" id="ot38"
+                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot38}"/>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p7"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p7}" contentDelivery="lazyUncached"
+              popupFetchListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertNotePopupFetchListener}"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}">
+        <af:dialog id="d7" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d7}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertNoteDialogListener}"
+                   title="Create Note">
+            <af:panelFormLayout id="pfl4" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl4}">
+                <af:inputText value="#{bindings.NoteTitle.inputValue}" label="#{bindings.NoteTitle.hints.label}"
+                              required="#{bindings.NoteTitle.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.NoteTitle.hints.precision}"
+                              shortDesc="#{bindings.NoteTitle.hints.tooltip}" id="it27"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it27}">
+                    <f:validator binding="#{bindings.NoteTitle.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.NoteDate.inputValue}" label="#{bindings.NoteDate.hints.label}"
+                              required="#{bindings.NoteDate.hints.mandatory}"
+                              columns="#{bindings.NoteDate.hints.displayWidth}"
+                              shortDesc="#{bindings.NoteDate.hints.tooltip}" id="id3"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.id3}">
+                    <f:validator binding="#{bindings.NoteDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.NoteDate.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.NoteContent.inputValue}" label="#{bindings.NoteContent.hints.label}"
+                              required="#{bindings.NoteContent.hints.mandatory}"
+                              columns="28"
+                              maximumLength="#{bindings.NoteContent.hints.precision}"
+                              shortDesc="#{bindings.NoteContent.hints.tooltip}" id="it28"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it28}" rows="3">
+                    <f:validator binding="#{bindings.NoteContent.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p8"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p8}" contentDelivery="lazyUncached">
+        <af:dialog id="d8" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d8}" type="yesNo"
+                   title="Delete Note"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteNoteDialogListener}">
+            <f:facet name="buttonBar"/>
+            <af:outputText value="Are you sure you want to delete?" id="ot39"
+                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot39}"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p9"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p9}"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}"
+              contentDelivery="lazyUncached">
+        <af:dialog id="d9" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d9}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.editNoteDialogListener}"
+                   title="Note Details">
+            <f:facet name="buttonBar"/>
+            <af:panelFormLayout id="pfl5" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl5}">
+                <af:inputDate value="#{bindings.NoteDate1.inputValue}" label="#{bindings.NoteDate1.hints.label}"
+                              required="#{bindings.NoteDate1.hints.mandatory}"
+                              columns="#{bindings.NoteDate1.hints.displayWidth}"
+                              shortDesc="#{bindings.NoteDate1.hints.tooltip}" id="id4"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.id4}" editable="onAccess">
+                    <f:validator binding="#{bindings.NoteDate1.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.NoteDate1.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.NoteTitle1.inputValue}" label="#{bindings.NoteTitle1.hints.label}"
+                              required="#{bindings.NoteTitle1.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.NoteTitle1.hints.precision}"
+                              shortDesc="#{bindings.NoteTitle1.hints.tooltip}" id="it30"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it30}" editable="onAccess">
+                    <f:validator binding="#{bindings.NoteTitle1.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.NoteContent1.inputValue}" label="#{bindings.NoteContent1.hints.label}"
+                              required="#{bindings.NoteContent1.hints.mandatory}"
+                              columns="28"
+                              maximumLength="#{bindings.NoteContent1.hints.precision}"
+                              shortDesc="#{bindings.NoteContent1.hints.tooltip}" id="it31"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it31}" editable="onAccess"
+                              rows="3">
+                    <f:validator binding="#{bindings.NoteContent1.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p10"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p10}"
+              popupFetchListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertAppoPopupFetchListener}"
+              popupCanceledListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.cancelPopupListener}"
+              contentDelivery="lazyUncached">
+        <af:dialog id="d10" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d10}"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.insertAppoDialogListener}"
+                   title="Create appointment">
+            <af:panelFormLayout id="pfl6" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.pfl6}">
+                <af:inputText value="#{bindings.ActivityTitle1.inputValue}"
+                              label="#{bindings.ActivityTitle1.hints.label}"
+                              required="#{bindings.ActivityTitle1.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.ActivityTitle1.hints.precision}"
+                              shortDesc="#{bindings.ActivityTitle1.hints.tooltip}" id="it24"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it24}">
+                    <f:validator binding="#{bindings.ActivityTitle1.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.StartDateTime.inputValue}" label="#{bindings.StartDateTime.hints.label}"
+                              required="#{bindings.StartDateTime.hints.mandatory}"
+                              columns="#{bindings.StartDateTime.hints.displayWidth}"
+                              shortDesc="#{bindings.StartDateTime.hints.tooltip}" id="id5"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.id5}">
+                    <f:validator binding="#{bindings.StartDateTime.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.StartDateTime.format}"/>
+                </af:inputDate>
+                <af:inputDate value="#{bindings.EndDueDateTime1.inputValue}"
+                              label="#{bindings.EndDueDateTime1.hints.label}"
+                              required="#{bindings.EndDueDateTime1.hints.mandatory}"
+                              columns="#{bindings.EndDueDateTime1.hints.displayWidth}"
+                              shortDesc="#{bindings.EndDueDateTime1.hints.tooltip}" id="id6"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.id6}">
+                    <f:validator binding="#{bindings.EndDueDateTime1.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.EndDueDateTime1.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.AddressLine13.inputValue}" label="#{bindings.AddressLine13.hints.label}"
+                              required="#{bindings.AddressLine13.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine13.hints.precision}"
+                              shortDesc="#{bindings.AddressLine13.hints.tooltip}" id="it29"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it29}">
+                    <f:validator binding="#{bindings.AddressLine13.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine23.inputValue}" label="#{bindings.AddressLine23.hints.label}"
+                              required="#{bindings.AddressLine23.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine23.hints.precision}"
+                              shortDesc="#{bindings.AddressLine23.hints.tooltip}" id="it32"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it32}">
+                    <f:validator binding="#{bindings.AddressLine23.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.AddressLine33.inputValue}" label="#{bindings.AddressLine33.hints.label}"
+                              required="#{bindings.AddressLine33.hints.mandatory}"
+                              columns="30"
+                              maximumLength="#{bindings.AddressLine33.hints.precision}"
+                              shortDesc="#{bindings.AddressLine33.hints.tooltip}" id="it33"
+                              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.it33}">
+                    <f:validator binding="#{bindings.AddressLine33.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+            <f:facet name="buttonBar"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p11"
+              binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.p11}" contentDelivery="lazyUncached">
+        <af:dialog id="d11" binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.d11}" type="yesNo"
+                   dialogListener="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.deleteAppoDialogListener}"
+                   title="Delete appointment">
+            <f:facet name="buttonBar"/>
+            <af:outputText value="Are you sure you want to delete this?" id="ot40"
+                           binding="#{backingBeanScope.backing_WEBINF_flows_ViewCustomer.ot40}"/>
         </af:dialog>
     </af:popup>
 </ui:composition>

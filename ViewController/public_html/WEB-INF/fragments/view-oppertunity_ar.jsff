@@ -702,7 +702,9 @@
                                                   rowBandingInterval="0"
                                                   fetchSize="#{bindings.OpportunityTask.rangeSize}"
                                                   partialTriggers="::qryId4" id="t12"
-                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t12}">
+                                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.t12}"
+                                                  rowSelection="single"
+                                                  selectionListener="#{bindings.OpportunityTask.treeModel.makeCurrent}">
                                             <af:column headerText="#{bindings.OpportunityTask.hints.ActivityId.label}"
                                                        id="c25" rendered="false">
                                                 <af:outputText value="#{row.ActivityId}"
@@ -1067,7 +1069,7 @@
               binding="#{backingBeanScope.backing_viewoppertunity_ar.p7}" contentDelivery="lazyUncached">
         <af:dialog id="d7" binding="#{backingBeanScope.backing_viewoppertunity_ar.d7}"
                    dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.deleteAppoDialogListener}"
-                   title="Delete appointment">
+                   title="Delete appointment" type="yesNo">
             <af:activeOutputText value="Are you sure you want to delete?" id="aot2"
                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.aot2}"/>
             <f:facet name="buttonBar"/>

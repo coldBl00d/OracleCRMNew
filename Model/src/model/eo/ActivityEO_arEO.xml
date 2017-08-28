@@ -194,6 +194,15 @@
     Type="java.lang.Long"
     ColumnType="NUMBER"
     TableName="ACTIVITY"/>
+  <Attribute
+    Name="AccountId"
+    Precision="18"
+    Scale="0"
+    ColumnName="ACCOUNT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACTIVITY"/>
   <AccessorAttribute
     Name="ContactsEO_ar"
     Association="model.assoc.ContactToInteractionsAssoc"
