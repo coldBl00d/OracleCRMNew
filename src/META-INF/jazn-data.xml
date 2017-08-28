@@ -16,7 +16,7 @@
                     <display-name>Sam</display-name>
                 </user>
                 <user>
-                    <name>sarep</name>
+                    <name>ben</name>
                     <credentials>{903}AxxEh+9WKOGd0yqrPW+mE4eutHx2Qdf2</credentials>
                     <display-name>Sales Rep</display-name>
                     <description></description>
@@ -48,7 +48,7 @@
                     <members>
                         <member>
                             <type>user</type>
-                            <name>sarep</name>
+                            <name>ben</name>
                         </member>
                     </members>
                 </role>
