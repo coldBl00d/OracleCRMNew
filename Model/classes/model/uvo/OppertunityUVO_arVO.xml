@@ -168,7 +168,7 @@
     EntityAttrName="OpportunityId"
     EntityUsage="OppertunityEO_ar"
     AliasName="OPPORTUNITY_ID"
-    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0">
+    DefaultValue="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYHINT
@@ -487,6 +487,11 @@
   <ViewLinkAccessor
     Name="RevenueItemsU"
     ViewLink="model.vl.OpportunityToRevenueItemVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AltCustContactU"
+    ViewLink="model.vl.ViewLinkVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

@@ -27,6 +27,12 @@ public class ViewTask {
     private RichDecorativeBox db1;
     private RichPanelGroupLayout pgl1;
     private RichInputText it1;
+    private RichInputText it2;
+    private RichInputText it3;
+    private RichOutputLabel ol4;
+    private RichInputText it4;
+    private RichOutputLabel ol5;
+    private RichInputText it5;
 
     public ViewTask() {
         System.out.println("Task id  from page flow scope view task page :" +ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
@@ -142,5 +148,53 @@ public class ViewTask {
 
     public RichInputText getIt1() {
         return it1;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setOl4(RichOutputLabel ol4) {
+        this.ol4 = ol4;
+    }
+
+    public RichOutputLabel getOl4() {
+        return ol4;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void setOl5(RichOutputLabel ol5) {
+        this.ol5 = ol5;
+    }
+
+    public RichOutputLabel getOl5() {
+        return ol5;
+    }
+
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
     }
 }

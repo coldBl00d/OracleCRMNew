@@ -64,9 +64,6 @@
     Name="Appointments"
     ViewObjectName="model.uvo.ActivityUVO_ar"/>
   <ViewUsage
-    Name="CustContactLinkUVO_ar1"
-    ViewObjectName="model.uvo.CustContactLinkUVO_arVO"/>
-  <ViewUsage
     Name="CreateCustomerU1"
     ViewObjectName="model.uvo.CreateCustomerUVO"/>
   <ViewUsage
@@ -201,6 +198,12 @@
   <ViewUsage
     Name="CustNoteLinkU1"
     ViewObjectName="model.uvo.CustNoteLinkUVO"/>
+  <ViewUsage
+    Name="CustContactLinkUVO_ar1"
+    ViewObjectName="model.uvo.CustContactLinkUVO_arVO"/>
+  <ViewUsage
+    Name="AltCustContactU2"
+    ViewObjectName="model.uvo.AltCustContactUVO"/>
   <ViewLinkUsage
     Name="CustomerToParentViewLink_ar1"
     ViewLinkObjectName="model.vl.CustomerToParentViewLink_ar"
@@ -404,6 +407,12 @@
     ViewLinkObjectName="model.vl.AltCustContactVL"
     SrcViewUsageName="model.am.UserApplicationModule.Customer"
     DstViewUsageName="model.am.UserApplicationModule.AltCustContactU1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ViewLinkVL1"
+    ViewLinkObjectName="model.vl.ViewLinkVL"
+    SrcViewUsageName="model.am.UserApplicationModule.OppertunityForOverview"
+    DstViewUsageName="model.am.UserApplicationModule.AltCustContactU2"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

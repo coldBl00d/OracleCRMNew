@@ -29,5 +29,16 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="OppertunityContactLinkEO"
-    AliasName="CONTACT_ID"/>
+    AliasName="CONTACT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.uvo.OppertunityContactLinkVO.ContactId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

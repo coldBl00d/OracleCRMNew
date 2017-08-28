@@ -435,6 +435,20 @@
     AssociationOtherEnd="model.eo.fk_OppertunityEO_arASSOC.OppertunityEO_ar"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AltContacts"
+    Association="model.assoc.OpportunityContactASSOC"
+    AssociationEnd="model.assoc.OpportunityContactASSOC.AltContactsEO"
+    AssociationOtherEnd="model.assoc.OpportunityContactASSOC.OppertunityEO_ar2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AltContacts1"
+    Association="model.assoc.AltOpConASSOC"
+    AssociationEnd="model.assoc.AltOpConASSOC.AltContacts1"
+    AssociationOtherEnd="model.assoc.AltOpConASSOC.OppertunityEO_ar"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunityBudgetAmountCheck">
     <DesignTime>

@@ -268,6 +268,12 @@
                         <display-name>home-taskflow(/WEB-INF)</display-name>
                         <description>/WEB-INF/home-taskflow.xml#home-taskflow</description>
                     </resource>
+                    <resource>
+                        <name>/WEB-INF/flows/AdminDashBoard-taskflow.xml#AdminDashBoard-taskflow</name>
+                        <type-name-ref>TaskFlowResourceType</type-name-ref>
+                        <display-name>AdminDashBoard-taskflow(/WEB-INF/flows)</display-name>
+                        <description>/WEB-INF/flows/AdminDashBoard-taskflow.xml#AdminDashBoard-taskflow</description>
+                    </resource>
                 </resources>
                 <permission-sets>
                     <permission-set>
@@ -361,6 +367,12 @@
                                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                                 <resource-name>/WEB-INF/home-taskflow.xml#home-taskflow</resource-name>
                                 <display-name>home-taskflow(/WEB-INF)</display-name>
+                                <actions>view</actions>
+                            </member-resource>
+                            <member-resource>
+                                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                                <resource-name>/WEB-INF/flows/AdminDashBoard-taskflow.xml#AdminDashBoard-taskflow</resource-name>
+                                <display-name>AdminDashBoard-taskflow(/WEB-INF/flows)</display-name>
                                 <actions>view</actions>
                             </member-resource>
                         </member-resources>

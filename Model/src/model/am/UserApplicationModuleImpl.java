@@ -145,14 +145,6 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
 
 
     /**
-     * Container's getter for CustContactLinkUVO_ar1.
-     * @return CustContactLinkUVO_ar1
-     */
-    public ViewObjectImpl getCustContactLinkUVO_ar1() {
-        return (ViewObjectImpl) findViewObject("CustContactLinkUVO_ar1");
-    }
-
-    /**
      * Container's getter for CustomerToParentViewLink_ar1.
      * @return CustomerToParentViewLink_ar1
      */
@@ -830,6 +822,31 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
         row.setAttribute("CustId", cId);
         vo.insertRow(row);
         this.getDBTransaction().commit();
+    }
+
+
+    /**
+     * Container's getter for CustContactLinkUVO_ar1.
+     * @return CustContactLinkUVO_ar1
+     */
+    public ViewObjectImpl getCustContactLinkUVO_ar1() {
+        return (ViewObjectImpl) findViewObject("CustContactLinkUVO_ar1");
+    }
+
+    /**
+     * Container's getter for AltCustContactU2.
+     * @return AltCustContactU2
+     */
+    public ViewObjectImpl getAltCustContactU2() {
+        return (ViewObjectImpl) findViewObject("AltCustContactU2");
+    }
+
+    /**
+     * Container's getter for ViewLinkVL1.
+     * @return ViewLinkVL1
+     */
+    public ViewLinkImpl getViewLinkVL1() {
+        return (ViewLinkImpl) findViewLink("ViewLinkVL1");
     }
 }
 

@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:panelGroupLayout id="pgl4" binding="#{backingBeanScope.ViewAppointmnets.pgl4}">
         <af:decorativeBox id="db1" binding="#{backingBeanScope.ViewAppointmnets.db1}">
             <f:facet name="center">
@@ -31,17 +32,51 @@
                                                   binding="#{backingBeanScope.ViewAppointmnets.it1}">
                                         <f:validator binding="#{bindings.ActivityTitle.validator}"/>
                                     </af:inputText>
-                                    <af:outputLabel value="Appointment Creator" id="ol2"
-                                                    binding="#{backingBeanScope.ViewAppointmnets.ol2}"/>
                                     <af:outputLabel value="Appointment Start Time" id="ol3"
                                                     binding="#{backingBeanScope.ViewAppointmnets.ol3}"/>
+                                    <af:inputText value="#{bindings.StartDateTime.inputValue}"
+                                                  required="#{bindings.StartDateTime.hints.mandatory}"
+                                                  columns="#{bindings.StartDateTime.hints.displayWidth}"
+                                                  maximumLength="#{bindings.StartDateTime.hints.precision}"
+                                                  shortDesc="#{bindings.StartDateTime.hints.tooltip}" id="it2"
+                                                  binding="#{backingBeanScope.ViewAppointmnets.it2}">
+                                        <f:validator binding="#{bindings.StartDateTime.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.StartDateTime.format}"/>
+                                    </af:inputText>
                                     <af:outputLabel value="Appointment End Time" id="ol4"
                                                     binding="#{backingBeanScope.ViewAppointmnets.ol4}"/>
+                                    <af:inputText value="#{bindings.EndDueDateTime.inputValue}"
+                                                  required="#{bindings.EndDueDateTime.hints.mandatory}"
+                                                  columns="#{bindings.EndDueDateTime.hints.displayWidth}"
+                                                  maximumLength="#{bindings.EndDueDateTime.hints.precision}"
+                                                  shortDesc="#{bindings.EndDueDateTime.hints.tooltip}" id="it3"
+                                                  binding="#{backingBeanScope.ViewAppointmnets.it3}">
+                                        <f:validator binding="#{bindings.EndDueDateTime.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.EndDueDateTime.format}"/>
+                                    </af:inputText>
+                                    <af:outputLabel value="#{viewcontrollerBundle.DESCRIPTION}" id="ol2"
+                                                    binding="#{backingBeanScope.ViewAppointmnets.ol2}"/>
+                                    <af:inputText value="#{bindings.ActivityDescription.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityDescription.hints.mandatory}"
+                                                  columns="#{bindings.ActivityDescription.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityDescription.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityDescription.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.ViewAppointmnets.it4}" rows="3">
+                                        <f:validator binding="#{bindings.ActivityDescription.validator}"/>
+                                    </af:inputText>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"
-                                     binding="#{backingBeanScope.ViewAppointmnets.gc2}"/>
+                                     binding="#{backingBeanScope.ViewAppointmnets.gc2}">
+                            <af:panelTabbed position="above" id="pt1"
+                                            binding="#{backingBeanScope.ViewAppointmnets.pt1}">
+                                <af:showDetailItem id="tab1" text="Contacts" disclosed="true"
+                                                   binding="#{backingBeanScope.ViewAppointmnets.tab1}"/>
+                                <af:showDetailItem id="tab2" text="Users"
+                                                   binding="#{backingBeanScope.ViewAppointmnets.tab2}"/>
+                            </af:panelTabbed>
+                        </af:gridCell>
                     </af:gridRow>
                 </af:panelGridLayout>
             </f:facet>

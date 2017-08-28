@@ -13,5 +13,20 @@
         <Item Value="ActivityTitle"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="InteractionsDisplayIterator" id="ActivityType">
+      <AttrNames>
+        <Item Value="ActivityType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteractionsDisplayIterator" id="ActivityDescription">
+      <AttrNames>
+        <Item Value="ActivityDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteractionsDisplayIterator" id="StartDateTime">
+      <AttrNames>
+        <Item Value="StartDateTime"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

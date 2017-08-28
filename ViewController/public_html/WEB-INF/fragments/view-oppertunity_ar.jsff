@@ -1197,4 +1197,22 @@
                                  binding="#{backingBeanScope.backing_viewoppertunity_ar.aot4}"/>
         </af:dialog>
     </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p12"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p12}">
+        <af:dialog id="d12" binding="#{backingBeanScope.backing_viewoppertunity_ar.d12}"
+                   dialogListener="#{backingBeanScope.backing_viewoppertunity_ar.insertContactDialogListener}"
+                   title="Add related contact">
+            <f:facet name="buttonBar"/>
+            <af:selectOneChoice value="#{bindings.ContactId1.inputValue}" label="#{bindings.ContactId1.label}"
+                                required="#{bindings.ContactId1.hints.mandatory}"
+                                shortDesc="#{bindings.ContactId1.hints.tooltip}" id="soc15"
+                                binding="#{backingBeanScope.backing_viewoppertunity_ar.soc15}">
+                <f:selectItems value="#{bindings.ContactId1.items}" id="si15"
+                               binding="#{backingBeanScope.backing_viewoppertunity_ar.si15}"/>
+                <f:validator binding="#{bindings.ContactId1.validator}"/>
+            </af:selectOneChoice>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p13"
+              binding="#{backingBeanScope.backing_viewoppertunity_ar.p13}"/>
 </ui:composition>

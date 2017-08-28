@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:panelGroupLayout layout="scroll" id="pgl1">
         <af:decorativeBox id="db1">
             <f:facet name="top"/>
@@ -20,7 +21,25 @@
                                     <af:outputText value="#{bindings.ActivityTitle.inputValue}"
                                                    shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="ot1"/>
                                     <af:outputLabel value="Type" id="ol2"/>
-                                    <af:outputLabel value="outputLabel1" id="ol1"/>
+                                    <af:outputText value="#{bindings.ActivityType.inputValue}"
+                                                   shortDesc="#{bindings.ActivityType.hints.tooltip}" id="ot2"/>
+                                    <af:outputLabel value="#{viewcontrollerBundle.DESCRIPTION}" id="ol1"/>
+                                    <af:inputText value="#{bindings.ActivityDescription.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityDescription.hints.mandatory}"
+                                                  columns="#{bindings.ActivityDescription.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityDescription.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityDescription.hints.tooltip}" id="it1"
+                                                  rows="3">
+                                        <f:validator binding="#{bindings.ActivityDescription.validator}"/>
+                                    </af:inputText>
+                                    <af:outputLabel value="#{viewcontrollerBundle.DATE}" id="ol4"/>
+                                    <af:inputDate value="#{bindings.StartDateTime.inputValue}"
+                                                  required="#{bindings.StartDateTime.hints.mandatory}"
+                                                  columns="#{bindings.StartDateTime.hints.displayWidth}"
+                                                  shortDesc="#{bindings.StartDateTime.hints.tooltip}" id="id1">
+                                        <f:validator binding="#{bindings.StartDateTime.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.StartDateTime.format}"/>
+                                    </af:inputDate>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                         </af:gridCell>

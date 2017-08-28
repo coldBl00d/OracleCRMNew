@@ -1868,7 +1868,7 @@ public class ViewCustomer {
                     DCBindingContainer bindings2 = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
                     DCIteratorBinding iter = (DCIteratorBinding)bindings2.findIteratorBinding("AppointmentsIterator");
                     BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
-                    OperationBinding operationBinding = bindings.getOperationBinding("Delete4");
+                    OperationBinding operationBinding = bindings.getOperationBinding("Delete4it add");
                     operationBinding.execute();
                     operationBinding = bindings.getOperationBinding("Commit");
                     operationBinding.execute();

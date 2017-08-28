@@ -40,6 +40,10 @@
               id="CreateTask1Iterator"/>
     <iterator Binds="CreateNotesU1" RangeSize="10" DataControl="UserApplicationModuleDataControl"
               id="CreateNotesU1Iterator"/>
+    <iterator Binds="OppertunityContactLink1" RangeSize="25" DataControl="AdminAppModuleDataControl"
+              id="OppertunityContactLink1Iterator"/>
+    <iterator Binds="AltCustContactU2" RangeSize="-1" DataControl="UserApplicationModuleDataControl"
+              id="AltCustContactU2Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
@@ -405,5 +409,17 @@
         <Item Value="NoteContent"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="OppertunityContactLink1Iterator" id="ContactId1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="false" ListIter="AltCustContactU2Iterator">
+      <AttrNames>
+        <Item Value="ContactId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="ContactId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="ContactName"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>

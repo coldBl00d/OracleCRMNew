@@ -13,5 +13,20 @@
         <Item Value="ActivityTitle"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="AppointmentDisplayIterator" id="StartDateTime">
+      <AttrNames>
+        <Item Value="StartDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentDisplayIterator" id="EndDueDateTime">
+      <AttrNames>
+        <Item Value="EndDueDateTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentDisplayIterator" id="ActivityDescription">
+      <AttrNames>
+        <Item Value="ActivityDescription"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

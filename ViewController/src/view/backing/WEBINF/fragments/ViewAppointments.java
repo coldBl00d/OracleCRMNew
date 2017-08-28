@@ -8,6 +8,8 @@ import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
+import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
@@ -16,7 +18,6 @@ public class ViewAppointments {
     private RichGridCell gc2;
     private RichOutputLabel ol4;
     private RichOutputLabel ol3;
-    private RichOutputLabel ol2;
     private RichInputText it1;
     private RichOutputLabel ol1;
     private RichPanelGroupLayout pgl3;
@@ -28,6 +29,13 @@ public class ViewAppointments {
     private RichPanelGridLayout pgl2;
     private RichDecorativeBox db1;
     private RichPanelGroupLayout pgl4;
+    private RichPanelTabbed pt1;
+    private RichShowDetailItem tab1;
+    private RichShowDetailItem tab2;
+    private RichInputText it2;
+    private RichInputText it3;
+    private RichOutputLabel ol2;
+    private RichInputText it4;
 
     public ViewAppointments() {
         System.out.println("ViewAppointment backing bean: Appointment id :"+ADFContext.getCurrent().getPageFlowScope().get("AppointmentId"));
@@ -57,13 +65,6 @@ public class ViewAppointments {
         return ol3;
     }
 
-    public void setOl2(RichOutputLabel ol2) {
-        this.ol2 = ol2;
-    }
-
-    public RichOutputLabel getOl2() {
-        return ol2;
-    }
 
     public void setIt1(RichInputText it1) {
         this.it1 = it1;
@@ -151,5 +152,61 @@ public class ViewAppointments {
 
     public RichPanelGroupLayout getPgl4() {
         return pgl4;
+    }
+
+    public void setPt1(RichPanelTabbed pt1) {
+        this.pt1 = pt1;
+    }
+
+    public RichPanelTabbed getPt1() {
+        return pt1;
+    }
+
+    public void setTab1(RichShowDetailItem tab1) {
+        this.tab1 = tab1;
+    }
+
+    public RichShowDetailItem getTab1() {
+        return tab1;
+    }
+
+    public void setTab2(RichShowDetailItem tab2) {
+        this.tab2 = tab2;
+    }
+
+    public RichShowDetailItem getTab2() {
+        return tab2;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
+    }
+
+    public void setOl2(RichOutputLabel ol2) {
+        this.ol2 = ol2;
+    }
+
+    public RichOutputLabel getOl2() {
+        return ol2;
+    }
+
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
     }
 }

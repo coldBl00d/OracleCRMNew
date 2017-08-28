@@ -32,8 +32,47 @@
                                     </af:inputText>
                                     <af:outputLabel value="#{viewcontrollerBundle.DUE_DATE}" id="ol2"
                                                     binding="#{backingBeanScope.ViewTask.ol2}"/>
+                                    <af:inputText value="#{bindings.EndDueDateTime1.inputValue}"
+                                                  required="#{bindings.EndDueDateTime1.hints.mandatory}"
+                                                  columns="#{bindings.EndDueDateTime1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.EndDueDateTime1.hints.precision}"
+                                                  shortDesc="#{bindings.EndDueDateTime1.hints.tooltip}" id="it2"
+                                                  binding="#{backingBeanScope.ViewTask.it2}">
+                                        <f:validator binding="#{bindings.EndDueDateTime1.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.EndDueDateTime1.format}"/>
+                                    </af:inputText>
                                     <af:outputLabel value="#{viewcontrollerBundle.DESCRIPTION_}" id="ol3"
                                                     binding="#{backingBeanScope.ViewTask.ol3}"/>
+                                    <af:inputText value="#{bindings.ActivityDescription1.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityDescription1.hints.mandatory}"
+                                                  columns="#{bindings.ActivityDescription1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityDescription1.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityDescription1.hints.tooltip}" id="it3"
+                                                  binding="#{backingBeanScope.ViewTask.it3}">
+                                        <f:validator binding="#{bindings.ActivityDescription1.validator}"/>
+                                    </af:inputText>
+                                    <af:outputLabel value="#{viewcontrollerBundle.COMPLETION}" id="ol4"
+                                                    binding="#{backingBeanScope.ViewTask.ol4}"/>
+                                    <af:inputText value="#{bindings.ATaskCompletion1.inputValue}"
+                                                  required="#{bindings.ATaskCompletion1.hints.mandatory}"
+                                                  columns="#{bindings.ATaskCompletion1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ATaskCompletion1.hints.precision}"
+                                                  shortDesc="#{bindings.ATaskCompletion1.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.ViewTask.it4}">
+                                        <f:validator binding="#{bindings.ATaskCompletion1.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ATaskCompletion1.format}"/>
+                                    </af:inputText>
+                                    <af:outputLabel value="#{viewcontrollerBundle.PRIORITY}" id="ol5"
+                                                    binding="#{backingBeanScope.ViewTask.ol5}"/>
+                                    <af:inputText value="#{bindings.ATaskPriority1.inputValue}" simple="true"
+                                                  required="#{bindings.ATaskPriority1.hints.mandatory}"
+                                                  columns="#{bindings.ATaskPriority1.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ATaskPriority1.hints.precision}"
+                                                  shortDesc="#{bindings.ATaskPriority1.hints.tooltip}" id="it5"
+                                                  binding="#{backingBeanScope.ViewTask.it5}">
+                                        <f:validator binding="#{bindings.ATaskPriority1.validator}"/>
+                                    </af:inputText>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                         </af:gridCell>

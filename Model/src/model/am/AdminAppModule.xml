@@ -46,6 +46,9 @@
   <ViewUsage
     Name="UserManagerU1"
     ViewObjectName="model.uvo.UserManagerUVO"/>
+  <ViewUsage
+    Name="OppertunityContactLink1"
+    ViewObjectName="model.uvo.OppertunityContactLinkVO"/>
   <ViewLinkUsage
     Name="AKUser_FormVL1"
     ViewLinkObjectName="model.vl.AKUser_FormVL"
