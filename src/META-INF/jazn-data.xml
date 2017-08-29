@@ -80,6 +80,16 @@
                             </member>
                         </members>
                     </app-role>
+                    <app-role>
+                        <name>salesrep</name>
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                <name>SA_REP</name>
+                            </member>
+                        </members>
+                    </app-role>
                 </app-roles>
                 <resource-types>
                     <resource-type>
@@ -680,6 +690,18 @@
                             <permission-set-ref>
                                 <name>Admin Entitlement</name>
                             </permission-set-ref>
+                        </permission-set-refs>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>salesrep</name>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permission-set-refs>
                             <permission-set-ref>
                                 <name>Manager Entitlement</name>
                             </permission-set-ref>
