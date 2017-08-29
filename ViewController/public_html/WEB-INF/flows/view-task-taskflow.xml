@@ -18,25 +18,12 @@
     <view id="Tasks">
       <page>/WEB-INF/fragments/Tasks.jsff</page>
     </view>
-    <method-call id="SetCurrentRowWithKeyValue1">
-      <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
-      <outcome>
-        <fixed-outcome>setCurrentRowWithKeyValue</fixed-outcome>
-      </outcome>
-    </method-call>
     <method-call id="SetCurrentRowWithKeyValue">
       <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
       <outcome>
         <fixed-outcome>setCurrentRowWithKeyValue</fixed-outcome>
       </outcome>
     </method-call>
-    <control-flow-rule id="__5">
-      <from-activity-id>SetCurrentRowWithKeyValue1</from-activity-id>
-      <control-flow-case id="__6">
-        <from-outcome>setCurrentRowWithKeyValue</from-outcome>
-        <to-activity-id>Tasks</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
     <control-flow-rule id="__3">
       <from-activity-id>SetCurrentRowWithKeyValue</from-activity-id>
       <control-flow-case id="__4">
