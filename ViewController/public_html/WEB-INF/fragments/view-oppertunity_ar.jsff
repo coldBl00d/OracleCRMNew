@@ -233,7 +233,8 @@
                                             <af:showPopupBehavior popupId="p1" align="afterStart" alignId="b8"/>
                                         </af:button>
                                         <af:button id="b18" binding="#{backingBeanScope.backing_viewoppertunity_ar.b18}"
-                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}">
+                                                   icon="#{resource['images:ic_mode_edit_black_24dp_1x.png']}"
+                                                   disabled="#{backingBeanScope.backing_viewoppertunity_ar.t9Clicked}">
                                             <af:showPopupBehavior popupId="p2" align="afterStart" alignId="b18"/>
                                         </af:button>
                                         <af:button id="b11" binding="#{backingBeanScope.backing_viewoppertunity_ar.b11}"
@@ -764,10 +765,10 @@
                                 <af:showDetailItem id="sdi4" text="Documents"
                                                    binding="#{backingBeanScope.backing_viewoppertunity_ar.sdi4}">
                                     <af:toolbar id="t8" binding="#{backingBeanScope.backing_viewoppertunity_ar.t8}">
-                                        <af:button id="b16" binding="#{backingBeanScope.backing_viewoppertunity_ar.b16}"
-                                                   icon="#{resource['images:ic_add_black_24dp_1x.png']}"/>
                                         <af:button id="b17" binding="#{backingBeanScope.backing_viewoppertunity_ar.b17}"
                                                    icon="#{resource['images:ic_delete_black_24dp_1x.png']}"/>
+                                        <af:inputFile label="Select File" id="if1"
+                                                      binding="#{backingBeanScope.backing_viewoppertunity_ar.if1}"/>
                                     </af:toolbar>
                                 </af:showDetailItem>
                             </af:panelTabbed>

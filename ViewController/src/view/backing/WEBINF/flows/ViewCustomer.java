@@ -688,6 +688,7 @@ public class ViewCustomer {
     }
     
     public String goTask(){
+        
         goPlace("CustomerTasksIterator",
                 "ActivityTitle",
                 "TaskId",

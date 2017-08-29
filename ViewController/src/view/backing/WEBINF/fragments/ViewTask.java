@@ -8,6 +8,8 @@ import oracle.adf.view.rich.component.rich.layout.RichGridRow;
 import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
+import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichImage;
 import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
@@ -33,6 +35,9 @@ public class ViewTask {
     private RichInputText it4;
     private RichOutputLabel ol5;
     private RichInputText it5;
+    private RichPanelTabbed pt1;
+    private RichShowDetailItem tab1;
+    private RichShowDetailItem tab2;
 
     public ViewTask() {
         System.out.println("Task id  from page flow scope view task page :" +ADFContext.getCurrent().getPageFlowScope().get("PointerId"));
@@ -196,5 +201,29 @@ public class ViewTask {
 
     public RichInputText getIt5() {
         return it5;
+    }
+
+    public void setPt1(RichPanelTabbed pt1) {
+        this.pt1 = pt1;
+    }
+
+    public RichPanelTabbed getPt1() {
+        return pt1;
+    }
+
+    public void setTab1(RichShowDetailItem tab1) {
+        this.tab1 = tab1;
+    }
+
+    public RichShowDetailItem getTab1() {
+        return tab1;
+    }
+
+    public void setTab2(RichShowDetailItem tab2) {
+        this.tab2 = tab2;
+    }
+
+    public RichShowDetailItem getTab2() {
+        return tab2;
     }
 }

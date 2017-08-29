@@ -848,5 +848,8 @@ public class UserApplicationModuleImpl extends ApplicationModuleImpl implements 
     public ViewLinkImpl getViewLinkVL1() {
         return (ViewLinkImpl) findViewLink("ViewLinkVL1");
     }
+    
+    
+    
 }
 

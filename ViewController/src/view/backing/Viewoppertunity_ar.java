@@ -15,6 +15,7 @@ import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.RichQuickQuery;
 import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputDate;
+import oracle.adf.view.rich.component.rich.input.RichInputFile;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.component.rich.layout.RichDecorativeBox;
@@ -122,7 +123,6 @@ public class Viewoppertunity_ar {
     private RichButton b11;
     private RichShowDetailItem sdi4;
     private RichToolbar t8;
-    private RichButton b16;
     private RichButton b17;
     private RichTable t9;
     private RichButton b18;
@@ -226,11 +226,22 @@ public class Viewoppertunity_ar {
     private RichQuickQuery qryId6;
     private RichCommandLink cl6;
     private RichTable t10;
+    private RichInputFile if1;
 
 
     public Viewoppertunity_ar(){
        //setRow();
        
+    }
+    
+    public boolean isT9Clicked(){
+        if (this.t9.getActiveRowKey() == null){
+            System.out.println("Row key is null");
+            return false;
+        }else{
+            System.out.println ("Row key is not empty");
+            return true;
+        }
     }
     
     public void setRow(){
@@ -819,13 +830,6 @@ public class Viewoppertunity_ar {
         return t8;
     }
 
-    public void setB16(RichButton b16) {
-        this.b16 = b16;
-    }
-
-    public RichButton getB16() {
-        return b16;
-    }
 
     public void setB17(RichButton b17) {
         this.b17 = b17;
@@ -2232,5 +2236,13 @@ public class Viewoppertunity_ar {
 
     public RichTable getT10() {
         return t10;
+    }
+
+    public void setIf1(RichInputFile if1) {
+        this.if1 = if1;
+    }
+
+    public RichInputFile getIf1() {
+        return if1;
     }
 }
