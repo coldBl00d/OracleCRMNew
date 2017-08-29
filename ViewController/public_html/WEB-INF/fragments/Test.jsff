@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelGroupLayout layout="scroll" id="pgl1">
+        <af:decorativeBox id="db1">
+            <f:facet name="center">
+                <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                        <af:gridCell marginStart="5px" width="250px" id="gc1">
+                            <af:panelBox text="Task Detail" id="pb1" showDisclosure="false" inlineStyle="width:250px"
+                                         background="light">
+                                <f:facet name="toolbar"/>
+                                <af:image source="#{resource['images:Tasks.png']}" id="i1" inlineStyle="width:104px"/>
+                                <af:panelGroupLayout id="pgl3" layout="vertical">
+                                    <h:outputLabel value="Name" id="ol1"/>
+                                    <af:inputText value="#{bindings.ActivityTitle.inputValue}" simple="true"
+                                                  required="#{bindings.ActivityTitle.hints.mandatory}"
+                                                  columns="#{bindings.ActivityTitle.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ActivityTitle.hints.precision}"
+                                                  shortDesc="#{bindings.ActivityTitle.hints.tooltip}" id="it1"
+                                                  editable="onAccess">
+                                        <f:validator binding="#{bindings.ActivityTitle.validator}"/>
+                                    </af:inputText>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+                            <af:panelTabbed position="above" id="pt1">
+                                <af:showDetailItem id="tab1" text="Contacts" disclosed="true"/>
+                                <af:showDetailItem id="tab2" text="Users"/>
+                            </af:panelTabbed>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </f:facet>
+        </af:decorativeBox>
+    </af:panelGroupLayout>
+</ui:composition>

@@ -689,8 +689,8 @@ public class ViewCustomer {
     }
     
     public String goTask(){
-        goPlace("CustomerTasksIterator",
-                "ActivityTitle",
+        goPlacev2("CustomerTasksIterator",
+                "ActivityTitle","PointerId",
                 "TaskId",
                 "WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow");
         return null;

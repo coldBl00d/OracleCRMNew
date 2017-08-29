@@ -40,10 +40,9 @@
           usageId="view_view_contact_taskflow_view_contact_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page path="/WEB-INF/fragments/manage_opportunity.jsff" usageId="view_manage_opportunityPageDef"/>
     <page path="/WEB-INF/fragments/manage-contacts.jsff" usageId="view_manage_contactsPageDef"/>
+    <page path="/WEB-INF/fragments/Test.jsff" usageId="view_TestPageDef"/>
     <page path="/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow@SetCurrentRowWithKeyValue1"
           usageId="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValue1PageDef"/>
-    <page path="/WEB-INF/flows/view-task-taskflow.xml#view-task-taskflow@SetCurrentRowWithKeyValue"
-          usageId="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Role_HomePageDef" path="fragments.Role_HomePageDef"/>
@@ -77,10 +76,9 @@
           path="flows.view_contact_taskflow_view_contact_taskflow_SetCurrentRowWithKeyValuePageDef"/>
     <page id="view_manage_opportunityPageDef" path="fragments.manage_opportunityPageDef"/>
     <page id="view_manage_contactsPageDef" path="fragments.manage_contactsPageDef"/>
+    <page id="view_TestPageDef" path="fragments.TestPageDef"/>
     <page id="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValue1PageDef"
           path="flows.view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValue1PageDef"/>
-    <page id="view_view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"
-          path="flows.view_task_taskflow_view_task_taskflow_SetCurrentRowWithKeyValuePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AdminAppModuleDataControl" Package="model.am"

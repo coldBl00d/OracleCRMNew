@@ -3,45 +3,62 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View3">
+      id="View13">
       <property
          name="activityId">Tasks</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">550.5</property>
+         name="x">523.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Tasks&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">183.79883</property>
+         name="y">238.79883</property>
       <property
          name="page">/WEB-INF/fragments/Tasks.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
-   <MethodCall
-      id="MethodCall5">
-      <property
-         name="activityId">SetCurrentRowWithKeyValue</property>
-      <property
-         name="x">222.7002</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>SetCurrentRowWithKeyValue&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="y">335.1494</property>
-      <property
-         name="exceptionHandler">false</property>
-   </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase6"
-      from="MethodCall5"
-      to="View3">
+      id="ControlFlowCase14"
+      from="MethodCall6"
+      to="View15">
       <property
          name="fromOutcome">setCurrentRowWithKeyValue</property>
       <property
-         name="sdm:polyPoints">R50,263.7002,334.79883,509.5,183.44824,L50</property>
+         name="sdm:polyPoints">T50,506.0371,441.79883,327.5,241.44824,B50</property>
    </ControlFlowCase>
+   <View
+      id="View15">
+      <property
+         name="activityId">Test</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">327.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Test&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">187.79883</property>
+      <property
+         name="page">/WEB-INF/fragments/Test.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <MethodCall
+      id="MethodCall6">
+      <property
+         name="activityId">SetCurrentRowWithKeyValue1</property>
+      <property
+         name="x">506.0371</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SetCurrentRowWithKeyValue1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">496.1494</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
 </SDM>

@@ -4,33 +4,6 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Tasks" RangeSize="25" DataControl="UserApplicationModuleDataControl" id="TasksIterator"/>
   </executables>
-  <bindings>
-    <attributeValues IterBinding="TasksIterator" id="ActivityTitle1">
-      <AttrNames>
-        <Item Value="ActivityTitle"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TasksIterator" id="ActivityDescription1">
-      <AttrNames>
-        <Item Value="ActivityDescription"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TasksIterator" id="ATaskCompletion1">
-      <AttrNames>
-        <Item Value="ATaskCompletion"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TasksIterator" id="ATaskPriority1">
-      <AttrNames>
-        <Item Value="ATaskPriority"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TasksIterator" id="EndDueDateTime1">
-      <AttrNames>
-        <Item Value="EndDueDateTime"/>
-      </AttrNames>
-    </attributeValues>
-  </bindings>
+  <bindings/>
 </pageDefinition>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="view-task-taskflow">
-    <default-activity>SetCurrentRowWithKeyValue</default-activity>
+    <default-activity>SetCurrentRowWithKeyValue1</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -18,17 +18,20 @@
     <view id="Tasks">
       <page>/WEB-INF/fragments/Tasks.jsff</page>
     </view>
-    <method-call id="SetCurrentRowWithKeyValue">
+    <view id="Test">
+      <page>/WEB-INF/fragments/Test.jsff</page>
+    </view>
+    <method-call id="SetCurrentRowWithKeyValue1">
       <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
       <outcome>
         <fixed-outcome>setCurrentRowWithKeyValue</fixed-outcome>
       </outcome>
     </method-call>
-    <control-flow-rule id="__3">
-      <from-activity-id>SetCurrentRowWithKeyValue</from-activity-id>
-      <control-flow-case id="__4">
+    <control-flow-rule id="__6">
+      <from-activity-id>SetCurrentRowWithKeyValue1</from-activity-id>
+      <control-flow-case id="__7">
         <from-outcome>setCurrentRowWithKeyValue</from-outcome>
-        <to-activity-id>Tasks</to-activity-id>
+        <to-activity-id>Test</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

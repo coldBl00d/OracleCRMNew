@@ -9,6 +9,7 @@
       <name>tabContext</name>
       <value>#{pageFlowScope.tabContext}</value>
       <class>com.ui.pattern.dynamicShell.TabContext</class>
+      <required/>
     </input-parameter-definition>
     <view id="manage_opportunity">
       <page>/WEB-INF/fragments/manage_opportunity.jsff</page>
